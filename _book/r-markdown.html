@@ -53,6 +53,14 @@
 
 <link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections/anchor-sections.js"></script>
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding/datatables.js"></script>
+<link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -164,6 +172,9 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="翻译说明.html"><a href="翻译说明.html"><i class="fa fa-check"></i>翻译说明</a></li>
 <li class="chapter" data-level="" data-path="排版说明.html"><a href="排版说明.html"><i class="fa fa-check"></i>排版说明</a></li>
 <li class="chapter" data-level="" data-path="翻译进度.html"><a href="翻译进度.html"><i class="fa fa-check"></i>翻译进度</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="前言.html"><a href="前言.html"><i class="fa fa-check"></i>前言</a>
+<ul>
 <li class="chapter" data-level="" data-path="为什么要阅读这本书.html"><a href="为什么要阅读这本书.html"><i class="fa fa-check"></i>为什么要阅读这本书</a></li>
 <li class="chapter" data-level="" data-path="本书的结构.html"><a href="本书的结构.html"><i class="fa fa-check"></i>本书的结构</a></li>
 <li class="chapter" data-level="" data-path="软件信息与一些约定.html"><a href="软件信息与一些约定.html"><i class="fa fa-check"></i>软件信息与一些约定</a></li>
@@ -279,35 +290,35 @@ div.csl-indent {
 <h2><span class="header-section-number">B.2</span> R Markdown</h2>
 <p>  由于 R 和 Pandoc 的强大功能，你可以轻松地在 R Markdown 文档中进行计算，并将其转换为各种输出格式，包括 HTML/PDF/Word 文档、HTML5/Beamer 幻灯片、仪表板和网站等。R Markdown 文档通常由 YAML 元数据（可选）和文档主体组成。我们在第 <a href="components.html#components">2</a> 章中介绍了编写文档主体各个组件的语法，并在本节中详细解释了 YAML 元数据。</p>
 <p>  R Markdown 的元数据可以写在文档的最开头，分别以三个短划线 <code>---</code> 开头和结尾。YAML 元数据通常由冒号分隔的标记值对组成，例如：</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="r-markdown.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb4-2"><a href="r-markdown.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;An R Markdown Document&quot;</span></span>
-<span id="cb4-3"><a href="r-markdown.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Yihui Xie&quot;</span></span>
-<span id="cb4-4"><a href="r-markdown.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb146-1"><a href="r-markdown.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb146-2"><a href="r-markdown.html#cb146-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;An R Markdown Document&quot;</span></span>
+<span id="cb146-3"><a href="r-markdown.html#cb146-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Yihui Xie&quot;</span></span>
+<span id="cb146-4"><a href="r-markdown.html#cb146-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>For character values, you may omit the quotes when the values do not contain special characters, but it is safer to quote them if they are expected to be character values.</p>
 <p>Besides characters, another common type of values are logical values. Both <code>yes</code> and <code>true</code> mean true, and <code>no</code>/<code>false</code> mean false, e.g.,</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="r-markdown.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb147-1"><a href="r-markdown.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
 <p>Values can be vectors, and there are two ways of writing vectors. The following two ways are equivalent:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb6-1"><a href="r-markdown.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;html_document&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;word_document&quot;</span><span class="kw">]</span></span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="r-markdown.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="r-markdown.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;html_document&quot;</span></span>
-<span id="cb7-3"><a href="r-markdown.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;word_document&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb148-1"><a href="r-markdown.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;html_document&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;word_document&quot;</span><span class="kw">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb149-1"><a href="r-markdown.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb149-2"><a href="r-markdown.html#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;html_document&quot;</span></span>
+<span id="cb149-3"><a href="r-markdown.html#cb149-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;word_document&quot;</span></span></code></pre></div>
 <p>Values can also be lists of values. You just need to indent the values by two more spaces, e.g.,</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb8-1"><a href="r-markdown.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb8-2"><a href="r-markdown.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="r-markdown.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">split_by</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;section&quot;</span></span>
-<span id="cb8-4"><a href="r-markdown.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">split_bib</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb150-1"><a href="r-markdown.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb150-2"><a href="r-markdown.html#cb150-2" aria-hidden="true" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
+<span id="cb150-3"><a href="r-markdown.html#cb150-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">split_by</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;section&quot;</span></span>
+<span id="cb150-4"><a href="r-markdown.html#cb150-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">split_bib</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span></code></pre></div>
 <p>It is a common mistake to forget to indent the values. For example, the following data</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="r-markdown.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb9-2"><a href="r-markdown.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb9-3"><a href="r-markdown.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb151-1"><a href="r-markdown.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb151-2"><a href="r-markdown.html#cb151-2" aria-hidden="true" tabindex="-1"></a><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb151-3"><a href="r-markdown.html#cb151-3" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
 <p>actually means</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="r-markdown.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span><span class="ch">null</span></span>
-<span id="cb10-2"><a href="r-markdown.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">html_document</span><span class="kw">:</span><span class="at"> </span><span class="ch">null</span></span>
-<span id="cb10-3"><a href="r-markdown.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb152-1"><a href="r-markdown.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span><span class="ch">null</span></span>
+<span id="cb152-2"><a href="r-markdown.html#cb152-2" aria-hidden="true" tabindex="-1"></a><span class="fu">html_document</span><span class="kw">:</span><span class="at"> </span><span class="ch">null</span></span>
+<span id="cb152-3"><a href="r-markdown.html#cb152-3" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
 <p>instead of what you probably would have expected:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb11-1"><a href="r-markdown.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
-<span id="cb11-2"><a href="r-markdown.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
-<span id="cb11-3"><a href="r-markdown.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb153-1"><a href="r-markdown.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb153-2"><a href="r-markdown.html#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb153-3"><a href="r-markdown.html#cb153-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
 <p>The R Markdown output format is specified in the <code>output</code> field of the YAML metadata, and you need to consult the R help pages for the possible options, e.g., <code>?rmarkdown::html_document</code>, or <code>?bookdown::gitbook</code>. The meanings of most other fields in YAML can be found in the Pandoc documentation.</p>
 <p>The <strong>rmarkdown</strong> package has provided these R Markdown output formats:</p>
 <ul>
@@ -386,6 +397,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

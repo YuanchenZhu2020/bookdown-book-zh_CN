@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="pandoc.html"/>
-<link rel="next" href="software-usage.html"/>
+<link rel="next" href="软件使用.html"/>
 <script src="libs/header-attrs/header-attrs.js"></script>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
@@ -53,6 +53,14 @@
 
 <link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections/anchor-sections.js"></script>
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding/datatables.js"></script>
+<link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -120,6 +128,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -142,13 +172,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="翻译说明.html"><a href="翻译说明.html"><i class="fa fa-check"></i>翻译说明</a></li>
 <li class="chapter" data-level="" data-path="排版说明.html"><a href="排版说明.html"><i class="fa fa-check"></i>排版说明</a></li>
 <li class="chapter" data-level="" data-path="翻译进度.html"><a href="翻译进度.html"><i class="fa fa-check"></i>翻译进度</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="前言.html"><a href="前言.html"><i class="fa fa-check"></i>前言</a>
+<ul>
 <li class="chapter" data-level="" data-path="为什么要阅读这本书.html"><a href="为什么要阅读这本书.html"><i class="fa fa-check"></i>为什么要阅读这本书</a></li>
 <li class="chapter" data-level="" data-path="本书的结构.html"><a href="本书的结构.html"><i class="fa fa-check"></i>本书的结构</a></li>
 <li class="chapter" data-level="" data-path="软件信息与一些约定.html"><a href="软件信息与一些约定.html"><i class="fa fa-check"></i>软件信息与一些约定</a></li>
 <li class="chapter" data-level="" data-path="致谢.html"><a href="致谢.html"><i class="fa fa-check"></i>致谢</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="关于作者.html"><a href="关于作者.html"><i class="fa fa-check"></i>关于作者</a></li>
-<li class="chapter" data-level="1" data-path="简介.html"><a href="简介.html"><i class="fa fa-check"></i><b>1</b> 简介</a>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> 简介</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="开发动机.html"><a href="开发动机.html"><i class="fa fa-check"></i><b>1.1</b> 开发动机</a></li>
 <li class="chapter" data-level="1.2" data-path="开始.html"><a href="开始.html"><i class="fa fa-check"></i><b>1.2</b> 开始</a></li>
@@ -226,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="A.2" data-path="pandoc.html"><a href="pandoc.html"><i class="fa fa-check"></i><b>A.2</b> Pandoc</a></li>
 <li class="chapter" data-level="A.3" data-path="latex.html"><a href="latex.html"><i class="fa fa-check"></i><b>A.3</b> LaTeX</a></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="software-usage.html"><a href="software-usage.html"><i class="fa fa-check"></i><b>B</b> Software Usage</a>
+<li class="chapter" data-level="B" data-path="软件使用.html"><a href="软件使用.html"><i class="fa fa-check"></i><b>B</b> 软件使用</a>
 <ul>
 <li class="chapter" data-level="B.1" data-path="knitr.html"><a href="knitr.html"><i class="fa fa-check"></i><b>B.1</b> knitr</a></li>
 <li class="chapter" data-level="B.2" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>B.2</b> R Markdown</a></li>
@@ -256,41 +289,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="latex" class="section level2" number="7.3">
 <h2><span class="header-section-number">A.3</span> LaTeX</h2>
 <p>  只有当你想要将你的书籍转为 PDF 时，你才需要 LaTeX。你可以查阅 <a href="https://www.latex-project.org/get/" class="uri">https://www.latex-project.org/get/</a> 以获取更多关于 LaTeX 它的安装的信息，但是我们强烈推荐你安装名为 <a href="https://yihui.org/tinytex/">TinyTeX</a> 的轻量级跨平台 LaTeX 发行版，它是基于 TeX Live 构建的。TinyTeX 能够通过 R 软件包 <strong>tinytex</strong> 轻松安装（安装 <strong>bookdown</strong> 时将自动安装）：</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="latex.html#cb6-1" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="latex.html#cb138-1" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
 <p>使用 TinyTeX，你将永远不会看见这样的错误信息：</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb7-1"><a href="latex.html#cb7-1" aria-hidden="true" tabindex="-1"></a>! LaTeX Error: File `titling.sty&#39; not found.</span>
-<span id="cb7-2"><a href="latex.html#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="latex.html#cb7-3" aria-hidden="true" tabindex="-1"></a>Type X to quit or &lt;RETURN&gt; to proceed,</span>
-<span id="cb7-4"><a href="latex.html#cb7-4" aria-hidden="true" tabindex="-1"></a>or enter new name. (Default extension: sty)</span>
-<span id="cb7-5"><a href="latex.html#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="latex.html#cb7-6" aria-hidden="true" tabindex="-1"></a>Enter file name: </span>
-<span id="cb7-7"><a href="latex.html#cb7-7" aria-hidden="true" tabindex="-1"></a>! Emergency stop.</span>
-<span id="cb7-8"><a href="latex.html#cb7-8" aria-hidden="true" tabindex="-1"></a>&lt;read *&gt; </span>
-<span id="cb7-9"><a href="latex.html#cb7-9" aria-hidden="true" tabindex="-1"></a>         </span>
-<span id="cb7-10"><a href="latex.html#cb7-10" aria-hidden="true" tabindex="-1"></a>l.107 ^^M</span>
-<span id="cb7-11"><a href="latex.html#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="latex.html#cb7-12" aria-hidden="true" tabindex="-1"></a>pandoc: Error producing PDF</span>
-<span id="cb7-13"><a href="latex.html#cb7-13" aria-hidden="true" tabindex="-1"></a>Error: pandoc document conversion failed with error 43</span>
-<span id="cb7-14"><a href="latex.html#cb7-14" aria-hidden="true" tabindex="-1"></a>Execution halted</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb139-1"><a href="latex.html#cb139-1" aria-hidden="true" tabindex="-1"></a>! LaTeX Error: File `titling.sty&#39; not found.</span>
+<span id="cb139-2"><a href="latex.html#cb139-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb139-3"><a href="latex.html#cb139-3" aria-hidden="true" tabindex="-1"></a>Type X to quit or &lt;RETURN&gt; to proceed,</span>
+<span id="cb139-4"><a href="latex.html#cb139-4" aria-hidden="true" tabindex="-1"></a>or enter new name. (Default extension: sty)</span>
+<span id="cb139-5"><a href="latex.html#cb139-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb139-6"><a href="latex.html#cb139-6" aria-hidden="true" tabindex="-1"></a>Enter file name: </span>
+<span id="cb139-7"><a href="latex.html#cb139-7" aria-hidden="true" tabindex="-1"></a>! Emergency stop.</span>
+<span id="cb139-8"><a href="latex.html#cb139-8" aria-hidden="true" tabindex="-1"></a>&lt;read *&gt; </span>
+<span id="cb139-9"><a href="latex.html#cb139-9" aria-hidden="true" tabindex="-1"></a>         </span>
+<span id="cb139-10"><a href="latex.html#cb139-10" aria-hidden="true" tabindex="-1"></a>l.107 ^^M</span>
+<span id="cb139-11"><a href="latex.html#cb139-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb139-12"><a href="latex.html#cb139-12" aria-hidden="true" tabindex="-1"></a>pandoc: Error producing PDF</span>
+<span id="cb139-13"><a href="latex.html#cb139-13" aria-hidden="true" tabindex="-1"></a>Error: pandoc document conversion failed with error 43</span>
+<span id="cb139-14"><a href="latex.html#cb139-14" aria-hidden="true" tabindex="-1"></a>Execution halted</span></code></pre></div>
 <p>  上面的错误信息表示你使用了一个包含 <code>titling.sty</code> 的 LaTeX 软件包，但它并没有被安装。LaTeX 软件包名称通常是 <code>*.sty</code> 这样的文件名格式，因此在本例中，你可以尝试安装 <code>titling</code> 软件包。如果你使用带有 R Markdown 的 TinyTeX，丢失的 LaTeX 软件包将自动安装，因此你无需担心此类问题。</p>
 <p>  LaTeX 发行版和其软件包也不时会进行更新，你可以考虑更新它们，特别是当您遇到 LaTeX 问题时。你可以通过以下方式找到 LaTeX 发行版的版本：</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="latex.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">&#39;pdflatex --version&#39;</span>)</span>
-<span id="cb8-2"><a href="latex.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="do">## pdfTeX 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX)</span></span>
-<span id="cb8-3"><a href="latex.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="do">## kpathsea version 6.3.3</span></span>
-<span id="cb8-4"><a href="latex.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Copyright 2021 Han The Thanh (pdfTeX) et al.</span></span>
-<span id="cb8-5"><a href="latex.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="do">## There is NO warranty.  Redistribution of this software is</span></span>
-<span id="cb8-6"><a href="latex.html#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="do">## covered by the terms of both the pdfTeX copyright and</span></span>
-<span id="cb8-7"><a href="latex.html#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="do">## the Lesser GNU General Public License.</span></span>
-<span id="cb8-8"><a href="latex.html#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="do">## For more information about these matters, see the file</span></span>
-<span id="cb8-9"><a href="latex.html#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="do">## named COPYING and the pdfTeX source.</span></span>
-<span id="cb8-10"><a href="latex.html#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.</span></span>
-<span id="cb8-11"><a href="latex.html#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Compiled with libpng 1.6.37; using libpng 1.6.37</span></span>
-<span id="cb8-12"><a href="latex.html#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Compiled with zlib 1.2.11; using zlib 1.2.11</span></span>
-<span id="cb8-13"><a href="latex.html#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Compiled with xpdf version 4.03</span></span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="latex.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(<span class="st">&#39;pdflatex --version&#39;</span>)</span>
+<span id="cb140-2"><a href="latex.html#cb140-2" aria-hidden="true" tabindex="-1"></a><span class="do">## pdfTeX 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX)</span></span>
+<span id="cb140-3"><a href="latex.html#cb140-3" aria-hidden="true" tabindex="-1"></a><span class="do">## kpathsea version 6.3.3</span></span>
+<span id="cb140-4"><a href="latex.html#cb140-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Copyright 2021 Han The Thanh (pdfTeX) et al.</span></span>
+<span id="cb140-5"><a href="latex.html#cb140-5" aria-hidden="true" tabindex="-1"></a><span class="do">## There is NO warranty.  Redistribution of this software is</span></span>
+<span id="cb140-6"><a href="latex.html#cb140-6" aria-hidden="true" tabindex="-1"></a><span class="do">## covered by the terms of both the pdfTeX copyright and</span></span>
+<span id="cb140-7"><a href="latex.html#cb140-7" aria-hidden="true" tabindex="-1"></a><span class="do">## the Lesser GNU General Public License.</span></span>
+<span id="cb140-8"><a href="latex.html#cb140-8" aria-hidden="true" tabindex="-1"></a><span class="do">## For more information about these matters, see the file</span></span>
+<span id="cb140-9"><a href="latex.html#cb140-9" aria-hidden="true" tabindex="-1"></a><span class="do">## named COPYING and the pdfTeX source.</span></span>
+<span id="cb140-10"><a href="latex.html#cb140-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.</span></span>
+<span id="cb140-11"><a href="latex.html#cb140-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Compiled with libpng 1.6.37; using libpng 1.6.37</span></span>
+<span id="cb140-12"><a href="latex.html#cb140-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Compiled with zlib 1.2.11; using zlib 1.2.11</span></span>
+<span id="cb140-13"><a href="latex.html#cb140-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Compiled with xpdf version 4.03</span></span></code></pre></div>
 <p>  你可以运行如下代码来更新 TinyTeX：</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="latex.html#cb9-1" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">tlmgr_update</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="latex.html#cb141-1" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">tlmgr_update</span>()</span></code></pre></div>
 <p>  随着时间的推移，你可能也需要升级 TinyTeX（否则你无法安装或更新任何 LaTeX 软件包），在这种情况下你需要重新安装 TinyTeX：</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="latex.html#cb10-1" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">reinstall_tinytex</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="latex.html#cb142-1" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">reinstall_tinytex</span>()</span></code></pre></div>
 
 </div>
 <!-- </div> -->
@@ -300,7 +333,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="pandoc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="software-usage.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="软件使用.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
@@ -351,6 +384,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

@@ -53,6 +53,14 @@
 
 <link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections/anchor-sections.js"></script>
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding/datatables.js"></script>
+<link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -173,7 +181,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="致谢.html"><a href="致谢.html"><i class="fa fa-check"></i>致谢</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="关于作者.html"><a href="关于作者.html"><i class="fa fa-check"></i>关于作者</a></li>
-<li class="chapter" data-level="1" data-path="简介.html"><a href="简介.html"><i class="fa fa-check"></i><b>1</b> 简介</a>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> 简介</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="开发动机.html"><a href="开发动机.html"><i class="fa fa-check"></i><b>1.1</b> 开发动机</a></li>
 <li class="chapter" data-level="1.2" data-path="开始.html"><a href="开始.html"><i class="fa fa-check"></i><b>1.2</b> 开始</a></li>
@@ -251,7 +259,7 @@ div.csl-indent {
 <li class="chapter" data-level="A.2" data-path="pandoc.html"><a href="pandoc.html"><i class="fa fa-check"></i><b>A.2</b> Pandoc</a></li>
 <li class="chapter" data-level="A.3" data-path="latex.html"><a href="latex.html"><i class="fa fa-check"></i><b>A.3</b> LaTeX</a></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="software-usage.html"><a href="software-usage.html"><i class="fa fa-check"></i><b>B</b> Software Usage</a>
+<li class="chapter" data-level="B" data-path="软件使用.html"><a href="软件使用.html"><i class="fa fa-check"></i><b>B</b> 软件使用</a>
 <ul>
 <li class="chapter" data-level="B.1" data-path="knitr.html"><a href="knitr.html"><i class="fa fa-check"></i><b>B.1</b> knitr</a></li>
 <li class="chapter" data-level="B.2" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>B.2</b> R Markdown</a></li>
@@ -280,7 +288,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="本书的结构" class="section level2 unnumbered">
 <h2>本书的结构</h2>
-<p>  第 <a href="#introduction"><strong>??</strong></a> 和 <a href="components.html#components">2</a> 章介绍了基础用法和语法，对大多数读者来说应该足够让他们开始创作书籍。第 <a href="output-formats.html#output-formats">3</a> 和 <a href="customization.html#customization">4</a> 章是为了那些想要微调书籍外观的读者准备的。如果你不熟悉 HTML/CSS 和 LaTeX，这部分内容可能看起来很技术化。当你第一次阅读本书时，不必非常仔细地阅读这两章。你可以先学习书籍外观的哪些部分可以被改变，之后再回来了解它们是如何被改变的。对于第 <a href="editing.html#editing">5</a> 章，里面的技术细节并不重要，除非你不使用 RStudio IDE（第 <a href="rstudio-ide.html#rstudio-ide">5.4</a> 节）。同样地，你可能会对第 <a href="#publishing"><strong>??</strong></a> 章中用于发布书籍的命令感到不知所措，但我们仍然可以通过 RStudio IDE 简化你在线发布书籍的流程。自定义命令和函数仅适用于那些选择不使用 RStudio 的服务或想要明白技术细节的读者。</p>
+<p>  第 <a href="introduction.html#introduction">1</a> 和 <a href="components.html#components">2</a> 章介绍了基础用法和语法，对大多数读者来说应该足够让他们开始创作书籍。第 <a href="output-formats.html#output-formats">3</a> 和 <a href="customization.html#customization">4</a> 章是为了那些想要微调书籍外观的读者准备的。如果你不熟悉 HTML/CSS 和 LaTeX，这部分内容可能看起来很技术化。当你第一次阅读本书时，不必非常仔细地阅读这两章。你可以先学习书籍外观的哪些部分可以被改变，之后再回来了解它们是如何被改变的。对于第 <a href="editing.html#editing">5</a> 章，里面的技术细节并不重要，除非你不使用 RStudio IDE（第 <a href="rstudio-ide.html#rstudio-ide">5.4</a> 节）。同样地，你可能会对第 <a href="#publishing"><strong>??</strong></a> 章中用于发布书籍的命令感到不知所措，但我们仍然可以通过 RStudio IDE 简化你在线发布书籍的流程。自定义命令和函数仅适用于那些选择不使用 RStudio 的服务或想要明白技术细节的读者。</p>
 <p>  综上所述，本书是对 <strong>bookdown</strong> 程序包的综合参考书。你在阅读时可以遵循 <a href="https://en.wikipedia.org/wiki/Pareto_principle">80/20 法则</a>。有些章节的存在是为了内容的完整性，并不是所有章节都对你想写的书同样有用。</p>
 </div>
             </section>
@@ -340,6 +348,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

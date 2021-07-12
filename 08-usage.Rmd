@@ -1,0 +1,112 @@
+# 软件使用
+
+&emsp;&emsp;如第 \@ref(introduction) 章所述,这本书并不是一本全面的 **knitr** 或 **rmarkdown** 指南。在本章中，我们简要地解释了 **knitr** 和 **rmarkdown** 中的一些基本概念和语法。如果你还有什么问题，可以将它们发布到 StackOverflow (<https://stackoverflow.com>) 上，并用 `r`、`knitr`、`rmarkdown` 和/或 `bookdown` 等任何适合的标签标记你的问题。
+
+## knitr
+
+&emsp;&emsp;**knitr** 软件包\index{knitr}是基于“文学编程”[@knuth1984]的思想设计的，它允许你将程序代码与源文档中的文本混合在一起。当 **knitr** 编译文档时，将提取并执行程序代码（以代码块为单位），程序输出将与输出文档中的原始文本一起显示。我们在第 \@ref(r-code) 节中介绍了基本的语法。
+
+&emsp;&emsp;R Markdown 不是 **knitr** 支持的唯一源格式。**knitr** 的基本思想可应用于其他计算和创作语言。例如，**knitr**还支持 R 和 LaTeX 的组合（`*.rnw`文档），以及 R + HTML (`*.RtML`) 等。你也可以在 **knitr** 中 使用其他计算语言，如 C++、Python、SQL 等。下面是一个简单的例子，你可以在 <http://rmarkdown.rstudio.com/authoring_knitr_engines.html> 中了解更多信息。
+
+````markdown
+`r ''````{python}
+x = 'Hello, Python World!'
+print(x.split(' '))
+```
+````
+
+&emsp;&emsp;Python 用户可能熟悉 IPython\index{IPython} 或 Jupyter\index{Jupyter Notebook} Notebooks (https://jupyter.org)。事实上，R Markdown 也可以作为笔记本使用，并有一些额外的优势；有关这方面详细信息，请参阅这篇博客文章：<https://blog.rstudio.org/2016/10/05/r-notebooks/>。
+
+&emsp;&emsp;如果要在文档中显示文本形式的代码块，可以在块头部之前添加一个内联表达式，该表达式生成一个空字符串 (`` `r "\x60r ''\x60"` ``)，并将代码块用在四个反引号包裹起来，^[如果要在列表等其他环境中显示文字形式的代码块，请遵循缩进规则：<https://pandoc.org/MANUAL.html#block-content-in-list-items>]，例如：
+
+`````markdown
+````
+`r "\x60r ''\x60"````{r}
+# a literal code chunk
+```
+````
+`````
+
+&emsp;&emsp;当文档被编译后，内联表达式将会消失，你会看到：
+
+````markdown
+`r ""````{r}
+# a literal code chunk
+```
+````
+
+&emsp;&emsp;编译文档时通常不需要直接调用 **knitr** 函数，因为 **rmarkdown** 会调用 **knitr**。如果你希望编译源文档而不进一步将其转换为其他格式，可以使用 `knitr::knit()` 函数。
+
+## R Markdown
+
+&emsp;&emsp;由于 R 和 Pandoc 的强大功能，你可以轻松地在 R Markdown 文档中进行计算，并将其转换为各种输出格式，包括 HTML/PDF/Word 文档、HTML5/Beamer 幻灯片、仪表板和网站等。R Markdown 文档通常由 YAML\index{YAML} 元数据（可选）和文档主体组成。我们在第 \@ref(components) 章中介绍了编写文档主体各个组件的语法，并在本节中详细解释了 YAML 元数据。
+
+&emsp;&emsp;R Markdown 的元数据可以写在文档的最开头，分别以三个短划线 `---` 开头和结尾。YAML 元数据通常由冒号分隔的标记值对组成，例如：
+
+```yaml
+---
+title: "An R Markdown Document"
+author: "Yihui Xie"
+---
+```
+
+For character values, you may omit the quotes when the values do not contain special characters, but it is safer to quote them if they are expected to be character values.
+
+Besides characters, another common type of values are logical values. Both `yes` and `true` mean true, and `no`/`false` mean false, e.g.,
+
+```yaml
+link-citations: yes
+```
+
+Values can be vectors, and there are two ways of writing vectors. The following two ways are equivalent:
+
+```yaml
+output: ["html_document", "word_document"]
+```
+
+```yaml
+output:
+  - "html_document"
+  - "word_document"
+```
+
+Values can also be lists of values. You just need to indent the values by two more spaces, e.g.,
+
+```yaml
+output:
+  bookdown::gitbook:
+    split_by: "section"
+    split_bib: no
+```
+
+It is a common mistake to forget to indent the values. For example, the following data
+
+```yaml
+output:
+html_document:
+toc: yes
+```
+
+actually means
+
+```yaml
+output: null
+html_document: null
+toc: yes
+```
+
+instead of what you probably would have expected:
+
+```yaml
+output:
+  html_document:
+    toc: yes
+```
+
+The R Markdown output format is specified in the `output` field of the YAML metadata, and you need to consult the R help pages for the possible options, e.g., `?rmarkdown::html_document`, or `?bookdown::gitbook`. The meanings of most other fields in YAML can be found in the Pandoc documentation.
+
+The **rmarkdown** package has provided these R Markdown output formats:
+
+`r knitr::combine_words(grep('^[^_]+_(document|presentation)$', ls(asNamespace('rmarkdown')), value = TRUE), sep = '\n', and = '', before = '- \x60', after = '\x60')`
+
+There are many more possible output formats in other R packages, including **bookdown**, **tufte**, **rticles**, **flexdashboard**, **revealjs**, and **rmdformats**, etc.

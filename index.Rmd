@@ -1,0 +1,194 @@
+---
+title: "Bookdown: 使用 R Markdown 创作书籍和技术文档"
+author: "谢益辉"
+date: "`r Sys.Date()`"
+knit: "bookdown::render_book"
+documentclass: krantz
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+colorlinks: yes
+lot: yes
+lof: yes
+fontsize: 12pt
+site: bookdown::bookdown_site
+description: "这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。"
+url: 'https\://bookdown.org/yihui/bookdown/'
+github-repo: rstudio/bookdown
+cover-image: images/cover.jpg
+---
+
+```{r setup, include=FALSE}
+options(
+  htmltools.dir.version = FALSE, formatR.indent = 2,
+  width = 55, digits = 4, warnPartialMatchAttr = FALSE, warnPartialMatchDollar = FALSE
+)
+
+local({
+  r = getOption('repos')
+  if (!length(r) || identical(unname(r['CRAN']), '@CRAN@'))
+    r['CRAN'] = 'https://cran.rstudio.com' 
+  options(repos = r)
+})
+
+lapply(c('DT', 'formatR', 'svglite', 'rticles'), function(pkg) {
+  if (system.file(package = pkg) == '') install.packages(pkg)
+})
+
+# install from github
+githubs <- c('citr' = 'crsh/citr')
+lapply(names(githubs), function(pkg) {
+  if (system.file(package = pkg) == '') remotes::install_github(githubs[pkg], upgrade = FALSE)
+})
+
+```
+
+# 翻译与排版说明 {-}
+
+&emsp;&emsp;本书的简体中文版还没有影子，所以笔者先用自己早就遗忘的文学素养进行翻译，使用与原书相同的技术栈生成中文翻译版本。
+
+## 翻译说明 {-}
+
+&emsp;&emsp;英译中的技术书籍的翻译是个痛苦的过程，难以避免地会遇到一些没有公认翻译方式的英文词汇，或者是有公认的中文翻译词汇，但该词过于口语化，或者不能很好地反映英文词汇的意思。这些英文词汇以及它们在书中的对应中文词汇将在下方列出，欢迎大家批评。
+
+| 英文词汇 | 中文翻译 | 原因 |
+| :--- | :------- | :------- |
+| package | 软件包，程序包 | r pkgs 是一组用来完成特定任务的程序，作为 R 的补充，符合 Software Package 的定义。 |
+| hardcopy | 实体书，书的实体版本 | 原意为“硬拷贝”，指信息被储存并显示在物体实体上，这里采用符合常用语境的翻译。 |
+| page margin | 页边空白 | 直译为页面外边距（区域），是页面各边边线离矩形文字区域的垂直距离，四边共同组成了边框形状的区域，通常为空白部分。 |
+| typewriter font | 老式打字机字体 | 直译为“打字机字体”，也就是类似于二十世纪七八十年代的铅字打字机的字体，为突出其独特性而强调了“老式” |
+| R plots | （暂无） | （暂无） |
+| personal access token | 个人访问令牌 | 参照国内计网教科书对于 token 的翻译进行的直译。 |
+| command-line | 命令行（hang，第二声）、命令提示符 | 笔者对于“line”所指的概念不明确，因此参照国内流行的翻译，称为“命令行”。 |
+| key | 字段、配置项 | 指的是 YAML 文件中的配置项，位于冒号 `:` 左侧。由于是“键值对”的形式，因此用了 key 一词，但依照语境翻译为“字段”或是“配置项”。 |
+| LaTeX preamble | LaTeX preamble、LaTeX 导言 | 在 `\begin{document}` 之前的命令称为 “preamble”（导言），preamble 中通常定义文档的格式、语言等。 |
+| Small Capitals | 小型大写字母 | 西文字体设计中的一种字符形式，其大写字母的字高一般与 'x' 等高，并在笔画上做一定的修正，保持更宽的纵横比以保证可读性。 |
+| dedication page | 献词页 | 在一些书中，作者想要把这本书献给某人，献词通常写在前几页。 |
+| quote | 引用环境（文段） | LaTeX 中的 Quote 环境，放置引用于其他文献中的文段。 |
+| copyeditor | 定稿编辑 | 文稿最后付印时按照印刷出版要求进行排版、校正文字和格式错误的编辑。 |
+| typeface | 字型 | typeface 与 font 有着微妙的区别，本书中将前者翻译为“字型”，后者翻译为“字体”。且前者多指代印刷用字体。 |
+| help desk | 帮助中心 | 直译为“帮助台”，是用来解决用户的 IT 服务问题，降低处置时间的一个服务。 |
+| demo | 样例 | 为与 example 区分，demo 翻译为样例，example 翻译为示例。 |
+| final words | 结语 | 翻译为中文书籍中常见的“结语”。 |
+| index | 主页 | 当描述对象为网页时，翻译为“主页”，指网站的入口点。 |
+| in this case | 使用这种方法时 | 将原意“在这种情况下”翻译得更加具体一些。 |
+| render | 编译、呈现为、转化为 | 在图形学中一直被翻译为“渲染”，但用在本书中并不合适。考虑到本书中书籍是由源文档**转化为**多种格式的书籍，其过程涉及源文档的转译（Markdown to LaTeX）与编码，因此翻译为“编译”。另外，它也有“呈现”的意思，在本书中的一些语境下适用。 |
+| knit | 生成、“编织” | 这个词是对于将代码和文字交织在一起的文学编程的形象描述，笔者暂且找不到一个好的词来准确描述该过程，因此使用“生成”或加了双引号的“编织”一词来翻译。 |
+| isolate | 剔除 | 作“分离”、“剔除”解释。 |
+| side-effects | 副作用 | 这里指程序设计中的“副作用”。如果一个函数修改了自己范围之外的资源，例如读取文件、调用其它有副作用的函数，则该函数称作是有副作用的。 |
+| upgrade/update | 升级/更新 ||
+
+## 排版说明 {-}
+
+&emsp;&emsp;由于书中不可避免地会同时出现中文和英文，因此原书的排版并不完全适用于中文翻译版。为了在尊重原书的基础上使页面变得美观，约定如下排版要求：
+
+1. 英文单词、标点符号和数字各具有 1 个前导空格和 1 个后导空格。例如：软件包的名称是 bookdown 吗。
+    - 英文单词、标点和数字的一侧为标点符号时，该侧无空格。例如：使用 Leading and Trailing Spaces。
+2. 需要展示并链接 URL 时，将其放入尖括号内 `<>`。
+3. 小括号内的文本包含中文时，使用中文小括号 `（）`；如果全是英文文本，则使用英文小括号 `()`，并各具有 1 个前导和后导空格。
+4. 书中某些操作中带有选项、菜单等名称，在实际操作时不具有中文翻译，此时列出该单词的中文翻译，后跟括号，括号内展示原英文单词。中文翻译便于读者查询相关资料，原英文单词便于按图索骥地进行操作。
+
+## 翻译进度 {-}
+
+&emsp;&emsp;常言道，人生未填之坑十之八九。笔者学业繁忙，只能利用空闲时间翻译本书。因此在这里记录一下翻译进度，欢迎加入本项目提交 Pull Request。
+
+| 章节 | 是否翻译 | 是否润色 |
+| :--: | :------: | :------: |
+| preface | √ | × |
+| Author | √ | × |
+| Introduction | √ | × |
+| Components | × | × |
+| Output Formats | × | × |
+| Customization | × | × |
+| Editing | × | × |
+| Publishing | √ | × |
+| Appendix | × | × |
+| References | √ | × |
+
+# 前言 {-}
+
+```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://www.crcpress.com/product/isbn/9781138700109'}
+knitr::include_graphics('images/cover.jpg', dpi = NA)
+```
+
+&emsp;&emsp;这本短小精悍的书籍介绍了一个 R 软件包 **bookdown**，它能够改变你创作书籍的流程。写一本书在技术上要容易，看书时在视觉上要舒适愉悦，与书互动时要有趣，总览全书要方便，读者能够直截了当地为书籍内容做出贡献，或是给作者留下反馈。最重要的是，作者不应该总是被排版细节分散注意力。
+
+&emsp;&emsp;**Bookdown** 是构建在 R Markdown (<http://rmarkdown.rstudio.com>) 之上的一个拓展包，它继承了 Markdown 语法的简单性（你能够在5分钟内学会基础内容；请看第 \@ref(markdown-syntax) 节），同时也继承了以多种格式 (PDF/HTML/Word/...) 进行输出的可能性。同时，它添加了多页HTML输出、图/表/节/方程的编号与交叉引用、插入多章组成的部分/附录等功能，并导入了 GitBook\index{GitBook} 样式 (<https://www.gitbook.com>) 以创建优雅迷人的HTML书页。这本书本身就是一个教你如何从一系列 R Markdown 文档中生成一本书籍的例子，并且其印刷版与在线版都能够有专业的观感。你能够在 <https://bookdown.org> 上找到更多的例子。
+
+```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://github.com/rstudio/bookdown'}
+knitr::include_graphics('images/logo.png', dpi = NA)
+```
+
+&emsp;&emsp;尽管名称中包含了“Book”一词，但 **Bookdown** 软件包并不仅仅适用于写书。“书”可以是任何能够按照线性顺序阅读的一系列 R Markdown 文档，例如课程讲义、学习笔记、软件使用手册、论文，甚至可以是日记。事实上，许多 **bookdown** 特性也适用于单个 R Markdown 文档（请见第 \@ref(a-single-document) 节）。
+
+![Creative Commons License](images/by-nc-sa.png)\
+本书的在线版本依据 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/) 许可证进行授权。另外，你能够在 [Chapman & Hall](https://www.crcpress.com/product/isbn/9781138700109) 或者亚马逊上购买本书的实体版本。
+
+## 为什么要阅读这本书 {-}
+
+&emsp;&emsp;我们能够只使用一种源文档格式编写书籍，但能生成多种格式的输出文档吗？书籍传统上通常是使用 LaTeX 或者 Microsoft Word 进行编写的。但不论是哪种工具都会使得写书变成一趟单程旅行，你无法回头：如果选择 LaTeX，你通常只会得到一个 PDF 文档；如果使用 Word，你可能不得不永远挣扎在 Word 的泥潭中，而且可能会错过许多有用的特性以及来自 LaTeX 的漂亮的 PDF 输出。
+
+&emsp;&emsp;我们能够专注于书写内容而不用太担心排版吗？内容和外观之间似乎有着天然的矛盾，我们总是要平衡花费在这两方面上的时间。鱼和熊掌不可兼得，但这并不意味着我们不能吃到半条鱼和半块熊掌。我们希望我们的书看起来美观，我们也希望把注意力集中在内容上。一种选择是暂时放弃 PDF 输出，作为回报，你可能会得到一个相当不错的HTML网页\index{HTML}预览版。LaTeX\index{LaTeX} 是一个非常好的排版工具，但是在编写书籍的过程中，你很容易沉浸于大量的 LaTeX 命令和排版细节。我们很难避免通过 PDF 预览正在编写的书籍，然而不幸的是，我们经常会发现某些单词超出了页边空白，某些图片浮动到随机的页面上，一章末尾的五到六个零星的单词骄傲地占据了一个全新的页面……如果书籍要印刷，我们最终将不得不处理这些问题，但当你在创作书的内容时，不值得一次又一次为此分心。事实上，Markdown 语法比 LaTeX 更加简单，功能更少，这有助于你专注于书的内容。真的有必要自己定义一个像 `\myprecious{}` 一样的新命令来将 `\textbf{\textit{\textsf{}}}` 应用到文本上吗？当读者能够轻易地理解字母“R”代表 R 语言时，字母“R”是否有必要包括在 `\proglang{}` 中？如果读者需要关注书籍的每一处细节，那这和读者什么都不关注有什么区别呢？因此好的书籍创作技术应该帮助作者自动解决对于内容不重要的细节，让作者关注重点内容。
+
+&emsp;&emsp;读者能和我们的书籍中的例子进行互动吗？如果书籍是打印在纸上的，答案当然是不能。但如果你的书籍有 HTML 版本，并包含了在线示例，例如 Shiny 应用 (<https://shiny.rstudio.com>) 或 HTML 组件 (<https://htmlwidgets.org>)，那么读者阅读时就可能能够与书进行互动。例如，读者能够立刻知道如果他们改变了统计模型的某些参数后会发生什么。
+
+&emsp;&emsp;我们能够在创作书籍时得到来自读者的反馈，甚至是内容贡献吗？传统上，编辑会找一小部分匿名评审员来审查你的书。评审员往往很有帮助，但你仍然可能错过来自更有代表性的读者的智慧。如果读者只有等到第一版印刷发布之后才能够看到你的书，那可能已经太迟了，他们可能需要等待好几年才能看到增订修改后的第二版。有一些网络平台，人们可以轻松地利用它们提供反馈并为你的项目做出贡献。GitHub (<https://github.com>) 就是一个突出的例子。如果有人在你的书里发现一个拼写错误，他/她能够简单地进行在线更正，并将更改提交给你供你审阅批准。你只需要点击一个按钮来合并更改，无需询问任何问题或来回发送邮件。为了能够使用这些平台，你需要学习 GIT 等版本控制系统，并且你的书籍源文件应该是纯文本。
+
+&emsp;&emsp;R (<https://www.r-project.org>)、Markdown 和 Pandoc (<http://pandoc.org>) 的组合使得将文档从一种简单的源格式 (R Markdown) 转换为多种格式（PDF、HTML、EPUB 和 Word……）成为可能。**bookdown** 软件包的功能基于 R Markdown 实现，并为书籍和长篇文章提供输出格式，其中包括 GitBook 格式，它是一种多页面 HTML 输出格式，有着实用且美观的用户界面。用 HTML 进行排版比用 LaTeX 轻松得多，因此你能够经常使用 HTML 预览你的书籍，并且在内容基本完成后再转为 PDF 进行调整。可运行示例很容易就能够插入 HTML 中，它可以使得书籍更具有吸引力和实用性。R Markdown 是一种纯文本格式，因此你也能享受版本控制的优势，例如在 GitHub 上协作创作。我们还努力将一些重要特性从 LaTeX 移植到 HTML 和其它输出格式上，例如图/表编号和交叉引用。
+
+&emsp;&emsp;简单来说，你只需要准备一些 R Markdown 格式的书籍章节文档，然后 **bookdown** 就能帮助你将它们转变成一本漂亮的书。
+
+## 本书的结构 {-}
+
+&emsp;&emsp;第 \@ref(introduction) 和 \@ref(components) 章介绍了基础用法和语法，对大多数读者来说应该足够让他们开始创作书籍。第 \@ref(output-formats) 和 \@ref(customization) 章是为了那些想要微调书籍外观的读者准备的。如果你不熟悉 HTML/CSS 和 LaTeX，这部分内容可能看起来很技术化。当你第一次阅读本书时，不必非常仔细地阅读这两章。你可以先学习书籍外观的哪些部分可以被改变，之后再回来了解它们是如何被改变的。对于第 \@ref(editing) 章，里面的技术细节并不重要，除非你不使用 RStudio IDE（第 \@ref(rstudio-ide) 节）。同样地，你可能会对第 \@ref(publishing) 章中用于发布书籍的命令感到不知所措，但我们仍然可以通过 RStudio IDE 简化你在线发布书籍的流程。自定义命令和函数仅适用于那些选择不使用 RStudio 的服务或想要明白技术细节的读者。
+
+&emsp;&emsp;综上所述，本书是对 **bookdown** 程序包的综合参考书。你在阅读时可以遵循 [80/20 法则](https://en.wikipedia.org/wiki/Pareto_principle)。有些章节的存在是为了内容的完整性，并不是所有章节都对你想写的书同样有用。
+
+## 软件信息与一些约定 {-}
+
+&emsp;&emsp;本书内容主要关于 R 的软件包 **bookdown**，因此你至少需要安装 R 和 **bookdown** 软件包。不过，你的书籍根本不必与 R 语言相关。你可以使用其它计算语言（C++、SQL、Python 等；详情请见附录 \@ref(software-usage)），甚至可以与计算完全无关（例如，你可以创作小说或者是诗集）。附录 \@ref(software-tools) 介绍了创作并构建一本书籍所需的软件工具。
+
+&emsp;&emsp;编译本书时的 R Session 信息如下所示：
+
+```{r include=FALSE}
+# only show versions of very relevant packages
+sessionInfo = function() {
+  lapply(c('shiny', 'miniUI'), loadNamespace)
+  res = utils::sessionInfo()
+  loaded = res$loadedOnly
+  res$loadedOnly = loaded[intersect(names(loaded), c(
+    'bookdown', 'knitr', 'rmarkdown', 'shiny', 'htmltools', 'tools', 'miniUI'
+  ))]
+  res$BLAS = res$LAPACK = NULL
+  res
+}
+```
+
+```{r}
+sessionInfo()
+```
+
+&emsp;&emsp;我们在本书的源代码中没有添加提示符（`>` 和 `+`），默认情况下我们使用两个 `##` 标签注释掉文本输出，就像你在上面的 R Session 信息中看到的那样。这样做是为了让你能够方便地复制和运行代码（由于文本输出被注释掉了，因此执行代码时会被忽略）。程序包名称以粗体显示（例如，**rmarkdown**），行内代码和文件名用老式打字机字体进行格式化（例如，`knitr::knit('foo.Rmd')`）。函数名称后跟括号（例如，`bookdown::render_book()`）。双冒号操作符 `::` 表示从软件包的命名空间对其中的对象进行访问。
+
+## 致谢 {-}
+
+First I'd like to thank my employer, RStudio, for providing me the opportunity to work on this exciting project. I was hoping to work on it when I first saw the GitBook project in 2013, because I immediately realized it was a beautiful book style and there was a lot more power we could add to it, judging from my experience of writing the **knitr** book [@xie2015] and reading other books. R Markdown became mature after two years, and luckily, **bookdown** became my official job in late 2015. There are not many things in the world better than the fact that your job happens to be your hobby (or vice versa). I totally enjoyed messing around with JavaScript libraries, LaTeX packages, and endless regular expressions in R. Honestly I should also thank Stack Overflow (<https://stackoverflow.com>), and I believe you all know [what I mean,](http://bit.ly/2cWbiAp) if you have ever written any program code.
+
+This project is certainly not a single person's effort. Several colleagues at RStudio have helped me along the way. Hadley Wickham provided a huge amount of feedback during the development of **bookdown**, as he was working on his book *R for Data Science* with Garrett Grolemund. JJ Allaire and Jonathan McPherson provided a lot of technical help directly to this package as well as support in the RStudio IDE. Jeff Allen, Chaita Chaudhari, and the RStudio Connect team have been maintaining the <https://bookdown.org> website. Robby Shaver designed a nice cover image for this book. Both Hadley Wickham and Mine Cetinkaya-Rundel reviewed the manuscript and gave me a lot of helpful comments. Tareef Kawaf tried his best to help me become a professional software engineer. It is such a blessing to work in this company with enthusiastic and smart people. I remember once I told Jonathan, "hey I found a problem in caching HTML widgets dependencies and finally figured out a possible solution". Jonathan grabbed his beer and said, "I already solved it." "Oh, nice, nice."
+
+I also received a lot of feedback from book authors outside RStudio, including Jan de Leeuw, Jenny Bryan, Dean Attali, Rafael Irizarry, Michael Love, Roger Peng, Andrew Clark, and so on. Some users also contributed code to the project and helped revise the book. Here is a list of all contributors: <https://github.com/rstudio/bookdown/graphs/contributors>. It feels good when you invent a tool and realize you are also the beneficiary of your own tool. As someone who loves the GitHub pull request model, I wished readers did not have to email me there was a typo or obvious mistake in my book, but could just fix it via a pull request. This was made possible in **bookdown**. You can see how many pull requests on typos I have merged: <https://github.com/rstudio/bookdown/pulls>. It is nice to have so many outsourced careful human spell checkers. It is not that I do not know how to use a real spell checker, but I do not want to do this before the book is finished, and the evil Yihui also wants to leave a few simple tasks to the readers to engage them in improving the book.
+
+Callum Webb kindly designed a nice hexbin sticker for **bookdown**.
+
+The **bookdown** package is not possible without a few open-source software packages. In particular, Pandoc, GitBook, jQuery, and the dependent R packages, not to mention R itself. I thank the developers of these packages.
+
+I moved to Omaha, Nebraska, in 2015, and enjoyed one year at Steeplechase Apartments, where I lived comfortably while developing the **bookdown** package, thanks to the extremely friendly and helpful staff. Then I met a professional and smart realtor, Kevin Schaben, who found a fabulous home for us in an amazingly short period of time, and I finished this book in our new home.
+
+John Kimmel, the editor from Chapman & Hall/CRC, helped me publish my first book. It is my pleasure to work with him again. He generously agreed to let me keep the online version of this book for free, so I can continue to update it after it is printed and published (i.e., you do not have to wait for years for the second edition to correct mistakes and introduce new features). I wish I could be as open-minded as he is when I'm his age. Rebecca Condit and Suzanne Lassandro proofread the manuscript, and their suggestions were professional and helpful. Shashi Kumar solved some of my technical issues with the publisher's LaTeX class (`krantz.cls`) when I was trying to integrate it with **bookdown**. I also appreciate the very helpful comments from the reviewers Jan de Leeuw, Karl Broman, Brooke Anderson, Michael Grayling, Daniel Kaplan, and Max Kuhn.
+
+Lastly I want to thank my family, in particular, my wife and son, for their support. The one-year-old has discovered that my monitor will light up when he touches my keyboard, so occasionally he just creeps into my office and presses randomly on the keyboard when I'm away. I'm not sure if this counts as his contribution to the book... \@)!%)&\@\*
+
+```{block2, type='flushright', html.tag='p'}
+Yihui Xie  
+Elkhorn, Nebraska
+```

@@ -1,0 +1,12 @@
+book_filename: bookdown-book-zhCN
+repo: https://github.com/rstudio/bookdown/
+output_dir: _book
+clean: [packages.bib, bookdown.bbl]
+delete_merged_file: true
+language:
+  label:
+    fig: "图 "
+    tab: "表 "
+  # ui:
+  #   edit: "Edit"
+  #   chapter_name: "Chapter "

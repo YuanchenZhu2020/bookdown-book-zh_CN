@@ -102,7 +102,7 @@ lapply(names(githubs), function(pkg) {
 | Customization | × | × |
 | Editing | × | × |
 | Publishing | √ | × |
-| Appendix | × | × |
+| Appendix | √ | × |
 | References | √ | × |
 
 # 前言 {-}

@@ -48,7 +48,7 @@
 
 &emsp;&emsp;尽管你在 `bookdown-demo` 示例中看到了不少文件，但大多数文件对于一本书来说并不是必需的。如果你对巨大的文件数量感到不知所措，可以使用这个最小的示例，它实际上是一个文件 `index.Rmd`：<https://github.com/yihui/bookdown-minimal>。`bookdown-demo`示例包含一些你之后可能需要学习的高级设置，例如如何自定义 LaTeX 序言 (preamble)、调整 CSS 以及在 GitHub 上构建图书等。
 
-## 使用 {#usage}
+## 使用方法 {#usage}
 
 &emsp;&emsp;有典型的 **bookdown** 书籍包括多个章节，并且每一章放在一个 R Markdown 文件中，文件的拓展名为 `.Rmd`。每一个 R Markdown 文件必须直接以本章标题作为开头，并使用一级标题，例如 `# Chapter Title`。全部 R Markdown 文件必须使用 UTF-8 编码，特别是当他们包含某些多字节字符时，例如中文、日文和韩文。以下是一个例子（the bullets are the filenames, followed by the file content):
 
@@ -171,7 +171,7 @@ link-citations: yes
 - 因为 **knitr** 不允许在一个源文档中出现重复的代码块标签，因此当你使用 M-K 方法时，需要确保在书籍各章节中没有重复的标签，否则 **knitr** 在生成合并后的 Rmd 文件时会发出错误信号。而 K-M 方法只需要在任何单个 Rmd 文件中没有重复的标签。
 - K-M 方法不允许 Rmd 文件位于子目录中，而 M-K 方法允许。
 
-&emsp;&emsp**bookdown** 中的默认方法时 M-K。如果想要转为 K-M 方法，可以在调用 `render_book()` 时使用参数 `new_session = TRUE`，或者在配置文件 `_bookdown.yml` 中设置 `new_session: yes`。
+&emsp;&emsp;**bookdown** 中的默认方法时 M-K。如果想要转为 K-M 方法，可以在调用 `render_book()` 时使用参数 `new_session = TRUE`，或者在配置文件 `_bookdown.yml` 中设置 `new_session: yes`。
 
 &emsp;&emsp;对于 K-M 方法，你可以在 `_bookdown.yml` 中配置 `book_filename` 选项，但是它应该是一个 Markdown 文件的名称，例如 `_main.md`。不过文件扩展名并不重要，你甚至可以省略扩展名，例如，只需设置为 `book_filename: _main` 即可。其它配置都适用于 M-K 和 K-M。
 

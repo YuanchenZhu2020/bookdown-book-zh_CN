@@ -1,4 +1,4 @@
-# 软件使用
+# 软件使用 {#software-usage}
 
 &emsp;&emsp;如第 \@ref(introduction) 章所述,这本书并不是一本全面的 **knitr** 或 **rmarkdown** 指南。在本章中，我们简要地解释了 **knitr** 和 **rmarkdown** 中的一些基本概念和语法。如果你还有什么问题，可以将它们发布到 StackOverflow (<https://stackoverflow.com>) 上，并用 `r`、`knitr`、`rmarkdown` 和/或 `bookdown` 等任何适合的标签标记你的问题。
 
@@ -17,7 +17,7 @@ print(x.split(' '))
 
 &emsp;&emsp;Python 用户可能熟悉 IPython\index{IPython} 或 Jupyter\index{Jupyter Notebook} Notebooks (https://jupyter.org)。事实上，R Markdown 也可以作为笔记本使用，并有一些额外的优势；有关这方面详细信息，请参阅这篇博客文章：<https://blog.rstudio.org/2016/10/05/r-notebooks/>。
 
-&emsp;&emsp;如果要在文档中显示文本形式的代码块，可以在块头部之前添加一个内联表达式，该表达式生成一个空字符串 (`` `r "\x60r ''\x60"` ``)，并将代码块用在四个反引号包裹起来，^[如果要在列表等其他环境中显示文字形式的代码块，请遵循缩进规则：<https://pandoc.org/MANUAL.html#block-content-in-list-items>]，例如：
+&emsp;&emsp;如果要在文档中显示文本形式的代码块，可以在块头部之前添加一个内联表达式，该表达式生成一个空字符串 (`` `r "\x60r ''\x60"` ``)，并将代码块用在四个反引号包裹起来，^[如果要在列表等其他环境中显示文字形式的代码块，请遵循缩进规则：<https://pandoc.org/MANUAL.html#block-content-in-list-items>]例如：
 
 `````markdown
 ````
@@ -50,15 +50,15 @@ author: "Yihui Xie"
 ---
 ```
 
-For character values, you may omit the quotes when the values do not contain special characters, but it is safer to quote them if they are expected to be character values.
+&emsp;&emsp;对于元数据中的字符值，当其不包含特殊字符时，你可以省略引号，但如果希望它们是字符值，则使用引号更为安全。
 
-Besides characters, another common type of values are logical values. Both `yes` and `true` mean true, and `no`/`false` mean false, e.g.,
+&emsp;&emsp;除字符类型外，另一种元数据取值的常见类型是逻辑类型。`yes` 和 `true` 都表示 true，`no`/`false` 都表示 false，例如：
 
 ```yaml
 link-citations: yes
 ```
 
-Values can be vectors, and there are two ways of writing vectors. The following two ways are equivalent:
+&emsp;&emsp;元数据取值可以是向量，并且有两种写入向量的方法。下面两种方法是等价的
 
 ```yaml
 output: ["html_document", "word_document"]
@@ -70,7 +70,7 @@ output:
   - "word_document"
 ```
 
-Values can also be lists of values. You just need to indent the values by two more spaces, e.g.,
+&emsp;&emsp;元数据取值也可以是值的列表，只需要将其额外缩进两个空格，例如：
 
 ```yaml
 output:
@@ -79,7 +79,7 @@ output:
     split_bib: no
 ```
 
-It is a common mistake to forget to indent the values. For example, the following data
+&emsp;&emsp;忘记缩进元数据取值是一个常见的错误。例如，下面的数据
 
 ```yaml
 output:
@@ -87,7 +87,7 @@ html_document:
 toc: yes
 ```
 
-actually means
+实际上表示
 
 ```yaml
 output: null
@@ -95,7 +95,7 @@ html_document: null
 toc: yes
 ```
 
-instead of what you probably would have expected:
+而不是你可能期望的那样：
 
 ```yaml
 output:
@@ -103,10 +103,10 @@ output:
     toc: yes
 ```
 
-The R Markdown output format is specified in the `output` field of the YAML metadata, and you need to consult the R help pages for the possible options, e.g., `?rmarkdown::html_document`, or `?bookdown::gitbook`. The meanings of most other fields in YAML can be found in the Pandoc documentation.
+&emsp;&emsp;R Markdown 输出格式在 YAML 元数据中的 `output` 字段中指定，并且你需要查阅 R 帮助页面以获得可以填写的选项，例如 `?rmarkdown::html_document` 或 `?bookdown::gitbook`。YAML 中其它大多数字段的含义可以在 Pandoc 文档中找到。
 
-The **rmarkdown** package has provided these R Markdown output formats:
+&emsp;&emsp;**rmarkdown** 软件包提供了这些 R Markdown 输出格式：
 
 `r knitr::combine_words(grep('^[^_]+_(document|presentation)$', ls(asNamespace('rmarkdown')), value = TRUE), sep = '\n', and = '', before = '- \x60', after = '\x60')`
 
-There are many more possible output formats in other R packages, including **bookdown**, **tufte**, **rticles**, **flexdashboard**, **revealjs**, and **rmdformats**, etc.
+&emsp;&emsp;在其他 R 软件包中有更多可能的输出格式，包括 **bookdown**、**tufte**、**rticles**、**flexdashboard**、**revealjs** 和 **rmdformats**等。

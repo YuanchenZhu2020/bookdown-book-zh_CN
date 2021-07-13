@@ -2,7 +2,7 @@
 
 # (APPENDIX) 附录 {-}
 
-# 软件工具
+# 软件工具 {#software-tools}
 
 &emsp;&emsp;对于那些不熟悉使用 R Markdown 所需的软件包的读者，我们将简要介绍这些软件包的安装和维护。
 

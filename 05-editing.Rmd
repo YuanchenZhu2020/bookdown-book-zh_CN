@@ -5,7 +5,7 @@
 
 ## 构建书籍
 
-&emsp;&emsp;要将所有 Rmd 文件构建到一本书中，可以在 **bookdown** 中调用 `render_book()`\index{bookdown::render_book()}函数。下面是 `render_book()` 的参数：
+&emsp;&emsp;要将所有 Rmd 文件构建到一本书中，可以在 **bookdown** 中调用 `render_book()`\index{bookdown::render\_book()}函数。下面是 `render_book()` 的参数：
 
 ```{r eval=FALSE, code=formatR::usage(bookdown::render_book, output=FALSE)}
 ```
@@ -41,7 +41,7 @@ bookdown::render_book("index.Rmd", "bookdown::pdf_book")
 
 ## 使用 HTTP 服务预览书籍
 
-&emsp;&emsp;相比于重复运行 `render_book()` 或 `preview_chapter()` 来预览章节，你实际上可以在 web 浏览器中实时预览书籍，你只需要保存 Rmd 文件即可。**bookdown** 中的函数 `serve_book()`\index{bookdown::serve_book()}可以基于 **servr** 软件包[@R-servr]启动本地 web 服务器，提供 HTML 输出的在线预览服务。
+&emsp;&emsp;相比于重复运行 `render_book()` 或 `preview_chapter()` 来预览章节，你实际上可以在 web 浏览器中实时预览书籍，你只需要保存 Rmd 文件即可。**bookdown** 中的函数 `serve_book()`\index{bookdown::serve\_book()}可以基于 **servr** 软件包[@R-servr]启动本地 web 服务器，提供 HTML 输出的在线预览服务。
 
 ```{r serve-book-usage, eval=FALSE, code=formatR::usage(bookdown::serve_book, output=FALSE)}
 ```
@@ -54,16 +54,16 @@ bookdown::render_book("index.Rmd", "bookdown::pdf_book")
 
 &emsp;&emsp;`...` 里的参数都会传递给 `servr::httw()`，请参阅其帮助页面以查看所有可能的选项，例如 `daemon` 和 `port`。使用 `in_session = TRUE` 或 `FALSE` 有其优缺点：
 
-- For `in_session = TRUE`, you will have access to all objects created in the book in the current R session: if you use a daemonized server (via the argument `daemon = TRUE`), you can check the objects at any time when the current R session is not busy; otherwise you will have to stop the server before you can check the objects. This can be useful when you need to interactively explore the R objects in the book. The downside of `in_session = TRUE` is that the output may be different with the book compiled from a fresh R session, because the state of the current R session may not be clean.
-- For `in_session = FALSE`, you do not have access to objects in the book from the current R session, but the output is more likely to be reproducible since everything is created from new R sessions. Since this function is only for previewing purposes, the cleanness of the R session may not be a big concern.
+- 对于 `in_session = TRUE`，你可以在当前 R session 中访问在书籍中创建的所有对象；如果使用守护进程（通过参数 `daemon = TRUE`），你可以在当前 R session 不忙碌时检查对象；否则必须先停止服务器，然后才能检查对象。这当你需要以交互方式探索书中的 R 对象时会很有用。`in_session = TRUE` 的缺点是输出内容可能与从新的 R session 编译的书不同，因为当前 R session 的状态可能不干净。
+- 对于 `in_session = FALSE`，你不能从当前 R session 访问书籍中的对象，但其输出内容更有可能是可复制的，因为所有内容都是从新的 R session 中创建的。由于此函数仅用于预览目的，因此 R session 是否干净可能不是一个大问题。
 
-You may choose `in_session = TRUE` or `FALSE` depending on your specific use cases. Eventually, you should run `render_book()` from a fresh R session to generate a reliable copy of the book output.
+&emsp;&emsp;根据具体的用例，你可以选择 `in_session = TRUE` 或 `FALSE`。最后，你应该从一个新的 R session 开始运行 `render_book()` 以生成一个可靠的书籍副本。
 
 ## RStudio IDE
 
-We recommend that you [upgrade](https://www.rstudio.com/products/rstudio/download/) your RStudio IDE\index{RStudio IDE} if your version is lower than 1.0.0. As mentioned in Section \@ref(usage), all R Markdown files must be encoded in UTF-8. This is important especially when your files contain multibyte characters. To save a file with the UTF-8 encoding, you can use the menu `File -> Save with Encoding`, and choose `UTF-8`.
+&emsp;&emsp;如果你的 RStudio IDE\index{RStudio IDE} 版本低于 1.0.0，我们建议你进行[升级](https://www.rstudio.com/products/rstudio/download/)。正如第 \@ref(usage) 节所述，所有 R Markdown 文件都必须用 UTF-8 编码。这一点非常重要，尤其是当文件包含多字节字符时。要使用 UTF-8 编码保存文件，可以使用菜单 `File -> Save with Encoding`，然后选择 `UTF-8`。
 
-When you click the `Knit` button to compile an R Markdown document in the RStudio IDE, the default function called by RStudio is `rmarkdown::render()`, which is not what we want for books. To call the function `bookdown::render_book()` instead, you can set the `site` field to be `bookdown::bookdown_site` in the YAML metadata of the R Markdown document `index.Rmd`, e.g.,
+&emsp;&emsp;当你单击 `Knit` 按钮在 RStudio IDE 中编译 R Markdown 文档时，RStudio 调用的默认函数是 `rmarkdown::render()`，这不是我们想要的编译书籍的函数。要调用函数 `bookdown::render_book()`，可以在 R Markdown 文档 `index.Rmd` 的 YAML 元数据中将 `site` 字段设置为 `bookdown::bookdown_site`，例如：
 
 ```yaml
 ---
@@ -74,33 +74,34 @@ output:
 ---
 ```
 
-When you have set `site: bookdown::bookdown_site` in `index.Rmd`, RStudio will be able to discover the directory as a book source directory,^[This directory has to be an RStudio project.] and you will see a button `Build Book` in the `Build` pane. You can click the button to build the whole book in different formats, and if you click the `Knit` button on the toolbar, RStudio will automatically preview the current chapter, and you do not need to use `preview_chapter()` explicitly.
+&emsp;&emsp;当你在 `index.Rmd` 中设置 `site: bookdown::bookdown_site` 后，RStudio 将能够发现作为书籍源目录的目录，^[这个目录必须是一个 RStudio 项目。]，并且你将在 `Build` 窗格中看到 `Build book` 按钮。你可以通过单击按钮以不同的格式构建整本书，另外，如果单击工具栏上的 `Knit` 按钮，RStudio 将自动预览当前章节，而不需要显式使用 `preview_chapter()`。
 
-The **bookdown** package comes with a few addins for RStudio. If you are not familiar with RStudio addins, you may check out the documentation at http://rstudio.github.io/rstudioaddins/. After you have installed the **bookdown** package and use RStudio v0.99.878 or later, you will see a dropdown menu on the toolbar named "Addins"\index{RStudio addin} and menu items like "Preview Book" and "Input LaTeX Math" after you open the menu.
+&emsp;&emsp;**bookdown** 软件包附带了几个 RStudio 插件。如果你不熟悉 RStudio 插件，可以在以下位置查看文档：<http://rstudio.github.io/rstudioaddins/>。当你安装了 **bookdown** 软件包并正在使用 RStudio v0.99.878 或更高版本时，打开菜单，你将在工具栏上看到名为“Addins”\index{RStudio addin}的下拉菜单和“Preview Book”以及“Input LaTeX Math”菜单项。
 
-The addin "Preview Book" calls `bookdown::serve_book()` to compile and serve the book. It will block your current R session, i.e., when `serve_book()` is running, you will not be able to do anything in the R console anymore. To avoid blocking the R session, you can daemonize the server using `bookdown::serve_book(daemon = TRUE)`. Note that this addin must be used when the current document opened in RStudio is under the root directory of your book, otherwise `serve_book()` may not be able to find the book source.
+&emsp;&emsp;“Preview Book”插件调用 `bookdown::serve_Book()` 来编译书籍并通过 HTTP 服务提供书籍预览。它将阻塞当前的 R session，即当 `serve_book` 正在运行时，你将无法在 R console 中执行任何操作。为了避免阻塞 R session，你可以使用 `bookdown::serve_book(daemon = TRUE)` 在服务器上启动守护进程。请注意，在 RStudio 中打开的当前文档位于书籍的根目录下时，才能够使用这个加载项，否则 `serve_book()` 可能无法找到书籍源文档。
 
-The addin "Input LaTeX Math" is essentially a small Shiny application that provides a text box to help you type LaTeX math expressions\index{LaTeX math expression} (Figure \@ref(fig:mathquill)). As you type, you will see the preview of the math expression and its LaTeX source code. This will make it much less error-prone to type math expressions --- when you type a long LaTeX math expression without preview, it is easy to make mistakes such as `X_ij` when you meant `X_{ij}`, or omitting a closing bracket. If you have selected a LaTeX math expression in the RStudio editor before clicking the addin, the expression will be automatically loaded and rendered in the text box. This addin was built on top of the MathQuill library (http://mathquill.com). It is not meant to provide full support to all LaTeX commands for math expressions, but should help you type some common math expressions.
+&emsp;&emsp;“Input LaTeX Math”插件本质上是一个小的 Shiny 应用程序，它提供一个文本框来帮助输入 LaTeX 数学表达式\index{LaTeX Math expression}（图 \@ref(fig:mathquill)）。输入表达式时，你将可以预览数学表达式并看到其源代码。这将使输入数学表达式时更不容易出错——当在没有预览的情况下输入一个长的 LaTeX 数学表达式时很容易犯错误，例如，输入 `X_ij` 时，可能想要输入的是 `X_{ij}`，或者输入时忽略了右括号。如果在单击加载项之前在 RStudio 编辑器中选择了 LaTeX 数学表达式，则该表达式将自动加载并呈现在文本框中。这个插件是建立在 MathQuill 库 (<http://mathquill.com>) 之上的。它并不是要为所有用于数学表达式的 LaTeX 命令提供完整支持，而是致力于帮助输入一些常见的数学表达式。
 
-```{r mathquill, echo=FALSE, fig.align='center', fig.cap='The RStudio addin to help input LaTeX math.'}
+```{r mathquill, echo=FALSE, fig.align='center', fig.cap='辅助输入 LaTeX 数学公式的 RStudio 插件'}
 knitr::include_graphics('images/mathquill.png', dpi = NA)
 ```
 
-There are also other R packages that provide addins to help you author books. The **citr** package [@R-citr] provides an addin named "Insert citations", which makes it easy to insert citations\index{citation} into R Markdown documents. It scans your bibliography databases, and shows all citation items in a drop-down menu, so you can choose from the list without remembering which citation key corresponds to which citation item (Figure \@ref(fig:citr)).
 
-```{r citr, echo=FALSE, fig.align='center', fig.cap='The RStudio addin to help insert citations.'}
+&emsp;&emsp;还有其他 R 软件包提供了插件来帮助你编写书籍。**citr** 软件包 [@R-citr] 提供了一个名为“Insert citations”的加载项，可以很容易地将引用文献\index{citation}插入到 R Markdown 文档中。它会扫描你的文献数据库，并在下拉菜单中显示所有引用文献，因此你可以直接从列表中选择，而无需记住哪个引文键对应于哪个引文项（图 \@ref(fig:citr)）。
+
+```{r citr, echo=FALSE, fig.align='center', fig.cap='帮助插入引用文献的 RStudio 插件'}
 knitr::include_graphics('images/citr.png', dpi = NA)
 ```
 
-## Collaboration
+## 协同工作
 
-Writing a book will almost surely involve more than a single person. You may have co-authors, and readers who give you feedback from time to time.
+&emsp;&emsp;今后创作书籍几乎肯定会涉及到多个人。你可能会和共同作者一起工作，以及不时提供反馈的读者。
 
-Since all book chapters are plain-text files, they are perfect for version control tools, which means if all your co-authors and collaborators have basic knowledge of a version control tool like GIT, you can collaborate with them on the book content using these tools. In fact, collaboration with GIT is possible even if they do not know how to use GIT, because GitHub\index{GitHub} has made it possible to create and edit files online right in your web browser. Only one person has to be familiar with GIT, and that person can set up the book repository. The rest of the collaborators can contribute content online, although they will have more freedom if they know the basic usage of GIT to work locally.
+&emsp;&emsp;由于所有书籍章节都是纯文本文件，因此它们非常适合用于应用版本控制工具。因此，如果你的所有合著者和合作者都具备 GIT 等版本控制工具的基本知识，你就可以使用这些工具与他们协作处理书籍内容。事实上，即使他们不知道如何使用 GIT，通过 GIT 进行协作也是可以的，因为 GitHub\index{GitHub}能够让使用者在 web 浏览器中在线创建和编辑文件。只需要有一个人必须熟悉 GIT，并且能够设置书籍存储库。其他合作者可以在线贡献内容，不过如果他们知道在本地使用 GIT 工作的基础用法，他们会有更多的自由。
 
-Readers can contribute in two ways. One way is to contribute content directly, and the easiest way, is through [GitHub pull requests](https://help.github.com/articles/about-pull-requests/) if your book source is hosted on GitHub. Basically, any GitHub user can click the edit button on the page of an Rmd source file, edit the content, and submit the changes to you for your approval. If you are satisfied with the changes proposed (you can clearly see what exactly was changed), you can click a "Merge" button to merge the changes. If you are not satisfied, you can provide your feedback in the pull request, so the reader can further revise it according to your requirements. We mentioned the edit button in the GitBook style in Section \@ref(gitbook-style). That button is linked to the Rmd source of each page, and can guide you to create the pull request. There is no need to write emails back and forth to communicate simple changes, such as fixing a typo.
+&emsp;&emsp;读者可以通过两种方式做出贡献。一种方式是直接贡献内容，如果你的书源托管在 GitHub 上，最简单的方法是通过 [GitHub pull requests](https://help.github.com/articles/about-pull-requests/)。基本上，任何 GitHub 用户都可以单击 Rmd 源文件页面上的编辑 (edit) 按钮，编辑内容，并将更改提交给你进行审批。如果你对提交的更改感到满意（你可以清楚地看到更改的内容），可以单击“合并 (Merge)”按钮来合并更改。如果你不满意，可以在 pull request 中提供反馈，以便读者根据要求进一步修改。我们在第 \@ref(gitBook-style) 节中提到了 GitBook 样式中的编辑 (edit) 按钮。该按钮链接到每个页面的 Rmd 源文件，可以引导你创建 pull request。没有必要来回收发电子邮件来交流简单的更改内容，比如修改打字错误。
 
-Another way for readers to contribute to your book is to leave comments. Comments can be left in multiple forms: emails, GitHub issues, or HTML page comments. Here we use Disqus (see Section \@ref(yaml-options)) as an example. Disqus is a service to embed a discussion area on your web pages, and can be loaded via JavaScript. You can find the JavaScript code after you register and create a new forum on Disqus, which looks like this:
+&emsp;&emsp;读者对你的书作出贡献的另一种方式是留下评论。评论可以以多种形式留下：电子邮件、GitHub issues 或 HTML 页面评论。这里我们使用 Disqus（参见第 \@ref(yaml-options) 节）作为示例。Disqus 是一种在网页上嵌入讨论区的服务，可以通过 JavaScript 加载。当你注册并在 Disqus 上创建一个新的论坛后，你可以找到如下所示的 JavaScript 代码：
 
 ```html
 <div id="disqus_thread"></div>
@@ -117,7 +118,7 @@ s.setAttribute('data-timestamp', +new Date());
   comments powered by Disqus.</a></noscript>
 ```
 
-Note that you will need to replace the name `yihui` with your own forum name (this name has to be provided when you create a new Disqus forum). You can save the code to an HTML file named, for example, `disqus.html`. Then you can embed it at the end of every page via the `after_body` option (Figure \@ref(fig:disqus) shows what the discussion area looks like):
+&emsp;&emsp;请注意，你需要用自己的论坛名称替换名称 `yihui`（创建新论坛时必须提供此名称）。你可以将代码保存到一个名为  `disqus.html` 的 HTML 文件中。然后可以通过 `after_body` 选项将其嵌入到每页的末尾（图 \@ref(fig:disqus) 显示了讨论区的外观）：
 
 ```yaml
 ---
@@ -128,6 +129,6 @@ output:
 ---
 ```
 
-```{r disqus, fig.cap='A book page with a discussion area.', out.width='100%', echo=FALSE}
+```{r disqus, fig.cap='有讨论区的书页。', out.width='100%', echo=FALSE}
 knitr::include_graphics('images/disqus.png', dpi = NA)
 ```

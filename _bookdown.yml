@@ -7,6 +7,6 @@ language:
   label:
     fig: "图 "
     tab: "表 "
-  # ui:
-  #   edit: "Edit"
-  #   chapter_name: "Chapter "
+  ui:
+    edit: "Edit"
+    chapter_name: ["Chapter ", " a"]

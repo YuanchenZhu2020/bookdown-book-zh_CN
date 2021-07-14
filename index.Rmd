@@ -78,6 +78,7 @@ lapply(names(githubs), function(pkg) {
 | side-effects | 副作用 | 这里指程序设计中的“副作用”。如果一个函数修改了自己范围之外的资源，例如读取文件、调用其它有副作用的函数，则该函数称作是有副作用的。 |
 | upgrade/update | 升级/更新 ||
 | serve (v.) | 通过 HTTP 服务 | 直译并不贴切，因此用其行为和原理来解释这个词。 |
+| daemonized server | 守护进程（？） | 中文互联网上少见“守护服务器”这一词汇，因此将“server”作“服务程序”解，翻译为“守护进程”，日后再行修订。 |
 
 ## 排版说明 {-}
 
@@ -101,7 +102,7 @@ lapply(names(githubs), function(pkg) {
 | Components | × | × |
 | Output Formats | × | × |
 | Customization | × | × |
-| Editing | × | × |
+| Editing | √ | × |
 | Publishing | √ | × |
 | Appendix | √ | × |
 | References | √ | × |

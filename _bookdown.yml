@@ -8,5 +8,6 @@ language:
     fig: "图 "
     tab: "表 "
   ui:
-    edit: "Edit"
-    chapter_name: ["Chapter ", " a"]
+    edit: "编辑"
+    chapter_name: ["第 ", " 章"]
+    # !expr function(i) paste('第', i, '章', sep = " ")

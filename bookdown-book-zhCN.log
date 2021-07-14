@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.7.13)  14 JUL 2021 08:57
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.7.13)  14 JUL 2021 11:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3295,6 +3295,10 @@ Requested font "[Alegreya-Bold.otf]/OT:script=latn;language=dflt;+pnum;+lnum;ma
 pping=tex-text;" at 11.0pt
  -> c:/Users/xiaob/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/huerta/ale
 greya/Alegreya-Bold.otf
+LaTeX Font Info:    Font shape `TU/KaiTi(0)/b/n' will be
+(Font)              scaled to size 10.28548pt on input line 748.
+Requested font "KaiTi/OT:script=hani;language=dflt;" at 10.28548pt
+ -> C:/Windows/fonts/simkai.ttf
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/sc' will be
 (Font)              scaled to size 12.0pt on input line 750.
 Requested font "[Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum
@@ -3461,6 +3465,8 @@ Requested font "[Alegreya-Bold.otf]/OT:script=latn;language=dflt;+pnum;+lnum;ma
 pping=tex-text;" at 10.0pt
  -> c:/Users/xiaob/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/huerta/ale
 greya/Alegreya-Bold.otf
+LaTeX Font Info:    Font shape `TU/KaiTi(0)/b/n' will be
+(Font)              scaled to size 9.35043pt on input line 1236.
 [28] [29] [30]
 LaTeX Font Info:    Font shape `TU/Alegreya(1)/b/n' will be
 (Font)              scaled to size 10.0pt on input line 1316.
@@ -3480,7 +3486,12 @@ greya/Alegreya-Bold.otf
 File: bookdown-book-zhCN_files/figure-latex/no-caption-1.pdf Graphic file (type
  pdf)
 <use bookdown-book-zhCN_files/figure-latex/no-caption-1.pdf>
-[33] [34]
+[33]
+
+LaTeX Warning: Reference `text-references' on page 34 undefined on input line 1
+375.
+
+[34]
 File: images/important.png Graphic file (type bmp)
 <images/important.png>
 File: bookdown-book-zhCN_files/figure-latex/pressure-plot-1.pdf Graphic file (t
@@ -3569,6 +3580,18 @@ es. What
 
 LaTeX Warning: Reference `fig:does-not-exist' on page 46 undefined on input lin
 e 1643.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1663--1665
+[]\TU/SourceCodePro(0)/m/n/12 [link text][Section header text]\TU/Alegreya(1)/m
+/n/12 , e.g., “[non-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1663--1665
+\TU/Alegreya(1)/m/n/12 English books][Internationalization]” via \TU/SourceCode
+Pro(0)/m/n/12 [non-English
+ []
 
 [46]
 File: images/important.png Graphic file (type bmp)
@@ -3926,6 +3949,17 @@ LaTeX Warning: Reference `collaboration' on page 96 undefined on input line 267
 2.
 
 [96] [97]
+
+LaTeX Warning: Reference `bootstrap-style' on page 98 undefined on input line 2
+715.
+
+
+Underfull \hbox (badness 3108) in paragraph at lines 2715--2716
+\TU/Alegreya(1)/m/n/12 Bootstrap style. The Bootstrap style actually has severa
+l built-in
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 2729--2730
 []\TU/Alegreya(1)/m/n/12 For \TU/SourceCodePro(0)/m/n/12 pdf_book()\TU/Alegreya
 (1)/m/n/12 , besides the \TU/SourceCodePro(0)/m/n/12 in_header \TU/Alegreya(1)/
@@ -3964,6 +3998,11 @@ Underfull \hbox (badness 2538) in paragraph at lines 2729--2730
  []
 
 [98] [99] [100] [101]
+
+LaTeX Warning: Reference `bootstrap-style' on page 102 undefined on input line 
+2810.
+
+
 Underfull \hbox (badness 1237) in paragraph at lines 2828--2830
 \TU/Alegreya(1)/m/n/12 repositories, since it is easy to edit arbitrary plain-t
 ext files on
@@ -4718,6 +4757,9 @@ Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:sc
 ipt=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:scr
 ipt=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+
+LaTeX Warning: Reference `r-code' on page 139 undefined on input line 3513.
+
 Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:scr
 ipt=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:scr
@@ -4974,14 +5016,14 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `bookdown-book-zhCN.out' has not changed.
-(rerunfilecheck)             Checksum: C9C16EF958EC6DFE963B8B11AA2324CA;7150.
+(rerunfilecheck)             Checksum: 4834756C82BAAB09983C2024462940DB;6298.
  ) 
 Here is how much of TeX's memory you used:
- 23512 strings out of 478451
- 464098 string characters out of 5857123
- 938237 words of memory out of 5000000
- 43376 multiletter control sequences out of 15000+600000
- 412147 words of font info for 160 fonts, out of 8000000 for 9000
+ 23520 strings out of 478451
+ 464396 string characters out of 5857123
+ 937936 words of memory out of 5000000
+ 43383 multiletter control sequences out of 15000+600000
+ 412155 words of font info for 161 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,18n,137p,1634b,908s stack positions out of 5000i,500n,10000p,200000b,80000s
 

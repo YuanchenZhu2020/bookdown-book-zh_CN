@@ -4,7 +4,7 @@
 
 ## RStudio Connect
 
-&emsp;&emsp;理论上，你可以自己编译书籍然后将其发布到你想要的任何地方。例如，你可以在自己的 Web 服务器上托管书籍的 HTML 版本。不过我们在 **bookdown** 中提供了一个函数 `publish_book()` ，它能够让你很轻松地将书籍上传至 <https://bookdown.org>。这是一个由 RStudio 提供的网站，用于免费托管你的书籍。\index{bookdown.org}这个网站建立在 ["RStudio Connect",](https://www.rstudio.com/products/connect/)\index{RStudio Connect} 之上，它是 RStudio 提供的产品之一，能够让你将各种与 R 相关的应用部署到服务器上，包括 R Markdown 文档、Shiny 应用、R plots 等。
+&emsp;&emsp;理论上，你可以自己编译书籍然后将其发布到你想要的任何地方。例如，你可以在自己的 Web 服务器上托管书籍的 HTML 版本。不过我们在 **bookdown** 中提供了一个函数 `publish_book()` ，它能够让你很轻松地将书籍上传至 <https://bookdown.org>。这是一个由 RStudio 提供的网站，用于免费托管你的书籍。\index{bookdown.org}这个网站建立在 ["RStudio Connect"](https://www.rstudio.com/products/connect/)\index{RStudio Connect} 之上，它是 RStudio 提供的产品之一，能够让你将各种与 R 相关的应用部署到服务器上，包括 R Markdown 文档、Shiny 应用、R plots 等。
 
 &emsp;&emsp;你不必了解太多 RStudio Connect 就能够将你的书籍发布到 bookdown.org。你需要在  https://bookdown.org/connect/ 注册，之后当你第一次尝试运行 `bookdown::publish_book()`\index{bookdown::publish\_book()} 时，系统将要求你授权 **bookdown** 发布到你的 bookdown.org 账户。以后使用时，只需要再次调用 `publish_book()` 即可，**bookdown** 将不会要求你进行任何其他的操作。
 

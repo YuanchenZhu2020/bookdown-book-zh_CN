@@ -735,22 +735,22 @@ Elkhorn, Nebraska
   在第 \ref{editing} 章，我们将会讨论如何在你编辑时快速地预览书籍。简单来说，你可以使用 \texttt{preview\_chapter()} 函数来编译单个章节，而不是编译整本书。函数 \texttt{serve\_book()} 能够让你轻松实现实时预览 HTML 书页：每当你修改 Rmd 文件时，书籍都可以重新编译，浏览器也能相应地自动刷新。
 
 \hypertarget{components}{%
-\chapter{Components}\label{components}}
+\chapter{组成部分}\label{components}}
 
 This chapter demonstrates the syntax of common components of a book written in \textbf{bookdown}, including code chunks, figures, tables, citations, math theorems, and equations. The approach is based on Pandoc, so we start with the syntax of Pandoc's\index{Pandoc} flavor of Markdown.
 
 \hypertarget{markdown-syntax}{%
-\section{Markdown syntax}\label{markdown-syntax}}
+\section{Markdown 语法}\label{markdown-syntax}}
 
 In this section, we give a very brief introduction to Pandoc's Markdown\index{Markdown}. Readers who are familiar with Markdown can skip this section. The comprehensive syntax of Pandoc's Markdown can be found on the Pandoc website \url{http://pandoc.org}.
 
-\hypertarget{inline-formatting}{%
-\subsection{Inline formatting}\label{inline-formatting}}
+\hypertarget{ux5185ux8054ux683cux5f0f}{%
+\subsection{内联格式}\label{ux5185ux8054ux683cux5f0f}}
 
 You can make text \emph{italic} by surrounding it with underscores or asterisks, e.g., \texttt{\_text\_} or \texttt{*text*}. For \textbf{bold} text, use two underscores (\texttt{\_\_text\_\_}) or asterisks (\texttt{**text**}). Text surrounded by \texttt{\textasciitilde{}} will be converted to a subscript (e.g., \texttt{H\textasciitilde{}2\textasciitilde{}SO\textasciitilde{}4\textasciitilde{}} renders H\textsubscript{2}SO\textsubscript{4}), and similarly, two carets (\texttt{\^{}}) produce a superscript (e.g., \texttt{Fe\^{}2+\^{}} renders Fe\textsuperscript{2+}). To mark text as \texttt{inline\ code}, use a pair of backticks, e.g., \texttt{\textasciigrave{}code\textasciigrave{}}.\footnote{To include literal backticks, use more backticks outside, e.g., you can use two backticks to preserve one backtick inside: \texttt{\textasciigrave{}\textasciigrave{}\ \textasciigrave{}code\textasciigrave{}\ \textasciigrave{}\textasciigrave{}}.} Small caps can be produced by the HTML tag \texttt{span}, e.g., \texttt{\textless{}span\ style="font-variant:small-caps;"\textgreater{}Small\ Caps\textless{}/span\textgreater{}} renders \textsc{Small Caps}. Links are created using \texttt{{[}text{]}(link)}, e.g., \texttt{{[}RStudio{]}(https://www.rstudio.com)}, and the syntax for images is similar: just add an exclamation mark, e.g., \texttt{!{[}alt\ text\ or\ image\ title{]}(path/to/image)}. Footnotes are put inside the square brackets after a caret \texttt{\^{}{[}{]}}, e.g., \texttt{\^{}{[}This\ is\ a\ footnote.{]}}. We will talk about citations in Section \ref{citations}.
 
-\hypertarget{block-level-elements}{%
-\subsection{Block-level elements}\label{block-level-elements}}
+\hypertarget{ux5757ux7ea7ux5143ux7d20}{%
+\subsection{块级元素}\label{ux5757ux7ea7ux5143ux7d20}}
 
 Section headers can be written after a number of pound signs, e.g.,
 
@@ -863,8 +863,8 @@ Plain code blocks can be written after three or more backticks, and you can also
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{math-expressions}{%
-\subsection{Math expressions}\label{math-expressions}}
+\hypertarget{ux6570ux5b66ux8868ux8fbeux5f0f}{%
+\subsection{数学表达式}\label{ux6570ux5b66ux8868ux8fbeux5f0f}}
 
 Inline LaTeX equations\index{LaTeX math expression} can be written in a pair of dollar signs using the LaTeX syntax, e.g., \texttt{\$f(k)\ =\ \{n\ \textbackslash{}choose\ k\}\ p\^{}\{k\}\ (1-p)\^{}\{n-k\}\$} (actual output: \(f(k)={n \choose k}p^{k}(1-p)^{n-k}\)); math expressions of the display style can be written in a pair of double dollar signs, e.g., \texttt{\$\$f(k)\ =\ \{n\ \textbackslash{}choose\ k\}\ p\^{}\{k\}\ (1-p)\^{}\{n-k\}\$\$}, and the output looks like this:
 
@@ -924,13 +924,13 @@ x_{21} & x_{22} & x_{23}
 c & d
 \end{vmatrix}=ad-bc\]
 
-\hypertarget{markdown-extensions-by-bookdown}{%
-\section{Markdown extensions by bookdown}\label{markdown-extensions-by-bookdown}}
+\hypertarget{bookdown-ux63d0ux4f9bux7684-markdown-ux529fux80fdux62d3ux5c55}{%
+\section{bookdown 提供的 Markdown 功能拓展}\label{bookdown-ux63d0ux4f9bux7684-markdown-ux529fux80fdux62d3ux5c55}}
 
 Although Pandoc's Markdown is much richer than the original Markdown syntax, it still lacks a number of things that we may need for academic writing. For example, it supports math equations, but you cannot number and reference equations in multi-page HTML or EPUB output. We have provided a few Markdown extensions in \textbf{bookdown} to fill the gaps.
 
 \hypertarget{equations}{%
-\subsection{Number and reference equations}\label{equations}}
+\subsection{方程编号与引用}\label{equations}}
 
 To number and refer to equations\index{equation}\index{cross-reference}, put them in the equation environments and assign labels to them using the syntax \texttt{(\textbackslash{}\#eq:label)}, e.g.,
 
@@ -1016,7 +1016,7 @@ You can use the \texttt{split} environment inside \texttt{equation} so that all 
 \end{equation}
 
 \hypertarget{theorems}{%
-\subsection{Theorems and proofs}\label{theorems}}
+\subsection{定理与证明}\label{theorems}}
 
 Theorems\index{theorem} and proofs are commonly used in articles and books in mathematics. However, please do not be misled by the names: a ``theorem'' is just a numbered/labeled environment, and it does not have to be a mathematical theorem (e.g., it can be an example irrelevant to mathematics). Similarly, a ``proof'' is an unnumbered environment. In this section, we always use the \emph{general} meanings of a ``theorem'' and ``proof'' unless explicitly stated.
 
@@ -1233,7 +1233,7 @@ for complex values of \(s\) and which converges when the real part of \(s\) is g
 \end{hypothesis}
 
 \hypertarget{theorem-engine}{%
-\subsubsection{A note on the old syntax}\label{theorem-engine}}
+\subsubsection{关于旧语法的注记}\label{theorem-engine}}
 
 For older versions of \textbf{bookdown} (before v0.21), a \texttt{theorem} environment could be written like this:
 
@@ -1308,8 +1308,8 @@ The second type is an unnumbered header that starts with \texttt{(APPENDIX)}, in
 
 The numbering style of appendices will be automatically changed in LaTeX/PDF and HTML output (usually in the form A, A.1, A.2, B, B.1, \ldots). This feature is not available to e-books or Word output.
 
-\hypertarget{text-references}{%
-\subsection{Text references}\label{text-references}}
+\hypertarget{ux6587ux672cux5f15ux7528}{%
+\subsection{文本引用}\label{ux6587ux672cux5f15ux7528}}
 
 You can assign some text to a label and reference the text using the label elsewhere in your document. This can be particularly useful for long figure/table captions (Section \ref{figures} and \ref{tables}), in which case you normally will have to write the whole character string in the chunk header (e.g., \texttt{fig.cap\ =\ "A\ long\ long\ figure\ caption."}) or your R code (e.g., \texttt{kable(caption\ =\ "A\ long\ long\ table\ caption.")}). It is also useful when these captions contain special HTML or LaTeX characters, e.g., if the figure caption contains an underscore, it works in the HTML output but may not work in LaTeX output because the underscore must be escaped in LaTeX.
 
@@ -1337,8 +1337,8 @@ Then you can use \texttt{(ref:foo)} in your figure/table captions. The text can 
 
 Text references can be used anywhere in the document (not limited to figure captions). It can also be useful if you want to reuse a fragment of text in multiple places.
 
-\hypertarget{r-code}{%
-\section{R code}\label{r-code}}
+\hypertarget{r-ux4ee3ux7801}{%
+\section{R 代码}\label{r-ux4ee3ux7801}}
 
 There are two types of R code in R Markdown/\textbf{knitr} documents: R code chunks\index{code chunk}, and inline R code\index{inline R code}. The syntax for the latter is \texttt{\textasciigrave{}r\ R\_CODE\textasciigrave{}}, and it can be embedded inline with other document elements. R code chunks look like plain code blocks, but have \texttt{\{r\}} after the three backticks and (optionally) chunk options inside \texttt{\{\}}, e.g.,
 
@@ -1652,7 +1652,7 @@ You can also create text-based links using explicit or automatic section IDs or 
   \begin{itemize}
   \tightlist
   \item
-    \texttt{{[}Section\ header\ text{]}}: example ``\protect\hyperlink{a-single-document}{A single document}'' via \texttt{{[}A\ single\ document{]}}
+    \texttt{{[}Section\ header\ text{]}}: example ``{[}A single document{]}'' via \texttt{{[}A\ single\ document{]}}
   \end{itemize}
 \item
   There are two ways to specify custom link text:
@@ -1660,7 +1660,7 @@ You can also create text-based links using explicit or automatic section IDs or 
   \begin{itemize}
   \tightlist
   \item
-    \texttt{{[}link\ text{]}{[}Section\ header\ text{]}}, e.g., ``\protect\hyperlink{internationalization}{non-English books}'' via \texttt{{[}non-English\ books{]}{[}Internationalization{]}}
+    \texttt{{[}link\ text{]}{[}Section\ header\ text{]}}, e.g., ``{[}non-English books{]}{[}Internationalization{]}'' via \texttt{{[}non-English\ books{]}{[}Internationalization{]}}
   \item
     \texttt{{[}link\ text{]}(\#ID)}, e.g., ``\protect\hyperlink{tables}{Table stuff}'' via \texttt{{[}Table\ stuff{]}(\#tables)}
   \end{itemize}
@@ -1811,7 +1811,7 @@ The theorem and proof environments in Section \ref{theorems} are actually implem
 For all custom blocks based on the \texttt{block} or \texttt{block2} engine, there is one chunk option \texttt{echo} that you can use to show (\texttt{echo\ =\ TRUE}) or hide (\texttt{echo\ =\ FALSE}) the blocks.
 
 \hypertarget{citations}{%
-\section{Citations}\label{citations}}
+\section{引文}\label{citations}}
 
 Pandoc offers two methods for managing citations\index{citation} and bibliographic references in a document.
 
@@ -1942,7 +1942,7 @@ When the output format is LaTeX, the list of references will be automatically pu
 For more detailed instructions and further examples on how to use citations, please see the ``Citations'' section of the Pandoc manual.
 
 \hypertarget{latex-index}{%
-\section{Index}\label{latex-index}}
+\section{索引}\label{latex-index}}
 
 Currently the index\index{index} is only supported for LaTeX/PDF output. To print an index after the book, you can use the LaTeX package \textbf{makeidx} in the preamble (see Section \ref{yaml-options}):
 
@@ -1955,8 +1955,8 @@ Currently the index\index{index} is only supported for LaTeX/PDF output. To prin
 
 Then insert \texttt{\textbackslash{}printindex} at the end of your book through the YAML option \texttt{includes\ -\textgreater{}\ after\_body}. An index entry can be created via the \texttt{\textbackslash{}index\{\}} command in the book body, e.g., \texttt{\textbackslash{}index\{GIT\}}.
 
-\hypertarget{html-widgets}{%
-\section{HTML widgets}\label{html-widgets}}
+\hypertarget{html-ux5c0fux7ec4ux4ef6}{%
+\section{HTML 小组件}\label{html-ux5c0fux7ec4ux4ef6}}
 
 Although one of R's greatest strengths is data visualization, there are a large number of JavaScript libraries for much richer data visualization. These libraries can be used to build interactive applications that can easily render in web browsers, so users do not need to install any additional software packages to view the visualizations. One way to bring these JavaScript libraries into R is through the \href{http://htmlwidgets.org}{\textbf{htmlwidgets}} package \citep{R-htmlwidgets}\index{HTML widget}.
 
@@ -1997,8 +1997,8 @@ Fourth, if you feel it is slow to capture the screenshots, or do not want to do 
 
 Screenshots behave like normal R plots in the sense that many chunk options related to figures also apply to screenshots, including \texttt{fig.width}, \texttt{fig.height}, \texttt{out.width}, \texttt{fig.cap}, and so on. So you can specify the size of screenshots in the output document, and assign figure captions to them as well. The image format of the automatic screenshots can be specified via the chunk option \texttt{dev}, and possible values are \texttt{pdf}, \texttt{png}, and \texttt{jpeg}. The default for PDF output is \texttt{pdf}, and it is \texttt{png} for other types of output. Note that \texttt{pdf} may not work as faithfully as \texttt{png}: sometimes there are certain elements on an HTML page that fail to render to the PDF screenshot, so you may want to use \texttt{dev\ =\ \textquotesingle{}png\textquotesingle{}} even for PDF output. It depends on specific cases of HTML widgets, and you can try both \texttt{pdf} and \texttt{png} (or \texttt{jpeg}) before deciding which format is more desirable.
 
-\hypertarget{web-pages-and-shiny-apps}{%
-\section{Web pages and Shiny apps}\label{web-pages-and-shiny-apps}}
+\hypertarget{web-ux9875ux9762ux548c-shiny-ux5e94ux7528}{%
+\section{Web 页面和 Shiny 应用}\label{web-ux9875ux9762ux548c-shiny-ux5e94ux7528}}
 
 Similar to HTML widgets, arbitrary web pages can be embedded in the book. You can use the function \texttt{knitr::include\_url()} to include a web page through its URL. When the output format is HTML, an \texttt{iframe} is used;\footnote{An \texttt{iframe} is basically a box on one web page to embed another web page.} in other cases, \textbf{knitr} tries to take a screenshot of the web page (or use the custom screenshot you provided). All chunk options are the same as those for HTML widgets. One option that may require your special attention is the \texttt{delay} option: HTML widgets are rendered locally, so usually they are fast to load for PhantomJS to take screenshots, but an arbitrary URL may take longer to load, so you may want to use a larger \texttt{delay} value, e.g., use the chunk option \texttt{screenshot.opts\ =\ list(delay\ =\ 5)}.
 
@@ -2029,7 +2029,7 @@ Again, you will see a live app if you are reading an HTML version of this book, 
 Shiny apps may take even longer to load than usual URLs. You may want to use a conservative value for the \texttt{delay} option, e.g., 10. Needless to say, \texttt{include\_url()} and \texttt{include\_app()} require a working Internet connection, unless you have previously cached the chunk (but web pages inside iframes still will not work without an Internet connection).
 
 \hypertarget{output-formats}{%
-\chapter{Output Formats}\label{output-formats}}
+\chapter{输出格式}\label{output-formats}}
 
 The \textbf{bookdown} package primarily supports three types of output formats: HTML, LaTeX/PDF, and e-books. In this chapter, we introduce the possible options for these formats. Output formats can be specified either in the YAML metadata of the first Rmd file of the book, or in a separate YAML file named \texttt{\_output.yml} under the root directory of the book. Here is a brief example of the former (output formats are specified in the \texttt{output} field of the YAML metadata):
 
@@ -2079,7 +2079,7 @@ In this case, all formats should be at the top level, instead of under an \textt
 The main difference between rendering a book (using \textbf{bookdown}) with rendering a single R Markdown document (using \textbf{rmarkdown}) to HTML\index{HTML} is that a book will generate multiple HTML pages by default --- normally one HTML file per chapter. This makes it easier to bookmark a certain chapter or share its URL with others as you read the book, and faster to load a book into the web browser. Currently we have provided a number of different styles for HTML output: the GitBook style, the Bootstrap style, and the Tufte style.
 
 \hypertarget{gitbook-style}{%
-\subsection{GitBook style}\label{gitbook-style}}
+\subsection{GitBook 样式}\label{gitbook-style}}
 
 The GitBook style was borrowed from GitBook\index{GitBook}, a project launched by Friendcode, Inc.~(\url{https://www.gitbook.com}) and dedicated to helping authors write books with Markdown. It provides a beautiful style, with a layout consisting of a sidebar showing the table of contents on the left, and the main body of a book on the right. The design is responsive to the window size, e.g., the navigation buttons are displayed on the left/right of the book body when the window is wide enough, and collapsed into the bottom when the window is narrow to give readers more horizontal space to read the book body.
 
@@ -2301,8 +2301,8 @@ Below we show some sample YAML metadata (again, please note that these are \emph
 
 A nice effect of setting \texttt{description} and \texttt{cover-image} is that when you share the link of your book on some social network websites such as Twitter, the link can be automatically expanded to a card with the cover image and description of the book.
 
-\hypertarget{bootstrap-style}{%
-\subsection{Bootstrap style}\label{bootstrap-style}}
+\hypertarget{bootstrap-ux6837ux5f0f}{%
+\subsection{Bootstrap 样式}\label{bootstrap-ux6837ux5f0f}}
 
 If you have used R Markdown before, you should be familiar with the Bootstrap\index{Bootstrap style} style (\url{http://getbootstrap.com}), which is the default style of the HTML output of R Markdown. The output format function in \textbf{rmarkdown} is \texttt{html\_document()}, and we have a corresponding format \texttt{html\_book()} in \textbf{bookdown} using \texttt{html\_document()} as the base format. In fact, there is a more general format \texttt{html\_chapters()} in \textbf{bookdown} and \texttt{html\_book()} is just its special case:
 
@@ -2433,8 +2433,8 @@ There are many possible ways to turn \texttt{\textless{}ul\textgreater{}} lists 
 
 As a matter of fact, you can get rid of the Bootstrap style in \texttt{html\_document()} if you set the \texttt{theme} option to \texttt{null}, and you are free to apply arbitrary styles to the HTML output using the \texttt{css} option (and possibly the \texttt{includes} option if you want to include arbitrary content in the HTML head/foot).
 
-\hypertarget{tufte-style}{%
-\subsection{Tufte style}\label{tufte-style}}
+\hypertarget{tufte-ux6837ux5f0f}{%
+\subsection{Tufte 样式}\label{tufte-ux6837ux5f0f}}
 
 Like the Bootstrap style, the Tufte\index{Tufte style} style is provided by an output format \texttt{tufte\_html\_book()}, which is also a special case of \texttt{html\_chapters()} using \texttt{tufte::tufte\_html()} as the base format. Please see the \textbf{tufte} package \citep{R-tufte} if you are not familiar with the Tufte style. Basically, it is a layout with a main column on the left and a margin column on the right. The main body is in the main column, and the margin column is used to place footnotes, margin notes, references, and margin figures, and so on.
 
@@ -2487,8 +2487,8 @@ The \texttt{pdf\_book()} format is a general format like \texttt{html\_book()}, 
 
 You can change the \texttt{base\_format} function to other output format functions, and \textbf{bookdown} has provided a simple wrapper function \texttt{tufte\_book2()}, which is basically \texttt{pdf\_book(base\_format\ =\ tufte::tufte\_book)}, to produce a PDF book using the Tufte PDF style (again, see the \textbf{tufte} package).
 
-\hypertarget{e-books}{%
-\section{E-Books}\label{e-books}}
+\hypertarget{ux7535ux5b50ux4e66}{%
+\section{电子书}\label{ux7535ux5b50ux4e66}}
 
 Currently \textbf{bookdown} provides two e-book\index{e-book} formats, EPUB\index{EPUB} and MOBI\index{MOBI}. Books in these formats can be read on devices like smartphones, tablets, or special e-readers such as Kindle.
 
@@ -2535,7 +2535,7 @@ There are several EPUB readers available, including Calibre (\url{https://www.ca
 MOBI e-books can be read on Amazon's Kindle devices. Pandoc does not support MOBI output natively, but you may use third-party tools to convert EPUB to MOBI. One possible tool is Calibre\index{Calibre}. Calibre is open-source and free, and supports conversion among many more formats. For example, you can convert HTML to EPUB, Word documents to MOBI, and so on. The function \texttt{calibre()} in \textbf{bookdown} is a wrapper function of the command-line utility \texttt{ebook-convert} in Calibre. You need to make sure that the executable \texttt{ebook-convert} can be found via the environment variable \texttt{PATH}. If you use macOS, you can install Calibre with Homebrew (\url{https://brew.sh}) via the command \texttt{brew\ cask\ install\ calibre}, so you do not need to worry about the \texttt{PATH} issue.
 
 \hypertarget{a-single-document}{%
-\section{A single document}\label{a-single-document}}
+\section{单个文档}\label{a-single-document}}
 
 Sometimes you may not want to write a book, but a single long-form article or report instead. Usually what you do is call \texttt{rmarkdown::render()}\index{rmarkdown::render()} with a certain output format. The main features missing there are the automatic numbering of figures/tables/equations, and cross-referencing figures/tables/equations/sections. We have factored out these features from \textbf{bookdown}, so that you can use them without having to prepare a book of multiple Rmd files.
 
@@ -2567,7 +2567,7 @@ The above HTML and PDF output format functions are basically wrappers of output 
 ## {
 ##     pdf_book(..., base_format = rmarkdown::pdf_document)
 ## }
-## <bytecode: 0x000000001cd59b60>
+## <bytecode: 0x000000001d579db0>
 ## <environment: namespace:bookdown>
 \end{verbatim}
 
@@ -2586,12 +2586,12 @@ Then you will be able to use all features we introduced in Chapter \ref{componen
 Although the \texttt{gitbook()} format was designed primarily for books, you can actually also apply it to a single R Markdown document. The only difference is that there will be no search button on the single page output, because you can simply use the searching tool of your web browser to find text (e.g., press \texttt{Ctrl\ +\ F} or \texttt{Command\ +\ F}). You may also want to set the option \texttt{split\_by} to \texttt{none} to only generate a single output page, in which case there will not be any navigation buttons, since there are no other pages to navigate to. You can still generate multiple-page HTML files if you like. Another option you may want to use is \texttt{self\_contained\ =\ TRUE} when it is only a single output page.
 
 \hypertarget{customization}{%
-\chapter{Customization}\label{customization}}
+\chapter{定制化}\label{customization}}
 
 As we mentioned in the very beginning of this book, you are expected to have some basic knowledge about R Markdown, and we have been focusing on introducing the \textbf{bookdown} features instead of \textbf{rmarkdown}. In fact, R Markdown is highly customizable, and there are many options that you can use to customize the output document. Depending on how much you want to customize the output, you may use some simple options in the YAML metadata, or just replace the entire Pandoc template.
 
 \hypertarget{yaml-options}{%
-\section{YAML options}\label{yaml-options}}
+\section{YAML 选项}\label{yaml-options}}
 
 \index{YAML}For most types of output formats, you can customize the syntax highlighting styles using the \texttt{highlight} option of the specific format. Currently, the possible styles are \texttt{default}, \texttt{tango}, \texttt{pygments}, \texttt{kate}, \texttt{monochrome}, \texttt{espresso}, \texttt{zenburn}, \texttt{haddock}, and \texttt{breezedark}. For example, you can choose the \texttt{tango} style for the \texttt{gitbook} format:
 
@@ -2707,8 +2707,8 @@ The above LaTeX code is saved in a file \texttt{preamble.tex}, and the YAML meta
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{theming}{%
-\section{Theming}\label{theming}}
+\hypertarget{ux66f4ux6362ux4e3bux9898}{%
+\section{更换主题}\label{ux66f4ux6362ux4e3bux9898}}
 
 Sometimes you may want to change the overall theme of the output, and usually this can be done through the \texttt{in\_header} option described in the previous section, or the \texttt{css} option if the output is HTML. Some output formats have their unique themes, such as \texttt{gitbook}, \texttt{tufte\_html\_book}, and \texttt{tufte\_book2}, and you may not want to customize these themes too much. By comparison, the output formats \texttt{html\_book()} and \texttt{pdf\_book()} are not tied to particular themes and more customizable.
 
@@ -2752,8 +2752,8 @@ Note that when you change \texttt{documentclass}, you are likely to specify an a
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{templates}{%
-\section{Templates}\label{templates}}
+\hypertarget{ux6a21ux677f}{%
+\section{模板}\label{ux6a21ux677f}}
 
 When Pandoc converts Markdown to another output format, it uses a template\index{Pandoc template} under the hood. The template is a plain-text file that contains some variables of the form \texttt{\$variable\$}. These variables will be replaced by their values generated by Pandoc. Below is a very brief template for HTML output:
 
@@ -2810,7 +2810,7 @@ The actual HTML, LaTeX, and EPUB templates are more complicated, but the idea is
 Note that for HTML output, \textbf{bookdown} requires some additional comment tokens in the template, and we have explained them in Section \ref{bootstrap-style}.
 
 \hypertarget{configuration}{%
-\section{Configuration}\label{configuration}}
+\section{配置}\label{configuration}}
 
 We have mentioned \texttt{rmd\_files} in Section \ref{usage}, and there are more (optional) settings you can configure for a book in \texttt{\_bookdown.yml}\index{\_bookdown.yml}:
 
@@ -2853,8 +2853,8 @@ Here is a sample \texttt{\_bookdown.yml}:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{internationalization}{%
-\section{Internationalization}\label{internationalization}}
+\hypertarget{ux56fdux9645ux5316}{%
+\section{国际化}\label{ux56fdux9645ux5316}}
 
 If the language of your book is not English, you will need to translate certain English words and phrases into your language, such as the words ``Figure'' and ``Table'' when figures/tables are automatically numbered in the HTML output. Internationalization may not be an issue for LaTeX output, since some LaTeX packages can automatically translate these terms into the local language, such as the \textbf{ctexcap} package for Chinese.
 
@@ -3096,7 +3096,7 @@ There is one caveat when you write in a language that uses multibyte characters,
 \hypertarget{rstudio-connect}{%
 \section{RStudio Connect}\label{rstudio-connect}}
 
-  理论上，你可以自己编译书籍然后将其发布到你想要的任何地方。例如，你可以在自己的 Web 服务器上托管书籍的 HTML 版本。不过我们在 \textbf{bookdown} 中提供了一个函数 \texttt{publish\_book()} ，它能够让你很轻松地将书籍上传至 \url{https://bookdown.org}。这是一个由 RStudio 提供的网站，用于免费托管你的书籍。\index{bookdown.org}这个网站建立在 \href{https://www.rstudio.com/products/connect/}{``RStudio Connect'',}\index{RStudio Connect} 之上，它是 RStudio 提供的产品之一，能够让你将各种与 R 相关的应用部署到服务器上，包括 R Markdown 文档、Shiny 应用、R plots 等。
+  理论上，你可以自己编译书籍然后将其发布到你想要的任何地方。例如，你可以在自己的 Web 服务器上托管书籍的 HTML 版本。不过我们在 \textbf{bookdown} 中提供了一个函数 \texttt{publish\_book()} ，它能够让你很轻松地将书籍上传至 \url{https://bookdown.org}。这是一个由 RStudio 提供的网站，用于免费托管你的书籍。\index{bookdown.org}这个网站建立在 \href{https://www.rstudio.com/products/connect/}{``RStudio Connect''}\index{RStudio Connect} 之上，它是 RStudio 提供的产品之一，能够让你将各种与 R 相关的应用部署到服务器上，包括 R Markdown 文档、Shiny 应用、R plots 等。
 
   你不必了解太多 RStudio Connect 就能够将你的书籍发布到 bookdown.org。你需要在 \url{https://bookdown.org/connect/} 注册，之后当你第一次尝试运行 \texttt{bookdown::publish\_book()}\index{bookdown::publish\_book()} 时，系统将要求你授权 \textbf{bookdown} 发布到你的 bookdown.org 账户。以后使用时，只需要再次调用 \texttt{publish\_book()} 即可，\textbf{bookdown} 将不会要求你进行任何其他的操作。
 

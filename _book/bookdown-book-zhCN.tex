@@ -8,7 +8,7 @@
 ]{krantz}
 \title{Bookdown: 使用 R Markdown 创作书籍和技术文档}
 \author{谢益辉}
-\date{2021-07-19}
+\date{2021-08-09}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -298,7 +298,7 @@ package & 软件包，程序包 & r pkgs 是一组用来完成特定任务的程
 hardcopy & 实体书，书的实体版本 & 原意为``硬拷贝''，指信息被储存并显示在物体实体上，这里采用符合常用语境的翻译。 \\
 page margin & 页边空白 & 直译为页面外边距（区域），是页面各边边线离矩形文字区域的垂直距离，四边共同组成了边框形状的区域，通常为空白部分。 \\
 typewriter font & 老式打字机字体 & 直译为``打字机字体''，也就是类似于二十世纪七八十年代的铅字打字机的字体，为突出其独特性而强调了``老式'' \\
-R plots & （暂无） & （暂无） \\
+R plots & （R 语言输出的图片） & （暂无） \\
 personal access token & 个人访问令牌 & 参照国内计网教科书对于 token 的翻译进行的直译。 \\
 command-line & 命令行（hang，第二声）、命令提示符 & 笔者对于``line''所指的概念不明确，因此参照国内流行的翻译，称为``命令行''。 \\
 key & 字段、配置项 & 指的是 YAML 文件中的配置项，位于冒号 \texttt{:} 左侧。由于是``键值对''的形式，因此用了 key 一词，但依照语境翻译为``字段''或是``配置项''。 \\
@@ -326,6 +326,8 @@ fenced \texttt{div} syntax & \texttt{div} 围栏语法 & 来源于 Pandoc 的 \t
 token & 令牌、标志 & 当语境中没有``通行证''等类似含义时，使用``标志''翻译。 \\
 part title & 各部份的标题？ & 意思为将书籍中的部分章节组成一个部分，例如第 1、2、3 章组成第一部分，为这一部分的标题。 \\
 aspect ratio & 纵横比 & 专业词汇 \\
+logo & 徽标 & 相比于``标志''和``标识''这两种具有广泛含义的词汇，``徽标''这个翻译简洁且准确。 \\
+chunk & 区块、代码块 & 泛用含义为``区块''，多用于标识 R 代码。 \\
 \bottomrule
 \end{longtable}
 
@@ -430,7 +432,7 @@ References & √ & × \\
 \end{Shaded}
 
 \begin{verbatim}
-## R version 4.0.3 (2020-10-10)
+## R version 4.1.0 (2021-05-18)
 ## Platform: x86_64-w64-mingw32/x64 (64-bit)
 ## Running under: Windows 10 x64 (build 19042)
 ## 
@@ -449,7 +451,7 @@ References & √ & × \\
 ## 
 ## loaded via a namespace (and not attached):
 ## [1] bookdown_0.22     miniUI_0.1.1.1   
-## [3] rmarkdown_2.9     tools_4.0.3      
+## [3] rmarkdown_2.9     tools_4.1.0      
 ## [5] shiny_1.6.0       htmltools_0.5.1.1
 ## [7] knitr_1.33
 \end{verbatim}
@@ -1314,8 +1316,8 @@ hypothesis & Hypothesis & hyp\\
 
   附录的编号样式将在 LaTeX/PDF 和 HTML 输出中自动更改（通常采用 A、A.1、A.2、B、B.1 等格式）。此功能不适用于电子书或 Word 输出。
 
-\hypertarget{ux6587ux672cux5f15ux7528}{%
-\subsection{文本引用}\label{ux6587ux672cux5f15ux7528}}
+\hypertarget{text-references}{%
+\subsection{文本引用}\label{text-references}}
 
   你可以将一些文本指定给标签，并使用文档中其他位置的标签来引用这些文本。这对于长图形/表格的标题（第 \ref{figures} 节和第 \ref{tables} 节）特别有用，在这种情况下，你通常需要将整个字符串写入区块标题（例如 \texttt{fig.cap\ =\ "一张长图片的标题”）或\ R\ 代码（例如}kable(caption = ``一个很长很长的表格的标题''））。当这些标题包含特殊的 HTML 或 LaTeX 字符时，它也很有用。例如，如果图片标题包含下划线，则它在 HTML 输出中正常工作，但在 LaTeX 输出中可能不起作用，因为下划线必须在 LaTeX 中进行转义。
 
@@ -1343,10 +1345,10 @@ hypothesis & Hypothesis & hyp\\
 
   文本引用可以在文档中的任何位置使用（不仅限于图片标题）。如果你想在多个位置重用文本片段，它也很有用。
 
-\hypertarget{r-ux4ee3ux7801}{%
-\section{R 代码}\label{r-ux4ee3ux7801}}
+\hypertarget{r-code}{%
+\section{R 代码}\label{r-code}}
 
-  R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 \texttt{\textasciigrave{}r\ R\_CODE\textasciigrave{}}，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 \texttt{\{r\}}，在 \texttt{\{\}} 内有（可选的）块选项，例如：
+  R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 \texttt{\textasciigrave{}r\ R\_CODE\textasciigrave{}}，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 \texttt{\{r\}}，在 \texttt{\{\}} 内有（可选的）区块选项，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1358,7 +1360,7 @@ hypothesis & Hypothesis & hyp\\
 \end{Highlighting}
 \end{Shaded}
 
-  有关 \textbf{knitr} 块选项的详细信息，请参阅 \citet{xie2015} 或网页 \url{http://yihui.org/knitr/options}。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 \ref{configuration} 节中的 \texttt{before\_chapter\_script} 和 \texttt{after\_chapter\_script}。
+  有关 \textbf{knitr} 区块选项的详细信息，请参阅 \citet{xie2015} 或网页 \url{http://yihui.org/knitr/options}。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 \ref{configuration} 节中的 \texttt{before\_chapter\_script} 和 \texttt{after\_chapter\_script}。
 
 \hypertarget{figures}{%
 \section{图片}\label{figures}}
@@ -1376,7 +1378,7 @@ hypothesis & Hypothesis & hyp\\
 
   这样排版图片的缺点是，如果当前页面没有足够的空间放置图片，图片可能会被放在页面的底部（因此会超出页边空白），或者被推到下一页，在当前页面底部留下一大块空白。这基本上就是 LaTeX 中存在着``浮动环境 (floating environments)''\index{floating environment} 的原因：不能再多个页面上进行拆分（如图片）的元素会被放在浮动环境中，因此它们可以浮动到一个有足够空间容纳它们的页面。但是，向前或向后的浮动也存在着缺点：读者可能需要跳转到另一个页面才能找到当前页面上提到的图片。这只是不得不在多个页面上以固定大小进行排版的一个自然的结果。不过 HTML 中不存在这个问题，因为所有内容都可以被连续地放置在一个页面上（大概有着无限的高度），并且不需要在有着相同页面大小的多个页面上分割任何内容。
 
-  如果我们通过块选项 \texttt{fig.cap} 为代码块分配一个图片标题，那么 R 图形将被放入图形 (figure) 环境中，它将被自动标记和编号，还可以进行交叉引用。图形环境的标签是从代码块的标签生成的。例如，如果块标签是 \texttt{foo}，则图片标签将是 \texttt{fig:foo}（前缀 \texttt{fig:} 在 \texttt{foo} 之前添加）。如果要引用一张图片\index{cross-reference}，请使用语法 \texttt{\textbackslash{}@ref(label)}，\footnote{不要忘记前导的反斜杠！注意 \texttt{ref} 后面的括号 \texttt{()}；它们不是大括号 \texttt{\{\}}。}，其中 \texttt{label} 是图片标签，例如 \texttt{fig:foo}。
+  如果我们通过区块选项 \texttt{fig.cap} 为代码块分配一个图片标题，那么 R 图形将被放入图形 (figure) 环境中，它将被自动标记和编号，还可以进行交叉引用。图形环境的标签是从代码块的标签生成的。例如，如果块标签是 \texttt{foo}，则图片标签将是 \texttt{fig:foo}（前缀 \texttt{fig:} 在 \texttt{foo} 之前添加）。如果要引用一张图片\index{cross-reference}，请使用语法 \texttt{\textbackslash{}@ref(label)}，\footnote{不要忘记前导的反斜杠！注意 \texttt{ref} 后面的括号 \texttt{()}；它们不是大括号 \texttt{\{\}}。}，其中 \texttt{label} 是图片标签，例如 \texttt{fig:foo}。
 
   如果要\emph{在图片标题中}利用 Markdown 格式化的优势，需要使用文本引用（请参阅第 \ref{text-references} 节）。例如，当输出格式为 LaTeX/PDF 时，包含 \texttt{\_斜体文本\_} 的图片标题将不起作用，因为下划线是 LaTeX 中的特殊字符。但如果使用文本引用，则当输出为 LaTeX 时，\texttt{\_斜体文本\_} 将被转换为 LaTeX 代码。
 
@@ -1384,7 +1386,7 @@ hypothesis & Hypothesis & hyp\\
 如果要交叉引用从代码块生成的图片或表格，请确保块标签仅包含\emph{字母与数字字符 (alphanumber)} （a-z、a-z、0-9）、斜杠 (/) 或破折号 (-)。
 \end{rmdimportant}
 
-  块选项 \texttt{fig.asp} 能够被用来设置图片的纵横比。例如图片的高宽比。如果图片的宽度是 6 英寸 (\texttt{fig.width\ =\ 6}) 并且 \texttt{fig.asp\ =\ 0.7}，则图片的高度将会自动使用 \texttt{fig.width\ *\ fig.asp\ =\ 6\ *\ 0.7\ =\ 4.2} 计算得出。图 \ref{fig:pressure-plot} 是使用块选项 \texttt{fig.asp\ =\ 0.7}、\texttt{fig.width\ =\ 6} 和 \texttt{fig.align\ =\ \textquotesingle{}center\textquotesingle{}} 的一个例子，它是从下面的代码中生成的：
+  区块选项 \texttt{fig.asp} 能够被用来设置图片的纵横比。例如图片的高宽比。如果图片的宽度是 6 英寸 (\texttt{fig.width\ =\ 6}) 并且 \texttt{fig.asp\ =\ 0.7}，则图片的高度将会自动使用 \texttt{fig.width\ *\ fig.asp\ =\ 6\ *\ 0.7\ =\ 4.2} 计算得出。图 \ref{fig:pressure-plot} 是使用区块选项 \texttt{fig.asp\ =\ 0.7}、\texttt{fig.width\ =\ 6} 和 \texttt{fig.align\ =\ \textquotesingle{}center\textquotesingle{}} 的一个例子，它是从下面的代码中生成的：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1402,7 +1404,7 @@ hypothesis & Hypothesis & hyp\\
 \caption{指定纵横比、宽度和对齐方式的一个图片示例。}\label{fig:pressure-plot}
 \end{figure}
 
-  图片的实际大小是由块选项 \texttt{fig.width} 和 \texttt{fig.height} 决定的（图片的大小由图形设备 (graphical device) 生成），并且我们能够通过块选项 \texttt{out.width} 和 \texttt{out.height} 指定图片的输出大小。这两个选项可能的取值由文档的输出格式决定。例如，\texttt{out.width\ =\ \textquotesingle{}30\%\textquotesingle{}} 对于 HTML 输出格式来说是有效的，但对于 LaTeX/PDF 输出来说是无效值。然而，\textbf{knitr} 会自动地将 \texttt{x\%} 格式的 \texttt{out.width} 的百分比值转化为 \texttt{(x\ /\ 100)\ \textbackslash{}linewidth}。例如，当输出格式为 LaTeX 时，\texttt{out.width\ =\ \textquotesingle{}70\%\textquotesingle{}} 将会被视为 \texttt{.7\textbackslash{}linewidth}。这样的处理使得我们能够以一致的方式指定图片的相对宽度。图 \ref{fig:cars-plot} 是 \texttt{out.width\ =\ 70\%} 的一个示例。
+  图片的实际大小是由区块选项 \texttt{fig.width} 和 \texttt{fig.height} 决定的（图片的大小由图形设备 (graphical device) 生成），并且我们能够通过区块选项 \texttt{out.width} 和 \texttt{out.height} 指定图片的输出大小。这两个选项可能的取值由文档的输出格式决定。例如，\texttt{out.width\ =\ \textquotesingle{}30\%\textquotesingle{}} 对于 HTML 输出格式来说是有效的，但对于 LaTeX/PDF 输出来说是无效值。然而，\textbf{knitr} 会自动地将 \texttt{x\%} 格式的 \texttt{out.width} 的百分比值转化为 \texttt{(x\ /\ 100)\ \textbackslash{}linewidth}。例如，当输出格式为 LaTeX 时，\texttt{out.width\ =\ \textquotesingle{}70\%\textquotesingle{}} 将会被视为 \texttt{.7\textbackslash{}linewidth}。这样的处理使得我们能够以一致的方式指定图片的相对宽度。图 \ref{fig:cars-plot} 是 \texttt{out.width\ =\ 70\%} 的一个示例。
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1415,7 +1417,7 @@ hypothesis & Hypothesis & hyp\\
 \includegraphics[width=0.7\linewidth]{bookdown-book-zhCN_files/figure-latex/cars-plot-1} \caption{相对宽度为 70\% 的一个图片示例。}\label{fig:cars-plot}
 \end{figure}
 
-  如果要在一个图形环境中放置多张图片，则必须使用块选项 \texttt{fig.show\ =\ \textquotesingle{}hold\textquotesingle{}} 来保存代码块中的多张图片，并将它们包含在一个环境中。如果所有图片的宽度之和小于或等于当前线宽 (line width)，也可以并排放置图片。例如，如果两张图片具有相同的宽度 \texttt{50\%}，则它们将并排放置。类似地，可以通过指定 \texttt{out.width\ =\ \textquotesingle{}33\%\textquotesingle{}} 在一行并排放置三张图片。图 \ref{fig:multi-plots} 是放置两张图的示例，每张图的宽度为 \texttt{50\%}。
+  如果要在一个图形环境中放置多张图片，则必须使用区块选项 \texttt{fig.show\ =\ \textquotesingle{}hold\textquotesingle{}} 来保存代码块中的多张图片，并将它们包含在一个环境中。如果所有图片的宽度之和小于或等于当前线宽 (line width)，也可以并排放置图片。例如，如果两张图片具有相同的宽度 \texttt{50\%}，则它们将并排放置。类似地，可以通过指定 \texttt{out.width\ =\ \textquotesingle{}33\%\textquotesingle{}} 在一行并排放置三张图片。图 \ref{fig:multi-plots} 是放置两张图的示例，每张图的宽度为 \texttt{50\%}。
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1429,7 +1431,7 @@ hypothesis & Hypothesis & hyp\\
 \includegraphics[width=0.5\linewidth]{bookdown-book-zhCN_files/figure-latex/multi-plots-1} \includegraphics[width=0.5\linewidth]{bookdown-book-zhCN_files/figure-latex/multi-plots-2} \caption{并排放置两张图片。}\label{fig:multi-plots}
 \end{figure}
 
-Sometimes you may have certain images that are not generated from R code, and you can include them in R Markdown via the function \texttt{knitr::include\_graphics()}. Figure \ref{fig:knitr-logo} is an example of three \textbf{knitr} logos included in a figure environment. You may pass one or multiple image paths to the \texttt{include\_graphics()}\index{knitr::include\_graphics()} function, and all chunk options that apply to normal R plots also apply to these images, e.g., you can use \texttt{out.width\ =\ \textquotesingle{}33\%\textquotesingle{}} to set the widths of these images in the output document.
+  有时，你可能有一些不是从 R 代码生成的图片，这时可以通过函数 \texttt{knitr::include\_graphics()} 将它们包含在 R Markdown 中。图 \ref{fig:knitr-logo} 是在图形环境中包含三个 \textbf{knitr} 徽标的示例。你可以将一个或多个图像路径传递给 \texttt{include\_graphics()}\index{knitr::include\_graphics()} 函数，并且应用于普通 R plots 的所有区块选项也适用于这些图像，例如，可以使用 \texttt{out.width\ =\ \textquotesingle{}33\%\textquotesingle{}} 设置这些图像在输出文档中的宽度。
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1438,43 +1440,43 @@ Sometimes you may have certain images that are not generated from R code, and yo
 \end{Shaded}
 
 \begin{figure}
-\includegraphics[width=0.328\linewidth]{images/knit-logo} \includegraphics[width=0.328\linewidth]{images/knit-logo} \includegraphics[width=0.328\linewidth]{images/knit-logo} \caption{Three knitr logos included in the document from an external PNG image file.}\label{fig:knitr-logo}
+\includegraphics[width=0.328\linewidth]{images/knit-logo} \includegraphics[width=0.328\linewidth]{images/knit-logo} \includegraphics[width=0.328\linewidth]{images/knit-logo} \caption{包含在文档中的来自外部 PNG 图像文件的三个 knitr 徽标。}\label{fig:knitr-logo}
 \end{figure}
 
-There are a few advantages of using \texttt{include\_graphics()}:
+使用 \texttt{include\_graphics()} 有以下一些优点：
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  You do not need to worry about the document output format, e.g., when the output format is LaTeX, you may have to use the LaTeX command \texttt{\textbackslash{}includegraphics\{\}} to include an image, and when the output format is Markdown, you have to use \texttt{!{[}{]}()}. The function \texttt{include\_graphics()} in \textbf{knitr} takes care of these details automatically.
+  你不需要担心文档的输出格式，例如，当输出格式为 LaTeX 时，你可能需要使用 LaTeX 命令 \texttt{\textbackslash{}includegraphics\{\}} 来引入一张图片，而当输出格式是 Markdown 时，你需要使用 \texttt{!{[}{]}()}。\textbf{knitr} 中的 \texttt{include\_graphics()} 函数能够自动处理这些细节。
 \item
-  The syntax for controlling the image attributes is the same as when images are generated from R code, e.g., chunk options \texttt{fig.cap}, \texttt{out.width}, and \texttt{fig.show} still have the same meanings.
+  控制图像属性的语法与图像是从 R 代码生成时的语法相同，例如，区块选项 \texttt{fig.cap}、\texttt{out.width} 和 \texttt{fig.show} 仍然有着相同的含义。
 \item
-  \texttt{include\_graphics()} can be smart enough to use PDF graphics automatically when the output format is LaTeX and the PDF graphics files exist, e.g., an image path \texttt{foo/bar.png} can be automatically replaced with \texttt{foo/bar.pdf} if the latter exists. PDF images often have better qualities than raster images in LaTeX/PDF output. To make use of this feature, set the argument \texttt{auto\_pdf\ =\ TRUE}, or set the global option \texttt{options(knitr.graphics.auto\_pdf\ =\ TRUE)} to enable this feature globally in an R session.
+  \texttt{include\_graphics()} 的表现足够智能，可以在输出格式为 LaTeX 且存在 PDF 图片文件时自动使用 PDF 图片，例如，图片路径 \texttt{foo/bar.png} 能够自动使用 \texttt{foo/bar.pdf} 进行替换（如果后者存在）。在 LaTeX/PDF 输出中，PDF 图片通常比光栅图像具有更好的质量。要使用此功能，请设置参数 \texttt{auto\_pdf\ =\ TRUE}，或者设置全局配置项 \texttt{options(knitr.graphics.auto\_pdf\ =\ TRUE)}，以便在 R session 中全局启用这个功能。
 \item
-  You can easily scale these images proportionally using the same ratio. This can be done via the \texttt{dpi} argument (dots per inch), which takes the value from the chunk option \texttt{dpi} by default. If it is a numeric value and the chunk option \texttt{out.width} is not set, the output width of an image will be its actual width (in pixels) divided by \texttt{dpi}, and the unit will be inches. For example, for an image with the size 672 x 480, its output width will be 7 inches (\texttt{7in}) when \texttt{dpi\ =\ 96}. This feature requires the package \textbf{png} and/or \textbf{jpeg} to be installed. You can always override the automatic calculation of width in inches by providing a non-NULL value to the chunk option \texttt{out.width}, or use \texttt{include\_graphics(dpi\ =\ NA)}.
+  你可以使用相同的比例轻松地按比例缩放这些图片。这可以通过 \texttt{dpi} 参数（每英寸像素点数）来完成。默认情况下，该参数从区块选项 \texttt{dpi} 中获取值。如果这个值是数值类型，并且并没有设置区块选项 \texttt{out.width}，那么一张图片的输出宽度将会是它的实际宽度（以像素为单位）除以 \texttt{dpi}，并且单位变为英寸。例如，对于一张大小为 672 x 480 的图片，在 \texttt{dpi\ =\ 96} 时，它的输出宽度将会是 7 英寸 (\texttt{7in}) 。这个功能需要安装有 \textbf{png} 和/或 \textbf{jpeg} 软件包。通过为区块选项 \texttt{out.width} 提供非空值，或使用 \texttt{include\_graphics(dpi\ =\ NA)}，你可以覆盖以英寸为单位的图片宽度的自动计算功能。
 \end{enumerate}
 
 \hypertarget{tables}{%
 \section{表格}\label{tables}}
 
-For now, the most convenient way to generate a table\index{table} is the function \texttt{knitr::kable()}, because there are some internal tricks in \textbf{knitr} to make it work with \textbf{bookdown} and users do not have to know anything about these implementation details. We will explain how to use other packages and functions later in this section.
+  目前来说，生成一个表格\index{table}的最方便的方法是使用函数 \texttt{knitr::kable()}，因为在 \textbf{knitr} 中有一些内部技巧可以使其与 \textbf{bookdown} 一起工作，并且用户并不需要知道这些实现细节。我们在本节后面将会解释如何使用其他软件包和函数。
 
-Like figures, tables with captions will also be numbered and can be referenced\index{cross-reference}. The \texttt{kable()} function will automatically generate a label for a table environment, which is the prefix \texttt{tab:} plus the chunk label. For example, the table label for a code chunk with the label \texttt{foo} will be \texttt{tab:foo}, and we can still use the syntax \texttt{\textbackslash{}@ref(label)} to reference the table. Table \ref{tab:table-single} is a simple example.
+  和图片一样，带有标题的表格也将被编号并且可以被引用\index{cross-reference}。\texttt{kable()} 函数将会为表格环境自动生成一个标签，即前缀 \texttt{tab:} 加上区块标签。例如，标签为 \texttt{foo} 的代码块的表格标签将是 \texttt{tab:foo}，并且我们仍然能够使用语法 \texttt{\textbackslash{}@ref(label)} 来引用该表格。表 \ref{tab:table-single} 是一个简单的例子。
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}
   \FunctionTok{head}\NormalTok{(mtcars[, }\DecValTok{1}\SpecialCharTok{:}\DecValTok{8}\NormalTok{], }\DecValTok{10}\NormalTok{), }\AttributeTok{booktabs =} \ConstantTok{TRUE}\NormalTok{,}
-  \AttributeTok{caption =} \StringTok{\textquotesingle{}A table of the first 10 rows of the mtcars data.\textquotesingle{}}
+  \AttributeTok{caption =} \StringTok{\textquotesingle{}一个包含 mtcars 数据前 10 行的表格。\textquotesingle{}}
 \NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{table}
 
-\caption{\label{tab:table-single}A table of the first 10 rows of the mtcars data.}
+\caption{\label{tab:table-single}一个包含 mtcars 数据前 10 行的表格。}
 \centering
 \begin{tabular}[t]{lrrrrrrrr}
 \toprule
@@ -1495,7 +1497,7 @@ Merc 280 & 19.2 & 6 & 167.6 & 123 & 3.92 & 3.440 & 18.30 & 1\\
 \end{tabular}
 \end{table}
 
-If you want to put multiple tables in a single table environment, wrap the data objects (usually data frames in R) into a list. See Table \ref{tab:table-multi} for an example. Please note that this feature is only available in HTML and PDF output.
+  如果要在单个表格环境放入多个表格，请将数据对象（通常是 R 中的数据框）封装到一个列表中有关示例请见表 \ref{tab:table-multi}。请注意此功能仅在 HTML 和 PDF 输出格式中起作用。
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1504,13 +1506,13 @@ If you want to put multiple tables in a single table environment, wrap the data 
     \FunctionTok{head}\NormalTok{(iris[, }\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{], }\DecValTok{3}\NormalTok{),}
     \FunctionTok{head}\NormalTok{(mtcars[, }\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{], }\DecValTok{5}\NormalTok{)}
 \NormalTok{  ),}
-  \AttributeTok{caption =} \StringTok{\textquotesingle{}A Tale of Two Tables.\textquotesingle{}}\NormalTok{, }\AttributeTok{booktabs =} \ConstantTok{TRUE}
+  \AttributeTok{caption =} \StringTok{\textquotesingle{}两个表格的故事。\textquotesingle{}}\NormalTok{, }\AttributeTok{booktabs =} \ConstantTok{TRUE}
 \NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{table}
-\caption{\label{tab:table-multi}A Tale of Two Tables.}
+\caption{\label{tab:table-multi}两个表格的故事。}
 
 \centering
 \begin{tabular}[t]{rr}
@@ -1536,19 +1538,19 @@ Hornet Sportabout & 18.7 & 8 & 360\\
 \end{tabular}
 \end{table}
 
-When you do not want a table to float in PDF, you may use the LaTeX package \href{https://www.ctan.org/pkg/longtable}{\textbf{longtable},}\index{longtable} which can break a table across multiple pages. To use \textbf{longtable}, pass \texttt{longtable\ =\ TRUE} to \texttt{kable()}, and make sure to include \texttt{\textbackslash{}usepackage\{longtable\}} in the LaTeX preamble (see Section \ref{yaml-options} for how to customize the LaTeX preamble). Of course, this is irrelevant to HTML output, since tables in HTML do not need to float.
+  当你不希望表格在 PDF 中浮动时，可以使用 LaTeX 软件包 \href{https://www.ctan.org/pkg/longtable}{\textbf{longtable}}\index{longtable}，它可以在多个页面上截断一个表格。要使用 \textbf{longtable}，请将 \texttt{longtable\ =\ TRUE} 参数传递给 \texttt{kable()}，并确保在 LaTeX 导言 (preamble) 中包含 \texttt{\textbackslash{}usepackage\{longtable\}}（有关如何自定义 LaTeX 导言的信息，请参阅第 \ref{yaml-options} 节)。当然，这与 HTML 输出无关，因为 HTML 中的表格并不需要浮动。
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}
 \NormalTok{  iris[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{55}\NormalTok{, ], }\AttributeTok{longtable =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{booktabs =} \ConstantTok{TRUE}\NormalTok{,}
-  \AttributeTok{caption =} \StringTok{\textquotesingle{}A table generated by the longtable package.\textquotesingle{}}
+  \AttributeTok{caption =} \StringTok{\textquotesingle{}由 longtable 软件包生成的表格。\textquotesingle{}}
 \NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{longtable}[t]{rrrrl}
-\caption{\label{tab:longtable}A table generated by the longtable package.}\\
+\caption{\label{tab:longtable}由 longtable 软件包生成的表格。}\\
 \toprule
 Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \midrule
@@ -1620,11 +1622,11 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \bottomrule
 \end{longtable}
 
-Pandoc supports several types of \href{http://pandoc.org/MANUAL.html\#tables}{Markdown tables,} such as simple tables, multiline tables, grid tables, and pipe tables. What \texttt{knitr::kable()} generates is a simple table like this:
+  Pandoc 支持多种类型的 \href{http://pandoc.org/MANUAL.html\#tables}{Markdown 表格}，例如简单表格、多行表格、栅格表格和管道表格。\texttt{knitr::kable()} 生成的是这样一个简单的表格：
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\AnnotationTok{Table:}\CommentTok{ A simple table in Markdown.}
+\NormalTok{表：Markdown 的一个简单表格。}
 
 \NormalTok{ Sepal.Length   Sepal.Width   Petal.Length   Petal.Width}
 \NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}  {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}  {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}  {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
@@ -1637,12 +1639,12 @@ Pandoc supports several types of \href{http://pandoc.org/MANUAL.html\#tables}{Ma
 \end{Highlighting}
 \end{Shaded}
 
-You can use any types of Markdown tables in your document. To be able to cross-reference a Markdown table, it must have a labeled caption of the form \texttt{Table:\ (\textbackslash{}\#label)\ Caption\ here}, where \texttt{label} must have the prefix \texttt{tab:}, e.g., \texttt{tab:simple-table}.
+  你可以在文档中使用任何类型的 Markdown 表格。为了能够交叉引用 Markdown 表格，它必须具有 \texttt{Table:\ (\textbackslash{}\#label)\ Caption\ here} 格式的标签标题，其中 \texttt{label} 必须具有前缀 \texttt{tab:}，例如 \texttt{tab:simple-table}。
 
-If you decide to use other R packages to generate tables, you have to make sure the label for the table environment appears in the beginning of the table caption in the form \texttt{(\textbackslash{}\#label)} (again, \texttt{label} must have the prefix \texttt{tab:}). You have to be very careful about the \emph{portability} of the table generating function: it should work for both HTML and LaTeX output automatically, so it must consider the output format internally (check \texttt{knitr::opts\_knit\$get(\textquotesingle{}rmarkdown.pandoc.to\textquotesingle{})}). When writing out an HTML table, the caption must be written in the \texttt{\textless{}caption\textgreater{}\textless{}/caption\textgreater{}} tag. For simple tables, \texttt{kable()} should suffice. If you have to create complicated tables (e.g., with certain cells spanning across multiple columns/rows), you will have to take the aforementioned issues into consideration.
+  如果决定使用其它 R 软件包生成表格，则必须确保表格环境的标签以 \texttt{(\textbackslash{}\#label)} 的格式出现在表格标题的开头（同样地，\texttt{label} 必须具有前缀 \texttt{tab:}）。你必须非常小心表格生成函数的 \emph{通用性}：它应该在 HTML 和 LaTeX 输出格式下能够自动正常工作，因此必须在内部考虑输出格式（检查 \texttt{knitr::opts\_knit\$get(\textquotesingle{}rmarkdown.pandoc.to\textquotesingle{})}）。当输出 HTML 表格时，标题必须写在 \texttt{\textless{}caption\textgreater{}\textless{}/caption\textgreater{}} 标签中，不过对于简单的表格，\texttt{kable()} 就足够了。如果你需要创建复杂的表格（例如，某些单元格跨越多列/行），则必须考虑上述问题。
 
-\hypertarget{ux4ea4ux53c9ux5f15ux7528}{%
-\section{交叉引用}\label{ux4ea4ux53c9ux5f15ux7528}}
+\hypertarget{cross-references}{%
+\section{交叉引用}\label{cross-references}}
 
 We have explained how cross-references\index{cross-reference} work for equations (Section \ref{equations}), theorems (Section \ref{theorems}), figures (Section \ref{figures}), and tables (Section \ref{tables}). In fact, you can also reference sections using the same syntax \texttt{\textbackslash{}@ref(label)}, where \texttt{label} is the section ID. By default, Pandoc will generate an ID for all section headers, e.g., a section \texttt{\#\ Hello\ World} will have an ID \texttt{hello-world}. We recommend you to manually assign an ID to a section header to make sure you do not forget to update the reference label after you change the section header. To assign an ID to a section header, simply add \texttt{\{\#id\}} to the end of the section header. Further attributes of section headers can be set using standard \href{http://pandoc.org/MANUAL.html\#heading-identifiers}{Pandoc syntax}.
 
@@ -1679,142 +1681,9 @@ Cross-references still work even when we refer to an item that is not on the cur
 \hypertarget{ux81eaux5b9aux4e49ux5757}{%
 \section{自定义块}\label{ux81eaux5b9aux4e49ux5757}}
 
-\begin{rmdimportant}
-We recommend that you use the new syntax to create custom blocks, which is introduced in \href{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}{Section 9.6 in the \emph{R Markdown Cookbook}} \citep{rmarkdown2020}. We do not recommend using the \texttt{block} or \texttt{block2} engine described below. Those will be deprecated in a future version of \textbf{bookdown}. Please remember to switch to the new syntax for your content if you are still using one of these engines. Thanks for your understanding!
+Custom blocks are often used in technical books to create salient boxes of code and/or narrative that call the reader's attention. For example, custom blocks may be used to highlight a note or a warning. These can be included in multiple \textbf{bookdown} output formats using Pandoc's syntax for fenced \texttt{Div} blocks (\url{https://pandoc.org/MANUAL.html\#divs-and-spans}). Section 9.6 in the \href{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}{\emph{R Markdown Cookbook}} \citep{rmarkdown2020} for instructions.
 
-\end{rmdimportant}
-
-You can generate custom blocks\index{custom block} using the \texttt{block} engine in \textbf{knitr}, i.e., the chunk option \texttt{engine\ =\ \textquotesingle{}block\textquotesingle{}}, or the more compact syntax \texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{block\}}. This engine should be used in conjunction with the chunk option \texttt{type}, which takes a character string. When the \texttt{block} engine is used, it generates a \texttt{\textless{}div\textgreater{}} to wrap the chunk content if the output format is HTML, and a LaTeX environment if the output is LaTeX. The \texttt{type} option specifies the class of the \texttt{\textless{}div\textgreater{}} and the name of the LaTeX environment. For example, the HTML output of this chunk
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{block, type=\textquotesingle{}FOO\textquotesingle{}\}}
-\InformationTok{Some text for this block.}
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
-\end{Highlighting}
-\end{Shaded}
-
-will be this:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{\textless{}div} \ErrorTok{class}\OtherTok{=}\StringTok{"FOO"}\KeywordTok{\textgreater{}}
-\NormalTok{Some text for this block.}
-\KeywordTok{\textless{}/div\textgreater{}}
-\end{Highlighting}
-\end{Shaded}
-
-and the LaTeX output will be this:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{FOO}\NormalTok{\}}
-\NormalTok{Some text for this block.}
-\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{FOO}\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-It is up to the book author how to define the style of the block. You can define the style of the \texttt{\textless{}div\textgreater{}} in CSS and include it in the output via the \texttt{includes} option in the YAML metadata. Similarly, you may define the LaTeX environment via \texttt{\textbackslash{}newenvironment} and include the definition in the LaTeX output via the \texttt{includes} option. For example, we may save the following style in a CSS file, say, \texttt{style.css}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{div}\FunctionTok{.FOO}\NormalTok{ \{}
-  \KeywordTok{font{-}weight}\NormalTok{: }\DecValTok{bold}\OperatorTok{;}
-  \KeywordTok{color}\NormalTok{: }\ConstantTok{red}\OperatorTok{;}
-\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-And the YAML metadata of the R Markdown document can be:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\PreprocessorTok{{-}{-}{-}}
-\FunctionTok{output}\KeywordTok{:}
-\AttributeTok{  bookdown:}\FunctionTok{:html\_book}\KeywordTok{:}
-\AttributeTok{    }\FunctionTok{includes}\KeywordTok{:}
-\AttributeTok{      }\FunctionTok{in\_header}\KeywordTok{:}\AttributeTok{ style.css}
-\PreprocessorTok{{-}{-}{-}}
-\end{Highlighting}
-\end{Shaded}
-
-We have defined a few types of blocks for this book to show notes, tips, and warnings, etc. Below are some examples:
-
-\begin{rmdnote}
-R is free software and comes with ABSOLUTELY NO WARRANTY.
-You are welcome to redistribute it under the terms of the
-GNU General Public License versions 2 or 3.
-For more information about these matters see
-\url{http://www.gnu.org/licenses/}.
-\end{rmdnote}
-
-\begin{rmdcaution}
-R is free software and comes with ABSOLUTELY NO WARRANTY.
-You are welcome to redistribute it under the terms of the
-GNU General Public License versions 2 or 3.
-For more information about these matters see
-\url{http://www.gnu.org/licenses/}.
-\end{rmdcaution}
-
-\begin{rmdimportant}
-R is free software and comes with ABSOLUTELY NO WARRANTY.
-You are welcome to redistribute it under the terms of the
-GNU General Public License versions 2 or 3.
-For more information about these matters see
-\url{http://www.gnu.org/licenses/}.
-\end{rmdimportant}
-
-\begin{rmdtip}
-R is free software and comes with ABSOLUTELY NO WARRANTY.
-You are welcome to redistribute it under the terms of the
-GNU General Public License versions 2 or 3.
-For more information about these matters see
-\url{http://www.gnu.org/licenses/}.
-\end{rmdtip}
-
-\begin{rmdwarning}
-R is free software and comes with ABSOLUTELY NO WARRANTY.
-You are welcome to redistribute it under the terms of the
-GNU General Public License versions 2 or 3.
-For more information about these matters see
-\url{http://www.gnu.org/licenses/}.
-\end{rmdwarning}
-
-The \textbf{knitr} \texttt{block} engine was designed to display simple content (typically a paragraph of plain text). You can use simple formatting syntax such as making certain words bold or italic, but more advanced syntax such as citations and cross-references will not work. However, there is an alternative engine named \texttt{block2} that supports arbitrary Markdown syntax, e.g.,
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{block2, type=\textquotesingle{}FOO\textquotesingle{}\}}
-\InformationTok{Some text for this block [@citation{-}key].}
-
-\InformationTok{{-} a list item}
-\InformationTok{{-} another item}
-
-\InformationTok{More text.}
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
-\end{Highlighting}
-\end{Shaded}
-
-The \texttt{block2} engine should also be faster than the \texttt{block} engine if you have a lot of custom blocks in the document, but its implementation was based on \href{https://github.com/jgm/pandoc/issues/2453}{a hack,} so we are not 100\% sure if it is always going to work in the future. We have not seen problems with Pandoc v1.17.2 yet.
-
-One more caveat for the \texttt{block2} engine: if the last element in the block is not an ordinary paragraph, you must leave a blank line at the end, e.g.,
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{block2, type=\textquotesingle{}FOO\textquotesingle{}\}}
-\InformationTok{Some text for this block [@citation{-}key].}
-
-\InformationTok{{-} a list item}
-\InformationTok{{-} another item}
-\InformationTok{{-} end the list with a blank line}
-
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
-\end{Highlighting}
-\end{Shaded}
-
-The theorem and proof environments in Section \ref{theorems} are actually implemented through the \texttt{block2} engine.
-
-For all custom blocks based on the \texttt{block} or \texttt{block2} engine, there is one chunk option \texttt{echo} that you can use to show (\texttt{echo\ =\ TRUE}) or hide (\texttt{echo\ =\ FALSE}) the blocks.
+The \texttt{bs4\_book()} HTML output format includes styling for selected custom blocks; see Section \ref{bs4-book}.
 
 \hypertarget{citations}{%
 \section{引文}\label{citations}}
@@ -2082,12 +1951,28 @@ In this case, all formats should be at the top level, instead of under an \textt
 \hypertarget{html}{%
 \section{HTML}\label{html}}
 
-The main difference between rendering a book (using \textbf{bookdown}) with rendering a single R Markdown document (using \textbf{rmarkdown}) to HTML\index{HTML} is that a book will generate multiple HTML pages by default --- normally one HTML file per chapter. This makes it easier to bookmark a certain chapter or share its URL with others as you read the book, and faster to load a book into the web browser. Currently we have provided a number of different styles for HTML output: the GitBook style, the Bootstrap style, and the Tufte style.
+The main difference between rendering a book (using \textbf{bookdown}) with rendering a single R Markdown document (using \textbf{rmarkdown}) to HTML\index{HTML} is that a book will generate multiple HTML pages by default---normally one HTML file per chapter. This makes it easier to bookmark a certain chapter or share its URL with others as you read the book, and faster to load a book into the web browser. Currently we have provided a number of different styles for HTML output:
+
+\begin{itemize}
+\tightlist
+\item
+  the GitBook style (Section \ref{gitbook-style}),
+\item
+  the three-column Bootstrap style (Section \ref{bs4-book}),
+\item
+  the default Bootstrap style (Section \ref{bootstrap-style}), and
+\item
+  the Tufte style (Section \ref{tufte-style}).
+\end{itemize}
 
 \hypertarget{gitbook-style}{%
 \subsection{GitBook 样式}\label{gitbook-style}}
 
 The GitBook style was borrowed from GitBook\index{GitBook}, a project launched by Friendcode, Inc.~(\url{https://www.gitbook.com}) and dedicated to helping authors write books with Markdown. It provides a beautiful style, with a layout consisting of a sidebar showing the table of contents on the left, and the main body of a book on the right. The design is responsive to the window size, e.g., the navigation buttons are displayed on the left/right of the book body when the window is wide enough, and collapsed into the bottom when the window is narrow to give readers more horizontal space to read the book body.
+
+The easiest way to get started writing a new \texttt{gitbook} is to use the RStudio Project Wizard (\emph{File \textgreater{} New Project \textgreater{} New Directory \textgreater{} Book project using bookdown}) and select \texttt{gitbook} from the dropdown menu (see Figure \ref{fig:new-bs4-book}).
+
+If you do not use RStudio or prefer a function, you can create the same project template with \texttt{bookdown::create\_gitbook()} from your R console. See \texttt{?bookdown::create\_gitbook} for help.
 
 We have made several improvements over the original GitBook project. The most significant one is that we replaced the Markdown engine with R Markdown v2 based on Pandoc, so that there are a lot more features for you to use when writing a book:
 
@@ -2166,7 +2051,7 @@ There are several sub-options in the \texttt{config} option for you to tweak som
 \AttributeTok{    }\FunctionTok{download}\KeywordTok{:}\AttributeTok{ }\CharTok{null}
 \AttributeTok{    }\FunctionTok{search}\KeywordTok{:}
 \AttributeTok{      }\FunctionTok{engine}\KeywordTok{:}\AttributeTok{ lunr}\CommentTok{ \# or fuse}
-\CommentTok{      \# options to control/tune search engine behaviour (for}
+\CommentTok{      \# options to control/tune search engine behavior (for}
 \CommentTok{      \# fuse.js, refer to https://fusejs.io/api/options.html)}
 \AttributeTok{      }\FunctionTok{options}\KeywordTok{:}\AttributeTok{ }\CharTok{null}
 \AttributeTok{    }\FunctionTok{fontsettings}\KeywordTok{:}
@@ -2307,10 +2192,290 @@ Below we show some sample YAML metadata (again, please note that these are \emph
 
 A nice effect of setting \texttt{description} and \texttt{cover-image} is that when you share the link of your book on some social network websites such as Twitter, the link can be automatically expanded to a card with the cover image and description of the book.
 
-\hypertarget{bootstrap-ux6837ux5f0f}{%
-\subsection{Bootstrap 样式}\label{bootstrap-ux6837ux5f0f}}
+\hypertarget{bs4-book}{%
+\subsection{三列 Bootstrap 样式}\label{bs4-book}}
 
-If you have used R Markdown before, you should be familiar with the Bootstrap\index{Bootstrap style} style (\url{http://getbootstrap.com}), which is the default style of the HTML output of R Markdown. The output format function in \textbf{rmarkdown} is \texttt{html\_document()}, and we have a corresponding format \texttt{html\_book()} in \textbf{bookdown} using \texttt{html\_document()} as the base format. In fact, there is a more general format \texttt{html\_chapters()} in \textbf{bookdown} and \texttt{html\_book()} is just its special case:
+The \texttt{bs4\_book()} output format is built with Bootstrap (\url{https://getbootstrap.com}), using carefully crafted features to provide a clean reading experience whether you are on a phone, tablet, or desktop. On a full-size screen, the layout includes three columns of content so readers can quickly see all chapters on the left, the current chapter in the middle, and sections within the the current chapter on the right. You can read an example book here: \url{https://mastering-shiny.org}
+
+\begin{figure}
+
+{\centering \href{https://mastering-shiny.org}{\includegraphics{images/bs4-book} }
+
+}
+
+\caption{Home page of a book with the three-column Bootstrap style.}\label{fig:unnamed-chunk-12}
+\end{figure}
+
+In addition to the basic \textbf{bookdown} components (Section \ref{components}), the main features of \texttt{bs4\_book} are:
+
+\begin{itemize}
+\item
+  Easy customization of colors and fonts with
+  \href{https://pkgs.rstudio.com/bslib/}{the \textbf{bslib} package.}
+\item
+  Built-in search (broken down by section) that helps readers quickly find what
+  they are looking for.
+\item
+  A sidebar containing a within-chapter table of contents that makes
+  navigation easy and helps provide context about your current position
+  within the chapter.
+\item
+  Thoughtful typography to make the contents as easy as possible to read,
+  regardless of the size of your device. A sticky header gets out of your
+  way when reading, but is easily accessible if you need it.
+\item
+  In-line footnotes mean you can read asides next to the next they refer
+  to. This theme is best paired with a reference style that generates
+  footnotes.
+\item
+  R syntax highlighting and autolinking by
+  \href{https://downlit.r-lib.org}{the \textbf{downlit} package} is paired with an accessible
+  color scheme designed by Alison Hill.
+\item
+  Enhanced metadata for social sharing via platforms like Twitter, LinkedIn, and Facebook, so that each chapter shared will have a unique description, auto-generated based on that chapter's content.
+\item
+  Ability to configure links to a remote repository like GitHub or GitLab, allowing readers to easily view each chapter's source file or suggest an edit.
+\end{itemize}
+
+The output format function is \href{https://pkgs.rstudio.com/bookdown/reference/bs4_book.html}{\texttt{bookdown::bs4\_book}.} Here are its arguments:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{bs4\_book}\NormalTok{(}\AttributeTok{theme =} \FunctionTok{bs4\_book\_theme}\NormalTok{(), }\AttributeTok{repo =} \ConstantTok{NULL}\NormalTok{, ...,}
+  \AttributeTok{lib\_dir =} \StringTok{"libs"}\NormalTok{, }\AttributeTok{pandoc\_args =} \ConstantTok{NULL}\NormalTok{,}
+  \AttributeTok{extra\_dependencies =} \ConstantTok{NULL}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux521bux4f5cux4e00ux672c-bs4_book}{%
+\subsubsection{\texorpdfstring{创作一本 \texttt{bs4\_book}}{创作一本 bs4\_book}}\label{ux521bux4f5cux4e00ux672c-bs4_book}}
+
+The easiest way to get started writing a new \texttt{bs4\_book} is to use the RStudio Project Wizard (\emph{File \textgreater{} New Project \textgreater{} New Directory \textgreater{} Book project using bookdown}) and select \texttt{bs4\_book} from the dropdown menu (see Figure \ref{fig:new-bs4-book}).
+
+\begin{figure}
+
+{\centering \includegraphics{images/new-bs4-book} 
+
+}
+
+\caption{Screenshot of the RStudio Project Wizard for creating a new bookdown project.}\label{fig:new-bs4-book}
+\end{figure}
+
+If you do not use RStudio or prefer a function, you can create the same project template with \texttt{bookdown::create\_bs4\_book()} from your R console. See \texttt{?bookdown::create\_bs4\_book} or \href{https://pkgs.rstudio.com/bookdown/reference/create_book.html}{the online documentation} for help.
+
+This style is designed for books that use one chapter per page.
+This means that each chapter is an \texttt{.Rmd} file, and each \texttt{.Rmd} file can contain one chapter.
+Each file \emph{must} start with a first-level heading, \texttt{\#\ Chapter\ title}, and that must be the only first-level heading in the file.
+
+Use second-level and lower-level headings within chapters like:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\#   A chapter}
+
+\FunctionTok{\#\#  A section}
+
+\FunctionTok{\#\#\# A subsection}
+\end{Highlighting}
+\end{Shaded}
+
+The first- and second-level headings appear in the current chapter's sidebar, which sticks to the top of the page as you scroll down. When a section is navigated to, third-level subheadings like ``A subsection'' will auto-expand.
+
+The \texttt{index.Rmd} file is required, and is also your first book chapter. It will be the homepage when you render the book. If you want to include content that should only be included in the HTML version of the book, you may want to include that content conditionally by combining the \textbf{knitr} \texttt{include} chunk option with the \texttt{knitr::is\_html\_output()} function. See the \href{https://bookdown.org/yihui/rmarkdown-cookbook/latex-html.html}{\emph{R Markdown Cookbook}} for instructions.
+
+A YAML header in \texttt{index.Rmd} for a \texttt{bs4\_book} would look like this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{{-}{-}{-}}
+\FunctionTok{title}\KeywordTok{:}\AttributeTok{ }\StringTok{"A Minimal Book Example"}
+\FunctionTok{author}\KeywordTok{:}\AttributeTok{ }\StringTok{"Jane Doe"}
+\FunctionTok{date}\KeywordTok{:}\AttributeTok{ }\StringTok{"2021{-}08{-}09"}
+\FunctionTok{site}\KeywordTok{:}\AttributeTok{ bookdown::bookdown\_site}
+\FunctionTok{output}\KeywordTok{:}\AttributeTok{ bookdown::bs4\_book}
+\FunctionTok{url}\KeywordTok{:}\AttributeTok{ https://bookdown.org/janedoe/bookdown{-}demo}
+\FunctionTok{cover{-}image}\KeywordTok{:}\AttributeTok{ cover.png}
+\FunctionTok{description}\KeywordTok{: }\CharTok{|}
+\NormalTok{  This is a minimal example of using the bookdown package to write a book.}
+\NormalTok{  The output format for this example is bookdown::bs4\_book.}
+\PreprocessorTok{{-}{-}{-}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux6837ux5f0f-ux5b9aux5236ux5316}{%
+\subsubsection{样式 \& 定制化}\label{ux6837ux5f0f-ux5b9aux5236ux5316}}
+
+The \texttt{bs4\_book()} format builds upon the Bootstrap CSS framework (\href{https://getbootstrap.com/docs/4.0/}{version 4}), an open source library of reusable chunks of HTML, CSS, and JavaScript code. The Bootstrap framework allows for easy customization of colors and fonts via the \textbf{bslib} R package.
+
+You can use the \texttt{theme} option to add a \texttt{primary} color in \href{https://en.wikipedia.org/wiki/Web_colors}{hexidecimal format,} which will change the color of all links in your book and the background color of the footer.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\AttributeTok{bookdown:}\FunctionTok{:bs4\_book}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{theme}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{primary}\KeywordTok{:}\AttributeTok{ }\StringTok{"\#0d6efd"}\AttributeTok{   }
+\end{Highlighting}
+\end{Shaded}
+
+For custom font settings, adding a \texttt{google:} keyword triggers \href{https://rstudio.github.io/sass/reference/font_face.html}{\texttt{sass::font\_google()}'s} ability to automatically import \href{https://fonts.google.com}{Google Font files.} Here is an example YAML that changes the \texttt{base\_font}, \texttt{heading\_font}, and \texttt{code\_font}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\AttributeTok{bookdown:}\FunctionTok{:bs4\_book}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{theme}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{primary}\KeywordTok{:}\AttributeTok{ }\StringTok{"\#0d6efd"}\AttributeTok{   }
+\AttributeTok{    }\FunctionTok{base\_font}\KeywordTok{:}\AttributeTok{ }
+\AttributeTok{      }\FunctionTok{google}\KeywordTok{:}\AttributeTok{ Sen}
+\AttributeTok{    }\FunctionTok{heading\_font}\KeywordTok{:}
+\AttributeTok{      }\FunctionTok{google}\KeywordTok{:}
+\AttributeTok{        }\FunctionTok{family}\KeywordTok{:}\AttributeTok{ Bitter}
+\AttributeTok{        }\FunctionTok{wght}\KeywordTok{:}\AttributeTok{ }\DecValTok{200}
+\AttributeTok{    }\FunctionTok{code\_font}\KeywordTok{:}
+\AttributeTok{      }\FunctionTok{google}\KeywordTok{:}\AttributeTok{ }
+\CommentTok{        \# arguments to sass::font\_google() }
+\AttributeTok{        }\FunctionTok{family}\KeywordTok{:}\AttributeTok{ DM Mono}
+\AttributeTok{        }\FunctionTok{local}\KeywordTok{:}\AttributeTok{ }\CharTok{false}
+\end{Highlighting}
+\end{Shaded}
+
+By default, \texttt{google:} will bundle font files with your book, so it downloads, caches, and serves the relevant font file(s) locally. This means that when you share it with someone else, the fonts are guaranteed to render, even without an Internet connection (\texttt{local:\ false} imports files via URL instead of serving them locally).
+
+You may also use non-Google fonts that you serve locally using \href{https://rstudio.github.io/sass/reference/font_face.html\#serving-non-google-fonts-locally}{\texttt{sass::font\_face()}.}
+
+\hypertarget{callout-blocks}{%
+\subsubsection{Callout blocks}\label{callout-blocks}}
+
+Callout blocks can be used to make certain portions of content stand out from the rest of your narrative. The \texttt{bs4\_book} style includes special callout blocks with predefined styles for adding a colored border around the text and/or code inside the callout. Use the following syntax to create a callout block:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{::: \{.rmdnote\}}
+\NormalTok{The }\InformationTok{\textasciigrave{}bs4\_book\textasciigrave{}}\NormalTok{ style also includes an }\InformationTok{\textasciigrave{}.rmdnote\textasciigrave{}}\NormalTok{ callout block}
+\NormalTok{like this one.}
+
+\NormalTok{\textasciigrave{}\textasciigrave{}}\InformationTok{\textasciigrave{}\{r collapse=TRUE\}\textasciigrave{}}
+\NormalTok{head(beaver1, n = 5)}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\InformationTok{:::}
+\end{Highlighting}
+\end{Shaded}
+
+You may use Markdown syntax and inline code inside a block. When knitted, the output will look like Figure \ref{fig:bs4-note}.
+
+\begin{figure}
+
+{\centering \includegraphics{images/rmd-note} 
+
+}
+
+\caption{A special callout block.}\label{fig:bs4-note}
+\end{figure}
+
+Available blocks are: \texttt{.rmdnote}, \texttt{.rmdcaution}, \texttt{.rmdimportant}, \texttt{.rmdtip}, and \texttt{.rmdwarning}. The colors used will be based on the default colors provided by Bootstrap, but can be also be customized in your \texttt{\_output.yml} file:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\AttributeTok{bookdown:}\FunctionTok{:bs4\_book}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{theme}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{primary}\KeywordTok{:}\AttributeTok{ }\StringTok{"\#0d6efd"}\CommentTok{   \# default .rmdnote = blue}
+\AttributeTok{    }\FunctionTok{danger}\KeywordTok{:}\AttributeTok{  }\StringTok{"\#dc3545"}\CommentTok{   \# default .rmdcaution = red}
+\AttributeTok{    }\FunctionTok{success}\KeywordTok{:}\AttributeTok{ }\StringTok{"\#198754"}\CommentTok{   \# default .rmdimportant = green}
+\AttributeTok{    }\FunctionTok{info}\KeywordTok{:}\AttributeTok{    }\StringTok{"\#0dcaf0"}\CommentTok{   \# default .rmdtip = cyan}
+\AttributeTok{    }\FunctionTok{warning}\KeywordTok{:}\AttributeTok{ }\StringTok{"\#ffc107"}\CommentTok{   \# default .rmdwarning = yellow}
+\end{Highlighting}
+\end{Shaded}
+
+For LaTeX output, only the content of these blocks will be shown with no colored outline as for HTML. It is up to the user to define the appearance of these blocks for LaTeX output using custom environments. See the \href{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}{\emph{R Markdown Cookbook}} for a how-to.
+
+\hypertarget{html-ux5143ux6570ux636e}{%
+\subsubsection{HTML 元数据}\label{html-ux5143ux6570ux636e}}
+
+Bookdown will generate HTML \texttt{\textless{}meta\textgreater{}} tags based on Pandoc's variables set in \texttt{index.Rmd}, described in \ref{metadata-for-sharing}. Additionally, \texttt{bs4\_book()} will create unique chapter descriptions auto-generated from the chapter's contents. You can have a look at \href{https://github.com/rstudio/bookdown/blob/main/inst/templates/bs4_book.html}{the \texttt{bs4\_book} HTML
+template} for details on how these variables are used.
+
+\hypertarget{ux53c2ux8003ux6587ux732eux53c2ux8003ux4e66ux76ee}{%
+\subsubsection{参考文献/参考书目}\label{ux53c2ux8003ux6587ux732eux53c2ux8003ux4e66ux76ee}}
+
+Making your citations \emph{footnotes} allows readers to read them near the text where they are used because \texttt{bs4\_book} makes footnotes appear inline when clicked.
+To do that, download a footnote style CSL file; we recommend \url{https://www.zotero.org/styles/}.
+For example, you could download the \texttt{chicago-fullnote-bibliography.csl} from \href{https://www.zotero.org/styles/?q=id\%3Achicago-fullnote-bibliography}{Zotero,} then
+add this to your \texttt{index.Rmd}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{bibliography}\KeywordTok{:}\AttributeTok{ refs.bib}
+\FunctionTok{csl}\KeywordTok{:}\AttributeTok{ chicago{-}fullnote{-}bibliography.csl}
+\end{Highlighting}
+\end{Shaded}
+
+Optionally, if you no longer want a reference section
+at the back of the book, add this line to your \texttt{index.Rmd}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{suppress{-}bibliography}\KeywordTok{:}\AttributeTok{ }\CharTok{true}
+\end{Highlighting}
+\end{Shaded}
+
+If you would like to use a citation style that does not support footnotes, references will not be shown inline in popups. In this case, you may wish to add the \texttt{split\_bib} option to your \texttt{\_output.yml}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\AttributeTok{bookdown:}\FunctionTok{:bs4\_book}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{split\_bib}\KeywordTok{:}\AttributeTok{ }\CharTok{true}
+\end{Highlighting}
+\end{Shaded}
+
+Then your bibliography will be split and relevant citation items will be put at the bottom of each chapter, so that readers do not have to navigate to a different bibliography page to see the details of citations.
+
+\hypertarget{ux6307ux5b9aux4e00ux4e2aux50a8ux5b58ux5e93}{%
+\subsubsection{指定一个储存库}\label{ux6307ux5b9aux4e00ux4e2aux50a8ux5b58ux5e93}}
+
+Specify a source repository for your book to give your readers the option to easily view each chapter's source file or suggest an edit.
+
+If your book has a default branch called ``main,'' you can use:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\AttributeTok{bookdown:}\FunctionTok{:bs4\_book}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{repo}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{base}\KeywordTok{:}\AttributeTok{ https://github.com/hadley/ggplot2{-}book}
+\AttributeTok{    }\FunctionTok{branch}\KeywordTok{:}\AttributeTok{ main}
+\end{Highlighting}
+\end{Shaded}
+
+If your book is furthermore located in a subdirectory called ``book,'' you can use:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\AttributeTok{bookdown:}\FunctionTok{:bs4\_book}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{repo}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{base}\KeywordTok{:}\AttributeTok{ https://github.com/hadley/ggplot2{-}book}
+\AttributeTok{    }\FunctionTok{branch}\KeywordTok{:}\AttributeTok{ main}
+\AttributeTok{    }\FunctionTok{subdir}\KeywordTok{:}\AttributeTok{ book}
+\end{Highlighting}
+\end{Shaded}
+
+By default, if the repo URL contains ``github,'' it will get a GitHub \href{https://fontawesome.com}{Font Awesome} icon, otherwise it gets a GitLab icon.
+To use another icon, specify it with the correct prefix such as \texttt{fas}, \texttt{fab}, and so on (\href{https://fontawesome.com/v5.0/how-to-use/on-the-web/referencing-icons/basic-use}{Font Awesome 5}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\AttributeTok{bookdown:}\FunctionTok{:bs4\_book}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{repo}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{base}\KeywordTok{:}\AttributeTok{ https://github.com/hadley/ggplot2{-}book}
+\AttributeTok{    }\FunctionTok{branch}\KeywordTok{:}\AttributeTok{ main}
+\AttributeTok{    }\FunctionTok{subdir}\KeywordTok{:}\AttributeTok{ book}
+\AttributeTok{    }\FunctionTok{icon}\KeywordTok{:}\AttributeTok{ }\StringTok{"fas fa{-}air{-}freshener"}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{bootstrap-style}{%
+\subsection{默认的 Bootstrap 样式}\label{bootstrap-style}}
+
+If you have used R Markdown before, you should be familiar with the Bootstrap\index{Bootstrap style} style (\url{https://getbootstrap.com}), which is the default style of the HTML output of R Markdown. The output format function in \textbf{rmarkdown} is \texttt{html\_document()}, and we have a corresponding format \texttt{html\_book()} in \textbf{bookdown} using \texttt{html\_document()} as the base format. You can read an example \texttt{html\_book()} here: \url{https://bookdown.org/yihui/bookdown-demo2}
+
+In fact, there is a more general format \texttt{html\_chapters()} in \textbf{bookdown} and \texttt{html\_book()} is just its special case:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2439,10 +2604,12 @@ There are many possible ways to turn \texttt{\textless{}ul\textgreater{}} lists 
 
 As a matter of fact, you can get rid of the Bootstrap style in \texttt{html\_document()} if you set the \texttt{theme} option to \texttt{null}, and you are free to apply arbitrary styles to the HTML output using the \texttt{css} option (and possibly the \texttt{includes} option if you want to include arbitrary content in the HTML head/foot).
 
-\hypertarget{tufte-ux6837ux5f0f}{%
-\subsection{Tufte 样式}\label{tufte-ux6837ux5f0f}}
+\hypertarget{tufte-style}{%
+\subsection{Tufte 样式}\label{tufte-style}}
 
-Like the Bootstrap style, the Tufte\index{Tufte style} style is provided by an output format \texttt{tufte\_html\_book()}, which is also a special case of \texttt{html\_chapters()} using \texttt{tufte::tufte\_html()} as the base format. Please see the \textbf{tufte} package \citep{R-tufte} if you are not familiar with the Tufte style. Basically, it is a layout with a main column on the left and a margin column on the right. The main body is in the main column, and the margin column is used to place footnotes, margin notes, references, and margin figures, and so on.
+Like the Bootstrap style, the Tufte\index{Tufte style} style is provided by an output format \texttt{tufte\_html\_book()}, which is also a special case of \texttt{html\_chapters()} using \texttt{tufte::tufte\_html()} as the base format. Please see the \textbf{tufte} package \citep{R-tufte} if you are not familiar with the Tufte style. You can read an example \texttt{tufte\_html\_book()} here: \url{https://bookdown.org/yihui/bookdown-demo3/}
+
+Basically, it is a layout with a main column on the left and a margin column on the right. The main body is in the main column, and the margin column is used to place footnotes, margin notes, references, and margin figures, and so on.
 
 All arguments of \texttt{tufte\_html\_book()} have exactly the same meanings as \texttt{html\_book()}, e.g., you can also customize the CSS via the \texttt{css} option. There are a few elements that are specific to the Tufte style, though, such as margin notes, margin figures, and full-width figures. These elements require special syntax to generate; please see the documentation of the \textbf{tufte} package. Note that you do not need to do anything special to footnotes and references (just use the normal Markdown syntax \texttt{\^{}{[}footnote{]}} and \texttt{{[}@citation{]}}), since they will be automatically put in the margin. A brief YAML example of the \texttt{tufte\_html\_book} format:
 
@@ -2573,7 +2740,7 @@ The above HTML and PDF output format functions are basically wrappers of output 
 ## {
 ##     pdf_book(..., base_format = rmarkdown::pdf_document)
 ## }
-## <bytecode: 0x000000001cd54b10>
+## <bytecode: 0x000000001cc43de0>
 ## <environment: namespace:bookdown>
 \end{verbatim}
 
@@ -3049,8 +3216,8 @@ There is one caveat when you write in a language that uses multibyte characters,
 \caption{帮助插入引用文献的 RStudio 插件}\label{fig:citr}
 \end{figure}
 
-\hypertarget{ux534fux540cux5de5ux4f5c}{%
-\section{协同工作}\label{ux534fux540cux5de5ux4f5c}}
+\hypertarget{collaboration}{%
+\section{协同工作}\label{collaboration}}
 
   今后创作书籍几乎肯定会涉及到多个人。你可能会和共同作者一起工作，以及不时提供反馈的读者。
 
@@ -3252,6 +3419,52 @@ Remotes: rstudio/bookdown
   以上所有脚本和配置都可以在 \texttt{bookdown-demo} 存储库中找到：\url{https://github.com/rstudio/bookdown-demo/}。如果你将它们复制到自己的存储库中，请记住使用自己的加密变量 \texttt{GITHUB\_PAT} 更改 \texttt{.travis.yml} 文件中的 \texttt{secure} 字段。
 
   GitHub 和 Travis CI 当然不是构建和出版你的书籍的唯一选择。你可以在自己的服务器上自由地存储和发布这本书。
+
+\hypertarget{html-ux53d1ux5e03ux529fux80fd}{%
+\section{HTML 发布功能}\label{html-ux53d1ux5e03ux529fux80fd}}
+
+\hypertarget{html-404}{%
+\subsection{HTML 404 页面}\label{html-404}}
+
+  如果读者试图访问书籍中无法找到的页面，浏览器将因为找不到请求的网页而显示 \href{https://en.wikipedia.org/wiki/HTTP_404}{404 错误}。这个 404 错误显示在一个 404 页面上。每个 web 服务器都有一个默认的 404 页面。但是大多数 web 服务平台，如 Netlify、Github Pages 和 Gitlab Pages 都会将网站根目录中名为 \texttt{404.html} 的文件用作自定义的错误提示网页（如果你能提供该文件）。
+
+  对于全部 HTML 书记格式，\textbf{bookdown} 会在你的输出目录中使用简单的内容（一个标题和 2 段正文）创建一个自定义的 \texttt{404.html}；请见图 \ref{fig:404-page}。
+
+\begin{figure}
+
+{\centering \includegraphics{images/404} 
+
+}
+
+\caption{示例 404 页面的屏幕截图。}\label{fig:404-page}
+\end{figure}
+
+  如您所见，这个 404 页面嵌入在书中，以便读者能够快速返回正在阅读的书籍内容。网页书籍站点的整体结构（包括导航栏、页脚、侧边栏等）和 CSS 样式仍然保留在 404 页面上。
+
+  要自定义 404 页面而不是使用 \textbf{bookdown} 提供的页面，你可以向项目根目录中添加 \texttt{\_404.Rmd} 或 \texttt{\_404.md} 文件。如果在编译书籍时找到前述任何一个文件，则该文件内容将被编译并作为嵌入书籍结构中的 404 页面的主体内容。
+
+  如果一个 404.html 文件已经存在于根目录级别的书籍源文档仓库中（与书籍的 \texttt{.Rmd} 文件放在一起），那么 \textbf{bookdown} 将保持该文件不变，并且不会将它覆盖。这是因为我们假设你的发布工作流中已经有了使用这个自定义的 \texttt{404.html} 的机制。
+
+\hypertarget{metadata-for-sharing}{%
+\subsection{用于共享的元数据}\label{metadata-for-sharing}}
+
+  Bookdown HTML 书籍将使用你在 \texttt{index.Rmd} 的 YAML 中提供的信息，为 Twitter、Facebook 和 LinkedIn 等平台上的社交共享提供 HTML 元数据。要对其进行设置，请设置书籍的 \texttt{url} 和 \texttt{cover-image} 文件的路径。该路径可以是绝对 URL，也可以是项目中图像文件的相对路径。书籍的 \texttt{title} 和 \texttt{description} 也会被使用。设置这些选项能带来一个很好的效果，当读者在社交网络网站上共享你的书籍的链接时，该链接将自动扩展为带有书籍封面图像和描述的卡片。
+
+\begin{figure}
+\includegraphics[width=0.4755\linewidth]{images/social-og} \includegraphics[width=0.5145\linewidth]{images/social-twitter} \caption{当链接在 Facebook 和 LinkedIn（左侧）和 Twitter（右侧）上被共享时，显示 HTML 书籍封面图像、标题和描述的屏幕截图。}\label{fig:social}
+\end{figure}
+
+  无论使用哪种方法发布 HTML 书籍，都可以使用 \url{https://www.opengraph.xyz} 来检查书籍元数据，它显示了跨平台共享链接时链接外观的预览。你还可以使用特定于平台的开发人员工具：
+
+\begin{itemize}
+\tightlist
+\item
+  Facebook: \url{https://developers.facebook.com/tools/debug/}
+\item
+  LinkedIn: \url{https://www.linkedin.com/post-inspector/}
+\item
+  Twitter: \url{https://cards-dev.twitter.com/validator}
+\end{itemize}
 
 \hypertarget{ux51faux7248ux5546}{%
 \section{出版商}\label{ux51faux7248ux5546}}

@@ -24,7 +24,7 @@
 <meta name="author" content="谢益辉" />
 
 
-<meta name="date" content="2021-07-19" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -219,8 +219,9 @@ div.csl-indent {
 <li class="chapter" data-level="3.1" data-path="html.html"><a href="html.html"><i class="fa fa-check"></i><b>3.1</b> HTML</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="html.html"><a href="html.html#gitbook-style"><i class="fa fa-check"></i><b>3.1.1</b> GitBook 样式</a></li>
-<li class="chapter" data-level="3.1.2" data-path="html.html"><a href="html.html#bootstrap-样式"><i class="fa fa-check"></i><b>3.1.2</b> Bootstrap 样式</a></li>
-<li class="chapter" data-level="3.1.3" data-path="html.html"><a href="html.html#tufte-样式"><i class="fa fa-check"></i><b>3.1.3</b> Tufte 样式</a></li>
+<li class="chapter" data-level="3.1.2" data-path="html.html"><a href="html.html#bs4-book"><i class="fa fa-check"></i><b>3.1.2</b> 三列 Bootstrap 样式</a></li>
+<li class="chapter" data-level="3.1.3" data-path="html.html"><a href="html.html#bootstrap-style"><i class="fa fa-check"></i><b>3.1.3</b> 默认的 Bootstrap 样式</a></li>
+<li class="chapter" data-level="3.1.4" data-path="html.html"><a href="html.html#tufte-样式"><i class="fa fa-check"></i><b>3.1.4</b> Tufte 样式</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="latexpdf.html"><a href="latexpdf.html"><i class="fa fa-check"></i><b>3.2</b> LaTeX/PDF</a></li>
 <li class="chapter" data-level="3.3" data-path="电子书.html"><a href="电子书.html"><i class="fa fa-check"></i><b>3.3</b> 电子书</a>
@@ -250,7 +251,12 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="6.1" data-path="rstudio-connect.html"><a href="rstudio-connect.html"><i class="fa fa-check"></i><b>6.1</b> RStudio Connect</a></li>
 <li class="chapter" data-level="6.2" data-path="github.html"><a href="github.html"><i class="fa fa-check"></i><b>6.2</b> GitHub</a></li>
-<li class="chapter" data-level="6.3" data-path="出版商.html"><a href="出版商.html"><i class="fa fa-check"></i><b>6.3</b> 出版商</a></li>
+<li class="chapter" data-level="6.3" data-path="html-发布功能.html"><a href="html-发布功能.html"><i class="fa fa-check"></i><b>6.3</b> HTML 发布功能</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="html-发布功能.html"><a href="html-发布功能.html#html-404"><i class="fa fa-check"></i><b>6.3.1</b> HTML 404 页面</a></li>
+<li class="chapter" data-level="6.3.2" data-path="html-发布功能.html"><a href="html-发布功能.html#用于共享的元数据"><i class="fa fa-check"></i><b>6.3.2</b> 用于共享的元数据</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="出版商.html"><a href="出版商.html"><i class="fa fa-check"></i><b>6.4</b> 出版商</a></li>
 </ul></li>
 <li class="appendix"><span><b>附录</b></span></li>
 <li class="chapter" data-level="A" data-path="software-tools.html"><a href="software-tools.html"><i class="fa fa-check"></i><b>A</b> 软件工具</a>
@@ -288,13 +294,13 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="r-代码" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> R 代码</h2>
-<p>  R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 <code>`r R_CODE`</code>，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 <code>{r}</code>，在 <code>{}</code> 内有（可选的）块选项，例如：</p>
+<p>  R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 <code>`r R_CODE`</code>，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 <code>{r}</code>，在 <code>{}</code> 内有（可选的）区块选项，例如：</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb42-1"><a href="r-代码.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r chunk-label, echo = FALSE, fig.cap = &#39;A figure caption.&#39;}</span></span>
 <span id="cb42-2"><a href="r-代码.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="in">1 + 1</span></span>
 <span id="cb42-3"><a href="r-代码.html#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="in">rnorm(10)  # 10 个随机数</span></span>
 <span id="cb42-4"><a href="r-代码.html#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="in">plot(dist ~ speed, cars)  # 绘制散点图</span></span>
 <span id="cb42-5"><a href="r-代码.html#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>  有关 <strong>knitr</strong> 块选项的详细信息，请参阅 <span class="citation"><a href="#ref-xie2015" role="doc-biblioref">Xie</a> (<a href="#ref-xie2015" role="doc-biblioref">2015</a>)</span> 或网页 <a href="http://yihui.org/knitr/options" class="uri">http://yihui.org/knitr/options</a>。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 <a href="configuration.html#configuration">4.4</a> 节中的 <code>before_chapter_script</code> 和 <code>after_chapter_script</code>。</p>
+<p>  有关 <strong>knitr</strong> 区块选项的详细信息，请参阅 <span class="citation"><a href="#ref-xie2015" role="doc-biblioref">Xie</a> (<a href="#ref-xie2015" role="doc-biblioref">2015</a>)</span> 或网页 <a href="http://yihui.org/knitr/options" class="uri">http://yihui.org/knitr/options</a>。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 <a href="configuration.html#configuration">4.4</a> 节中的 <code>before_chapter_script</code> 和 <code>after_chapter_script</code>。</p>
 </div>
 <h3>参考文献</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
@@ -354,6 +360,9 @@ gitbook.start({
 "download": ["bookdown-book-zhCN.pdf", "bookdown-book-zhCN.epub", "bookdown-book-zhCN.mobi"],
 "toc": {
 "collapse": "none"
+},
+"search": {
+"engine": "fuse"
 }
 });
 });

@@ -92,7 +92,7 @@
 <text transform='translate(40.32,123.96) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arial;' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>400</text>
 <text transform='translate(40.32,68.04) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arial;' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>600</text>
 <text transform='translate(40.32,12.13) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arial;' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>800</text>
-<polyline points='57.60,244.80 430.56,244.80 430.56,1.44 57.60,1.44 57.60,244.80 ' style='stroke-width: 0.75;' />
+<polygon points='57.60,244.80 430.56,244.80 430.56,1.44 57.60,1.44 ' style='stroke-width: 0.75; fill: none;' />
 <text x='244.08' y='299.52' text-anchor='middle' style='font-size: 12.00px; font-family: Arial;' textLength='64.71px' lengthAdjust='spacingAndGlyphs'>temperature</text>
 <text transform='translate(11.52,123.12) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arial;' textLength='46.70px' lengthAdjust='spacingAndGlyphs'>pressure</text>
 </g>

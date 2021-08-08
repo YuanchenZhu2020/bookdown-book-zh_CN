@@ -103,7 +103,7 @@
 <text transform='translate(40.32,107.05) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arial;' textLength='13.35px' lengthAdjust='spacingAndGlyphs'>80</text>
 <text transform='translate(40.32,59.82) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arial;' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>100</text>
 <text transform='translate(40.32,12.59) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arial;' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>120</text>
-<polyline points='57.60,302.40 502.56,302.40 502.56,1.44 57.60,1.44 57.60,302.40 ' style='stroke-width: 0.75;' />
+<polygon points='57.60,302.40 502.56,302.40 502.56,1.44 57.60,1.44 ' style='stroke-width: 0.75; fill: none;' />
 <text x='280.08' y='357.12' text-anchor='middle' style='font-size: 12.00px; font-family: Arial;' textLength='32.70px' lengthAdjust='spacingAndGlyphs'>speed</text>
 <text transform='translate(11.52,151.92) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: Arial;' textLength='18.68px' lengthAdjust='spacingAndGlyphs'>dist</text>
 </g>

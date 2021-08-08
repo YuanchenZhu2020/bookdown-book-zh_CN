@@ -545,7 +545,7 @@ There are many possible ways to turn `<ul>` lists into navigation menus if you d
 
 As a matter of fact, you can get rid of the Bootstrap style in `html_document()` if you set the `theme` option to `null`, and you are free to apply arbitrary styles to the HTML output using the `css` option (and possibly the `includes` option if you want to include arbitrary content in the HTML head/foot).
 
-### Tufte 样式
+### Tufte 样式 {#tufte-style}
 
 Like the Bootstrap style, the Tufte\index{Tufte style} style is provided by an output format `tufte_html_book()`, which is also a special case of `html_chapters()` using `tufte::tufte_html()` as the base format. Please see the **tufte** package [@R-tufte] if you are not familiar with the Tufte style. You can read an example `tufte_html_book()` here: <https://bookdown.org/yihui/bookdown-demo3/>
 

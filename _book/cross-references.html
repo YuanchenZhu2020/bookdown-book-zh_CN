@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.6 Cross-references | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
+  <title>2.6 交叉引用 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.6 Cross-references | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
+  <meta property="og:title" content="2.6 交叉引用 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://bookdown.org/yihui/bookdown/" />
   <meta property="og:image" content="https://bookdown.org/yihui/bookdown//images/cover.jpg" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.6 Cross-references | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
+  <meta name="twitter:title" content="2.6 交叉引用 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   
   <meta name="twitter:description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
   <meta name="twitter:image" content="https://bookdown.org/yihui/bookdown//images/cover.jpg" />
@@ -24,7 +24,7 @@
 <meta name="author" content="谢益辉" />
 
 
-<meta name="date" content="2021-07-15" />
+<meta name="date" content="2021-08-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,16 +32,16 @@
   
   
 <link rel="prev" href="tables.html"/>
-<link rel="next" href="custom-blocks.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<link rel="next" href="自定义块.html"/>
+<script src="libs/header-attrs/header-attrs.js"></script>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
@@ -51,16 +51,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.16/datatables.js"></script>
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding/datatables.js"></script>
+<link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -172,6 +172,9 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="翻译说明.html"><a href="翻译说明.html"><i class="fa fa-check"></i>翻译说明</a></li>
 <li class="chapter" data-level="" data-path="排版说明.html"><a href="排版说明.html"><i class="fa fa-check"></i>排版说明</a></li>
 <li class="chapter" data-level="" data-path="翻译进度.html"><a href="翻译进度.html"><i class="fa fa-check"></i>翻译进度</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="前言.html"><a href="前言.html"><i class="fa fa-check"></i>前言</a>
+<ul>
 <li class="chapter" data-level="" data-path="为什么要阅读这本书.html"><a href="为什么要阅读这本书.html"><i class="fa fa-check"></i>为什么要阅读这本书</a></li>
 <li class="chapter" data-level="" data-path="本书的结构.html"><a href="本书的结构.html"><i class="fa fa-check"></i>本书的结构</a></li>
 <li class="chapter" data-level="" data-path="软件信息与一些约定.html"><a href="软件信息与一些约定.html"><i class="fa fa-check"></i>软件信息与一些约定</a></li>
@@ -198,14 +201,14 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#equations"><i class="fa fa-check"></i><b>2.2.1</b> 方程编号与引用</a></li>
 <li class="chapter" data-level="2.2.2" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#theorems"><i class="fa fa-check"></i><b>2.2.2</b> 定理与证明</a></li>
-<li class="chapter" data-level="2.2.3" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#special-headers"><i class="fa fa-check"></i><b>2.2.3</b> Special headers</a></li>
-<li class="chapter" data-level="2.2.4" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#文本引用"><i class="fa fa-check"></i><b>2.2.4</b> 文本引用</a></li>
+<li class="chapter" data-level="2.2.3" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#特殊的标题"><i class="fa fa-check"></i><b>2.2.3</b> 特殊的标题</a></li>
+<li class="chapter" data-level="2.2.4" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#text-references"><i class="fa fa-check"></i><b>2.2.4</b> 文本引用</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="r-代码.html"><a href="r-代码.html"><i class="fa fa-check"></i><b>2.3</b> R 代码</a></li>
-<li class="chapter" data-level="2.4" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>2.4</b> Figures</a></li>
-<li class="chapter" data-level="2.5" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>2.5</b> Tables</a></li>
-<li class="chapter" data-level="2.6" data-path="cross-references.html"><a href="cross-references.html"><i class="fa fa-check"></i><b>2.6</b> Cross-references</a></li>
-<li class="chapter" data-level="2.7" data-path="custom-blocks.html"><a href="custom-blocks.html"><i class="fa fa-check"></i><b>2.7</b> Custom blocks</a></li>
+<li class="chapter" data-level="2.3" data-path="r-code.html"><a href="r-code.html"><i class="fa fa-check"></i><b>2.3</b> R 代码</a></li>
+<li class="chapter" data-level="2.4" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>2.4</b> 图片</a></li>
+<li class="chapter" data-level="2.5" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>2.5</b> 表格</a></li>
+<li class="chapter" data-level="2.6" data-path="cross-references.html"><a href="cross-references.html"><i class="fa fa-check"></i><b>2.6</b> 交叉引用</a></li>
+<li class="chapter" data-level="2.7" data-path="自定义块.html"><a href="自定义块.html"><i class="fa fa-check"></i><b>2.7</b> 自定义块</a></li>
 <li class="chapter" data-level="2.8" data-path="citations.html"><a href="citations.html"><i class="fa fa-check"></i><b>2.8</b> 引文</a></li>
 <li class="chapter" data-level="2.9" data-path="latex-index.html"><a href="latex-index.html"><i class="fa fa-check"></i><b>2.9</b> 索引</a></li>
 <li class="chapter" data-level="2.10" data-path="html-小组件.html"><a href="html-小组件.html"><i class="fa fa-check"></i><b>2.10</b> HTML 小组件</a></li>
@@ -216,8 +219,9 @@ div.csl-indent {
 <li class="chapter" data-level="3.1" data-path="html.html"><a href="html.html"><i class="fa fa-check"></i><b>3.1</b> HTML</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="html.html"><a href="html.html#gitbook-style"><i class="fa fa-check"></i><b>3.1.1</b> GitBook 样式</a></li>
-<li class="chapter" data-level="3.1.2" data-path="html.html"><a href="html.html#bootstrap-样式"><i class="fa fa-check"></i><b>3.1.2</b> Bootstrap 样式</a></li>
-<li class="chapter" data-level="3.1.3" data-path="html.html"><a href="html.html#tufte-样式"><i class="fa fa-check"></i><b>3.1.3</b> Tufte 样式</a></li>
+<li class="chapter" data-level="3.1.2" data-path="html.html"><a href="html.html#bs4-book"><i class="fa fa-check"></i><b>3.1.2</b> 三列 Bootstrap 样式</a></li>
+<li class="chapter" data-level="3.1.3" data-path="html.html"><a href="html.html#bootstrap-style"><i class="fa fa-check"></i><b>3.1.3</b> 默认的 Bootstrap 样式</a></li>
+<li class="chapter" data-level="3.1.4" data-path="html.html"><a href="html.html#tufte-style"><i class="fa fa-check"></i><b>3.1.4</b> Tufte 样式</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="latexpdf.html"><a href="latexpdf.html"><i class="fa fa-check"></i><b>3.2</b> LaTeX/PDF</a></li>
 <li class="chapter" data-level="3.3" data-path="电子书.html"><a href="电子书.html"><i class="fa fa-check"></i><b>3.3</b> 电子书</a>
@@ -241,13 +245,18 @@ div.csl-indent {
 <li class="chapter" data-level="5.2" data-path="预览单个章节.html"><a href="预览单个章节.html"><i class="fa fa-check"></i><b>5.2</b> 预览单个章节</a></li>
 <li class="chapter" data-level="5.3" data-path="使用-http-服务预览书籍.html"><a href="使用-http-服务预览书籍.html"><i class="fa fa-check"></i><b>5.3</b> 使用 HTTP 服务预览书籍</a></li>
 <li class="chapter" data-level="5.4" data-path="rstudio-ide.html"><a href="rstudio-ide.html"><i class="fa fa-check"></i><b>5.4</b> RStudio IDE</a></li>
-<li class="chapter" data-level="5.5" data-path="协同工作.html"><a href="协同工作.html"><i class="fa fa-check"></i><b>5.5</b> 协同工作</a></li>
+<li class="chapter" data-level="5.5" data-path="collaboration.html"><a href="collaboration.html"><i class="fa fa-check"></i><b>5.5</b> 协同工作</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>6</b> 发布与出版</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="rstudio-connect.html"><a href="rstudio-connect.html"><i class="fa fa-check"></i><b>6.1</b> RStudio Connect</a></li>
 <li class="chapter" data-level="6.2" data-path="github.html"><a href="github.html"><i class="fa fa-check"></i><b>6.2</b> GitHub</a></li>
-<li class="chapter" data-level="6.3" data-path="出版商.html"><a href="出版商.html"><i class="fa fa-check"></i><b>6.3</b> 出版商</a></li>
+<li class="chapter" data-level="6.3" data-path="html-发布功能.html"><a href="html-发布功能.html"><i class="fa fa-check"></i><b>6.3</b> HTML 发布功能</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="html-发布功能.html"><a href="html-发布功能.html#html-404"><i class="fa fa-check"></i><b>6.3.1</b> HTML 404 页面</a></li>
+<li class="chapter" data-level="6.3.2" data-path="html-发布功能.html"><a href="html-发布功能.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.3.2</b> 用于共享的元数据</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="出版商.html"><a href="出版商.html"><i class="fa fa-check"></i><b>6.4</b> 出版商</a></li>
 </ul></li>
 <li class="appendix"><span><b>附录</b></span></li>
 <li class="chapter" data-level="A" data-path="software-tools.html"><a href="software-tools.html"><i class="fa fa-check"></i><b>A</b> 软件工具</a>
@@ -284,7 +293,7 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="cross-references" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Cross-references</h2>
+<h2><span class="header-section-number">2.6</span> 交叉引用</h2>
 <p>We have explained how cross-references work for equations (Section <a href="bookdown-提供的-markdown-功能拓展.html#equations">2.2.1</a>), theorems (Section <a href="bookdown-提供的-markdown-功能拓展.html#theorems">2.2.2</a>), figures (Section <a href="figures.html#figures">2.4</a>), and tables (Section <a href="tables.html#tables">2.5</a>). In fact, you can also reference sections using the same syntax <code>\@ref(label)</code>, where <code>label</code> is the section ID. By default, Pandoc will generate an ID for all section headers, e.g., a section <code># Hello World</code> will have an ID <code>hello-world</code>. We recommend you to manually assign an ID to a section header to make sure you do not forget to update the reference label after you change the section header. To assign an ID to a section header, simply add <code>{#id}</code> to the end of the section header. Further attributes of section headers can be set using standard <a href="http://pandoc.org/MANUAL.html#heading-identifiers">Pandoc syntax</a>.</p>
 <p>When a referenced label cannot be found, you will see two question marks like <a href="#fig:does-not-exist"><strong>??</strong></a>, as well as a warning message in the R console when rendering the book.</p>
 <p>You can also create text-based links using explicit or automatic section IDs or even the actual section header text.</p>
@@ -308,18 +317,18 @@ div.csl-indent {
         </div>
       </div>
 <a href="tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="custom-blocks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="自定义块.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -340,7 +349,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/02-components.Rmd",
+"link": "https://github.com/YuanchenZhu2020/bookdown-book-zhCN/edit/main/02-components.Rmd",
 "text": "编辑"
 },
 "history": {
@@ -354,6 +363,9 @@ gitbook.start({
 "download": ["bookdown-book-zhCN.pdf", "bookdown-book-zhCN.epub", "bookdown-book-zhCN.mobi"],
 "toc": {
 "collapse": "none"
+},
+"search": {
+"engine": "fuse"
 }
 });
 });

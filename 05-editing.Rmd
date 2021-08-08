@@ -93,7 +93,7 @@ knitr::include_graphics('images/mathquill.png', dpi = NA)
 knitr::include_graphics('images/citr.png', dpi = NA)
 ```
 
-## 协同工作
+## 协同工作 {#collaboration}
 
 &emsp;&emsp;今后创作书籍几乎肯定会涉及到多个人。你可能会和共同作者一起工作，以及不时提供反馈的读者。
 

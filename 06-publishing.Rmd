@@ -149,7 +149,7 @@ knitr::include_graphics('images/404.png', dpi = NA)
 
 &emsp;&emsp;如果一个 404.html 文件已经存在于根目录级别的书籍源文档仓库中（与书籍的 `.Rmd` 文件放在一起），那么 **bookdown** 将保持该文件不变，并且不会将它覆盖。这是因为我们假设你的发布工作流中已经有了使用这个自定义的 `404.html` 的机制。
 
-### 用于共享的元数据
+### 用于共享的元数据 {#metadata-for-sharing}
 
 &emsp;&emsp;Bookdown HTML 书籍将使用你在 `index.Rmd` 的 YAML 中提供的信息，为 Twitter、Facebook 和 LinkedIn 等平台上的社交共享提供 HTML 元数据。要对其进行设置，请设置书籍的 `url` 和 `cover-image` 文件的路径。该路径可以是绝对 URL，也可以是项目中图像文件的相对路径。书籍的 `title` 和  `description` 也会被使用。设置这些选项能带来一个很好的效果，当读者在社交网络网站上共享你的书籍的链接时，该链接将自动扩展为带有书籍封面图像和描述的卡片。
 

@@ -454,7 +454,7 @@ bookdown::fence_theorems("01-intro.Rmd", output = "01-intro-new.Rmd")
 
 &emsp;&emsp;附录的编号样式将在 LaTeX/PDF 和 HTML 输出中自动更改（通常采用 A、A.1、A.2、B、B.1 等格式）。此功能不适用于电子书或 Word 输出。
 
-### 文本引用
+### 文本引用 {#text-references}
 
 &emsp;&emsp;你可以将一些文本指定给标签，并使用文档中其他位置的标签来引用这些文本。这对于长图形/表格的标题（第 \@ref(figures) 节和第 \@ref(tables) 节）特别有用，在这种情况下，你通常需要将整个字符串写入区块标题（例如 `fig.cap = "一张长图片的标题”）或 R 代码（例如 `kable(caption = "一个很长很长的表格的标题”））。当这些标题包含特殊的 HTML 或 LaTeX 字符时，它也很有用。例如，如果图片标题包含下划线，则它在 HTML 输出中正常工作，但在 LaTeX 输出中可能不起作用，因为下划线必须在 LaTeX 中进行转义。
 
@@ -478,9 +478,9 @@ plot(cars)  # 绘制散点图
 
 &emsp;&emsp;文本引用可以在文档中的任何位置使用（不仅限于图片标题）。如果你想在多个位置重用文本片段，它也很有用。
 
-## R 代码
+## R 代码 {#r-code}
 
-&emsp;&emsp;R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 `` ``r ''`r R_CODE` ``，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 `{r}`，在 `{}` 内有（可选的）块选项，例如：
+&emsp;&emsp;R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 `` ``r ''`r R_CODE` ``，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 `{r}`，在 `{}` 内有（可选的）区块选项，例如：
 
 ````markdown
 `r ''````{r chunk-label, echo = FALSE, fig.cap = 'A figure caption.'}
@@ -490,7 +490,7 @@ plot(dist ~ speed, cars)  # 绘制散点图
 ```
 ````
 
-&emsp;&emsp;有关 **knitr** 块选项的详细信息，请参阅 @xie2015 或网页 <http://yihui.org/knitr/options>。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 \@ref(configuration) 节中的 `before_chapter_script` 和 `after_chapter_script`。
+&emsp;&emsp;有关 **knitr** 区块选项的详细信息，请参阅 @xie2015 或网页 <http://yihui.org/knitr/options>。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 \@ref(configuration) 节中的 `before_chapter_script` 和 `after_chapter_script`。
 
 ## 图片 {#figures}
 
@@ -501,7 +501,7 @@ plot(dist ~ speed, cars)  # 绘制散点图
 
 &emsp;&emsp;这样排版图片的缺点是，如果当前页面没有足够的空间放置图片，图片可能会被放在页面的底部（因此会超出页边空白），或者被推到下一页，在当前页面底部留下一大块空白。这基本上就是 LaTeX 中存在着“浮动环境 (floating environments)”\index{floating environment} 的原因：不能再多个页面上进行拆分（如图片）的元素会被放在浮动环境中，因此它们可以浮动到一个有足够空间容纳它们的页面。但是，向前或向后的浮动也存在着缺点：读者可能需要跳转到另一个页面才能找到当前页面上提到的图片。这只是不得不在多个页面上以固定大小进行排版的一个自然的结果。不过 HTML 中不存在这个问题，因为所有内容都可以被连续地放置在一个页面上（大概有着无限的高度），并且不需要在有着相同页面大小的多个页面上分割任何内容。
 
-&emsp;&emsp;如果我们通过块选项 `fig.cap` 为代码块分配一个图片标题，那么 R 图形将被放入图形 (figure) 环境中，它将被自动标记和编号，还可以进行交叉引用。图形环境的标签是从代码块的标签生成的。例如，如果块标签是 `foo`，则图片标签将是 `fig:foo`（前缀 `fig:` 在 `foo` 之前添加）。如果要引用一张图片\index{cross-reference}，请使用语法 `\@ref(label)`，^[不要忘记前导的反斜杠！注意 `ref` 后面的括号 `()`；它们不是大括号 `{}`。]，其中 `label` 是图片标签，例如 `fig:foo`。
+&emsp;&emsp;如果我们通过区块选项 `fig.cap` 为代码块分配一个图片标题，那么 R 图形将被放入图形 (figure) 环境中，它将被自动标记和编号，还可以进行交叉引用。图形环境的标签是从代码块的标签生成的。例如，如果块标签是 `foo`，则图片标签将是 `fig:foo`（前缀 `fig:` 在 `foo` 之前添加）。如果要引用一张图片\index{cross-reference}，请使用语法 `\@ref(label)`，^[不要忘记前导的反斜杠！注意 `ref` 后面的括号 `()`；它们不是大括号 `{}`。]，其中 `label` 是图片标签，例如 `fig:foo`。
 
 &emsp;&emsp;如果要*在图片标题中*利用 Markdown 格式化的优势，需要使用文本引用（请参阅第 \@ref(text-references) 节）。例如，当输出格式为 LaTeX/PDF 时，包含 `_斜体文本_` 的图片标题将不起作用，因为下划线是 LaTeX 中的特殊字符。但如果使用文本引用，则当输出为 LaTeX 时，`_斜体文本_` 将被转换为 LaTeX 代码。
 
@@ -510,14 +510,14 @@ plot(dist ~ speed, cars)  # 绘制散点图
 ```
 
 
-&emsp;&emsp;块选项 `fig.asp` 能够被用来设置图片的纵横比。例如图片的高宽比。如果图片的宽度是 6 英寸 (`fig.width = 6`) 并且 `fig.asp = 0.7`，则图片的高度将会自动使用 `fig.width * fig.asp = 6 * 0.7 = 4.2` 计算得出。图 \@ref(fig:pressure-plot) 是使用块选项 `fig.asp = 0.7`、`fig.width = 6` 和 `fig.align = 'center'` 的一个例子，它是从下面的代码中生成的：
+&emsp;&emsp;区块选项 `fig.asp` 能够被用来设置图片的纵横比。例如图片的高宽比。如果图片的宽度是 6 英寸 (`fig.width = 6`) 并且 `fig.asp = 0.7`，则图片的高度将会自动使用 `fig.width * fig.asp = 6 * 0.7 = 4.2` 计算得出。图 \@ref(fig:pressure-plot) 是使用区块选项 `fig.asp = 0.7`、`fig.width = 6` 和 `fig.align = 'center'` 的一个例子，它是从下面的代码中生成的：
 
 ```{r pressure-plot, fig.asp=.7, fig.width=6, fig.cap='指定纵横比、宽度和对齐方式的一个图片示例。', fig.align='center', out.width='90%'}
 par(mar = c(4, 4, .1, .1))
 plot(pressure, pch = 19, type = 'b')
 ```
 
-&emsp;&emsp;图片的实际大小是由块选项 `fig.width` 和 `fig.height` 决定的（图片的大小由图形设备 (graphical device) 生成），并且我们能够通过块选项 `out.width` 和 `out.height` 指定图片的输出大小。这两个选项可能的取值由文档的输出格式决定。例如，`out.width = '30%'` 对于 HTML 输出格式来说是有效的，但对于 LaTeX/PDF 输出来说是无效值。然而，**knitr** 会自动地将 `x%` 格式的 `out.width` 的百分比值转化为 `(x / 100) \linewidth`。例如，当输出格式为 LaTeX 时，`out.width = '70%'` 将会被视为 `.7\linewidth`。这样的处理使得我们能够以一致的方式指定图片的相对宽度。图 \@ref(fig:cars-plot) 是 `out.width = 70%` 的一个示例。
+&emsp;&emsp;图片的实际大小是由区块选项 `fig.width` 和 `fig.height` 决定的（图片的大小由图形设备 (graphical device) 生成），并且我们能够通过区块选项 `out.width` 和 `out.height` 指定图片的输出大小。这两个选项可能的取值由文档的输出格式决定。例如，`out.width = '30%'` 对于 HTML 输出格式来说是有效的，但对于 LaTeX/PDF 输出来说是无效值。然而，**knitr** 会自动地将 `x%` 格式的 `out.width` 的百分比值转化为 `(x / 100) \linewidth`。例如，当输出格式为 LaTeX 时，`out.width = '70%'` 将会被视为 `.7\linewidth`。这样的处理使得我们能够以一致的方式指定图片的相对宽度。图 \@ref(fig:cars-plot) 是 `out.width = 70%` 的一个示例。
 
 ```{r cars-plot, out.width='70%', fig.cap='相对宽度为 70\\% 的一个图片示例。'}
 par(mar = c(4, 4, .1, .1))
@@ -525,7 +525,7 @@ plot(cars, pch = 19)
 ```
 
 
-&emsp;&emsp;如果要在一个图形环境中放置多张图片，则必须使用块选项 `fig.show = 'hold'` 来保存代码块中的多张图片，并将它们包含在一个环境中。如果所有图片的宽度之和小于或等于当前线宽 (line width)，也可以并排放置图片。例如，如果两张图片具有相同的宽度 `50%`，则它们将并排放置。类似地，可以通过指定 `out.width = '33%'` 在一行并排放置三张图片。图 \@ref(fig:multi-plots) 是放置两张图的示例，每张图的宽度为 `50%`。
+&emsp;&emsp;如果要在一个图形环境中放置多张图片，则必须使用区块选项 `fig.show = 'hold'` 来保存代码块中的多张图片，并将它们包含在一个环境中。如果所有图片的宽度之和小于或等于当前线宽 (line width)，也可以并排放置图片。例如，如果两张图片具有相同的宽度 `50%`，则它们将并排放置。类似地，可以通过指定 `out.width = '33%'` 在一行并排放置三张图片。图 \@ref(fig:multi-plots) 是放置两张图的示例，每张图的宽度为 `50%`。
 
 ```{r multi-plots, out.width='50%', fig.show='hold', fig.cap='并排放置两张图片。'}
 par(mar = c(4, 4, .1, .1))
@@ -533,33 +533,33 @@ plot(pressure, pch = 19, type = 'b')
 plot(cars, pch = 19)
 ```
 
-Sometimes you may have certain images that are not generated from R code, and you can include them in R Markdown via the function `knitr::include_graphics()`. Figure \@ref(fig:knitr-logo) is an example of three **knitr** logos included in a figure environment. You may pass one or multiple image paths to the `include_graphics()`\index{knitr::include\_graphics()} function, and all chunk options that apply to normal R plots also apply to these images, e.g., you can use `out.width = '33%'` to set the widths of these images in the output document.
+&emsp;&emsp;有时，你可能有一些不是从 R 代码生成的图片，这时可以通过函数 `knitr::include_graphics()` 将它们包含在 R Markdown 中。图 \@ref(fig:knitr-logo) 是在图形环境中包含三个 **knitr** 徽标的示例。你可以将一个或多个图像路径传递给 `include_graphics()`\index{knitr::include\_graphics()} 函数，并且应用于普通 R plots 的所有区块选项也适用于这些图像，例如，可以使用 `out.width = '33%'` 设置这些图像在输出文档中的宽度。
 
-```{r knitr-logo, out.width='32.8%', fig.show='hold', fig.cap='Three knitr logos included in the document from an external PNG image file.'}
+```{r knitr-logo, out.width='32.8%', fig.show='hold', fig.cap='包含在文档中的来自外部 PNG 图像文件的三个 knitr 徽标。'}
 knitr::include_graphics(rep('images/knit-logo.png', 3))
 ```
 
-There are a few advantages of using `include_graphics()`:
+使用 `include_graphics()` 有以下一些优点：
 
-1. You do not need to worry about the document output format, e.g., when the output format is LaTeX, you may have to use the LaTeX command `\includegraphics{}` to include an image, and when the output format is Markdown, you have to use `![]()`. The function `include_graphics()` in **knitr** takes care of these details automatically.
-1. The syntax for controlling the image attributes is the same as when images are generated from R code, e.g., chunk options `fig.cap`, `out.width`, and `fig.show` still have the same meanings.
-1. `include_graphics()` can be smart enough to use PDF graphics automatically when the output format is LaTeX and the PDF graphics files exist, e.g., an image path `foo/bar.png` can be automatically replaced with `foo/bar.pdf` if the latter exists. PDF images often have better qualities than raster images in LaTeX/PDF output. To make use of this feature, set the argument `auto_pdf = TRUE`, or set the global option `options(knitr.graphics.auto_pdf = TRUE)` to enable this feature globally in an R session.
-1. You can easily scale these images proportionally using the same ratio. This can be done via the `dpi` argument (dots per inch), which takes the value from the chunk option `dpi` by default. If it is a numeric value and the chunk option `out.width` is not set, the output width of an image will be its actual width (in pixels) divided by `dpi`, and the unit will be inches. For example, for an image with the size 672 x 480, its output width will be 7 inches (`7in`) when `dpi = 96`. This feature requires the package **png** and/or **jpeg** to be installed. You can always override the automatic calculation of width in inches by providing a non-NULL value to the chunk option `out.width`, or use `include_graphics(dpi = NA)`.
+1. 你不需要担心文档的输出格式，例如，当输出格式为 LaTeX 时，你可能需要使用 LaTeX 命令 `\includegraphics{}` 来引入一张图片，而当输出格式是 Markdown 时，你需要使用 `![]()`。**knitr** 中的 `include_graphics()` 函数能够自动处理这些细节。
+1. 控制图像属性的语法与图像是从 R 代码生成时的语法相同，例如，区块选项 `fig.cap`、`out.width` 和 `fig.show` 仍然有着相同的含义。
+1. `include_graphics()` 的表现足够智能，可以在输出格式为 LaTeX 且存在 PDF 图片文件时自动使用 PDF 图片，例如，图片路径 `foo/bar.png` 能够自动使用 `foo/bar.pdf` 进行替换（如果后者存在）。在 LaTeX/PDF 输出中，PDF 图片通常比光栅图像具有更好的质量。要使用此功能，请设置参数 `auto_pdf = TRUE`，或者设置全局配置项 `options(knitr.graphics.auto_pdf = TRUE)`，以便在 R session 中全局启用这个功能。
+1. 你可以使用相同的比例轻松地按比例缩放这些图片。这可以通过 `dpi` 参数（每英寸像素点数）来完成。默认情况下，该参数从区块选项 `dpi` 中获取值。如果这个值是数值类型，并且并没有设置区块选项 `out.width`，那么一张图片的输出宽度将会是它的实际宽度（以像素为单位）除以 `dpi`，并且单位变为英寸。例如，对于一张大小为 672 x 480 的图片，在 `dpi = 96` 时，它的输出宽度将会是 7 英寸 (`7in`) 。这个功能需要安装有 **png** 和/或 **jpeg** 软件包。通过为区块选项 `out.width` 提供非空值，或使用 `include_graphics(dpi = NA)`，你可以覆盖以英寸为单位的图片宽度的自动计算功能。
 
 ## 表格 {#tables}
 
-For now, the most convenient way to generate a table\index{table} is the function `knitr::kable()`, because there are some internal tricks in **knitr** to make it work with **bookdown** and users do not have to know anything about these implementation details. We will explain how to use other packages and functions later in this section.
+&emsp;&emsp;目前来说，生成一个表格\index{table}的最方便的方法是使用函数 `knitr::kable()`，因为在 **knitr** 中有一些内部技巧可以使其与 **bookdown** 一起工作，并且用户并不需要知道这些实现细节。我们在本节后面将会解释如何使用其他软件包和函数。
 
-Like figures, tables with captions will also be numbered and can be referenced\index{cross-reference}. The `kable()` function will automatically generate a label for a table environment, which is the prefix `tab:` plus the chunk label. For example, the table label for a code chunk with the label `foo` will be `tab:foo`, and we can still use the syntax `\@ref(label)` to reference the table. Table \@ref(tab:table-single) is a simple example.
+&emsp;&emsp;和图片一样，带有标题的表格也将被编号并且可以被引用\index{cross-reference}。`kable()` 函数将会为表格环境自动生成一个标签，即前缀 `tab:` 加上区块标签。例如，标签为 `foo` 的代码块的表格标签将是 `tab:foo`，并且我们仍然能够使用语法 `\@ref(label)` 来引用该表格。表 \@ref(tab:table-single) 是一个简单的例子。
 
 ```{r table-single, tidy=FALSE}
 knitr::kable(
   head(mtcars[, 1:8], 10), booktabs = TRUE,
-  caption = 'A table of the first 10 rows of the mtcars data.'
+  caption = '一个包含 mtcars 数据前 10 行的表格。'
 )
 ```
 
-If you want to put multiple tables in a single table environment, wrap the data objects (usually data frames in R) into a list. See Table \@ref(tab:table-multi) for an example. Please note that this feature is only available in HTML and PDF output.
+&emsp;&emsp;如果要在单个表格环境放入多个表格，请将数据对象（通常是 R 中的数据框）封装到一个列表中有关示例请见表 \@ref(tab:table-multi)。请注意此功能仅在 HTML 和 PDF 输出格式中起作用。
 
 ```{r table-multi, tidy=FALSE}
 knitr::kable(
@@ -567,23 +567,23 @@ knitr::kable(
     head(iris[, 1:2], 3),
     head(mtcars[, 1:3], 5)
   ),
-  caption = 'A Tale of Two Tables.', booktabs = TRUE
+  caption = '两个表格的故事。', booktabs = TRUE
 )
 ```
 
-When you do not want a table to float in PDF, you may use the LaTeX package [**longtable**,](https://www.ctan.org/pkg/longtable)\index{longtable} which can break a table across multiple pages. To use **longtable**, pass `longtable = TRUE` to `kable()`, and make sure to include `\usepackage{longtable}` in the LaTeX preamble (see Section \@ref(yaml-options) for how to customize the LaTeX preamble). Of course, this is irrelevant to HTML output, since tables in HTML do not need to float.
+&emsp;&emsp;当你不希望表格在 PDF 中浮动时，可以使用 LaTeX 软件包 [**longtable**](https://www.ctan.org/pkg/longtable)\index{longtable}，它可以在多个页面上截断一个表格。要使用 **longtable**，请将 `longtable = TRUE` 参数传递给 `kable()`，并确保在 LaTeX 导言 (preamble) 中包含 `\usepackage{longtable}`（有关如何自定义 LaTeX 导言的信息，请参阅第 \@ref(yaml-options) 节)。当然，这与 HTML 输出无关，因为 HTML 中的表格并不需要浮动。
 
 ```{r longtable, tidy=FALSE}
 knitr::kable(
   iris[1:55, ], longtable = TRUE, booktabs = TRUE,
-  caption = 'A table generated by the longtable package.'
+  caption = '由 longtable 软件包生成的表格。'
 )
 ```
 
-Pandoc supports several types of [Markdown tables,](http://pandoc.org/MANUAL.html#tables) such as simple tables, multiline tables, grid tables, and pipe tables. What `knitr::kable()` generates is a simple table like this:
+&emsp;&emsp;Pandoc 支持多种类型的 [Markdown 表格](http://pandoc.org/MANUAL.html#tables)，例如简单表格、多行表格、栅格表格和管道表格。`knitr::kable()` 生成的是这样一个简单的表格：
 
 ```markdown
-Table: A simple table in Markdown.
+表：Markdown 的一个简单表格。
 
  Sepal.Length   Sepal.Width   Petal.Length   Petal.Width
 -------------  ------------  -------------  ------------
@@ -595,11 +595,11 @@ Table: A simple table in Markdown.
           5.4           3.9            1.7           0.4
 ```
 
-You can use any types of Markdown tables in your document. To be able to cross-reference a Markdown table, it must have a labeled caption of the form `Table: (\#label) Caption here`, where `label` must have the prefix `tab:`, e.g., `tab:simple-table`.
+&emsp;&emsp;你可以在文档中使用任何类型的 Markdown 表格。为了能够交叉引用 Markdown 表格，它必须具有 `Table: (\#label) Caption here` 格式的标签标题，其中 `label` 必须具有前缀 `tab:`，例如 `tab:simple-table`。
 
-If you decide to use other R packages to generate tables, you have to make sure the label for the table environment appears in the beginning of the table caption in the form `(\#label)` (again, `label` must have the prefix `tab:`). You have to be very careful about the _portability_ of the table generating function: it should work for both HTML and LaTeX output automatically, so it must consider the output format internally (check `knitr::opts_knit$get('rmarkdown.pandoc.to')`). When writing out an HTML table, the caption must be written in the `<caption></caption>` tag. For simple tables, `kable()` should suffice. If you have to create complicated tables (e.g., with certain cells spanning across multiple columns/rows), you will have to take the aforementioned issues into consideration.
+&emsp;&emsp;如果决定使用其它 R 软件包生成表格，则必须确保表格环境的标签以 `(\#label)` 的格式出现在表格标题的开头（同样地，`label` 必须具有前缀 `tab:`）。你必须非常小心表格生成函数的 *通用性*：它应该在 HTML 和 LaTeX 输出格式下能够自动正常工作，因此必须在内部考虑输出格式（检查 `knitr::opts_knit$get('rmarkdown.pandoc.to')`）。当输出 HTML 表格时，标题必须写在 `<caption></caption>` 标签中，不过对于简单的表格，`kable()` 就足够了。如果你需要创建复杂的表格（例如，某些单元格跨越多列/行），则必须考虑上述问题。
 
-## 交叉引用
+## 交叉引用 {#cross-references}
 
 We have explained how cross-references\index{cross-reference} work for equations (Section \@ref(equations)), theorems (Section \@ref(theorems)), figures (Section \@ref(figures)), and tables (Section \@ref(tables)). In fact, you can also reference sections using the same syntax `\@ref(label)`, where `label` is the section ID. By default, Pandoc will generate an ID for all section headers, e.g., a section `# Hello World` will have an ID `hello-world`. We recommend you to manually assign an ID to a section header to make sure you do not forget to update the reference label after you change the section header. To assign an ID to a section header, simply add `{#id}` to the end of the section header.  Further attributes of section headers can be set using standard [Pandoc syntax](http://pandoc.org/MANUAL.html#heading-identifiers).
 

@@ -8,7 +8,7 @@
 ]{krantz}
 \title{Bookdown: 使用 R Markdown 创作书籍和技术文档}
 \author{谢益辉}
-\date{2021-07-14}
+\date{2021-07-19}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -320,6 +320,12 @@ side-effects & 副作用 & 这里指程序设计中的``副作用''。如果一�
 upgrade/update & 升级/更新 & \\
 serve (v.) & 通过 HTTP 服务 & 直译并不贴切，因此用其行为和原理来解释这个词。 \\
 daemonized server & 守护进程（？） & 中文互联网上少见``守护服务器''这一词汇，因此将``server''作``服务程序''解，翻译为``守护进程''，日后再行修订。 \\
+caret & 脱字符、补注符 & 也就是 \texttt{\^{}}，以往文章中漏了字就使用该符号标注插入的字。 \\
+blockquote & 块引用 & 拆分为 block 和 quote 两部分翻译，意思为作为块级元素的引用文段。 \\
+fenced \texttt{div} syntax & \texttt{div} 围栏语法 & 来源于 Pandoc 的 \texttt{fenced\ div\ block}，可以使用至少三个连续的 \texttt{:} 和属性构造原生的 \texttt{Div} 块，由于类似于围栏，因此翻译为``围栏语法''。 \\
+token & 令牌、标志 & 当语境中没有``通行证''等类似含义时，使用``标志''翻译。 \\
+part title & 各部份的标题？ & 意思为将书籍中的部分章节组成一个部分，例如第 1、2、3 章组成第一部分，为这一部分的标题。 \\
+aspect ratio & 纵横比 & 专业词汇 \\
 \bottomrule
 \end{longtable}
 
@@ -737,22 +743,22 @@ Elkhorn, Nebraska
 \hypertarget{components}{%
 \chapter{组成部分}\label{components}}
 
-This chapter demonstrates the syntax of common components of a book written in \textbf{bookdown}, including code chunks, figures, tables, citations, math theorems, and equations. The approach is based on Pandoc, so we start with the syntax of Pandoc's\index{Pandoc} flavor of Markdown.
+  本章演示了用 \textbf{bookdown} 编写的书籍中常见组件的语法，包括代码块、数字、表格、引文、数学定理和公式。该方法基于 Pandoc，因此我们从 Pandoc\index{Pandoc} 风格的 Markdown 语法开始讲起。
 
 \hypertarget{markdown-syntax}{%
 \section{Markdown 语法}\label{markdown-syntax}}
 
-In this section, we give a very brief introduction to Pandoc's Markdown\index{Markdown}. Readers who are familiar with Markdown can skip this section. The comprehensive syntax of Pandoc's Markdown can be found on the Pandoc website \url{http://pandoc.org}.
+  在本节中，我们将非常简要地介绍 Pandoc 风格的 Markdown\index{Markdown}。熟悉 Markdown 的读者可以跳过这一节。Pandoc 风格的 Markdown 的全部语法可以在 Pandoc 网站 \url{http://pandoc.org} 上找到。
 
 \hypertarget{ux5185ux8054ux683cux5f0f}{%
 \subsection{内联格式}\label{ux5185ux8054ux683cux5f0f}}
 
-You can make text \emph{italic} by surrounding it with underscores or asterisks, e.g., \texttt{\_text\_} or \texttt{*text*}. For \textbf{bold} text, use two underscores (\texttt{\_\_text\_\_}) or asterisks (\texttt{**text**}). Text surrounded by \texttt{\textasciitilde{}} will be converted to a subscript (e.g., \texttt{H\textasciitilde{}2\textasciitilde{}SO\textasciitilde{}4\textasciitilde{}} renders H\textsubscript{2}SO\textsubscript{4}), and similarly, two carets (\texttt{\^{}}) produce a superscript (e.g., \texttt{Fe\^{}2+\^{}} renders Fe\textsuperscript{2+}). To mark text as \texttt{inline\ code}, use a pair of backticks, e.g., \texttt{\textasciigrave{}code\textasciigrave{}}.\footnote{To include literal backticks, use more backticks outside, e.g., you can use two backticks to preserve one backtick inside: \texttt{\textasciigrave{}\textasciigrave{}\ \textasciigrave{}code\textasciigrave{}\ \textasciigrave{}\textasciigrave{}}.} Small caps can be produced by the HTML tag \texttt{span}, e.g., \texttt{\textless{}span\ style="font-variant:small-caps;"\textgreater{}Small\ Caps\textless{}/span\textgreater{}} renders \textsc{Small Caps}. Links are created using \texttt{{[}text{]}(link)}, e.g., \texttt{{[}RStudio{]}(https://www.rstudio.com)}, and the syntax for images is similar: just add an exclamation mark, e.g., \texttt{!{[}alt\ text\ or\ image\ title{]}(path/to/image)}. Footnotes are put inside the square brackets after a caret \texttt{\^{}{[}{]}}, e.g., \texttt{\^{}{[}This\ is\ a\ footnote.{]}}. We will talk about citations in Section \ref{citations}.
+  要将文本变为 \emph{斜体} (\emph{italic})，可以用下划线或星号将它围起来，例如 \texttt{\_text\_} 或 \texttt{*text*}。对于 \textbf{粗体} (\textbf{bold}) 文本，可以使用双下划线 (\texttt{\_\_text\_\_}) 或双星号 (\texttt{**text**})。被 \texttt{\textasciitilde{}} 围住的文本将会被转换为下标（例如 \texttt{H\textasciitilde{}2\textasciitilde{}SO\textasciitilde{}4\textasciitilde{}} 呈现为 H\textsubscript{2}SO\textsubscript{4}）。类似地，两个脱字符 (\texttt{\^{}}) 能够产生上标（例如 \texttt{Fe\^{}2+\^{}} 渲染为 Fe\textsuperscript{2+}）。为了把文本标注为 \texttt{内联代码} (\texttt{inline\ code})，使用一堆反引号，例如 \texttt{\textasciigrave{}code\textasciigrave{}}。\footnote{为了呈现文本性的反引号，需要在外部使用更多的反引号，例如你可以使用两个反引号使内部的一个反引号能够呈现出来：\texttt{\textasciigrave{}\textasciigrave{}\ \textasciigrave{}code\textasciigrave{}\ \textasciigrave{}\textasciigrave{}}。}小型大写字母 (Small caps) 能够通过 HTML 标签 \texttt{span} 呈现出来，例如 \texttt{\textless{}span\ style="font-variant:small-caps;"\textgreater{}Small\ Caps\textless{}/span\textgreater{}} 呈现为 \textsc{Small Caps}。链接是使用 \texttt{{[}text{]}(link)} 呈现的，例如 \texttt{{[}RStudio{]}(https://www.rstudio.com)}，图片的语法也类似：在前面加一个感叹号即可，例如 \texttt{!{[}alt\ text\ or\ image\ title{]}(path/to/image)}。脚注放进脱字符 (\texttt{\^{}}) 后面的方括号内 \texttt{\^{}{[}{]}}，例如 \texttt{\^{}{[}This\ is\ a\ footnote.{]}}。我们将在第 \ref{citations} 节内讨论引文 (citations)。
 
 \hypertarget{ux5757ux7ea7ux5143ux7d20}{%
 \subsection{块级元素}\label{ux5757ux7ea7ux5143ux7d20}}
 
-Section headers can be written after a number of pound signs, e.g.,
+  小节标题可以在若干 \texttt{\#} 号之后写入，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -764,7 +770,7 @@ Section headers can be written after a number of pound signs, e.g.,
 \end{Highlighting}
 \end{Shaded}
 
-If you do not want a certain heading to be numbered, you can add \texttt{\{-\}} after the heading, e.g.,
+  如果你不想对某个标题进行编号，可以在标题后面添加 \texttt{\{-\}}，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -772,7 +778,7 @@ If you do not want a certain heading to be numbered, you can add \texttt{\{-\}} 
 \end{Highlighting}
 \end{Shaded}
 
-Unordered list items start with \texttt{*}, \texttt{-}, or \texttt{+}, and you can nest one list within another list by indenting the sub-list by four spaces, e.g.,
+  无序列表以 \texttt{*}、\texttt{-} 或 \texttt{+} 开头，并且你可以通过缩进四个空格将另一个列表嵌套进一个列表中，例如
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -784,7 +790,7 @@ Unordered list items start with \texttt{*}, \texttt{-}, or \texttt{+}, and you c
 \end{Highlighting}
 \end{Shaded}
 
-The output is:
+输出为：
 
 \begin{itemize}
 \tightlist
@@ -804,7 +810,7 @@ The output is:
   \end{itemize}
 \end{itemize}
 
-Ordered list items start with numbers (the rule for nested lists is the same as above), e.g.,
+  嵌套列表以数字开头（嵌套列表的书写规则同上），例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -814,7 +820,7 @@ Ordered list items start with numbers (the rule for nested lists is the same as 
 \end{Highlighting}
 \end{Shaded}
 
-The output does not look too much different with the Markdown source:
+输出结果与 Markdown 源代码并没有太多不同：
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -827,7 +833,7 @@ The output does not look too much different with the Markdown source:
   the third item
 \end{enumerate}
 
-Blockquotes are written after \texttt{\textgreater{}}, e.g.,
+  块引用 (blockquotes) 写在 \texttt{\textgreater{}} 之后，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -839,7 +845,7 @@ Blockquotes are written after \texttt{\textgreater{}}, e.g.,
 \end{Highlighting}
 \end{Shaded}
 
-The actual output (we customized the style for blockquotes in this book):
+实际输出为（我们在本书中为块引用定制了样式）：
 
 \begin{quote}
 ``I thoroughly disapprove of duels. If a man should challenge me,
@@ -849,7 +855,7 @@ to a quiet place and kill him.''
 \VA{--- Mark Twain}{}
 \end{quote}
 
-Plain code blocks can be written after three or more backticks, and you can also indent the blocks by four spaces, e.g.,
+  纯文本代码块可以在三个或更多的反引号后写入，也可以将块缩进四个空格，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -866,11 +872,11 @@ Plain code blocks can be written after three or more backticks, and you can also
 \hypertarget{ux6570ux5b66ux8868ux8fbeux5f0f}{%
 \subsection{数学表达式}\label{ux6570ux5b66ux8868ux8fbeux5f0f}}
 
-Inline LaTeX equations\index{LaTeX math expression} can be written in a pair of dollar signs using the LaTeX syntax, e.g., \texttt{\$f(k)\ =\ \{n\ \textbackslash{}choose\ k\}\ p\^{}\{k\}\ (1-p)\^{}\{n-k\}\$} (actual output: \(f(k)={n \choose k}p^{k}(1-p)^{n-k}\)); math expressions of the display style can be written in a pair of double dollar signs, e.g., \texttt{\$\$f(k)\ =\ \{n\ \textbackslash{}choose\ k\}\ p\^{}\{k\}\ (1-p)\^{}\{n-k\}\$\$}, and the output looks like this:
+  内联 LaTeX 方程\index{LaTeX math expression} 可以使用 LaTeX 语法写在一对美元符号 (\texttt{\$}) 内，例如：\texttt{\$f(k)\ =\ \{n\ \textbackslash{}choose\ k\}\ p\^{}\{k\}\ (1-p)\^{}\{n-k\}\$}（实际输出为：\(f(k)={n \choose k}p^{k}(1-p)^{n-k}\)）；展示样式的数学表达式可以用一对双美元符号表示，例如： \texttt{\$\$f(k)\ =\ \{n\ \textbackslash{}choose\ k\}\ p\^{}\{k\}\ (1-p)\^{}\{n-k\}\$\$}，其输出看起来像这样：
 
 \[f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k}\]
 
-You can also use math environments inside \texttt{\$\ \$} or \texttt{\$\$\ \$\$}, e.g.,
+  你也能够在 \texttt{\$\ \$} 或 \texttt{\$\$\ \$\$} 中使用数学环境，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -927,12 +933,14 @@ c & d
 \hypertarget{bookdown-ux63d0ux4f9bux7684-markdown-ux529fux80fdux62d3ux5c55}{%
 \section{bookdown 提供的 Markdown 功能拓展}\label{bookdown-ux63d0ux4f9bux7684-markdown-ux529fux80fdux62d3ux5c55}}
 
-Although Pandoc's Markdown is much richer than the original Markdown syntax, it still lacks a number of things that we may need for academic writing. For example, it supports math equations, but you cannot number and reference equations in multi-page HTML or EPUB output. We have provided a few Markdown extensions in \textbf{bookdown} to fill the gaps.
+  尽管 Pandoc 风格的 Markdown 比原来的 Markdown 语法要丰富得多，但它仍然缺少我们在学术写作中可能需要的一些东西。例如，它支持数学公式，但不能在多页 HTML 或 EPUB 输出中对公式进行编号和引用。我们在 \textbf{bookdown} 中提供了一些 Markdown 扩展来填补这些空白。
 
 \hypertarget{equations}{%
 \subsection{方程编号与引用}\label{equations}}
 
 To number and refer to equations\index{equation}\index{cross-reference}, put them in the equation environments and assign labels to them using the syntax \texttt{(\textbackslash{}\#eq:label)}, e.g.,
+
+  要对方程\index{equation}进行编号和引用\index{cross-reference}，请将它们放在方程环境中，并使用语法 \texttt{(\textbackslash{}\#eq:label)} 为它们指定标签，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -943,19 +951,19 @@ To number and refer to equations\index{equation}\index{cross-reference}, put the
 \end{Highlighting}
 \end{Shaded}
 
-It renders the equation below:
+方程将展示如下：
 
 \begin{equation}
 f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} \label{eq:binom}
 \end{equation}
 
-You may refer to it using \texttt{\textbackslash{}@ref(eq:binom)}, e.g., see Equation \eqref{eq:binom}.
+  你可以使用 \texttt{\textbackslash{}@ref(eq:binom)} 来引用它，例如：请看方程 \eqref{eq:binom}。
 
 \begin{rmdcaution}
-Equation labels must start with the prefix \texttt{eq:} in \textbf{bookdown}. All labels in \textbf{bookdown} must only contain alphanumeric characters, \texttt{:}, \texttt{-}, and/or \texttt{/}. Equation references work best for LaTeX/PDF output, and they are not well supported in Word output or e-books. For HTML output, \textbf{bookdown} can only number the equations with labels. Please make sure equations without labels are not numbered by either using the \texttt{equation*} environment or adding \texttt{\textbackslash{}nonumber} or \texttt{\textbackslash{}notag} to your equations. The same rules apply to other math environments, such as \texttt{eqnarray}, \texttt{gather}, \texttt{align}, and so on (e.g., you can use the \texttt{align*} environment).
+方程标签在 \textbf{bookdown} 中必须以前缀 \texttt{eq:} 开头。\textbf{bookdown} 中的所有标签只能包含字母数字字符、\texttt{:}、\texttt{-} 和/或 \texttt{/}。方程引用最适合 LaTeX/PDF 输出格式，它们在 Word 或电子书中没有收到很好的支持。对于 HTML 输出，\textbf{bookdown} 只能对带有标签的方程进行编号。请确保没有标签的方程没有使用 \texttt{equation*} 环境或在方程中添加 \texttt{\textbackslash{}nonumber} 或 \texttt{\textbackslash{}notag} 进行编号。同样的规则也适用于其他数学环境，如 \texttt{eqnarray}、\texttt{gather}、\texttt{align} 等（例如可以使用 \texttt{align*} 环境）。
 \end{rmdcaution}
 
-We demonstrate a few more math equation environments below. Here is an unnumbered equation using the \texttt{equation*} environment:
+  我们将在下面演示更多的数学方程环境。下面是一个使用 \texttt{equation*} 环境的未编号方程：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -969,7 +977,7 @@ We demonstrate a few more math equation environments below. Here is an unnumbere
 \frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x)
 \end{equation*}
 
-Below is an \texttt{align} environment \eqref{eq:align}:
+  下面展示了一个 \texttt{align} 环境 \eqref{eq:align}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -987,7 +995,7 @@ g(X_{n}) &= g(\theta)+g'({\tilde{\theta}})(X_{n}-\theta) \notag \\
   \sqrt{n}[X_{n}-\theta ] \label{eq:align}
 \end{align}
 
-You can use the \texttt{split} environment inside \texttt{equation} so that all lines share the same number \eqref{eq:var-beta}. By default, each line in the \texttt{align} environment will be assigned an equation number. We suppressed the number of the first line in the previous example using \texttt{\textbackslash{}notag}. In this example, the whole \texttt{split} environment was assigned a single number.
+  你可以在 \texttt{equation} 中使用 \texttt{split} 环境，以便所有行共享相同的编号 \eqref{eq:var-beta}。默认情况下，\texttt{align} 环境中的每一行都将被分配一个方程编号。在前面的示例中，我们使用 \texttt{\textbackslash{}notag} 取消了第一行的编号。在本例中，整个 \texttt{split} 环境被分配了一个编号。
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1018,9 +1026,9 @@ You can use the \texttt{split} environment inside \texttt{equation} so that all 
 \hypertarget{theorems}{%
 \subsection{定理与证明}\label{theorems}}
 
-Theorems\index{theorem} and proofs are commonly used in articles and books in mathematics. However, please do not be misled by the names: a ``theorem'' is just a numbered/labeled environment, and it does not have to be a mathematical theorem (e.g., it can be an example irrelevant to mathematics). Similarly, a ``proof'' is an unnumbered environment. In this section, we always use the \emph{general} meanings of a ``theorem'' and ``proof'' unless explicitly stated.
+  定理\index{theorem}和证明常用于数学文章和书籍中。但是请不要被名称误导：``定理''只是一个编号或标记的环境，它不一定是一个数学定理（例如，它可以是一个与数学无关的例子）。类似地，``证明''是一个没有编号的环境。在这一节中，除非明确说明，否则我们总是使用``定理''和``证明''的\emph{一般}含义。
 
-In \textbf{bookdown}, the types of theorem environments supported are in Table \ref{tab:theorem-envs}. To write a theorem, you can use the syntax below:
+  在 \textbf{bookdown} 中，支持的定理环境类型在表 \ref{tab:theorem-envs}。要写出一个定理，可以使用以下语法：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1031,13 +1039,13 @@ In \textbf{bookdown}, the types of theorem environments supported are in Table \
 \end{Highlighting}
 \end{Shaded}
 
-This syntax is based on Pandoc's \href{https://pandoc.org/MANUAL.html\#divs-and-spans}{fenced \texttt{Div} blocks} and can already be used in any R Markdown document to write \href{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}{custom blocks.} \textbf{Bookdown} only offers special handling for theorem and proof environments. Since this uses the syntax of Pandoc's Markdown, you can write any valid Markdown text inside the block.
+  这个语法基于 Pandoc 的 \href{https://pandoc.org/MANUAL.html\#divs-and-spans}{fenced \texttt{Div} blocks}，并且已经可以在任何 R Markdown 文档中用于编写\href{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}{自定义块}。\textbf{Bookdown} 只提供定理和证明环境的特殊处理。因为这使用了 Pandoc 风格的 Markdown 语法，所以可以在块内编写任何有效的 Markdown 文本。
 
 
 
 \begin{table}
 
-\caption{\label{tab:theorem-envs}Theorem environments in \textbf{bookdown}.}
+\caption{\label{tab:theorem-envs}\textbf{Bookdown} 中的定理环境。}
 \centering
 \begin{tabular}[t]{lll}
 \toprule
@@ -1057,9 +1065,9 @@ hypothesis & Hypothesis & hyp\\
 \end{tabular}
 \end{table}
 
-To write other theorem environments, replace \texttt{:::\ \{.theorem\}} with other environment names in Table \ref{tab:theorem-envs}, e.g., \texttt{:::\ \{.lemma\}}.
+  要编写其他定理环境，请用表 \ref{tab:theorem-envs} 中的其他环境名称替换 \texttt{:::\ \{.theorem\}}，例如 \texttt{:::\ \{.lemma\}}。
 
-A theorem can have a \texttt{name} attribute so its name will be printed. For example,
+  一个定理可以有一个 \texttt{name} 属性，这样它的名字就会被打印出来。例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1071,7 +1079,7 @@ A theorem can have a \texttt{name} attribute so its name will be printed. For ex
 \end{Highlighting}
 \end{Shaded}
 
-If you want to refer to a theorem, you should label it. The label can be provided as an ID to the block of the form \texttt{\#label}. For example,
+  如果你想引用一个定理，应该给它贴上标签。标签可以以 \texttt{\#label} 的形式作为一个 ID 提供给块。例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1081,7 +1089,7 @@ If you want to refer to a theorem, you should label it. The label can be provide
 \end{Highlighting}
 \end{Shaded}
 
-After you label a theorem, you can refer to it using the syntax \texttt{\textbackslash{}@ref(prefix:label)}.\index{cross-reference} See the column \texttt{Label\ Prefix} in Table \ref{tab:theorem-envs} for the value of \texttt{prefix} for each environment. For example, we have a labeled and named theorem below, and \texttt{\textbackslash{}@ref(thm:pyth)} gives us its theorem number \ref{thm:pyth}:
+  当你为一个定理贴上标签后，你可以使用语法 \texttt{\textbackslash{}@ref(prefix:label)}\index{cross-reference}来引用它。对于每个环境中的 \texttt{prefix} 值，请看表 \ref{tab:theorem-envs} 中的 \texttt{Label\ Prefix} 列。例如，我们在下面有一个标记和命名了的定理，\texttt{\textbackslash{}@ref(thm:pyth)} 给出了它的定理编号 \ref{thm:pyth}：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1097,18 +1105,17 @@ After you label a theorem, you can refer to it using the syntax \texttt{\textbac
 \begin{theorem}[Pythagorean theorem]
 \protect\hypertarget{thm:pyth}{}\label{thm:pyth}
 
-For a right triangle, if \(c\) denotes the length of the hypotenuse
-and \(a\) and \(b\) denote the lengths of the other two sides, we have
+对于直角三角形，如果 \(c\) 表示斜边的长度，\(a\) 和 \(b\) 表示另外两边的长度，我们有
 
 \[a^2 + b^2 = c^2\]
 
 \end{theorem}
 
-The proof environments currently supported are \texttt{proof}, \texttt{remark}, and \texttt{solution}. The syntax is similar to theorem environments, and proof environments can also be named using the \texttt{name} attribute. The only difference is that since they are unnumbered, you cannot reference them, even if you provide an ID to a proof environment.
+  目前支持的证明环有境 \texttt{proof}, \texttt{remark}, and \texttt{solution}。它的语法类似于定理环境，并且证明环境也能够使用 \texttt{name} 属性命名。唯一的区别是你不能引用它们，即便你为证明环境提供了 ID，因为它们无法进行编号。
 
-We have tried to make all these theorem and proof environments work out of the box, no matter if your output is PDF or HTML. If you are a LaTeX or HTML expert, you may want to customize the style of these environments anyway (see Chapter \ref{customization}). Customization in HTML is easy with CSS, and each environment is enclosed in \texttt{\textless{}div\textgreater{}\textless{}/div\textgreater{}} with the CSS class being the environment name, e.g., \texttt{\textless{}div\ class="lemma"\textgreater{}\textless{}/div\textgreater{}}. For LaTeX output, we have predefined the style to be \texttt{definition} for environments \texttt{definition}, \texttt{example}, \texttt{exercise}, and \texttt{hypothesis}, and \texttt{remark} for environments \texttt{proof} and \texttt{remark}. All other environments use the \texttt{plain} style. The style definition is done through the \texttt{\textbackslash{}theoremstyle\{\}} command of the \textbf{amsthm} package. If you do not want the default theorem definitions to be automatically added by \textbf{bookdown}, you can set \texttt{options(bookdown.theorem.preamble\ =\ FALSE)}. This can be useful, for example, to avoid conflicts in single documents (Section \ref{a-single-document}) using the output format \texttt{bookdown::pdf\_book} with a \texttt{base\_format} that has already included \textbf{amsmath} definitions.
+  无论你选择的输出是 PDF 还是 HTML，我们都已经尝试使所有这些定理和证明环境开箱即用。如果你是 LaTeX 或 HTML 专家，你可能希望自定义这些环境的样式（请参阅第 \ref{customization} 章）。使用 CSS 可以很容易在 HTML 中自定义样式，每个环境都包含在 \texttt{\textless{}div\textgreater{}\textless{}/div\textgreater{}} 中，CSS class 属性为环境名称，例如 \texttt{\textless{}div\ class=“lemma”\textgreater{}\textless{}/div\textgreater{}}。对于 LaTeX 输出，我们为环境 \texttt{definition}, \texttt{example}, \texttt{exercise}, and \texttt{hypothesis} 预定义了样式 \texttt{definition}，为环境 \texttt{proof} and \texttt{remark} 预定义了样式 \texttt{remark}。所有其他环境都使用 \texttt{plain} 样式。样式定义是通过 \textbf{amsthm} 包的 \texttt{\textbackslash{}theoremstyle\{\}} 命令完成的。如果你不希望 \textbf{bookdown} 自动添加默认的定理定义，可以设置 \texttt{options(bookdown.thermo.preamble\ =\ FALSE)}。例如，使用输出格式 \texttt{bookdown::pdf\_book} 和已经包含 \textbf{amsmath} 定义的 \texttt{base\_format} 来避免单个文档（第 \ref{a-single-document} 节）中的冲突非常有用。
 
-Theorems are numbered by chapters by default. If there are no chapters in your document, they are numbered by sections instead. If the whole document is unnumbered (the output format option \texttt{number\_sections\ =\ FALSE}), all theorems are numbered sequentially from 1, 2, \ldots, N. LaTeX supports numbering one theorem environment after another, e.g., let theorems and lemmas share the same counter. This is not supported for HTML/EPUB output in \textbf{bookdown}. You can change the numbering scheme in the LaTeX preamble by defining your own theorem environments, e.g.,
+  默认情况下，定理按篇章编号。如果文档中没有篇章，则按小节编号。如果整篇文档没有编号（输出格式选项为 \texttt{number\_sections\ =\ FALSE}），则所有定理都从 1、2、\ldots、N 开始依次编号。LaTeX 支持依次对一个又一个定理环境进行编号，例如，让定理和引理共享同一个计数器。\textbf{bookdown} 中的 HTML/EPUB 输出不支持此操作。你可以通过定义自己的定理环境来更改 LaTeX 导言 (preamble) 中的编号方案，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1117,14 +1124,14 @@ Theorems are numbered by chapters by default. If there are no chapters in your d
 \end{Highlighting}
 \end{Shaded}
 
-When \textbf{bookdown} detects \texttt{\textbackslash{}newtheorem\{theorem\}} in your LaTeX preamble, it will not write out its default theorem definitions, which means you have to define all theorem environments by yourself. For the sake of simplicity and consistency, we do not recommend that you do this. It can be confusing when your Theorem 18 in PDF becomes Theorem 2.4 in HTML.
+  当 \textbf{bookdown} 在 LaTeX 导言 (preamble) 中检测到 \texttt{\textbackslash{}newtheorem\{themore\}} 时，它不会输出其默认的定理定义，这意味着你必须自己定义所有定理环境。为了简单和一致性，我们不建议你这样做。当 PDF 中的定理 18 变成 HTML 中的定理 2.4 时可能会令人十分困惑。
 
-Below we show more examples\footnote{Some examples are adapted from the Wikipedia page \url{https://en.wikipedia.org/wiki/Characteristic_function_(probability_theory)}} of the theorem and proof environments, so you can see the default styles in \textbf{bookdown}.
+  下面我们展示了定理和证明环境的更多的例子\footnote{一些例子改编自维基百科页面 \url{https://en.wikipedia.org/wiki/Characteristic_function_(probability_theory)}}，所以你可以在 \textbf{bookdown} 中看到默认样式。
 
 \begin{definition}
 \protect\hypertarget{def:unlabeled-div-1}{}\label{def:unlabeled-div-1}
 
-The characteristic function of a random variable \(X\) is defined by
+随机变量 \(x\) 的特征函数定义如下：
 
 \[\varphi _{X}(t)=\operatorname {E} \left[e^{itX}\right], \; t\in\mathcal{R}\]
 
@@ -1133,7 +1140,7 @@ The characteristic function of a random variable \(X\) is defined by
 \begin{example}
 \protect\hypertarget{exm:unlabeled-div-2}{}\label{exm:unlabeled-div-2}
 
-We derive the characteristic function of \(X\sim U(0,1)\) with the probability density function \(f(x)=\mathbf{1}_{x \in [0,1]}\).
+我们用概率密度函数 \(f(x)=\mathbf{1}_{x \in [0,1]}\) 导出了特征函数 \(X\sim U(0,1)\)。
 
 \begin{equation*}
 \begin{split}
@@ -1148,14 +1155,14 @@ We derive the characteristic function of \(X\sim U(0,1)\) with the probability d
 \end{split}
 \end{equation*}
 
-Note that we used the fact \(e^{ix}=\cos(x)+i\sin(x)\) twice.
+注意，我们使用了两次 \(e^{ix}=\cos(x)+i\sin(x)\)。
 
 \end{example}
 
 \begin{lemma}
 \protect\hypertarget{lem:chf-pdf}{}\label{lem:chf-pdf}
 
-For any two random variables \(X_1\), \(X_2\), they both have the same probability distribution if and only if
+对任意两个随机变量 \(X_1\), \(X_2\)，它们都具有相同的概率分布当且仅当
 
 \[\varphi _{X_1}(t)=\varphi _{X_2}(t)\]
 
@@ -1164,7 +1171,7 @@ For any two random variables \(X_1\), \(X_2\), they both have the same probabili
 \begin{theorem}
 \protect\hypertarget{thm:chf-sum}{}\label{thm:chf-sum}
 
-If \(X_1\), \ldots, \(X_n\) are independent random variables, and \(a_1\), \ldots, \(a_n\) are some constants, then the characteristic function of the linear combination \(S_n=\sum_{i=1}^na_iX_i\) is
+如果 \(X_1\), \ldots, \(X_n\) 是相互独立的随机变量。并且 \(a_1\), \ldots, \(a_n\) 是一些常数，那么线性组合 \(S_n=\sum_{i=1}^na_iX_i\) 的特征函数是
 
 \[\varphi _{S_{n}}(t)=\prod_{i=1}^n\varphi _{X_i}(a_{i}t)=\varphi _{X_{1}}(a_{1}t)\cdots \varphi _{X_{n}}(a_{n}t)\]
 
@@ -1173,13 +1180,13 @@ If \(X_1\), \ldots, \(X_n\) are independent random variables, and \(a_1\), \ldot
 \begin{proposition}
 \protect\hypertarget{prp:unlabeled-div-3}{}\label{prp:unlabeled-div-3}
 
-The distribution of the sum of independent Poisson random variables \(X_i \sim \mathrm{Pois}(\lambda_i),\: i=1,2,\cdots,n\) is \(\mathrm{Pois}(\sum_{i=1}^n\lambda_i)\).
+独立且服从泊松分布的随机变量 \(X_i \sim \mathrm{Pois}(\lambda_i),\: i=1,2,\cdots,n\) 之和的分布是 \(\mathrm{Pois}(\sum_{i=1}^n\lambda_i)\).
 
 \end{proposition}
 
 \begin{proof}
 
-The characteristic function of \(X\sim\mathrm{Pois}(\lambda)\) is \(\varphi _{X}(t)=e^{\lambda (e^{it}-1)}\). Let \(P_n=\sum_{i=1}^nX_i\). We know from Theorem \ref{thm:chf-sum} that
+\(X\sim\mathrm{Pois}(\lambda)\) 的特征函数是 \(\varphi _{X}(t)=e^{\lambda (e^{it}-1)}\)。令 \(P_n=\sum_{i=1}^nX_i\)。我们从定理 \ref{thm:chf-sum} 可以知道
 
 \begin{equation*}
 \begin{split}
@@ -1189,68 +1196,67 @@ The characteristic function of \(X\sim\mathrm{Pois}(\lambda)\) is \(\varphi _{X}
 \end{split}
 \end{equation*}
 
-This is the characteristic function of a Poisson random variable with the parameter \(\lambda=\sum_{i=1}^n \lambda_i\). From Lemma \ref{lem:chf-pdf}, we know the distribution of \(P_n\) is \(\mathrm{Pois}(\sum_{i=1}^n\lambda_i)\).
+这是具有参数 \(\lambda=\sum_{i=1}^n \lambda_i\) 的服从泊松分布的随机变量的特征函数。从引理 \ref{lem:chf-pdf} 可以知道 \(P_n\) 的分布是 \(\mathrm{Pois}(\sum_{i=1}^n\lambda_i)\)。
 
 \end{proof}
 
 \begin{remark}
 
-In some cases, it is very convenient and easy to figure out the distribution of the sum of independent random variables using characteristic functions.
+在以些情况下，使用特征函数计算独立随机变量之和的分布是非常方便和容易的。
 
 \end{remark}
 
 \begin{corollary}
 \protect\hypertarget{cor:unlabeled-div-6}{}\label{cor:unlabeled-div-6}
 
-The characteristic function of the sum of two independent random variables \(X_1\) and \(X_2\) is the product of characteristic functions of \(X_1\) and \(X_2\), i.e.,
+两个独立随机变量 \(X_1\) 和 \(X_2\) 之和的特征函数是 \(X_1\) 和 \(X_2\) 特征函数的乘积，即
 
 \[\varphi _{X_1+X_2}(t)=\varphi _{X_1}(t) \varphi _{X_2}(t)\]
 
 \end{corollary}
 
-\begin{exercise}[Characteristic Function of the Sample Mean]
+\begin{exercise}[样本均值的特征函数]
 \protect\hypertarget{exr:unlabeled-div-7}{}\label{exr:unlabeled-div-7}
 
-Let \(\bar{X}=\sum_{i=1}^n \frac{1}{n} X_i\) be the sample mean of \(n\) independent and identically distributed random variables, each with characteristic function \(\varphi _{X}\). Compute the characteristic function of \(\bar{X}\).
+令 \(\bar{X}=\sum_{i=1}^n \frac{1}{n} X_i\) 是 \(n\) 个独立同分布的随机变量的均值，每个变量具有特征函数 \(\varphi _{X}\)。计算 \(\bar{X}\) 的特征函数。
 
 \end{exercise}
 
 \begin{solution}
 
-Applying Theorem \ref{thm:chf-sum}, we have
+应用定理 \ref{thm:chf-sum}，我们得到
 
 \[\varphi _{\bar{X}}(t)=\prod_{i=1}^n \varphi _{X_i}\left(\frac{t}{n}\right)=\left[\varphi _{X}\left(\frac{t}{n}\right)\right]^n.\]
 
 \end{solution}
 
-\begin{hypothesis}[Riemann hypothesis]
+\begin{hypothesis}[黎曼猜想]
 \protect\hypertarget{hyp:unlabeled-div-9}{}\label{hyp:unlabeled-div-9}
 
-The Riemann Zeta-function is defined as
+黎曼 Zeta 函数被定义为
 \[\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}\]
-for complex values of \(s\) and which converges when the real part of \(s\) is greater than 1. The Riemann hypothesis is that the Riemann zeta function has its zeros only at the negative even integers and complex numbers with real part \(1/2\).
+对于复数值 \(s\)，当 \(s\) 的实部大于 1 时收敛。黎曼猜想是黎曼 zeta 函数只在负偶数和实部为 \(1/2\) 的复数处有零点。
 
 \end{hypothesis}
 
 \hypertarget{theorem-engine}{%
 \subsubsection{关于旧语法的注记}\label{theorem-engine}}
 
-For older versions of \textbf{bookdown} (before v0.21), a \texttt{theorem} environment could be written like this:
+  对于较早版本的 \textbf{bookdown}（v0.21 之前），可以这样编写 \texttt{theorem} 环境：
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{theorem pyth, name="Pythagorean theorem"\}}
-\InformationTok{For a right triangle, if $c$ denotes the length of the hypotenuse}
-\InformationTok{and $a$ and $b$ denote the lengths of the other two sides, we have}
+\InformationTok{对于直角三角形，如果 $c$ 表示斜边的长度，$a$ 和 $b$ 表示另外两边的长度，我们有}
 
 \InformationTok{$$a\^{}2 + b\^{}2 = c\^{}2$$}
 \InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
 \end{Highlighting}
 \end{Shaded}
 
-This syntax still works, but we do not recommend it since the new syntax allows you to write richer content and has a cleaner implementation. However, note that the old syntax has to be used if you want the environment to work with output formats in addition to HTML and PDF, such as EPUB. The fenced \texttt{Div} syntax only works for HTML and PDF output at the moment, and we will try to improve it in the future.
+  这种语法仍然有效，但我们不建议使用这种语法，因为新语法允许编写更丰富的内容，并且具有更清晰的实现。但是请注意，如果希望环境处理除 HTML 和 PDF 以外的输出格式（如 EPUB），则必须使用旧语法。\texttt{Div} 围栏语法目前只适用于 HTML 和 PDF 输出，我们将在将来对其进行改进。
 
-This conversion between the two syntaxes is straightforward. The above theorem could be rewritten in this way:
+  这两种语法之间的转换非常简单。上述定理可以这样改写：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1263,7 +1269,7 @@ This conversion between the two syntaxes is straightforward. The above theorem c
 \end{Highlighting}
 \end{Shaded}
 
-You can use the helper function \texttt{bookdown::fence\_theorems()} to convert a whole file or a piece of text. This is a one-time operation. We have tried to do the conversion from old to new syntax safely, but we might have missed some edge cases. To make sure you do not overwrite the \texttt{input} file by accident, you can write the converted source to a new file, e.g.,
+\&emso; 你可以使用帮助函数 \texttt{bookdown::fence\_theorems()} 来转换整个文件或一段文本。这是一次性的操作。我们已经尝试过安全地从旧语法转换到新语法，但是可能错过了一些边缘情况。为确保不会意外覆盖 \texttt{input} 文件，可以将转换后的源代码写入新文件，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1271,93 +1277,93 @@ You can use the helper function \texttt{bookdown::fence\_theorems()} to convert 
 \end{Highlighting}
 \end{Shaded}
 
-Then double check the content of \texttt{01-intro-new.Rmd}. Using \texttt{output\ =\ NULL} will print the result of conversion in the R console, and is another way to check the conversion. If you are using a control version tool, you can set \texttt{output} to be the same as \texttt{input}, as it should be safe and easy for you to revert the change if anything goes wrong.
+  然后仔细检查 \texttt{01-intro-new.Rmd} 的内容。使用 \texttt{output\ =\ NULL} 将在 R 控制台中打印转换结果，这是检查转换的另一种方法。如果你使用的是版本控制工具，则可以将 \texttt{output} 设置为与 \texttt{input} 相同，因为如果出现任何问题，你应该可以安全且轻松地还原更改。
 
-\hypertarget{special-headers}{%
-\subsection{Special headers}\label{special-headers}}
+\hypertarget{ux7279ux6b8aux7684ux6807ux9898}{%
+\subsection{特殊的标题}\label{ux7279ux6b8aux7684ux6807ux9898}}
 
-There are a few special types of first-level headers that will be processed differently in \textbf{bookdown}. The first type is an unnumbered header that starts with the token \texttt{(PART)}. This kind of headers are translated to part titles\index{part}. If you are familiar with LaTeX, this basically means \texttt{\textbackslash{}part\{\}}. When your book has a large number of chapters, you may want to organize them into parts, e.g.,
-
-\begin{verbatim}
-# (PART) Part I {-} 
-
-# Chapter One
-
-# Chapter Two
-
-# (PART) Part II {-} 
-
-# Chapter Three
-\end{verbatim}
-
-A part title should be written right before the first chapter title in this part, both title in the same document. You can use \texttt{(PART\textbackslash{}*)} (the backslash before \texttt{*} is required) instead of \texttt{(PART)} if a part title should not be numbered.
-
-The second type is an unnumbered header that starts with \texttt{(APPENDIX)}, indicating that all chapters after this header are appendices\index{appendix}, e.g.,
+  有几种特殊类型的一级标题在 \textbf{bookdown} 会以不同方式处理。第一种类型是没有编号的标题，以标志 \texttt{(PART)} 开头。这种类型的标题将会翻译为书籍各部份的标题\index{part}。如果你熟悉 LaTeX 就应该知道它基本上等同于 \texttt{\textbackslash{}part\{\}}。当你的书籍有大量章节时，你可能希望将它们组织成部分，例如：
 
 \begin{verbatim}
-# Chapter One 
+# (PART) 第一部分 {-} 
 
-# Chapter Two
+# 第一章
 
-# (APPENDIX) Appendix {-} 
+# 第二章
 
-# Appendix A
+# (PART) 第二部分 {-} 
 
-# Appendix B
+# 第三章
 \end{verbatim}
 
-The numbering style of appendices will be automatically changed in LaTeX/PDF and HTML output (usually in the form A, A.1, A.2, B, B.1, \ldots). This feature is not available to e-books or Word output.
+  各部分的标题应写在本部分第一章标题之前，两个标题应在同一文件中。如果各部分标题不应该参与自动编号，则可以使用 \texttt{(PART\textbackslash{}*)}（\texttt{*} 前的反斜杠是必须的）而不是 \texttt{(PART)}。
+
+  第二种类型是以 \texttt{(APPENDIX)} 开头的无编号标题，表示此标题后面的所有章节都是附录\index{appendix}，例如：
+
+\begin{verbatim}
+# 第一章
+
+# 第二章
+
+# (APPENDIX) 附录 {-} 
+
+# 附录 A
+
+# 附录 B
+\end{verbatim}
+
+  附录的编号样式将在 LaTeX/PDF 和 HTML 输出中自动更改（通常采用 A、A.1、A.2、B、B.1 等格式）。此功能不适用于电子书或 Word 输出。
 
 \hypertarget{ux6587ux672cux5f15ux7528}{%
 \subsection{文本引用}\label{ux6587ux672cux5f15ux7528}}
 
-You can assign some text to a label and reference the text using the label elsewhere in your document. This can be particularly useful for long figure/table captions (Section \ref{figures} and \ref{tables}), in which case you normally will have to write the whole character string in the chunk header (e.g., \texttt{fig.cap\ =\ "A\ long\ long\ figure\ caption."}) or your R code (e.g., \texttt{kable(caption\ =\ "A\ long\ long\ table\ caption.")}). It is also useful when these captions contain special HTML or LaTeX characters, e.g., if the figure caption contains an underscore, it works in the HTML output but may not work in LaTeX output because the underscore must be escaped in LaTeX.
+  你可以将一些文本指定给标签，并使用文档中其他位置的标签来引用这些文本。这对于长图形/表格的标题（第 \ref{figures} 节和第 \ref{tables} 节）特别有用，在这种情况下，你通常需要将整个字符串写入区块标题（例如 \texttt{fig.cap\ =\ "一张长图片的标题”）或\ R\ 代码（例如}kable(caption = ``一个很长很长的表格的标题''））。当这些标题包含特殊的 HTML 或 LaTeX 字符时，它也很有用。例如，如果图片标题包含下划线，则它在 HTML 输出中正常工作，但在 LaTeX 输出中可能不起作用，因为下划线必须在 LaTeX 中进行转义。
 
-The syntax for a text reference is \texttt{(ref:label)\ text}, where \texttt{label} is a unique label\footnote{You may consider using the code chunk labels.} throughout the document for \texttt{text}. It must be in a separate paragraph with empty lines above and below it. The paragraph must not be wrapped into multiple lines, and should not end with a white space. For example,
+  文本引用的语法是 \texttt{(ref:label)\ text}。其中 \texttt{text} 的标签 \texttt{label} 是在整个文档中唯一的标签\footnote{你可以考使用代码块标签}。文本引用必须放在一个单独的段落中，上面和下面都有空行。段落不能有多行，也不能以空格结尾。例如，
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{(ref:foo) Define a text reference **here**. }
+\NormalTok{(ref:foo) **在这里**定义一个文本引用。}
 \end{Highlighting}
 \end{Shaded}
 
-Then you can use \texttt{(ref:foo)} in your figure/table captions. The text can contain anything that Markdown supports, as long as it is one single paragraph. Here is a complete example:
+  然后你可以在图形/表格标题中使用 \texttt{(ref:foo)}。只要是一个段落，文本可以包含 Markdown 支持的任何内容。下面是一个完整的示例：
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{A normal paragraph.}
 
-\NormalTok{(ref:foo) A scatterplot of the data }\InformationTok{\textasciigrave{}cars\textasciigrave{}}\NormalTok{ using **base** R graphics. }
+\NormalTok{(ref:foo) 使用 **base** R 图形系统绘制的数据集 }\InformationTok{\textasciigrave{}cars\textasciigrave{}}\NormalTok{ 的散点图。}
 
 \InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r foo, fig.cap=\textquotesingle{}(ref:foo)\textquotesingle{}\}}
-\InformationTok{plot(cars)  \# a scatterplot}
+\InformationTok{plot(cars)  \# 绘制散点图}
 \InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
 \end{Highlighting}
 \end{Shaded}
 
-Text references can be used anywhere in the document (not limited to figure captions). It can also be useful if you want to reuse a fragment of text in multiple places.
+  文本引用可以在文档中的任何位置使用（不仅限于图片标题）。如果你想在多个位置重用文本片段，它也很有用。
 
 \hypertarget{r-ux4ee3ux7801}{%
 \section{R 代码}\label{r-ux4ee3ux7801}}
 
-There are two types of R code in R Markdown/\textbf{knitr} documents: R code chunks\index{code chunk}, and inline R code\index{inline R code}. The syntax for the latter is \texttt{\textasciigrave{}r\ R\_CODE\textasciigrave{}}, and it can be embedded inline with other document elements. R code chunks look like plain code blocks, but have \texttt{\{r\}} after the three backticks and (optionally) chunk options inside \texttt{\{\}}, e.g.,
+  R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 \texttt{\textasciigrave{}r\ R\_CODE\textasciigrave{}}，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 \texttt{\{r\}}，在 \texttt{\{\}} 内有（可选的）块选项，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r chunk{-}label, echo = FALSE, fig.cap = \textquotesingle{}A figure caption.\textquotesingle{}\}}
 \InformationTok{1 + 1}
-\InformationTok{rnorm(10)  \# 10 random numbers}
-\InformationTok{plot(dist \textasciitilde{} speed, cars)  \# a scatterplot}
+\InformationTok{rnorm(10)  \# 10 个随机数}
+\InformationTok{plot(dist \textasciitilde{} speed, cars)  \# 绘制散点图}
 \InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
 \end{Highlighting}
 \end{Shaded}
 
-To learn more about \textbf{knitr} chunk options, see \citet{xie2015} or the web page \url{http://yihui.org/knitr/options}. For books, additional R code can be executed before/after each chapter; see \texttt{before\_chapter\_script} and \texttt{after\_chapter\_script} in Section \ref{configuration}.
+  有关 \textbf{knitr} 块选项的详细信息，请参阅 \citet{xie2015} 或网页 \url{http://yihui.org/knitr/options}。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 \ref{configuration} 节中的 \texttt{before\_chapter\_script} 和 \texttt{after\_chapter\_script}。
 
 \hypertarget{figures}{%
-\section{Figures}\label{figures}}
+\section{图片}\label{figures}}
 
-By default, figures\index{figure} have no captions in the output generated by \textbf{knitr}, which means they will be placed wherever they were generated in the R code. Below is such an example.
+  默认情况下，图片\index{figure}在 \textbf{knitr} 生成的输出文档中没有标题，这意味着它们将放在生成它们的 R 代码处。下面就是这样一个例子。
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1368,17 +1374,17 @@ By default, figures\index{figure} have no captions in the output generated by \t
 
 \includegraphics[width=0.7\linewidth]{bookdown-book-zhCN_files/figure-latex/no-caption-1}
 
-The disadvantage of typesetting figures in this way is that when there is not enough space on the current page to place a figure, it may either reach the bottom of the page (hence exceeds the page margin), or be pushed to the next page, leaving a large white margin at the bottom of the current page. That is basically why there are ``floating environments''\index{floating environment} in LaTeX: elements that cannot be split over multiple pages (like figures) are put in floating environments, so they can float to a page that has enough space to hold them. There is also a disadvantage of floating things forward or backward, though. That is, readers may have to jump to a different page to find the figure mentioned on the current page. This is simply a natural consequence of having to typeset things on multiple pages of fixed sizes. This issue does not exist in HTML, however, since everything can be placed continuously on one single page (presumably with infinite height), and there is no need to split anything across multiple pages of the same page size.
+  这样排版图片的缺点是，如果当前页面没有足够的空间放置图片，图片可能会被放在页面的底部（因此会超出页边空白），或者被推到下一页，在当前页面底部留下一大块空白。这基本上就是 LaTeX 中存在着``浮动环境 (floating environments)''\index{floating environment} 的原因：不能再多个页面上进行拆分（如图片）的元素会被放在浮动环境中，因此它们可以浮动到一个有足够空间容纳它们的页面。但是，向前或向后的浮动也存在着缺点：读者可能需要跳转到另一个页面才能找到当前页面上提到的图片。这只是不得不在多个页面上以固定大小进行排版的一个自然的结果。不过 HTML 中不存在这个问题，因为所有内容都可以被连续地放置在一个页面上（大概有着无限的高度），并且不需要在有着相同页面大小的多个页面上分割任何内容。
 
-If we assign a figure caption to a code chunk via the chunk option \texttt{fig.cap}, R plots will be put into figure environments, which will be automatically labeled and numbered, and can also be cross-referenced. The label of a figure environment is generated from the label of the code chunk, e.g., if the chunk label is \texttt{foo}, the figure label will be \texttt{fig:foo} (the prefix \texttt{fig:} is added before \texttt{foo}). To reference a figure\index{cross-reference}, use the syntax \texttt{\textbackslash{}@ref(label)},\footnote{Do not forget the leading backslash! And also note the parentheses \texttt{()} after \texttt{ref}; they are not curly braces \texttt{\{\}}.} where \texttt{label} is the figure label, e.g., \texttt{fig:foo}.
+  如果我们通过块选项 \texttt{fig.cap} 为代码块分配一个图片标题，那么 R 图形将被放入图形 (figure) 环境中，它将被自动标记和编号，还可以进行交叉引用。图形环境的标签是从代码块的标签生成的。例如，如果块标签是 \texttt{foo}，则图片标签将是 \texttt{fig:foo}（前缀 \texttt{fig:} 在 \texttt{foo} 之前添加）。如果要引用一张图片\index{cross-reference}，请使用语法 \texttt{\textbackslash{}@ref(label)}，\footnote{不要忘记前导的反斜杠！注意 \texttt{ref} 后面的括号 \texttt{()}；它们不是大括号 \texttt{\{\}}。}，其中 \texttt{label} 是图片标签，例如 \texttt{fig:foo}。
 
-To take advantage of Markdown formatting \emph{within} the figure caption, you will need to use text references (see Section \ref{text-references}). For example, a figure caption that contains \texttt{\_italic\ text\_} will not work when the output format is LaTeX/PDF, since the underscore is a special character in LaTeX, but if you use text references, \texttt{\_italic\ text\_} will be translated to LaTeX code when the output is LaTeX.
+  如果要\emph{在图片标题中}利用 Markdown 格式化的优势，需要使用文本引用（请参阅第 \ref{text-references} 节）。例如，当输出格式为 LaTeX/PDF 时，包含 \texttt{\_斜体文本\_} 的图片标题将不起作用，因为下划线是 LaTeX 中的特殊字符。但如果使用文本引用，则当输出为 LaTeX 时，\texttt{\_斜体文本\_} 将被转换为 LaTeX 代码。
 
 \begin{rmdimportant}
-If you want to cross-reference figures or tables generated from a code chunk, please make sure the chunk label only contains \emph{alphanumeric} characters (a-z, A-Z, 0-9), slashes (/), or dashes (-).
+如果要交叉引用从代码块生成的图片或表格，请确保块标签仅包含\emph{字母与数字字符 (alphanumber)} （a-z、a-z、0-9）、斜杠 (/) 或破折号 (-)。
 \end{rmdimportant}
 
-The chunk option \texttt{fig.asp} can be used to set the aspect ratio of plots, i.e., the ratio of figure height/width. If the figure width is 6 inches (\texttt{fig.width\ =\ 6}) and \texttt{fig.asp\ =\ 0.7}, the figure height will be automatically calculated from \texttt{fig.width\ *\ fig.asp\ =\ 6\ *\ 0.7\ =\ 4.2}. Figure \ref{fig:pressure-plot} is an example using the chunk options \texttt{fig.asp\ =\ 0.7}, \texttt{fig.width\ =\ 6}, and \texttt{fig.align\ =\ \textquotesingle{}center\textquotesingle{}}, generated from the code below:
+  块选项 \texttt{fig.asp} 能够被用来设置图片的纵横比。例如图片的高宽比。如果图片的宽度是 6 英寸 (\texttt{fig.width\ =\ 6}) 并且 \texttt{fig.asp\ =\ 0.7}，则图片的高度将会自动使用 \texttt{fig.width\ *\ fig.asp\ =\ 6\ *\ 0.7\ =\ 4.2} 计算得出。图 \ref{fig:pressure-plot} 是使用块选项 \texttt{fig.asp\ =\ 0.7}、\texttt{fig.width\ =\ 6} 和 \texttt{fig.align\ =\ \textquotesingle{}center\textquotesingle{}} 的一个例子，它是从下面的代码中生成的：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1393,10 +1399,10 @@ The chunk option \texttt{fig.asp} can be used to set the aspect ratio of plots, 
 
 }
 
-\caption{A figure example with the specified aspect ratio, width, and alignment.}\label{fig:pressure-plot}
+\caption{指定纵横比、宽度和对齐方式的一个图片示例。}\label{fig:pressure-plot}
 \end{figure}
 
-The actual size of a plot is determined by the chunk options \texttt{fig.width} and \texttt{fig.height} (the size of the plot generated from a graphical device), and we can specify the output size of plots via the chunk options \texttt{out.width} and \texttt{out.height}. The possible value of these two options depends on the output format of the document. For example, \texttt{out.width\ =\ \textquotesingle{}30\%\textquotesingle{}} is a valid value for HTML output, but not for LaTeX/PDF output. However, \textbf{knitr} will automatically convert a percentage value for \texttt{out.width} of the form \texttt{x\%} to \texttt{(x\ /\ 100)\ \textbackslash{}linewidth}, e.g., \texttt{out.width\ =\ \textquotesingle{}70\%\textquotesingle{}} will be treated as \texttt{.7\textbackslash{}linewidth} when the output format is LaTeX. This makes it possible to specify a relative width of a plot in a consistent manner. Figure \ref{fig:cars-plot} is an example of \texttt{out.width\ =\ 70\%}.
+  图片的实际大小是由块选项 \texttt{fig.width} 和 \texttt{fig.height} 决定的（图片的大小由图形设备 (graphical device) 生成），并且我们能够通过块选项 \texttt{out.width} 和 \texttt{out.height} 指定图片的输出大小。这两个选项可能的取值由文档的输出格式决定。例如，\texttt{out.width\ =\ \textquotesingle{}30\%\textquotesingle{}} 对于 HTML 输出格式来说是有效的，但对于 LaTeX/PDF 输出来说是无效值。然而，\textbf{knitr} 会自动地将 \texttt{x\%} 格式的 \texttt{out.width} 的百分比值转化为 \texttt{(x\ /\ 100)\ \textbackslash{}linewidth}。例如，当输出格式为 LaTeX 时，\texttt{out.width\ =\ \textquotesingle{}70\%\textquotesingle{}} 将会被视为 \texttt{.7\textbackslash{}linewidth}。这样的处理使得我们能够以一致的方式指定图片的相对宽度。图 \ref{fig:cars-plot} 是 \texttt{out.width\ =\ 70\%} 的一个示例。
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1406,10 +1412,10 @@ The actual size of a plot is determined by the chunk options \texttt{fig.width} 
 \end{Shaded}
 
 \begin{figure}
-\includegraphics[width=0.7\linewidth]{bookdown-book-zhCN_files/figure-latex/cars-plot-1} \caption{A figure example with a relative width 70\%.}\label{fig:cars-plot}
+\includegraphics[width=0.7\linewidth]{bookdown-book-zhCN_files/figure-latex/cars-plot-1} \caption{相对宽度为 70\% 的一个图片示例。}\label{fig:cars-plot}
 \end{figure}
 
-If you want to put multiple plots in one figure environment, you must use the chunk option \texttt{fig.show\ =\ \textquotesingle{}hold\textquotesingle{}} to hold multiple plots from a code chunk and include them in one environment. You can also place plots side by side if the sum of the width of all plots is smaller than or equal to the current line width. For example, if two plots have the same width \texttt{50\%}, they will be placed side by side. Similarly, you can specify \texttt{out.width\ =\ \textquotesingle{}33\%\textquotesingle{}} to arrange three plots on one line. Figure \ref{fig:multi-plots} is an example of two plots, each with a width of \texttt{50\%}.
+  如果要在一个图形环境中放置多张图片，则必须使用块选项 \texttt{fig.show\ =\ \textquotesingle{}hold\textquotesingle{}} 来保存代码块中的多张图片，并将它们包含在一个环境中。如果所有图片的宽度之和小于或等于当前线宽 (line width)，也可以并排放置图片。例如，如果两张图片具有相同的宽度 \texttt{50\%}，则它们将并排放置。类似地，可以通过指定 \texttt{out.width\ =\ \textquotesingle{}33\%\textquotesingle{}} 在一行并排放置三张图片。图 \ref{fig:multi-plots} 是放置两张图的示例，每张图的宽度为 \texttt{50\%}。
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1420,7 +1426,7 @@ If you want to put multiple plots in one figure environment, you must use the ch
 \end{Shaded}
 
 \begin{figure}
-\includegraphics[width=0.5\linewidth]{bookdown-book-zhCN_files/figure-latex/multi-plots-1} \includegraphics[width=0.5\linewidth]{bookdown-book-zhCN_files/figure-latex/multi-plots-2} \caption{Two plots placed side by side.}\label{fig:multi-plots}
+\includegraphics[width=0.5\linewidth]{bookdown-book-zhCN_files/figure-latex/multi-plots-1} \includegraphics[width=0.5\linewidth]{bookdown-book-zhCN_files/figure-latex/multi-plots-2} \caption{并排放置两张图片。}\label{fig:multi-plots}
 \end{figure}
 
 Sometimes you may have certain images that are not generated from R code, and you can include them in R Markdown via the function \texttt{knitr::include\_graphics()}. Figure \ref{fig:knitr-logo} is an example of three \textbf{knitr} logos included in a figure environment. You may pass one or multiple image paths to the \texttt{include\_graphics()}\index{knitr::include\_graphics()} function, and all chunk options that apply to normal R plots also apply to these images, e.g., you can use \texttt{out.width\ =\ \textquotesingle{}33\%\textquotesingle{}} to set the widths of these images in the output document.
@@ -1451,7 +1457,7 @@ There are a few advantages of using \texttt{include\_graphics()}:
 \end{enumerate}
 
 \hypertarget{tables}{%
-\section{Tables}\label{tables}}
+\section{表格}\label{tables}}
 
 For now, the most convenient way to generate a table\index{table} is the function \texttt{knitr::kable()}, because there are some internal tricks in \textbf{knitr} to make it work with \textbf{bookdown} and users do not have to know anything about these implementation details. We will explain how to use other packages and functions later in this section.
 
@@ -1635,8 +1641,8 @@ You can use any types of Markdown tables in your document. To be able to cross-r
 
 If you decide to use other R packages to generate tables, you have to make sure the label for the table environment appears in the beginning of the table caption in the form \texttt{(\textbackslash{}\#label)} (again, \texttt{label} must have the prefix \texttt{tab:}). You have to be very careful about the \emph{portability} of the table generating function: it should work for both HTML and LaTeX output automatically, so it must consider the output format internally (check \texttt{knitr::opts\_knit\$get(\textquotesingle{}rmarkdown.pandoc.to\textquotesingle{})}). When writing out an HTML table, the caption must be written in the \texttt{\textless{}caption\textgreater{}\textless{}/caption\textgreater{}} tag. For simple tables, \texttt{kable()} should suffice. If you have to create complicated tables (e.g., with certain cells spanning across multiple columns/rows), you will have to take the aforementioned issues into consideration.
 
-\hypertarget{cross-references}{%
-\section{Cross-references}\label{cross-references}}
+\hypertarget{ux4ea4ux53c9ux5f15ux7528}{%
+\section{交叉引用}\label{ux4ea4ux53c9ux5f15ux7528}}
 
 We have explained how cross-references\index{cross-reference} work for equations (Section \ref{equations}), theorems (Section \ref{theorems}), figures (Section \ref{figures}), and tables (Section \ref{tables}). In fact, you can also reference sections using the same syntax \texttt{\textbackslash{}@ref(label)}, where \texttt{label} is the section ID. By default, Pandoc will generate an ID for all section headers, e.g., a section \texttt{\#\ Hello\ World} will have an ID \texttt{hello-world}. We recommend you to manually assign an ID to a section header to make sure you do not forget to update the reference label after you change the section header. To assign an ID to a section header, simply add \texttt{\{\#id\}} to the end of the section header. Further attributes of section headers can be set using standard \href{http://pandoc.org/MANUAL.html\#heading-identifiers}{Pandoc syntax}.
 
@@ -1670,8 +1676,8 @@ The Pandoc documentation provides more details on \href{http://pandoc.org/MANUAL
 
 Cross-references still work even when we refer to an item that is not on the current page of the PDF or HTML output. For example, see Equation \eqref{eq:binom} and Figure \ref{fig:knitr-logo}.
 
-\hypertarget{custom-blocks}{%
-\section{Custom blocks}\label{custom-blocks}}
+\hypertarget{ux81eaux5b9aux4e49ux5757}{%
+\section{自定义块}\label{ux81eaux5b9aux4e49ux5757}}
 
 \begin{rmdimportant}
 We recommend that you use the new syntax to create custom blocks, which is introduced in \href{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}{Section 9.6 in the \emph{R Markdown Cookbook}} \citep{rmarkdown2020}. We do not recommend using the \texttt{block} or \texttt{block2} engine described below. Those will be deprecated in a future version of \textbf{bookdown}. Please remember to switch to the new syntax for your content if you are still using one of these engines. Thanks for your understanding!
@@ -2567,7 +2573,7 @@ The above HTML and PDF output format functions are basically wrappers of output 
 ## {
 ##     pdf_book(..., base_format = rmarkdown::pdf_document)
 ## }
-## <bytecode: 0x000000001d579db0>
+## <bytecode: 0x000000001cd54b10>
 ## <environment: namespace:bookdown>
 \end{verbatim}
 

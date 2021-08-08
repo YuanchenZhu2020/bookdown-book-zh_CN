@@ -79,6 +79,12 @@ lapply(names(githubs), function(pkg) {
 | upgrade/update | 升级/更新 ||
 | serve (v.) | 通过 HTTP 服务 | 直译并不贴切，因此用其行为和原理来解释这个词。 |
 | daemonized server | 守护进程（？） | 中文互联网上少见“守护服务器”这一词汇，因此将“server”作“服务程序”解，翻译为“守护进程”，日后再行修订。 |
+| caret | 脱字符、补注符 | 也就是 `^`，以往文章中漏了字就使用该符号标注插入的字。 |
+| blockquote | 块引用 | 拆分为 block 和 quote 两部分翻译，意思为作为块级元素的引用文段。 |
+| fenced `div` syntax | `div` 围栏语法 | 来源于 Pandoc 的 `fenced div block`，可以使用至少三个连续的 `:` 和属性构造原生的 `Div` 块，由于类似于围栏，因此翻译为“围栏语法”。 |
+| token | 令牌、标志 | 当语境中没有“通行证”等类似含义时，使用“标志”翻译。 |
+| part title | 各部份的标题？ | 意思为将书籍中的部分章节组成一个部分，例如第 1、2、3 章组成第一部分，为这一部分的标题。 |
+| aspect ratio | 纵横比 | 专业词汇 |
 
 ## 排版说明 {-}
 

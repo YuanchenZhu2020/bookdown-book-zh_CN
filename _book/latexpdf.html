@@ -24,7 +24,7 @@
 <meta name="author" content="谢益辉" />
 
 
-<meta name="date" content="2021-07-14" />
+<meta name="date" content="2021-07-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,14 +201,14 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#equations"><i class="fa fa-check"></i><b>2.2.1</b> 方程编号与引用</a></li>
 <li class="chapter" data-level="2.2.2" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#theorems"><i class="fa fa-check"></i><b>2.2.2</b> 定理与证明</a></li>
-<li class="chapter" data-level="2.2.3" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#special-headers"><i class="fa fa-check"></i><b>2.2.3</b> Special headers</a></li>
+<li class="chapter" data-level="2.2.3" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#特殊的标题"><i class="fa fa-check"></i><b>2.2.3</b> 特殊的标题</a></li>
 <li class="chapter" data-level="2.2.4" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#文本引用"><i class="fa fa-check"></i><b>2.2.4</b> 文本引用</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="r-代码.html"><a href="r-代码.html"><i class="fa fa-check"></i><b>2.3</b> R 代码</a></li>
-<li class="chapter" data-level="2.4" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>2.4</b> Figures</a></li>
-<li class="chapter" data-level="2.5" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>2.5</b> Tables</a></li>
-<li class="chapter" data-level="2.6" data-path="cross-references.html"><a href="cross-references.html"><i class="fa fa-check"></i><b>2.6</b> Cross-references</a></li>
-<li class="chapter" data-level="2.7" data-path="custom-blocks.html"><a href="custom-blocks.html"><i class="fa fa-check"></i><b>2.7</b> Custom blocks</a></li>
+<li class="chapter" data-level="2.4" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>2.4</b> 图片</a></li>
+<li class="chapter" data-level="2.5" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>2.5</b> 表格</a></li>
+<li class="chapter" data-level="2.6" data-path="交叉引用.html"><a href="交叉引用.html"><i class="fa fa-check"></i><b>2.6</b> 交叉引用</a></li>
+<li class="chapter" data-level="2.7" data-path="自定义块.html"><a href="自定义块.html"><i class="fa fa-check"></i><b>2.7</b> 自定义块</a></li>
 <li class="chapter" data-level="2.8" data-path="citations.html"><a href="citations.html"><i class="fa fa-check"></i><b>2.8</b> 引文</a></li>
 <li class="chapter" data-level="2.9" data-path="latex-index.html"><a href="latex-index.html"><i class="fa fa-check"></i><b>2.9</b> 索引</a></li>
 <li class="chapter" data-level="2.10" data-path="html-小组件.html"><a href="html-小组件.html"><i class="fa fa-check"></i><b>2.10</b> HTML 小组件</a></li>
@@ -289,7 +289,7 @@ div.csl-indent {
 <div id="latexpdf" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> LaTeX/PDF</h2>
 <p>We strongly recommend that you use an HTML output format instead of LaTeX when you develop a book, since you will not be too distracted by the typesetting details, which can bother you a lot if you constantly look at the PDF output of a book. Leave the job of careful typesetting to the very end (ideally after you have really finished the content of the book).</p>
-<p>The LaTeX/PDF output format is provided by <code>pdf_book()</code> in <strong>bookdown</strong>. There is not a significant difference between <code>pdf_book()</code> and the <code>pdf_document()</code> format in <strong>rmarkdown</strong>. The main purpose of <code>pdf_book()</code> is to resolve the labels and cross-references written using the syntax described in Sections <a href="figures.html#figures">2.4</a>, <a href="tables.html#tables">2.5</a>, and <a href="cross-references.html#cross-references">2.6</a>. If the only output format that you want for a book is LaTeX/PDF, you may use the syntax specific to LaTeX, such as <code>\label{}</code> to label figures/tables/sections, and <code>\ref{}</code> to cross-reference them via their labels, because Pandoc supports LaTeX commands in Markdown. However, the LaTeX syntax is not portable to other output formats, such as HTML and e-books. That is why we introduced the syntax <code>(\#label)</code> for labels and <code>\@ref(label)</code> for cross-references.</p>
+<p>The LaTeX/PDF output format is provided by <code>pdf_book()</code> in <strong>bookdown</strong>. There is not a significant difference between <code>pdf_book()</code> and the <code>pdf_document()</code> format in <strong>rmarkdown</strong>. The main purpose of <code>pdf_book()</code> is to resolve the labels and cross-references written using the syntax described in Sections <a href="figures.html#figures">2.4</a>, <a href="tables.html#tables">2.5</a>, and <a href="#cross-references"><strong>??</strong></a>. If the only output format that you want for a book is LaTeX/PDF, you may use the syntax specific to LaTeX, such as <code>\label{}</code> to label figures/tables/sections, and <code>\ref{}</code> to cross-reference them via their labels, because Pandoc supports LaTeX commands in Markdown. However, the LaTeX syntax is not portable to other output formats, such as HTML and e-books. That is why we introduced the syntax <code>(\#label)</code> for labels and <code>\@ref(label)</code> for cross-references.</p>
 <p>There are some top-level YAML options that will be applied to the LaTeX output. For a book, you may change the default document class to <code>book</code> (the default is <code>article</code>), and specify a bibliography style required by your publisher. A brief YAML example:</p>
 <div class="sourceCode" id="cb87"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb87-1"><a href="latexpdf.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb87-2"><a href="latexpdf.html#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> book</span></span>
@@ -344,7 +344,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/03-formats.Rmd",
+"link": "https://github.com/YuanchenZhu2020/bookdown-book-zhCN/edit/main/03-formats.Rmd",
 "text": "编辑"
 },
 "history": {

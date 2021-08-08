@@ -14,7 +14,7 @@
 
 <meta name="author" content="谢益辉" />
 
-<meta name="date" content="2021-07-14" />
+<meta name="date" content="2021-07-19" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -219,14 +219,14 @@ details > summary {
 <ul>
 <li><a href="2-2-bookdown-提供的-markdown-功能拓展.html#equations"><span class="toc-section-number">2.2.1</span> 方程编号与引用</a></li>
 <li><a href="2-2-bookdown-提供的-markdown-功能拓展.html#theorems"><span class="toc-section-number">2.2.2</span> 定理与证明</a></li>
-<li><a href="2-2-bookdown-提供的-markdown-功能拓展.html#special-headers"><span class="toc-section-number">2.2.3</span> Special headers</a></li>
+<li><a href="2-2-bookdown-提供的-markdown-功能拓展.html#特殊的标题"><span class="toc-section-number">2.2.3</span> 特殊的标题</a></li>
 <li><a href="2-2-bookdown-提供的-markdown-功能拓展.html#文本引用"><span class="toc-section-number">2.2.4</span> 文本引用</a></li>
 </ul></li>
 <li><a href="2-3-r-代码.html#r-代码"><span class="toc-section-number">2.3</span> R 代码</a></li>
-<li><a href="2-4-figures.html#figures"><span class="toc-section-number">2.4</span> Figures</a></li>
-<li><a href="2-5-tables.html#tables"><span class="toc-section-number">2.5</span> Tables</a></li>
-<li><a href="2-6-cross-references.html#cross-references"><span class="toc-section-number">2.6</span> Cross-references</a></li>
-<li><a href="2-7-custom-blocks.html#custom-blocks"><span class="toc-section-number">2.7</span> Custom blocks</a></li>
+<li><a href="2-4-figures.html#figures"><span class="toc-section-number">2.4</span> 图片</a></li>
+<li><a href="2-5-tables.html#tables"><span class="toc-section-number">2.5</span> 表格</a></li>
+<li><a href="2-6-交叉引用.html#交叉引用"><span class="toc-section-number">2.6</span> 交叉引用</a></li>
+<li><a href="2-7-自定义块.html#自定义块"><span class="toc-section-number">2.7</span> 自定义块</a></li>
 <li><a href="2-8-citations.html#citations"><span class="toc-section-number">2.8</span> 引文</a></li>
 <li><a href="2-9-latex-index.html#latex-index"><span class="toc-section-number">2.9</span> 索引</a></li>
 <li><a href="2-10-html-小组件.html#html-小组件"><span class="toc-section-number">2.10</span> HTML 小组件</a></li>
@@ -292,13 +292,13 @@ details > summary {
 <div class="col-sm-12">
 <div id="r-代码" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> R 代码</h2>
-<p>There are two types of R code in R Markdown/<strong>knitr</strong> documents: R code chunks, and inline R code. The syntax for the latter is <code>`r R_CODE`</code>, and it can be embedded inline with other document elements. R code chunks look like plain code blocks, but have <code>{r}</code> after the three backticks and (optionally) chunk options inside <code>{}</code>, e.g.,</p>
+<p>  R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 <code>`r R_CODE`</code>，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 <code>{r}</code>，在 <code>{}</code> 内有（可选的）块选项，例如：</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb42-1"><a href="2-3-r-代码.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r chunk-label, echo = FALSE, fig.cap = &#39;A figure caption.&#39;}</span></span>
 <span id="cb42-2"><a href="2-3-r-代码.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="in">1 + 1</span></span>
-<span id="cb42-3"><a href="2-3-r-代码.html#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="in">rnorm(10)  # 10 random numbers</span></span>
-<span id="cb42-4"><a href="2-3-r-代码.html#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="in">plot(dist ~ speed, cars)  # a scatterplot</span></span>
+<span id="cb42-3"><a href="2-3-r-代码.html#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="in">rnorm(10)  # 10 个随机数</span></span>
+<span id="cb42-4"><a href="2-3-r-代码.html#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="in">plot(dist ~ speed, cars)  # 绘制散点图</span></span>
 <span id="cb42-5"><a href="2-3-r-代码.html#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>To learn more about <strong>knitr</strong> chunk options, see <span class="citation"><a href="#ref-xie2015" role="doc-biblioref">Xie</a> (<a href="#ref-xie2015" role="doc-biblioref">2015</a>)</span> or the web page <a href="http://yihui.org/knitr/options" class="uri">http://yihui.org/knitr/options</a>. For books, additional R code can be executed before/after each chapter; see <code>before_chapter_script</code> and <code>after_chapter_script</code> in Section <a href="4-4-configuration.html#configuration">4.4</a>.</p>
+<p>  有关 <strong>knitr</strong> 块选项的详细信息，请参阅 <span class="citation"><a href="#ref-xie2015" role="doc-biblioref">Xie</a> (<a href="#ref-xie2015" role="doc-biblioref">2015</a>)</span> 或网页 <a href="http://yihui.org/knitr/options" class="uri">http://yihui.org/knitr/options</a>。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 <a href="4-4-configuration.html#configuration">4.4</a> 节中的 <code>before_chapter_script</code> 和 <code>after_chapter_script</code>。</p>
 </div>
 <h3>参考文献</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">

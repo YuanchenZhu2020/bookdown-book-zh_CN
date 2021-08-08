@@ -14,7 +14,7 @@
 
 <meta name="author" content="谢益辉" />
 
-<meta name="date" content="2021-07-14" />
+<meta name="date" content="2021-07-19" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -219,14 +219,14 @@ details > summary {
 <ul>
 <li><a href="2-2-bookdown-提供的-markdown-功能拓展.html#equations"><span class="toc-section-number">2.2.1</span> 方程编号与引用</a></li>
 <li><a href="2-2-bookdown-提供的-markdown-功能拓展.html#theorems"><span class="toc-section-number">2.2.2</span> 定理与证明</a></li>
-<li><a href="2-2-bookdown-提供的-markdown-功能拓展.html#special-headers"><span class="toc-section-number">2.2.3</span> Special headers</a></li>
+<li><a href="2-2-bookdown-提供的-markdown-功能拓展.html#特殊的标题"><span class="toc-section-number">2.2.3</span> 特殊的标题</a></li>
 <li><a href="2-2-bookdown-提供的-markdown-功能拓展.html#文本引用"><span class="toc-section-number">2.2.4</span> 文本引用</a></li>
 </ul></li>
 <li><a href="2-3-r-代码.html#r-代码"><span class="toc-section-number">2.3</span> R 代码</a></li>
-<li><a href="2-4-figures.html#figures"><span class="toc-section-number">2.4</span> Figures</a></li>
-<li><a href="2-5-tables.html#tables"><span class="toc-section-number">2.5</span> Tables</a></li>
-<li><a href="2-6-cross-references.html#cross-references"><span class="toc-section-number">2.6</span> Cross-references</a></li>
-<li><a href="2-7-custom-blocks.html#custom-blocks"><span class="toc-section-number">2.7</span> Custom blocks</a></li>
+<li><a href="2-4-figures.html#figures"><span class="toc-section-number">2.4</span> 图片</a></li>
+<li><a href="2-5-tables.html#tables"><span class="toc-section-number">2.5</span> 表格</a></li>
+<li><a href="2-6-交叉引用.html#交叉引用"><span class="toc-section-number">2.6</span> 交叉引用</a></li>
+<li><a href="2-7-自定义块.html#自定义块"><span class="toc-section-number">2.7</span> 自定义块</a></li>
 <li><a href="2-8-citations.html#citations"><span class="toc-section-number">2.8</span> 引文</a></li>
 <li><a href="2-9-latex-index.html#latex-index"><span class="toc-section-number">2.9</span> 索引</a></li>
 <li><a href="2-10-html-小组件.html#html-小组件"><span class="toc-section-number">2.10</span> HTML 小组件</a></li>
@@ -307,7 +307,7 @@ details > summary {
 ## {
 ##     pdf_book(..., base_format = rmarkdown::pdf_document)
 ## }
-## &lt;bytecode: 0x000000001cdc3360&gt;
+## &lt;bytecode: 0x000000001d584950&gt;
 ## &lt;environment: namespace:bookdown&gt;</code></pre>
 <p>After you know this fact, you can apply the same idea to other output formats by using the appropriate <code>base_format</code>. For example, you can port the <strong>bookdown</strong> features to the <code>jss_article</code> format in the <strong>rticles</strong> package <span class="citation">(<a href="#ref-R-rticles" role="doc-biblioref">Allaire, Xie, R Foundation, et al. 2021</a>)</span> by using the YAML metadata:</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb93-1"><a href="3-4-a-single-document.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>

@@ -24,7 +24,7 @@
 <meta name="author" content="谢益辉" />
 
 
-<meta name="date" content="2021-07-14" />
+<meta name="date" content="2021-07-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,14 +201,14 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#equations"><i class="fa fa-check"></i><b>2.2.1</b> 方程编号与引用</a></li>
 <li class="chapter" data-level="2.2.2" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#theorems"><i class="fa fa-check"></i><b>2.2.2</b> 定理与证明</a></li>
-<li class="chapter" data-level="2.2.3" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#special-headers"><i class="fa fa-check"></i><b>2.2.3</b> Special headers</a></li>
+<li class="chapter" data-level="2.2.3" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#特殊的标题"><i class="fa fa-check"></i><b>2.2.3</b> 特殊的标题</a></li>
 <li class="chapter" data-level="2.2.4" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#文本引用"><i class="fa fa-check"></i><b>2.2.4</b> 文本引用</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="r-代码.html"><a href="r-代码.html"><i class="fa fa-check"></i><b>2.3</b> R 代码</a></li>
-<li class="chapter" data-level="2.4" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>2.4</b> Figures</a></li>
-<li class="chapter" data-level="2.5" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>2.5</b> Tables</a></li>
-<li class="chapter" data-level="2.6" data-path="cross-references.html"><a href="cross-references.html"><i class="fa fa-check"></i><b>2.6</b> Cross-references</a></li>
-<li class="chapter" data-level="2.7" data-path="custom-blocks.html"><a href="custom-blocks.html"><i class="fa fa-check"></i><b>2.7</b> Custom blocks</a></li>
+<li class="chapter" data-level="2.4" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>2.4</b> 图片</a></li>
+<li class="chapter" data-level="2.5" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>2.5</b> 表格</a></li>
+<li class="chapter" data-level="2.6" data-path="交叉引用.html"><a href="交叉引用.html"><i class="fa fa-check"></i><b>2.6</b> 交叉引用</a></li>
+<li class="chapter" data-level="2.7" data-path="自定义块.html"><a href="自定义块.html"><i class="fa fa-check"></i><b>2.7</b> 自定义块</a></li>
 <li class="chapter" data-level="2.8" data-path="citations.html"><a href="citations.html"><i class="fa fa-check"></i><b>2.8</b> 引文</a></li>
 <li class="chapter" data-level="2.9" data-path="latex-index.html"><a href="latex-index.html"><i class="fa fa-check"></i><b>2.9</b> 索引</a></li>
 <li class="chapter" data-level="2.10" data-path="html-小组件.html"><a href="html-小组件.html"><i class="fa fa-check"></i><b>2.10</b> HTML 小组件</a></li>
@@ -288,31 +288,32 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="bookdown-提供的-markdown-功能拓展" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> bookdown 提供的 Markdown 功能拓展</h2>
-<p>Although Pandoc’s Markdown is much richer than the original Markdown syntax, it still lacks a number of things that we may need for academic writing. For example, it supports math equations, but you cannot number and reference equations in multi-page HTML or EPUB output. We have provided a few Markdown extensions in <strong>bookdown</strong> to fill the gaps.</p>
+<p>  尽管 Pandoc 风格的 Markdown 比原来的 Markdown 语法要丰富得多，但它仍然缺少我们在学术写作中可能需要的一些东西。例如，它支持数学公式，但不能在多页 HTML 或 EPUB 输出中对公式进行编号和引用。我们在 <strong>bookdown</strong> 中提供了一些 Markdown 扩展来填补这些空白。</p>
 <div id="equations" class="section level3" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> 方程编号与引用</h3>
 <p>To number and refer to equations, put them in the equation environments and assign labels to them using the syntax <code>(\#eq:label)</code>, e.g.,</p>
+<p>  要对方程进行编号和引用，请将它们放在方程环境中，并使用语法 <code>(\#eq:label)</code> 为它们指定标签，例如：</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb26-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}<span class="ss"> </span></span>
 <span id="cb26-2"><a href="bookdown-提供的-markdown-功能拓展.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  f</span><span class="sc">\left</span><span class="ss">(k</span><span class="sc">\right</span><span class="ss">) = </span><span class="sc">\binom</span><span class="ss">{n}{k} p^k</span><span class="sc">\left</span><span class="ss">(1-p</span><span class="sc">\right</span><span class="ss">)^{n-k}</span></span>
 <span id="cb26-3"><a href="bookdown-提供的-markdown-功能拓展.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ss">  (</span><span class="sc">\#</span><span class="ss">eq:binom)</span></span>
 <span id="cb26-4"><a href="bookdown-提供的-markdown-功能拓展.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation</span>} </span></code></pre></div>
-<p>It renders the equation below:</p>
+<p>方程将展示如下：</p>
 <p><span class="math display" id="eq:binom">\[\begin{equation}
 f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} \tag{2.1}
 \end{equation}\]</span></p>
-<p>You may refer to it using <code>\@ref(eq:binom)</code>, e.g., see Equation <a href="bookdown-提供的-markdown-功能拓展.html#eq:binom">(2.1)</a>.</p>
+<p>  你可以使用 <code>\@ref(eq:binom)</code> 来引用它，例如：请看方程 <a href="bookdown-提供的-markdown-功能拓展.html#eq:binom">(2.1)</a>。</p>
 
 <div class="rmdcaution">
-Equation labels must start with the prefix <code>eq:</code> in <strong>bookdown</strong>. All labels in <strong>bookdown</strong> must only contain alphanumeric characters, <code>:</code>, <code>-</code>, and/or <code>/</code>. Equation references work best for LaTeX/PDF output, and they are not well supported in Word output or e-books. For HTML output, <strong>bookdown</strong> can only number the equations with labels. Please make sure equations without labels are not numbered by either using the <code>equation*</code> environment or adding <code>\nonumber</code> or <code>\notag</code> to your equations. The same rules apply to other math environments, such as <code>eqnarray</code>, <code>gather</code>, <code>align</code>, and so on (e.g., you can use the <code>align*</code> environment).
+方程标签在 <strong>bookdown</strong> 中必须以前缀 <code>eq:</code> 开头。<strong>bookdown</strong> 中的所有标签只能包含字母数字字符、<code>:</code>、<code>-</code> 和/或 <code>/</code>。方程引用最适合 LaTeX/PDF 输出格式，它们在 Word 或电子书中没有收到很好的支持。对于 HTML 输出，<strong>bookdown</strong> 只能对带有标签的方程进行编号。请确保没有标签的方程没有使用 <code>equation*</code> 环境或在方程中添加 <code>\nonumber</code> 或 <code>\notag</code> 进行编号。同样的规则也适用于其他数学环境，如 <code>eqnarray</code>、<code>gather</code>、<code>align</code> 等（例如可以使用 <code>align*</code> 环境）。
 </div>
-<p>We demonstrate a few more math equation environments below. Here is an unnumbered equation using the <code>equation*</code> environment:</p>
+<p>  我们将在下面演示更多的数学方程环境。下面是一个使用 <code>equation*</code> 环境的未编号方程：</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb27-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation*</span>}<span class="ss"> </span></span>
 <span id="cb27-2"><a href="bookdown-提供的-markdown-功能拓展.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="sc">\frac</span><span class="ss">{d}{dx}</span><span class="sc">\left</span><span class="ss">( </span><span class="sc">\int</span><span class="ss">_{a}^{x} f(u)</span><span class="sc">\,</span><span class="ss">du</span><span class="sc">\right</span><span class="ss">)=f(x)</span></span>
 <span id="cb27-3"><a href="bookdown-提供的-markdown-功能拓展.html#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation*</span>} </span></code></pre></div>
 <p><span class="math display">\[\begin{equation*}
 \frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x)
 \end{equation*}\]</span></p>
-<p>Below is an <code>align</code> environment <a href="bookdown-提供的-markdown-功能拓展.html#eq:align">(2.2)</a>:</p>
+<p>  下面展示了一个 <code>align</code> 环境 <a href="bookdown-提供的-markdown-功能拓展.html#eq:align">(2.2)</a>:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb28-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}<span class="ss"> </span></span>
 <span id="cb28-2"><a href="bookdown-提供的-markdown-功能拓展.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ss">g(X_{n}) &amp;= g(</span><span class="sc">\theta</span><span class="ss">)+g&#39;({</span><span class="sc">\tilde</span><span class="ss">{</span><span class="sc">\theta</span><span class="ss">}})(X_{n}-</span><span class="sc">\theta</span><span class="ss">) </span><span class="sc">\notag</span><span class="ss"> </span><span class="sc">\\</span></span>
 <span id="cb28-3"><a href="bookdown-提供的-markdown-功能拓展.html#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="sc">\sqrt</span><span class="ss">{n}[g(X_{n})-g(</span><span class="sc">\theta</span><span class="ss">)] &amp;= g&#39;</span><span class="sc">\left</span><span class="ss">({</span><span class="sc">\tilde</span><span class="ss">{</span><span class="sc">\theta</span><span class="ss">}}</span><span class="sc">\right</span><span class="ss">)</span></span>
@@ -323,7 +324,7 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 \sqrt{n}[g(X_{n})-g(\theta)] &amp;= g&#39;\left({\tilde{\theta}}\right)
   \sqrt{n}[X_{n}-\theta ] \tag{2.2}
 \end{align}\]</span></p>
-<p>You can use the <code>split</code> environment inside <code>equation</code> so that all lines share the same number <a href="bookdown-提供的-markdown-功能拓展.html#eq:var-beta">(2.3)</a>. By default, each line in the <code>align</code> environment will be assigned an equation number. We suppressed the number of the first line in the previous example using <code>\notag</code>. In this example, the whole <code>split</code> environment was assigned a single number.</p>
+<p>  你可以在 <code>equation</code> 中使用 <code>split</code> 环境，以便所有行共享相同的编号 <a href="bookdown-提供的-markdown-功能拓展.html#eq:var-beta">(2.3)</a>。默认情况下，<code>align</code> 环境中的每一行都将被分配一个方程编号。在前面的示例中，我们使用 <code>\notag</code> 取消了第一行的编号。在本例中，整个 <code>split</code> 环境被分配了一个编号。</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb29-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}<span class="ss"> </span></span>
 <span id="cb29-2"><a href="bookdown-提供的-markdown-功能拓展.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">split</span>}</span>
 <span id="cb29-3"><a href="bookdown-提供的-markdown-功能拓展.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="sc">\mathrm</span><span class="ss">{Var}(</span><span class="sc">\hat</span><span class="ss">{</span><span class="sc">\beta</span><span class="ss">}) &amp; =</span><span class="sc">\mathrm</span><span class="ss">{Var}((X&#39;X)^{-1}X&#39;y)</span><span class="sc">\\</span></span>
@@ -347,16 +348,16 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 </div>
 <div id="theorems" class="section level3" number="2.2.2">
 <h3><span class="header-section-number">2.2.2</span> 定理与证明</h3>
-<p>Theorems and proofs are commonly used in articles and books in mathematics. However, please do not be misled by the names: a “theorem” is just a numbered/labeled environment, and it does not have to be a mathematical theorem (e.g., it can be an example irrelevant to mathematics). Similarly, a “proof” is an unnumbered environment. In this section, we always use the <em>general</em> meanings of a “theorem” and “proof” unless explicitly stated.</p>
-<p>In <strong>bookdown</strong>, the types of theorem environments supported are in Table <a href="bookdown-提供的-markdown-功能拓展.html#tab:theorem-envs">2.1</a>. To write a theorem, you can use the syntax below:</p>
+<p>  定理和证明常用于数学文章和书籍中。但是请不要被名称误导：“定理”只是一个编号或标记的环境，它不一定是一个数学定理（例如，它可以是一个与数学无关的例子）。类似地，“证明”是一个没有编号的环境。在这一节中，除非明确说明，否则我们总是使用“定理”和“证明”的<em>一般</em>含义。</p>
+<p>  在 <strong>bookdown</strong> 中，支持的定理环境类型在表 <a href="bookdown-提供的-markdown-功能拓展.html#tab:theorem-envs">2.1</a>。要写出一个定理，可以使用以下语法：</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb30-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb30-1" aria-hidden="true" tabindex="-1"></a>::: {.theorem}</span>
 <span id="cb30-2"><a href="bookdown-提供的-markdown-功能拓展.html#cb30-2" aria-hidden="true" tabindex="-1"></a>This is a <span class="in">`theorem`</span> environment that can contain **any**</span>
 <span id="cb30-3"><a href="bookdown-提供的-markdown-功能拓展.html#cb30-3" aria-hidden="true" tabindex="-1"></a>_Markdown_ syntax.</span>
 <span id="cb30-4"><a href="bookdown-提供的-markdown-功能拓展.html#cb30-4" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<p>This syntax is based on Pandoc’s <a href="https://pandoc.org/MANUAL.html#divs-and-spans">fenced <code>Div</code> blocks</a> and can already be used in any R Markdown document to write <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html">custom blocks.</a> <strong>Bookdown</strong> only offers special handling for theorem and proof environments. Since this uses the syntax of Pandoc’s Markdown, you can write any valid Markdown text inside the block.</p>
+<p>  这个语法基于 Pandoc 的 <a href="https://pandoc.org/MANUAL.html#divs-and-spans">fenced <code>Div</code> blocks</a>，并且已经可以在任何 R Markdown 文档中用于编写<a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html">自定义块</a>。<strong>Bookdown</strong> 只提供定理和证明环境的特殊处理。因为这使用了 Pandoc 风格的 Markdown 语法，所以可以在块内编写任何有效的 Markdown 文本。</p>
 
 <table>
-<caption><span id="tab:theorem-envs">表 2.1: </span>Theorem environments in <strong>bookdown</strong>.</caption>
+<caption><span id="tab:theorem-envs">表 2.1: </span><strong>Bookdown</strong> 中的定理环境。</caption>
 <thead>
 <tr class="header">
 <th align="left">Environment</th>
@@ -412,18 +413,18 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 </tr>
 </tbody>
 </table>
-<p>To write other theorem environments, replace <code>::: {.theorem}</code> with other environment names in Table <a href="bookdown-提供的-markdown-功能拓展.html#tab:theorem-envs">2.1</a>, e.g., <code>::: {.lemma}</code>.</p>
-<p>A theorem can have a <code>name</code> attribute so its name will be printed. For example,</p>
+<p>  要编写其他定理环境，请用表 <a href="bookdown-提供的-markdown-功能拓展.html#tab:theorem-envs">2.1</a> 中的其他环境名称替换 <code>::: {.theorem}</code>，例如 <code>::: {.lemma}</code>。</p>
+<p>  一个定理可以有一个 <code>name</code> 属性，这样它的名字就会被打印出来。例如：</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb31-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb31-1" aria-hidden="true" tabindex="-1"></a>::: {.theorem name=&quot;Pythagorean theorem&quot;}</span>
 <span id="cb31-2"><a href="bookdown-提供的-markdown-功能拓展.html#cb31-2" aria-hidden="true" tabindex="-1"></a>For a right triangle, if $c$ denotes the length of the hypotenuse</span>
 <span id="cb31-3"><a href="bookdown-提供的-markdown-功能拓展.html#cb31-3" aria-hidden="true" tabindex="-1"></a>and $a$ and $b$ denote the lengths of the other two sides, we have</span>
 <span id="cb31-4"><a href="bookdown-提供的-markdown-功能拓展.html#cb31-4" aria-hidden="true" tabindex="-1"></a>$$a^2 + b^2 = c^2$$</span>
 <span id="cb31-5"><a href="bookdown-提供的-markdown-功能拓展.html#cb31-5" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<p>If you want to refer to a theorem, you should label it. The label can be provided as an ID to the block of the form <code>#label</code>. For example,</p>
+<p>  如果你想引用一个定理，应该给它贴上标签。标签可以以 <code>#label</code> 的形式作为一个 ID 提供给块。例如：</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb32-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb32-1" aria-hidden="true" tabindex="-1"></a>::: {.theorem #foo}</span>
 <span id="cb32-2"><a href="bookdown-提供的-markdown-功能拓展.html#cb32-2" aria-hidden="true" tabindex="-1"></a>A labeled theorem here.</span>
 <span id="cb32-3"><a href="bookdown-提供的-markdown-功能拓展.html#cb32-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<p>After you label a theorem, you can refer to it using the syntax <code>\@ref(prefix:label)</code>. See the column <code>Label Prefix</code> in Table <a href="bookdown-提供的-markdown-功能拓展.html#tab:theorem-envs">2.1</a> for the value of <code>prefix</code> for each environment. For example, we have a labeled and named theorem below, and <code>\@ref(thm:pyth)</code> gives us its theorem number <a href="bookdown-提供的-markdown-功能拓展.html#thm:pyth">2.1</a>:</p>
+<p>  当你为一个定理贴上标签后，你可以使用语法 <code>\@ref(prefix:label)</code>来引用它。对于每个环境中的 <code>prefix</code> 值，请看表 <a href="bookdown-提供的-markdown-功能拓展.html#tab:theorem-envs">2.1</a> 中的 <code>Label Prefix</code> 列。例如，我们在下面有一个标记和命名了的定理，<code>\@ref(thm:pyth)</code> 给出了它的定理编号 <a href="bookdown-提供的-markdown-功能拓展.html#thm:pyth">2.1</a>：</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb33-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb33-1" aria-hidden="true" tabindex="-1"></a>::: {.theorem #pyth name=&quot;Pythagorean theorem&quot;}</span>
 <span id="cb33-2"><a href="bookdown-提供的-markdown-功能拓展.html#cb33-2" aria-hidden="true" tabindex="-1"></a>For a right triangle, if $c$ denotes the length of the hypotenuse</span>
 <span id="cb33-3"><a href="bookdown-提供的-markdown-功能拓展.html#cb33-3" aria-hidden="true" tabindex="-1"></a>and $a$ and $b$ denote the lengths of the other two sides, we have</span>
@@ -431,23 +432,22 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 <span id="cb33-5"><a href="bookdown-提供的-markdown-功能拓展.html#cb33-5" aria-hidden="true" tabindex="-1"></a>$$a^2 + b^2 = c^2$$</span>
 <span id="cb33-6"><a href="bookdown-提供的-markdown-功能拓展.html#cb33-6" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="theorem">
-<p><span id="thm:pyth" class="theorem"><strong>Theorem 2.1  (Pythagorean theorem) </strong></span>For a right triangle, if <span class="math inline">\(c\)</span> denotes the length of the hypotenuse
-and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> denote the lengths of the other two sides, we have</p>
+<p><span id="thm:pyth" class="theorem"><strong>Theorem 2.1  (Pythagorean theorem) </strong></span>对于直角三角形，如果 <span class="math inline">\(c\)</span> 表示斜边的长度，<span class="math inline">\(a\)</span> 和 <span class="math inline">\(b\)</span> 表示另外两边的长度，我们有</p>
 <p><span class="math display">\[a^2 + b^2 = c^2\]</span></p>
 </div>
-<p>The proof environments currently supported are <code>proof</code>, <code>remark</code>, and <code>solution</code>. The syntax is similar to theorem environments, and proof environments can also be named using the <code>name</code> attribute. The only difference is that since they are unnumbered, you cannot reference them, even if you provide an ID to a proof environment.</p>
-<p>We have tried to make all these theorem and proof environments work out of the box, no matter if your output is PDF or HTML. If you are a LaTeX or HTML expert, you may want to customize the style of these environments anyway (see Chapter <a href="customization.html#customization">4</a>). Customization in HTML is easy with CSS, and each environment is enclosed in <code>&lt;div&gt;&lt;/div&gt;</code> with the CSS class being the environment name, e.g., <code>&lt;div class="lemma"&gt;&lt;/div&gt;</code>. For LaTeX output, we have predefined the style to be <code>definition</code> for environments <code>definition</code>, <code>example</code>, <code>exercise</code>, and <code>hypothesis</code>, and <code>remark</code> for environments <code>proof</code> and <code>remark</code>. All other environments use the <code>plain</code> style. The style definition is done through the <code>\theoremstyle{}</code> command of the <strong>amsthm</strong> package. If you do not want the default theorem definitions to be automatically added by <strong>bookdown</strong>, you can set <code>options(bookdown.theorem.preamble = FALSE)</code>. This can be useful, for example, to avoid conflicts in single documents (Section <a href="a-single-document.html#a-single-document">3.4</a>) using the output format <code>bookdown::pdf_book</code> with a <code>base_format</code> that has already included <strong>amsmath</strong> definitions.</p>
-<p>Theorems are numbered by chapters by default. If there are no chapters in your document, they are numbered by sections instead. If the whole document is unnumbered (the output format option <code>number_sections = FALSE</code>), all theorems are numbered sequentially from 1, 2, …, N. LaTeX supports numbering one theorem environment after another, e.g., let theorems and lemmas share the same counter. This is not supported for HTML/EPUB output in <strong>bookdown</strong>. You can change the numbering scheme in the LaTeX preamble by defining your own theorem environments, e.g.,</p>
+<p>  目前支持的证明环有境 <code>proof</code>, <code>remark</code>, and <code>solution</code>。它的语法类似于定理环境，并且证明环境也能够使用 <code>name</code> 属性命名。唯一的区别是你不能引用它们，即便你为证明环境提供了 ID，因为它们无法进行编号。</p>
+<p>  无论你选择的输出是 PDF 还是 HTML，我们都已经尝试使所有这些定理和证明环境开箱即用。如果你是 LaTeX 或 HTML 专家，你可能希望自定义这些环境的样式（请参阅第 <a href="customization.html#customization">4</a> 章）。使用 CSS 可以很容易在 HTML 中自定义样式，每个环境都包含在 <code>&lt;div&gt;&lt;/div&gt;</code> 中，CSS class 属性为环境名称，例如 <code>&lt;div class=“lemma”&gt;&lt;/div&gt;</code>。对于 LaTeX 输出，我们为环境 <code>definition</code>, <code>example</code>, <code>exercise</code>, and <code>hypothesis</code> 预定义了样式 <code>definition</code>，为环境 <code>proof</code> and <code>remark</code> 预定义了样式 <code>remark</code>。所有其他环境都使用 <code>plain</code> 样式。样式定义是通过 <strong>amsthm</strong> 包的 <code>\theoremstyle{}</code> 命令完成的。如果你不希望 <strong>bookdown</strong> 自动添加默认的定理定义，可以设置 <code>options(bookdown.thermo.preamble = FALSE)</code>。例如，使用输出格式 <code>bookdown::pdf_book</code> 和已经包含 <strong>amsmath</strong> 定义的 <code>base_format</code> 来避免单个文档（第 <a href="a-single-document.html#a-single-document">3.4</a> 节）中的冲突非常有用。</p>
+<p>  默认情况下，定理按篇章编号。如果文档中没有篇章，则按小节编号。如果整篇文档没有编号（输出格式选项为 <code>number_sections = FALSE</code>），则所有定理都从 1、2、…、N 开始依次编号。LaTeX 支持依次对一个又一个定理环境进行编号，例如，让定理和引理共享同一个计数器。<strong>bookdown</strong> 中的 HTML/EPUB 输出不支持此操作。你可以通过定义自己的定理环境来更改 LaTeX 导言 (preamble) 中的编号方案，例如：</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb34-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{theorem}{Theorem}</span>
 <span id="cb34-2"><a href="bookdown-提供的-markdown-功能拓展.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\newtheorem</span>{lemma}[theorem]{Lemma}</span></code></pre></div>
-<p>When <strong>bookdown</strong> detects <code>\newtheorem{theorem}</code> in your LaTeX preamble, it will not write out its default theorem definitions, which means you have to define all theorem environments by yourself. For the sake of simplicity and consistency, we do not recommend that you do this. It can be confusing when your Theorem 18 in PDF becomes Theorem 2.4 in HTML.</p>
-<p>Below we show more examples<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> of the theorem and proof environments, so you can see the default styles in <strong>bookdown</strong>.</p>
+<p>  当 <strong>bookdown</strong> 在 LaTeX 导言 (preamble) 中检测到 <code>\newtheorem{themore}</code> 时，它不会输出其默认的定理定义，这意味着你必须自己定义所有定理环境。为了简单和一致性，我们不建议你这样做。当 PDF 中的定理 18 变成 HTML 中的定理 2.4 时可能会令人十分困惑。</p>
+<p>  下面我们展示了定理和证明环境的更多的例子<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>，所以你可以在 <strong>bookdown</strong> 中看到默认样式。</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 2.1  </strong></span>The characteristic function of a random variable <span class="math inline">\(X\)</span> is defined by</p>
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 2.1  </strong></span>随机变量 <span class="math inline">\(x\)</span> 的特征函数定义如下：</p>
 <p><span class="math display">\[\varphi _{X}(t)=\operatorname {E} \left[e^{itX}\right], \; t\in\mathcal{R}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-2" class="example"><strong>Example 2.1  </strong></span>We derive the characteristic function of <span class="math inline">\(X\sim U(0,1)\)</span> with the probability density function <span class="math inline">\(f(x)=\mathbf{1}_{x \in [0,1]}\)</span>.</p>
+<p><span id="exm:unlabeled-div-2" class="example"><strong>Example 2.1  </strong></span>我们用概率密度函数 <span class="math inline">\(f(x)=\mathbf{1}_{x \in [0,1]}\)</span> 导出了特征函数 <span class="math inline">\(X\sim U(0,1)\)</span>。</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{split}
 \varphi _{X}(t) &amp;= \operatorname {E} \left[e^{itX}\right]\\
@@ -460,21 +460,21 @@ and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</
  &amp; =\frac{e^{it}-1}{it}
 \end{split}
 \end{equation*}\]</span></p>
-<p>Note that we used the fact <span class="math inline">\(e^{ix}=\cos(x)+i\sin(x)\)</span> twice.</p>
+<p>注意，我们使用了两次 <span class="math inline">\(e^{ix}=\cos(x)+i\sin(x)\)</span>。</p>
 </div>
 <div class="lemma">
-<p><span id="lem:chf-pdf" class="lemma"><strong>Lemma 2.1  </strong></span>For any two random variables <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, they both have the same probability distribution if and only if</p>
+<p><span id="lem:chf-pdf" class="lemma"><strong>Lemma 2.1  </strong></span>对任意两个随机变量 <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>，它们都具有相同的概率分布当且仅当</p>
 <p><span class="math display">\[\varphi _{X_1}(t)=\varphi _{X_2}(t)\]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:chf-sum" class="theorem"><strong>Theorem 2.2  </strong></span>If <span class="math inline">\(X_1\)</span>, …, <span class="math inline">\(X_n\)</span> are independent random variables, and <span class="math inline">\(a_1\)</span>, …, <span class="math inline">\(a_n\)</span> are some constants, then the characteristic function of the linear combination <span class="math inline">\(S_n=\sum_{i=1}^na_iX_i\)</span> is</p>
+<p><span id="thm:chf-sum" class="theorem"><strong>Theorem 2.2  </strong></span>如果 <span class="math inline">\(X_1\)</span>, …, <span class="math inline">\(X_n\)</span> 是相互独立的随机变量。并且 <span class="math inline">\(a_1\)</span>, …, <span class="math inline">\(a_n\)</span> 是一些常数，那么线性组合 <span class="math inline">\(S_n=\sum_{i=1}^na_iX_i\)</span> 的特征函数是</p>
 <p><span class="math display">\[\varphi _{S_{n}}(t)=\prod_{i=1}^n\varphi _{X_i}(a_{i}t)=\varphi _{X_{1}}(a_{1}t)\cdots \varphi _{X_{n}}(a_{n}t)\]</span></p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-3" class="proposition"><strong>Proposition 2.1  </strong></span>The distribution of the sum of independent Poisson random variables <span class="math inline">\(X_i \sim \mathrm{Pois}(\lambda_i),\: i=1,2,\cdots,n\)</span> is <span class="math inline">\(\mathrm{Pois}(\sum_{i=1}^n\lambda_i)\)</span>.</p>
+<p><span id="prp:unlabeled-div-3" class="proposition"><strong>Proposition 2.1  </strong></span>独立且服从泊松分布的随机变量 <span class="math inline">\(X_i \sim \mathrm{Pois}(\lambda_i),\: i=1,2,\cdots,n\)</span> 之和的分布是 <span class="math inline">\(\mathrm{Pois}(\sum_{i=1}^n\lambda_i)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-4" class="proof"><em>Proof</em>. </span>The characteristic function of <span class="math inline">\(X\sim\mathrm{Pois}(\lambda)\)</span> is <span class="math inline">\(\varphi _{X}(t)=e^{\lambda (e^{it}-1)}\)</span>. Let <span class="math inline">\(P_n=\sum_{i=1}^nX_i\)</span>. We know from Theorem <a href="bookdown-提供的-markdown-功能拓展.html#thm:chf-sum">2.2</a> that</p>
+<p><span id="unlabeled-div-4" class="proof"><em>Proof</em>. </span><span class="math inline">\(X\sim\mathrm{Pois}(\lambda)\)</span> 的特征函数是 <span class="math inline">\(\varphi _{X}(t)=e^{\lambda (e^{it}-1)}\)</span>。令 <span class="math inline">\(P_n=\sum_{i=1}^nX_i\)</span>。我们从定理 <a href="bookdown-提供的-markdown-功能拓展.html#thm:chf-sum">2.2</a> 可以知道</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{split}
 \varphi _{P_{n}}(t) &amp; =\prod_{i=1}^n\varphi _{X_i}(t) \\
@@ -482,95 +482,94 @@ and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</
 &amp; = e^{\sum_{i=1}^n \lambda_i (e^{it}-1)}
 \end{split}
 \end{equation*}\]</span></p>
-<p>This is the characteristic function of a Poisson random variable with the parameter <span class="math inline">\(\lambda=\sum_{i=1}^n \lambda_i\)</span>. From Lemma <a href="bookdown-提供的-markdown-功能拓展.html#lem:chf-pdf">2.1</a>, we know the distribution of <span class="math inline">\(P_n\)</span> is <span class="math inline">\(\mathrm{Pois}(\sum_{i=1}^n\lambda_i)\)</span>.</p>
+<p>这是具有参数 <span class="math inline">\(\lambda=\sum_{i=1}^n \lambda_i\)</span> 的服从泊松分布的随机变量的特征函数。从引理 <a href="bookdown-提供的-markdown-功能拓展.html#lem:chf-pdf">2.1</a> 可以知道 <span class="math inline">\(P_n\)</span> 的分布是 <span class="math inline">\(\mathrm{Pois}(\sum_{i=1}^n\lambda_i)\)</span>。</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-5" class="remark"><em>Remark</em>. </span>In some cases, it is very convenient and easy to figure out the distribution of the sum of independent random variables using characteristic functions.</p>
+<p><span id="unlabeled-div-5" class="remark"><em>Remark</em>. </span>在以些情况下，使用特征函数计算独立随机变量之和的分布是非常方便和容易的。</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-6" class="corollary"><strong>Corollary 2.1  </strong></span>The characteristic function of the sum of two independent random variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> is the product of characteristic functions of <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, i.e.,</p>
+<p><span id="cor:unlabeled-div-6" class="corollary"><strong>Corollary 2.1  </strong></span>两个独立随机变量 <span class="math inline">\(X_1\)</span> 和 <span class="math inline">\(X_2\)</span> 之和的特征函数是 <span class="math inline">\(X_1\)</span> 和 <span class="math inline">\(X_2\)</span> 特征函数的乘积，即</p>
 <p><span class="math display">\[\varphi _{X_1+X_2}(t)=\varphi _{X_1}(t) \varphi _{X_2}(t)\]</span></p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Exercise 2.1  (Characteristic Function of the Sample Mean) </strong></span>Let <span class="math inline">\(\bar{X}=\sum_{i=1}^n \frac{1}{n} X_i\)</span> be the sample mean of <span class="math inline">\(n\)</span> independent and identically distributed random variables, each with characteristic function <span class="math inline">\(\varphi _{X}\)</span>. Compute the characteristic function of <span class="math inline">\(\bar{X}\)</span>.</p>
+<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Exercise 2.1  (样本均值的特征函数) </strong></span>令 <span class="math inline">\(\bar{X}=\sum_{i=1}^n \frac{1}{n} X_i\)</span> 是 <span class="math inline">\(n\)</span> 个独立同分布的随机变量的均值，每个变量具有特征函数 <span class="math inline">\(\varphi _{X}\)</span>。计算 <span class="math inline">\(\bar{X}\)</span> 的特征函数。</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-8" class="solution"><em>Solution</em>. </span>Applying Theorem <a href="bookdown-提供的-markdown-功能拓展.html#thm:chf-sum">2.2</a>, we have</p>
+<p><span id="unlabeled-div-8" class="solution"><em>Solution</em>. </span>应用定理 <a href="bookdown-提供的-markdown-功能拓展.html#thm:chf-sum">2.2</a>，我们得到</p>
 <p><span class="math display">\[\varphi _{\bar{X}}(t)=\prod_{i=1}^n \varphi _{X_i}\left(\frac{t}{n}\right)=\left[\varphi _{X}\left(\frac{t}{n}\right)\right]^n.\]</span></p>
 </div>
 <div class="hypothesis">
-<p><span id="hyp:unlabeled-div-9" class="hypothesis"><strong>Hypothesis 2.1  (Riemann hypothesis) </strong></span>The Riemann Zeta-function is defined as
+<p><span id="hyp:unlabeled-div-9" class="hypothesis"><strong>Hypothesis 2.1  (黎曼猜想) </strong></span>黎曼 Zeta 函数被定义为
 <span class="math display">\[\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}\]</span>
-for complex values of <span class="math inline">\(s\)</span> and which converges when the real part of <span class="math inline">\(s\)</span> is greater than 1. The Riemann hypothesis is that the Riemann zeta function has its zeros only at the negative even integers and complex numbers with real part <span class="math inline">\(1/2\)</span>.</p>
+对于复数值 <span class="math inline">\(s\)</span>，当 <span class="math inline">\(s\)</span> 的实部大于 1 时收敛。黎曼猜想是黎曼 zeta 函数只在负偶数和实部为 <span class="math inline">\(1/2\)</span> 的复数处有零点。</p>
 </div>
 <div id="theorem-engine" class="section level4" number="2.2.2.1">
 <h4><span class="header-section-number">2.2.2.1</span> 关于旧语法的注记</h4>
-<p>For older versions of <strong>bookdown</strong> (before v0.21), a <code>theorem</code> environment could be written like this:</p>
+<p>  对于较早版本的 <strong>bookdown</strong>（v0.21 之前），可以这样编写 <code>theorem</code> 环境：</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb35-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{theorem pyth, name=&quot;Pythagorean theorem&quot;}</span></span>
-<span id="cb35-2"><a href="bookdown-提供的-markdown-功能拓展.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="in">For a right triangle, if $c$ denotes the length of the hypotenuse</span></span>
-<span id="cb35-3"><a href="bookdown-提供的-markdown-功能拓展.html#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="in">and $a$ and $b$ denote the lengths of the other two sides, we have</span></span>
-<span id="cb35-4"><a href="bookdown-提供的-markdown-功能拓展.html#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-5"><a href="bookdown-提供的-markdown-功能拓展.html#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="in">$$a^2 + b^2 = c^2$$</span></span>
-<span id="cb35-6"><a href="bookdown-提供的-markdown-功能拓展.html#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>This syntax still works, but we do not recommend it since the new syntax allows you to write richer content and has a cleaner implementation. However, note that the old syntax has to be used if you want the environment to work with output formats in addition to HTML and PDF, such as EPUB. The fenced <code>Div</code> syntax only works for HTML and PDF output at the moment, and we will try to improve it in the future.</p>
-<p>This conversion between the two syntaxes is straightforward. The above theorem could be rewritten in this way:</p>
+<span id="cb35-2"><a href="bookdown-提供的-markdown-功能拓展.html#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="in">对于直角三角形，如果 $c$ 表示斜边的长度，$a$ 和 $b$ 表示另外两边的长度，我们有</span></span>
+<span id="cb35-3"><a href="bookdown-提供的-markdown-功能拓展.html#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="bookdown-提供的-markdown-功能拓展.html#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="in">$$a^2 + b^2 = c^2$$</span></span>
+<span id="cb35-5"><a href="bookdown-提供的-markdown-功能拓展.html#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>  这种语法仍然有效，但我们不建议使用这种语法，因为新语法允许编写更丰富的内容，并且具有更清晰的实现。但是请注意，如果希望环境处理除 HTML 和 PDF 以外的输出格式（如 EPUB），则必须使用旧语法。<code>Div</code> 围栏语法目前只适用于 HTML 和 PDF 输出，我们将在将来对其进行改进。</p>
+<p>  这两种语法之间的转换非常简单。上述定理可以这样改写：</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb36-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb36-1" aria-hidden="true" tabindex="-1"></a>::: {.theorem #pyth name=&quot;Pythagorean theorem&quot;}</span>
 <span id="cb36-2"><a href="bookdown-提供的-markdown-功能拓展.html#cb36-2" aria-hidden="true" tabindex="-1"></a>For a right triangle, if $c$ denotes the length of the hypotenuse</span>
 <span id="cb36-3"><a href="bookdown-提供的-markdown-功能拓展.html#cb36-3" aria-hidden="true" tabindex="-1"></a>and $a$ and $b$ denote the lengths of the other two sides, we have</span>
 <span id="cb36-4"><a href="bookdown-提供的-markdown-功能拓展.html#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-5"><a href="bookdown-提供的-markdown-功能拓展.html#cb36-5" aria-hidden="true" tabindex="-1"></a>$$a^2 + b^2 = c^2$$</span>
 <span id="cb36-6"><a href="bookdown-提供的-markdown-功能拓展.html#cb36-6" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
-<p>You can use the helper function <code>bookdown::fence_theorems()</code> to convert a whole file or a piece of text. This is a one-time operation. We have tried to do the conversion from old to new syntax safely, but we might have missed some edge cases. To make sure you do not overwrite the <code>input</code> file by accident, you can write the converted source to a new file, e.g.,</p>
+<p>&amp;emso; 你可以使用帮助函数 <code>bookdown::fence_theorems()</code> 来转换整个文件或一段文本。这是一次性的操作。我们已经尝试过安全地从旧语法转换到新语法，但是可能错过了一些边缘情况。为确保不会意外覆盖 <code>input</code> 文件，可以将转换后的源代码写入新文件，例如：</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb37-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">fence_theorems</span>(<span class="st">&quot;01-intro.Rmd&quot;</span>, <span class="at">output =</span> <span class="st">&quot;01-intro-new.Rmd&quot;</span>)</span></code></pre></div>
-<p>Then double check the content of <code>01-intro-new.Rmd</code>. Using <code>output = NULL</code> will print the result of conversion in the R console, and is another way to check the conversion. If you are using a control version tool, you can set <code>output</code> to be the same as <code>input</code>, as it should be safe and easy for you to revert the change if anything goes wrong.</p>
+<p>  然后仔细检查 <code>01-intro-new.Rmd</code> 的内容。使用 <code>output = NULL</code> 将在 R 控制台中打印转换结果，这是检查转换的另一种方法。如果你使用的是版本控制工具，则可以将 <code>output</code> 设置为与 <code>input</code> 相同，因为如果出现任何问题，你应该可以安全且轻松地还原更改。</p>
 </div>
 </div>
-<div id="special-headers" class="section level3" number="2.2.3">
-<h3><span class="header-section-number">2.2.3</span> Special headers</h3>
-<p>There are a few special types of first-level headers that will be processed differently in <strong>bookdown</strong>. The first type is an unnumbered header that starts with the token <code>(PART)</code>. This kind of headers are translated to part titles. If you are familiar with LaTeX, this basically means <code>\part{}</code>. When your book has a large number of chapters, you may want to organize them into parts, e.g.,</p>
-<pre><code># (PART) Part I {-} 
+<div id="特殊的标题" class="section level3" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> 特殊的标题</h3>
+<p>  有几种特殊类型的一级标题在 <strong>bookdown</strong> 会以不同方式处理。第一种类型是没有编号的标题，以标志 <code>(PART)</code> 开头。这种类型的标题将会翻译为书籍各部份的标题。如果你熟悉 LaTeX 就应该知道它基本上等同于 <code>\part{}</code>。当你的书籍有大量章节时，你可能希望将它们组织成部分，例如：</p>
+<pre><code># (PART) 第一部分 {-} 
 
-# Chapter One
+# 第一章
 
-# Chapter Two
+# 第二章
 
-# (PART) Part II {-} 
+# (PART) 第二部分 {-} 
 
-# Chapter Three</code></pre>
-<p>A part title should be written right before the first chapter title in this part, both title in the same document. You can use <code>(PART\*)</code> (the backslash before <code>*</code> is required) instead of <code>(PART)</code> if a part title should not be numbered.</p>
-<p>The second type is an unnumbered header that starts with <code>(APPENDIX)</code>, indicating that all chapters after this header are appendices, e.g.,</p>
-<pre><code># Chapter One 
+# 第三章</code></pre>
+<p>  各部分的标题应写在本部分第一章标题之前，两个标题应在同一文件中。如果各部分标题不应该参与自动编号，则可以使用 <code>(PART\*)</code>（<code>*</code> 前的反斜杠是必须的）而不是 <code>(PART)</code>。</p>
+<p>  第二种类型是以 <code>(APPENDIX)</code> 开头的无编号标题，表示此标题后面的所有章节都是附录，例如：</p>
+<pre><code># 第一章
 
-# Chapter Two
+# 第二章
 
-# (APPENDIX) Appendix {-} 
+# (APPENDIX) 附录 {-} 
 
-# Appendix A
+# 附录 A
 
-# Appendix B</code></pre>
-<p>The numbering style of appendices will be automatically changed in LaTeX/PDF and HTML output (usually in the form A, A.1, A.2, B, B.1, …). This feature is not available to e-books or Word output.</p>
+# 附录 B</code></pre>
+<p>  附录的编号样式将在 LaTeX/PDF 和 HTML 输出中自动更改（通常采用 A、A.1、A.2、B、B.1 等格式）。此功能不适用于电子书或 Word 输出。</p>
 </div>
 <div id="文本引用" class="section level3" number="2.2.4">
 <h3><span class="header-section-number">2.2.4</span> 文本引用</h3>
-<p>You can assign some text to a label and reference the text using the label elsewhere in your document. This can be particularly useful for long figure/table captions (Section <a href="figures.html#figures">2.4</a> and <a href="tables.html#tables">2.5</a>), in which case you normally will have to write the whole character string in the chunk header (e.g., <code>fig.cap = "A long long figure caption."</code>) or your R code (e.g., <code>kable(caption = "A long long table caption.")</code>). It is also useful when these captions contain special HTML or LaTeX characters, e.g., if the figure caption contains an underscore, it works in the HTML output but may not work in LaTeX output because the underscore must be escaped in LaTeX.</p>
-<p>The syntax for a text reference is <code>(ref:label) text</code>, where <code>label</code> is a unique label<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> throughout the document for <code>text</code>. It must be in a separate paragraph with empty lines above and below it. The paragraph must not be wrapped into multiple lines, and should not end with a white space. For example,</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb40-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb40-1" aria-hidden="true" tabindex="-1"></a>(ref:foo) Define a text reference **here**. </span></code></pre></div>
-<p>Then you can use <code>(ref:foo)</code> in your figure/table captions. The text can contain anything that Markdown supports, as long as it is one single paragraph. Here is a complete example:</p>
+<p>  你可以将一些文本指定给标签，并使用文档中其他位置的标签来引用这些文本。这对于长图形/表格的标题（第 <a href="figures.html#figures">2.4</a> 节和第 <a href="tables.html#tables">2.5</a> 节）特别有用，在这种情况下，你通常需要将整个字符串写入区块标题（例如 <code>fig.cap = "一张长图片的标题”）或 R 代码（例如</code>kable(caption = “一个很长很长的表格的标题”））。当这些标题包含特殊的 HTML 或 LaTeX 字符时，它也很有用。例如，如果图片标题包含下划线，则它在 HTML 输出中正常工作，但在 LaTeX 输出中可能不起作用，因为下划线必须在 LaTeX 中进行转义。</p>
+<p>  文本引用的语法是 <code>(ref:label) text</code>。其中 <code>text</code> 的标签 <code>label</code> 是在整个文档中唯一的标签<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>。文本引用必须放在一个单独的段落中，上面和下面都有空行。段落不能有多行，也不能以空格结尾。例如，</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb40-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb40-1" aria-hidden="true" tabindex="-1"></a>(ref:foo) **在这里**定义一个文本引用。</span></code></pre></div>
+<p>  然后你可以在图形/表格标题中使用 <code>(ref:foo)</code>。只要是一个段落，文本可以包含 Markdown 支持的任何内容。下面是一个完整的示例：</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb41-1"><a href="bookdown-提供的-markdown-功能拓展.html#cb41-1" aria-hidden="true" tabindex="-1"></a>A normal paragraph.</span>
 <span id="cb41-2"><a href="bookdown-提供的-markdown-功能拓展.html#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-3"><a href="bookdown-提供的-markdown-功能拓展.html#cb41-3" aria-hidden="true" tabindex="-1"></a>(ref:foo) A scatterplot of the data <span class="in">`cars`</span> using **base** R graphics. </span>
+<span id="cb41-3"><a href="bookdown-提供的-markdown-功能拓展.html#cb41-3" aria-hidden="true" tabindex="-1"></a>(ref:foo) 使用 **base** R 图形系统绘制的数据集 <span class="in">`cars`</span> 的散点图。</span>
 <span id="cb41-4"><a href="bookdown-提供的-markdown-功能拓展.html#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-5"><a href="bookdown-提供的-markdown-功能拓展.html#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r foo, fig.cap=&#39;(ref:foo)&#39;}</span></span>
-<span id="cb41-6"><a href="bookdown-提供的-markdown-功能拓展.html#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars)  # a scatterplot</span></span>
+<span id="cb41-6"><a href="bookdown-提供的-markdown-功能拓展.html#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars)  # 绘制散点图</span></span>
 <span id="cb41-7"><a href="bookdown-提供的-markdown-功能拓展.html#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>Text references can be used anywhere in the document (not limited to figure captions). It can also be useful if you want to reuse a fragment of text in multiple places.</p>
+<p>  文本引用可以在文档中的任何位置使用（不仅限于图片标题）。如果你想在多个位置重用文本片段，它也很有用。</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="4">
-<li id="fn4"><p>Some examples are adapted from the Wikipedia page <a href="https://en.wikipedia.org/wiki/Characteristic_function_(probability_theory)" class="uri">https://en.wikipedia.org/wiki/Characteristic_function_(probability_theory)</a><a href="bookdown-提供的-markdown-功能拓展.html#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>You may consider using the code chunk labels.<a href="bookdown-提供的-markdown-功能拓展.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>一些例子改编自维基百科页面 <a href="https://en.wikipedia.org/wiki/Characteristic_function_(probability_theory)" class="uri">https://en.wikipedia.org/wiki/Characteristic_function_(probability_theory)</a><a href="bookdown-提供的-markdown-功能拓展.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>你可以考使用代码块标签<a href="bookdown-提供的-markdown-功能拓展.html#fnref5" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -611,7 +610,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/02-components.Rmd",
+"link": "https://github.com/YuanchenZhu2020/bookdown-book-zhCN/edit/main/02-components.Rmd",
 "text": "编辑"
 },
 "history": {

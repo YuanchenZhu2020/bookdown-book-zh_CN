@@ -24,7 +24,7 @@
 <meta name="author" content="谢益辉" />
 
 
-<meta name="date" content="2021-07-14" />
+<meta name="date" content="2021-07-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -201,14 +201,14 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#equations"><i class="fa fa-check"></i><b>2.2.1</b> 方程编号与引用</a></li>
 <li class="chapter" data-level="2.2.2" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#theorems"><i class="fa fa-check"></i><b>2.2.2</b> 定理与证明</a></li>
-<li class="chapter" data-level="2.2.3" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#special-headers"><i class="fa fa-check"></i><b>2.2.3</b> Special headers</a></li>
+<li class="chapter" data-level="2.2.3" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#特殊的标题"><i class="fa fa-check"></i><b>2.2.3</b> 特殊的标题</a></li>
 <li class="chapter" data-level="2.2.4" data-path="bookdown-提供的-markdown-功能拓展.html"><a href="bookdown-提供的-markdown-功能拓展.html#文本引用"><i class="fa fa-check"></i><b>2.2.4</b> 文本引用</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="r-代码.html"><a href="r-代码.html"><i class="fa fa-check"></i><b>2.3</b> R 代码</a></li>
-<li class="chapter" data-level="2.4" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>2.4</b> Figures</a></li>
-<li class="chapter" data-level="2.5" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>2.5</b> Tables</a></li>
-<li class="chapter" data-level="2.6" data-path="cross-references.html"><a href="cross-references.html"><i class="fa fa-check"></i><b>2.6</b> Cross-references</a></li>
-<li class="chapter" data-level="2.7" data-path="custom-blocks.html"><a href="custom-blocks.html"><i class="fa fa-check"></i><b>2.7</b> Custom blocks</a></li>
+<li class="chapter" data-level="2.4" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>2.4</b> 图片</a></li>
+<li class="chapter" data-level="2.5" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>2.5</b> 表格</a></li>
+<li class="chapter" data-level="2.6" data-path="交叉引用.html"><a href="交叉引用.html"><i class="fa fa-check"></i><b>2.6</b> 交叉引用</a></li>
+<li class="chapter" data-level="2.7" data-path="自定义块.html"><a href="自定义块.html"><i class="fa fa-check"></i><b>2.7</b> 自定义块</a></li>
 <li class="chapter" data-level="2.8" data-path="citations.html"><a href="citations.html"><i class="fa fa-check"></i><b>2.8</b> 引文</a></li>
 <li class="chapter" data-level="2.9" data-path="latex-index.html"><a href="latex-index.html"><i class="fa fa-check"></i><b>2.9</b> 索引</a></li>
 <li class="chapter" data-level="2.10" data-path="html-小组件.html"><a href="html-小组件.html"><i class="fa fa-check"></i><b>2.10</b> HTML 小组件</a></li>
@@ -433,6 +433,36 @@ div.csl-indent {
 <td align="left">守护进程（？）</td>
 <td align="left">中文互联网上少见“守护服务器”这一词汇，因此将“server”作“服务程序”解，翻译为“守护进程”，日后再行修订。</td>
 </tr>
+<tr class="odd">
+<td align="left">caret</td>
+<td align="left">脱字符、补注符</td>
+<td align="left">也就是 <code>^</code>，以往文章中漏了字就使用该符号标注插入的字。</td>
+</tr>
+<tr class="even">
+<td align="left">blockquote</td>
+<td align="left">块引用</td>
+<td align="left">拆分为 block 和 quote 两部分翻译，意思为作为块级元素的引用文段。</td>
+</tr>
+<tr class="odd">
+<td align="left">fenced <code>div</code> syntax</td>
+<td align="left"><code>div</code> 围栏语法</td>
+<td align="left">来源于 Pandoc 的 <code>fenced div block</code>，可以使用至少三个连续的 <code>:</code> 和属性构造原生的 <code>Div</code> 块，由于类似于围栏，因此翻译为“围栏语法”。</td>
+</tr>
+<tr class="even">
+<td align="left">token</td>
+<td align="left">令牌、标志</td>
+<td align="left">当语境中没有“通行证”等类似含义时，使用“标志”翻译。</td>
+</tr>
+<tr class="odd">
+<td align="left">part title</td>
+<td align="left">各部份的标题？</td>
+<td align="left">意思为将书籍中的部分章节组成一个部分，例如第 1、2、3 章组成第一部分，为这一部分的标题。</td>
+</tr>
+<tr class="even">
+<td align="left">aspect ratio</td>
+<td align="left">纵横比</td>
+<td align="left">专业词汇</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -474,7 +504,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown/edit/master/inst/examples/index.Rmd",
+"link": "https://github.com/YuanchenZhu2020/bookdown-book-zhCN/edit/main/index.Rmd",
 "text": "编辑"
 },
 "history": {

@@ -39,13 +39,13 @@ bookdown-提供的-markdown-功能拓展
 equations
 theorems
 theorem-engine
-special-headers
+特殊的标题
 文本引用
 r-代码
 figures
 tables
-cross-references
-custom-blocks
+交叉引用
+自定义块
 citations
 latex-index
 html-小组件

@@ -1,18 +1,18 @@
 # 组成部分 {#components}
 
-This chapter demonstrates the syntax of common components of a book written in **bookdown**, including code chunks, figures, tables, citations, math theorems, and equations. The approach is based on Pandoc, so we start with the syntax of Pandoc's\index{Pandoc} flavor of Markdown.
+&emsp;&emsp;本章演示了用 **bookdown** 编写的书籍中常见组件的语法，包括代码块、数字、表格、引文、数学定理和公式。该方法基于 Pandoc，因此我们从 Pandoc\index{Pandoc} 风格的 Markdown 语法开始讲起。
 
 ## Markdown 语法 {#markdown-syntax}
 
-In this section, we give a very brief introduction to Pandoc's Markdown\index{Markdown}. Readers who are familiar with Markdown can skip this section. The comprehensive syntax of Pandoc's Markdown can be found on the Pandoc website <http://pandoc.org>.
+&emsp;&emsp;在本节中，我们将非常简要地介绍 Pandoc  风格的 Markdown\index{Markdown}。熟悉 Markdown 的读者可以跳过这一节。Pandoc 风格的 Markdown 的全部语法可以在 Pandoc 网站 <http://pandoc.org> 上找到。
 
 ### 内联格式
 
-You can make text _italic_ by surrounding it with underscores or asterisks, e.g., `_text_` or `*text*`. For **bold** text, use two underscores (`__text__`) or asterisks (`**text**`). Text surrounded by `~` will be converted to a subscript (e.g., `H~2~SO~4~` renders H~2~SO~4~), and similarly, two carets (`^`) produce a superscript (e.g., `Fe^2+^` renders Fe^2+^). To mark text as `inline code`, use a pair of backticks, e.g., `` `code` ``.^[To include literal backticks, use more backticks outside, e.g., you can use two backticks to preserve one backtick inside: ``` `` `code` `` ```.] Small caps can be produced by the HTML tag `span`, e.g., `<span style="font-variant:small-caps;">Small Caps</span>` renders <span style="font-variant:small-caps;">Small Caps</span>. Links are created using `[text](link)`, e.g., `[RStudio](https://www.rstudio.com)`, and the syntax for images is similar: just add an exclamation mark, e.g., `![alt text or image title](path/to/image)`. Footnotes are put inside the square brackets after a caret `^[]`, e.g., `^[This is a footnote.]`. We will talk about citations in Section \@ref(citations).
+&emsp;&emsp;要将文本变为 _斜体_ (_italic_)，可以用下划线或星号将它围起来，例如 `_text_` 或 `*text*`。对于 **粗体** (**bold**) 文本，可以使用双下划线 (`__text__`) 或双星号 (`**text**`)。被 `~` 围住的文本将会被转换为下标（例如 `H~2~SO~4~` 呈现为 H~2~SO~4~）。类似地，两个脱字符 (`^`) 能够产生上标（例如 `Fe^2+^` 渲染为 Fe^2+^）。为了把文本标注为 `内联代码` (`inline code`)，使用一堆反引号，例如 `` `code` ``。^[为了呈现文本性的反引号，需要在外部使用更多的反引号，例如你可以使用两个反引号使内部的一个反引号能够呈现出来：``` `` `code` `` ```。]小型大写字母 (Small caps) 能够通过 HTML 标签 `span` 呈现出来，例如 `<span style="font-variant:small-caps;">Small Caps</span>` 呈现为 <span style="font-variant:small-caps;">Small Caps</span>。链接是使用 `[text](link)` 呈现的，例如 `[RStudio](https://www.rstudio.com)`，图片的语法也类似：在前面加一个感叹号即可，例如 `![alt text or image title](path/to/image)`。脚注放进脱字符 (`^`) 后面的方括号内 `^[]`，例如 `^[This is a footnote.]`。我们将在第 \@ref(citations) 节内讨论引文 (citations)。
 
 ### 块级元素
 
-Section headers can be written after a number of pound signs, e.g.,
+&emsp;&emsp;小节标题可以在若干 `#` 号之后写入，例如：
 
 ```markdown
 # First-level header
@@ -22,13 +22,13 @@ Section headers can be written after a number of pound signs, e.g.,
 ### Third-level header
 ```
 
-If you do not want a certain heading to be numbered, you can add `{-}` after the heading, e.g.,
+&emsp;&emsp;如果你不想对某个标题进行编号，可以在标题后面添加 `{-}`，例如：
 
 ```markdown
 # Preface {-}
 ```
 
-Unordered list items start with `*`, `-`, or `+`, and you can nest one list within another list by indenting the sub-list by four spaces, e.g.,
+&emsp;&emsp;无序列表以 `*`、`-` 或 `+` 开头，并且你可以通过缩进四个空格将另一个列表嵌套进一个列表中，例如
 
 ```markdown
 - one item
@@ -38,7 +38,7 @@ Unordered list items start with `*`, `-`, or `+`, and you can nest one list with
     - one item
 ```
 
-The output is:
+输出为：
 
 - one item
 - one item
@@ -46,7 +46,7 @@ The output is:
     - one item
     - one item
 
-Ordered list items start with numbers (the rule for nested lists is the same as above), e.g.,
+&emsp;&emsp;嵌套列表以数字开头（嵌套列表的书写规则同上），例如：
 
 ```markdown
 1. the first item
@@ -54,13 +54,13 @@ Ordered list items start with numbers (the rule for nested lists is the same as 
 3. the third item
 ```
 
-The output does not look too much different with the Markdown source:
+输出结果与 Markdown 源代码并没有太多不同：
 
 1. the first item
 2. the second item
 3. the third item
 
-Blockquotes are written after `>`, e.g.,
+&emsp;&emsp;块引用 (blockquotes) 写在 `>` 之后，例如：
 
 ```markdown
 > "I thoroughly disapprove of duels. If a man should challenge me,
@@ -70,7 +70,7 @@ Blockquotes are written after `>`, e.g.,
 > --- Mark Twain
 ```
 
-The actual output (we customized the style for blockquotes in this book):
+实际输出为（我们在本书中为块引用定制了样式）：
 
 > "I thoroughly disapprove of duels. If a man should challenge me,
   I would take him kindly and forgivingly by the hand and lead him
@@ -78,7 +78,7 @@ The actual output (we customized the style for blockquotes in this book):
 >
 > --- Mark Twain
 
-Plain code blocks can be written after three or more backticks, and you can also indent the blocks by four spaces, e.g.,
+&emsp;&emsp;纯文本代码块可以在三个或更多的反引号后写入，也可以将块缩进四个空格，例如：
 
 ````markdown
 ```
@@ -92,11 +92,11 @@ Or indent by four spaces:
 
 ### 数学表达式
 
-Inline LaTeX equations\index{LaTeX math expression} can be written in a pair of dollar signs using the LaTeX syntax, e.g., `$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$` (actual output: $f(k)={n \choose k}p^{k}(1-p)^{n-k}$); math expressions of the display style can be written in a pair of double dollar signs, e.g., `$$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$`, and the output looks like this:
+&emsp;&emsp;内联 LaTeX 方程\index{LaTeX math expression} 可以使用 LaTeX 语法写在一对美元符号 (`$`) 内，例如：`$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$`（实际输出为：$f(k)={n \choose k}p^{k}(1-p)^{n-k}$）；展示样式的数学表达式可以用一对双美元符号表示，例如： `$$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$`，其输出看起来像这样：
 
 $$f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k}$$
 
-You can also use math environments inside `$ $` or `$$ $$`, e.g.,
+&emsp;&emsp;你也能够在 `$ $` 或 `$$ $$` 中使用数学环境，例如：
 
 ```latex
 $$\begin{array}{ccc}
@@ -144,11 +144,14 @@ c & d
 
 ## bookdown 提供的 Markdown 功能拓展
 
-Although Pandoc's Markdown is much richer than the original Markdown syntax, it still lacks a number of things that we may need for academic writing. For example, it supports math equations, but you cannot number and reference equations in multi-page HTML or EPUB output. We have provided a few Markdown extensions in **bookdown** to fill the gaps.
+&emsp;&emsp;尽管 Pandoc 风格的 Markdown 比原来的 Markdown 语法要丰富得多，但它仍然缺少我们在学术写作中可能需要的一些东西。例如，它支持数学公式，但不能在多页 HTML 或 EPUB 输出中对公式进行编号和引用。我们在 **bookdown** 中提供了一些 Markdown 扩展来填补这些空白。
 
 ### 方程编号与引用 {#equations}
 
+
 To number and refer to equations\index{equation}\index{cross-reference}, put them in the equation environments and assign labels to them using the syntax `(\#eq:label)`, e.g.,
+
+&emsp;&emsp;要对方程\index{equation}进行编号和引用\index{cross-reference}，请将它们放在方程环境中，并使用语法 `(\#eq:label)` 为它们指定标签，例如：
 
 ```latex
 \begin{equation} 
@@ -157,19 +160,19 @@ To number and refer to equations\index{equation}\index{cross-reference}, put the
 \end{equation} 
 ```
 
-It renders the equation below:
+方程将展示如下：
 
 \begin{equation}
 f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} (\#eq:binom)
 \end{equation}
 
-You may refer to it using `\@ref(eq:binom)`, e.g., see Equation \@ref(eq:binom).
+&emsp;&emsp;你可以使用 `\@ref(eq:binom)` 来引用它，例如：请看方程 \@ref(eq:binom)。
 
 ```{block2, type='rmdcaution'}
-Equation labels must start with the prefix `eq:` in **bookdown**. All labels in **bookdown** must only contain alphanumeric characters, `:`, `-`, and/or `/`. Equation references work best for LaTeX/PDF output, and they are not well supported in Word output or e-books. For HTML output, **bookdown** can only number the equations with labels. Please make sure equations without labels are not numbered by either using the `equation*` environment or adding `\nonumber` or `\notag` to your equations. The same rules apply to other math environments, such as `eqnarray`, `gather`, `align`, and so on (e.g., you can use the `align*` environment).
+方程标签在 **bookdown** 中必须以前缀 `eq:` 开头。**bookdown** 中的所有标签只能包含字母数字字符、`:`、`-` 和/或 `/`。方程引用最适合 LaTeX/PDF 输出格式，它们在 Word 或电子书中没有收到很好的支持。对于 HTML 输出，**bookdown** 只能对带有标签的方程进行编号。请确保没有标签的方程没有使用 `equation*` 环境或在方程中添加 `\nonumber` 或 `\notag` 进行编号。同样的规则也适用于其他数学环境，如 `eqnarray`、`gather`、`align` 等（例如可以使用 `align*` 环境）。
 ```
 
-We demonstrate a few more math equation environments below. Here is an unnumbered equation using the `equation*` environment:
+&emsp;&emsp;我们将在下面演示更多的数学方程环境。下面是一个使用 `equation*` 环境的未编号方程：
 
 ```latex
 \begin{equation*} 
@@ -181,7 +184,7 @@ We demonstrate a few more math equation environments below. Here is an unnumbere
 \frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x)
 \end{equation*}
 
-Below is an `align` environment \@ref(eq:align):
+&emsp;&emsp;下面展示了一个 `align` 环境 \@ref(eq:align):
 
 ```latex
 \begin{align} 
@@ -197,7 +200,7 @@ g(X_{n}) &= g(\theta)+g'({\tilde{\theta}})(X_{n}-\theta) \notag \\
   \sqrt{n}[X_{n}-\theta ] (\#eq:align)
 \end{align}
 
-You can use the `split` environment inside `equation` so that all lines share the same number \@ref(eq:var-beta). By default, each line in the `align` environment will be assigned an equation number. We suppressed the number of the first line in the previous example using `\notag`. In this example, the whole `split` environment was assigned a single number.
+&emsp;&emsp;你可以在 `equation` 中使用 `split` 环境，以便所有行共享相同的编号 \@ref(eq:var-beta)。默认情况下，`align` 环境中的每一行都将被分配一个方程编号。在前面的示例中，我们使用 `\notag` 取消了第一行的编号。在本例中，整个 `split` 环境被分配了一个编号。
 
 ```latex
 \begin{equation} 
@@ -225,9 +228,9 @@ You can use the `split` environment inside `equation` so that all lines share th
 
 ### 定理与证明 {#theorems}
 
-Theorems\index{theorem} and proofs are commonly used in articles and books in mathematics. However, please do not be misled by the names: a "theorem" is just a numbered/labeled environment, and it does not have to be a mathematical theorem (e.g., it can be an example irrelevant to mathematics). Similarly, a "proof" is an unnumbered environment. In this section, we always use the _general_ meanings of a "theorem" and "proof" unless explicitly stated.
+&emsp;&emsp;定理\index{theorem}和证明常用于数学文章和书籍中。但是请不要被名称误导：“定理”只是一个编号或标记的环境，它不一定是一个数学定理（例如，它可以是一个与数学无关的例子）。类似地，“证明”是一个没有编号的环境。在这一节中，除非明确说明，否则我们总是使用“定理”和“证明”的*一般*含义。
 
-In **bookdown**, the types of theorem environments supported are in Table \@ref(tab:theorem-envs). To write a theorem, you can use the syntax below:
+&emsp;&emsp;在 **bookdown** 中，支持的定理环境类型在表 \@ref(tab:theorem-envs)。要写出一个定理，可以使用以下语法：
 
 ````markdown
 ::: {.theorem}
@@ -236,9 +239,10 @@ _Markdown_ syntax.
 :::
 ````
 
-This syntax is based on Pandoc's [fenced `Div` blocks](https://pandoc.org/MANUAL.html#divs-and-spans) and can already be used in any R Markdown document to write [custom blocks.](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html) **Bookdown** only offers special handling for theorem and proof environments. Since this uses the syntax of Pandoc's Markdown, you can write any valid Markdown text inside the block.
 
-(ref:theorem-envs) Theorem environments in **bookdown**.
+&emsp;&emsp;这个语法基于 Pandoc 的 [fenced `Div` blocks](https://pandoc.org/MANUAL.html#divs-and-spans)，并且已经可以在任何 R Markdown 文档中用于编写[自定义块](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html)。**Bookdown** 只提供定理和证明环境的特殊处理。因为这使用了 Pandoc 风格的 Markdown 语法，所以可以在块内编写任何有效的 Markdown 文本。
+
+(ref:theorem-envs) **Bookdown** 中的定理环境。
 
 ```{r theorem-envs, echo=FALSE}
 knitr::kable(data.frame(
@@ -249,9 +253,9 @@ knitr::kable(data.frame(
 ), caption = '(ref:theorem-envs)', booktabs = TRUE)
 ```
 
-To write other theorem environments, replace `::: {.theorem}` with other environment names in Table \@ref(tab:theorem-envs), e.g., `::: {.lemma}`.
+&emsp;&emsp;要编写其他定理环境，请用表 \@ref(tab:theorem-envs) 中的其他环境名称替换 `::: {.theorem}`，例如 `::: {.lemma}`。
 
-A theorem can have a `name` attribute so its name will be printed. For example,
+&emsp;&emsp;一个定理可以有一个 `name` 属性，这样它的名字就会被打印出来。例如：
 
 ````markdown
 ::: {.theorem name="Pythagorean theorem"}
@@ -261,7 +265,7 @@ $$a^2 + b^2 = c^2$$
 :::
 ````
 
-If you want to refer to a theorem, you should label it. The label can be provided as an ID to the block of the form `#label`. For example,
+&emsp;&emsp;如果你想引用一个定理，应该给它贴上标签。标签可以以 `#label` 的形式作为一个 ID 提供给块。例如：
 
 ````markdown
 ::: {.theorem #foo}
@@ -269,7 +273,7 @@ A labeled theorem here.
 :::
 ````
 
-After you label a theorem, you can refer to it using the syntax `\@ref(prefix:label)`.\index{cross-reference} See the column `Label Prefix` in Table \@ref(tab:theorem-envs) for the value of `prefix` for each environment. For example, we have a labeled and named theorem below, and `\@ref(thm:pyth)` gives us its theorem number \@ref(thm:pyth):
+&emsp;&emsp;当你为一个定理贴上标签后，你可以使用语法 `\@ref(prefix:label)`\index{cross-reference}来引用它。对于每个环境中的 `prefix` 值，请看表 \@ref(tab:theorem-envs) 中的 `Label Prefix` 列。例如，我们在下面有一个标记和命名了的定理，`\@ref(thm:pyth)` 给出了它的定理编号 \@ref(thm:pyth)：
 
 ````markdown
 ::: {.theorem #pyth name="Pythagorean theorem"}
@@ -281,36 +285,35 @@ $$a^2 + b^2 = c^2$$
 ````
 
 ::: {.theorem #pyth name="Pythagorean theorem"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
+对于直角三角形，如果 $c$ 表示斜边的长度，$a$ 和 $b$ 表示另外两边的长度，我们有
 
 $$a^2 + b^2 = c^2$$
 :::
 
-The proof environments currently supported are `r knitr::combine_words(names(bookdown:::label_names_math2), before = '\x60')`. The syntax is similar to theorem environments, and proof environments can also be named using the `name` attribute. The only difference is that since they are unnumbered, you cannot reference them, even if you provide an ID to a proof environment.
+&emsp;&emsp;目前支持的证明环有境 `r knitr::combine_words(names(bookdown:::label_names_math2), before = '\x60')`。它的语法类似于定理环境，并且证明环境也能够使用 `name` 属性命名。唯一的区别是你不能引用它们，即便你为证明环境提供了 ID，因为它们无法进行编号。
 
-We have tried to make all these theorem and proof environments work out of the box, no matter if your output is PDF or HTML. If you are a LaTeX or HTML expert, you may want to customize the style of these environments anyway (see Chapter \@ref(customization)). Customization in HTML is easy with CSS, and each environment is enclosed in `<div></div>` with the CSS class being the environment name, e.g., `<div class="lemma"></div>`. For LaTeX output, we have predefined the style to be `definition` for environments `r knitr::combine_words(bookdown:::style_definition, before='\x60')`, and `remark` for environments `r knitr::combine_words(c('proof', bookdown:::style_remark), before='\x60')`. All other environments use the `plain` style. The style definition is done through the `\theoremstyle{}` command of the **amsthm** package. If you do not want the default theorem definitions to be automatically added by **bookdown**, you can set `options(bookdown.theorem.preamble = FALSE)`. This can be useful, for example, to avoid conflicts in single documents (Section \@ref(a-single-document)) using the output format `bookdown::pdf_book` with a `base_format` that has already included **amsmath** definitions.
+&emsp;&emsp;无论你选择的输出是 PDF 还是 HTML，我们都已经尝试使所有这些定理和证明环境开箱即用。如果你是 LaTeX 或 HTML 专家，你可能希望自定义这些环境的样式（请参阅第 \@ref(customization) 章）。使用 CSS 可以很容易在 HTML 中自定义样式，每个环境都包含在 `<div></div>` 中，CSS class 属性为环境名称，例如 `<div class=“lemma”></div>`。对于 LaTeX 输出，我们为环境 `r knitr::combine_words(bookdown:::style_definition, before='\x60')` 预定义了样式 `definition`，为环境 `r knitr::combine_words(c('proof', bookdown:::style_remark), before='\x60')` 预定义了样式 `remark`。所有其他环境都使用 `plain` 样式。样式定义是通过 **amsthm** 包的 `\theoremstyle{}` 命令完成的。如果你不希望 **bookdown** 自动添加默认的定理定义，可以设置 `options(bookdown.thermo.preamble = FALSE)`。例如，使用输出格式 `bookdown::pdf_book` 和已经包含 **amsmath** 定义的 `base_format` 来避免单个文档（第 \@ref(a-single-document) 节）中的冲突非常有用。
 
-Theorems are numbered by chapters by default. If there are no chapters in your document, they are numbered by sections instead. If the whole document is unnumbered (the output format option `number_sections = FALSE`), all theorems are numbered sequentially from 1, 2, ..., N. LaTeX supports numbering one theorem environment after another, e.g., let theorems and lemmas share the same counter. This is not supported for HTML/EPUB output in **bookdown**. You can change the numbering scheme in the LaTeX preamble by defining your own theorem environments, e.g.,
+&emsp;&emsp;默认情况下，定理按篇章编号。如果文档中没有篇章，则按小节编号。如果整篇文档没有编号（输出格式选项为 `number_sections = FALSE`），则所有定理都从 1、2、…、N 开始依次编号。LaTeX 支持依次对一个又一个定理环境进行编号，例如，让定理和引理共享同一个计数器。**bookdown** 中的 HTML/EPUB 输出不支持此操作。你可以通过定义自己的定理环境来更改 LaTeX 导言 (preamble) 中的编号方案，例如：
 
 ```latex
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 ```
 
-When **bookdown** detects `\newtheorem{theorem}` in your LaTeX preamble, it will not write out its default theorem definitions, which means you have to define all theorem environments by yourself. For the sake of simplicity and consistency, we do not recommend that you do this. It can be confusing when your Theorem 18 in PDF becomes Theorem 2.4 in HTML.
+&emsp;&emsp;当 **bookdown** 在 LaTeX 导言 (preamble) 中检测到 `\newtheorem{themore}` 时，它不会输出其默认的定理定义，这意味着你必须自己定义所有定理环境。为了简单和一致性，我们不建议你这样做。当 PDF 中的定理 18 变成 HTML 中的定理 2.4 时可能会令人十分困惑。
 
-Below we show more examples^[Some examples are adapted from the Wikipedia page https://en.wikipedia.org/wiki/Characteristic_function_(probability_theory)] of the theorem and proof environments, so you can see the default styles in **bookdown**.
+&emsp;&emsp;下面我们展示了定理和证明环境的更多的例子^[一些例子改编自维基百科页面 <https://en.wikipedia.org/wiki/Characteristic_function_(probability_theory)>]，所以你可以在 **bookdown** 中看到默认样式。
 
 ::: {.definition}
-The characteristic function of a random variable $X$ is defined by
+随机变量 $x$ 的特征函数定义如下：
 
 $$\varphi _{X}(t)=\operatorname {E} \left[e^{itX}\right], \; t\in\mathcal{R}$$
 :::
 
 
 ::: {.example}
-We derive the characteristic function of $X\sim U(0,1)$ with the probability density function $f(x)=\mathbf{1}_{x \in [0,1]}$.
+我们用概率密度函数 $f(x)=\mathbf{1}_{x \in [0,1]}$ 导出了特征函数 $X\sim U(0,1)$。
 
 \begin{equation*}
 \begin{split}
@@ -325,27 +328,27 @@ We derive the characteristic function of $X\sim U(0,1)$ with the probability den
 \end{split}
 \end{equation*}
 
-Note that we used the fact $e^{ix}=\cos(x)+i\sin(x)$ twice.
+注意，我们使用了两次 $e^{ix}=\cos(x)+i\sin(x)$。
 :::
 
 ::: {.lemma #chf-pdf}
-For any two random variables $X_1$, $X_2$, they both have the same probability distribution if and only if
+对任意两个随机变量 $X_1$, $X_2$，它们都具有相同的概率分布当且仅当
 
 $$\varphi _{X_1}(t)=\varphi _{X_2}(t)$$
 :::
 
 ::: {.theorem #chf-sum}
-If $X_1$, ..., $X_n$ are independent random variables, and $a_1$, ..., $a_n$ are some constants, then the characteristic function of the linear combination $S_n=\sum_{i=1}^na_iX_i$ is
+如果 $X_1$, ..., $X_n$ 是相互独立的随机变量。并且 $a_1$, ..., $a_n$ 是一些常数，那么线性组合 $S_n=\sum_{i=1}^na_iX_i$ 的特征函数是
 
 $$\varphi _{S_{n}}(t)=\prod_{i=1}^n\varphi _{X_i}(a_{i}t)=\varphi _{X_{1}}(a_{1}t)\cdots \varphi _{X_{n}}(a_{n}t)$$
 :::
 
 ::: {.proposition}
-The distribution of the sum of independent Poisson random variables $X_i \sim \mathrm{Pois}(\lambda_i),\: i=1,2,\cdots,n$ is $\mathrm{Pois}(\sum_{i=1}^n\lambda_i)$.
+独立且服从泊松分布的随机变量 $X_i \sim \mathrm{Pois}(\lambda_i),\: i=1,2,\cdots,n$ 之和的分布是 $\mathrm{Pois}(\sum_{i=1}^n\lambda_i)$.
 :::
 
 ::: {.proof}
-The characteristic function of $X\sim\mathrm{Pois}(\lambda)$ is $\varphi _{X}(t)=e^{\lambda (e^{it}-1)}$. Let $P_n=\sum_{i=1}^nX_i$. We know from Theorem \@ref(thm:chf-sum) that
+$X\sim\mathrm{Pois}(\lambda)$ 的特征函数是 $\varphi _{X}(t)=e^{\lambda (e^{it}-1)}$。令 $P_n=\sum_{i=1}^nX_i$。我们从定理 \@ref(thm:chf-sum) 可以知道
 
 \begin{equation*}
 \begin{split}
@@ -355,51 +358,50 @@ The characteristic function of $X\sim\mathrm{Pois}(\lambda)$ is $\varphi _{X}(t)
 \end{split}
 \end{equation*}
 
-This is the characteristic function of a Poisson random variable with the parameter $\lambda=\sum_{i=1}^n \lambda_i$. From Lemma \@ref(lem:chf-pdf), we know the distribution of $P_n$ is $\mathrm{Pois}(\sum_{i=1}^n\lambda_i)$.
+这是具有参数 $\lambda=\sum_{i=1}^n \lambda_i$ 的服从泊松分布的随机变量的特征函数。从引理 \@ref(lem:chf-pdf) 可以知道 $P_n$ 的分布是 $\mathrm{Pois}(\sum_{i=1}^n\lambda_i)$。
 :::
 
 ::: {.remark}
-In some cases, it is very convenient and easy to figure out the distribution of the sum of independent random variables using characteristic functions.
+在以些情况下，使用特征函数计算独立随机变量之和的分布是非常方便和容易的。
 :::
 
 ::: {.corollary}
-The characteristic function of the sum of two independent random variables $X_1$ and $X_2$ is the product of characteristic functions of $X_1$ and $X_2$, i.e.,
+两个独立随机变量 $X_1$ 和 $X_2$ 之和的特征函数是 $X_1$ 和 $X_2$ 特征函数的乘积，即
 
 $$\varphi _{X_1+X_2}(t)=\varphi _{X_1}(t) \varphi _{X_2}(t)$$
 :::
 
-::: {.exercise name="Characteristic Function of the Sample Mean"}
-Let $\bar{X}=\sum_{i=1}^n \frac{1}{n} X_i$ be the sample mean of $n$ independent and identically distributed random variables, each with characteristic function $\varphi _{X}$. Compute the characteristic function of $\bar{X}$. 
+::: {.exercise name="样本均值的特征函数"}
+令 $\bar{X}=\sum_{i=1}^n \frac{1}{n} X_i$ 是 $n$ 个独立同分布的随机变量的均值，每个变量具有特征函数 $\varphi _{X}$。计算 $\bar{X}$ 的特征函数。
 :::
 
 ::: {.solution}
-Applying Theorem \@ref(thm:chf-sum), we have
+应用定理 \@ref(thm:chf-sum)，我们得到
 
 $$\varphi _{\bar{X}}(t)=\prod_{i=1}^n \varphi _{X_i}\left(\frac{t}{n}\right)=\left[\varphi _{X}\left(\frac{t}{n}\right)\right]^n.$$
 :::
   
-::: {.hypothesis name="Riemann hypothesis"}
-The Riemann Zeta-function is defined as
+::: {.hypothesis name="黎曼猜想"}
+黎曼 Zeta 函数被定义为
 $$\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}$$
-for complex values of $s$ and which converges when the real part of $s$ is greater than 1. The Riemann hypothesis is that the Riemann zeta function has its zeros only at the negative even integers and complex numbers with real part $1/2$.
+对于复数值 $s$，当 $s$ 的实部大于 1 时收敛。黎曼猜想是黎曼 zeta 函数只在负偶数和实部为 $1/2$ 的复数处有零点。
 :::
 
 #### 关于旧语法的注记 {#theorem-engine}
 
-For older versions of **bookdown** (before v0.21), a `theorem` environment could be written like this:
+&emsp;&emsp;对于较早版本的 **bookdown**（v0.21 之前），可以这样编写 `theorem` 环境：
 
 ````markdown
 `r ''````{theorem pyth, name="Pythagorean theorem"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
+对于直角三角形，如果 $c$ 表示斜边的长度，$a$ 和 $b$ 表示另外两边的长度，我们有
 
 $$a^2 + b^2 = c^2$$
 ```
 ````
 
-This syntax still works, but we do not recommend it since the new syntax allows you to write richer content and has a cleaner implementation. However, note that the old syntax has to be used if you want the environment to work with output formats in addition to HTML and PDF, such as EPUB. The fenced `Div` syntax only works for HTML and PDF output at the moment, and we will try to improve it in the future.
+&emsp;&emsp;这种语法仍然有效，但我们不建议使用这种语法，因为新语法允许编写更丰富的内容，并且具有更清晰的实现。但是请注意，如果希望环境处理除 HTML 和 PDF 以外的输出格式（如 EPUB），则必须使用旧语法。`Div` 围栏语法目前只适用于 HTML 和 PDF 输出，我们将在将来对其进行改进。
 
-This conversion between the two syntaxes is straightforward. The above theorem could be rewritten in this way:
+&emsp;&emsp;这两种语法之间的转换非常简单。上述定理可以这样改写：
 
 ````markdown
 ::: {.theorem #pyth name="Pythagorean theorem"}
@@ -410,121 +412,122 @@ $$a^2 + b^2 = c^2$$
 :::
 ````
 
-You can use the helper function `bookdown::fence_theorems()` to convert a whole file or a piece of text. This is a one-time operation. We have tried to do the conversion from old to new syntax safely, but we might have missed some edge cases. To make sure you do not overwrite the `input` file by accident, you can write the converted source to a new file, e.g.,
+&emso;&emsp;你可以使用帮助函数 `bookdown::fence_theorems()` 来转换整个文件或一段文本。这是一次性的操作。我们已经尝试过安全地从旧语法转换到新语法，但是可能错过了一些边缘情况。为确保不会意外覆盖 `input` 文件，可以将转换后的源代码写入新文件，例如：
 
 ```r
 bookdown::fence_theorems("01-intro.Rmd", output = "01-intro-new.Rmd")
 ```
 
-Then double check the content of `01-intro-new.Rmd`. Using `output = NULL` will print the result of conversion in the R console, and is another way to check the conversion. If you are using a control version tool, you can set `output` to be the same as `input`, as it should be safe and easy for you to revert the change if anything goes wrong.
+&emsp;&emsp;然后仔细检查 `01-intro-new.Rmd` 的内容。使用 `output = NULL` 将在 R 控制台中打印转换结果，这是检查转换的另一种方法。如果你使用的是版本控制工具，则可以将 `output` 设置为与 `input` 相同，因为如果出现任何问题，你应该可以安全且轻松地还原更改。
 
-### Special headers
+### 特殊的标题
 
-There are a few special types of first-level headers that will be processed differently in **bookdown**. The first type is an unnumbered header that starts with the token `(PART)`. This kind of headers are translated to part titles\index{part}. If you are familiar with LaTeX, this basically means `\part{}`. When your book has a large number of chapters, you may want to organize them into parts, e.g.,
-
-```
-# (PART) Part I {-} 
-
-# Chapter One
-
-# Chapter Two
-
-# (PART) Part II {-} 
-
-# Chapter Three
-```
-
-A part title should be written right before the first chapter title in this part, both title in the same document. You can use `(PART\*)` (the backslash before `*` is required) instead of `(PART)` if a part title should not be numbered.
-
-The second type is an unnumbered header that starts with `(APPENDIX)`, indicating that all chapters after this header are appendices\index{appendix}, e.g.,
+&emsp;&emsp;有几种特殊类型的一级标题在 **bookdown** 会以不同方式处理。第一种类型是没有编号的标题，以标志 `(PART)` 开头。这种类型的标题将会翻译为书籍各部份的标题\index{part}。如果你熟悉 LaTeX 就应该知道它基本上等同于 `\part{}`。当你的书籍有大量章节时，你可能希望将它们组织成部分，例如：
 
 ```
-# Chapter One 
+# (PART) 第一部分 {-} 
 
-# Chapter Two
+# 第一章
 
-# (APPENDIX) Appendix {-} 
+# 第二章
 
-# Appendix A
+# (PART) 第二部分 {-} 
 
-# Appendix B
+# 第三章
 ```
 
-The numbering style of appendices will be automatically changed in LaTeX/PDF and HTML output (usually in the form A, A.1, A.2, B, B.1, ...). This feature is not available to e-books or Word output.
+&emsp;&emsp;各部分的标题应写在本部分第一章标题之前，两个标题应在同一文件中。如果各部分标题不应该参与自动编号，则可以使用 `(PART\*)`（`*` 前的反斜杠是必须的）而不是 `(PART)`。
+
+&emsp;&emsp;第二种类型是以 `(APPENDIX)` 开头的无编号标题，表示此标题后面的所有章节都是附录\index{appendix}，例如：
+
+```
+# 第一章
+
+# 第二章
+
+# (APPENDIX) 附录 {-} 
+
+# 附录 A
+
+# 附录 B
+```
+
+&emsp;&emsp;附录的编号样式将在 LaTeX/PDF 和 HTML 输出中自动更改（通常采用 A、A.1、A.2、B、B.1 等格式）。此功能不适用于电子书或 Word 输出。
 
 ### 文本引用
 
-You can assign some text to a label and reference the text using the label elsewhere in your document. This can be particularly useful for long figure/table captions (Section \@ref(figures) and \@ref(tables)), in which case you normally will have to write the whole character string in the chunk header (e.g., `fig.cap = "A long long figure caption."`) or your R code (e.g., `kable(caption = "A long long table caption.")`). It is also useful when these captions contain special HTML or LaTeX characters, e.g., if the figure caption contains an underscore, it works in the HTML output but may not work in LaTeX output because the underscore must be escaped in LaTeX.
+&emsp;&emsp;你可以将一些文本指定给标签，并使用文档中其他位置的标签来引用这些文本。这对于长图形/表格的标题（第 \@ref(figures) 节和第 \@ref(tables) 节）特别有用，在这种情况下，你通常需要将整个字符串写入区块标题（例如 `fig.cap = "一张长图片的标题”）或 R 代码（例如 `kable(caption = "一个很长很长的表格的标题”））。当这些标题包含特殊的 HTML 或 LaTeX 字符时，它也很有用。例如，如果图片标题包含下划线，则它在 HTML 输出中正常工作，但在 LaTeX 输出中可能不起作用，因为下划线必须在 LaTeX 中进行转义。
 
-The syntax for a text reference is `(ref:label) text`, where `label` is a unique label^[You may consider using the code chunk labels.] throughout the document for `text`. It must be in a separate paragraph with empty lines above and below it. The paragraph must not be wrapped into multiple lines, and should not end with a white space. For example,
+&emsp;&emsp;文本引用的语法是 `(ref:label) text`。其中 `text` 的标签 `label` 是在整个文档中唯一的标签^[你可以考使用代码块标签]。文本引用必须放在一个单独的段落中，上面和下面都有空行。段落不能有多行，也不能以空格结尾。例如，
 
 ```markdown
-(ref:foo) Define a text reference **here**. 
+(ref:foo) **在这里**定义一个文本引用。
 ```
 
-Then you can use `(ref:foo)` in your figure/table captions. The text can contain anything that Markdown supports, as long as it is one single paragraph. Here is a complete example:
+&emsp;&emsp;然后你可以在图形/表格标题中使用 `(ref:foo)`。只要是一个段落，文本可以包含 Markdown 支持的任何内容。下面是一个完整的示例：
 
 ````markdown
 A normal paragraph.
 
-(ref:foo) A scatterplot of the data `cars` using **base** R graphics. 
+(ref:foo) 使用 **base** R 图形系统绘制的数据集 `cars` 的散点图。
 
 `r ''````{r foo, fig.cap='(ref:foo)'}
-plot(cars)  # a scatterplot
+plot(cars)  # 绘制散点图
 ```
 ````
 
-Text references can be used anywhere in the document (not limited to figure captions). It can also be useful if you want to reuse a fragment of text in multiple places.
+&emsp;&emsp;文本引用可以在文档中的任何位置使用（不仅限于图片标题）。如果你想在多个位置重用文本片段，它也很有用。
 
 ## R 代码
 
-There are two types of R code in R Markdown/**knitr** documents: R code chunks\index{code chunk}, and inline R code\index{inline R code}. The syntax for the latter is `` ``r ''`r R_CODE` ``, and it can be embedded inline with other document elements. R code chunks look like plain code blocks, but have `{r}` after the three backticks and (optionally) chunk options inside `{}`, e.g.,
+&emsp;&emsp;R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 `` ``r ''`r R_CODE` ``，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 `{r}`，在 `{}` 内有（可选的）块选项，例如：
 
 ````markdown
 `r ''````{r chunk-label, echo = FALSE, fig.cap = 'A figure caption.'}
 1 + 1
-rnorm(10)  # 10 random numbers
-plot(dist ~ speed, cars)  # a scatterplot
+rnorm(10)  # 10 个随机数
+plot(dist ~ speed, cars)  # 绘制散点图
 ```
 ````
 
-To learn more about **knitr** chunk options, see @xie2015 or the web page <http://yihui.org/knitr/options>. For books, additional R code can be executed before/after each chapter; see `before_chapter_script` and `after_chapter_script` in Section \@ref(configuration).
+&emsp;&emsp;有关 **knitr** 块选项的详细信息，请参阅 @xie2015 或网页 <http://yihui.org/knitr/options>。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 \@ref(configuration) 节中的 `before_chapter_script` 和 `after_chapter_script`。
 
-## Figures {#figures}
+## 图片 {#figures}
 
-By default, figures\index{figure} have no captions in the output generated by **knitr**, which means they will be placed wherever they were generated in the R code. Below is such an example.
+&emsp;&emsp;默认情况下，图片\index{figure}在 **knitr** 生成的输出文档中没有标题，这意味着它们将放在生成它们的 R 代码处。下面就是这样一个例子。
 
 ```{r no-caption, fig.width=6, fig.asp=.7, out.width='70%', ref.label='pressure-plot'}
 ```
 
-The disadvantage of typesetting figures in this way is that when there is not enough space on the current page to place a figure, it may either reach the bottom of the page (hence exceeds the page margin), or be pushed to the next page, leaving a large white margin at the bottom of the current page. That is basically why there are "floating environments"\index{floating environment} in LaTeX: elements that cannot be split over multiple pages (like figures) are put in floating environments, so they can float to a page that has enough space to hold them. There is also a disadvantage of floating things forward or backward, though. That is, readers may have to jump to a different page to find the figure mentioned on the current page. This is simply a natural consequence of having to typeset things on multiple pages of fixed sizes. This issue does not exist in HTML, however, since everything can be placed continuously on one single page (presumably with infinite height), and there is no need to split anything across multiple pages of the same page size.
+&emsp;&emsp;这样排版图片的缺点是，如果当前页面没有足够的空间放置图片，图片可能会被放在页面的底部（因此会超出页边空白），或者被推到下一页，在当前页面底部留下一大块空白。这基本上就是 LaTeX 中存在着“浮动环境 (floating environments)”\index{floating environment} 的原因：不能再多个页面上进行拆分（如图片）的元素会被放在浮动环境中，因此它们可以浮动到一个有足够空间容纳它们的页面。但是，向前或向后的浮动也存在着缺点：读者可能需要跳转到另一个页面才能找到当前页面上提到的图片。这只是不得不在多个页面上以固定大小进行排版的一个自然的结果。不过 HTML 中不存在这个问题，因为所有内容都可以被连续地放置在一个页面上（大概有着无限的高度），并且不需要在有着相同页面大小的多个页面上分割任何内容。
 
-If we assign a figure caption to a code chunk via the chunk option `fig.cap`, R plots will be put into figure environments, which will be automatically labeled and numbered, and can also be cross-referenced. The label of a figure environment is generated from the label of the code chunk, e.g., if the chunk label is `foo`, the figure label will be `fig:foo` (the prefix `fig:` is added before `foo`). To reference a figure\index{cross-reference}, use the syntax `\@ref(label)`,^[Do not forget the leading backslash! And also note the parentheses `()` after `ref`; they are not curly braces `{}`.] where `label` is the figure label, e.g., `fig:foo`.
+&emsp;&emsp;如果我们通过块选项 `fig.cap` 为代码块分配一个图片标题，那么 R 图形将被放入图形 (figure) 环境中，它将被自动标记和编号，还可以进行交叉引用。图形环境的标签是从代码块的标签生成的。例如，如果块标签是 `foo`，则图片标签将是 `fig:foo`（前缀 `fig:` 在 `foo` 之前添加）。如果要引用一张图片\index{cross-reference}，请使用语法 `\@ref(label)`，^[不要忘记前导的反斜杠！注意 `ref` 后面的括号 `()`；它们不是大括号 `{}`。]，其中 `label` 是图片标签，例如 `fig:foo`。
 
-To take advantage of Markdown formatting _within_ the figure caption, you will need to use text references (see Section \@ref(text-references)). For example, a figure caption that contains `_italic text_` will not work when the output format is LaTeX/PDF, since the underscore is a special character in LaTeX, but if you use text references, `_italic text_` will be translated to LaTeX code when the output is LaTeX.
+&emsp;&emsp;如果要*在图片标题中*利用 Markdown 格式化的优势，需要使用文本引用（请参阅第 \@ref(text-references) 节）。例如，当输出格式为 LaTeX/PDF 时，包含 `_斜体文本_` 的图片标题将不起作用，因为下划线是 LaTeX 中的特殊字符。但如果使用文本引用，则当输出为 LaTeX 时，`_斜体文本_` 将被转换为 LaTeX 代码。
 
 ```{block2, type='rmdimportant'}
-If you want to cross-reference figures or tables generated from a code chunk, please make sure the chunk label only contains _alphanumeric_ characters (a-z, A-Z, 0-9), slashes (/), or dashes (-).
+如果要交叉引用从代码块生成的图片或表格，请确保块标签仅包含*字母与数字字符 (alphanumber)* （a-z、a-z、0-9）、斜杠 (/) 或破折号 (-)。
 ```
 
 
-The chunk option `fig.asp` can be used to set the aspect ratio of plots, i.e., the ratio of figure height/width. If the figure width is 6 inches (`fig.width = 6`) and `fig.asp = 0.7`, the figure height will be automatically calculated from `fig.width * fig.asp = 6 * 0.7 = 4.2`. Figure \@ref(fig:pressure-plot) is an example using the chunk options `fig.asp = 0.7`, `fig.width = 6`, and `fig.align = 'center'`, generated from the code below:
+&emsp;&emsp;块选项 `fig.asp` 能够被用来设置图片的纵横比。例如图片的高宽比。如果图片的宽度是 6 英寸 (`fig.width = 6`) 并且 `fig.asp = 0.7`，则图片的高度将会自动使用 `fig.width * fig.asp = 6 * 0.7 = 4.2` 计算得出。图 \@ref(fig:pressure-plot) 是使用块选项 `fig.asp = 0.7`、`fig.width = 6` 和 `fig.align = 'center'` 的一个例子，它是从下面的代码中生成的：
 
-```{r pressure-plot, fig.asp=.7, fig.width=6, fig.cap='A figure example with the specified aspect ratio, width, and alignment.', fig.align='center', out.width='90%'}
+```{r pressure-plot, fig.asp=.7, fig.width=6, fig.cap='指定纵横比、宽度和对齐方式的一个图片示例。', fig.align='center', out.width='90%'}
 par(mar = c(4, 4, .1, .1))
 plot(pressure, pch = 19, type = 'b')
 ```
 
-The actual size of a plot is determined by the chunk options `fig.width` and `fig.height` (the size of the plot generated from a graphical device), and we can specify the output size of plots via the chunk options `out.width` and `out.height`. The possible value of these two options depends on the output format of the document. For example, `out.width = '30%'` is a valid value for HTML output, but not for LaTeX/PDF output. However, **knitr** will automatically convert a percentage value for `out.width` of the form `x%` to `(x / 100) \linewidth`, e.g., `out.width = '70%'` will be treated as `.7\linewidth` when the output format is LaTeX. This makes it possible to specify a relative width of a plot in a consistent manner. Figure \@ref(fig:cars-plot) is an example of `out.width = 70%`.
+&emsp;&emsp;图片的实际大小是由块选项 `fig.width` 和 `fig.height` 决定的（图片的大小由图形设备 (graphical device) 生成），并且我们能够通过块选项 `out.width` 和 `out.height` 指定图片的输出大小。这两个选项可能的取值由文档的输出格式决定。例如，`out.width = '30%'` 对于 HTML 输出格式来说是有效的，但对于 LaTeX/PDF 输出来说是无效值。然而，**knitr** 会自动地将 `x%` 格式的 `out.width` 的百分比值转化为 `(x / 100) \linewidth`。例如，当输出格式为 LaTeX 时，`out.width = '70%'` 将会被视为 `.7\linewidth`。这样的处理使得我们能够以一致的方式指定图片的相对宽度。图 \@ref(fig:cars-plot) 是 `out.width = 70%` 的一个示例。
 
-```{r cars-plot, out.width='70%', fig.cap='A figure example with a relative width 70\\%.'}
+```{r cars-plot, out.width='70%', fig.cap='相对宽度为 70\\% 的一个图片示例。'}
 par(mar = c(4, 4, .1, .1))
 plot(cars, pch = 19)
 ```
 
-If you want to put multiple plots in one figure environment, you must use the chunk option `fig.show = 'hold'` to hold multiple plots from a code chunk and include them in one environment. You can also place plots side by side if the sum of the width of all plots is smaller than or equal to the current line width. For example, if two plots have the same width `50%`, they will be placed side by side. Similarly, you can specify `out.width = '33%'` to arrange three plots on one line. Figure \@ref(fig:multi-plots) is an example of two plots, each with a width of `50%`.
 
-```{r multi-plots, out.width='50%', fig.show='hold', fig.cap='Two plots placed side by side.'}
+&emsp;&emsp;如果要在一个图形环境中放置多张图片，则必须使用块选项 `fig.show = 'hold'` 来保存代码块中的多张图片，并将它们包含在一个环境中。如果所有图片的宽度之和小于或等于当前线宽 (line width)，也可以并排放置图片。例如，如果两张图片具有相同的宽度 `50%`，则它们将并排放置。类似地，可以通过指定 `out.width = '33%'` 在一行并排放置三张图片。图 \@ref(fig:multi-plots) 是放置两张图的示例，每张图的宽度为 `50%`。
+
+```{r multi-plots, out.width='50%', fig.show='hold', fig.cap='并排放置两张图片。'}
 par(mar = c(4, 4, .1, .1))
 plot(pressure, pch = 19, type = 'b')
 plot(cars, pch = 19)
@@ -543,7 +546,7 @@ There are a few advantages of using `include_graphics()`:
 1. `include_graphics()` can be smart enough to use PDF graphics automatically when the output format is LaTeX and the PDF graphics files exist, e.g., an image path `foo/bar.png` can be automatically replaced with `foo/bar.pdf` if the latter exists. PDF images often have better qualities than raster images in LaTeX/PDF output. To make use of this feature, set the argument `auto_pdf = TRUE`, or set the global option `options(knitr.graphics.auto_pdf = TRUE)` to enable this feature globally in an R session.
 1. You can easily scale these images proportionally using the same ratio. This can be done via the `dpi` argument (dots per inch), which takes the value from the chunk option `dpi` by default. If it is a numeric value and the chunk option `out.width` is not set, the output width of an image will be its actual width (in pixels) divided by `dpi`, and the unit will be inches. For example, for an image with the size 672 x 480, its output width will be 7 inches (`7in`) when `dpi = 96`. This feature requires the package **png** and/or **jpeg** to be installed. You can always override the automatic calculation of width in inches by providing a non-NULL value to the chunk option `out.width`, or use `include_graphics(dpi = NA)`.
 
-## Tables {#tables}
+## 表格 {#tables}
 
 For now, the most convenient way to generate a table\index{table} is the function `knitr::kable()`, because there are some internal tricks in **knitr** to make it work with **bookdown** and users do not have to know anything about these implementation details. We will explain how to use other packages and functions later in this section.
 
@@ -596,7 +599,7 @@ You can use any types of Markdown tables in your document. To be able to cross-r
 
 If you decide to use other R packages to generate tables, you have to make sure the label for the table environment appears in the beginning of the table caption in the form `(\#label)` (again, `label` must have the prefix `tab:`). You have to be very careful about the _portability_ of the table generating function: it should work for both HTML and LaTeX output automatically, so it must consider the output format internally (check `knitr::opts_knit$get('rmarkdown.pandoc.to')`). When writing out an HTML table, the caption must be written in the `<caption></caption>` tag. For simple tables, `kable()` should suffice. If you have to create complicated tables (e.g., with certain cells spanning across multiple columns/rows), you will have to take the aforementioned issues into consideration.
 
-## Cross-references
+## 交叉引用
 
 We have explained how cross-references\index{cross-reference} work for equations (Section \@ref(equations)), theorems (Section \@ref(theorems)), figures (Section \@ref(figures)), and tables (Section \@ref(tables)). In fact, you can also reference sections using the same syntax `\@ref(label)`, where `label` is the section ID. By default, Pandoc will generate an ID for all section headers, e.g., a section `# Hello World` will have an ID `hello-world`. We recommend you to manually assign an ID to a section header to make sure you do not forget to update the reference label after you change the section header. To assign an ID to a section header, simply add `{#id}` to the end of the section header.  Further attributes of section headers can be set using standard [Pandoc syntax](http://pandoc.org/MANUAL.html#heading-identifiers).
 
@@ -615,110 +618,11 @@ The Pandoc documentation provides more details on [automatic section IDs](http:/
 
 Cross-references still work even when we refer to an item that is not on the current page of the PDF or HTML output. For example, see Equation \@ref(eq:binom) and Figure \@ref(fig:knitr-logo).
 
-## Custom blocks
+## 自定义块
 
-:::{.rmdimportant latex=true}
-We recommend that you use the new syntax to create custom blocks, which is introduced in [Section 9.6 in the _R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html) [@rmarkdown2020]. We do not recommend using the `block` or `block2` engine described below. Those will be deprecated in a future version of **bookdown**. Please remember to switch to the new syntax for your content if you are still using one of these engines. Thanks for your understanding!
-:::
+Custom blocks are often used in technical books to create salient boxes of code and/or narrative that call the reader's attention. For example, custom blocks may be used to highlight a note or a warning. These can be included in multiple **bookdown** output formats using Pandoc's syntax for fenced `Div` blocks (https://pandoc.org/MANUAL.html#divs-and-spans). Section 9.6 in the [_R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html) [@rmarkdown2020] for instructions.
 
-You can generate custom blocks\index{custom block} using the `block` engine in **knitr**, i.e., the chunk option `engine = 'block'`, or the more compact syntax ```` ```{block} ````. This engine should be used in conjunction with the chunk option `type`, which takes a character string. When the `block` engine is used, it generates a `<div>` to wrap the chunk content if the output format is HTML, and a LaTeX environment if the output is LaTeX. The `type` option specifies the class of the `<div>` and the name of the LaTeX environment. For example, the HTML output of this chunk
-
-````markdown
-`r ''````{block, type='FOO'}
-Some text for this block.
-```
-````
-
-will be this:
-
-```html
-<div class="FOO">
-Some text for this block.
-</div>
-```
-
-and the LaTeX output will be this:
-
-```latex
-\begin{FOO}
-Some text for this block.
-\end{FOO}
-```
-
-It is up to the book author how to define the style of the block. You can define the style of the `<div>` in CSS and include it in the output via the `includes` option in the YAML metadata. Similarly, you may define the LaTeX environment via `\newenvironment` and include the definition in the LaTeX output via the `includes` option. For example, we may save the following style in a CSS file, say, `style.css`:
-
-```css
-div.FOO {
-  font-weight: bold;
-  color: red;
-}
-```
-
-And the YAML metadata of the R Markdown document can be:
-
-```yaml
----
-output:
-  bookdown::html_book:
-    includes:
-      in_header: style.css
----
-```
-
-We have defined a few types of blocks for this book to show notes, tips, and warnings, etc. Below are some examples:
-
-```{block2, note-text, type='rmdnote'}
-R is free software and comes with ABSOLUTELY NO WARRANTY.
-You are welcome to redistribute it under the terms of the
-GNU General Public License versions 2 or 3.
-For more information about these matters see
-http://www.gnu.org/licenses/.
-```
-
-```{block2, note-text, type='rmdcaution'}
-```
-
-
-```{block2, note-text, type='rmdimportant'}
-```
-
-```{block2, note-text, type='rmdtip'}
-```
-
-```{block2, note-text, type='rmdwarning'}
-```
-
-The **knitr** `block` engine was designed to display simple content (typically a paragraph of plain text). You can use simple formatting syntax such as making certain words bold or italic, but more advanced syntax such as citations and cross-references will not work. However, there is an alternative engine named `block2` that supports arbitrary Markdown syntax, e.g.,
-
-````markdown
-`r ''````{block2, type='FOO'}
-Some text for this block [@citation-key].
-
-- a list item
-- another item
-
-More text.
-```
-````
-
-The `block2` engine should also be faster than the `block` engine if you have a lot of custom blocks in the document, but its implementation was based on [a hack,](https://github.com/jgm/pandoc/issues/2453) so we are not 100% sure if it is always going to work in the future. We have not seen problems with Pandoc v1.17.2 yet.
-
-One more caveat for the `block2` engine: if the last element in the block is not an ordinary paragraph, you must leave a blank line at the end, e.g.,
-
-````markdown
-`r ''````{block2, type='FOO'}
-Some text for this block [@citation-key].
-
-- a list item
-- another item
-- end the list with a blank line
-
-```
-````
-
-The theorem and proof environments in Section \@ref(theorems) are actually implemented through the `block2` engine.
-
-For all custom blocks based on the `block` or `block2` engine, there is one chunk option `echo` that you can use to show (`echo = TRUE`) or hide (`echo = FALSE`) the blocks.
+The `bs4_book()` HTML output format includes styling for selected custom blocks; see Section \@ref(bs4-book).
 
 ## 引文 {#citations}
 

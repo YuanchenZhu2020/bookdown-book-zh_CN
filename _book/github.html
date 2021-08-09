@@ -208,7 +208,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.4" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>2.4</b> 图片</a></li>
 <li class="chapter" data-level="2.5" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>2.5</b> 表格</a></li>
 <li class="chapter" data-level="2.6" data-path="cross-references.html"><a href="cross-references.html"><i class="fa fa-check"></i><b>2.6</b> 交叉引用</a></li>
-<li class="chapter" data-level="2.7" data-path="自定义块.html"><a href="自定义块.html"><i class="fa fa-check"></i><b>2.7</b> 自定义块</a></li>
+<li class="chapter" data-level="2.7" data-path="自定义区块.html"><a href="自定义区块.html"><i class="fa fa-check"></i><b>2.7</b> 自定义区块</a></li>
 <li class="chapter" data-level="2.8" data-path="citations.html"><a href="citations.html"><i class="fa fa-check"></i><b>2.8</b> 引文</a></li>
 <li class="chapter" data-level="2.9" data-path="latex-index.html"><a href="latex-index.html"><i class="fa fa-check"></i><b>2.9</b> 索引</a></li>
 <li class="chapter" data-level="2.10" data-path="html-小组件.html"><a href="html-小组件.html"><i class="fa fa-check"></i><b>2.10</b> HTML 小组件</a></li>
@@ -237,11 +237,11 @@ div.csl-indent {
 <li class="chapter" data-level="4.2" data-path="更换主题.html"><a href="更换主题.html"><i class="fa fa-check"></i><b>4.2</b> 更换主题</a></li>
 <li class="chapter" data-level="4.3" data-path="模板.html"><a href="模板.html"><i class="fa fa-check"></i><b>4.3</b> 模板</a></li>
 <li class="chapter" data-level="4.4" data-path="configuration.html"><a href="configuration.html"><i class="fa fa-check"></i><b>4.4</b> 配置</a></li>
-<li class="chapter" data-level="4.5" data-path="国际化.html"><a href="国际化.html"><i class="fa fa-check"></i><b>4.5</b> 国际化</a></li>
+<li class="chapter" data-level="4.5" data-path="internationalization.html"><a href="internationalization.html"><i class="fa fa-check"></i><b>4.5</b> 国际化</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="editing.html"><a href="editing.html"><i class="fa fa-check"></i><b>5</b> 编辑</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="构建书籍.html"><a href="构建书籍.html"><i class="fa fa-check"></i><b>5.1</b> 构建书籍</a></li>
+<li class="chapter" data-level="5.1" data-path="build-the-book.html"><a href="build-the-book.html"><i class="fa fa-check"></i><b>5.1</b> 构建书籍</a></li>
 <li class="chapter" data-level="5.2" data-path="预览单个章节.html"><a href="预览单个章节.html"><i class="fa fa-check"></i><b>5.2</b> 预览单个章节</a></li>
 <li class="chapter" data-level="5.3" data-path="使用-http-服务预览书籍.html"><a href="使用-http-服务预览书籍.html"><i class="fa fa-check"></i><b>5.3</b> 使用 HTTP 服务预览书籍</a></li>
 <li class="chapter" data-level="5.4" data-path="rstudio-ide.html"><a href="rstudio-ide.html"><i class="fa fa-check"></i><b>5.4</b> RStudio IDE</a></li>
@@ -339,7 +339,7 @@ div.csl-indent {
 <span id="cb127-12"><a href="github.html#cb127-12" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">--all</span> <span class="pp">*</span></span>
 <span id="cb127-13"><a href="github.html#cb127-13" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span><span class="st">&quot;Update the book&quot;</span></span>
 <span id="cb127-14"><a href="github.html#cb127-14" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-q</span> origin gh-pages</span></code></pre></div>
-<p>  变量名 <code>GITHUB_PAT</code> 和目录名 <code>book-output</code> 可以是任意名称。只要名称没有与已经存在的变量名或目录名冲突，你就可以使用喜欢的任何名字。上述脚本与我们在第 <a href="#build-the-book"><strong>??</strong></a> 节提到的书籍构建脚本可以放在 <code>master</code> 分支作为 as Shell 脚本。例如，你可以将它们命名为 <code>_build.sh</code> 和 <code>_deploy.sh</code>。那么，你的 <code>.travis.yml</code> 文件可能是这样的：</p>
+<p>  变量名 <code>GITHUB_PAT</code> 和目录名 <code>book-output</code> 可以是任意名称。只要名称没有与已经存在的变量名或目录名冲突，你就可以使用喜欢的任何名字。上述脚本与我们在第 <a href="build-the-book.html#build-the-book">5.1</a> 节提到的书籍构建脚本可以放在 <code>master</code> 分支作为 as Shell 脚本。例如，你可以将它们命名为 <code>_build.sh</code> 和 <code>_deploy.sh</code>。那么，你的 <code>.travis.yml</code> 文件可能是这样的：</p>
 <div class="sourceCode" id="cb128"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb128-1"><a href="github.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">language</span><span class="kw">:</span><span class="at"> r</span></span>
 <span id="cb128-2"><a href="github.html#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pandoc_version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.19.2.1</span></span>
 <span id="cb128-3"><a href="github.html#cb128-3" aria-hidden="true" tabindex="-1"></a></span>

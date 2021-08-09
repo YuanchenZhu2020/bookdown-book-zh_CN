@@ -208,7 +208,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.4" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>2.4</b> 图片</a></li>
 <li class="chapter" data-level="2.5" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>2.5</b> 表格</a></li>
 <li class="chapter" data-level="2.6" data-path="cross-references.html"><a href="cross-references.html"><i class="fa fa-check"></i><b>2.6</b> 交叉引用</a></li>
-<li class="chapter" data-level="2.7" data-path="自定义块.html"><a href="自定义块.html"><i class="fa fa-check"></i><b>2.7</b> 自定义块</a></li>
+<li class="chapter" data-level="2.7" data-path="自定义区块.html"><a href="自定义区块.html"><i class="fa fa-check"></i><b>2.7</b> 自定义区块</a></li>
 <li class="chapter" data-level="2.8" data-path="citations.html"><a href="citations.html"><i class="fa fa-check"></i><b>2.8</b> 引文</a></li>
 <li class="chapter" data-level="2.9" data-path="latex-index.html"><a href="latex-index.html"><i class="fa fa-check"></i><b>2.9</b> 索引</a></li>
 <li class="chapter" data-level="2.10" data-path="html-小组件.html"><a href="html-小组件.html"><i class="fa fa-check"></i><b>2.10</b> HTML 小组件</a></li>
@@ -237,11 +237,11 @@ div.csl-indent {
 <li class="chapter" data-level="4.2" data-path="更换主题.html"><a href="更换主题.html"><i class="fa fa-check"></i><b>4.2</b> 更换主题</a></li>
 <li class="chapter" data-level="4.3" data-path="模板.html"><a href="模板.html"><i class="fa fa-check"></i><b>4.3</b> 模板</a></li>
 <li class="chapter" data-level="4.4" data-path="configuration.html"><a href="configuration.html"><i class="fa fa-check"></i><b>4.4</b> 配置</a></li>
-<li class="chapter" data-level="4.5" data-path="国际化.html"><a href="国际化.html"><i class="fa fa-check"></i><b>4.5</b> 国际化</a></li>
+<li class="chapter" data-level="4.5" data-path="internationalization.html"><a href="internationalization.html"><i class="fa fa-check"></i><b>4.5</b> 国际化</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="editing.html"><a href="editing.html"><i class="fa fa-check"></i><b>5</b> 编辑</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="构建书籍.html"><a href="构建书籍.html"><i class="fa fa-check"></i><b>5.1</b> 构建书籍</a></li>
+<li class="chapter" data-level="5.1" data-path="build-the-book.html"><a href="build-the-book.html"><i class="fa fa-check"></i><b>5.1</b> 构建书籍</a></li>
 <li class="chapter" data-level="5.2" data-path="预览单个章节.html"><a href="预览单个章节.html"><i class="fa fa-check"></i><b>5.2</b> 预览单个章节</a></li>
 <li class="chapter" data-level="5.3" data-path="使用-http-服务预览书籍.html"><a href="使用-http-服务预览书籍.html"><i class="fa fa-check"></i><b>5.3</b> 使用 HTTP 服务预览书籍</a></li>
 <li class="chapter" data-level="5.4" data-path="rstudio-ide.html"><a href="rstudio-ide.html"><i class="fa fa-check"></i><b>5.4</b> RStudio IDE</a></li>
@@ -438,7 +438,7 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 <span id="cb33-5"><a href="bookdown-提供的-markdown-功能拓展.html#cb33-5" aria-hidden="true" tabindex="-1"></a>$$a^2 + b^2 = c^2$$</span>
 <span id="cb33-6"><a href="bookdown-提供的-markdown-功能拓展.html#cb33-6" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 <div class="theorem">
-<p><span id="thm:pyth" class="theorem"><strong>Theorem 2.1  (Pythagorean theorem) </strong></span>对于直角三角形，如果 <span class="math inline">\(c\)</span> 表示斜边的长度，<span class="math inline">\(a\)</span> 和 <span class="math inline">\(b\)</span> 表示另外两边的长度，我们有</p>
+<p><span id="thm:pyth" class="theorem"><strong>定理 2.1  (Pythagorean theorem) </strong></span>对于直角三角形，如果 <span class="math inline">\(c\)</span> 表示斜边的长度，<span class="math inline">\(a\)</span> 和 <span class="math inline">\(b\)</span> 表示另外两边的长度，我们有</p>
 <p><span class="math display">\[a^2 + b^2 = c^2\]</span></p>
 </div>
 <p>  目前支持的证明环有境 <code>proof</code>, <code>remark</code>, and <code>solution</code>。它的语法类似于定理环境，并且证明环境也能够使用 <code>name</code> 属性命名。唯一的区别是你不能引用它们，即便你为证明环境提供了 ID，因为它们无法进行编号。</p>
@@ -449,11 +449,11 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 <p>  当 <strong>bookdown</strong> 在 LaTeX 导言 (preamble) 中检测到 <code>\newtheorem{themore}</code> 时，它不会输出其默认的定理定义，这意味着你必须自己定义所有定理环境。为了简单和一致性，我们不建议你这样做。当 PDF 中的定理 18 变成 HTML 中的定理 2.4 时可能会令人十分困惑。</p>
 <p>  下面我们展示了定理和证明环境的更多的例子<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>，所以你可以在 <strong>bookdown</strong> 中看到默认样式。</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 2.1  </strong></span>随机变量 <span class="math inline">\(x\)</span> 的特征函数定义如下：</p>
+<p><span id="def:unlabeled-div-1" class="definition"><strong>定义 2.1  </strong></span>随机变量 <span class="math inline">\(x\)</span> 的特征函数定义如下：</p>
 <p><span class="math display">\[\varphi _{X}(t)=\operatorname {E} \left[e^{itX}\right], \; t\in\mathcal{R}\]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-2" class="example"><strong>Example 2.1  </strong></span>我们用概率密度函数 <span class="math inline">\(f(x)=\mathbf{1}_{x \in [0,1]}\)</span> 导出了特征函数 <span class="math inline">\(X\sim U(0,1)\)</span>。</p>
+<p><span id="exm:unlabeled-div-2" class="example"><strong>例 2.1  </strong></span>我们用概率密度函数 <span class="math inline">\(f(x)=\mathbf{1}_{x \in [0,1]}\)</span> 导出了特征函数 <span class="math inline">\(X\sim U(0,1)\)</span>。</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{split}
 \varphi _{X}(t) &amp;= \operatorname {E} \left[e^{itX}\right]\\
@@ -469,18 +469,18 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 <p>注意，我们使用了两次 <span class="math inline">\(e^{ix}=\cos(x)+i\sin(x)\)</span>。</p>
 </div>
 <div class="lemma">
-<p><span id="lem:chf-pdf" class="lemma"><strong>Lemma 2.1  </strong></span>对任意两个随机变量 <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>，它们都具有相同的概率分布当且仅当</p>
+<p><span id="lem:chf-pdf" class="lemma"><strong>引理 2.1  </strong></span>对任意两个随机变量 <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>，它们都具有相同的概率分布当且仅当</p>
 <p><span class="math display">\[\varphi _{X_1}(t)=\varphi _{X_2}(t)\]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:chf-sum" class="theorem"><strong>Theorem 2.2  </strong></span>如果 <span class="math inline">\(X_1\)</span>, …, <span class="math inline">\(X_n\)</span> 是相互独立的随机变量。并且 <span class="math inline">\(a_1\)</span>, …, <span class="math inline">\(a_n\)</span> 是一些常数，那么线性组合 <span class="math inline">\(S_n=\sum_{i=1}^na_iX_i\)</span> 的特征函数是</p>
+<p><span id="thm:chf-sum" class="theorem"><strong>定理 2.2  </strong></span>如果 <span class="math inline">\(X_1\)</span>, …, <span class="math inline">\(X_n\)</span> 是相互独立的随机变量。并且 <span class="math inline">\(a_1\)</span>, …, <span class="math inline">\(a_n\)</span> 是一些常数，那么线性组合 <span class="math inline">\(S_n=\sum_{i=1}^na_iX_i\)</span> 的特征函数是</p>
 <p><span class="math display">\[\varphi _{S_{n}}(t)=\prod_{i=1}^n\varphi _{X_i}(a_{i}t)=\varphi _{X_{1}}(a_{1}t)\cdots \varphi _{X_{n}}(a_{n}t)\]</span></p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-3" class="proposition"><strong>Proposition 2.1  </strong></span>独立且服从泊松分布的随机变量 <span class="math inline">\(X_i \sim \mathrm{Pois}(\lambda_i),\: i=1,2,\cdots,n\)</span> 之和的分布是 <span class="math inline">\(\mathrm{Pois}(\sum_{i=1}^n\lambda_i)\)</span>.</p>
+<p><span id="prp:unlabeled-div-3" class="proposition"><strong>命题 2.1  </strong></span>独立且服从泊松分布的随机变量 <span class="math inline">\(X_i \sim \mathrm{Pois}(\lambda_i),\: i=1,2,\cdots,n\)</span> 之和的分布是 <span class="math inline">\(\mathrm{Pois}(\sum_{i=1}^n\lambda_i)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-4" class="proof"><em>Proof</em>. </span><span class="math inline">\(X\sim\mathrm{Pois}(\lambda)\)</span> 的特征函数是 <span class="math inline">\(\varphi _{X}(t)=e^{\lambda (e^{it}-1)}\)</span>。令 <span class="math inline">\(P_n=\sum_{i=1}^nX_i\)</span>。我们从定理 <a href="bookdown-提供的-markdown-功能拓展.html#thm:chf-sum">2.2</a> 可以知道</p>
+<p><span id="unlabeled-div-4" class="proof"><em>证明</em>. </span><span class="math inline">\(X\sim\mathrm{Pois}(\lambda)\)</span> 的特征函数是 <span class="math inline">\(\varphi _{X}(t)=e^{\lambda (e^{it}-1)}\)</span>。令 <span class="math inline">\(P_n=\sum_{i=1}^nX_i\)</span>。我们从定理 <a href="bookdown-提供的-markdown-功能拓展.html#thm:chf-sum">2.2</a> 可以知道</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{split}
 \varphi _{P_{n}}(t) &amp; =\prod_{i=1}^n\varphi _{X_i}(t) \\
@@ -494,18 +494,18 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 <p><span id="unlabeled-div-5" class="remark"><em>Remark</em>. </span>在以些情况下，使用特征函数计算独立随机变量之和的分布是非常方便和容易的。</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-6" class="corollary"><strong>Corollary 2.1  </strong></span>两个独立随机变量 <span class="math inline">\(X_1\)</span> 和 <span class="math inline">\(X_2\)</span> 之和的特征函数是 <span class="math inline">\(X_1\)</span> 和 <span class="math inline">\(X_2\)</span> 特征函数的乘积，即</p>
+<p><span id="cor:unlabeled-div-6" class="corollary"><strong>推论 2.1  </strong></span>两个独立随机变量 <span class="math inline">\(X_1\)</span> 和 <span class="math inline">\(X_2\)</span> 之和的特征函数是 <span class="math inline">\(X_1\)</span> 和 <span class="math inline">\(X_2\)</span> 特征函数的乘积，即</p>
 <p><span class="math display">\[\varphi _{X_1+X_2}(t)=\varphi _{X_1}(t) \varphi _{X_2}(t)\]</span></p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Exercise 2.1  (样本均值的特征函数) </strong></span>令 <span class="math inline">\(\bar{X}=\sum_{i=1}^n \frac{1}{n} X_i\)</span> 是 <span class="math inline">\(n\)</span> 个独立同分布的随机变量的均值，每个变量具有特征函数 <span class="math inline">\(\varphi _{X}\)</span>。计算 <span class="math inline">\(\bar{X}\)</span> 的特征函数。</p>
+<p><span id="exr:unlabeled-div-7" class="exercise"><strong>练习 2.1  (样本均值的特征函数) </strong></span>令 <span class="math inline">\(\bar{X}=\sum_{i=1}^n \frac{1}{n} X_i\)</span> 是 <span class="math inline">\(n\)</span> 个独立同分布的随机变量的均值，每个变量具有特征函数 <span class="math inline">\(\varphi _{X}\)</span>。计算 <span class="math inline">\(\bar{X}\)</span> 的特征函数。</p>
 </div>
 <div class="solution">
-<p><span id="unlabeled-div-8" class="solution"><em>Solution</em>. </span>应用定理 <a href="bookdown-提供的-markdown-功能拓展.html#thm:chf-sum">2.2</a>，我们得到</p>
+<p><span id="unlabeled-div-8" class="solution"><em>解</em>. </span>应用定理 <a href="bookdown-提供的-markdown-功能拓展.html#thm:chf-sum">2.2</a>，我们得到</p>
 <p><span class="math display">\[\varphi _{\bar{X}}(t)=\prod_{i=1}^n \varphi _{X_i}\left(\frac{t}{n}\right)=\left[\varphi _{X}\left(\frac{t}{n}\right)\right]^n.\]</span></p>
 </div>
 <div class="hypothesis">
-<p><span id="hyp:unlabeled-div-9" class="hypothesis"><strong>Hypothesis 2.1  (黎曼猜想) </strong></span>黎曼 Zeta 函数被定义为
+<p><span id="hyp:unlabeled-div-9" class="hypothesis"><strong>假设 2.1  (黎曼猜想) </strong></span>黎曼 Zeta 函数被定义为
 <span class="math display">\[\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}\]</span>
 对于复数值 <span class="math inline">\(s\)</span>，当 <span class="math inline">\(s\)</span> 的实部大于 1 时收敛。黎曼猜想是黎曼 zeta 函数只在负偶数和实部为 <span class="math inline">\(1/2\)</span> 的复数处有零点。</p>
 </div>

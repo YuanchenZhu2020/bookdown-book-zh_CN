@@ -7,6 +7,19 @@ language:
   label:
     fig: "图 "
     tab: "表 "
+    eq: '方程 '
+    thm: '定理 '
+    lem: '引理 '
+    cor: '推论 '
+    prp: '命题 '
+    cnj: '猜想 '
+    def: '定义 '
+    exm: '例 '
+    exr: '练习 '
+    hyp: '假设 '
+    proof: '证明. '
+    remark: 'Remark. '
+    solution: '解. '
   ui:
     edit: "编辑"
     chapter_name: ["第 ", " 章"]

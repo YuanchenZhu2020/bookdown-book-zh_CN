@@ -221,7 +221,7 @@ output_dir: "book-output"
 clean: ["my-book.bbl", "R-packages.bib"]
 ```
 
-## 国际化
+## 国际化 {#internationalization}
 
 If the language of your book is not English, you will need to translate certain English words and phrases into your language, such as the words "Figure" and "Table" when figures/tables are automatically numbered in the HTML output. Internationalization may not be an issue for LaTeX output, since some LaTeX packages can automatically translate these terms into the local language, such as the **ctexcap** package for Chinese.
 

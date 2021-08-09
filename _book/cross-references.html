@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="tables.html"/>
-<link rel="next" href="自定义块.html"/>
+<link rel="next" href="自定义区块.html"/>
 <script src="libs/header-attrs/header-attrs.js"></script>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
@@ -208,7 +208,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.4" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>2.4</b> 图片</a></li>
 <li class="chapter" data-level="2.5" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>2.5</b> 表格</a></li>
 <li class="chapter" data-level="2.6" data-path="cross-references.html"><a href="cross-references.html"><i class="fa fa-check"></i><b>2.6</b> 交叉引用</a></li>
-<li class="chapter" data-level="2.7" data-path="自定义块.html"><a href="自定义块.html"><i class="fa fa-check"></i><b>2.7</b> 自定义块</a></li>
+<li class="chapter" data-level="2.7" data-path="自定义区块.html"><a href="自定义区块.html"><i class="fa fa-check"></i><b>2.7</b> 自定义区块</a></li>
 <li class="chapter" data-level="2.8" data-path="citations.html"><a href="citations.html"><i class="fa fa-check"></i><b>2.8</b> 引文</a></li>
 <li class="chapter" data-level="2.9" data-path="latex-index.html"><a href="latex-index.html"><i class="fa fa-check"></i><b>2.9</b> 索引</a></li>
 <li class="chapter" data-level="2.10" data-path="html-小组件.html"><a href="html-小组件.html"><i class="fa fa-check"></i><b>2.10</b> HTML 小组件</a></li>
@@ -237,11 +237,11 @@ div.csl-indent {
 <li class="chapter" data-level="4.2" data-path="更换主题.html"><a href="更换主题.html"><i class="fa fa-check"></i><b>4.2</b> 更换主题</a></li>
 <li class="chapter" data-level="4.3" data-path="模板.html"><a href="模板.html"><i class="fa fa-check"></i><b>4.3</b> 模板</a></li>
 <li class="chapter" data-level="4.4" data-path="configuration.html"><a href="configuration.html"><i class="fa fa-check"></i><b>4.4</b> 配置</a></li>
-<li class="chapter" data-level="4.5" data-path="国际化.html"><a href="国际化.html"><i class="fa fa-check"></i><b>4.5</b> 国际化</a></li>
+<li class="chapter" data-level="4.5" data-path="internationalization.html"><a href="internationalization.html"><i class="fa fa-check"></i><b>4.5</b> 国际化</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="editing.html"><a href="editing.html"><i class="fa fa-check"></i><b>5</b> 编辑</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="构建书籍.html"><a href="构建书籍.html"><i class="fa fa-check"></i><b>5.1</b> 构建书籍</a></li>
+<li class="chapter" data-level="5.1" data-path="build-the-book.html"><a href="build-the-book.html"><i class="fa fa-check"></i><b>5.1</b> 构建书籍</a></li>
 <li class="chapter" data-level="5.2" data-path="预览单个章节.html"><a href="预览单个章节.html"><i class="fa fa-check"></i><b>5.2</b> 预览单个章节</a></li>
 <li class="chapter" data-level="5.3" data-path="使用-http-服务预览书籍.html"><a href="使用-http-服务预览书籍.html"><i class="fa fa-check"></i><b>5.3</b> 使用 HTTP 服务预览书籍</a></li>
 <li class="chapter" data-level="5.4" data-path="rstudio-ide.html"><a href="rstudio-ide.html"><i class="fa fa-check"></i><b>5.4</b> RStudio IDE</a></li>
@@ -294,22 +294,22 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="cross-references" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> 交叉引用</h2>
-<p>We have explained how cross-references work for equations (Section <a href="bookdown-提供的-markdown-功能拓展.html#equations">2.2.1</a>), theorems (Section <a href="bookdown-提供的-markdown-功能拓展.html#theorems">2.2.2</a>), figures (Section <a href="figures.html#figures">2.4</a>), and tables (Section <a href="tables.html#tables">2.5</a>). In fact, you can also reference sections using the same syntax <code>\@ref(label)</code>, where <code>label</code> is the section ID. By default, Pandoc will generate an ID for all section headers, e.g., a section <code># Hello World</code> will have an ID <code>hello-world</code>. We recommend you to manually assign an ID to a section header to make sure you do not forget to update the reference label after you change the section header. To assign an ID to a section header, simply add <code>{#id}</code> to the end of the section header. Further attributes of section headers can be set using standard <a href="http://pandoc.org/MANUAL.html#heading-identifiers">Pandoc syntax</a>.</p>
-<p>When a referenced label cannot be found, you will see two question marks like <a href="#fig:does-not-exist"><strong>??</strong></a>, as well as a warning message in the R console when rendering the book.</p>
-<p>You can also create text-based links using explicit or automatic section IDs or even the actual section header text.</p>
+<p>  我们已经解释了交叉引用是如何在方程（第 <a href="bookdown-提供的-markdown-功能拓展.html#equations">2.2.1</a> 节）、定理（第 <a href="bookdown-提供的-markdown-功能拓展.html#theorems">2.2.2</a> 节）、图片（第 <a href="figures.html#figures">2.4</a> 节）和表格（第 <a href="tables.html#tables">2.5</a> 节）上起作用的。事实上，你也能够使用相同的语法 <code>\@ref(label)</code> 引用章节，在此时 <code>label</code> 是章节的标识符。默认情况下，Pandoc 将会为全部章节标题生成一个标识符，例如 <code># Hello World</code> 这一章将会有名为 <code>hello-world</code> 的标识符。我们建议你手动为章节标题指定标识符，以确保更改章节标题后不会忘记更新参考标签。要将标识符分配给章节标题，只需要简单的在章节标题之后添加 <code>{#id}</code> 即可。章节标题的其他属性可以使用标准 <a href="http://pandoc.org/MANUAL.html#heading-identifiers">Pandoc 语法</a>。</p>
+<p>  当找不到引用的标签时，你将会看见两个问号 <a href="#fig:does-not-exist"><strong>??</strong></a>以及编译书籍时在 R console 中打印的警告信息。</p>
+<p>  你也可以使用显式或自动指定的章节标识符，甚至是实际的章节标题文本创建基于文本的章节链接。</p>
 <ul>
-<li>If you are happy with the section header as the link text, use it inside a single set of square brackets:
+<li>如果你对使用章节标题作为链接文本感到满意，请在一组方括号内使用它：
 <ul>
-<li><code>[Section header text]</code>: example “[A single document]” via <code>[A single document]</code></li>
+<li><code>[章节标题文本]</code>: 例如通过 <code>[单个文档]</code> 创建指定的链接文本 “<a href="a-single-document.html#a-single-document">单个文档</a>”</li>
 </ul></li>
-<li>There are two ways to specify custom link text:
+<li>如果要指定自定义链接文本，有两种方法：
 <ul>
-<li><code>[link text][Section header text]</code>, e.g., “[non-English books][Internationalization]” via <code>[non-English books][Internationalization]</code></li>
-<li><code>[link text](#ID)</code>, e.g., “<a href="tables.html#tables">Table stuff</a>” via <code>[Table stuff](#tables)</code></li>
+<li><code>[链接文本][章节标题文本]</code>。例如，“<a href="internationalization.html#internationalization">非英语书籍</a>” via <code>[非英语书籍][国际化]</code></li>
+<li><code>[链接文本](#标识符)</code>。例如，“<a href="tables.html#tables">表格填充</a>” via <code>[表格填充](#tables)</code></li>
 </ul></li>
 </ul>
-<p>The Pandoc documentation provides more details on <a href="http://pandoc.org/MANUAL.html#extension-auto_identifiers">automatic section IDs</a> and <a href="http://pandoc.org/MANUAL.html#extension-implicit_header_references">implicit header references.</a></p>
-<p>Cross-references still work even when we refer to an item that is not on the current page of the PDF or HTML output. For example, see Equation <a href="bookdown-提供的-markdown-功能拓展.html#eq:binom">(2.1)</a> and Figure <a href="figures.html#fig:knitr-logo">2.4</a>.</p>
+<p>  Pandoc 文档提供了更多详细信息，请见 <a href="http://pandoc.org/MANUAL.html#extension-auto_identifiers">自动指定章节标识符 (automatic section IDs)</a> 和 <a href="http://pandoc.org/MANUAL.html#extension-implicit_header_references">隐式标题引用 (implicit header references)</a>。</p>
+<p>  当我们在 PDF 或 HTML 输出文档下提及并不在当前页面的文档项目时，交叉引用仍然能够起作用。例如，请见方程 <a href="bookdown-提供的-markdown-功能拓展.html#eq:binom">(2.1)</a> 和图片 <a href="figures.html#fig:knitr-logo">2.4</a>。</p>
 </div>
             </section>
 
@@ -317,7 +317,7 @@ div.csl-indent {
         </div>
       </div>
 <a href="tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="自定义块.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="自定义区块.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>

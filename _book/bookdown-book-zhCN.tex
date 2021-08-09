@@ -231,22 +231,22 @@
 \bibliographystyle{apalike}
 
 \usepackage{amsthm}
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{corollary}{Corollary}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
-\newtheorem{conjecture}{Conjecture}[chapter]
+\newtheorem{theorem}{定理}[chapter]
+\newtheorem{lemma}{引理}[chapter]
+\newtheorem{corollary}{推论}[chapter]
+\newtheorem{proposition}{命题}[chapter]
+\newtheorem{conjecture}{猜想}[chapter]
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]
+\newtheorem{definition}{定义}[chapter]
 \theoremstyle{definition}
-\newtheorem{example}{Example}[chapter]
+\newtheorem{example}{例}[chapter]
 \theoremstyle{definition}
-\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{exercise}{练习}[chapter]
 \theoremstyle{definition}
-\newtheorem{hypothesis}{Hypothesis}[chapter]
+\newtheorem{hypothesis}{假设}[chapter]
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
-\newtheorem*{solution}{Solution}
+\newtheorem*{solution}{解}
 \begin{document}
 \maketitle
 
@@ -328,6 +328,11 @@ part title & 各部份的标题？ & 意思为将书籍中的部分章节组成�
 aspect ratio & 纵横比 & 专业词汇 \\
 logo & 徽标 & 相比于``标志''和``标识''这两种具有广泛含义的词汇，``徽标''这个翻译简洁且准确。 \\
 chunk & 区块、代码块 & 泛用含义为``区块''，多用于标识 R 代码。 \\
+section ID & 章节标识符 & 为准确表达其实质含义，这里 ID 翻译为``标识符''，意为能够标识一个章节的\textbf{符号}。 \\
+item & 项目、文档项目 & 在本文部分语境下，item 指文档中如章节标题、文本、引用等项目。（日后润色） \\
+manual & 使用指南 & 翻译时突出``指南''这一功能性的特点，弱化``手册''这一形式上的特点。 \\
+citation key & 引文关键词 & CS 中 key 一般直接翻译为``键''，指的是``键-值''类型的数据结构，拥有一一对应的关系，由于本书目标读者并不是 CS 专业人群，因此以更加通俗的``关键词''来体现``索引''的关系。 \\
+braces & 圆括号 & 一般被译为``大括号''，此处强调其形状，翻译为``圆括号''，因为通常所说的大括号一般指的是\texttt{\{\}}，即花括号。 \\
 \bottomrule
 \end{longtable}
 
@@ -874,7 +879,7 @@ to a quiet place and kill him.''
 \hypertarget{ux6570ux5b66ux8868ux8fbeux5f0f}{%
 \subsection{数学表达式}\label{ux6570ux5b66ux8868ux8fbeux5f0f}}
 
-  内联 LaTeX 方程\index{LaTeX math expression} 可以使用 LaTeX 语法写在一对美元符号 (\texttt{\$}) 内，例如：\texttt{\$f(k)\ =\ \{n\ \textbackslash{}choose\ k\}\ p\^{}\{k\}\ (1-p)\^{}\{n-k\}\$}（实际输出为：\(f(k)={n \choose k}p^{k}(1-p)^{n-k}\)）；展示样式的数学表达式可以用一对双美元符号表示，例如： \texttt{\$\$f(k)\ =\ \{n\ \textbackslash{}choose\ k\}\ p\^{}\{k\}\ (1-p)\^{}\{n-k\}\$\$}，其输出看起来像这样：
+  内联 LaTeX 方程\index{LaTeX math expression} 可以使用 LaTeX 语法写在一对美元符号 (\texttt{\$}) 内，例如：\texttt{\$f(k)\ =\ \{n\ \textbackslash{}choose\ k\}\ p\^{}\{k\}\ (1-p)\^{}\{n-k\}\$}（实际输出为：\(f(k)=\binom{n}{k}p^{k}(1-p)^{n-k}\)）；展示样式的数学表达式可以用一对双美元符号表示，例如： \texttt{\$\$f(k)\ =\ \textbackslash{}binom\{n\}\{k\}\ p\^{}\{k\}\ (1-p)\^{}\{n-k\}\$\$}，其输出看起来像这样：
 
 \[f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k}\]
 
@@ -1626,7 +1631,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{表：Markdown 的一个简单表格。}
+\NormalTok{Table：Markdown 的一个简单表格。}
 
 \NormalTok{ Sepal.Length   Sepal.Width   Petal.Length   Petal.Width}
 \NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}  {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}  {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}  {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
@@ -1646,58 +1651,58 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \hypertarget{cross-references}{%
 \section{交叉引用}\label{cross-references}}
 
-We have explained how cross-references\index{cross-reference} work for equations (Section \ref{equations}), theorems (Section \ref{theorems}), figures (Section \ref{figures}), and tables (Section \ref{tables}). In fact, you can also reference sections using the same syntax \texttt{\textbackslash{}@ref(label)}, where \texttt{label} is the section ID. By default, Pandoc will generate an ID for all section headers, e.g., a section \texttt{\#\ Hello\ World} will have an ID \texttt{hello-world}. We recommend you to manually assign an ID to a section header to make sure you do not forget to update the reference label after you change the section header. To assign an ID to a section header, simply add \texttt{\{\#id\}} to the end of the section header. Further attributes of section headers can be set using standard \href{http://pandoc.org/MANUAL.html\#heading-identifiers}{Pandoc syntax}.
+  我们已经解释了交叉引用\index{cross-reference}是如何在方程（第 \ref{equations} 节）、定理（第 \ref{theorems} 节）、图片（第 \ref{figures} 节）和表格（第 \ref{tables} 节）上起作用的。事实上，你也能够使用相同的语法 \texttt{\textbackslash{}@ref(label)} 引用章节，在此时 \texttt{label} 是章节的标识符。默认情况下，Pandoc 将会为全部章节标题生成一个标识符，例如 \texttt{\#\ Hello\ World} 这一章将会有名为 \texttt{hello-world} 的标识符。我们建议你手动为章节标题指定标识符，以确保更改章节标题后不会忘记更新参考标签。要将标识符分配给章节标题，只需要简单的在章节标题之后添加 \texttt{\{\#id\}} 即可。章节标题的其他属性可以使用标准 \href{http://pandoc.org/MANUAL.html\#heading-identifiers}{Pandoc 语法}。
 
-When a referenced label cannot be found, you will see two question marks like \ref{fig:does-not-exist}, as well as a warning message in the R console when rendering the book.
+  当找不到引用的标签时，你将会看见两个问号 \ref{fig:does-not-exist}以及编译书籍时在 R console 中打印的警告信息。
 
-You can also create text-based links using explicit or automatic section IDs or even the actual section header text.
+  你也可以使用显式或自动指定的章节标识符，甚至是实际的章节标题文本创建基于文本的章节链接。
 
 \begin{itemize}
 \tightlist
 \item
-  If you are happy with the section header as the link text, use it inside a single set of square brackets:
+  如果你对使用章节标题作为链接文本感到满意，请在一组方括号内使用它：
 
   \begin{itemize}
   \tightlist
   \item
-    \texttt{{[}Section\ header\ text{]}}: example ``{[}A single document{]}'' via \texttt{{[}A\ single\ document{]}}
+    \texttt{{[}章节标题文本{]}}: 例如通过 \texttt{{[}单个文档{]}} 创建指定的链接文本 ``\protect\hyperlink{a-single-document}{单个文档}''
   \end{itemize}
 \item
-  There are two ways to specify custom link text:
+  如果要指定自定义链接文本，有两种方法：
 
   \begin{itemize}
   \tightlist
   \item
-    \texttt{{[}link\ text{]}{[}Section\ header\ text{]}}, e.g., ``{[}non-English books{]}{[}Internationalization{]}'' via \texttt{{[}non-English\ books{]}{[}Internationalization{]}}
+    \texttt{{[}链接文本{]}{[}章节标题文本{]}}。例如，``\protect\hyperlink{internationalization}{非英语书籍}'' via \texttt{{[}非英语书籍{]}{[}国际化{]}}
   \item
-    \texttt{{[}link\ text{]}(\#ID)}, e.g., ``\protect\hyperlink{tables}{Table stuff}'' via \texttt{{[}Table\ stuff{]}(\#tables)}
+    \texttt{{[}链接文本{]}(\#标识符)}。例如，``\protect\hyperlink{tables}{表格填充}'' via \texttt{{[}表格填充{]}(\#tables)}
   \end{itemize}
 \end{itemize}
 
-The Pandoc documentation provides more details on \href{http://pandoc.org/MANUAL.html\#extension-auto_identifiers}{automatic section IDs} and \href{http://pandoc.org/MANUAL.html\#extension-implicit_header_references}{implicit header references.}
+  Pandoc 文档提供了更多详细信息，请见 \href{http://pandoc.org/MANUAL.html\#extension-auto_identifiers}{自动指定章节标识符 (automatic section IDs)} 和 \href{http://pandoc.org/MANUAL.html\#extension-implicit_header_references}{隐式标题引用 (implicit header references)}。
 
-Cross-references still work even when we refer to an item that is not on the current page of the PDF or HTML output. For example, see Equation \eqref{eq:binom} and Figure \ref{fig:knitr-logo}.
+  当我们在 PDF 或 HTML 输出文档下提及并不在当前页面的文档项目时，交叉引用仍然能够起作用。例如，请见方程 \eqref{eq:binom} 和图片 \ref{fig:knitr-logo}。
 
-\hypertarget{ux81eaux5b9aux4e49ux5757}{%
-\section{自定义块}\label{ux81eaux5b9aux4e49ux5757}}
+\hypertarget{ux81eaux5b9aux4e49ux533aux5757}{%
+\section{自定义区块}\label{ux81eaux5b9aux4e49ux533aux5757}}
 
-Custom blocks are often used in technical books to create salient boxes of code and/or narrative that call the reader's attention. For example, custom blocks may be used to highlight a note or a warning. These can be included in multiple \textbf{bookdown} output formats using Pandoc's syntax for fenced \texttt{Div} blocks (\url{https://pandoc.org/MANUAL.html\#divs-and-spans}). Section 9.6 in the \href{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}{\emph{R Markdown Cookbook}} \citep{rmarkdown2020} for instructions.
+  自定义区块通常用于技术书籍中，它可以创建引起读者注意的代码和/或描述文字的突出文本框。例如，自定义区块可用于高亮显示注释或警告。可以使用 Pandoc 的 \texttt{Div} 围栏区块 (\url{https://pandoc.org/MANUAL.html\#divs-and-spans}) 的语法将其包含在多个 \textbf{bookdown} 输出格式中。关于其用法可以阅读 \href{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}{\emph{R Markdown Cookbook}} 第 9.6 节 \citep{rmarkdown2020}。
 
-The \texttt{bs4\_book()} HTML output format includes styling for selected custom blocks; see Section \ref{bs4-book}.
+  HTML 输出格式 \texttt{bs4\_book()} 包括为选定的自定义区块设置样式的功能，请见第 \ref{bs4-book} 节。
 
 \hypertarget{citations}{%
 \section{引文}\label{citations}}
 
-Pandoc offers two methods for managing citations\index{citation} and bibliographic references in a document.
+  Pandoc 提供了两种方法来管理文档中引用文献\index{citation}和参考书目。
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  The default method is to use a Pandoc helper program called \href{https://github.com/jgm/pandoc-citeproc}{\texttt{pandoc-citeproc}}, which follows the specifications of the \href{http://docs.citationstyles.org/en/1.0.1/specification.html}{Citation Style Language (CSL)} and obtains specific formatting instructions from one of the huge number of available \href{https://www.zotero.org/styles/}{CSL style files.}
+  默认的方法是使用名为 \href{https://github.com/jgm/pandoc-citeproc}{\texttt{pandoc-citeproc}} 的 Pandoc 帮助程序，它遵循 \href{http://docs.citationstyles.org/en/1.0.1/specification.html}{引用样式语言 (Citation Style Language, CSL)} 的规范，并从大量可用的 \href{https://www.zotero.org/styles/}{CSL 样式文件 (CSL style files)} 之一中获取特定的格式说明。
 \item
-  Users may also choose to use either \href{https://ctan.org/pkg/natbib}{\textbf{natbib}} (based on \texttt{bibtex}) or \href{https://ctan.org/pkg/biblatex}{\textbf{biblatex}} as a ``citation package''. In this case, the bibliographic data files need to be in the \texttt{bibtex} or \texttt{biblatex} format, and the document output format is limited to PDF. Again, various bibliographic styles are available (please consult the documentation of these packages).
+  用户也可以选择使用 \href{https://ctan.org/pkg/natbib}{\textbf{natbib}}（基于 \texttt{bibtex}）或 \href{https://ctan.org/pkg/biblatex}{\textbf{biblatex}} 作为``引文软件包''。在这种情况下，参考书目数据文件需要为 \texttt{bibtex} 或 \texttt{biblatex} 格式，并且文档输出格式仅限于 PDF。与 CSL 相同，可用地参考书目样式也有许多（请参阅这些软件包的文档）。
 
-  To use \textbf{natbib} or \textbf{biblatex} to process references, you can set the \texttt{citation\_package} option of the R Markdown output format, e.g.,
+  为了使用 \textbf{natbib} 或 \textbf{biblatex} 处理参考文献，你可用设置 R Markdown 输出格式的 \texttt{citation\_package} 选项，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1710,14 +1715,13 @@ Pandoc offers two methods for managing citations\index{citation} and bibliograph
 \end{Shaded}
 \end{enumerate}
 
-Even if you choose \texttt{natbib} or \texttt{biblatex} for PDF output, all other output formats will be using \texttt{pandoc-citeproc}. If you use matching styles (e.g., \texttt{biblio-style:\ apa} for \texttt{biblatex} along with \texttt{csl:\ apa.csl} for \texttt{pandoc-citeproc}), output to PDF and to non-PDF formats will be very similar, though not necessarily identical.
+  即使你为 PDF 输出格式选择了 \texttt{natbib} 或 \texttt{biblatex} 作为引文软件包，所有其它输出格式都将使用 \texttt{pandoc-citeproc}。如果使用相匹配的样式（例如对于 \texttt{biblatex} 采用 \texttt{biblio-style:\ apa}，而对于 \texttt{pandoc-citeproc} 采用 \texttt{csl:\ apa.csl}），输出到 PDF 和 非 PDF 的格式将非常相似，但不一定是相同的。
 
-For any non-PDF output format, \texttt{pandoc-citeproc} is the only available option. If consistency across PDF and non-PDF output
-formats is important, use \texttt{pandoc-citeproc} throughout.
+  对于任何非 PDF 输出格式，\texttt{pandoc-citeproc} 是唯一可用的选项。如果 PDF 和非 PDF 输出格式之间的一致性很重要，请始终使用 \texttt{pandoc-citeproc}。
 
-The bibliographic data can be in several formats. We have only shown examples of BibTeX databases in this section, and please see the \href{https://pandoc.org/MANUAL.html\#citations}{``Citations''} section of the Pandoc manual for other possible formats.
+  参考书目数据有很多种格式。本节仅展示了 BibTeX 数据库的示例，对于其他格式请参见 Pandoc 使用指南中 \href{https://pandoc.org/MANUAL.html\#citations}{``Citations''} 一节。
 
-A BibTeX database is a plain-text file (with the conventional filename extension \texttt{.bib}) that consists of bibliography entries like this:
+  BibTeX 数据库是一个纯文本文件（依惯例其文件扩展名为 \texttt{.bib}），其内容包含有类似于以下所示的参考书目条目：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1733,11 +1737,11 @@ A BibTeX database is a plain-text file (with the conventional filename extension
 \end{Highlighting}
 \end{Shaded}
 
-A bibliography entry starts with \texttt{@type\{}, where \texttt{type} may be \texttt{article}, \texttt{book}, \texttt{manual}, and so on.\footnote{The type name is case-insensitive, so it does not matter if it is \texttt{manual}, \texttt{Manual}, or \texttt{MANUAL}.} Then there is a citation key, like \texttt{R-base} in the above example. To cite an entry, use \texttt{@key} or \texttt{{[}@key{]}} (the latter puts the citation in braces), e.g., \texttt{@R-base} is rendered as \citet{R-base}, and \texttt{{[}@R-base{]}} generates ``\citep{R-base}''. If you are familiar with the \textbf{natbib} package in LaTeX, \texttt{@key} is basically \texttt{\textbackslash{}citet\{key\}}, and \texttt{{[}@key{]}} is equivalent to \texttt{\textbackslash{}citep\{key\}}.
+  参考书目条目以 \texttt{@type\{} 开头，其中 \texttt{type} 可以是 \texttt{article}、\texttt{book}、\texttt{manual}等等。\footnote{类型名称不区分大小写，因此不管是 \texttt{manual}、\texttt{Manual} 或 \texttt{MANUAL} 都可以。}紧跟着是一个引文关键词，在上面的示例中为 \texttt{R-base}。要引用条目，使用 \texttt{@key} 或 \texttt{{[}@key{]}}（后者将引用文字放在圆括号中），例如，\texttt{@R-base} 被渲染为 \citet{R-base}，而 \texttt{{[}@R-base{]}} 则渲染为 ``\citep{R-base}''。如果你对於 LaTeX 中的 \textbf{natbib} 软件包很熟悉，你会发现 \texttt{@key} 基本上就是 \texttt{\textbackslash{}citet\{key\}}，而 \texttt{{[}@key{]}} 等同于 \texttt{\textbackslash{}citep\{key\}}。
 
-There are a number of fields in a bibliography entry, such as \texttt{title}, \texttt{author}, and \texttt{year}, etc. You may see \url{https://en.wikipedia.org/wiki/BibTeX} for possible types of entries and fields in BibTeX.
+  在一个参考书目条目中有许多字段，例如 \texttt{title}、\texttt{author} 和 \texttt{year} 等。你可用在 \url{https://en.wikipedia.org/wiki/BibTeX} 查看 BibTeX 中可能的条目和字段类型。
 
-There is a helper function \texttt{write\_bib()} in \textbf{knitr} to generate BibTeX entries automatically for R packages, e.g.,
+  在 \textbf{knitr} 中有一个帮助函数 \texttt{write\_bib()}，它能够为 R 软件包自动生成 BibTeX 条目，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1792,7 +1796,7 @@ There is a helper function \texttt{write\_bib()} in \textbf{knitr} to generate B
 }
 \end{verbatim}
 
-Once you have one or multiple \texttt{.bib} files, you may use the field \texttt{bibliography} in the YAML metadata of your first R Markdown document (which is typically \texttt{index.Rmd}), and you can also specify the bibliography style via \texttt{biblio-style} (this only applies to PDF output), e.g.,
+  一旦你有一个或多个 \texttt{.bib} 文件，你可以在第一个 R Markdown 文档（通常是 \texttt{index.Rmd}）中的 YAML 元数据中使用字段 \texttt{bibliography} 来使用它们，你也可以通过 \texttt{biblio-style} 指定参考书目样式（它仅对 PDF 输出文档起作用），例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1804,9 +1808,9 @@ Once you have one or multiple \texttt{.bib} files, you may use the field \texttt
 \end{Highlighting}
 \end{Shaded}
 
-The field \texttt{link-citations} can be used to add internal links from the citation text of the author-year style to the bibliography entry in the HTML output.
+  字段 \texttt{link-citations} 能够用来添加从``作者-年份''格式的引文文本到 HTML 输出中参考书目条目的内部链接。
 
-When the output format is LaTeX, the list of references will be automatically put in a chapter or section at the end of the document. For non-LaTeX output, you can add an empty chapter as the last chapter of your book. For example, if your last chapter is the Rmd file \texttt{06-references.Rmd}, its content can be an inline R expression:
+  当输出格式为 LaTeX 时，参考文献列表将自动放在文档末尾的章节中。对于非 LaTeX 输出，你可以为你的书籍添加一个空章节作为最后一章。例如，如果最后一章是 Rmd 文件 \texttt{06-references.Rmd}，则它的内容可以是内联 R 表达式：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1814,12 +1818,12 @@ When the output format is LaTeX, the list of references will be automatically pu
 \end{Highlighting}
 \end{Shaded}
 
-For more detailed instructions and further examples on how to use citations, please see the ``Citations'' section of the Pandoc manual.
+  有关如何使用引文的更多详细说明和示例，请参阅 Pandoc 使用指南的``引文''部分。
 
 \hypertarget{latex-index}{%
 \section{索引}\label{latex-index}}
 
-Currently the index\index{index} is only supported for LaTeX/PDF output. To print an index after the book, you can use the LaTeX package \textbf{makeidx} in the preamble (see Section \ref{yaml-options}):
+  目前只有 LaTeX/PDF 输出支持索引\index{index}。要在书籍之后打印索引，你可以在 LaTeX 导言 (preamble) 中使用 LaTeX 软件包 \textbf{makeidx} （请参阅第 \ref{yaml-options} 节）：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1828,7 +1832,7 @@ Currently the index\index{index} is only supported for LaTeX/PDF output. To prin
 \end{Highlighting}
 \end{Shaded}
 
-Then insert \texttt{\textbackslash{}printindex} at the end of your book through the YAML option \texttt{includes\ -\textgreater{}\ after\_body}. An index entry can be created via the \texttt{\textbackslash{}index\{\}} command in the book body, e.g., \texttt{\textbackslash{}index\{GIT\}}.
+  然后通过 YAML 选项 \texttt{includes\ -\textgreater{}\ after\_body} 在书的末尾插入 \texttt{\textbackslash{}printindex}。索引项可以通过书籍正文中的 \texttt{\textbackslash{}index\{\}}命令创建，例如 \texttt{\textbackslash{}index\{GIT\}}。
 
 \hypertarget{html-ux5c0fux7ec4ux4ef6}{%
 \section{HTML 小组件}\label{html-ux5c0fux7ec4ux4ef6}}
@@ -2740,7 +2744,7 @@ The above HTML and PDF output format functions are basically wrappers of output 
 ## {
 ##     pdf_book(..., base_format = rmarkdown::pdf_document)
 ## }
-## <bytecode: 0x000000001cc43de0>
+## <bytecode: 0x000000001cc4c5c0>
 ## <environment: namespace:bookdown>
 \end{verbatim}
 
@@ -3026,8 +3030,8 @@ Here is a sample \texttt{\_bookdown.yml}:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{ux56fdux9645ux5316}{%
-\section{国际化}\label{ux56fdux9645ux5316}}
+\hypertarget{internationalization}{%
+\section{国际化}\label{internationalization}}
 
 If the language of your book is not English, you will need to translate certain English words and phrases into your language, such as the words ``Figure'' and ``Table'' when figures/tables are automatically numbered in the HTML output. Internationalization may not be an issue for LaTeX output, since some LaTeX packages can automatically translate these terms into the local language, such as the \textbf{ctexcap} package for Chinese.
 
@@ -3090,8 +3094,8 @@ There is one caveat when you write in a language that uses multibyte characters,
 
   在本章中，我们将解释如何在本地编辑、构建、预览和通过 HTTP 服务预览书籍。你可以使用任何文本编辑器来编辑书籍，不过我们将展示一些使用 RStudio IDE 的技巧。在介绍编辑器之前，我们将介绍用于构建、预览和通过 HTTP 服务预览书籍的底层 R 函数，以便你真正了解在 RStudio IDE 中单击某个按钮时在幕后发生的事情，并且还可以自定义调用这些函数的其它编辑器。
 
-\hypertarget{ux6784ux5efaux4e66ux7c4d}{%
-\section{构建书籍}\label{ux6784ux5efaux4e66ux7c4d}}
+\hypertarget{build-the-book}{%
+\section{构建书籍}\label{build-the-book}}
 
   要将所有 Rmd 文件构建到一本书中，可以在 \textbf{bookdown} 中调用 \texttt{render\_book()}\index{bookdown::render\_book()}函数。下面是 \texttt{render\_book()} 的参数：
 
@@ -3223,7 +3227,7 @@ There is one caveat when you write in a language that uses multibyte characters,
 
   由于所有书籍章节都是纯文本文件，因此它们非常适合用于应用版本控制工具。因此，如果你的所有合著者和合作者都具备 GIT 等版本控制工具的基本知识，你就可以使用这些工具与他们协作处理书籍内容。事实上，即使他们不知道如何使用 GIT，通过 GIT 进行协作也是可以的，因为 GitHub\index{GitHub}能够让使用者在 web 浏览器中在线创建和编辑文件。只需要有一个人必须熟悉 GIT，并且能够设置书籍存储库。其他合作者可以在线贡献内容，不过如果他们知道在本地使用 GIT 工作的基础用法，他们会有更多的自由。
 
-  读者可以通过两种方式做出贡献。一种方式是直接贡献内容，如果你的书源托管在 GitHub 上，最简单的方法是通过 \href{https://help.github.com/articles/about-pull-requests/}{GitHub pull requests}。基本上，任何 GitHub 用户都可以单击 Rmd 源文件页面上的编辑 (edit) 按钮，编辑内容，并将更改提交给你进行审批。如果你对提交的更改感到满意（你可以清楚地看到更改的内容），可以单击``合并 (Merge)''按钮来合并更改。如果你不满意，可以在 pull request 中提供反馈，以便读者根据要求进一步修改。我们在第 \ref{gitBook-style} 节中提到了 GitBook 样式中的编辑 (edit) 按钮。该按钮链接到每个页面的 Rmd 源文件，可以引导你创建 pull request。没有必要来回收发电子邮件来交流简单的更改内容，比如修改打字错误。
+  读者可以通过两种方式做出贡献。一种方式是直接贡献内容，如果你的书源托管在 GitHub 上，最简单的方法是通过 \href{https://help.github.com/articles/about-pull-requests/}{GitHub pull requests}。基本上，任何 GitHub 用户都可以单击 Rmd 源文件页面上的编辑 (edit) 按钮，编辑内容，并将更改提交给你进行审批。如果你对提交的更改感到满意（你可以清楚地看到更改的内容），可以单击``合并 (Merge)''按钮来合并更改。如果你不满意，可以在 pull request 中提供反馈，以便读者根据要求进一步修改。我们在第 \ref{gitbook-style} 节中提到了 GitBook 样式中的编辑 (edit) 按钮。该按钮链接到每个页面的 Rmd 源文件，可以引导你创建 pull request。没有必要来回收发电子邮件来交流简单的更改内容，比如修改打字错误。
 
   读者对你的书作出贡献的另一种方式是留下评论。评论可以以多种形式留下：电子邮件、GitHub issues 或 HTML 页面评论。这里我们使用 Disqus（参见第 \ref{yaml-options} 节）作为示例。Disqus 是一种在网页上嵌入讨论区的服务，可以通过 JavaScript 加载。当你注册并在 Disqus 上创建一个新的论坛后，你可以找到如下所示的 JavaScript 代码：
 

@@ -226,7 +226,7 @@ details > summary {
 <li><a href="2-4-figures.html#figures"><span class="toc-section-number">2.4</span> 图片</a></li>
 <li><a href="2-5-tables.html#tables"><span class="toc-section-number">2.5</span> 表格</a></li>
 <li><a href="2-6-cross-references.html#cross-references"><span class="toc-section-number">2.6</span> 交叉引用</a></li>
-<li><a href="2-7-自定义块.html#自定义块"><span class="toc-section-number">2.7</span> 自定义块</a></li>
+<li><a href="2-7-自定义区块.html#自定义区块"><span class="toc-section-number">2.7</span> 自定义区块</a></li>
 <li><a href="2-8-citations.html#citations"><span class="toc-section-number">2.8</span> 引文</a></li>
 <li><a href="2-9-latex-index.html#latex-index"><span class="toc-section-number">2.9</span> 索引</a></li>
 <li><a href="2-10-html-小组件.html#html-小组件"><span class="toc-section-number">2.10</span> HTML 小组件</a></li>
@@ -255,11 +255,11 @@ details > summary {
 <li><a href="4-2-更换主题.html#更换主题"><span class="toc-section-number">4.2</span> 更换主题</a></li>
 <li><a href="4-3-模板.html#模板"><span class="toc-section-number">4.3</span> 模板</a></li>
 <li><a href="4-4-configuration.html#configuration"><span class="toc-section-number">4.4</span> 配置</a></li>
-<li><a href="4-5-国际化.html#国际化"><span class="toc-section-number">4.5</span> 国际化</a></li>
+<li><a href="4-5-internationalization.html#internationalization"><span class="toc-section-number">4.5</span> 国际化</a></li>
 </ul></li>
 <li><a href="5-editing.html#editing"><span class="toc-section-number">5</span> 编辑</a>
 <ul>
-<li><a href="5-1-构建书籍.html#构建书籍"><span class="toc-section-number">5.1</span> 构建书籍</a></li>
+<li><a href="5-1-build-the-book.html#build-the-book"><span class="toc-section-number">5.1</span> 构建书籍</a></li>
 <li><a href="5-2-预览单个章节.html#预览单个章节"><span class="toc-section-number">5.2</span> 预览单个章节</a></li>
 <li><a href="5-3-使用-http-服务预览书籍.html#使用-http-服务预览书籍"><span class="toc-section-number">5.3</span> 使用 HTTP 服务预览书籍</a></li>
 <li><a href="5-4-rstudio-ide.html#rstudio-ide"><span class="toc-section-number">5.4</span> RStudio IDE</a></li>
@@ -343,7 +343,7 @@ details > summary {
 <span id="cb127-12"><a href="6-2-github.html#cb127-12" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">--all</span> <span class="pp">*</span></span>
 <span id="cb127-13"><a href="6-2-github.html#cb127-13" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span><span class="st">&quot;Update the book&quot;</span></span>
 <span id="cb127-14"><a href="6-2-github.html#cb127-14" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-q</span> origin gh-pages</span></code></pre></div>
-<p>  变量名 <code>GITHUB_PAT</code> 和目录名 <code>book-output</code> 可以是任意名称。只要名称没有与已经存在的变量名或目录名冲突，你就可以使用喜欢的任何名字。上述脚本与我们在第 <a href="#build-the-book"><strong>??</strong></a> 节提到的书籍构建脚本可以放在 <code>master</code> 分支作为 as Shell 脚本。例如，你可以将它们命名为 <code>_build.sh</code> 和 <code>_deploy.sh</code>。那么，你的 <code>.travis.yml</code> 文件可能是这样的：</p>
+<p>  变量名 <code>GITHUB_PAT</code> 和目录名 <code>book-output</code> 可以是任意名称。只要名称没有与已经存在的变量名或目录名冲突，你就可以使用喜欢的任何名字。上述脚本与我们在第 <a href="5-1-build-the-book.html#build-the-book">5.1</a> 节提到的书籍构建脚本可以放在 <code>master</code> 分支作为 as Shell 脚本。例如，你可以将它们命名为 <code>_build.sh</code> 和 <code>_deploy.sh</code>。那么，你的 <code>.travis.yml</code> 文件可能是这样的：</p>
 <div class="sourceCode" id="cb128"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb128-1"><a href="6-2-github.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">language</span><span class="kw">:</span><span class="at"> r</span></span>
 <span id="cb128-2"><a href="6-2-github.html#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pandoc_version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.19.2.1</span></span>
 <span id="cb128-3"><a href="6-2-github.html#cb128-3" aria-hidden="true" tabindex="-1"></a></span>

@@ -226,7 +226,7 @@ details > summary {
 <li><a href="2-4-figures.html#figures"><span class="toc-section-number">2.4</span> 图片</a></li>
 <li><a href="2-5-tables.html#tables"><span class="toc-section-number">2.5</span> 表格</a></li>
 <li><a href="2-6-cross-references.html#cross-references"><span class="toc-section-number">2.6</span> 交叉引用</a></li>
-<li><a href="2-7-自定义块.html#自定义块"><span class="toc-section-number">2.7</span> 自定义块</a></li>
+<li><a href="2-7-自定义区块.html#自定义区块"><span class="toc-section-number">2.7</span> 自定义区块</a></li>
 <li><a href="2-8-citations.html#citations"><span class="toc-section-number">2.8</span> 引文</a></li>
 <li><a href="2-9-latex-index.html#latex-index"><span class="toc-section-number">2.9</span> 索引</a></li>
 <li><a href="2-10-html-小组件.html#html-小组件"><span class="toc-section-number">2.10</span> HTML 小组件</a></li>
@@ -255,11 +255,11 @@ details > summary {
 <li><a href="4-2-更换主题.html#更换主题"><span class="toc-section-number">4.2</span> 更换主题</a></li>
 <li><a href="4-3-模板.html#模板"><span class="toc-section-number">4.3</span> 模板</a></li>
 <li><a href="4-4-configuration.html#configuration"><span class="toc-section-number">4.4</span> 配置</a></li>
-<li><a href="4-5-国际化.html#国际化"><span class="toc-section-number">4.5</span> 国际化</a></li>
+<li><a href="4-5-internationalization.html#internationalization"><span class="toc-section-number">4.5</span> 国际化</a></li>
 </ul></li>
 <li><a href="5-editing.html#editing"><span class="toc-section-number">5</span> 编辑</a>
 <ul>
-<li><a href="5-1-构建书籍.html#构建书籍"><span class="toc-section-number">5.1</span> 构建书籍</a></li>
+<li><a href="5-1-build-the-book.html#build-the-book"><span class="toc-section-number">5.1</span> 构建书籍</a></li>
 <li><a href="5-2-预览单个章节.html#预览单个章节"><span class="toc-section-number">5.2</span> 预览单个章节</a></li>
 <li><a href="5-3-使用-http-服务预览书籍.html#使用-http-服务预览书籍"><span class="toc-section-number">5.3</span> 使用 HTTP 服务预览书籍</a></li>
 <li><a href="5-4-rstudio-ide.html#rstudio-ide"><span class="toc-section-number">5.4</span> RStudio IDE</a></li>
@@ -298,22 +298,21 @@ details > summary {
 <div class="col-sm-12">
 <div id="citations" class="section level2" number="2.8">
 <h2><span class="header-section-number">2.8</span> 引文</h2>
-<p>Pandoc offers two methods for managing citations and bibliographic references in a document.</p>
+<p>  Pandoc 提供了两种方法来管理文档中引用文献和参考书目。</p>
 <ol style="list-style-type: decimal">
-<li><p>The default method is to use a Pandoc helper program called <a href="https://github.com/jgm/pandoc-citeproc"><code>pandoc-citeproc</code></a>, which follows the specifications of the <a href="http://docs.citationstyles.org/en/1.0.1/specification.html">Citation Style Language (CSL)</a> and obtains specific formatting instructions from one of the huge number of available <a href="https://www.zotero.org/styles/">CSL style files.</a></p></li>
-<li><p>Users may also choose to use either <a href="https://ctan.org/pkg/natbib"><strong>natbib</strong></a> (based on <code>bibtex</code>) or <a href="https://ctan.org/pkg/biblatex"><strong>biblatex</strong></a> as a “citation package.” In this case, the bibliographic data files need to be in the <code>bibtex</code> or <code>biblatex</code> format, and the document output format is limited to PDF. Again, various bibliographic styles are available (please consult the documentation of these packages).</p>
-<p>To use <strong>natbib</strong> or <strong>biblatex</strong> to process references, you can set the <code>citation_package</code> option of the R Markdown output format, e.g.,</p>
+<li><p>默认的方法是使用名为 <a href="https://github.com/jgm/pandoc-citeproc"><code>pandoc-citeproc</code></a> 的 Pandoc 帮助程序，它遵循 <a href="http://docs.citationstyles.org/en/1.0.1/specification.html">引用样式语言 (Citation Style Language, CSL)</a> 的规范，并从大量可用的 <a href="https://www.zotero.org/styles/">CSL 样式文件 (CSL style files)</a> 之一中获取特定的格式说明。</p></li>
+<li><p>用户也可以选择使用 <a href="https://ctan.org/pkg/natbib"><strong>natbib</strong></a>（基于 <code>bibtex</code>）或 <a href="https://ctan.org/pkg/biblatex"><strong>biblatex</strong></a> 作为“引文软件包”。在这种情况下，参考书目数据文件需要为 <code>bibtex</code> 或 <code>biblatex</code> 格式，并且文档输出格式仅限于 PDF。与 CSL 相同，可用地参考书目样式也有许多（请参阅这些软件包的文档）。</p>
+<p>为了使用 <strong>natbib</strong> 或 <strong>biblatex</strong> 处理参考文献，你可用设置 R Markdown 输出格式的 <code>citation_package</code> 选项，例如：</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb52-1"><a href="2-8-citations.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb52-2"><a href="2-8-citations.html#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf_document</span><span class="kw">:</span></span>
 <span id="cb52-3"><a href="2-8-citations.html#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">citation_package</span><span class="kw">:</span><span class="at"> natbib</span></span>
 <span id="cb52-4"><a href="2-8-citations.html#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:pdf_book</span><span class="kw">:</span></span>
 <span id="cb52-5"><a href="2-8-citations.html#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">citation_package</span><span class="kw">:</span><span class="at"> biblatex</span></span></code></pre></div></li>
 </ol>
-<p>Even if you choose <code>natbib</code> or <code>biblatex</code> for PDF output, all other output formats will be using <code>pandoc-citeproc</code>. If you use matching styles (e.g., <code>biblio-style: apa</code> for <code>biblatex</code> along with <code>csl: apa.csl</code> for <code>pandoc-citeproc</code>), output to PDF and to non-PDF formats will be very similar, though not necessarily identical.</p>
-<p>For any non-PDF output format, <code>pandoc-citeproc</code> is the only available option. If consistency across PDF and non-PDF output
-formats is important, use <code>pandoc-citeproc</code> throughout.</p>
-<p>The bibliographic data can be in several formats. We have only shown examples of BibTeX databases in this section, and please see the <a href="https://pandoc.org/MANUAL.html#citations">“Citations”</a> section of the Pandoc manual for other possible formats.</p>
-<p>A BibTeX database is a plain-text file (with the conventional filename extension <code>.bib</code>) that consists of bibliography entries like this:</p>
+<p>  即使你为 PDF 输出格式选择了 <code>natbib</code> 或 <code>biblatex</code> 作为引文软件包，所有其它输出格式都将使用 <code>pandoc-citeproc</code>。如果使用相匹配的样式（例如对于 <code>biblatex</code> 采用 <code>biblio-style: apa</code>，而对于 <code>pandoc-citeproc</code> 采用 <code>csl: apa.csl</code>），输出到 PDF 和 非 PDF 的格式将非常相似，但不一定是相同的。</p>
+<p>  对于任何非 PDF 输出格式，<code>pandoc-citeproc</code> 是唯一可用的选项。如果 PDF 和非 PDF 输出格式之间的一致性很重要，请始终使用 <code>pandoc-citeproc</code>。</p>
+<p>  参考书目数据有很多种格式。本节仅展示了 BibTeX 数据库的示例，对于其他格式请参见 Pandoc 使用指南中 <a href="https://pandoc.org/MANUAL.html#citations">“Citations”</a> 一节。</p>
+<p>  BibTeX 数据库是一个纯文本文件（依惯例其文件扩展名为 <code>.bib</code>），其内容包含有类似于以下所示的参考书目条目：</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb53-1"><a href="2-8-citations.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="va">@Manual</span>{<span class="ot">R</span>-<span class="ot">base</span>,</span>
 <span id="cb53-2"><a href="2-8-citations.html#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span> = {R: A Language and Environment for Statistical</span>
 <span id="cb53-3"><a href="2-8-citations.html#cb53-3" aria-hidden="true" tabindex="-1"></a>    Computing},</span>
@@ -323,9 +322,9 @@ formats is important, use <code>pandoc-citeproc</code> throughout.</p>
 <span id="cb53-7"><a href="2-8-citations.html#cb53-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span> = {2016},</span>
 <span id="cb53-8"><a href="2-8-citations.html#cb53-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">url</span> = {https://www.R-project.org/},</span>
 <span id="cb53-9"><a href="2-8-citations.html#cb53-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<p>A bibliography entry starts with <code>@type{</code>, where <code>type</code> may be <code>article</code>, <code>book</code>, <code>manual</code>, and so on.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> Then there is a citation key, like <code>R-base</code> in the above example. To cite an entry, use <code>@key</code> or <code>[@key]</code> (the latter puts the citation in braces), e.g., <code>@R-base</code> is rendered as <span class="citation"><a href="#ref-R-base" role="doc-biblioref">R Core Team</a> (<a href="#ref-R-base" role="doc-biblioref">2021</a>)</span>, and <code>[@R-base]</code> generates “<span class="citation">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2021</a>)</span>.” If you are familiar with the <strong>natbib</strong> package in LaTeX, <code>@key</code> is basically <code>\citet{key}</code>, and <code>[@key]</code> is equivalent to <code>\citep{key}</code>.</p>
-<p>There are a number of fields in a bibliography entry, such as <code>title</code>, <code>author</code>, and <code>year</code>, etc. You may see <a href="https://en.wikipedia.org/wiki/BibTeX" class="uri">https://en.wikipedia.org/wiki/BibTeX</a> for possible types of entries and fields in BibTeX.</p>
-<p>There is a helper function <code>write_bib()</code> in <strong>knitr</strong> to generate BibTeX entries automatically for R packages, e.g.,</p>
+<p>  参考书目条目以 <code>@type{</code> 开头，其中 <code>type</code> 可以是 <code>article</code>、<code>book</code>、<code>manual</code>等等。<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>紧跟着是一个引文关键词，在上面的示例中为 <code>R-base</code>。要引用条目，使用 <code>@key</code> 或 <code>[@key]</code>（后者将引用文字放在圆括号中），例如，<code>@R-base</code> 被渲染为 <span class="citation"><a href="#ref-R-base" role="doc-biblioref">R Core Team</a> (<a href="#ref-R-base" role="doc-biblioref">2021</a>)</span>，而 <code>[@R-base]</code> 则渲染为 “<span class="citation">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2021</a>)</span>”。如果你对於 LaTeX 中的 <strong>natbib</strong> 软件包很熟悉，你会发现 <code>@key</code> 基本上就是 <code>\citet{key}</code>，而 <code>[@key]</code> 等同于 <code>\citep{key}</code>。</p>
+<p>  在一个参考书目条目中有许多字段，例如 <code>title</code>、<code>author</code> 和 <code>year</code> 等。你可用在 <a href="https://en.wikipedia.org/wiki/BibTeX" class="uri">https://en.wikipedia.org/wiki/BibTeX</a> 查看 BibTeX 中可能的条目和字段类型。</p>
+<p>  在 <strong>knitr</strong> 中有一个帮助函数 <code>write_bib()</code>，它能够为 R 软件包自动生成 BibTeX 条目，例如：</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="2-8-citations.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the second argument can be a .bib file</span></span>
 <span id="cb54-2"><a href="2-8-citations.html#cb54-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">write_bib</span>(<span class="fu">c</span>(<span class="st">&#39;knitr&#39;</span>, <span class="st">&#39;stringr&#39;</span>), <span class="st">&#39;&#39;</span>, <span class="at">width =</span> <span class="dv">60</span>)</span></code></pre></div>
 <pre><code>@Manual{R-knitr,
@@ -371,16 +370,16 @@ formats is important, use <code>pandoc-citeproc</code> throughout.</p>
   url = {http://www.crcpress.com/product/isbn/
     9781466561595},
 }</code></pre>
-<p>Once you have one or multiple <code>.bib</code> files, you may use the field <code>bibliography</code> in the YAML metadata of your first R Markdown document (which is typically <code>index.Rmd</code>), and you can also specify the bibliography style via <code>biblio-style</code> (this only applies to PDF output), e.g.,</p>
+<p>  一旦你有一个或多个 <code>.bib</code> 文件，你可以在第一个 R Markdown 文档（通常是 <code>index.Rmd</code>）中的 YAML 元数据中使用字段 <code>bibliography</code> 来使用它们，你也可以通过 <code>biblio-style</code> 指定参考书目样式（它仅对 PDF 输出文档起作用），例如：</p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb56-1"><a href="2-8-citations.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb56-2"><a href="2-8-citations.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;one.bib&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;another.bib&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;yet-another.bib&quot;</span><span class="kw">]</span></span>
 <span id="cb56-3"><a href="2-8-citations.html#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="fu">biblio-style</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;apalike&quot;</span></span>
 <span id="cb56-4"><a href="2-8-citations.html#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb56-5"><a href="2-8-citations.html#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<p>The field <code>link-citations</code> can be used to add internal links from the citation text of the author-year style to the bibliography entry in the HTML output.</p>
-<p>When the output format is LaTeX, the list of references will be automatically put in a chapter or section at the end of the document. For non-LaTeX output, you can add an empty chapter as the last chapter of your book. For example, if your last chapter is the Rmd file <code>06-references.Rmd</code>, its content can be an inline R expression:</p>
+<p>  字段 <code>link-citations</code> 能够用来添加从“作者-年份”格式的引文文本到 HTML 输出中参考书目条目的内部链接。</p>
+<p>  当输出格式为 LaTeX 时，参考文献列表将自动放在文档末尾的章节中。对于非 LaTeX 输出，你可以为你的书籍添加一个空章节作为最后一章。例如，如果最后一章是 Rmd 文件 <code>06-references.Rmd</code>，则它的内容可以是内联 R 表达式：</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb57-1"><a href="2-8-citations.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="in">`r if (knitr::is_html_output()) &#39;# References {-}&#39;`</span></span></code></pre></div>
-<p>For more detailed instructions and further examples on how to use citations, please see the “Citations” section of the Pandoc manual.</p>
+<p>  有关如何使用引文的更多详细说明和示例，请参阅 Pandoc 使用指南的“引文”部分。</p>
 </div>
 <h3>参考文献</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
@@ -391,11 +390,11 @@ R Core Team. 2021. <em>R: A Language and Environment for Statistical Computing</
 <div class="footnotes">
 <hr />
 <ol start="7">
-<li id="fn7"><p>The type name is case-insensitive, so it does not matter if it is <code>manual</code>, <code>Manual</code>, or <code>MANUAL</code>.<a href="2-8-citations.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>类型名称不区分大小写，因此不管是 <code>manual</code>、<code>Manual</code> 或 <code>MANUAL</code> 都可以。<a href="2-8-citations.html#fnref7" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <p style="text-align: center;">
-<a href="2-7-自定义块.html"><button class="btn btn-default">Previous</button></a>
+<a href="2-7-自定义区块.html"><button class="btn btn-default">Previous</button></a>
 <a href="2-9-latex-index.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>

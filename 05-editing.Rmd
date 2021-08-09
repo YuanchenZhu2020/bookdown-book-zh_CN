@@ -3,7 +3,7 @@
 
 &emsp;&emsp;在本章中，我们将解释如何在本地编辑、构建、预览和通过 HTTP 服务预览书籍。你可以使用任何文本编辑器来编辑书籍，不过我们将展示一些使用 RStudio IDE 的技巧。在介绍编辑器之前，我们将介绍用于构建、预览和通过 HTTP 服务预览书籍的底层 R 函数，以便你真正了解在 RStudio IDE 中单击某个按钮时在幕后发生的事情，并且还可以自定义调用这些函数的其它编辑器。
 
-## 构建书籍
+## 构建书籍 {#build-the-book}
 
 &emsp;&emsp;要将所有 Rmd 文件构建到一本书中，可以在 **bookdown** 中调用 `render_book()`\index{bookdown::render\_book()}函数。下面是 `render_book()` 的参数：
 
@@ -99,7 +99,7 @@ knitr::include_graphics('images/citr.png', dpi = NA)
 
 &emsp;&emsp;由于所有书籍章节都是纯文本文件，因此它们非常适合用于应用版本控制工具。因此，如果你的所有合著者和合作者都具备 GIT 等版本控制工具的基本知识，你就可以使用这些工具与他们协作处理书籍内容。事实上，即使他们不知道如何使用 GIT，通过 GIT 进行协作也是可以的，因为 GitHub\index{GitHub}能够让使用者在 web 浏览器中在线创建和编辑文件。只需要有一个人必须熟悉 GIT，并且能够设置书籍存储库。其他合作者可以在线贡献内容，不过如果他们知道在本地使用 GIT 工作的基础用法，他们会有更多的自由。
 
-&emsp;&emsp;读者可以通过两种方式做出贡献。一种方式是直接贡献内容，如果你的书源托管在 GitHub 上，最简单的方法是通过 [GitHub pull requests](https://help.github.com/articles/about-pull-requests/)。基本上，任何 GitHub 用户都可以单击 Rmd 源文件页面上的编辑 (edit) 按钮，编辑内容，并将更改提交给你进行审批。如果你对提交的更改感到满意（你可以清楚地看到更改的内容），可以单击“合并 (Merge)”按钮来合并更改。如果你不满意，可以在 pull request 中提供反馈，以便读者根据要求进一步修改。我们在第 \@ref(gitBook-style) 节中提到了 GitBook 样式中的编辑 (edit) 按钮。该按钮链接到每个页面的 Rmd 源文件，可以引导你创建 pull request。没有必要来回收发电子邮件来交流简单的更改内容，比如修改打字错误。
+&emsp;&emsp;读者可以通过两种方式做出贡献。一种方式是直接贡献内容，如果你的书源托管在 GitHub 上，最简单的方法是通过 [GitHub pull requests](https://help.github.com/articles/about-pull-requests/)。基本上，任何 GitHub 用户都可以单击 Rmd 源文件页面上的编辑 (edit) 按钮，编辑内容，并将更改提交给你进行审批。如果你对提交的更改感到满意（你可以清楚地看到更改的内容），可以单击“合并 (Merge)”按钮来合并更改。如果你不满意，可以在 pull request 中提供反馈，以便读者根据要求进一步修改。我们在第 \@ref(gitbook-style) 节中提到了 GitBook 样式中的编辑 (edit) 按钮。该按钮链接到每个页面的 Rmd 源文件，可以引导你创建 pull request。没有必要来回收发电子邮件来交流简单的更改内容，比如修改打字错误。
 
 &emsp;&emsp;读者对你的书作出贡献的另一种方式是留下评论。评论可以以多种形式留下：电子邮件、GitHub issues 或 HTML 页面评论。这里我们使用 Disqus（参见第 \@ref(yaml-options) 节）作为示例。Disqus 是一种在网页上嵌入讨论区的服务，可以通过 JavaScript 加载。当你注册并在 Disqus 上创建一个新的论坛后，你可以找到如下所示的 JavaScript 代码：
 

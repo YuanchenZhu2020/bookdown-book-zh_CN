@@ -208,7 +208,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.4" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>2.4</b> 图片</a></li>
 <li class="chapter" data-level="2.5" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>2.5</b> 表格</a></li>
 <li class="chapter" data-level="2.6" data-path="cross-references.html"><a href="cross-references.html"><i class="fa fa-check"></i><b>2.6</b> 交叉引用</a></li>
-<li class="chapter" data-level="2.7" data-path="自定义块.html"><a href="自定义块.html"><i class="fa fa-check"></i><b>2.7</b> 自定义块</a></li>
+<li class="chapter" data-level="2.7" data-path="自定义区块.html"><a href="自定义区块.html"><i class="fa fa-check"></i><b>2.7</b> 自定义区块</a></li>
 <li class="chapter" data-level="2.8" data-path="citations.html"><a href="citations.html"><i class="fa fa-check"></i><b>2.8</b> 引文</a></li>
 <li class="chapter" data-level="2.9" data-path="latex-index.html"><a href="latex-index.html"><i class="fa fa-check"></i><b>2.9</b> 索引</a></li>
 <li class="chapter" data-level="2.10" data-path="html-小组件.html"><a href="html-小组件.html"><i class="fa fa-check"></i><b>2.10</b> HTML 小组件</a></li>
@@ -237,11 +237,11 @@ div.csl-indent {
 <li class="chapter" data-level="4.2" data-path="更换主题.html"><a href="更换主题.html"><i class="fa fa-check"></i><b>4.2</b> 更换主题</a></li>
 <li class="chapter" data-level="4.3" data-path="模板.html"><a href="模板.html"><i class="fa fa-check"></i><b>4.3</b> 模板</a></li>
 <li class="chapter" data-level="4.4" data-path="configuration.html"><a href="configuration.html"><i class="fa fa-check"></i><b>4.4</b> 配置</a></li>
-<li class="chapter" data-level="4.5" data-path="国际化.html"><a href="国际化.html"><i class="fa fa-check"></i><b>4.5</b> 国际化</a></li>
+<li class="chapter" data-level="4.5" data-path="internationalization.html"><a href="internationalization.html"><i class="fa fa-check"></i><b>4.5</b> 国际化</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="editing.html"><a href="editing.html"><i class="fa fa-check"></i><b>5</b> 编辑</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="构建书籍.html"><a href="构建书籍.html"><i class="fa fa-check"></i><b>5.1</b> 构建书籍</a></li>
+<li class="chapter" data-level="5.1" data-path="build-the-book.html"><a href="build-the-book.html"><i class="fa fa-check"></i><b>5.1</b> 构建书籍</a></li>
 <li class="chapter" data-level="5.2" data-path="预览单个章节.html"><a href="预览单个章节.html"><i class="fa fa-check"></i><b>5.2</b> 预览单个章节</a></li>
 <li class="chapter" data-level="5.3" data-path="使用-http-服务预览书籍.html"><a href="使用-http-服务预览书籍.html"><i class="fa fa-check"></i><b>5.3</b> 使用 HTTP 服务预览书籍</a></li>
 <li class="chapter" data-level="5.4" data-path="rstudio-ide.html"><a href="rstudio-ide.html"><i class="fa fa-check"></i><b>5.4</b> RStudio IDE</a></li>
@@ -294,10 +294,10 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="latex-index" class="section level2" number="2.9">
 <h2><span class="header-section-number">2.9</span> 索引</h2>
-<p>Currently the index is only supported for LaTeX/PDF output. To print an index after the book, you can use the LaTeX package <strong>makeidx</strong> in the preamble (see Section <a href="yaml-options.html#yaml-options">4.1</a>):</p>
+<p>  目前只有 LaTeX/PDF 输出支持索引。要在书籍之后打印索引，你可以在 LaTeX 导言 (preamble) 中使用 LaTeX 软件包 <strong>makeidx</strong> （请参阅第 <a href="yaml-options.html#yaml-options">4.1</a> 节）：</p>
 <div class="sourceCode" id="cb58"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb58-1"><a href="latex-index.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>{<span class="ex">makeidx</span>}</span>
 <span id="cb58-2"><a href="latex-index.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\makeindex</span></span></code></pre></div>
-<p>Then insert <code>\printindex</code> at the end of your book through the YAML option <code>includes -&gt; after_body</code>. An index entry can be created via the <code>\index{}</code> command in the book body, e.g., <code>\index{GIT}</code>.</p>
+<p>  然后通过 YAML 选项 <code>includes -&gt; after_body</code> 在书的末尾插入 <code>\printindex</code>。索引项可以通过书籍正文中的 <code>\index{}</code>命令创建，例如 <code>\index{GIT}</code>。</p>
 </div>
             </section>
 

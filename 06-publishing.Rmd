@@ -21,55 +21,54 @@ bookdown::publish_book(render = 'local')
 
 ## Netlify Drop
 
-&emsp;&emsp;Netlify (<https://netlify.com>) 是一个为静态网站提供云托管和无服务器后端服务的平台。Netlify 提供免费和付费两种服务，但他们也提供一种称为 Netlify Drop 的服务 (<https://app.netlify.com/drop>)，这是一个免费发布选项，不需要启动Netlify帐户。此选项不依赖于您的**bookdown**项目位于版本控制的存储库中。你所需要的只是一个可以在本地构建的 **bookdown** 项目。
-Netlify (<https://netlify.com>) is a platform that offers cloud hosting and serverless backend services for static websites. Netlify offers both free and paid tiers for service, but they also offer a service called Netlify Drop (<https://app.netlify.com/drop>), which is a free publishing option that does not require a Netlify account to start. This option does not rely on your **bookdown** project being in a version-controlled repository. All you need is a **bookdown** project that you can build locally.
+&emsp;&emsp;Netlify (<https://netlify.com>) 是一个为静态网站提供云托管和无服务器后端服务的平台。Netlify 提供免费和付费两种服务，但他们也提供一种称为 Netlify Drop (<https://app.netlify.com/drop>) 的服务，这是一个免费的发布书籍的选项，并且不需要拥有 Netlify 帐户就能够使用。该服务不需要你的 **bookdown** 项目位于受版本控制的存储库中。你所需要的只是一个可以在本地构建的 **bookdown** 项目。
 
-### The build-and-deploy pipeline sequence
+### 构建和部署的工作流水线
 
-This publishing approach sets up the following flow of events:
+&emsp;&emsp;这种发布方法设置了以下事件流：
 
-1. You start with a local **bookdown** project.
-1. You build your book locally to an output directory of choice (`_book/` by default).
-1. You go to Netlify Drop (<https://app.netlify.com/drop>), and drag & drop the output directory into the Netlify browser-based user interface.
-1. You make changes to your book, rebuild locally, then drag & drop the output directory again into Netlify to update.
+1. 从本地 **bookdown** 项目开始。
+1. 在本地将书籍构建到所选的输出目录中（默认情况下为`_book/`）。
+1. 访问 Netlify Drop (<https://app.netlify.com/drop>)，将输出目录拖放到 Netlify 基于浏览器的用户界面中。
+1. 对书籍进行修改，在本地重新构建，然后再次将输出目录拖放到 Netlify 中进行更新。
 
-The above is an overview---read on for step-by-step instructions.
+&emsp;&emsp;以上内容仅为概述——请继续阅读以了解分步骤的说明。
 
-### Before you begin
+### 开始之前
 
-Start with a local **bookdown** project. It does not need to be in GitHub or another version-controlled repository. 
+&emsp;&emsp;工作流水线从建立本地 **bookdown** 项目开始。项目并不需要放在 GitHub 或其它受版本控制的储存库内。
 
-If you do not have an existing book, you can create a simple **bookdown** HTML book to practice with instead. See Figure \@ref(fig:new-bs4-book) for how to create a new book in RStudio, or use the function `bookdown::create_gitbook()` or `bookdown::create_bs4_book()` from your R console if you do not use RStudio.
+&emsp;&emsp;如果你没有线程的书籍，可以创建一个简单的 **bookdown** HTML 书籍来代替练习。有关如何在 RStudio 中创建新书的内容，请见图 \@ref(fig:new-bs4-book)；如果你不使用 RStudio，可以在 R console 中使用函数 `bookdown::create_gitbook()` 或 `bookdown::create_bs4_book()`。
 
-### Build your book
+### 构建书籍
 
-From your **bookdown** project, build your book locally using whichever method from Chapter \@ref(build-the-book) you prefer.
+&emsp;&emsp;在本地从你的 **bookdown** 项目中构建书籍，你可以使用第 \@ref(build-the-book) 章中你喜欢的任何方法。
 
-### Deploy your site
+### 部署网站
 
-Go to Netlify Drop ([netlify.com/drop](https://app.netlify.com/drop)), where you should see a box that tells you to "Drag and drop your site folder here."
+&emsp;&emsp;转到 Netlify Drop ([netlify.com/drop](https://app.netlify.com/drop))，你应该能够在网页上看到一个方框，它高数你“将站点文件夹拖放到此处”。
 
-Next, drag and drop the output directory from your **bookdown** project (`_book/` by default, unless you changed this in your `_bookdown.yml` file) into that box in your web browser. You should see your book deploy quickly with a random subdomain name of the form `https://random-word-12345.netlify.com`.
+&emsp;&emsp;接下来，将 **bookdown** 项目的输出目录（默认情况下为 `_book/`，除非你在 `_bookdown.yml` 文件中更改了这项设置）拖放到 Web 浏览器中的这个方框中。你应该会看到你的书籍使用了 `https://random-word-12345.netlify.com` 形式的随机子域名进行快速部署。
 
-You will also see a notice that unclaimed sites are deleted after 24 hours. You can sign up for a Netlify account to claim your site and keep it online permanently.
+&emsp;&emsp;你还会看到无人认领的网站会在 24 小时后被删除的通知。你可以注册一个 Netlify 账户来声明你的网站并使其永久在线。
 
-### *Optional: Update your site*
+### *可选：更新站点*
 
-After signing up for Netlify, you *can* update this kind of site, but it is a manual update. Go to Netlify.com and navigate to find your site, then click on "Deploys." You should see a box as shown in Figure \@ref(fig:netlify-drag-drop), indicating you may drag and drop your site folder to update your site (you may need to scroll to the bottom of this page).
+&emsp;&emsp;注册 Netlify 后，你*可以*更新这一类的网站，但它需要手动更新。访问 Netlify.com 并导航找到你的站点，然后单击“部署 (Deploys)”。你将看到一个方框，如图 \@ref(fig:netlify-drag-drop) 所示，这表示你可以拖放站点文件夹以更新站点（你可能需要滚动到此页面底部）。
 
-```{r netlify-drag-drop, echo=FALSE, fig.align='center', fig.cap="Screenshot of drag and drop deploy update box on Netlify."}
+```{r netlify-drag-drop, echo=FALSE, fig.align='center', fig.cap="在 Netlify 上拖放部署的站点更新方框的屏幕截图。"}
 knitr::include_graphics("images/netlify-drag-drop-update.png", dpi = NA)
 ```
 
-Edit your book, build it locally again, then drag and drop the output directory here again. 
+&emsp;&emsp;编辑你的书籍，再次在本地进行构建，然后将输出目录再次拖放到上传位置。
 
-### *Optional: change the default subdomain* {#netlify-subdomain} 
+### *可选：更改默认子域名* {#netlify-subdomain} 
 
-Navigate to your site's landing page on Netlify.com (<https://app.netlify.com>), click on *Overview > Site Settings*. Under *Site information*, click on *Change site name* and update it to a name that you want. If you want to use your own domain instead of Netlify's subdomain, please read the documentation at https://docs.netlify.com/domains-https/custom-domains/. 
+&emsp;&emsp;导航到 Netlify.com 上的站点登录页 (<https://app.netlify.com>)，单击*概述 (Overview) > 站点设置 (Site Settings)*。在*站点信息 (Site information)*下单击*更改站点名称 (Change site name)*并将其更新为你想要的名称。如果想使用自己的域名而不是 Netlify 的子域名，请阅读以下文档：<https://docs.netlify.com/domains-https/custom-domains/>。
 
-### Drawbacks and alternatives
+### 缺点和备选方案
 
-This workflow is great to quickly share a book prototype. However, if you opt to not claim your site, the link will expire in 24 hours. Even if you do claim your site and set up a Netlify account, this workflow is not ideal for books you are actively editing or collaborating on because every time you update your local version of the book, you need to manually upload the book to Netlify. You are also not reaping the benefits of version control with this approach. 
+&emsp;&emsp;这个工作流非常适合快速共享书籍原型。但是，如果你选择不声明你的站点，该链接将在 24 小时后过期。即使你申请了网站并设置了 Netlify 帐户，这个工作流也不适合正在积极编辑或合作创作的书籍，因为每次更新书籍的本地版本时，你都需要手动将书籍上传到 Netlify。使用这种方法也无法获得版本控制的好处。
 
 ## GitHub
 

@@ -142,7 +142,7 @@ $$\begin{vmatrix}a & b\\
 c & d
 \end{vmatrix}=ad-bc$$
 
-## bookdown 提供的 Markdown 功能拓展
+## Bookdown 中的 Markdown 功能拓展
 
 &emsp;&emsp;尽管 Pandoc 风格的 Markdown 比原来的 Markdown 语法要丰富得多，但它仍然缺少我们在学术写作中可能需要的一些东西。例如，它支持数学公式，但不能在多页 HTML 或 EPUB 输出中对公式进行编号和引用。我们在 **bookdown** 中提供了一些 Markdown 扩展来填补这些空白。
 
@@ -290,9 +290,9 @@ $$a^2 + b^2 = c^2$$
 $$a^2 + b^2 = c^2$$
 :::
 
-&emsp;&emsp;目前支持的证明环有境 `r knitr::combine_words(names(bookdown:::label_names_math2), before = '\x60')`。它的语法类似于定理环境，并且证明环境也能够使用 `name` 属性命名。唯一的区别是你不能引用它们，即便你为证明环境提供了 ID，因为它们无法进行编号。
+&emsp;&emsp;目前支持的证明环境有 `r knitr::combine_words(names(bookdown:::label_names_math2), before='\x60', sep='、', and=" 和 ", oxford_comma=FALSE)`。它的语法类似于定理环境，并且证明环境也能够使用 `name` 属性命名。唯一的区别是你不能引用它们，即便你为证明环境提供了 ID，因为它们无法进行编号。
 
-&emsp;&emsp;无论你选择的输出是 PDF 还是 HTML，我们都已经尝试使所有这些定理和证明环境开箱即用。如果你是 LaTeX 或 HTML 专家，你可能希望自定义这些环境的样式（请参阅第 \@ref(customization) 章）。使用 CSS 可以很容易在 HTML 中自定义样式，每个环境都包含在 `<div></div>` 中，CSS class 属性为环境名称，例如 `<div class=“lemma”></div>`。对于 LaTeX 输出，我们为环境 `r knitr::combine_words(bookdown:::style_definition, before='\x60')` 预定义了样式 `definition`，为环境 `r knitr::combine_words(c('proof', bookdown:::style_remark), before='\x60')` 预定义了样式 `remark`。所有其他环境都使用 `plain` 样式。样式定义是通过 **amsthm** 包的 `\theoremstyle{}` 命令完成的。如果你不希望 **bookdown** 自动添加默认的定理定义，可以设置 `options(bookdown.thermo.preamble = FALSE)`。例如，使用输出格式 `bookdown::pdf_book` 和已经包含 **amsmath** 定义的 `base_format` 来避免单个文档（第 \@ref(a-single-document) 节）中的冲突非常有用。
+&emsp;&emsp;无论你选择的输出是 PDF 还是 HTML，我们都已经尝试使所有这些定理和证明环境开箱即用。如果你是 LaTeX 或 HTML 专家，你可能希望自定义这些环境的样式（请参阅第 \@ref(customization) 章）。使用 CSS 可以很容易在 HTML 中自定义样式，每个环境都包含在 `<div></div>` 中，CSS class 属性为环境名称，例如 `<div class=“lemma”></div>`。对于 LaTeX 输出，我们为环境 `r knitr::combine_words(bookdown:::style_definition, before='\x60', sep='、', and=" 和 ", oxford_comma=FALSE)` 预定义了样式 `definition`，为环境 `r knitr::combine_words(c('proof', bookdown:::style_remark), before='\x60', sep='、', and=" 和 ", oxford_comma=FALSE)` 预定义了样式 `remark`。所有其他环境都使用 `plain` 样式。样式定义是通过 **amsthm** 包的 `\theoremstyle{}` 命令完成的。如果你不希望 **bookdown** 自动添加默认的定理定义，可以设置 `options(bookdown.thermo.preamble = FALSE)`。例如，使用输出格式 `bookdown::pdf_book` 和已经包含 **amsmath** 定义的 `base_format` 来避免单个文档（第 \@ref(a-single-document) 节）中的冲突非常有用。
 
 &emsp;&emsp;默认情况下，定理按篇章编号。如果文档中没有篇章，则按小节编号。如果整篇文档没有编号（输出格式选项为 `number_sections = FALSE`），则所有定理都从 1、2、…、N 开始依次编号。LaTeX 支持依次对一个又一个定理环境进行编号，例如，让定理和引理共享同一个计数器。**bookdown** 中的 HTML/EPUB 输出不支持此操作。你可以通过定义自己的定理环境来更改 LaTeX 导言 (preamble) 中的编号方案，例如：
 
@@ -706,50 +706,50 @@ link-citations: true
 
 ## HTML 小组件
 
-Although one of R's greatest strengths is data visualization, there are a large number of JavaScript libraries for much richer data visualization. These libraries can be used to build interactive applications that can easily render in web browsers, so users do not need to install any additional software packages to view the visualizations. One way to bring these JavaScript libraries into R is through the [**htmlwidgets**](http://htmlwidgets.org) package [@R-htmlwidgets]\index{HTML widget}. 
+&emsp;&emsp;尽管 R 的最大优势之一是数据可视化，但仍然有大量 JavaScript 库可用于更丰富的数据可视化。这些库可以被用来构建能够在 Web 浏览器中轻松呈现的可交互式应用，因此用户不必安装其它任何软件包就能够查看可视化效果。将这些 JavaScript 库引入 R 的一种方法是通过 [**htmlwidgets**](http://htmlwidgets.org) 软件包 [@R-htmlwidgets]\index{HTML widget}。
 
-HTML widgets can be rendered as a standalone web page (like an R plot), or embedded in R Markdown documents and Shiny applications. They were originally designed for HTML output only, and they require the availability of JavaScript, so they will not work in non-HTML output formats, such as LaTeX/PDF. Before **knitr** v1.13, you will get an error when you render HTML widgets to an output format that is not HTML. Since **knitr** v1.13, HTML widgets will be rendered automatically as screenshots taken via the **webshot** package [@R-webshot]. Of course, you need to install the **webshot** package. Additionally, you have to install PhantomJS (http://phantomjs.org), since it is what **webshot** uses to capture screenshots. Both **webshot** and PhantomJS can be installed automatically from R:
+&emsp;&emsp;HTML 小组件能够呈现为独立的网页（就像 R plot 一样），或者嵌入 R Markdown 文档和 Shiny 应用中。它们最初仅被设计用于 HTML 输出，并且需要使用 JavaScript，因此它们不能用于非 HTML 输出格式，例如 LaTeX/PDF。在 **knitr** v1.13 之前，如果你试图在非 HTML 输出格式中呈现 HTML 小组件，你将会收到错误消息。从 **knitr** v1.13 开始，HTML 小组件将会自动被呈现为通过 **webshot** 软件包 [@R-webshot] 截取的屏幕截图。当然，你需要安装有 **webshot** 软件包。另外，你必须安装 PhantomJS (http://phantomjs.org)，因为 **webshot** 使用它来捕捉屏幕截图。**webshot** 和 PhantomJS 都能够在 R 中自动安装：
 
 ```{r eval=FALSE}
 install.packages('webshot')
 webshot::install_phantomjs()
 ```
 
-The function `install_phantomjs()` works for Windows, OS X, and Linux. You may also choose to download and install PhantomJS by yourself, if you are familiar with modifying the system environment variable `PATH`.
+&emsp;&emsp;函数 `install_phantomjs()` 适用于 Windows、OS X 和 Linux。如果你熟悉修改系统环境变量 `PATH`，也可以选择自己下载和安装 PhantomJS。
 
-When **knitr** detects an HTML widget object in a code chunk, it either renders the widget normally when the current output format is HTML, or saves the widget as an HTML page and calls **webshot** to capture the screen of the HTML page when the output format is not HTML. Here is an example of a table created from the **DT** package [@R-DT]:
+&emsp;&emsp;当 **knitr** 在代码块中检测到 HTML 小组件对象时，它要么在当前输出格式为 HTML 时正常呈现小组件，要么在输出格式不是 HTML 时将小组件保存为 HTML 页面，并调用 **webshot** 来捕获 HTML 页面的屏幕图像。下面是从 **DT** 软件包 [@R-DT] 创建的表格的示例：
 
 ```{r DT-demo, fig.cap='A table widget rendered via the DT package.', dev='png', cache=TRUE, cache.extra=packageVersion('DT'), screenshot.opts=list(zoom=2)}
 DT::datatable(iris)
 ```
 
-If you are reading this book as web pages now, you should see an interactive table generated from the above code chunk, e.g., you may sort the columns and search in the table. If you are reading a non-HTML version of this book, you should see a screenshot of the table. The screenshot may look a little different with the actual widget rendered in the web browser, due to the difference between a real web browser and PhantomJS's virtual browser.
+&emsp;&emsp;如果你现在以网页的形式阅读本书，应该能看到由上述代码块生成的交互式表格：你可以对列进行排序并在表格中进行搜索。如果你正在阅读本书的非 HTML 版本，应该能看到这个表格的屏幕截图。由于真实的 Web 浏览器和 PhantomJS 的虚拟浏览器之间的差异，屏幕截图可能与 Web 浏览器中呈现的实际小组件略有不同。
 
-There are a number of **knitr** chunk options related to screen-capturing. First, if you are not satisfied with the quality of the automatic screenshots, or want a screenshot of the widget of a particular state (e.g., after you click and sort a certain column of a table), you may capture the screen manually, and provide your own screenshot via the chunk option `screenshot.alt` (alternative screenshots). This option takes the paths of images. If you have multiple widgets in a chunk, you can provide a vector of image paths. When this option is present, **knitr** will no longer call **webshot** to take automatic screenshots.
+&emsp;&emsp;有许多与屏幕捕获相关的 **knitr** 区块选项。第一，如果你对自动截图的质量不满意，或者想要一个特定状态的小组件的屏幕截图（例如在你单击并排序表的某一列之后），可以手动捕获屏幕图像，并通过区块选项 `screenshot.alt`（备选屏幕截图 (alternative screenshots)）提供自己的屏幕截图。该选项使用图像的路径获得图片。如果一个区块中有多个小组件，则可以提供一个图像路径的向量。当该选项存在时，**knitr** 将不再调用 **webshot** 自动截图。
 
-Second, sometimes you may want to force **knitr** to use static screenshots instead of rendering the actual widgets even on HTML pages. In this case, you can set the chunk option `screenshot.force = TRUE`, and widgets will always be rendered as static images. Note that you can still choose to use automatic or custom screenshots.
+&emsp;&emsp;第二，有时你可能希望强制 **knitr** 使用静态屏幕截图，而不是在 HTML 页面上呈现实际的小组件。在这种情况下，你可以设置区块选项 `screenshot.force = TRUE`。小组件将始终呈现为静态图像。请注意，你仍然可以选择使用自动或自定义的屏幕截图。
 
-Third, **webshot** has some options to control the automatic screenshots, and you may specify these options via the chunk option `screenshot.opts`, which takes a list like `list(delay = 2, cliprect = 'viewport')`. See the help page `?webshot::webshot` for the full list of possible options, and the [package vignette](https://cran.rstudio.com/web/packages/webshot/vignettes/intro.html) `vignette('intro', package = 'webshot')` illustrates the effect of these options. Here the `delay` option can be important for widgets that take long time to render: `delay` specifies the number of seconds to wait before PhantomJS takes the screenshot. If you see an incomplete screenshot, you may want to specify a longer delay (the default is 0.2 seconds).
+&emsp;&emsp;第三，**webshot** 有一些控制自动屏幕截图的选项，你可以通过区块选项 `screenshot.opts` 指定这些选项，该选项采用类似 `list(delay = 2, cliprect = 'viewport')` 的列表。有关可用选项的完整列表，请查阅帮助页面 `?webshot::webshot`，而[软件包说明短文](https://cran.rstudio.com/web/packages/webshot/vignettes/intro.html) `vignette('intro', package = 'webshot')` 说明了这些选项的效果。这里的 `delay` 选项对于需要很长时间进行渲染的小组件来说很重要：`delay` 指定了 PhantomJS 在截图前等待的秒数。如果看到不完整的屏幕截图，可能需要指定更长的延迟时间（默认值为 0.2 秒）。
 
-Fourth, if you feel it is slow to capture the screenshots, or do not want to do it every time the code chunk is executed, you may use the chunk option `cache = TRUE` to cache the chunk. Caching works for both HTML and non-HTML output formats.
+&emsp;&emsp;第四，如果你觉得捕获屏幕截图很慢，或者不想每次执行代码块时都这样做，可以使用区块选项 `cache = TRUE` 来缓存区块。缓存对于 HTML 和非 HTML 输出格式都适用。
 
-Screenshots behave like normal R plots in the sense that many chunk options related to figures also apply to screenshots, including `fig.width`, `fig.height`, `out.width`, `fig.cap`, and so on. So you can specify the size of screenshots in the output document, and assign figure captions to them as well. The image format of the automatic screenshots can be specified via the chunk option `dev`, and possible values are `pdf`, `png`, and `jpeg`. The default for PDF output is `pdf`, and it is `png` for other types of output. Note that `pdf` may not work as faithfully as `png`: sometimes there are certain elements on an HTML page that fail to render to the PDF screenshot, so you may want to use `dev = 'png'` even for PDF output. It depends on specific cases of HTML widgets, and you can try both `pdf` and `png` (or `jpeg`) before deciding which format is more desirable.
+&emsp;&emsp;屏幕截图的表现类似于普通的 R plot，因为许多与图形相关的区块选项也适用于屏幕截图，包括 `fig.width`、`fig.height`、`out.width`、`fig.cap` 等。因此你可以在输出文档中指定屏幕截图的大小，并为其指定图片标题。可以通过区块选项 `dev` 指定自动截图的图片格式，可能的值为 `pdf`、`png` 和 `jpeg`。PDF 输出的默认值为 `pdf`，其他类型输出的默认值为 `png`。请注意，`pdf` 可能不如 `png` 那样可靠：有时 HTML 页面上的某些元素无法呈现到 PDF 屏幕截图中，因此你甚至可能希望在 PDF 输出中使用 `dev = 'png'`。不过能否正常使用取决于 HTML 小部件的具体情况，在确定哪种格式更加合适之前，你可以对 `pdf` 和 `png`（或 `jpeg`）都加以尝试。
 
 ## Web 页面和 Shiny 应用
 
-Similar to HTML widgets, arbitrary web pages can be embedded in the book. You can use the function `knitr::include_url()` to include a web page through its URL. When the output format is HTML, an `iframe` is used;^[An `iframe` is basically a box on one web page to embed another web page.] in other cases, **knitr** tries to take a screenshot of the web page (or use the custom screenshot you provided). All chunk options are the same as those for HTML widgets. One option that may require your special attention is the `delay` option: HTML widgets are rendered locally, so usually they are fast to load for PhantomJS to take screenshots, but an arbitrary URL may take longer to load, so you may want to use a larger `delay` value, e.g., use the chunk option `screenshot.opts = list(delay = 5)`.
+&emsp;&emsp;与 HTML 小组件类似，书籍中可以嵌入任意网页。你可以使用函数 `knitr::include_url()` 通过 URL 在书籍中包含该网页。当输出格式为 HTML 时，它会使用一个 `iframe`；^[`iframe` 基本上是一个网页上的框，用于嵌入另一个网页。]在其他情况下，**knitr** 尝试拍摄该网页的屏幕截图（或使用你提供的自定义屏幕截图）。所有区块选项都与 HTML 小组件的选项相同。一个可能需要你特别注意的选项是 `delay`：HTML 小组件是在本地渲染的，因此 PhantomJS 通常可以快速加载以获取屏幕截图，但是加载任意 URL 可能需要更长的时间，因此你可能需要使用更大的 `delay` 值，例如，使用区块选项 `screenshot.opts = list(delay = 5)`。
 
-A related function is `knitr::include_app()`, which is very similar to `include_url()`, and it was designed for embedding Shiny apps\index{Shiny application} via their URLs in the output. Its only difference with `include_url()` is that it automatically adds a query parameter `?showcase=0` to the URL, if no other query parameters are present in the URL, to disable the Shiny showcase mode, which is unlikely to be useful for screenshots or iframes. If you do want the showcase mode, use `include_url()` instead of `include_app()`. Below is a Shiny app example (Figure \@ref(fig:miniUI)):
+&emsp;&emsp;另一个相关的函数是 `knitr::include_app()`，它与 `include_url()` 非常相似。它是为通过 URLs 在输出中嵌入 Shiny 应用程序\index{Shiny application}而设计的。它与 `include_url()` 的唯一区别在于，如果 URL 中不存在其他查询参数，它会自动将查询参数 `?showcase=0` 添加到 URL  中，以禁用 Shiny 的 showcase 模式，该模式对于屏幕截图或 iframes 来说不太可能有用。如果确实需要 showcase 模式，请使用 `include_url()` 而不是 `include_app()`。下面是一个 Shiny 的应用程序示例（图 \@ref(fig:miniUI)）：
 
 \let\ooldhref\href
 \let\href\oldhref
 
-```{r miniUI, fig.cap='A Shiny app created via the miniUI package; you can see a live version at https://yihui.shinyapps.io/miniUI/.', screenshot.opts=list(delay=20,zoom=2), dev='png', cache=TRUE, fig.align='center', fig.width=8, fig.height=6}
+```{r miniUI, fig.cap='通过 miniUI 软件包创建的一个 Shiny 应用；你可以在 <https://yihui.shinyapps.io/miniUI/> 看到现场版本', screenshot.opts=list(delay=20,zoom=2), dev='png', cache=TRUE, fig.align='center', fig.width=8, fig.height=6}
 knitr::include_app('https://yihui.shinyapps.io/miniUI/', height = '600px')
 ```
 
 \let\href\ooldhref
 
-Again, you will see a live app if you are reading an HTML version of this book, and a static screenshot if you are reading other types of formats. The above Shiny app was created using the **miniUI** package [@R-miniUI], which provides layout functions that are particularly nice for Shiny apps on small screens. If you use normal Shiny layout functions, you are likely to see vertical and/or horizontal scrollbars in the iframes because the page size is too big to fit in an iframe. When the default width of the iframe is too small, you may use the chunk option `out.width` to change it. For the height of the iframe, use the `height` argument of `include_url()`/`include_app()`.
+&emsp;&emsp;同样的，如果你正在阅读本书的 HTML 版本，将看到一个活动的应用程序，如果你正在阅读本书的其他格式版本，将看到一个静态屏幕截图。上面的 Shiny 应用程序是使用 **miniUI** 软件包 [@R-miniUI] 创建的，这个软件包提供的布局功能对于小屏幕上的 Shiny 应用程序特别好。如果使用普通的 Shiny 布局功能，则可能会在 iframe 中看到垂直和/或水平滚动条，因为页面大小太大，无法放入 iframe 中。如果 iframe 的默认宽度太小，可以使用区块选项 `out.width` 进行更改。对于 iframe 的高度，请使用 `include_url()`/`include_app()` 的 `height` 参数。
 
-Shiny apps may take even longer to load than usual URLs. You may want to use a conservative value for the `delay` option, e.g., 10. Needless to say, `include_url()` and `include_app()` require a working Internet connection, unless you have previously cached the chunk (but web pages inside iframes still will not work without an Internet connection).
+&emsp;&emsp;Shiny 应用程序可能需要比普通 URL 更长的加载时间。你可能需要对 `delay` 选项使用一个保守的值，例如 10。不用多加叙说，`include_url()` 和 `include_app()` 需要一个正常工作的 Internet 连接，除非你以前缓存了区块（但是如果没有 Internet 连接，iframe 内的网页仍然无法工作）。

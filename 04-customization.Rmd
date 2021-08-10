@@ -1,10 +1,10 @@
 # 定制化 {#customization}
 
-As we mentioned in the very beginning of this book, you are expected to have some basic knowledge about R Markdown, and we have been focusing on introducing the **bookdown** features instead of **rmarkdown**. In fact, R Markdown is highly customizable, and there are many options that you can use to customize the output document. Depending on how much you want to customize the output, you may use some simple options in the YAML metadata, or just replace the entire Pandoc template.
+&emsp;&emsp;正如我们在本书的开头中所提到的，你应该对 R Markdown 有一些基本的了解，并且我们一直在重点介绍 **bookdown** 而不是 **rmarkdown** 的特性。事实上，R Markdown 是高度可定制的，你可以使用许多选项来定制输出文档。根据你希望自定义输出文档的程度，你可以在 YAML 元数据中使用一些简单的选项，或者只替换整个 Pandoc 模板。
 
 ## YAML 选项 {#yaml-options}
 
-\index{YAML}For most types of output formats, you can customize the syntax highlighting styles using the `highlight` option of the specific format. Currently, the possible styles are `r knitr::combine_words(rmarkdown:::highlighters(), before = '\x60')`. For example, you can choose the `tango` style for the `gitbook` format:
+\index{YAML}&emsp;&emsp;对于大多数类型的输出格式来说，你可以使用特定格式的 `highlight` 选项自定义语法高亮样式，可用的样式为 `r knitr::combine_words(rmarkdown:::highlighters(), before='\x60', sep='、', and=" 和 ", oxford_comma=FALSE)`。例如，你可以为 `gitbook` 格式选择 `tango` 样式：
 
 ```yaml
 ---
@@ -14,42 +14,42 @@ output:
 ---
 ```
 
-For HTML\index{HTML} output formats, you are most likely to use the `css` option to provide your own CSS\index{CSS} stylesheets to customize the appearance of HTML elements. There is an option `includes` that applies to more formats, including HTML and LaTeX. The `includes` option allows you to insert arbitrary custom content before and/or after the body of the output. It has three sub-options: `in_header`, `before_body`, and `after_body`. You need to know the basic structure of an HTML or LaTeX document to understand these options. The source of an HTML document looks like this:
+&emsp;&emsp;对于 HTML\index{HTML} 输出格式，你最有可能使用 `css` 选项来提供自己的 CSS\index{CSS} 样式表，以自定义 HTML 元素的外观。有一个 `includes` 选项能够适用于更多格式，包括 HTML 和 LaTeX。`includes` 选项允许你在输出文档之前和/或之后插入任意自定义的内容。它有三个子选项：`in_header`、`before_body` 和 `after_body`。你需要了解 HTML 或 LaTeX 文档的基本结构才能理解这些选项。HTML 文件源文本如下所示：
 
 ```html
 <html>
   
   <head>
-  <!-- head content here, e.g. CSS and JS -->
+  <!-- 这里放置首部内容，例如 CSS 和 JS -->
   </head>
   
   <body>
-  <!-- body content here -->
+  <!-- 这里放置正文内容 -->
   </body>
 
 </html>
 ```
 
-The `in_header` option takes a file path and inserts it into the `<head>` tag. The `before_body` file will be inserted right below the opening `<body>` tag, and `after_body` is inserted before the closing tag `</body>`.
+&emsp;&emsp;`in_header` 选项接受一个文件路径然后将文件内容插入到 `<head>` 标签之间。`before_body` 所指文件将会被插入到 `<body>` 标签的正下方，`after_body` 所指文件将会被插入到 `</body>` 标签之前。
 
-A LaTeX\index{LaTeX} source document has a similar structure:
+&emsp;&emsp;一个 LaTeX\index{LaTeX} 源文档有着相似的结构：
 
 ```latex
 \documentclass{book}
 
-% LaTeX preamble
-% insert in_header here
+% LaTeX 导言 (preamble)
+% 这里插入 in_header
 
 \begin{document}
-% insert before_body here
+% 这里插入 before_body
 
-% body content here
+% 这里是正文内容
 
-% insert after_body here
+% 这里插入 after_body
 \end{document}
 ```
 
-The `includes` option is very useful and flexible. For HTML output, it means you can insert arbitrary HTML code into the output. For example, when you have LaTeX math expressions rendered via the MathJax\index{MathJax} library in the HTML output, and want the equation numbers to be displayed on the left (default is on the right), you can create a text file that contains the following code:
+&emsp;&emsp;`includes` 选项非常有用且使用灵活。对于 HTML 输出，它意味着你能够将任意 HTML 代码插入到输出中。例如，当你在 HTML 输出中通过 MathJax\index{MathJax} 库渲染 LaTeX 数学表达式，并希望方程编号显示在左侧（默认显示在右侧），你可以创建一个包含有以下代码的文本文件：
 
 ```html
 <script type="text/x-mathjax-config">
@@ -59,7 +59,7 @@ MathJax.Hub.Config({
 </script>
 ```
 
-Let's assume the file is named `mathjax-number.html`, and it is in the root directory of your book (the directory that contains all your Rmd files). You can insert this file into the HTML head via the `in_header` option, e.g.,
+&emsp;&emsp;让我们假设文件名为 `mathjax-number.html`，并且它位于你的书籍的根目录下（包含有你的全部 Rmd 文件的目录）。你可以通过 `in_header` 选项将该文件插入到 HTML 首部，例如：
 
 ```yaml
 ---
@@ -70,9 +70,11 @@ output:
 ---
 ```
 
-Another example is to enable comments or discussions on your HTML pages. There are several possibilities, such as Disqus (https://disqus.com) or Hypothesis (https://hypothes.is). These services can be easily embedded in your HTML book via the `includes` option (see Section \@ref(collaboration) for details).
+&emsp;&emsp;另一个例子是在 HTML 页面上启用评论区或讨论区。有这么几种可能的选择，例如：Disqus (https://disqus.com) 或 Hypothesis (https://hypothes.is)。这些服务可以通过 `includes` 选项轻松地嵌入到你的 HTML 书籍中（有关更多详细信息，请参阅第 \@ref(collaboration) 节）。
 
-Similarly, if you are familiar with LaTeX, you can add arbitrary LaTeX code to the preamble. That means you can use any LaTeX packages and set up any package options for your book. For example, this book used the `in_header` option to use a few more LaTeX packages like **booktabs** (for better-looking tables) and **longtable** (for tables that span across multiple pages), and applied a fix to an XeLaTeX problem that links on graphics do not work:
+&emsp;&emsp;类似地，如果你熟悉 LaTeX，则可以在导言 (preamble) 中添加任意 LaTeX 代码。这意味着你可以使用任何 LaTeX 软件包，并为书籍设置任何软件包选项。例如，本书通过 `in_header` 选项使用了更多的 LaTeX 软件包，如 **booktabs**（用于更美观的表格）和 **longtable**（用于跨多个页面的表格），并对图形环境中的链接不起作用的 XeLeTeX 问题进行了修复：
+
+> 中文版还使用了 **ctex** 软件包以在 PDF 输出中渲染中文字符。
 
 ```latex
 \usepackage{booktabs}
@@ -93,7 +95,7 @@ Similarly, if you are familiar with LaTeX, you can add arbitrary LaTeX code to t
 \fi
 ```
 
-The above LaTeX code is saved in a file `preamble.tex`, and the YAML metadata looks like this:
+&emsp;&emsp;上述 LaTeX 代码保存在文件 `preamble.tex` 中，而书籍的 YAML 元数据如下所示：
 
 ```yaml
 ---
@@ -106,9 +108,9 @@ output:
 
 ## 更换主题
 
-Sometimes you may want to change the overall theme of the output, and usually this can be done through the `in_header` option described in the previous section, or the `css` option if the output is HTML. Some output formats have their unique themes, such as `gitbook`, `tufte_html_book`, and `tufte_book2`, and you may not want to customize these themes too much. By comparison, the output formats `html_book()` and `pdf_book()` are not tied to particular themes and more customizable.
+&emsp;&emsp;有时你可能想要更改输出的整体主题，这通常可以通过上一节叙述的 `in_header` 选项或 `css` 选项（如果输出格式为 HTML）来完成。一些输出格式有它们独特的主题，例如 `gitbook`、`tufte_html_book` 和 `tufte_book2`，而你可能不想过多地自定义这些主题。相比之下，输出格式 `html_book()` 和 `pdf_book` 不受到特定主题的约束，更具有定制性。
 
-As mentioned in Section \@ref(bootstrap-style), the default style for `html_book()` is the Bootstrap style. The Bootstrap style actually has several built-in themes that you can use, including `r knitr::combine_words(rmarkdown:::themes(), before='\x60')`. You can set the theme via the `theme` option, e.g.,
+&emsp;&emsp;如第 \@ref(bootstrap-style) 节所述，`html_book()` 的默认样式是 Bootstrap 样式。Bootstrap 样式实际上有一些可以使用的内置主题，包括 `r knitr::combine_words(rmarkdown:::themes(), before='\x60', sep='、', and=" 和 ", oxford_comma=FALSE)`。你可以通过 `theme` 选项设定主题，例如：
 
 ```yaml
 ---
@@ -118,9 +120,9 @@ output:
 ---
 ```
 
-If you do not like any of these Bootstrap styles, you can set `theme` to `null`, and apply your own CSS through the `css` or `includes` option.
+&emsp;&emsp;如果你不喜欢上述任何一个 Bootstrap 主题，你可以将 `theme` 设置为 `null`，然后通过 `css` 或 `includes` 选项应用你自己的 CSS。
 
-For `pdf_book()`, besides the `in_header` option mentioned in the previous section, another possibility is to change the document class. There are many possible LaTeX classes for books, such as **memoir** (https://www.ctan.org/pkg/memoir), **amsbook** (https://www.ctan.org/pkg/amsbook), KOMA-Script (https://www.ctan.org/pkg/koma-script) and so on. Here is a brief sample of the YAML metadata specifying the `scrbook` class from the KOMA-Script package:
+&emsp;&emsp;对于 `pdf_book()`，除了上一节提到的 `in_header` 选项，另一个方法是改变文档类 (document calss)。对于书籍来说有许多可用的 LaTeX 类，例如 **memoir** (https://www.ctan.org/pkg/memoir)、**amsbook** (https://www.ctan.org/pkg/amsbook)、KOMA-Script (https://www.ctan.org/pkg/koma-script) 等等。以下是在 YAML 元数据中指定 KOMA-Script 软件包中的 `srcbook` 类的一个简要的示例：
 
 ```yaml
 ---
@@ -131,9 +133,9 @@ output:
 ---
 ```
 
-Some publishers (e.g., Springer and Chapman & Hall/CRC) have their own LaTeX style or class files. You may try to change the `documentclass` option to use their document classes, although typically it is not as simple as that. You may end up using `in_header`, or even design a custom Pandoc LaTeX template to accommodate these document classes.
+&emsp;&emsp;一些出版商（例如 Springer 和 Chapman & Hall/CRC）有他们自己的 LaTeX 样式或类文件。你可以尝试更改 `documentclass` 选项来使用他们的文档类，尽管通常情况下并非如此简单。你最终可能会使用 `in_header`，甚至设计一个自定义的 Pandoc LaTeX 模板来容纳这些文档类。
 
-Note that when you change `documentclass`, you are likely to specify an additional Pandoc argument `--top-level-division=chapter` so that Pandoc knows the first-level headers should be treated as chapters instead of sections (this is the default when `documentclass` is `book`), e.g.,
+&emsp;&emsp;请注意，当你更改 `documentclass` 时，你可能会指定一个额外的 Pandoc 参数 `--top-level-division=chapter` 以便 Pandoc 知道应该将第一级标题视为章而不是小节（这是在 `documentclass` 为 `book` 时的默认值），例如：
 
 ```yaml
 documentclass: krantz
@@ -144,7 +146,7 @@ output:
 
 ## 模板
 
-When Pandoc converts Markdown to another output format, it uses a template\index{Pandoc template} under the hood. The template is a plain-text file that contains some variables of the form `$variable$`. These variables will be replaced by their values generated by Pandoc. Below is a very brief template for HTML output:
+&emsp;&emsp;当 Pandoc 将 Markdown 转换为另一种输出格式时，它在幕后使用模板\index{Pandoc template}。模板是一个纯文本文件，其中包含一些格式为 `$variable$` 的变量。这些变量将由 Pandoc 生成的值替换。下面是一个非常简短的 HTML 输出模板：
 
 ```html
 <html>
@@ -158,57 +160,57 @@ When Pandoc converts Markdown to another output format, it uses a template\index
 </html>
 ```
 
-It has two variables `title` and `body`. The value of `title` comes from the `title` field of the YAML metadata, and `body` is the HTML code generated from the body of the Markdown input document. For example, suppose we have a Markdown document:
+&emsp;&emsp;它有两个变量 `title` 和 `body`。`title` 的值来自 YAML 元数据的 `title` 字段，`body` 是从 Markdown 输入文档的正文生成的 HTML 代码。例如，假设我们有一个 Markdown 文档：
 
 ```markdown
 ---
-title: A Nice Book
+title: 一本好书
 ---
 
-# Introduction
+# 简介
 
-This is a **nice** book!
+这是一本**优秀的**书！
 ```
 
-If we use the above template to generate an HTML document, its source code will be like this:
+&emsp;&emsp;如果我们使用上述文档生成 HTML 文档，其源代码如下：
 
 ```html
 <html>
   <head>
-    <title>A Nice Book</title>
+    <title>一本好书</title>
   </head>
   
   <body>
   
-  <h1>Introduction</h1>
+  <h1>简介</h1>
   
-  <p>This is a <strong>nice</strong> book!</p>
+  <p>这是一本<strong>优秀的</strong>书！</p>
   
   </body>
 </html>
 ```
 
-The actual HTML, LaTeX, and EPUB templates are more complicated, but the idea is the same. You need to know what variables are available: some variables are built-in Pandoc variables, and some can be either defined by users in the YAML metadata, or passed from the command-line option `-V` or `--variable`. Some variables only make sense in specific output formats, e.g., the `documentclass` variable is only used in LaTeX output. Please see the documentation of Pandoc to learn more about these variables, and you can find all default Pandoc templates in the GitHub repository https://github.com/jgm/pandoc-templates.
+&emsp;&emsp;实际的 HTML、LaTeX 和 EPUB 模板更加复杂，但其中的核心思想是一样的。你需要知道哪些变量可以使用：有些变量是内置的 Pandoc 变量，有些可以由用户在 YAML 元数据中定义，或者从命令行选项 `-V` 或 `--variable` 传递。某些变量仅在特定的输出格式中有意义，例如，`documentclass` 变量仅用于 LaTeX 输出。请参阅 Pandoc 文档以了解有关这些变量的更多信息，你可以在 GitHub 存储库 <https://github.com/jgm/pandoc-templates> 中找到所有默认的 Pandoc 模板。
 
-Note that for HTML output, **bookdown** requires some additional comment tokens in the template, and we have explained them in Section \@ref(bootstrap-style).
+&emsp;&emsp;请注意，对于 HTML 输出，**bookdown** 需要模板中的一些附加注释标记，我们已经在第 \@ref(bootstrap-style) 节中对它们进行了解释。
 
 
 ## 配置 {#configuration}
 
-We have mentioned `rmd_files` in Section \@ref(usage), and there are more (optional) settings you can configure for a book in `_bookdown.yml`\index{\_bookdown.yml}:
+&emsp;&emsp;我们以尽在第 \@ref(usage) 节中提到了 `rmd_files`，并且你可以在 `_bookdown.yml`\index{\_bookdown.yml} 中为书籍配置更多（可选的）设置。
 
-- `book_filename`: the filename of the main Rmd file, i.e., the Rmd file that is merged from all chapters; by default, it is named `_main.Rmd`.
-- `delete_merged_file`: whether to delete the main Rmd file after the book is successfully rendered.
-- `before_chapter_script`: one or multiple R scripts to be executed before each chapter, e.g., you may want to clear the workspace before compiling each chapter, in which case you can use `rm(list = ls(all = TRUE))` in the R script.
-- `after_chapter_script`: similar to `before_chapter_script`, and the R script is executed after each chapter.
-- `edit`: a link that collaborators can click to edit the Rmd source document of the current page; this was designed primarily for GitHub repositories, since it is easy to edit arbitrary plain-text files on GitHub even in other people's repositories (if you do not have write access to the repository, GitHub will automatically fork it and let you submit a pull request after you finish editing the file). This link should have `%s` in it, which will be substituted by the actual Rmd filename for each page.
--  `history`: similar to `edit`, a link to the edit/commit history of the current page.
--  `view`: similar to `edit`, a link to source code of the current page. 
-- `rmd_subdir`: whether to search for book source Rmd files in subdirectories (by default, only the root directory is searched). This may be either a boolean (e.g. `true` will search for book source Rmd files in the project directory and all subdirectories) or list of paths if you want to search for book source Rmd files in a subset of subdirectories.
-- `output_dir`: the output directory of the book (`_book` by default); this setting is read and used by `render_book()`.
-- `clean`: a vector of files and directories to be cleaned by the `clean_book()` function.
+- `book_filename`: 主 Rmd 文件的文件名，即从所有章节进行合并后的单个 Rmd 文件；默认情况下，它被命名为 `_main.Rmd`。
+- `delete_merged_file`: 书籍成功编译后是否删除主 Rmd 文件。
+- `before_chapter_script`: 在每个章节之前执行的一个或多个 R 脚本，例如，你可能希望在编译每个章节之前清理工作区，在这种情况下可以在 R 脚本中使用 `rm(list = ls(all = TRUE))`。
+- `after_chapter_script`: 与 `before_chapter_script` 类似，不过 R 脚本是在每一个章节编译完成后执行。
+- `edit`: 协作者可以单击后直接编辑当前页面 Rmd 源文档的链接；这主要是为 GitHub 存储库设计的，因为在 GitHub 上编辑任意纯文本文件很容易，即使在其他人的存储库中也是如此（如果你没有对存储库的写入权限，GitHub 将自动为其分叉，并允许你在编辑完文件后提交拉取请求 (pull request)）。这个链接中应包含 `%s`，它将被每个页面的实际 Rmd 文件名替换。
+-  `history`: 类似于 `edit`，它是一个指向当前页面编辑/提交历史记录的链接。
+-  `view`: 类似于 `edit`，它是一个指向当前页面源代码的链接。
+- `rmd_subdir`: 是否在子目录中搜索书籍 Rmd 源文件（默认情况下仅搜索根目录）。它可以是一个布尔值（例如，如果设为 `true`，则将在项目目录和所有子目录中搜索书记的 Rmd 源文件），如果要在子目录的子集中搜索书籍的 Rmd 源文件，它也可以是一个路径列表。
+- `output_dir`: 书籍的输出目录（默认为 `_book`）；`render_book()` 将会读取并使用这个设置。
+- `clean`: `clean_book()` 函数将要清理的文件和目录的向量。
 
-Here is a sample `_bookdown.yml`:
+&emsp;&emsp;下面是一个简短的 `_bookdown.yml`：
 
 ```yaml
 book_filename: "my-book.Rmd"
@@ -223,9 +225,9 @@ clean: ["my-book.bbl", "R-packages.bib"]
 
 ## 国际化 {#internationalization}
 
-If the language of your book is not English, you will need to translate certain English words and phrases into your language, such as the words "Figure" and "Table" when figures/tables are automatically numbered in the HTML output. Internationalization may not be an issue for LaTeX output, since some LaTeX packages can automatically translate these terms into the local language, such as the **ctexcap** package for Chinese.
+&emsp;&emsp;如果你的书籍的语言不是英语，那么可能需要将某些英语单词和短语翻译成你使用的语言，例如在 HTML 输出中自动编号数字/表格时的单词“Figure”和“Table”。国际化可能不是 LaTeX 输出的问题，因为一些 LaTeX 软件包可以自动将这些术语翻译成本地语言，例如 **ctexcap** 中文软件包。
 
-For non-LaTeX output, you can set the `language` field in the configuration file `_bookdown.yml`. Currently the default settings are:
+&emsp;&emsp;对于非 LaTeX 输出，你可以在配置文件 `_bookdown.yml` 中设置 `language` 字段。目前默认的设置为：
 
 ```{r echo=FALSE, comment='', results='asis'}
 cat('```yaml\n')
@@ -237,7 +239,7 @@ cat(yaml::as.yaml(list(language = list(
 cat('```')
 ```
 
-For example, if you want `FIGURE x.x` instead of `Figure x.x`, you can change `fig` to `"FIGURE "`:
+&emsp;&emsp;例如，如果你想要将使用 `FIGURE x.x` 而不是 `Figure x.x`，你可以将 `fig` 更改为 `"FIGURE "`：
 
 ```yaml
 language:
@@ -245,7 +247,7 @@ language:
     fig: "FIGURE "
 ```
 
-The fields under `ui` are used to specify some terms in the user interface. The `edit` field specifies the text associated with the `edit` link in `_bookdown.yml` (Section \@ref(configuration)). The fields `chapter_name`, `appendix_name`, `fig`, `tab` and `eq` can be either a character string to be prepended to chapter (e.g., `'CHAPTER '`) or reference number (e.g., `'FIGURE '`), or an R function that takes a number (chapter or reference number) as the input and returns a string. (e.g., `!expr function(i) paste('Chapter', i)`). Here is an example for Hungarian:
+&emsp;&emsp;`ui` 下的字段用于指定用户界面中的某些术语。`edit` 字段指定在 `_bookdown.yml`（第 \@ref(configuration) 节）中提到的 `edit` 链接相关联的文本。`chapter_name`、`appendix_name`、`fig`、`tab` 和 `eq` 字段可以是要在篇章或引用编号前加入的字符串（例如 `CHAPTER` 或 `FIGURE`），也可以是一个以接受数字（篇章或引用编号）输入并返回一个字符串的 R 函数（例如 `!expr function(i) paste('Chapter', i)`）。以下是匈牙利语的一个例子：
 
 ```yaml
 language:
@@ -255,6 +257,6 @@ language:
     chapter_name: !expr function(i) paste0(i, '. fejezet')
 ```
 
-For `chapter_name` and `appendix_name` only, if it is a character vector of length 2, the chapter title prefix will be `paste0(chapter_name[1], i, chapter_name[2])`, where `i` is the chapter number.
+&emsp;&emsp;仅仅对于 `chapter_name` 和 `appendix_name`，如果它是长度为 2 的字符向量，则章节标题前缀将为 `paste0(chapter_name[1], i, chapter_name[2])`，其中 `i` 是章节编号。
 
-There is one caveat when you write in a language that uses multibyte characters, such as Chinese, Japanese, and Korean (CJK): Pandoc cannot generate identifiers from section headings that are pure CJK characters, so you will not be able to cross-reference sections (they do not have labels), unless you manually assign identifiers to them by appending `{#identifier}` to the section heading, where `identifier` is an identifier of your choice.
+&emsp;&emsp;当你使用使用多字节字符（如中文、日文和韩文 (CJK)）的语言编写时会有一个警告：Pandoc 无法从纯 CJK 字符的章节标题中生成标识符，因此你将无法交叉引用章节（它们没有标签），除非你通过将 `{#identifier}` 附加到章节标题来手动为其分配标识符，其中 `identifier` 是你选择的标识符。

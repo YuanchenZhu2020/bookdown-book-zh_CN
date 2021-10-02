@@ -1,11 +1,11 @@
 # 输出格式 {#output-formats}
 
-The **bookdown** package primarily supports three types of output formats: HTML, LaTeX/PDF, and e-books. In this chapter, we introduce the possible options for these formats. Output formats can be specified either in the YAML metadata of the first Rmd file of the book, or in a separate YAML file named `_output.yml` under the root directory of the book. Here is a brief example of the former (output formats are specified in the `output` field of the YAML metadata):
+&emsp;&emsp;**bookdown** 软件包主要支持三种类型的输出格式：HTML、LaTeX/PDF 和电子书。在本章中，我们将介绍这些格式的可能的配置项。输出格式可以在书籍的第一个 Rmd 文件中的 YAML 元数据中指定，也可以在书籍根目录下名为 `_output.yml` 的单独 YAML 文件中指定。以下是前者的简要示例（输出格式在 YAML 元数据中的 `output` 字段中指定）：
 
 ```yaml
 ---
-title: "An Impressive Book"
-author: "Li Lei and Han Meimei"
+title: "一本令人印象深刻的书"
+author: "李雷和韩梅梅"
 output:
   bookdown::gitbook:
     lib_dir: assets
@@ -14,14 +14,14 @@ output:
       toolbar:
         position: static
   bookdown::pdf_book:
-    keep_tex: yes
+    keep_tex: true
   bookdown::html_book:
     css: toc.css
 documentclass: book
 ---
 ```
 
-Here is an example of `_output.yml`\index{\_output.yml}:
+&emsp;&emsp;这是 `_output.yml`\index{\_output.yml} 的示例：
 
 ```yaml
 bookdown::gitbook:
@@ -31,74 +31,74 @@ bookdown::gitbook:
     toolbar:
       position: static
 bookdown::pdf_book:
-  keep_tex: yes
+  keep_tex: true
 bookdown::html_book:
   css: toc.css
 ```
 
-In this case, all formats should be at the top level, instead of under an `output` field. You do not need the three dashes `---` in `_output.yml`.
+&emsp;&emsp;在这种情况下，所有格式配置都应该在顶层，而不是在 `output` 字段下。在 `_output.yml` 文件中你不需要这三个破折号 `---`。
 
 ## HTML
 
-The main difference between rendering a book (using **bookdown**) with rendering a single R Markdown document (using **rmarkdown**) to HTML\index{HTML} is that a book will generate multiple HTML pages by default---normally one HTML file per chapter. This makes it easier to bookmark a certain chapter or share its URL with others as you read the book, and faster to load a book into the web browser. Currently we have provided a number of different styles for HTML output: 
+&emsp;&emsp;编译一本书（使用 **bookdown**）与编译一个单独的 R Markdown 文档（使用 **rmarkdown**）为 HTML\index{HTML} 格式的主要区别在于，默认情况下一本书籍会生成多个 HTML 页面——通常每章一个 HTML 文件。这使得你在阅读书籍某一章节的时候能够更容易地添加书签或将其 URL 分享给他人，并且可以更快地将书籍加载到 Web 浏览器中。目前，我们为 HTML 输出提供了多种不同地样式：
 
-- the GitBook style (Section \@ref(gitbook-style)), 
-- the three-column Bootstrap style (Section \@ref(bs4-book)), 
-- the default Bootstrap style (Section \@ref(bootstrap-style)), and 
-- the Tufte style (Section \@ref(tufte-style)).
+- GitBook 样式 (Section \@ref(gitbook-style)), 
+- 三列 Bootstrap 样式 (Section \@ref(bs4-book)), 
+- 默认的 Bootstrap 样式 (Section \@ref(bootstrap-style))
+- Tufte 样式 (Section \@ref(tufte-style)).
 
 ### GitBook 样式 {#gitbook-style}
 
-The GitBook style was borrowed from GitBook\index{GitBook}, a project launched by Friendcode, Inc. (https://www.gitbook.com) and dedicated to helping authors write books with Markdown. It provides a beautiful style, with a layout consisting of a sidebar showing the table of contents on the left, and the main body of a book on the right. The design is responsive to the window size, e.g., the navigation buttons are displayed on the left/right of the book body when the window is wide enough, and collapsed into the bottom when the window is narrow to give readers more horizontal space to read the book body.
+&emsp;&emsp;GitBook 样式来自于 GitBook\index{GitBook}，这是一个由 Friendcode, Inc 公司发起的项目 (<https://www.gitbook.com>)，它致力于帮助作者使用 Markdown 撰写书籍。它提供了一种漂亮的风格，其布局由左侧显示目录的侧边栏和右侧的书籍主题组成。该设计能够对窗口大小变化做出响应，例如，当窗口足够宽时，导航按钮显示在书籍主体的左侧/右侧，当窗口较窄时，导航按钮折叠到底部，一边给读者更多的水平空间来阅读书籍主体部分。
 
-The easiest way to get started writing a new `gitbook` is to use the RStudio Project Wizard (*File > New Project > New Directory > Book project using bookdown*) and select `gitbook` from the dropdown menu (see Figure \@ref(fig:new-bs4-book)).
+&emsp;&emsp;开始撰写一本新的 `gitbook` 的最简单的方法就是使用 RStudio Project Wizard（*文件 (File) > 新建项目 (New Project) > 新的目录 (New Directory) > 使用 bookdown 的书籍项目 (Book project using bookdown)*）并在下拉菜单中选择 `gitbook`（见图 \@ref(fig:new-bs4-book)）。
 
-If you do not use RStudio or prefer a function, you can create the same project template with `bookdown::create_gitbook()` from your R console. See `?bookdown::create_gitbook` for help.
+&emsp;&emsp;如果你不使用 RStudio 或更喜欢使用函数，则可以从 R console 中使用 `bookdown::create_gitbook()` 创建相同的项目模板。请参阅 `?bookdown::create_gitbook` 以获取帮助。
 
-We have made several improvements over the original GitBook project. The most significant one is that we replaced the Markdown engine with R Markdown v2 based on Pandoc, so that there are a lot more features for you to use when writing a book:
+&emsp;&emsp;我们对原始的 GitBook 项目做了一些改进。最重要的一点是，我们将 Markdown 引擎替换为基于 Pandoc 的 R Markdown v2，这样你在写书时可以使用更多的功能：
 
-- You can embed R code chunks and inline R expressions in Markdown, and this makes it easy to create reproducible documents and frees you from synchronizing your computation with its actual output (**knitr** will take care of it automatically).
-- The Markdown syntax is much richer: you can write anything that Pandoc's Markdown supports, such as LaTeX math expressions and citations.
-- You can embed interactive content in the book (for HTML output only), such as HTML widgets and Shiny apps.
+- 你可以在 Markdown 中嵌入 R 代码块和内联 R 表达式，这样可以轻松创建可重复的 (reproducible) 文档，并使你不必手动同步计算过程与它的实际输出结果（**knitr** 将自动处理）。
+- Markdown 语法更加丰富：你可以编写 Pandoc 版本的 Markdown 支持的任何内容，例如 LaTeX 数学表达式和引文。
+- 你可以在书中嵌入交互式内容（仅用于 HTML 输出）。例如 HTML 小组件和 Shiny 应用程序。
 
-We have also added some useful features in the user interface that we will introduce in detail soon. The output format function for the GitBook style in **bookdown** is `gitbook()`. Here are its arguments:
+&emsp;&emsp;我们还在用户界面中添加了一些有用的特性，很快我们将详细介绍它们。**bookdown** 中 GitBook 样式的输出格式函数为 `gitbook()`。它的参数如下所示：
 
 ```{r gitbook-args, code=formatR::usage(bookdown::gitbook, output=FALSE, fail='none'), eval=FALSE, R.options=list(width=50)}
 ```
 
-Most arguments are passed to `rmarkdown::html_document()`, including `fig_caption`, `lib_dir`, and `...`. You can check out the help page of `rmarkdown::html_document()` for the full list of possible options. We strongly recommend you to use `fig_caption = TRUE` for two reasons: 1) it is important to explain your figures with captions; 2) enabling figure captions means figures will be placed in floating environments when the output is LaTeX, otherwise you may end up with a lot of white space on certain pages. The format of figure/table numbers depends on if sections are numbered or not: if `number_sections = TRUE`, these numbers will be of the format `X.i`, where `X` is the chapter number, and `i` in an incremental number; if sections are not numbered, all figures/tables will be numbered sequentially through the book from 1, 2, ..., N. Note that in either case, figures and tables will be numbered independently.
+&emsp;&emsp;大多数参数被传递给 `rmarkdown::html_document()`，包括 `fig_caption`、`lib_dir` 和 `...`。想要了解所有可能参数的完整列表，你可以查阅 `rmarkdown::html_document()` 的帮助页面。我们强烈推荐你使用 `fig_caption = TRUE`，原因由两个：1) 使用标题来解释你的图片很重要；2) 启用图片标题意味着当输出为 LaTeX 时，图片将被放置在浮动环境中，否则可能会在某些页面上留下大量空白。图/表编号的格式取决于章节是否编号：如果 `number_sections = TRUE`，这些编号数字会使用 `X.i` 的格式，其中 `X` 是篇章编号而 `i` 是递增编号；如果章节没有编号，所有的图/表在书籍中将从 1、2、……、N 开始依次编号。请注意，在任何一种情况下，图片和表格的编号都是相互独立的。
 
-Among all possible arguments in `...`, you are most likely to use the `css` argument to provide one or more custom CSS files to tweak the default CSS style. There are a few arguments of `html_document()` that have been hard-coded in `gitbook()` and you cannot change them: `toc = TRUE` (there must be a table of contents), `theme = NULL` (not using any Bootstrap themes), and `template` (there exists an internal GitBook template).
+&emsp;&emsp;在 `...` 的所有可能的参数之中，你最可能使用参数 `css` 提供一个或多个自定义的 CSS 文件来调整默认 CSS 样式。在 `gitbook()` 中有一些 `html_document()` 的参数被硬编码，你无法更改它们：`toc = TRUE`（必须使用目录）、`theme = NULL`（不使用任何 Bootstrap 主题）和 `template`（存在一个内部 GitBook 模板）。
 
-Please note that if you change `self_contained = TRUE` to make self-contained HTML pages, the total size of all HTML files can be significantly increased since there are many JS and CSS files that have to be embedded in every single HTML file.
+&emsp;&emsp;请注意，如果将参数修改为 `self_contained = TRUE` 以更改 HTML 页面为自包含的 HTML 页面，则所有 HTML 文件的总大小都会显著增加，因为每个 HTML 文件中都必须嵌入许多 JS 和 CSS 文件。
 
-Besides these `html_document()` options, `gitbook()` has three other arguments: `split_by`, `split_bib`, and `config`. The `split_by` argument specifies how you want to split the HTML output into multiple pages, and its possible values are:
+&emsp;&emsp;除了这些 `html_document()` 的配置项之外，`gitbook()` 还有另外三个参数：`split_by`、`split_bib` 和 `config`。参数 `split_by` 指定了如何将 HTML 输出文件拆分为多个页面，其可能的值为：
 
-- `rmd`: use the base filenames of the input Rmd files to create the HTML filenames, e.g., generate `chapter3.html` for `chapter3.Rmd`.
-- `none`: do not split the HTML file (the book will be a single HTML file).
-- `chapter`: split the file by the first-level headers.
-- `section`: split the file by the second-level headers.
-- `chapter+number` and `section+number`: similar to `chapter` and `section`, but the files will be numbered.
+- `rmd`：使用输入的 Rmd 文件的文件名作为对应 HTML 文件的文件名，例如，`chapter3.Rmd` 生成的 HTML 文件为 `chapter3.html`。
+- `none`：不要拆分 HTML 文件（整本书将是一个 HTML 文件）。
+- `chapter`：按一级标题拆分文件。
+- `section`：按二级标题拆分文件。
+- `chapter+number` 和 `section+number`: 与 `chapter` 和 `section` 类似，但是文件将被编号。
 
-For `chapter` and `section`, the HTML filenames will be determined by the header identifiers, e.g., the filename for the first chapter with a chapter title `# Introduction` will be `introduction.html` by default. For `chapter+number` and `section+number`, the chapter/section numbers will be prepended to the HTML filenames, e.g., `1-introduction.html` and `2-1-literature.html`. The header identifier is automatically generated from the header text by default,^[To see more details on how an identifier is automatically generated, see the `auto_identifiers` extension in Pandoc's documentation http://pandoc.org/MANUAL.html#header-identifiers] and you can manually specify an identifier using the syntax `{#your-custom-id}` after the header text, e.g.,
+&emsp;&emsp;对于 `chapter` 和 `section`，HTML 文件名将由标题标识符确定，例如，篇章标题为 `# Introduction` 的第一章的文件名默认为 `introduction.html`。对于 `chapter+number` 和 `section+number`，章/节编号将在 HTML 文件名之前，例如 `1-introduction.html` 和 `2-1-literature.html`。默认情况下，标题标识符是从标题文本自动生成的，^[要查看有关如何自动生成标识符的更多详细内容，请参阅 Pandoc 文档中 `auto_identifiers` 扩展相关内容 <http://pandoc.org/MANUAL.html#header-identifiers>]你页可以在标题文本后使用语法 `{your-custom-id}` 手动指定标识符，例如：
 
 ```markdown
 # An Introduction {#introduction}
 
-The default identifier is `an-introduction` but we changed
-it to `introduction`.
+默认标识符是 `an-introduction`，
+但是我们将其更改为 `introduction`。
 ```
 
-By default, the bibliography is split and relevant citation items are put at the bottom of each page, so that readers do not have to navigate to a different bibliography page to see the details of citations. This feature can be disabled using `split_bib = FALSE`, in which case all citations are put on a separate page.
+&emsp;&emsp;默认情况下，参考书目会被拆分，相关的引文项目将放在每页的底部，这样读者就不必导航到不同的参考书目页面来查看引文的详细信息。可以使用 `split_bib = FALSE` 禁用此功能，在这种情况下，所有引文都放在单独的页面上。
 
-There are several sub-options in the `config` option for you to tweak some details in the user interface. Recall that all output format options (not only for `bookdown::gitbook`) can be either passed to the format function if you use the command-line interface `bookdown::render_book()`, or written in the YAML metadata. We display the default sub-options of `config` in the `gitbook` format as YAML metadata below (note that they are indented under the `config` option):
+&emsp;&emsp;你可以使用 `config` 配置项中的几个子配置项来调整用户界面中的一些细节。回想一下，所有输出格式配置项（不仅仅适用于 `bookdown::gitbook`）都可以通过使用命令行接口 `bookdown::render_book()` 传递给格式函数，或直接将其写入 YAML 元数据。我们将 `gitbook` 格式下 `config` 的默认子配置项显示为 YAML 元数据并展示如下（请注意，它们的缩进都在 `config` 配置项下）：
 
 ```yaml
 bookdown::gitbook:
   config:
     toc:
       collapse: subsection
-      scroll_highlight: yes
+      scroll_highlight: true
       before: null
       after: null
     toolbar:
@@ -115,25 +115,25 @@ bookdown::gitbook:
       family: sans
       size: 2
     sharing:
-      facebook: yes
-      github: no
-      twitter: yes
-      linkedin: no
-      weibo: no
-      instapaper: no
-      vk: no
-      whatsapp: no
+      facebook: true
+      github: false
+      twitter: true
+      linkedin: false
+      weibo: false
+      instapaper: false
+      vk: false
+      whatsapp: false
       all: ['facebook', 'twitter', 'linkedin', 'weibo', 'instapaper']
-    info: yes
+    info: true
 ```
 
-The `toc` option controls the behavior of the table of contents (TOC). You can collapse some items initially when a page is loaded via the `collapse` option. Its possible values are `subsection`, `section`, `none` (or `null`). This option can be helpful if your TOC is very long and has more than three levels of headings: `subsection` means collapsing all TOC items for subsections (X.X.X), `section` means those items for sections (X.X) so only the top-level headings are displayed initially, and `none` means not collapsing any items in the TOC. For those collapsed TOC items, you can toggle their visibility by clicking their parent TOC items. For example, you can click a chapter title in the TOC to show/hide its sections.
+&emsp;&emsp;`toc` 配置项控制目录 (TOC) 的行为。当加载页面时，你可以通过 `collapse` 配置项先将某些项目折叠。该配置项可能的值为 `subsection`、`section`、`none`（或 `null`）。如果你的目录很长且标题超过三个级别，则这个配置项可能会有所帮助：`subsection` 表示折叠目录项目中的所有小节 (X.X.X)；`section` 表示折叠目录项目中的所有节 (X.X)，因此最初仅显示顶级标题；`none` 表示不折叠目录中的任何项目。对于那些折叠的目录项目，可以通过单击其上级目录项目来切换其可见性。例如，你可以单击目录中的篇章标题以显示/隐藏该章的小节。
 
-The `scroll_highlight` option in `toc` indicates whether to enable highlighting of TOC items as you scroll the book body (by default this feature is enabled). Whenever a new header comes into the current viewport as you scroll down/up, the corresponding item in TOC on the left will be highlighted.
+&emsp;&emsp;`toc` 中的 `scroll_highlight` 配置项控制在滚动书籍正文页面时是否启用目录项目的高亮显示（默认情况下此功能已启用）。当向下/向上滚动时，每当新标题进入当前视口，左侧目录中的相应项目将高亮显示。
 
-Since the sidebar has a fixed width, when an item in the TOC is truncated because the heading text is too wide, you can hover the cursor over it to see a tooltip showing the full text.
+&emsp;&emsp;由于侧边栏的宽度是固定的，因此当目录中的某个项目由于标题文本太宽而被截断时，可以将光标悬停在侧边栏上以查看显示全部文字的提示条。
 
-You may add more items before and after the TOC using the HTML tag `<li>`. These items will be separated from the TOC using a horizontal divider. You can use the pipe character `|` so that you do not need to escape any characters in these items following the YAML syntax, e.g.,
+&emsp;&emsp;你可以使用 HTML 标签 `<li>` 在目录前后添加更多项目。这些项目将使用水平分隔器与目录分开。你可以使用管道符 `|`，这样就不需要按照 YAML 语法转义这些项目中的任何字符，例如：
 
 ```
     toc:
@@ -145,19 +145,19 @@ You may add more items before and after the TOC using the HTML tag `<li>`. These
         Proudly published with bookdown</a></li>
 ```
 
-As you navigate through different HTML pages, we will try to preserve the scroll position of the TOC. Normally you will see the scrollbar in the TOC at a fixed position even if you navigate to the next page. However, if the TOC item for the current chapter/section is not visible when the page is loaded, we will automatically scroll the TOC to make it visible to you.
+&emsp;&emsp;当你浏览不同的 HTML 页面时，我们将尝试保留目录的滚动位置。通常即使你转到下一页，也会在目录的固定位置上看到滚动条。但是如果当前章/节的目录项目在页面加载时不可见，我们将自动滚动目录以使其对你可见。
 
 ```{r gitbook-toolbar, echo=FALSE, fig.cap='The GitBook toolbar.', out.width='100%'}
 knitr::include_graphics('images/gitbook.png', dpi = NA)
 ```
 
-The GitBook style has a toolbar (Figure \@ref(fig:gitbook-toolbar)) at the top of each page that allows you to dynamically change the book settings. The `toolbar` option has a sub-option `position`, which can take values `fixed` or `static`. The default is that the toolbar will be fixed at the top of the page, so even if you scroll down the page, the toolbar is still visible there. If it is `static`, the toolbar will not scroll with the page, i.e., once you scroll away, you will no longer see it.
+&emsp;&emsp;Gitbook 样式在每个页面的顶部都有一个工具栏（图 \@ref(fig:gitbook-toolbar)），允许你动态地改变书籍设置。`toolbar` 配置项有一个子配置项 `position`，可以取值为 `fixed` 或 `static`。默认情况下 (`fixed`)，工具栏将被固定在页面的顶部，所以即使你向下滚动页面，工具栏也仍然在顶部可见。如果它被设置为 `static`，工具栏将不会随着页面滚动，也就是说，一旦滚动页面，你将无法看到它。
 
-The first button on the toolbar can toggle the visibility of the sidebar. You can also hit the `S` key on your keyboard to do the same thing. The GitBook style can remember the visibility status of the sidebar, e.g., if you closed the sidebar, it will remain closed the next time you open the book. In fact, the GitBook style remembers many other settings as well, such as the search keyword and the font settings.
+&emsp;&emsp;工具栏的第一个按钮可以切换侧边栏的可见性。你也可以敲击键盘上的 `S` 键来做同样的事。GitBook 样式能够记住侧边栏的可见性状态，例如，如果你关闭了侧边栏，那么下次打开书籍时，侧边栏将保持隐藏状态。事实上，GitBook 样式也能够记住许多其它的设置，例如搜索关键词和字体设置。
 
-The second button on the toolbar is the search button. Its keyboard shortcut is `F` (Find). When the button is clicked, you will see a search box at the top of the sidebar. As you type in the box, the TOC will be filtered to display the sections that match the search keyword. Now you can use the arrow keys `Up`/`Down` to highlight the previous/next match in the search results. When you click the search button again (or hit `F` outside the search box), the search keyword will be emptied and the search box will be hidden. To disable searching, set the option `search: no` in `config`.
+&emsp;&emsp;工具栏的第二个按钮是搜索按钮。它的键盘快捷键是 `F`（查找）。点击该按钮后，你会看到侧边栏的顶部出现一个搜索框。当你在框中输入时，目录项将会被过滤，以显示符合搜索关键词的部分。现在你可以使用方向键 `Up`/`Down` 来突出显示搜索结果中的上一个或下一个匹配内容。当你再次点击搜索按钮（或在搜索框外敲击 `F`），搜索关键词将被清空，搜索框将被隐藏。如果要禁用搜索，请在 `config` 中设置 `search: false` 配置项。
 
-The third button is for font/theme settings. The reader can change the font size (bigger or smaller), the font family (serif or sans serif), and the theme (`White`, `Sepia`, or `Night`). You can set the initial value of these settings via the `fontsettings` option. Font size is measured on a scale of 0-4; the initial value can be set to 1, 2 (default), 3, or 4. The button can be removed from the toolbar by setting `fontsettings: null` (or `no`).
+&emsp;&emsp;第三个按钮是用于字体/主题设置。读者可以改变字体大小（更大或更小），字体族（有衬线 (serif) 或无衬线 (sans serif)），以及主题（`White`、`Sepia` 或 `Nignt`）。你可以通过 `fontsettings` 配置项设置这些配置项的初始值。字体大小是按 0-4 的比例测量的；初始值可以设置为 1、2（默认）、3 或 4。可以通过设置 `fontsettings: null`（或 `no`）将该按钮从工具栏中删除。
 
 ```yaml
 # changing the default
@@ -167,25 +167,24 @@ The third button is for font/theme settings. The reader can change the font size
       size: 3
 ```
 
-The `edit` option is the same as the option mentioned in Section \@ref(configuration). If it is not empty, an edit button will be added to the toolbar. This was designed for potential contributors to the book to contribute by editing the book on GitHub after clicking the button and sending pull requests.  The `history` and `view` options work the same
-way.
+&emsp;&emsp;`edit`（编辑）配置项与第 \@ref(configuration) 节中提到的配置项相同。如果它不为空，一个编辑按钮将被添加到工具栏中。这是为书籍的潜在贡献者设计的，他们可以在点击该按钮后在 GitHub 上编辑书籍内容并发送 Pull Requests。`history` 和 `View` 配置项的工作方式也是如此。
 
-If your book has other output formats for readers to download, you may provide the `download` option so that a download button can be added to the toolbar. This option takes either a character vector, or a list of character vectors with the length of each vector being 2. When it is a character vector, it should be either a vector of filenames, or filename extensions, e.g., both of the following settings are okay:
+&emsp;&emsp;如果你的书有其它输出格式供读者下载，你可以提供 `download` 选项，这样就可以在工具栏中添加一个下载按钮。这个配置项可以接受一个字符向量，或者一个字符向量的列表，其中每个向量的长度为 2。当它是一个字符向量时，它应该包含文件名或文件扩展名，例如，以下两种设置都是正确的。
 
 ```yaml
     download: ["book.pdf", "book.epub"]
     download: ["pdf", "epub", "mobi"]
 ```
 
-When you only provide the filename extensions, the filename is derived from the book filename of the configuration file `_bookdown.yml` (Section \@ref(configuration)). When `download` is `null`, `gitbook()` will look for PDF, EPUB, and MOBI files in the book output directory, and automatically add them to the `download` option. If you just want to suppress the download button, use `download: no`. All files for readers to download will be displayed in a drop-down menu, and the filename extensions are used as the menu text. When the only available format for readers to download is PDF, the download button will be a single PDF button instead of a drop-down menu.
+&emsp;&emsp;当你只提供文件扩展名时，文件名来自于配置文件 `_bookdown.yml`（第 \@ref(configuration) 节）中的书籍文件名。当 `download` 为 `null` 时，`gitbook()` 将在书籍输出目录中寻找 PDF、EPUB 和 MOBI 文件，并自动将它们加入 `download` 配置项中。如果你只是想关闭下载按钮，请使用 `download: false`。所有供读者下载的文件将显示在一个下拉菜单中，文件扩展名被用作菜单文本。当唯一可供读者下载的格式是 PDF 时，下载按钮将是一个单一的 PDF 按钮而不是一个下拉菜单。
 
-An alternative form for the value of the `download` option is a list of length-2 vectors, e.g.,
+&emsp;&esmp;另一种形式的 `download` 配置项的值是一个长度为 2 的向量构成的列表，例如：
 
 ```yaml
     download: [["book.pdf", "PDF"], ["book.epub", "EPUB"]]
 ```
 
-You can also write it as:
+&emsp;&emsp;你也可以把它写成这样：
 
 ```yaml
     download:
@@ -193,23 +192,23 @@ You can also write it as:
       - ["book.epub", "EPUB"]
 ```
 
-Each vector in the list consists of the filename and the text to be displayed in the menu. Compared to the first form, this form allows you to customize the menu text, e.g., you may have two different copies of the PDF for readers to download and you will need to make the menu items different.
+&emsp;&emsp;列表中的每个向量由文件名和将在菜单中显示的文本组成。与第一种形式相比，这种形式允许你自定义菜单文本，例如，你可能有两份不同的 PDF 供读者下载，因此需要使菜单项目有所差别。
 
-On the right of the toolbar, there are some buttons to share the link on social network websites such as Twitter, Facebook, and Linkedin. You can use the `sharing` option to decide which buttons to enable. If you want to get rid of these buttons entirely, use `sharing: null` (or `no`).
+&emsp;&emsp;在工具栏的右边有一些按钮，它们可以让你在社会网络网站，如 Twitter、Facebook 和 Linkedin 上分享链接。你可以使用 `sharing` 配置项来决定启用哪些按钮。如果你想完全摆脱这些按钮，可以使用 `sharing: null`（或 `no`）。
 
-Another button shown on the toolbar is the information ('i') button that lists keyboard shortcuts available to navigate the document. This button can be hidden by setting `info: no`.
+&emsp;&emsp;工具栏中显示的另一个按钮是信息 (`i`) 按钮，它列出了可用于导航文档的键盘快捷方式。这个按钮可以通过设置 `info: false` 来隐藏。
 
-Finally, there are a few more top-level options in the YAML metadata that can be passed to the GitBook HTML template via Pandoc. They may not have clear visible effects on the HTML output, but they may be useful when you deploy the HTML output as a website. These options include:
+&emsp;&emsp;最后，YAML 元数据中还有一些顶级配置项，可以通过 Pandoc 传递给 GitBook HTML 模板。它们可能不会对 HTML 输出产生明显的影响，但当你把 HTML 输出部署为网站时，它们可能会很有用。这些选项包括：
 
-- `description`: A character string to be written to the `content` attribute of the tag `<meta name="description" content="">` in the HTML head (if missing, the title of the book will be used). This can be useful for search engine optimization (SEO). Note that it should be plain text without any Markdown formatting such as `_italic_` or `**bold**`.
-- `url`: The URL of book's website, e.g., `https\://bookdown.org/yihui/bookdown/`.^[The backslash before `:` is due to a technical issue: we want to prevent Pandoc from translating the link to HTML code `<a href="..."></a>`. More details at https://github.com/jgm/pandoc/issues/2139.]
-- `github-repo`: The GitHub repository of the book of the form `user/repo`.
-- `cover-image`: The path to the cover image of the book.
-- `apple-touch-icon`: A path to an icon (e.g., a PNG image). This is for iOS only: when the website is added to the Home screen, the link is represented by this icon.
-- `apple-touch-icon-size`: The size of the icon (by default, 152 x 152 pixels).
-- `favicon`: A path to the "favorite icon". Typically this icon is displayed in the browser's address bar, or in front of the page title on the tab if the browser support tabs.
+- `description`: 一个字符串，它将会被写入 HTML 头部 `<meta name="description" content="">` 标签中的 `content` 属性（如果缺失，将会使用书籍的标题替代）。这对搜索引擎优化 (search engine optimization, SEO) 很有用。请注意，它应该是纯文本，不应该使用任何 Markdown 格式，例如 `_italic_` 或 `**bold**`。
+- `url`: 书籍网站的 URL，例如 `https\://bookdown.org/yihui/bookdown/`。^[在 `:` 之前插入的反斜杠是因为一个技术问题：我们要防止 Pandoc 将链接翻译为 HTML 代码 `<a href="..."></a>`。在 <https://github.com/jgm/pandoc/issues/2139> 上你能够看到更多细节]
+- `github-repo`: `user/repo` 格式的 GitHub 储存库。
+- `cover-image`: 书籍封面图片文件的路径。
+- `apple-touch-icon`: 一个图标文件的路径（例如一个 PNG 图片）。这只适用于 iOS 系统：当网站被添加到主屏幕上时，该链接由这个图标表示。
+- `apple-touch-icon-size`: 图标文件的大小（默认情况下为 152 x 152 像素）。
+- `favicon`: `favorite icon`（收藏夹图标）文件的路径。通常情况下，这个图标显示在浏览器的地址栏中，如果浏览器支持标签，则显示在标签的页面标题前方。
 
-Below we show some sample YAML metadata (again, please note that these are _top-level_ options):
+&emsp;&emsp;下面我们展示了一下 YAML 元数据的样例（请再次注意这些是 *顶级* 配置项）：
 
 ```yaml
 ---
@@ -225,78 +224,66 @@ favicon: "favicon.ico"
 ---
 ```
 
-A nice effect of setting `description` and `cover-image` is that when you share the link of your book on some social network websites such as Twitter, the link can be automatically expanded to a card with the cover image and description of the book.
+&emsp;&emsp;设置 `description` 和 `cover-image` 的一个很好的效果是，当你在一些社交网站（如 Twitter）上分享你的书籍的链接时，该链接可以自动扩展为一个带有封面图片和书籍描述的卡片。
 
 ### 三列 Bootstrap 样式 {#bs4-book}
 
-The `bs4_book()` output format is built with Bootstrap (<https://getbootstrap.com>), using carefully crafted features to provide a clean reading experience whether you are on a phone, tablet, or desktop. On a full-size screen, the layout includes three columns of content so readers can quickly see all chapters on the left, the current chapter in the middle, and sections within the the current chapter on the right. You can read an example book here: <https://mastering-shiny.org>
+&emsp;&emsp;`bs4_book()` 输出格式是使用 Bootstrap (<https://getbootstrap.com>) 构建的，其功能经过了精心设计，无论你是在手机、平板电脑还是桌面上，都能获得干净的阅读体验。在全尺寸屏幕上，其布局包括散列内容，因此读者能够快速看到左边的所有章节，中间的当前章节，右边的当前篇章中的各个小节。你可以在这里阅读样例书籍：<https://mastering-shiny.org>
 
 ```{r fig.align='center', echo=FALSE, fig.link='https://mastering-shiny.org', fig.cap="Home page of a book with the three-column Bootstrap style."}
 knitr::include_graphics('images/bs4-book.png', dpi = NA)
 ```
 
-In addition to the basic **bookdown** components (Section \@ref(components)), the main features of `bs4_book` are:
+&emsp;&emsp;除了基础的 **bookdown** 组件（第 \@ref(components) 节），`bs4_book` 的主要功能包括：
 
-- Easy customization of colors and fonts with
-  [the **bslib** package.](https://pkgs.rstudio.com/bslib/)
+- 使用 [**bslib** 软件包](https://pkgs.rstudio.com/bslib/)轻松定制颜色和字体。
 
-- Built-in search (broken down by section) that helps readers quickly find what
-  they are looking for.
+- 内置搜索（按小节细分），帮助读者快速查找所需内容。
 
-- A sidebar containing a within-chapter table of contents that makes
-  navigation easy and helps provide context about your current position
-  within the chapter.
+- 包含章节内目录的侧边栏，使得书籍导航更加简单，有助于提供在本章中有关当前位置的上下文。
 
-- Thoughtful typography to make the contents as easy as possible to read,
-  regardless of the size of your device. A sticky header gets out of your
-  way when reading, but is easily accessible if you need it.
+- 精心排版，不管设备的大小，都尽可能使得内容易于阅读。在阅读时，一个悬浮标题会妨碍你的阅读，但是如果你需要的话，它很容易被访问。
 
-- In-line footnotes mean you can read asides next to the next they refer
-  to. This theme is best paired with a reference style that generates
-  footnotes.
+- 行内脚注意味着你能够在它们所指文本的旁边阅读旁白。此主题最好与生成脚注的参考样式匹配。
 
-- R syntax highlighting and autolinking by
-  [the **downlit** package](https://downlit.r-lib.org) is paired with an accessible
-  color scheme designed by Alison Hill.
+- 通过 [**downlit** 软件包](https://downlit.r-lib.org)进行的 R 语法高亮和自动链接，并搭配 Alison Hill 设计的无障碍配色方案。
 
-- Enhanced metadata for social sharing via platforms like Twitter, LinkedIn, and Facebook, so that each chapter shared will have a unique description, auto-generated based on that chapter's content.
+- 增强了通过 Twitter、LinkedIn 和 Facebook等平台进行社会分享的元数据，这样，每一个分享的章节都会有一个独特的描述，根据该章节的内容自动生成。
 
-- Ability to configure links to a remote repository like GitHub or GitLab, allowing readers to easily view each chapter's source file or suggest an edit.
+- 配置指向远程存储库（如 GitHub 或 GitLab）的链接的能力，允许读者轻松查看每个章节的源文件或提供编辑建议。
 
-The output format function is [`bookdown::bs4_book`.](https://pkgs.rstudio.com/bookdown/reference/bs4_book.html) Here are its arguments:
+&emsp;&emsp;输出格式函数是 [`bookdown::bs4_book`](https://pkgs.rstudio.com/bookdown/reference/bs4_book.html)。以下是它的参数：
 
 ```{r bs4-book-args, code=formatR::usage(bookdown::bs4_book, output=FALSE, fail='none'), eval=FALSE, R.options=list(width=50)}
 ```
 
 #### 创作一本 `bs4_book`
 
-The easiest way to get started writing a new `bs4_book` is to use the RStudio Project Wizard (*File > New Project > New Directory > Book project using bookdown*) and select `bs4_book` from the dropdown menu (see Figure \@ref(fig:new-bs4-book)).
+&emsp;&emsp;开始撰写一本新的 `bs4_book` 的最简单的方法就是使用 RStudio 项目向导 (Project Wizard)（*File（文件） > New Project（新的项目） > New Directory（新的目录） > Book project using bookdown（使用 bookdown 的书籍项目）*） 并在下拉菜单中选择 `bs4_book`。（请见图 \@ref(fig:new-bs4-book)）。
 
-```{r new-bs4-book, fig.align='center', echo=FALSE, fig.cap="Screenshot of the RStudio Project Wizard for creating a new bookdown project."}
+```{r new-bs4-book, fig.align='center', echo=FALSE, fig.cap="用于创建新的 bookdown 项目的 RStudio 项目向导的屏幕截图。"}
 knitr::include_graphics('images/new-bs4-book.png', dpi = NA)
 ```
 
-If you do not use RStudio or prefer a function, you can create the same project template with `bookdown::create_bs4_book()` from your R console. See `?bookdown::create_bs4_book` or [the online documentation](https://pkgs.rstudio.com/bookdown/reference/create_book.html) for help.
+&emsp;&emsp;如果你不使用 RStudio 或者喜欢使用函数来完成，可以在 R Console 中使用 `bookdown::create_bs4_book()` 创建相同的项目模板。参见 `?bookdown::create_bs4_book`或[在线文档](https://pkgs.rstudio.com/bookdown/reference/create_book.html)以获得帮助。
 
-This style is designed for books that use one chapter per page. 
-This means that each chapter is an `.Rmd` file, and each `.Rmd` file can contain one chapter. 
-Each file *must* start with a first-level heading, `# Chapter title`, and that must be the only first-level heading in the file. 
+&emsp;&emsp;这种风格是为每页展示一个章节的书籍设计的。这意味着每章是一个 `.Rmd` 文件，每个 `.Rmd` 文件可以包含一个章节。每个文件*必须*以一级标题开始，例如 `# 章节标题`，而且必须是文件中唯一的一级标题。
 
-Use second-level and lower-level headings within chapters like: 
+&emsp;&emsp;在章节中使用第二级和更低级的标题，如：
 
 ```md
-#   A chapter
+#   一章
 
-##  A section
+##  一节
 
-### A subsection
+### 一小节
 ```
 
-The first- and second-level headings appear in the current chapter's sidebar, which sticks to the top of the page as you scroll down. When a section is navigated to, third-level subheadings like "A subsection" will auto-expand.
+&emsp;&emsp;第一级和第二级标题显示在当前章节的侧边栏中，当你向下滚动时，它会粘在页面顶部。当导航到一节时，像 `小节` 这样的三级子标题将自动展开。
 
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book. If you want to include content that should only be included in the HTML version of the book, you may want to include that content conditionally by combining the **knitr** `include` chunk option with the `knitr::is_html_output()` function. See the [_R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/latex-html.html) for instructions.
+&emsp;&emsp;`index.Rmd` 文件是必需的，并且也是你的书籍的第一章。当你编译书籍时，它将会成为主页面。如果你想将仅应包含在书籍 HTML 版本的内容包括在内，你可能需要将 **knitr** `include` 区块配置项与 `knitr::is_html_output()` 函数相结合，有条件地包含该内容。有关说明请参见 [_R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/latex-html.html)。
 
-A YAML header in `index.Rmd` for a `bs4_book` would look like this:
+&emsp;&emsp;`index.Rmd` 中 `bs4_book` 的一个 YAML 头部开起来像这样：
 
 ```yaml
 ---
@@ -315,9 +302,9 @@ description: |
 
 #### 样式 & 定制化
 
-The `bs4_book()` format builds upon the Bootstrap CSS framework ([version 4](https://getbootstrap.com/docs/4.0/)), an open source library of reusable chunks of HTML, CSS, and JavaScript code. The Bootstrap framework allows for easy customization of colors and fonts via the **bslib** R package.
+&emsp;&emsp;`bs4_book()` 格式建立在 Bootstrap CSS 框架 ([Version 4](https://getbootstrap.com/docs/4.0/))上，这是一个可复用的 HTML、CSS 和 JavaScript 代码块的开源库。Bootstrap 框架允许通过 **bslib** R 软件包轻松定制颜色和字体。
 
-You can use the `theme` option to add a `primary` color in [hexidecimal format,](https://en.wikipedia.org/wiki/Web_colors) which will change the color of all links in your book and the background color of the footer.
+&emsp;&emsp;你可以使用 `theme` 配置项来添加一个[十六进制格式](https://en.wikipedia.org/wiki/Web_colors)的 `primary` 颜色，这将改变你书中所有链接的颜色和页脚的背景颜色。
 
 ```yaml
 bookdown::bs4_book:
@@ -325,7 +312,7 @@ bookdown::bs4_book:
     primary: "#0d6efd"   
 ```
 
-For custom font settings, adding a `google:` keyword triggers [`sass::font_google()`’s](https://rstudio.github.io/sass/reference/font_face.html) ability to automatically import [Google Font files.](https://fonts.google.com) Here is an example YAML that changes the `base_font`, `heading_font`, and `code_font`:
+&emsp;&emsp;对于自定义字体设置，添加 `google:` 关键字会触发 [`sass::font_google()`](https://rstudio.github.io/sass/reference/font_face.html)的自动导入 [Google 字体文件](https://fonts.google.com)的能力。下面是一个 YAML 的例子，改变了 `base_font`、`heading_font` 和 `code_font`。
 
 ```yaml
 bookdown::bs4_book:
@@ -344,18 +331,18 @@ bookdown::bs4_book:
         local: false
 ```
 
-By default, `google:` will bundle font files with your book, so it downloads, caches, and serves the relevant font file(s) locally. This means that when you share it with someone else, the fonts are guaranteed to render, even without an Internet connection (`local: false` imports files via URL instead of serving them locally).
+&emsp;&emsp;默认情况下，`google:` 会将字体文件与你的书籍捆绑在一起，所以它会在本地下载、缓存并提供相关的字体文件。这意味着当你与其他人分享书籍时，即使没有互联网连接，字体也能保证呈现出来（`local: false` 通过 URL 导入文件，而不在本地提供）。
 
-You may also use non-Google fonts that you serve locally using [`sass::font_face()`.](https://rstudio.github.io/sass/reference/font_face.html#serving-non-google-fonts-locally)
+&emsp;&emsp;你也可以使用非谷歌字体，使用 [`sass::font_face()`](https://rstudio.github.io/sass/reference/font_face.html#serving-non-google-fonts-locally) 在本地提供。
 
-#### Callout blocks
+#### 标注区块
 
-Callout blocks can be used to make certain portions of content stand out from the rest of your narrative. The `bs4_book` style includes special callout blocks with predefined styles for adding a colored border around the text and/or code inside the callout. Use the following syntax to create a callout block: 
+&emsp;&emsp;标注区块可以用来使某些部分的内容从你叙述的其他部分中突出出来。`bs4_book` 样式包括特殊的标注区块，它具有预定义的风格，可以在标注的文本和/或代码周围添加一个彩色的边框。使用下面的语法来创建一个标注区块。
 
 ````markdown
 ::: {.rmdnote}
-The `bs4_book` style also includes an `.rmdnote` callout block
-like this one.
+`bs4_book` 样式也包含一个像这样的 `.rmdnote` 
+标注区块。
 
 ```{r collapse=TRUE}`r ''``
 head(beaver1, n = 5)
@@ -363,13 +350,13 @@ head(beaver1, n = 5)
 :::
 ````
 
-You may use Markdown syntax and inline code inside a block. When knitted, the output will look like Figure \@ref(fig:bs4-note).
+&emsp;&emsp;你可以在区块内使用 Markdown 语法和行内代码。生成书籍时，输出内容看起来和图 \@ref(fig:bs4-note) 类似。
 
 ```{r bs4-note, fig.align='center', echo=FALSE, fig.cap="A special callout block."}
 knitr::include_graphics('images/rmd-note.png', dpi = NA)
 ```
 
-Available blocks are: `.rmdnote`, `.rmdcaution`, `.rmdimportant`, `.rmdtip`, and `.rmdwarning`. The colors used will be based on the default colors provided by Bootstrap, but can be also be customized in your `_output.yml` file:
+&emsp;&emsp;可用的区块有 `.rmdnote`、`.rmdcaution`、`.rmdimportant`、`.rmdtip` 和 `.rmdwarning`。使用的颜色将基于 Bootstrap 提供的默认颜色，但也可以在你的 `_output.yml` 文件中自定义。
 
 ```yaml
 bookdown::bs4_book:
@@ -381,46 +368,42 @@ bookdown::bs4_book:
     warning: "#ffc107"   # default .rmdwarning = yellow
 ```
 
-For LaTeX output, only the content of these blocks will be shown with no colored outline as for HTML. It is up to the user to define the appearance of these blocks for LaTeX output using custom environments. See the [_R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html) for a how-to.
+&emsp;&emsp;对于LaTeX输出，只有这些区块的内容会被显示出来，没有像 HTML 那样的彩色轮廓。用户可以使用自定义环境来定义在 LaTeX 输出时这些区块的外观。参见 [_R Markdown Cookbook_](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html)以了解如何操作。
 
 #### HTML 元数据
 
-Bookdown will generate HTML `<meta>` tags based on Pandoc's variables set in `index.Rmd`, described in \@ref(metadata-for-sharing). Additionally, `bs4_book()` will create unique chapter descriptions auto-generated from the chapter's contents. You can have a look at [the `bs4_book` HTML
-template](https://github.com/rstudio/bookdown/blob/main/inst/templates/bs4_book.html) for details on how these variables are used.
+&emsp;&emsp;Bookdown 将根据 Pandoc 在 `index.Rmd` 中设置的变量生成 HTML `<meta>` 标签，该部分内容在第 \@ref(metadata-for-sharing) 节中进行了描述。此外，`bs4_book()` 将创建独特的章节描述，这些描述是由章节的内容自动生成的。你可以查阅 [`bs4_book` 的 HTML
+模板](https://github.com/rstudio/bookdown/blob/main/inst/templates/bs4_book.html)来了解这些变量的使用细节。
 
-#### 参考文献/参考书目
+#### 参考文献/书目
 
-Making your citations _footnotes_ allows readers to read them near the text where they are used because `bs4_book` makes footnotes appear inline when clicked. 
-To do that, download a footnote style CSL file; we recommend <https://www.zotero.org/styles/>.
-For example, you could download the `chicago-fullnote-bibliography.csl` from [Zotero,](https://www.zotero.org/styles/?q=id%3Achicago-fullnote-bibliography) then
-add this to your `index.Rmd`:
+&emsp;&emsp;将你的引用文献制作为 *脚注*，可以让读者在引用它们的文本附近阅读脚注内容，因为 `bs4_book` 使脚注在点击时出现在行内。要做到这一点，请下载一个脚注样式的 CSL 文件；我们推荐 <https://www.zotero.org/styles/>。例如，你可以从 [Zotero](https://www.zotero.org/styles/?q=id%3Achicago-fullnote-bibliography) 下载 `chicago-fullnote-bibliography.csl`，然后添加到你的 `index.Rmd` 中。
 
 ```yaml
 bibliography: refs.bib
 csl: chicago-fullnote-bibliography.csl
 ```
 
-Optionally, if you no longer want a reference section
-at the back of the book, add this line to your `index.Rmd`:
+&emsp;&emsp;如果你不想在书籍的最后有一个参考文献章节，可以选择在你的 `index.Rmd` 中添加这一行：
 
 ```yaml
 suppress-bibliography: true
 ```
 
-If you would like to use a citation style that does not support footnotes, references will not be shown inline in popups. In this case, you may wish to add the `split_bib` option to your `_output.yml`:
+&emsp;&emsp;如果你想使用不支持脚注的引用文献样式，参考文献将不会在行内弹出窗口中显示。在这种情况下，你可能希望在你的 `_output.yml` 中添加 `split_bib` 配置项。
 
 ```yaml
 bookdown::bs4_book:
   split_bib: true
 ```
 
-Then your bibliography will be split and relevant citation items will be put at the bottom of each chapter, so that readers do not have to navigate to a different bibliography page to see the details of citations.
+&emsp;&emsp;这样，你的参考书目将被拆分，相关的引用文献项目将被放在每一章的底部，这样读者就不必跳转到不同的参考书目页来查看引用文献的细节。
 
-#### 指定一个储存库
+#### 指定储存库
 
-Specify a source repository for your book to give your readers the option to easily view each chapter's source file or suggest an edit.
+&emsp;&emsp;为你的书籍指定一个源码储存库，让你的读者可以轻松查看每一章的源文件或提出编辑建议。
 
-If your book has a default branch called "main," you can use:
+&emsp;&emsp;如果你的书籍有一个名为 `main` 的默认分支，可以使用。
 
 ```yaml
 bookdown::bs4_book:
@@ -429,7 +412,7 @@ bookdown::bs4_book:
     branch: main
 ```
 
-If your book is furthermore located in a subdirectory called "book," you can use:
+&emsp;&emsp;进一步，如果你的书籍位于一个名为 "book" 的子目录中，你可以使用：
 
 ```yaml
 bookdown::bs4_book:
@@ -439,8 +422,7 @@ bookdown::bs4_book:
     subdir: book
 ```
 
-By default, if the repo URL contains "github," it will get a GitHub [Font Awesome](https://fontawesome.com) icon, otherwise it gets a GitLab icon.
-To use another icon, specify it with the correct prefix such as `fas`, `fab`, and so on ([Font Awesome 5](https://fontawesome.com/v5.0/how-to-use/on-the-web/referencing-icons/basic-use)).
+&emsp;&emsp;默认情况下，如果储存库的 URL 包含 "github"，它将获得一个 GitHub [Font Awesome](https://fontawesome.com) 图标，否则它将获得一个 GitLab 图标。要使用其他图标，请用正确的前缀来指定，如 `fas`、`fab` 等等 ([Font Awesome 5](https://fontawesome.com/v5.0/how-to-use/on-the-web/referencing-icons/basic-use))。
 
 ```yaml
 bookdown::bs4_book:
@@ -453,37 +435,37 @@ bookdown::bs4_book:
 
 ### 默认的 Bootstrap 样式 {#bootstrap-style}
 
-If you have used R Markdown before, you should be familiar with the Bootstrap\index{Bootstrap style} style (https://getbootstrap.com), which is the default style of the HTML output of R Markdown. The output format function in **rmarkdown** is `html_document()`, and we have a corresponding format `html_book()` in **bookdown** using `html_document()` as the base format. You can read an example `html_book()` here: <https://bookdown.org/yihui/bookdown-demo2>
+&emsp;&emsp;如果你之前使用过 R Markdown，你应该熟悉 Bootstrap\index{Bootstrap style} 样式 (<https://getbootstrap.com>)，它是 R Markdown 的 HTML 输出格式的默认样式。**rmarkdown** 中的输出格式函数是 `html_document()`，并且我们在 **bookdown** 中也有一个相应的格式 `html_book()`，它使用 `html_document()` 作为基础格式。你可以在这里阅读 `html_book()` 的样例：<https://bookdown.org/yihui/bookdown-demo2>。
 
-In fact, there is a more general format `html_chapters()` in **bookdown** and `html_book()` is just its special case:
+&emsp;&emsp;事实上，**bookdown** 中有一个更加通用的格式 `html_chapters()`，`html_book()` 只是它的特例：
 
 ```{r html-chapters-usage, eval=FALSE, code=formatR::usage(bookdown::html_chapters, output=FALSE, fail='none')}
 ```
 
-Note that it has a `base_format` argument that takes a base output format function, and `html_book()` is basically `html_chapters(base_format = rmarkdown::html_document)`. All arguments of `html_book()` are passed to `html_chapters()`:
+&emsp;&emsp;请注意它有一个 `base_format` 参数，接受一个基础输出格式函数，并且 `html_book()` 基本上就是 `html_chapters(base_format = rmarkdown::html_document)`。`html_book()` 的所有参数都传递给 `html_chapters()`:
 
 ```{r html-book-usage, eval=FALSE, code=formatR::usage(bookdown::html_book, output=FALSE)}
 ```
 
 
-That means that you can use most arguments of `rmarkdown::html_document`, such as `toc` (whether to show the table of contents), `number_sections` (whether to number section headings), and so on. Again, check the help page of `rmarkdown::html_document` to see the full list of possible options. Note that the argument `self_contained` is hard-coded to `FALSE` internally, so you cannot change the value of this argument. We have explained the argument `split_by` in the previous section.
+&emsp;&emsp;这意味着你可以使用 `rmarkdown::html_document` 的大多数参数，例如 `toc` （是否展示目录）， `number_sections`（是否为章节标题标号）等等。类似地，关于可用配置项的完整列表，请查阅 `rmarkdown::html_document` 的帮助页面。注意 `self_contained` 参数在内部硬编码为 `FALSE`，因此你不能更改这个参数的值。关于 `split_by` 参数，我们在之前的章节中已经解释过了。
 
-The arguments `template` and `page_builder` are for advanced users, and you do not need to understand them unless you have strong need to customize the HTML output, and those many options provided by `rmarkdown::html_document()` still do not give you what you want.
+&emsp;&emsp;参数 `template` 和 `page_builder` 是为高级用户准备的，除非你有强烈的定制 HTML 输出的需求，并且 `rmarkdown::html_document()` 提供的众多选项仍然无法为你提供想要的效果，否则你不需要理解它们。
 
-If you want to pass a different HTML template to the `template` argument, the template must contain three pairs of HTML comments, and each comment must be on a separate line:
+&emsp;&emsp;如果你想将不同的 HTML 模板传递给 `template` 参数，则模板必须包括三对 HTML 注释，每条注释必须位于单独的行中：
 
-- `<!--bookdown:title:start-->` and `<!--bookdown:title:end-->` to mark the title section of the book. This section will be placed only on the first page of the rendered book;
-- `<!--bookdown:toc:start-->` and `<!--bookdown:toc:end-->` to mark the table of contents section, which will be placed on all HTML pages;
-- `<!--bookdown:body:start-->` and `<!--bookdown:body:end-->` to mark the HTML body of the book, and the HTML body will be split into multiple separate pages. Recall that we merge all R Markdown or Markdown files, render them into a single HTML file, and split it.
+- `<!--bookdown:title:start-->` 和 `<!--bookdown:title:end-->` 标记书籍的标题部分。这部分仅放在编译好的书籍的第一页；
+- `<!--bookdown:toc:start-->` 和 `<!--bookdown:toc:end-->` 标记目录部分，这部分将会被放在所有 HTML 页面上；
+- `<!--bookdown:body:start-->` 和 `<!--bookdown:body:end-->` 标记书籍的 HTML 主体，HTML 主体内容将会被划分为多个单独的页面。回想一下，我们合并了所有 R Markdown 或 Markdown 文件，然后将其编译为单个 HTML 文件，并将其拆分；
 
-You may open the default HTML template to see where these comments were inserted:
+&emsp;&emsp;你可以打开默认的 HTML 模板，查看这些注释的插入位置：
 
 ```{r results='hide'}
 bookdown:::bookdown_file('templates/default.html')
 # you may use file.edit() to open this file
 ```
 
-Once you know how **bookdown** works internally to generate multiple-page HTML output, it will be easier to understand the argument `page_builder`, which is a function to compose each individual HTML page using the HTML fragments extracted from the above comment tokens. The default value of `page_builder` is a function `build_chapter` in **bookdown**, and its source code is relatively simple (ignore those internal functions like `button_link()`):
+&emsp;&emsp;一旦你知道 **bookdown** 在内部如何生成多页 HTML 输出，将更容易理解 `page_builder` 参数。它是一个函数，能够使用从上述注释标志中提取的 HTML 片段来合成每个单独的 HTML 页面。`page_builder` 的默认值是 **bookdown** 中的 `build_chapter` 函数，其源代码相对简单（忽略 `button_link()` 等内部函数）：
 
 ```{r include=FALSE}
 extract_fun = function(name, script) {
@@ -500,25 +482,25 @@ extract_fun = function(name, script) {
 ```{r eval=FALSE, tidy=FALSE, code=extract_fun('build_chapter', './R/html.R')}
 ```
 
-Basically, this function takes a number of components like the HTML head, the table of contents, the chapter body, and so on, and it is expected to return a character string which is the HTML source of a complete HTML page. You may manipulate all components in this function using text-processing functions like `gsub()` and `paste()`.
 
+&emsp;&emsp;基本上，这个函数使用许多组件，如 HTML 头部、目录、章节正文等，它将返回一个字符串，该字符串是完整 HTML 页面的 HTML 源代码。你可以使用诸如 `gsub()` 和 `paste()` 之类的文本处理函数来操作此函数中的所有组件。
 
-What the default page builder does is to put TOC in the first row, the body in the second row, navigation buttons at the bottom of the body, and concatenate them with the HTML head and foot. Here is a sketch of the HTML source code that may help you understand the output of `build_chapter()`:
+&emsp;&emsp;默认的页面生成器所做的是将目录放在第一行，正文放在第二行，导航按钮放在正文底部，并将它们与 HTML 头部和底部连接起来。下面是 HTML 源代码的一个简要示例，可以帮助你理解 `build_chapter()` 的输出：
 
 ```html
 <html>
   <head>
-    <title>A Nice Book</title>
+    <title>一本好书</title>
   </head>
   <body>
   
-    <div class="row">TOC</div>
+    <div class="row">目录</div>
     
     <div class="row">
-      CHAPTER BODY
+      章节主体
       <p>
-        <button>PREVIOUS</button>
-        <button>NEXT</button>
+        <button>上一章</button>
+        <button>下一章</button>
       </p>
     </div>
   
@@ -526,50 +508,49 @@ What the default page builder does is to put TOC in the first row, the body in t
 </html>
 ```
 
-For all HTML pages, the main difference is the chapter body, and most of the rest of the elements are the same. The default output from `html_book()` will include the Bootstrap CSS and JavaScript files in the `<head>` tag.
+&emsp;&emsp;对于所有 HTML 页面，主要的区别在于章节主体，其它大部分元素是相同的。`html_book()` 的默认输出将在 `<head>` 标签中包括 Bootstrap CSS 和 JavaScript 文件。
 
-The TOC is often used for navigation purposes. In the GitBook style, the TOC is displayed in the sidebar. For the Bootstrap style, we did not apply a special style to it, so it is shown as a plain unordered list (in the HTML tag `<ul>`). It is easy to turn this list into a navigation bar with some CSS techniques. We have provided a CSS file `toc.css` in this package that you can use, and you can find it here: https://github.com/rstudio/bookdown/blob/master/inst/examples/css/toc.css
+&emsp;&emsp;目录常用于导航。在 GitBook 样式中，目录显示在侧边栏中。对于 Bootstrap 样式，我们没有对它应用特殊样式，因此它显示为普通的无序列表（在 HTML 标签 `<ul>` 中）。使用某些 CSS 技术可以轻松地将此列表转为导航栏。在这个软件包中我们已经提供了一个 CSS 文件 `toc.css`，你可以在这里找到它：<https://github.com/rstudio/bookdown/blob/master/inst/examples/css/toc.css>
 
-You may copy this file to the root directory of your book, and apply it to the HTML output via the `css` option, e.g.,
+&emsp;&emsp;你可以复制这个文件导你的书籍的根目录，然后通过 `css` 配置项应用到 HTML 输出，例如：
 
 ```yaml
 ---
 output:
   bookdown::html_book:
-    toc: yes
+    toc: true
     css: toc.css
 ---
 ```
 
-There are many possible ways to turn `<ul>` lists into navigation menus if you do a little bit searching on the web, and you can choose a menu style that you like. The `toc.css` we just mentioned is a style with white menu texts on a black background, and supports sub-menus (e.g., section titles are displayed as drop-down menus under chapter titles).
+&emsp;&emsp;如果你在网上稍微搜索一下，就能找到许多可能的方法将 `<ul>` 列表变成导航菜单，你可以选择你喜欢的菜单样式。我们刚才提到的 `toc.css` 是一种在黑色背景上有白色菜单文本的样式，并且支持子菜单（例如，节标题显示为章标题下的下拉菜单）。
 
-As a matter of fact, you can get rid of the Bootstrap style in `html_document()` if you set the `theme` option to `null`, and you are free to apply arbitrary styles to the HTML output using the `css` option (and possibly the `includes` option if you want to include arbitrary content in the HTML head/foot).
+&emsp;&emsp;事实上，如果你把 `theme` 选项设置为 `null`，就可以在 `html_document()` 中摆脱 Bootstrap 样式，你可以自由地使用 `css` 选项在 HTML 输出中应用任意的样式（如果你想在 HTML 头部/底部中包含任意的内容，还可以使用 `includes` 选项）。
 
 ### Tufte 样式 {#tufte-style}
 
-Like the Bootstrap style, the Tufte\index{Tufte style} style is provided by an output format `tufte_html_book()`, which is also a special case of `html_chapters()` using `tufte::tufte_html()` as the base format. Please see the **tufte** package [@R-tufte] if you are not familiar with the Tufte style. You can read an example `tufte_html_book()` here: <https://bookdown.org/yihui/bookdown-demo3/>
+&emsp;&emsp;和 Bootstrap 样式一样，Tufte\index{Tufte style} 样式由输出格式 `tufte_html_book()` 提供，这也是 `html_chapters()` 的一个特例，使用 `tufte::tufte_html()` 作为基础格式。如果你不熟悉 Tufte 样式，请查阅 **tufte** 软件包[@R-tufte]。你可以在这里阅读一个 `tufte_html_book()` 的例子：<https://bookdown.org/yihui/bookdown-demo3/>。
 
+&emsp;&emsp;基本上，它是一个左边是主栏，右边是边栏的布局。内容主体在主栏中，边栏用来放置脚注 (footnotes)、边注 (margin notes)、参考文献 (references) 和边栏图片 (margin figures) 等。
 
-Basically, it is a layout with a main column on the left and a margin column on the right. The main body is in the main column, and the margin column is used to place footnotes, margin notes, references, and margin figures, and so on.
-
-All arguments of `tufte_html_book()` have exactly the same meanings as `html_book()`, e.g., you can also customize the CSS via the `css` option. There are a few elements that are specific to the Tufte style, though, such as margin notes, margin figures, and full-width figures. These elements require special syntax to generate; please see the documentation of the **tufte** package. Note that you do not need to do anything special to footnotes and references (just use the normal Markdown syntax `^[footnote]` and `[@citation]`), since they will be automatically put in the margin. A brief YAML example of the `tufte_html_book` format:
+&emsp;&emsp;`tufte_html_book()` 的所有参数的含义与 `html_book()` 完全相同，例如，你同样也可以通过 `css` 配置项定制 CSS。然而，有一些元素是 Tufte 风格所特有的，如边注 (margin notes)、边栏图片 (margin figures) 和全宽图片 (full-width figures)。这些元素需要特殊的语法来生成；请查阅 **tufte** 软件包的文档。请注意，你不需要对脚注和参考文献做任何特殊处理（只需使用正常的 Markdown 语法 `^[footnote]` 和 `[@citation]`），因为它们会被自动放到页边。一个关于 `tufte_html_book` 格式的简短 YAML 示例如下：
 
 ```yaml
 ---
 output:
   bookdown::tufte_html_book:
-    toc: yes
+    toc: true
     css: toc.css
 ---
 ```
 
 ## LaTeX/PDF
 
-We strongly recommend that you use an HTML output format instead of LaTeX\index{LaTeX} when you develop a book, since you will not be too distracted by the typesetting details, which can bother you a lot if you constantly look at the PDF output of a book. Leave the job of careful typesetting to the very end (ideally after you have really finished the content of the book).
+&emsp;&emsp;我们强烈建议你在撰写书籍时使用 HTML 输出格式，而不是 LaTeX\index{LaTeX}，因为你将不会因为排版细节而分心，如果经常查看书籍的 PDF 输出就会知道，排版细节会给你带来很多麻烦。把仔细排版的工作留到最后（最好在真正完成书籍的内容之后）。
 
-The LaTeX/PDF output format is provided by `pdf_book()` in **bookdown**. There is not a significant difference between `pdf_book()` and the `pdf_document()` format in **rmarkdown**. The main purpose of `pdf_book()` is to resolve the labels and cross-references written using the syntax described in Sections \@ref(figures), \@ref(tables), and \@ref(cross-references). If the only output format that you want for a book is LaTeX/PDF, you may use the syntax specific to LaTeX, such as `\label{}` to label figures/tables/sections, and `\ref{}` to cross-reference them via their labels, because Pandoc supports LaTeX commands in Markdown. However, the LaTeX syntax is not portable to other output formats, such as HTML and e-books. That is why we introduced the syntax `(\#label)` for labels and `\@ref(label)` for cross-references.
+&emsp;&emsp;LaTeX/PDF 输出格式是由 **bookdown** 中的 `pdf_book()` 提供的。`pdf_book()` 和 **rmarkdown** 中的 `pdf_document()` 格式之间没有明显的区别。`pdf_book()` 的主要目的是解决使用第 \@ref(figures)、\@ref(tables) 和 \@ref(cross-references) 节中描述的语法编写的标签和交叉引用。如果你希望书籍的唯一输出格式是 LaTeX/PDF，则可以使用 LaTeX 特有的语法，例如使用 `\label{}` 来标记图片/表格/章节，使用 `\ref{}` 通过它们的标签来交叉引用，因为 Pandoc 支持在 Markdown 中使用 LaTeX 命令。然而，LaTeX 语法不能移植到其他输出格式，如 HTML 和电子书。这就是为什么我们为标签引入了 `(\#label)` 语法，为交叉引用引入了 `\@ref(label)` 语法。
 
-There are some top-level YAML options that will be applied to the LaTeX output. For a book, you may change the default document class to `book` (the default is `article`), and specify a bibliography style required by your publisher. A brief YAML example:
+&emsp;&emsp;有一些顶级 YAML 配置项将被应用于 LaTeX 输出。对于一本书，你可以把默认的文档类别改为 `book`（默认是 `artical`），并指定出版商要求的参考文献样式。下面是一个一个简短的 YAML 示例。
 
 ```yaml
 ---
@@ -579,49 +560,49 @@ biblio-style: apalike
 ---
 ```
 
-There are a large number of other YAML options that you can specify for LaTeX output, such as the paper size, font size, page margin, line spacing, font families, and so on. See http://pandoc.org/MANUAL.html#variables-for-latex for a full list of options.
+&emsp;&emsp;LaTeX 输出格式还有大量的 YAML 配置项可以使用，如纸张大小、字体大小、页边距、行间距、字体族等等。关于配置项的完整列表，请参见 <http://pandoc.org/MANUAL.html#variables-for-latex>。
 
-The `pdf_book()` format is a general format like `html_book()`, and it also has a `base_format` argument:
+&emsp;&emsp;`pdf_book()` 格式与 `html_book()` 一样是一种通用格式，它也有一个 `base_format` 参数。
 
 ```{r pdf-book-usage, eval=FALSE, code=formatR::usage(bookdown::pdf_book, output=FALSE)}
 ```
 
-You can change the `base_format` function to other output format functions, and **bookdown** has provided a simple wrapper function `tufte_book2()`, which is basically `pdf_book(base_format = tufte::tufte_book)`, to produce a PDF book using the Tufte PDF style (again, see the **tufte** package).
+&emsp;&emsp;你可以将 `base_format` 函数改成其他的输出格式函数，**bookdown** 提供了一个简单的封装函数 `tufte_book2()`，基本上就是 `pdf_book(base_format = tufte::tufte_book)`，用 Tufte 的 PDF 样式来制作一本 PDF 书籍（类似地，详情请见 **tufte** 软件包）。
 
 ## 电子书
 
-Currently **bookdown** provides two e-book\index{e-book} formats, EPUB\index{EPUB} and MOBI\index{MOBI}. Books in these formats can be read on devices like smartphones, tablets, or special e-readers such as Kindle.
+&emsp;&emsp;目前 **bookdown** 支持 EPUB\index{EPUB} 和 MOBI\index{MOBI} 两种电子书\index{e-book}格式。这些格式的书籍可以在智能手机、平板电脑或者是 Kindle 等特殊的电子阅读器上阅读。
 
 ### EPUB
 
-To create an EPUB book, you can use the `epub_book()` format. It has some options in common with `rmarkdown::html_document()`:
+&emsp;&emsp;你可以使用 `epub_book()` 格式来创建一本 EPUB 书籍。它的一些配置项与 `rmarkdown::html_document()` 相同：
 
 ```{r epub-book, eval=FALSE, code=formatR::usage(bookdown::epub_book, output=FALSE), R.options=list(width=50)}
 ```
 
-The option `toc` is turned off because the e-book reader can often figure out a TOC automatically from the book, so it is not necessary to add a few pages for the TOC. There are a few options specific to EPUB:
+&emsp;&emsp;关闭 `toc` 选项是因为电子书阅读器通常可以从书中自动找出目录，所以没有必要为目录多增加几页。有几个专门针对 EPUB 的配置项：
 
-- `stylesheet`: It is similar to the `css` option in HTML output formats, and you can customize the appearance of elements using CSS.
-- `cover_image`: The path to the cover image of the book.
-- `metadata`: The path to an XML file for the metadata of the book (see Pandoc documentation for more details).
-- `chapter_level`: Internally an EPUB book is a series of "chapter" files, and this option determines the level by which the book is split into these files. This is similar to the `split_by` argument of HTML output formats we mentioned in Section \@ref(html), but an EPUB book is a single file, and you will not see these "chapter" files directly. The default level is the first level, and if you set it to 2, it means the book will be organized by section files internally, which may allow the reader to load the book more quickly.
-- `epub_version`: Version 3 or 2 of EPUB.
+- `stylesheet`: 它类似于 HTML 输出格式中的 `css` 配置项，你可以用 CSS 来定制元素的外观。
+- `cover_image`: 书籍封面图片的路径。
+- `metadata`: 书籍元数据所在 XML 文件的路径（更多细节请见 Pandoc 文档）。
+- `chapter_level`: 在内部，一本 EPUB 书籍是一系列的“章节”文件，这个配置项决定了书籍在何种级别上被分割成这些文件。这类似于我们在第 \@ref(html) 节中提到的 HTML 输出格式的 `split_by` 参数，但是 EPUB 书籍是一个单一的文件，你不会直接看到这些“章节”文件。默认的级别是第一级，如果你把它设置为 2，意味着这本书在内部会按节划分文件来组织，这可能会使得书籍加载更快。
+- `epub_version`: EPUB 的第 3 版或第 2 版。
 
-An EPUB book is essentially a collection of HTML pages, e.g., you can apply CSS rules to its elements, embed images, insert math expressions (because MathML is partially supported), and so on. Figure/table captions, cross-references, custom blocks, and citations mentioned in Chapter \@ref(components) also work for EPUB. You may compare the EPUB output of this book to the HTML output, and you will see that the only major difference is the visual appearance.
+&emsp;&emsp;EPUB 书籍本质上是 HTML 页面的集合，例如，你可以将 CSS 规则应用于其元素、嵌入图像、插入数学表达式（因为 EPUB 部分支持 MathML）等等。第 \@ref(components) 节中提到的图片/表格标题、交叉引用、自定义区块和引用也适用于 EPUB。你可以将本书的 EPUB 输出与 HTML 输出进行比较，你将看到二者唯一的主要区别是视觉外观。
 
-There are several EPUB readers available, including Calibre (https://www.calibre-ebook.com), Apple's iBooks, and Google Play Books.
+&emsp;&emsp;有几个 EPUB 阅读器可以阅读书籍，包括 Calibre (<https://www.calibre-ebook.com>)、苹果的 iBooks 和谷歌的 Play Books。
 
 ### MOBI
 
-MOBI e-books can be read on Amazon's Kindle devices. Pandoc does not support MOBI output natively, but you may use third-party tools to convert EPUB to MOBI. One possible tool is Calibre\index{Calibre}. Calibre is open-source and free, and supports conversion among many more formats. For example, you can convert HTML to EPUB, Word documents to MOBI, and so on. The function `calibre()` in **bookdown** is a wrapper function of the command-line utility `ebook-convert` in Calibre. You need to make sure that the executable `ebook-convert` can be found via the environment variable `PATH`. If you use macOS, you can install Calibre with Homebrew (https://brew.sh) via the command `brew cask install calibre`, so you do not need to worry about the `PATH` issue.
+&emsp;&emsp;MOBI 电子书可以在亚马逊的 Kindle 设备上阅读。Pandoc 本身不支持 MOBI 输出，但你可以使用第三方工具将 EPUB 转换为 MOBI。其中一种工具是 Calibre\index{Calibre}。Calibre 是开源并且免费的，并且支持更多格式之间的相互转换。例如，你可以将 HTML 转换成 EPUB，将 Word 文档转换成 MOBI 等等。在 **bookdown** 中的函数 `calibre()` 是 Calibre 中命令行工具 `ebook-convert` 的封装函数。你需要确保通过环境变量 `PATH` 可以找到可执行的 `ebook-convert`。如果你使用 macOS，你可以通过 `brew cask install calibre` 命令用 Homebrew (<https://brew.sh>) 安装 Calibre，所以你不需要担心 `PATH` 问题。
 
 ## 单个文档 {#a-single-document}
 
-Sometimes you may not want to write a book, but a single long-form article or report instead. Usually what you do is call `rmarkdown::render()`\index{rmarkdown::render()} with a certain output format. The main features missing there are the automatic numbering of figures/tables/equations, and cross-referencing figures/tables/equations/sections. We have factored out these features from **bookdown**, so that you can use them without having to prepare a book of multiple Rmd files.
+&emsp;&emsp;有时你可能不想写一本书，而是想写一篇长篇文章或报告。通常你要做的是使用特定的输出格式函数调用 `rmarkdown::render()`\index{rmarkdown::render()}。这种情况下缺少的主要功能是图片/表格/方程的自动编号，以及对图片/表格/方程/章节的交叉引用。我们已经将这些特性从 **bookdown** 中分解出来，这样你就可以使用它们而无需准备一本包含多个 Rmd 文件的书籍。
 
-The functions `html_document2()`, `tufte_html2()`, `pdf_document2()`, `word_document2()`, `tufte_handout2()`, and `tufte_book2()` are designed for this purpose. If you render an R Markdown document with the output format, say, `bookdown::html_document2`, you will get figure/table numbers and be able to cross-reference them in the single HTML page using the syntax described in Chapter \@ref(components).
+&emsp;&emsp;函数 `html_document2()`、`tufte_html2()`、`pdf_document2()`、`word_document2()`、`tufte_handout2()` 和 `tufte_book2()` 就是为此目的而设计的。如果使用这些输出格式渲染一份 R Markdown 文档，例如 `bookdown::html_document2`，你将能够对图片/表格自动编号，并能够使用第 \@ref(components) 章描述的语法在单个 HTML 页面中对它们进行交叉引用。
 
-Below are a few examples of these output formats in the YAML metadata of a single Rmd file (you can also add these formats to the `_output.yml` file):
+&emsp;&emsp;下面是单个 Rmd 文件的 YAML 元数据中这些输出格式的几个例子（你也可以把这些格式添加到 `_output.yml` 文件中）。
 
 ```yaml
 output:
@@ -632,13 +613,13 @@ output:
     toc: true
 ```
 
-The above HTML and PDF output format functions are basically wrappers of output formats `bookdown::html_book` and `bookdown::pdf_book`, in the sense that they changed the `base_format` argument. For example, you can take a look at the source code of `pdf_document2`:
+&emsp;&emsp;上面的 HTML 和 PDF 输出格式函数基本上是对输出格式 `bookdown::html_book` 和 `bookdown::pdf_book` 的封装，其意义在于它们改变了 `base_format` 参数。例如，你可以查阅 `pdf_document2` 的源代码。
 
 ```{r}
 bookdown::pdf_document2
 ```
 
-After you know this fact, you can apply the same idea to other output formats by using the appropriate `base_format`. For example, you can port the **bookdown** features to the `jss_article` format in the **rticles** package [@R-rticles] by using the YAML metadata:
+&emsp;&emsp;在你知道这个事实后，你可以通过使用适当的 `base_format` 将同样的想法应用于其他输出格式。例如，你可以通过使用 YAML 元数据将 **bookdown** 的功能移植到 **rticles** 软件包[@R-rticles]中的 `jss_article` 格式。
 
 ```yaml
 output:
@@ -646,6 +627,6 @@ output:
     base_format: rticles::jss_article
 ```
 
-Then you will be able to use all features we introduced in Chapter \@ref(components).
+&emsp;&emsp;然后你就可以使用我们在第 \@ref(components) 章中介绍的所有功能了。
 
-Although the `gitbook()` format was designed primarily for books, you can actually also apply it to a single R Markdown document. The only difference is that there will be no search button on the single page output, because you can simply use the searching tool of your web browser to find text (e.g., press `Ctrl + F` or `Command + F`). You may also want to set the option `split_by` to `none` to only generate a single output page, in which case there will not be any navigation buttons, since there are no other pages to navigate to. You can still generate multiple-page HTML files if you like. Another option you may want to use is `self_contained = TRUE` when it is only a single output page.
+&emsp;&emsp;尽管 `gitbook()` 格式主要是为书籍设计的，但实际上你也可以将其应用于单个 R Markdown 文档。唯一不同的是，在单页输出上不会有搜索按钮，因为你可以简单地使用网络浏览器的搜索工具来查找文本（例如使用 `Ctrl + F` 或 `Command + F`）。你也可以把选项 `split_by` 设置为 `none`，这样只会生成一个输出页面，在这种情况下不会有任何导航按钮，因为没有其他页面可以导航。如果你愿意，仍然可以生成多页 HTML 文件。当只生成单一的输出页面时，另一个你可能想使用的配置项是 `self_contained = TRUE`。

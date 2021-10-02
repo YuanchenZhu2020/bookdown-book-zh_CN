@@ -15,7 +15,7 @@
 
 ```{r eval=FALSE}
 bookdown::publish_book(render = 'local')
-````
+```
 
 &emsp;&emsp;如果你已经配置好了自己的 RStudio Connect 服务器，那么当然可以将书籍发布到你自己的服务器，而不必上传至 bookdown.org。
 

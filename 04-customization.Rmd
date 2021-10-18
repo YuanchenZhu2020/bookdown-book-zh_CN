@@ -197,7 +197,7 @@ title: 一本好书
 
 ## 配置 {#configuration}
 
-&emsp;&emsp;我们以尽在第 \@ref(usage) 节中提到了 `rmd_files`，并且你可以在 `_bookdown.yml`\index{\_bookdown.yml} 中为书籍配置更多（可选的）设置。
+&emsp;&emsp;我们以尽在第 \@ref(usage) 节中提到了 `rmd_files`，并且你可以在 `_bookdown.yml`\index{\_bookdown.yml} 中为书籍配置更多（可选的）设置。^[对于 [`bs4_book()`](#bs4-book) 格式，`edit`、`history` 和 `view` 字段不会起作用，可以使用输出函数的 [repo](#specifying-the-repository) 参数来指定类似的配置。]:
 
 - `book_filename`: 主 Rmd 文件的文件名，即从所有章节进行合并后的单个 Rmd 文件；默认情况下，它被命名为 `_main.Rmd`。
 - `delete_merged_file`: 书籍成功编译后是否删除主 Rmd 文件。

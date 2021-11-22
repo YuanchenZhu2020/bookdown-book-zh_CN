@@ -124,7 +124,7 @@ lapply(names(githubs), function(pkg) {
 | 章节 | 是否翻译 | 是否润色 |
 | :--: | :------: | :------: |
 | preface | √ | × |
-| Author | √ | × |
+| Author | √ | √ |
 | Introduction | √ | × |
 | Components | √ | × |
 | Output Formats | √ | × |
@@ -132,7 +132,7 @@ lapply(names(githubs), function(pkg) {
 | Editing | √ | × |
 | Publishing | √ | × |
 | Appendix | √ | × |
-| References | √ | × |
+| References | √ | √ |
 
 # 前言 {-}
 

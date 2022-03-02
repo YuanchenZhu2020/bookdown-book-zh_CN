@@ -1,6 +1,6 @@
 ---
 title: "Bookdown: 使用 R Markdown 创作书籍和技术文档"
-author: "谢益辉"
+author: "Yihui Xie"
 date: "`r Sys.Date()`"
 knit: "bookdown::render_book"
 documentclass: krantz
@@ -13,8 +13,8 @@ lof: yes
 fontsize: 12pt
 site: bookdown::bookdown_site
 description: "这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。"
-url: 'https\://bookdown.org/yihui/bookdown/'
-github-repo: rstudio/bookdown
+url: 'https\://book.formlesslab.top/bookdown/'
+github-repo: YuanchenZhu2020/bookdown-book-zh_CN 
 cover-image: images/cover.jpg
 ---
 

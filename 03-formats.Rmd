@@ -375,9 +375,18 @@ bookdown::bs4_book:
 &emsp;&emsp;Bookdown 将根据 Pandoc 在 `index.Rmd` 中设置的变量生成 HTML `<meta>` 标签，该部分内容在第 \@ref(metadata-for-sharing) 节中进行了描述。此外，`bs4_book()` 将创建独特的章节描述，这些描述是由章节的内容自动生成的。你可以查阅 [`bs4_book` 的 HTML
 模板](https://github.com/rstudio/bookdown/blob/main/inst/templates/bs4_book.html)来了解这些变量的使用细节。
 
+#### 行内脚注 {#bs4-book-footnotes}
+
+`bs4_book` 使任何脚注显示为在悬停状态下的行内显示，而不是在页面底部的链接项。您可以设置 `footnotes_inline = FALSE` 来选择取消这种行为，并将脚注放在底部。
+
+```yaml
+bookdown::bs4_book:
+  footnotes_inline: false
+```
+
 #### 参考文献/书目
 
-&emsp;&emsp;将你的引用文献制作为 *脚注*，可以让读者在引用它们的文本附近阅读脚注内容，因为 `bs4_book` 使脚注在点击时出现在行内。要做到这一点，请下载一个脚注样式的 CSL 文件；我们推荐 <https://www.zotero.org/styles/>。例如，你可以从 [Zotero](https://www.zotero.org/styles/?q=id%3Achicago-fullnote-bibliography) 下载 `chicago-fullnote-bibliography.csl`，然后添加到你的 `index.Rmd` 中。
+&emsp;&emsp;将你的引用文献制作为 *脚注*，可以让读者在引用它们的文本附近阅读脚注内容，因为 `bs4_book` 默认使脚注在点击时出现在行内。要做到这一点，请下载一个脚注样式的 CSL 文件；我们推荐 <https://www.zotero.org/styles/>。例如，你可以从 [Zotero](https://www.zotero.org/styles/?q=id%3Achicago-fullnote-bibliography) 下载 `chicago-fullnote-bibliography.csl`，然后添加到你的 `index.Rmd` 中。
 
 ```yaml
 bibliography: refs.bib

@@ -399,7 +399,7 @@ $$a^2 + b^2 = c^2$$
 ```
 ````
 
-&emsp;&emsp;这种语法仍然有效，但我们不建议使用这种语法，因为新语法允许编写更丰富的内容，并且具有更清晰的实现。但是请注意，如果希望环境处理除 HTML 和 PDF 以外的输出格式（如 EPUB），则必须使用旧语法。`Div` 围栏语法目前只适用于 HTML 和 PDF 输出，我们将在将来对其进行改进。
+&emsp;&emsp;这种语法仍然有效，但我们不建议使用这种语法，因为新语法允许编写更丰富的内容，并且具有更清晰的实现。
 
 &emsp;&emsp;这两种语法之间的转换非常简单。上述定理可以这样改写：
 
@@ -729,7 +729,7 @@ DT::datatable(iris)
 
 &emsp;&emsp;第二，有时你可能希望强制 **knitr** 使用静态屏幕截图，而不是在 HTML 页面上呈现实际的小组件。在这种情况下，你可以设置区块选项 `screenshot.force = TRUE`。小组件将始终呈现为静态图像。请注意，你仍然可以选择使用自动或自定义的屏幕截图。
 
-&emsp;&emsp;第三，**webshot** 有一些控制自动屏幕截图的选项，你可以通过区块选项 `screenshot.opts` 指定这些选项，该选项采用类似 `list(delay = 2, cliprect = 'viewport')` 的列表。有关可用选项的完整列表，请查阅帮助页面 `?webshot::webshot`，而[软件包说明短文](https://cran.rstudio.com/web/packages/webshot/vignettes/intro.html) `vignette('intro', package = 'webshot')` 说明了这些选项的效果。这里的 `delay` 选项对于需要很长时间进行渲染的小组件来说很重要：`delay` 指定了 PhantomJS 在截图前等待的秒数。如果看到不完整的屏幕截图，可能需要指定更长的延迟时间（默认值为 0.2 秒）。
+&emsp;&emsp;第三，**webshot** 有一些控制自动屏幕截图的选项，你可以通过区块选项 `screenshot.opts` 指定这些选项，该选项采用类似 `list(delay = 2, cliprect = 'viewport')` 的列表。有关可用选项的完整列表，请查阅帮助页面 [`?webshot::webshot`](https://wch.github.io/webshot/reference/webshot.html)，而其中一些选项的效果说明参见[软件包介绍](https://wch.github.io/web/packages/webshot/articles/intro.html)。这里的 `delay` 选项对于需要很长时间进行渲染的小组件来说很重要：`delay` 指定了 PhantomJS 在截图前等待的秒数。如果看到不完整的屏幕截图，可能需要指定更长的延迟时间（默认值为 0.2 秒）。
 
 &emsp;&emsp;第四，如果你觉得捕获屏幕截图很慢，或者不想每次执行代码块时都这样做，可以使用区块选项 `cache = TRUE` 来缓存区块。缓存对于 HTML 和非 HTML 输出格式都适用。
 

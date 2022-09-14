@@ -628,7 +628,7 @@ Table：Markdown 的一个简单表格。
 
 &emsp;&emsp;Pandoc 提供了两种方法来管理文档中引用文献\index{citation}和参考书目。
 
-1. 默认的方法是使用名为 [`pandoc-citeproc`](https://github.com/jgm/pandoc-citeproc) 的 Pandoc 帮助程序，它遵循 [引用样式语言 (Citation Style Language, CSL)](http://docs.citationstyles.org/en/1.0.1/specification.html) 的规范，并从大量可用的 [CSL 样式文件 (CSL style files)](https://www.zotero.org/styles/) 之一中获取特定的格式说明。
+1. 默认的方法是使用名为 [`pandoc-citeproc`](https://github.com/jgm/pandoc-citeproc) 的 Pandoc 帮助程序，它遵循 [引用样式语言 (Citation Style Language, CSL)](https://docs.citationstyles.org/en/v1.0.1/specification.html) 的规范，并从大量可用的 [CSL 样式文件 (CSL style files)](https://www.zotero.org/styles/) 之一中获取特定的格式说明。
 
 1. 用户也可以选择使用 [**natbib**](https://ctan.org/pkg/natbib)（基于 `bibtex`）或 [**biblatex**](https://ctan.org/pkg/biblatex) 作为“引文软件包”。在这种情况下，参考书目数据文件需要为 `bibtex` 或 `biblatex` 格式，并且文档输出格式仅限于 PDF。与 CSL 相同，可用地参考书目样式也有许多（请参阅这些软件包的文档）。
 
@@ -662,7 +662,7 @@ Table：Markdown 的一个简单表格。
 }
 ```
 
-&emsp;&emsp;参考书目条目以 `@type{` 开头，其中 `type` 可以是 `article`、`book`、`manual`等等。^[类型名称不区分大小写，因此不管是 `manual`、`Manual` 或 `MANUAL` 都可以。]紧跟着是一个引文关键词，在上面的示例中为 `R-base`。要引用条目，使用 `@key` 或 `[@key]`（后者将引用文字放在圆括号中），例如，`@R-base` 被渲染为 @R-base，而 `[@R-base]` 则渲染为 "[@R-base]"。如果你对於 LaTeX 中的 **natbib** 软件包很熟悉，你会发现 `@key` 基本上就是 `\citet{key}`，而 `[@key]` 等同于 `\citep{key}`。
+&emsp;&emsp;参考书目条目以 `@type{` 开头，其中 `type` 可以是 `article`、`book`、`manual`等等。^[类型名称不区分大小写，因此不管是 `manual`、`Manual` 或 `MANUAL` 都可以。]紧跟着是一个引文关键词，在上面的示例中为 `R-base`。要引用一个条目，需要使用 `@key` 或 `[@key]`（后者会将引用文字放在圆括号中），例如，`@R-base` 被渲染为 @R-base，而 `[@R-base]` 则渲染为 "[@R-base]"。注释也可以包含在方括号中，例如 `[a note about, @R-base]` 将会被渲染为 "[a note about, @R-base]"。如果你对 LaTeX 中的 **natbib** 软件包很熟悉，你会发现 `@key` 基本上就是 `\citet{key}`，而 `[@key]` 等同于 `\citep{key}`。
 
 &emsp;&emsp;在一个参考书目条目中有许多字段，例如 `title`、`author` 和 `year` 等。你可用在 <https://en.wikipedia.org/wiki/BibTeX> 查看 BibTeX 中可能的条目和字段类型。
 
@@ -729,7 +729,7 @@ DT::datatable(iris)
 
 &emsp;&emsp;第二，有时你可能希望强制 **knitr** 使用静态屏幕截图，而不是在 HTML 页面上呈现实际的小组件。在这种情况下，你可以设置区块选项 `screenshot.force = TRUE`。小组件将始终呈现为静态图像。请注意，你仍然可以选择使用自动或自定义的屏幕截图。
 
-&emsp;&emsp;第三，**webshot** 有一些控制自动屏幕截图的选项，你可以通过区块选项 `screenshot.opts` 指定这些选项，该选项采用类似 `list(delay = 2, cliprect = 'viewport')` 的列表。有关可用选项的完整列表，请查阅帮助页面 [`?webshot::webshot`](https://wch.github.io/webshot/reference/webshot.html)，而其中一些选项的效果说明参见[软件包介绍](https://wch.github.io/web/packages/webshot/articles/intro.html)。这里的 `delay` 选项对于需要很长时间进行渲染的小组件来说很重要：`delay` 指定了 PhantomJS 在截图前等待的秒数。如果看到不完整的屏幕截图，可能需要指定更长的延迟时间（默认值为 0.2 秒）。
+&emsp;&emsp;第三，**webshot** 有一些控制自动屏幕截图的选项，你可以通过区块选项 `screenshot.opts` 来进行设置，该选项接收一个类似 `list(delay = 2, cliprect = 'viewport')` 的列表。有关可用选项的完整列表，请查阅帮助页面 [`?webshot::webshot`](https://wch.github.io/webshot/reference/webshot.html)，而其中一些选项的效果说明请见[软件包介绍](https://wch.github.io/web/packages/webshot/articles/intro.html)。这里的 `delay` 选项对于需要很长时间进行渲染的小组件来说很重要：`delay` 指定了 PhantomJS 在截图前等待的秒数。如果看到不完整的屏幕截图，可能需要指定更长的延迟时间（默认值为 0.2 秒）。
 
 &emsp;&emsp;第四，如果你觉得捕获屏幕截图很慢，或者不想每次执行代码块时都这样做，可以使用区块选项 `cache = TRUE` 来缓存区块。缓存对于 HTML 和非 HTML 输出格式都适用。
 

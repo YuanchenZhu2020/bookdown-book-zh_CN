@@ -79,10 +79,14 @@ Execution halted
 &emsp;&emsp;LaTeX 发行版和其软件包也不时会进行更新，你可以考虑更新它们，特别是当您遇到 LaTeX 问题时。你可以通过以下方式找到 LaTeX 发行版的版本：
 
 ```{r include=FALSE}
-system = function(...) cat(base::system(..., intern = TRUE), sep = '\n')
+res <- base::system('pdflatex --version', intern = TRUE)
+res <- paste("## ", res)
+res <- paste0(res, collapse = "\n")
 ```
-```{r collapse=TRUE}
+
+```{r}
 system('pdflatex --version')
+`r res`
 ```
 
 &emsp;&emsp;你可以运行如下代码来更新 TinyTeX：

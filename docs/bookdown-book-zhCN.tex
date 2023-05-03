@@ -123,6 +123,7 @@
 \renewcommand{\floatpagefraction}{0.75}
 
 \renewenvironment{quote}{\begin{VF}}{\end{VF}}
+\usepackage{hyperref}
 \let\oldhref\href
 \renewcommand{\href}[2]{#2\footnote{\url{#1}}}
 
@@ -474,9 +475,9 @@ References & √ & √ \\
 ## [6] methods   base     
 ## 
 ## loaded via a namespace (and not attached):
-## [1] bookdown_0.30   miniUI_0.1.1.1  rmarkdown_2.18 
-## [4] tools_4.2.1     shiny_1.7.2     htmltools_0.5.3
-## [7] knitr_1.40
+## [1] knitr_1.40      tools_4.2.1     miniUI_0.1.1.1 
+## [4] htmltools_0.5.3 bookdown_0.30   shiny_1.7.2    
+## [7] rmarkdown_2.18
 \end{verbatim}
 
   我们在本书的源代码中没有添加提示符（\texttt{\textgreater{}} 和 \texttt{+}），默认情况下我们使用两个 \texttt{\#\#} 标签注释掉文本输出，就像你在上面的 R Session 信息中看到的那样。这样做是为了让你能够方便地复制和运行代码（由于文本输出被注释掉了，因此执行代码时会被忽略）。程序包名称以粗体显示（例如，\textbf{rmarkdown}），行内代码和文件名用老式打字机字体进行格式化（例如，\texttt{knitr::knit(\textquotesingle{}foo.Rmd\textquotesingle{})}）。函数名称后跟括号（例如，\texttt{bookdown::render\_book()}）。双冒号操作符 \texttt{::} 表示从软件包的命名空间对其中的对象进行访问。
@@ -1749,8 +1750,8 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
   title = {stringr: Simple, Consistent Wrappers for Common
     String Operations},
   author = {Hadley Wickham},
-  year = {2019},
-  note = {R package version 1.4.0},
+  year = {2022},
+  note = {R package version 1.5.0},
   url = {https://CRAN.R-project.org/package=stringr},
 }
 
@@ -1776,8 +1777,8 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
   publisher = {Chapman and Hall/CRC},
   year = {2014},
   note = {ISBN 978-1466561595},
-  url = {http://www.crcpress.com/product/isbn/
-    9781466561595},
+  url =
+    {http://www.crcpress.com/product/isbn/9781466561595},
 }
 \end{verbatim}
 
@@ -1944,14 +1945,7 @@ popular version control system.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}
-
-{\centering \oldhref{https://yihui.shinyapps.io/miniUI/}{\includegraphics{bookdown-book-zhCN_files/figure-latex/miniUI-1} }
-
-}
-
-\caption{通过 miniUI 软件包创建的一个 Shiny 应用；你可以在 <https://yihui.shinyapps.io/miniUI/> 看到在线版本}\label{fig:miniUI}
-\end{figure}
+\label{fig:miniUI}通过 miniUI 软件包创建的一个 Shiny 应用；你可以在 \url{https://yihui.shinyapps.io/miniUI/} 看到在线版本
 
 \let\href\ooldhref
 
@@ -2796,7 +2790,7 @@ popular version control system.
 ## {
 ##     pdf_book(..., base_format = rmarkdown::pdf_document)
 ## }
-## <bytecode: 0x000001778dfddfc8>
+## <bytecode: 0x0000020d62c16370>
 ## <environment: namespace:bookdown>
 \end{verbatim}
 
@@ -3824,18 +3818,18 @@ popular version control system.
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{system}\NormalTok{(}\StringTok{\textquotesingle{}pdflatex {-}{-}version\textquotesingle{}}\NormalTok{)}
-\DocumentationTok{\#\#  pdfTeX 3.141592653{-}2.6{-}1.40.24 (TeX Live 2022)}
-\DocumentationTok{\#\#  kpathsea version 6.3.4}
-\DocumentationTok{\#\#  Copyright 2022 Han The Thanh (pdfTeX) et al.}
+\DocumentationTok{\#\#  pdfTeX 3.141592653{-}2.6{-}1.40.25 (TeX Live 2023)}
+\DocumentationTok{\#\#  kpathsea version 6.3.5}
+\DocumentationTok{\#\#  Copyright 2023 Han The Thanh (pdfTeX) et al.}
 \DocumentationTok{\#\#  There is NO warranty.  Redistribution of this software is}
 \DocumentationTok{\#\#  covered by the terms of both the pdfTeX copyright and}
 \DocumentationTok{\#\#  the Lesser GNU General Public License.}
 \DocumentationTok{\#\#  For more information about these matters, see the file}
 \DocumentationTok{\#\#  named COPYING and the pdfTeX source.}
 \DocumentationTok{\#\#  Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.}
-\DocumentationTok{\#\#  Compiled with libpng 1.6.37; using libpng 1.6.37}
-\DocumentationTok{\#\#  Compiled with zlib 1.2.11; using zlib 1.2.11}
-\DocumentationTok{\#\#  Compiled with xpdf version 4.03}
+\DocumentationTok{\#\#  Compiled with libpng 1.6.39; using libpng 1.6.39}
+\DocumentationTok{\#\#  Compiled with zlib 1.2.13; using zlib 1.2.13}
+\DocumentationTok{\#\#  Compiled with xpdf version 4.04}
 \end{Highlighting}
 \end{Shaded}
 

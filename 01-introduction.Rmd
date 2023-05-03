@@ -27,7 +27,7 @@
 &emsp;&emsp;对于初学者来说，使用 R Markdown 和 **bookdown** 开始创作书籍的最简单的方法是 GitHub 上的示例 `bookdown-demo`：
 
 1. 下载 GitHub 存储库 <https://github.com/rstudio/bookdown-demo> 作为 [Zip文件](https://github.com/rstudio/bookdown-demo/archive/main.zip)，然后在本地解压该文件。
-1. 安装 RStudio IDE。注意，你需要版本号高于 1.0.0 的 RStudio。如果你的 RStudio 版本低于 1.0.0，请[下载最新版本](https://www.rstudio.com/products/rstudio/download/)。
+1. 安装 RStudio IDE。注意，你需要版本号高于 1.0.0 的 RStudio。如果你的 RStudio 版本低于 1.0.0，请[下载最新版本](https://posit.co/download/rstudio-desktop/)。
 1. 安装 R 软件包 **bookdown**：
 
     ```{r eval=FALSE}

@@ -61,7 +61,7 @@ bookdown::render_book("index.Rmd", "bookdown::pdf_book")
 
 ## RStudio IDE
 
-&emsp;&emsp;如果你的 RStudio IDE\index{RStudio IDE} 版本低于 1.0.0，我们建议你进行[升级](https://www.rstudio.com/products/rstudio/download/)。正如第 \@ref(usage) 节所述，所有 R Markdown 文件都必须用 UTF-8 编码。这一点非常重要，尤其是当文件包含多字节字符时。要使用 UTF-8 编码保存文件，可以使用菜单 `File -> Save with Encoding`，然后选择 `UTF-8`。
+&emsp;&emsp;如果你的 RStudio IDE\index{RStudio IDE} 版本低于 1.0.0，我们建议你进行[升级](https://posit.co/download/rstudio-desktop/)。正如第 \@ref(usage) 节所述，所有 R Markdown 文件都必须用 UTF-8 编码。这一点非常重要，尤其是当文件包含多字节字符时。要使用 UTF-8 编码保存文件，可以使用菜单 `File -> Save with Encoding`，然后选择 `UTF-8`。
 
 &emsp;&emsp;当你单击 `Knit` 按钮在 RStudio IDE 中编译 R Markdown 文档时，RStudio 调用的默认函数是 `rmarkdown::render()`，这不是我们想要的编译书籍的函数。要调用函数 `bookdown::render_book()`，可以在 R Markdown 文档 `index.Rmd` 的 YAML 元数据中将 `site` 字段设置为 `bookdown::bookdown_site`，例如：
 

@@ -4,7 +4,7 @@
 
 # 软件工具 {#software-tools}
 
-&emsp;&emsp;对于那些不熟悉使用 R Markdown 所需的软件包的读者，我们将简要介绍这些软件包的安装和维护。
+&emsp;&emsp;对于那些不熟悉如何使用 R Markdown 所需的软件包的读者，我们将简要介绍这些软件包的安装和维护。
 
 ## R 和 R 软件包
 
@@ -35,7 +35,7 @@ devtools::install_github('rstudio/bookdown')
 update.packages(ask = FALSE)
 ```
 
-&emsp;&emsp;尽管这不是必须的，但当你在处理与 R 相关的项目时，RStudio IDE 能够使很多事情变得更加简单。RStudio IDE 可以从 <https://www.rstudio.com> 下载。
+&emsp;&emsp;尽管这不是必须的，但当你在处理与 R 相关的项目时，RStudio IDE 能够使很多事情变得更加简单。RStudio IDE 可以从 <https://www.posit.co> 下载。
 
 ## Pandoc
 
@@ -84,7 +84,7 @@ res <- paste("## ", res)
 res <- paste0(res, collapse = "\n")
 ```
 
-```{r}
+```r
 system('pdflatex --version')
 `r res`
 ```

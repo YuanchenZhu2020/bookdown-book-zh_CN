@@ -702,7 +702,62 @@ link-citations: true
 \makeindex
 ```
 
-&emsp;&emsp;然后通过 YAML 选项 `includes -> after_body` 在书的末尾插入 `\printindex`。索引项可以通过书籍正文中的 `\index{}`命令创建，例如 `\index{GIT}`。
+或者，你也可以使用 **imakeidx** 软件包：
+
+```latex
+\usepackage{imakeidx}
+```
+
+这个软件包提供了格式化索引的额外功能，例如：
+
+```latex
+\makeindex[intoc=true,columns=3,columnseprule=true,
+           options=-s latex/indexstyles.ist]
+```
+
+在上面的例子中，`intoc=true` 将在目录中包含一个索引条目，`columns=3` 将把索引格式转为三列，`columnseprule=true` 将在相邻的索引列之间显示一条线。最后，`options=-s latex/indexstyles.ist` 将使用位于 `latex/indexstyles.ist` 的索引样式文件中包含的额外格式化选项。**imakeidx** 软件包中还有许多其他的功能，请参阅其文档以了解更多细节。
+
+### 插入索引条目
+
+索引条目可以通过在书籍正文中使用 `\index{}` 命令创建，例如：
+
+```latex
+Version Control\index{Version Control} is an
+important component of the SDLC.
+```
+
+类似的，可以为某项插入一个子条目：
+
+```
+Git\index{Version Control!Git} is a
+popular version control system.
+```
+
+上面的例子将会在索引的 "Version Control" 下方添加一个 "Git" 条目。
+
+要创建一个出现在项目子条目底部的 "see also" 条目（没有页码），首先在 LaTex 导言 (preamble) 文件中调用 `\makeindex` 的下方添加如下内容：
+
+```latex
+% to create a "see also" that appears at the bottom of the
+% subentries and with no page number, do the following:
+% \index{Main entry!zzzzz@\igobble|seealso{Other item}}
+
+\newcommand{\ii}[1]{{\it #1}}
+\newcommand{\nn}[1]{#1n}
+
+\def\igobble#1{}
+```
+
+然后，在你的书籍中使用 `\index{Main entry!zzzzz@\igobble|seealso{Other item}}` 语法。 举个例子：
+
+```latex
+Backups\index{Version Control!zzzzz@\igobble|seealso{backups}}
+should be part of your version control system.
+```
+
+### 构建索引
+
+要构建索引，可以通过 YAML 选项 `includes -> after_body` 在书籍末尾插入 `\printindex`。
 
 ## HTML 小组件
 
@@ -744,7 +799,7 @@ DT::datatable(iris)
 \let\ooldhref\href
 \let\href\oldhref
 
-```{r miniUI, fig.cap='通过 miniUI 软件包创建的一个 Shiny 应用；你可以在 <https://yihui.shinyapps.io/miniUI/> 看到现场版本', screenshot.opts=list(delay=20,zoom=2), dev='png', cache=TRUE, fig.align='center', fig.width=8, fig.height=6}
+```{r miniUI, fig.cap='通过 miniUI 软件包创建的一个 Shiny 应用；你可以在 <https://yihui.shinyapps.io/miniUI/> 看到在线版本', screenshot.opts=list(delay=20,zoom=2), dev='png', cache=TRUE, fig.align='center', fig.width=8, fig.height=6}
 knitr::include_app('https://yihui.shinyapps.io/miniUI/', height = '600px')
 ```
 

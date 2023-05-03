@@ -16,6 +16,7 @@ description: "这是一本使用 R Markdown 编写书籍的指南，包括如何
 url: 'https\://book.formlesslab.top/bookdown/'
 github-repo: YuanchenZhu2020/bookdown-book-zh_CN 
 cover-image: images/cover.jpg
+always_allow_html: true
 ---
 
 ```{r setup, include=FALSE}

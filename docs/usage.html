@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.3 使用方法 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
+  <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.3 使用方法 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="https://book.formlesslab.top/bookdown//images/cover.jpg" />
+  <meta property="og:description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
+  <meta name="github-repo" content="YuanchenZhu2020/bookdown-book-zh_CN" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.3 使用方法 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
+  
+  <meta name="twitter:description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
+  <meta name="twitter:image" content="https://book.formlesslab.top/bookdown//images/cover.jpg" />
+
+<meta name="author" content="Yihui Xie" />
+
+
+<meta name="date" content="2023-05-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="开始.html"/>
+<link rel="next" href="new-session.html"/>
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections/anchor-sections.js"></script>
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding/datatables.js"></script>
+<link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">使用 R Markdown 创作书籍和技术文档</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>翻译与排版说明</a>
+<ul>
+<li class="chapter" data-level="" data-path="翻译说明.html"><a href="翻译说明.html"><i class="fa fa-check"></i>翻译说明</a></li>
+<li class="chapter" data-level="" data-path="排版说明.html"><a href="排版说明.html"><i class="fa fa-check"></i>排版说明</a></li>
+<li class="chapter" data-level="" data-path="翻译进度.html"><a href="翻译进度.html"><i class="fa fa-check"></i>翻译进度</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="前言.html"><a href="前言.html"><i class="fa fa-check"></i>前言</a>
+<ul>
+<li class="chapter" data-level="" data-path="为什么要阅读这本书.html"><a href="为什么要阅读这本书.html"><i class="fa fa-check"></i>为什么要阅读这本书</a></li>
+<li class="chapter" data-level="" data-path="本书的结构.html"><a href="本书的结构.html"><i class="fa fa-check"></i>本书的结构</a></li>
+<li class="chapter" data-level="" data-path="软件信息与一些约定.html"><a href="软件信息与一些约定.html"><i class="fa fa-check"></i>软件信息与一些约定</a></li>
+<li class="chapter" data-level="" data-path="致谢.html"><a href="致谢.html"><i class="fa fa-check"></i>致谢</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="关于作者.html"><a href="关于作者.html"><i class="fa fa-check"></i>关于作者</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> 简介</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="开发动机.html"><a href="开发动机.html"><i class="fa fa-check"></i><b>1.1</b> 开发动机</a></li>
+<li class="chapter" data-level="1.2" data-path="开始.html"><a href="开始.html"><i class="fa fa-check"></i><b>1.2</b> 开始</a></li>
+<li class="chapter" data-level="1.3" data-path="usage.html"><a href="usage.html"><i class="fa fa-check"></i><b>1.3</b> 使用方法</a></li>
+<li class="chapter" data-level="1.4" data-path="new-session.html"><a href="new-session.html"><i class="fa fa-check"></i><b>1.4</b> 两种呈现方法</a></li>
+<li class="chapter" data-level="1.5" data-path="一些提示.html"><a href="一些提示.html"><i class="fa fa-check"></i><b>1.5</b> 一些提示</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="components.html"><a href="components.html"><i class="fa fa-check"></i><b>2</b> 组成部分</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="markdown-syntax.html"><a href="markdown-syntax.html"><i class="fa fa-check"></i><b>2.1</b> Markdown 语法</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="markdown-syntax.html"><a href="markdown-syntax.html#内联格式"><i class="fa fa-check"></i><b>2.1.1</b> 内联格式</a></li>
+<li class="chapter" data-level="2.1.2" data-path="markdown-syntax.html"><a href="markdown-syntax.html#块级元素"><i class="fa fa-check"></i><b>2.1.2</b> 块级元素</a></li>
+<li class="chapter" data-level="2.1.3" data-path="markdown-syntax.html"><a href="markdown-syntax.html#数学表达式"><i class="fa fa-check"></i><b>2.1.3</b> 数学表达式</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="bookdown-中的-markdown-功能拓展.html"><a href="bookdown-中的-markdown-功能拓展.html"><i class="fa fa-check"></i><b>2.2</b> Bookdown 中的 Markdown 功能拓展</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="bookdown-中的-markdown-功能拓展.html"><a href="bookdown-中的-markdown-功能拓展.html#equations"><i class="fa fa-check"></i><b>2.2.1</b> 方程编号与引用</a></li>
+<li class="chapter" data-level="2.2.2" data-path="bookdown-中的-markdown-功能拓展.html"><a href="bookdown-中的-markdown-功能拓展.html#theorems"><i class="fa fa-check"></i><b>2.2.2</b> 定理与证明</a></li>
+<li class="chapter" data-level="2.2.3" data-path="bookdown-中的-markdown-功能拓展.html"><a href="bookdown-中的-markdown-功能拓展.html#特殊的标题"><i class="fa fa-check"></i><b>2.2.3</b> 特殊的标题</a></li>
+<li class="chapter" data-level="2.2.4" data-path="bookdown-中的-markdown-功能拓展.html"><a href="bookdown-中的-markdown-功能拓展.html#text-references"><i class="fa fa-check"></i><b>2.2.4</b> 文本引用</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="r-code.html"><a href="r-code.html"><i class="fa fa-check"></i><b>2.3</b> R 代码</a></li>
+<li class="chapter" data-level="2.4" data-path="figures.html"><a href="figures.html"><i class="fa fa-check"></i><b>2.4</b> 图片</a></li>
+<li class="chapter" data-level="2.5" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i><b>2.5</b> 表格</a></li>
+<li class="chapter" data-level="2.6" data-path="cross-references.html"><a href="cross-references.html"><i class="fa fa-check"></i><b>2.6</b> 交叉引用</a></li>
+<li class="chapter" data-level="2.7" data-path="自定义区块.html"><a href="自定义区块.html"><i class="fa fa-check"></i><b>2.7</b> 自定义区块</a></li>
+<li class="chapter" data-level="2.8" data-path="citations.html"><a href="citations.html"><i class="fa fa-check"></i><b>2.8</b> 引文</a></li>
+<li class="chapter" data-level="2.9" data-path="latex-index.html"><a href="latex-index.html"><i class="fa fa-check"></i><b>2.9</b> 索引</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="latex-index.html"><a href="latex-index.html#插入索引条目"><i class="fa fa-check"></i><b>2.9.1</b> 插入索引条目</a></li>
+<li class="chapter" data-level="2.9.2" data-path="latex-index.html"><a href="latex-index.html#构建索引"><i class="fa fa-check"></i><b>2.9.2</b> 构建索引</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="html-小组件.html"><a href="html-小组件.html"><i class="fa fa-check"></i><b>2.10</b> HTML 小组件</a></li>
+<li class="chapter" data-level="2.11" data-path="web-页面和-shiny-应用.html"><a href="web-页面和-shiny-应用.html"><i class="fa fa-check"></i><b>2.11</b> Web 页面和 Shiny 应用</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="output-formats.html"><a href="output-formats.html"><i class="fa fa-check"></i><b>3</b> 输出格式</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="html.html"><a href="html.html"><i class="fa fa-check"></i><b>3.1</b> HTML</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="html.html"><a href="html.html#gitbook-style"><i class="fa fa-check"></i><b>3.1.1</b> GitBook 样式</a></li>
+<li class="chapter" data-level="3.1.2" data-path="html.html"><a href="html.html#bs4-book"><i class="fa fa-check"></i><b>3.1.2</b> 三列 Bootstrap 样式</a></li>
+<li class="chapter" data-level="3.1.3" data-path="html.html"><a href="html.html#bootstrap-style"><i class="fa fa-check"></i><b>3.1.3</b> 默认的 Bootstrap 样式</a></li>
+<li class="chapter" data-level="3.1.4" data-path="html.html"><a href="html.html#tufte-style"><i class="fa fa-check"></i><b>3.1.4</b> Tufte 样式</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="latexpdf.html"><a href="latexpdf.html"><i class="fa fa-check"></i><b>3.2</b> LaTeX/PDF</a></li>
+<li class="chapter" data-level="3.3" data-path="电子书.html"><a href="电子书.html"><i class="fa fa-check"></i><b>3.3</b> 电子书</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="电子书.html"><a href="电子书.html#epub"><i class="fa fa-check"></i><b>3.3.1</b> EPUB</a></li>
+<li class="chapter" data-level="3.3.2" data-path="电子书.html"><a href="电子书.html#mobi"><i class="fa fa-check"></i><b>3.3.2</b> MOBI</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="a-single-document.html"><a href="a-single-document.html"><i class="fa fa-check"></i><b>3.4</b> 单个文档</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="customization.html"><a href="customization.html"><i class="fa fa-check"></i><b>4</b> 定制化</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="yaml-options.html"><a href="yaml-options.html"><i class="fa fa-check"></i><b>4.1</b> YAML 选项</a></li>
+<li class="chapter" data-level="4.2" data-path="更换主题.html"><a href="更换主题.html"><i class="fa fa-check"></i><b>4.2</b> 更换主题</a></li>
+<li class="chapter" data-level="4.3" data-path="模板.html"><a href="模板.html"><i class="fa fa-check"></i><b>4.3</b> 模板</a></li>
+<li class="chapter" data-level="4.4" data-path="configuration.html"><a href="configuration.html"><i class="fa fa-check"></i><b>4.4</b> 配置</a></li>
+<li class="chapter" data-level="4.5" data-path="internationalization.html"><a href="internationalization.html"><i class="fa fa-check"></i><b>4.5</b> 国际化</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="editing.html"><a href="editing.html"><i class="fa fa-check"></i><b>5</b> 编辑</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="build-the-book.html"><a href="build-the-book.html"><i class="fa fa-check"></i><b>5.1</b> 构建书籍</a></li>
+<li class="chapter" data-level="5.2" data-path="预览单个章节.html"><a href="预览单个章节.html"><i class="fa fa-check"></i><b>5.2</b> 预览单个章节</a></li>
+<li class="chapter" data-level="5.3" data-path="使用-http-服务预览书籍.html"><a href="使用-http-服务预览书籍.html"><i class="fa fa-check"></i><b>5.3</b> 使用 HTTP 服务预览书籍</a></li>
+<li class="chapter" data-level="5.4" data-path="rstudio-ide.html"><a href="rstudio-ide.html"><i class="fa fa-check"></i><b>5.4</b> RStudio IDE</a></li>
+<li class="chapter" data-level="5.5" data-path="collaboration.html"><a href="collaboration.html"><i class="fa fa-check"></i><b>5.5</b> 协同工作</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="publishing.html"><a href="publishing.html"><i class="fa fa-check"></i><b>6</b> 发布与出版</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="rstudio-connect.html"><a href="rstudio-connect.html"><i class="fa fa-check"></i><b>6.1</b> RStudio Connect</a></li>
+<li class="chapter" data-level="6.2" data-path="netlify-drop.html"><a href="netlify-drop.html"><i class="fa fa-check"></i><b>6.2</b> Netlify Drop</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="netlify-drop.html"><a href="netlify-drop.html#构建和部署的工作流水线"><i class="fa fa-check"></i><b>6.2.1</b> 构建和部署的工作流水线</a></li>
+<li class="chapter" data-level="6.2.2" data-path="netlify-drop.html"><a href="netlify-drop.html#开始之前"><i class="fa fa-check"></i><b>6.2.2</b> 开始之前</a></li>
+<li class="chapter" data-level="6.2.3" data-path="netlify-drop.html"><a href="netlify-drop.html#构建书籍"><i class="fa fa-check"></i><b>6.2.3</b> 构建书籍</a></li>
+<li class="chapter" data-level="6.2.4" data-path="netlify-drop.html"><a href="netlify-drop.html#部署网站"><i class="fa fa-check"></i><b>6.2.4</b> 部署网站</a></li>
+<li class="chapter" data-level="6.2.5" data-path="netlify-drop.html"><a href="netlify-drop.html#可选更新站点"><i class="fa fa-check"></i><b>6.2.5</b> <em>可选：更新站点</em></a></li>
+<li class="chapter" data-level="6.2.6" data-path="netlify-drop.html"><a href="netlify-drop.html#netlify-subdomain"><i class="fa fa-check"></i><b>6.2.6</b> <em>可选：更改默认子域名</em></a></li>
+<li class="chapter" data-level="6.2.7" data-path="netlify-drop.html"><a href="netlify-drop.html#缺点和备选方案"><i class="fa fa-check"></i><b>6.2.7</b> 缺点和备选方案</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="github.html"><a href="github.html"><i class="fa fa-check"></i><b>6.3</b> GitHub</a></li>
+<li class="chapter" data-level="6.4" data-path="html-发布功能.html"><a href="html-发布功能.html"><i class="fa fa-check"></i><b>6.4</b> HTML 发布功能</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="html-发布功能.html"><a href="html-发布功能.html#html-404"><i class="fa fa-check"></i><b>6.4.1</b> HTML 404 页面</a></li>
+<li class="chapter" data-level="6.4.2" data-path="html-发布功能.html"><a href="html-发布功能.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.4.2</b> 用于共享的元数据</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="出版商.html"><a href="出版商.html"><i class="fa fa-check"></i><b>6.5</b> 出版商</a></li>
+</ul></li>
+<li class="appendix"><span><b>附录</b></span></li>
+<li class="chapter" data-level="A" data-path="software-tools.html"><a href="software-tools.html"><i class="fa fa-check"></i><b>A</b> 软件工具</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="r-和-r-软件包.html"><a href="r-和-r-软件包.html"><i class="fa fa-check"></i><b>A.1</b> R 和 R 软件包</a></li>
+<li class="chapter" data-level="A.2" data-path="pandoc.html"><a href="pandoc.html"><i class="fa fa-check"></i><b>A.2</b> Pandoc</a></li>
+<li class="chapter" data-level="A.3" data-path="latex.html"><a href="latex.html"><i class="fa fa-check"></i><b>A.3</b> LaTeX</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="software-usage.html"><a href="software-usage.html"><i class="fa fa-check"></i><b>B</b> 软件使用</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="knitr.html"><a href="knitr.html"><i class="fa fa-check"></i><b>B.1</b> knitr</a></li>
+<li class="chapter" data-level="B.2" data-path="r-markdown.html"><a href="r-markdown.html"><i class="fa fa-check"></i><b>B.2</b> R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="常见问题.html"><a href="常见问题.html"><i class="fa fa-check"></i><b>C</b> 常见问题</a></li>
+<li class="chapter" data-level="" data-path="参考文献.html"><a href="参考文献.html"><i class="fa fa-check"></i>参考文献</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">本书由 bookdown 强力驱动</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bookdown: 使用 R Markdown 创作书籍和技术文档</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="usage" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> 使用方法<a href="usage.html#usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>  有典型的 <strong>bookdown</strong> 书籍包括多个章节，并且每一章放在一个 R Markdown 文件中，文件的拓展名为 <code>.Rmd</code>。每一个 R Markdown 文件必须直接以本章标题作为开头，并使用一级标题，例如 <code># Chapter Title</code>。全部 R Markdown 文件必须使用 UTF-8 编码，特别是当他们包含某些多字节字符时，例如中文、日文和韩文。以下是一个例子（the bullets are the filenames, followed by the file content):</p>
+<ul>
+<li><p>index.Rmd</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="usage.html#cb4-1" tabindex="-1"></a><span class="fu"># 前言 {-}</span></span>
+<span id="cb4-2"><a href="usage.html#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="usage.html#cb4-3" tabindex="-1"></a>在本书中，我们将会介绍一种有趣的方法。</span></code></pre></div></li>
+<li><p>01-intro.Rmd</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="usage.html#cb5-1" tabindex="-1"></a><span class="fu"># 简介</span></span>
+<span id="cb5-2"><a href="usage.html#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="usage.html#cb5-3" tabindex="-1"></a>本章是我们提出的用来解决一个 **重要问题** 的方法的概述。</span></code></pre></div></li>
+<li><p>02-literature.Rmd</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="usage.html#cb6-1" tabindex="-1"></a><span class="fu"># 文献</span></span>
+<span id="cb6-2"><a href="usage.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="usage.html#cb6-3" tabindex="-1"></a>下面是对现有方法的回顾。</span></code></pre></div></li>
+<li><p>03-method.Rmd</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="usage.html#cb7-1" tabindex="-1"></a><span class="fu"># 方法</span></span>
+<span id="cb7-2"><a href="usage.html#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="usage.html#cb7-3" tabindex="-1"></a>我们在本章介绍了我们提出的方法。</span></code></pre></div></li>
+<li><p>04-application.Rmd</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="usage.html#cb8-1" tabindex="-1"></a><span class="fu"># 应用</span></span>
+<span id="cb8-2"><a href="usage.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="usage.html#cb8-3" tabindex="-1"></a>本章中展示了一些_重要的_应用。</span>
+<span id="cb8-4"><a href="usage.html#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="usage.html#cb8-5" tabindex="-1"></a><span class="fu">## 示例 1</span></span>
+<span id="cb8-6"><a href="usage.html#cb8-6" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="usage.html#cb8-7" tabindex="-1"></a><span class="fu">## 示例 2</span></span></code></pre></div></li>
+<li><p>05-summary.Rmd</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="usage.html#cb9-1" tabindex="-1"></a><span class="fu"># 结语</span></span>
+<span id="cb9-2"><a href="usage.html#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="usage.html#cb9-3" tabindex="-1"></a>我们完成了一本好书。</span></code></pre></div></li>
+</ul>
+<p>  默认情况下，<strong>bookdown</strong> 按文件名的顺序合并所有 Rmd 文件，例如，<code>01-intro.Rmd</code> 将出现在 <code>02-literature.Rmd</code> 之前。以下划线 <code>_</code> 开头的文件名将被跳过。如果存在名为 <code>index.Rmd</code> 的 Rmd 文件，则在合并所有 Rmd 文件时，它将始终被视为首个文件。使用这种特殊处理的原因是，从 <code>index.Rmd</code> 生成的 HTML 文件 <code>index.HTML</code> 通常是你查看网站时的默认主页，例如，当你打开 <a href="http://yihui.org/" class="uri">http://yihui.org/</a> 时，你实际上正在浏览 <a href="http://yihui.org/index.html" class="uri">http://yihui.org/index.html</a>。</p>
+<p>  你能够通过在书籍目录中包含一个名为 <code>_bookdown.yml</code> 的配置文件来覆盖程序的上述行为。它是一个 YAML 文件 (<a href="https://en.wikipedia.org/wiki/YAML" class="uri">https://en.wikipedia.org/wiki/YAML</a>)，R Markdown 用户应该对这种格式很熟悉，因为它也被用来在 R Markdown 文档开头编写元数据（你能够在第 <a href="r-markdown.html#r-markdown">B.2</a> 节了解有关 YAML 的更多信息）。你可以使用一个名为 <code>rmd_files</code> 的字段来定义你自己的书籍文件列表与 Rmd 文件顺序。例如：</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="usage.html#cb10-1" tabindex="-1"></a><span class="fu">rmd_files</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;abstract.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;intro.Rmd&quot;</span><span class="kw">]</span></span></code></pre></div>
+<p>  使用上述方法时，<strong>bookdown</strong> 将会使用你在这个 YAML 字段（如果文件 <code>index.Rmd</code> 存在，它将会被添加进文件列表，并且以下划线命名的文件名将会被忽略）中定义的文件列表。如果你希望同时输出 HTML 和 LaTeX/PDF 文档，并且对于 HTML 和 LaTeX 输出使用不同的 Rmd 文件，你可以分别为这两种输出格式指定不同的文件列表，例如，</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb11-1"><a href="usage.html#cb11-1" tabindex="-1"></a><span class="fu">rmd_files</span><span class="kw">:</span></span>
+<span id="cb11-2"><a href="usage.html#cb11-2" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;abstract.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;intro.Rmd&quot;</span><span class="kw">]</span></span>
+<span id="cb11-3"><a href="usage.html#cb11-3" tabindex="-1"></a><span class="at">  </span><span class="fu">latex</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;abstract.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;intro.Rmd&quot;</span><span class="kw">]</span></span></code></pre></div>
+<p>  尽管我们一直在谈论 R Markdown 文件，但章节文件实际上不必是 R Markdown 文件。它们可以是普通的 Markdown 文件 (<code>.md</code>)，并且完全不需要包含 R 代码块。你当然可以使用 <strong>bookdown</strong> 来创作小说和诗歌。</p>
+<p>  目前，你可能会使用的主要的输出格式包括 <code>bookdown::pdf_book</code>、<code>bookdown::gitbook</code>、<code>bookdown::html_book</code> 和 <code>bookdown::epub_book</code>。软件包中有一个类似于 <code>rmarkdown::render()</code> 的函数 <code>bookdown::render_book()</code>，但它是为了使用输出格式函数将<em>多个</em> Rmd 文档呈现在一本书中。你可以直接从命令行调用这个函数，或者点击 RStudio IDE 中的相关按钮。下面是一些命令行示例：</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="usage.html#cb12-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, <span class="st">&#39;bookdown::gitbook&#39;</span>)</span>
+<span id="cb12-2"><a href="usage.html#cb12-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, <span class="st">&#39;bookdown::pdf_book&#39;</span>)</span>
+<span id="cb12-3"><a href="usage.html#cb12-3" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, bookdown<span class="sc">::</span><span class="fu">gitbook</span>(<span class="at">lib_dir =</span> <span class="st">&#39;libs&#39;</span>))</span>
+<span id="cb12-4"><a href="usage.html#cb12-4" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, bookdown<span class="sc">::</span><span class="fu">pdf_book</span>(<span class="at">keep_tex =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<p>  为了在 RStudio IDE 中使用 <code>render_book</code> 和输出格式函数，可以定义一个名为 <code>site</code> 的 YAML 字段，其值为 <code>bookdown::bookdown_site</code>，<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>并且输出格式函数可以在 <code>output</code> 字段中使用，例如：</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb13-1"><a href="usage.html#cb13-1" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb13-2"><a href="usage.html#cb13-2" tabindex="-1"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;bookdown::bookdown_site&quot;</span></span>
+<span id="cb13-3"><a href="usage.html#cb13-3" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb13-4"><a href="usage.html#cb13-4" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
+<span id="cb13-5"><a href="usage.html#cb13-5" tabindex="-1"></a><span class="at">    </span><span class="fu">lib_dir</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;book_assets&quot;</span></span>
+<span id="cb13-6"><a href="usage.html#cb13-6" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:pdf_book</span><span class="kw">:</span></span>
+<span id="cb13-7"><a href="usage.html#cb13-7" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb13-8"><a href="usage.html#cb13-8" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<p>  然后你可以点击 RStudio 中 <code>Build</code> 选项卡下的 <code>Build Book</code> 按钮来将 Rmd 文件编译为一本书，或者点击工具栏中的 <code>Knit</code> 按钮来预览当前章节。</p>
+<p>  更多在 <code>_bookdown.yml</code> 中的 <strong>bookdown</strong> 设置将会在第 <a href="configuration.html#configuration">4.4</a> 节中介绍。除了这些配置，你还能够在书籍的<em>第一个</em> Rmd 文件中的 YAML 元数据里指定一些 Pandoc 相关的配置，例如标题、作者以及书籍付梓日期等。例如：</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb14-1"><a href="usage.html#cb14-1" tabindex="-1"></a><span class="pp">--- </span></span>
+<span id="cb14-2"><a href="usage.html#cb14-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Authoring A Book with R Markdown&quot;</span></span>
+<span id="cb14-3"><a href="usage.html#cb14-3" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Yihui Xie&quot;</span></span>
+<span id="cb14-4"><a href="usage.html#cb14-4" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;`r Sys.Date()`&quot;</span></span>
+<span id="cb14-5"><a href="usage.html#cb14-5" tabindex="-1"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;bookdown::bookdown_site&quot;</span></span>
+<span id="cb14-6"><a href="usage.html#cb14-6" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
+<span id="cb14-7"><a href="usage.html#cb14-7" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb14-8"><a href="usage.html#cb14-8" tabindex="-1"></a><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> book</span></span>
+<span id="cb14-9"><a href="usage.html#cb14-9" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;book.bib&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;packages.bib&quot;</span><span class="kw">]</span></span>
+<span id="cb14-10"><a href="usage.html#cb14-10" tabindex="-1"></a><span class="fu">biblio-style</span><span class="kw">:</span><span class="at"> apalike</span></span>
+<span id="cb14-11"><a href="usage.html#cb14-11" tabindex="-1"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb14-12"><a href="usage.html#cb14-12" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>这个函数会调用 <code>bookdown::render_book()</code>。<a href="usage.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="开始.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="new-session.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/YuanchenZhu2020/bookdown-book-zhCN/edit/main/01-introduction.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-book-zhCN.pdf", "bookdown-book-zhCN.epub", "bookdown-book-zhCN.mobi"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -150,6 +150,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/toc.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 
 <style type = "text/css">
 .main-container {
@@ -310,11 +311,11 @@ details > summary {
 <div class="col-sm-12">
 <div id="一些提示" class="section level2" number="1.5">
 <h2><span class="header-section-number">1.5</span> 一些提示</h2>
-<p>  分页限制下的排版（例如对于 LaTeX/PDF 输出）可能是一项非常繁琐和耗时的工作。我建议你不要经常查看 PDF 输出，因为大多数情况下你不太可能满意：文本可能超出页边空白，图片可能浮动得太远等等。不要试图<em>立即</em>使事情看起来很好，因为当你不断修改书籍时，你可能会一次又一次地失望。即使你只是做了一些小的改动，事情也可能会再次变得一团糟（参见 <a href="http://bit.ly/tbrLtx" class="uri">http://bit.ly/tbrLtx</a>，这是一个很好的例子）。</p>
-<p>  如果想要预览书籍，请预览 HTML 输出。在完成了书籍的内容，并且非常确定不需要进行重大修订后再使用 PDF 版本。</p>
-<p>  如果 R Markdown 文档中的某些代码块运行起来很费时，你可以通过在块头部添加块选项 <code>cache=TRUE</code> 来缓存这一个代码块的输出，并且也建议你标记这些代码块，例如：</p>
+<p>分页限制下的排版（例如对于 LaTeX/PDF 输出）可能是一项非常繁琐和耗时的工作。我建议你不要经常查看 PDF 输出，因为大多数情况下你不太可能满意：文本可能超出页边空白，图片可能浮动得太远等等。不要试图<em>立即</em>使事情看起来很好，因为当你不断修改书籍时，你可能会一次又一次地失望。即使你只是做了一些小的改动，事情也可能会再次变得一团糟（参见 <a href="http://bit.ly/tbrLtx" class="uri">http://bit.ly/tbrLtx</a>，这是一个很好的例子）。</p>
+<p>如果想要预览书籍，请预览 HTML 输出。在完成了书籍的内容，并且非常确定不需要进行重大修订后再使用 PDF 版本。</p>
+<p>如果 R Markdown 文档中的某些代码块运行起来很费时，你可以通过在块头部添加块选项 <code>cache=TRUE</code> 来缓存这一个代码块的输出，并且也建议你标记这些代码块，例如：</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="1.5-一些提示.html#cb15-1" tabindex="-1"></a><span class="in">```{r important-computing, cache=TRUE}</span></span></code></pre></div>
-<p>  在第 <a href="5-editing.html#editing">5</a> 章，我们将会讨论如何在你编辑时快速地预览书籍。简单来说，你可以使用 <code>preview_chapter()</code> 函数来编译单个章节，而不是编译整本书。函数 <code>serve_book()</code> 能够让你轻松实现实时预览 HTML 书页：每当你修改 Rmd 文件时，书籍都可以重新编译，浏览器也能相应地自动刷新。</p>
+<p>在第 <a href="5-editing.html#editing">5</a> 章，我们将会讨论如何在你编辑时快速地预览书籍。简单来说，你可以使用 <code>preview_chapter()</code> 函数来编译单个章节，而不是编译整本书。函数 <code>serve_book()</code> 能够让你轻松实现实时预览 HTML 书页：每当你修改 Rmd 文件时，书籍都可以重新编译，浏览器也能相应地自动刷新。</p>
 
 </div>
 <!-- </div> -->

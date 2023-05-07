@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -150,6 +150,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/toc.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 
 <style type = "text/css">
 .main-container {
@@ -310,25 +311,25 @@ details > summary {
 <div class="col-sm-12">
 <div id="rstudio-ide" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> RStudio IDE</h2>
-<p>  如果你的 RStudio IDE 版本低于 1.0.0，我们建议你进行<a href="https://posit.co/download/rstudio-desktop/">升级</a>。正如第 <a href="1.3-usage.html#usage">1.3</a> 节所述，所有 R Markdown 文件都必须用 UTF-8 编码。这一点非常重要，尤其是当文件包含多字节字符时。要使用 UTF-8 编码保存文件，可以使用菜单 <code>File -&gt; Save with Encoding</code>，然后选择 <code>UTF-8</code>。</p>
-<p>  当你单击 <code>Knit</code> 按钮在 RStudio IDE 中编译 R Markdown 文档时，RStudio 调用的默认函数是 <code>rmarkdown::render()</code>，这不是我们想要的编译书籍的函数。要调用函数 <code>bookdown::render_book()</code>，可以在 R Markdown 文档 <code>index.Rmd</code> 的 YAML 元数据中将 <code>site</code> 字段设置为 <code>bookdown::bookdown_site</code>，例如：</p>
+<p>如果你的 RStudio IDE 版本低于 1.0.0，我们建议你进行<a href="https://posit.co/download/rstudio-desktop/">升级</a>。正如第 <a href="1.3-usage.html#usage">1.3</a> 节所述，所有 R Markdown 文件都必须用 UTF-8 编码。这一点非常重要，尤其是当文件包含多字节字符时。要使用 UTF-8 编码保存文件，可以使用菜单 <code>File -&gt; Save with Encoding</code>，然后选择 <code>UTF-8</code>。</p>
+<p>当你单击 <code>Knit</code> 按钮在 RStudio IDE 中编译 R Markdown 文档时，RStudio 调用的默认函数是 <code>rmarkdown::render()</code>，这不是我们想要的编译书籍的函数。要调用函数 <code>bookdown::render_book()</code>，可以在 R Markdown 文档 <code>index.Rmd</code> 的 YAML 元数据中将 <code>site</code> 字段设置为 <code>bookdown::bookdown_site</code>，例如：</p>
 <div class="sourceCode" id="cb127"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb127-1"><a href="5.4-rstudio-ide.html#cb127-1" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb127-2"><a href="5.4-rstudio-ide.html#cb127-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;A Nice Book&quot;</span></span>
 <span id="cb127-3"><a href="5.4-rstudio-ide.html#cb127-3" tabindex="-1"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> bookdown::bookdown_site</span></span>
 <span id="cb127-4"><a href="5.4-rstudio-ide.html#cb127-4" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb127-5"><a href="5.4-rstudio-ide.html#cb127-5" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span><span class="at"> default</span></span>
 <span id="cb127-6"><a href="5.4-rstudio-ide.html#cb127-6" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<p>  当你在 <code>index.Rmd</code> 中设置 <code>site: bookdown::bookdown_site</code> 后，RStudio 将能够发现作为书籍源目录的目录，<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>，并且你将在 <code>Build</code> 窗格中看到 <code>Build book</code> 按钮。你可以通过单击按钮以不同的格式构建整本书，另外，如果单击工具栏上的 <code>Knit</code> 按钮，RStudio 将自动预览当前章节，而不需要显式使用 <code>preview_chapter()</code>。</p>
-<p>  <strong>bookdown</strong> 软件包附带了几个 RStudio 插件。如果你不熟悉 RStudio 插件，可以在以下位置查看文档：<a href="http://rstudio.github.io/rstudioaddins/" class="uri">http://rstudio.github.io/rstudioaddins/</a>。当你安装了 <strong>bookdown</strong> 软件包并正在使用 RStudio v0.99.878 或更高版本时，打开菜单，你将在工具栏上看到名为“Addins”的下拉菜单和“Preview Book”以及“Input LaTeX Math”菜单项。</p>
-<p>  “Preview Book”插件调用 <code>bookdown::serve_Book()</code> 来编译书籍并通过 HTTP 服务提供书籍预览。它将阻塞当前的 R session，即当 <code>serve_book</code> 正在运行时，你将无法在 R console 中执行任何操作。为了避免阻塞 R session，你可以使用 <code>bookdown::serve_book(daemon = TRUE)</code> 在服务器上启动守护进程。请注意，在 RStudio 中打开的当前文档位于书籍的根目录下时，才能够使用这个加载项，否则 <code>serve_book()</code> 可能无法找到书籍源文档。</p>
-<p>  “Input LaTeX Math”插件本质上是一个小的 Shiny 应用程序，它提供一个文本框来帮助输入 LaTeX 数学表达式（图 <a href="5.4-rstudio-ide.html#fig:mathquill">5.1</a>）。输入表达式时，你将可以预览数学表达式并看到其源代码。这将使输入数学表达式时更不容易出错——当在没有预览的情况下输入一个长的 LaTeX 数学表达式时很容易犯错误，例如，输入 <code>X_ij</code> 时，可能想要输入的是 <code>X_{ij}</code>，或者输入时忽略了右括号。如果在单击加载项之前在 RStudio 编辑器中选择了 LaTeX 数学表达式，则该表达式将自动加载并呈现在文本框中。这个插件是建立在 MathQuill 库 (<a href="http://mathquill.com" class="uri">http://mathquill.com</a>) 之上的。它并不是要为所有用于数学表达式的 LaTeX 命令提供完整支持，而是致力于帮助输入一些常见的数学表达式。</p>
+<p>当你在 <code>index.Rmd</code> 中设置 <code>site: bookdown::bookdown_site</code> 后，RStudio 将能够发现作为书籍源目录的目录，<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>，并且你将在 <code>Build</code> 窗格中看到 <code>Build book</code> 按钮。你可以通过单击按钮以不同的格式构建整本书，另外，如果单击工具栏上的 <code>Knit</code> 按钮，RStudio 将自动预览当前章节，而不需要显式使用 <code>preview_chapter()</code>。</p>
+<p><strong>bookdown</strong> 软件包附带了几个 RStudio 插件。如果你不熟悉 RStudio 插件，可以在以下位置查看文档：<a href="http://rstudio.github.io/rstudioaddins/" class="uri">http://rstudio.github.io/rstudioaddins/</a>。当你安装了 <strong>bookdown</strong> 软件包并正在使用 RStudio v0.99.878 或更高版本时，打开菜单，你将在工具栏上看到名为“Addins”的下拉菜单和“Preview Book”以及“Input LaTeX Math”菜单项。</p>
+<p>“Preview Book”插件调用 <code>bookdown::serve_Book()</code> 来编译书籍并通过 HTTP 服务提供书籍预览。它将阻塞当前的 R session，即当 <code>serve_book</code> 正在运行时，你将无法在 R console 中执行任何操作。为了避免阻塞 R session，你可以使用 <code>bookdown::serve_book(daemon = TRUE)</code> 在服务器上启动守护进程。请注意，在 RStudio 中打开的当前文档位于书籍的根目录下时，才能够使用这个加载项，否则 <code>serve_book()</code> 可能无法找到书籍源文档。</p>
+<p>“Input LaTeX Math”插件本质上是一个小的 Shiny 应用程序，它提供一个文本框来帮助输入 LaTeX 数学表达式（图 <a href="5.4-rstudio-ide.html#fig:mathquill">5.1</a>）。输入表达式时，你将可以预览数学表达式并看到其源代码。这将使输入数学表达式时更不容易出错——当在没有预览的情况下输入一个长的 LaTeX 数学表达式时很容易犯错误，例如，输入 <code>X_ij</code> 时，可能想要输入的是 <code>X_{ij}</code>，或者输入时忽略了右括号。如果在单击加载项之前在 RStudio 编辑器中选择了 LaTeX 数学表达式，则该表达式将自动加载并呈现在文本框中。这个插件是建立在 MathQuill 库 (<a href="http://mathquill.com" class="uri">http://mathquill.com</a>) 之上的。它并不是要为所有用于数学表达式的 LaTeX 命令提供完整支持，而是致力于帮助输入一些常见的数学表达式。</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:mathquill"></span>
 <img src="images/mathquill.png" alt="辅助输入 LaTeX 数学公式的 RStudio 插件"  />
 <p class="caption">
 图 5.1: 辅助输入 LaTeX 数学公式的 RStudio 插件
 </p>
 </div>
-<p>  还有其他 R 软件包提供了插件来帮助你编写书籍。<strong>citr</strong> 软件包 <span class="citation">(<a href="#ref-R-citr">Aust 2019</a>)</span> 提供了一个名为“Insert citations”的加载项，可以很容易地将引用文献插入到 R Markdown 文档中。它会扫描你的文献数据库，并在下拉菜单中显示所有引用文献，因此你可以直接从列表中选择，而无需记住哪个引文键对应于哪个引文项（图 <a href="5.4-rstudio-ide.html#fig:citr">5.2</a>）。</p>
+<p>还有其他 R 软件包提供了插件来帮助你编写书籍。<strong>citr</strong> 软件包 <span class="citation">(<a href="#ref-R-citr">Aust 2019</a>)</span> 提供了一个名为“Insert citations”的加载项，可以很容易地将引用文献插入到 R Markdown 文档中。它会扫描你的文献数据库，并在下拉菜单中显示所有引用文献，因此你可以直接从列表中选择，而无需记住哪个引文键对应于哪个引文项（图 <a href="5.4-rstudio-ide.html#fig:citr">5.2</a>）。</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:citr"></span>
 <img src="images/citr.png" alt="帮助插入引用文献的 RStudio 插件"  />
 <p class="caption">

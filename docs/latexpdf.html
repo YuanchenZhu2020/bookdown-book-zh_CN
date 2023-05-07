@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3.2 LaTeX/PDF | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3.2 LaTeX/PDF | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,23 +308,23 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="latexpdf" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> LaTeX/PDF<a href="latexpdf.html#latexpdf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  我们强烈建议你在撰写书籍时使用 HTML 输出格式，而不是 LaTeX，因为你将不会因为排版细节而分心，如果经常查看书籍的 PDF 输出就会知道，排版细节会给你带来很多麻烦。把仔细排版的工作留到最后（最好在真正完成书籍的内容之后）。</p>
-<p>  LaTeX/PDF 输出格式是由 <strong>bookdown</strong> 中的 <code>pdf_book()</code> 提供的。<code>pdf_book()</code> 和 <strong>rmarkdown</strong> 中的 <code>pdf_document()</code> 格式之间没有明显的区别。<code>pdf_book()</code> 的主要目的是解决使用第 <a href="figures.html#figures">2.4</a>、<a href="tables.html#tables">2.5</a> 和 <a href="cross-references.html#cross-references">2.6</a> 节中描述的语法编写的标签和交叉引用。如果你希望书籍的唯一输出格式是 LaTeX/PDF，则可以使用 LaTeX 特有的语法，例如使用 <code>\label{}</code> 来标记图片/表格/章节，使用 <code>\ref{}</code> 通过它们的标签来交叉引用，因为 Pandoc 支持在 Markdown 中使用 LaTeX 命令。然而，LaTeX 语法不能移植到其他输出格式，如 HTML 和电子书。这就是为什么我们为标签引入了 <code>(\#label)</code> 语法，为交叉引用引入了 <code>\@ref(label)</code> 语法。</p>
-<p>  有一些顶级 YAML 配置项将被应用于 LaTeX 输出。对于一本书，你可以把默认的文档类别改为 <code>book</code>（默认是 <code>artical</code>），并指定出版商要求的参考文献样式。下面是一个一个简短的 YAML 示例。</p>
+<p>我们强烈建议你在撰写书籍时使用 HTML 输出格式，而不是 LaTeX，因为你将不会因为排版细节而分心，如果经常查看书籍的 PDF 输出就会知道，排版细节会给你带来很多麻烦。把仔细排版的工作留到最后（最好在真正完成书籍的内容之后）。</p>
+<p>LaTeX/PDF 输出格式是由 <strong>bookdown</strong> 中的 <code>pdf_book()</code> 提供的。<code>pdf_book()</code> 和 <strong>rmarkdown</strong> 中的 <code>pdf_document()</code> 格式之间没有明显的区别。<code>pdf_book()</code> 的主要目的是解决使用第 <a href="figures.html#figures">2.4</a>、<a href="tables.html#tables">2.5</a> 和 <a href="cross-references.html#cross-references">2.6</a> 节中描述的语法编写的标签和交叉引用。如果你希望书籍的唯一输出格式是 LaTeX/PDF，则可以使用 LaTeX 特有的语法，例如使用 <code>\label{}</code> 来标记图片/表格/章节，使用 <code>\ref{}</code> 通过它们的标签来交叉引用，因为 Pandoc 支持在 Markdown 中使用 LaTeX 命令。然而，LaTeX 语法不能移植到其他输出格式，如 HTML 和电子书。这就是为什么我们为标签引入了 <code>(\#label)</code> 语法，为交叉引用引入了 <code>\@ref(label)</code> 语法。</p>
+<p>有一些顶级 YAML 配置项将被应用于 LaTeX 输出。对于一本书，你可以把默认的文档类别改为 <code>book</code>（默认是 <code>artical</code>），并指定出版商要求的参考文献样式。下面是一个一个简短的 YAML 示例。</p>
 <div class="sourceCode" id="cb100"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb100-1"><a href="latexpdf.html#cb100-1" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb100-2"><a href="latexpdf.html#cb100-2" tabindex="-1"></a><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> book</span></span>
 <span id="cb100-3"><a href="latexpdf.html#cb100-3" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">book.bib</span><span class="kw">,</span><span class="at"> packages.bib</span><span class="kw">]</span></span>
 <span id="cb100-4"><a href="latexpdf.html#cb100-4" tabindex="-1"></a><span class="fu">biblio-style</span><span class="kw">:</span><span class="at"> apalike</span></span>
 <span id="cb100-5"><a href="latexpdf.html#cb100-5" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<p>  LaTeX 输出格式还有大量的 YAML 配置项可以使用，如纸张大小、字体大小、页边距、行间距、字体族等等。关于配置项的完整列表，请参见 <a href="http://pandoc.org/MANUAL.html#variables-for-latex" class="uri">http://pandoc.org/MANUAL.html#variables-for-latex</a>。</p>
-<p>  <code>pdf_book()</code> 格式与 <code>html_book()</code> 一样是一种通用格式，它也有一个 <code>base_format</code> 参数。</p>
+<p>LaTeX 输出格式还有大量的 YAML 配置项可以使用，如纸张大小、字体大小、页边距、行间距、字体族等等。关于配置项的完整列表，请参见 <a href="http://pandoc.org/MANUAL.html#variables-for-latex" class="uri">http://pandoc.org/MANUAL.html#variables-for-latex</a>。</p>
+<p><code>pdf_book()</code> 格式与 <code>html_book()</code> 一样是一种通用格式，它也有一个 <code>base_format</code> 参数。</p>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="latexpdf.html#cb101-1" tabindex="-1"></a><span class="fu">pdf_book</span>(<span class="at">toc =</span> <span class="cn">TRUE</span>, <span class="at">number_sections =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb101-2"><a href="latexpdf.html#cb101-2" tabindex="-1"></a>  <span class="at">fig_caption =</span> <span class="cn">TRUE</span>, <span class="at">pandoc_args =</span> <span class="cn">NULL</span>, ...,</span>
 <span id="cb101-3"><a href="latexpdf.html#cb101-3" tabindex="-1"></a>  <span class="at">base_format =</span> rmarkdown<span class="sc">::</span>pdf_document,</span>
 <span id="cb101-4"><a href="latexpdf.html#cb101-4" tabindex="-1"></a>  <span class="at">toc_unnumbered =</span> <span class="cn">TRUE</span>, <span class="at">toc_appendix =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb101-5"><a href="latexpdf.html#cb101-5" tabindex="-1"></a>  <span class="at">toc_bib =</span> <span class="cn">FALSE</span>, <span class="at">quote_footer =</span> <span class="cn">NULL</span>,</span>
 <span id="cb101-6"><a href="latexpdf.html#cb101-6" tabindex="-1"></a>  <span class="at">highlight_bw =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p>  你可以将 <code>base_format</code> 函数改成其他的输出格式函数，<strong>bookdown</strong> 提供了一个简单的封装函数 <code>tufte_book2()</code>，基本上就是 <code>pdf_book(base_format = tufte::tufte_book)</code>，用 Tufte 的 PDF 样式来制作一本 PDF 书籍（类似地，详情请见 <strong>tufte</strong> 软件包）。</p>
+<p>你可以将 <code>base_format</code> 函数改成其他的输出格式函数，<strong>bookdown</strong> 提供了一个简单的封装函数 <code>tufte_book2()</code>，基本上就是 <code>pdf_book(base_format = tufte::tufte_book)</code>，用 Tufte 的 PDF 样式来制作一本 PDF 书籍（类似地，详情请见 <strong>tufte</strong> 软件包）。</p>
 </div>
             </section>
 

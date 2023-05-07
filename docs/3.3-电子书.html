@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -150,6 +150,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/toc.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 
 <style type = "text/css">
 .main-container {
@@ -310,10 +311,10 @@ details > summary {
 <div class="col-sm-12">
 <div id="电子书" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> 电子书</h2>
-<p>  目前 <strong>bookdown</strong> 支持 EPUB 和 MOBI 两种电子书格式。这些格式的书籍可以在智能手机、平板电脑或者是 Kindle 等特殊的电子阅读器上阅读。</p>
+<p>目前 <strong>bookdown</strong> 支持 EPUB 和 MOBI 两种电子书格式。这些格式的书籍可以在智能手机、平板电脑或者是 Kindle 等特殊的电子阅读器上阅读。</p>
 <div id="epub" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> EPUB</h3>
-<p>  你可以使用 <code>epub_book()</code> 格式来创建一本 EPUB 书籍。它的一些配置项与 <code>rmarkdown::html_document()</code> 相同：</p>
+<p>你可以使用 <code>epub_book()</code> 格式来创建一本 EPUB 书籍。它的一些配置项与 <code>rmarkdown::html_document()</code> 相同：</p>
 <div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="3.3-电子书.html#cb102-1" tabindex="-1"></a><span class="fu">epub_book</span>(<span class="at">fig_width =</span> <span class="dv">5</span>, <span class="at">fig_height =</span> <span class="dv">4</span>, <span class="at">dev =</span> <span class="st">&quot;png&quot;</span>,</span>
 <span id="cb102-2"><a href="3.3-电子书.html#cb102-2" tabindex="-1"></a>  <span class="at">fig_caption =</span> <span class="cn">TRUE</span>, <span class="at">number_sections =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb102-3"><a href="3.3-电子书.html#cb102-3" tabindex="-1"></a>  <span class="at">toc =</span> <span class="cn">FALSE</span>, <span class="at">toc_depth =</span> <span class="dv">3</span>, <span class="at">stylesheet =</span> <span class="cn">NULL</span>,</span>
@@ -323,7 +324,7 @@ details > summary {
 <span id="cb102-7"><a href="3.3-电子书.html#cb102-7" tabindex="-1"></a>  <span class="at">md_extensions =</span> <span class="cn">NULL</span>,</span>
 <span id="cb102-8"><a href="3.3-电子书.html#cb102-8" tabindex="-1"></a>  <span class="at">global_numbering =</span> <span class="sc">!</span>number_sections,</span>
 <span id="cb102-9"><a href="3.3-电子书.html#cb102-9" tabindex="-1"></a>  <span class="at">pandoc_args =</span> <span class="cn">NULL</span>, <span class="at">template =</span> <span class="st">&quot;default&quot;</span>)</span></code></pre></div>
-<p>  关闭 <code>toc</code> 选项是因为电子书阅读器通常可以从书中自动找出目录，所以没有必要为目录多增加几页。有几个专门针对 EPUB 的配置项：</p>
+<p>关闭 <code>toc</code> 选项是因为电子书阅读器通常可以从书中自动找出目录，所以没有必要为目录多增加几页。有几个专门针对 EPUB 的配置项：</p>
 <ul>
 <li><code>stylesheet</code>: 它类似于 HTML 输出格式中的 <code>css</code> 配置项，你可以用 CSS 来定制元素的外观。</li>
 <li><code>cover_image</code>: 书籍封面图片的路径。</li>
@@ -331,12 +332,12 @@ details > summary {
 <li><code>chapter_level</code>: 在内部，一本 EPUB 书籍是一系列的“章节”文件，这个配置项决定了书籍在何种级别上被分割成这些文件。这类似于我们在第 <a href="3.1-html.html#html">3.1</a> 节中提到的 HTML 输出格式的 <code>split_by</code> 参数，但是 EPUB 书籍是一个单一的文件，你不会直接看到这些“章节”文件。默认的级别是第一级，如果你把它设置为 2，意味着这本书在内部会按节划分文件来组织，这可能会使得书籍加载更快。</li>
 <li><code>epub_version</code>: EPUB 的第 3 版或第 2 版。</li>
 </ul>
-<p>  EPUB 书籍本质上是 HTML 页面的集合，例如，你可以将 CSS 规则应用于其元素、嵌入图像、插入数学表达式（因为 EPUB 部分支持 MathML）等等。第 <a href="2-components.html#components">2</a> 节中提到的图片/表格标题、交叉引用、自定义区块和引用也适用于 EPUB。你可以将本书的 EPUB 输出与 HTML 输出进行比较，你将看到二者唯一的主要区别是视觉外观。</p>
-<p>  有几个 EPUB 阅读器可以阅读书籍，包括 Calibre (<a href="https://www.calibre-ebook.com" class="uri">https://www.calibre-ebook.com</a>)、苹果的 iBooks 和谷歌的 Play Books。</p>
+<p>EPUB 书籍本质上是 HTML 页面的集合，例如，你可以将 CSS 规则应用于其元素、嵌入图像、插入数学表达式（因为 EPUB 部分支持 MathML）等等。第 <a href="2-components.html#components">2</a> 节中提到的图片/表格标题、交叉引用、自定义区块和引用也适用于 EPUB。你可以将本书的 EPUB 输出与 HTML 输出进行比较，你将看到二者唯一的主要区别是视觉外观。</p>
+<p>有几个 EPUB 阅读器可以阅读书籍，包括 Calibre (<a href="https://www.calibre-ebook.com" class="uri">https://www.calibre-ebook.com</a>)、苹果的 iBooks 和谷歌的 Play Books。</p>
 </div>
 <div id="mobi" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> MOBI</h3>
-<p>  MOBI 电子书可以在亚马逊的 Kindle 设备上阅读。Pandoc 本身不支持 MOBI 输出，但你可以使用第三方工具将 EPUB 转换为 MOBI。其中一种工具是 Calibre。Calibre 是开源并且免费的，并且支持更多格式之间的相互转换。例如，你可以将 HTML 转换成 EPUB，将 Word 文档转换成 MOBI 等等。在 <strong>bookdown</strong> 中的函数 <code>calibre()</code> 是 Calibre 中命令行工具 <code>ebook-convert</code> 的封装函数。你需要确保通过环境变量 <code>PATH</code> 可以找到可执行的 <code>ebook-convert</code>。如果你使用 macOS，你可以通过 <code>brew cask install calibre</code> 命令用 Homebrew (<a href="https://brew.sh" class="uri">https://brew.sh</a>) 安装 Calibre，所以你不需要担心 <code>PATH</code> 问题。</p>
+<p>MOBI 电子书可以在亚马逊的 Kindle 设备上阅读。Pandoc 本身不支持 MOBI 输出，但你可以使用第三方工具将 EPUB 转换为 MOBI。其中一种工具是 Calibre。Calibre 是开源并且免费的，并且支持更多格式之间的相互转换。例如，你可以将 HTML 转换成 EPUB，将 Word 文档转换成 MOBI 等等。在 <strong>bookdown</strong> 中的函数 <code>calibre()</code> 是 Calibre 中命令行工具 <code>ebook-convert</code> 的封装函数。你需要确保通过环境变量 <code>PATH</code> 可以找到可执行的 <code>ebook-convert</code>。如果你使用 macOS，你可以通过 <code>brew cask install calibre</code> 命令用 Homebrew (<a href="https://brew.sh" class="uri">https://brew.sh</a>) 安装 Calibre，所以你不需要担心 <code>PATH</code> 问题。</p>
 </div>
 </div>
 <p style="text-align: center;">

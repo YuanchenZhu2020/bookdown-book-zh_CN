@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -150,6 +150,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/toc.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 
 <style type = "text/css">
 .main-container {
@@ -310,18 +311,18 @@ details > summary {
 <div class="col-sm-12">
 <div id="figures" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> 图片</h2>
-<p>  默认情况下，图片在 <strong>knitr</strong> 生成的输出文档中没有标题，这意味着它们将放在生成它们的 R 代码处。下面就是这样一个例子。</p>
+<p>默认情况下，图片在 <strong>knitr</strong> 生成的输出文档中没有标题，这意味着它们将放在生成它们的 R 代码处。下面就是这样一个例子。</p>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="2.4-figures.html#cb43-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
 <span id="cb43-2"><a href="2.4-figures.html#cb43-2" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">type =</span> <span class="st">&#39;b&#39;</span>)</span></code></pre></div>
 <p><img src="bookdown-book-zhCN_files/figure-html/no-caption-1.png" width="70%" /></p>
-<p>  这样排版图片的缺点是，如果当前页面没有足够的空间放置图片，图片可能会被放在页面的底部（因此会超出页边空白），或者被推到下一页，在当前页面底部留下一大块空白。这基本上就是 LaTeX 中存在着“浮动环境 (floating environments)” 的原因：不能再多个页面上进行拆分（如图片）的元素会被放在浮动环境中，因此它们可以浮动到一个有足够空间容纳它们的页面。但是，向前或向后的浮动也存在着缺点：读者可能需要跳转到另一个页面才能找到当前页面上提到的图片。这只是不得不在多个页面上以固定大小进行排版的一个自然的结果。不过 HTML 中不存在这个问题，因为所有内容都可以被连续地放置在一个页面上（大概有着无限的高度），并且不需要在有着相同页面大小的多个页面上分割任何内容。</p>
-<p>  如果我们通过区块选项 <code>fig.cap</code> 为代码块分配一个图片标题，那么 R 图形将被放入图形 (figure) 环境中，它将被自动标记和编号，还可以进行交叉引用。图形环境的标签是从代码块的标签生成的。例如，如果块标签是 <code>foo</code>，则图片标签将是 <code>fig:foo</code>（前缀 <code>fig:</code> 在 <code>foo</code> 之前添加）。如果要引用一张图片，请使用语法 <code>\@ref(label)</code>，<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>，其中 <code>label</code> 是图片标签，例如 <code>fig:foo</code>。</p>
-<p>  如果要<em>在图片标题中</em>利用 Markdown 格式化的优势，需要使用文本引用（请参阅第 <a href="2.2-bookdown-中的-markdown-功能拓展.html#text-references">2.2.4</a> 节）。例如，当输出格式为 LaTeX/PDF 时，包含 <code>_斜体文本_</code> 的图片标题将不起作用，因为下划线是 LaTeX 中的特殊字符。但如果使用文本引用，则当输出为 LaTeX 时，<code>_斜体文本_</code> 将被转换为 LaTeX 代码。</p>
+<p>这样排版图片的缺点是，如果当前页面没有足够的空间放置图片，图片可能会被放在页面的底部（因此会超出页边空白），或者被推到下一页，在当前页面底部留下一大块空白。这基本上就是 LaTeX 中存在着“浮动环境 (floating environments)” 的原因：不能再多个页面上进行拆分（如图片）的元素会被放在浮动环境中，因此它们可以浮动到一个有足够空间容纳它们的页面。但是，向前或向后的浮动也存在着缺点：读者可能需要跳转到另一个页面才能找到当前页面上提到的图片。这只是不得不在多个页面上以固定大小进行排版的一个自然的结果。不过 HTML 中不存在这个问题，因为所有内容都可以被连续地放置在一个页面上（大概有着无限的高度），并且不需要在有着相同页面大小的多个页面上分割任何内容。</p>
+<p>如果我们通过区块选项 <code>fig.cap</code> 为代码块分配一个图片标题，那么 R 图形将被放入图形 (figure) 环境中，它将被自动标记和编号，还可以进行交叉引用。图形环境的标签是从代码块的标签生成的。例如，如果块标签是 <code>foo</code>，则图片标签将是 <code>fig:foo</code>（前缀 <code>fig:</code> 在 <code>foo</code> 之前添加）。如果要引用一张图片，请使用语法 <code>\@ref(label)</code>，<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>，其中 <code>label</code> 是图片标签，例如 <code>fig:foo</code>。</p>
+<p>如果要<em>在图片标题中</em>利用 Markdown 格式化的优势，需要使用文本引用（请参阅第 <a href="2.2-bookdown-中的-markdown-功能拓展.html#text-references">2.2.4</a> 节）。例如，当输出格式为 LaTeX/PDF 时，包含 <code>_斜体文本_</code> 的图片标题将不起作用，因为下划线是 LaTeX 中的特殊字符。但如果使用文本引用，则当输出为 LaTeX 时，<code>_斜体文本_</code> 将被转换为 LaTeX 代码。</p>
 
 <div class="rmdimportant">
 如果要交叉引用从代码块生成的图片或表格，请确保块标签仅包含<em>字母与数字字符 (alphanumber)</em> （a-z、a-z、0-9）、斜杠 (/) 或破折号 (-)。
 </div>
-<p>  区块选项 <code>fig.asp</code> 能够被用来设置图片的纵横比。例如图片的高宽比。如果图片的宽度是 6 英寸 (<code>fig.width = 6</code>) 并且 <code>fig.asp = 0.7</code>，则图片的高度将会自动使用 <code>fig.width * fig.asp = 6 * 0.7 = 4.2</code> 计算得出。图 <a href="2.4-figures.html#fig:pressure-plot">2.1</a> 是使用区块选项 <code>fig.asp = 0.7</code>、<code>fig.width = 6</code> 和 <code>fig.align = 'center'</code> 的一个例子，它是从下面的代码中生成的：</p>
+<p>区块选项 <code>fig.asp</code> 能够被用来设置图片的纵横比。例如图片的高宽比。如果图片的宽度是 6 英寸 (<code>fig.width = 6</code>) 并且 <code>fig.asp = 0.7</code>，则图片的高度将会自动使用 <code>fig.width * fig.asp = 6 * 0.7 = 4.2</code> 计算得出。图 <a href="2.4-figures.html#fig:pressure-plot">2.1</a> 是使用区块选项 <code>fig.asp = 0.7</code>、<code>fig.width = 6</code> 和 <code>fig.align = 'center'</code> 的一个例子，它是从下面的代码中生成的：</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="2.4-figures.html#cb44-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
 <span id="cb44-2"><a href="2.4-figures.html#cb44-2" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">type =</span> <span class="st">&#39;b&#39;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:pressure-plot"></span>
@@ -330,7 +331,7 @@ details > summary {
 图 2.1: 指定纵横比、宽度和对齐方式的一个图片示例。
 </p>
 </div>
-<p>  图片的实际大小是由区块选项 <code>fig.width</code> 和 <code>fig.height</code> 决定的（图片的大小由图形设备 (graphical device) 生成），并且我们能够通过区块选项 <code>out.width</code> 和 <code>out.height</code> 指定图片的输出大小。这两个选项可能的取值由文档的输出格式决定。例如，<code>out.width = '30%'</code> 对于 HTML 输出格式来说是有效的，但对于 LaTeX/PDF 输出来说是无效值。然而，<strong>knitr</strong> 会自动地将 <code>x%</code> 格式的 <code>out.width</code> 的百分比值转化为 <code>(x / 100) \linewidth</code>。例如，当输出格式为 LaTeX 时，<code>out.width = '70%'</code> 将会被视为 <code>.7\linewidth</code>。这样的处理使得我们能够以一致的方式指定图片的相对宽度。图 <a href="2.4-figures.html#fig:cars-plot">2.2</a> 是 <code>out.width = 70%</code> 的一个示例。</p>
+<p>图片的实际大小是由区块选项 <code>fig.width</code> 和 <code>fig.height</code> 决定的（图片的大小由图形设备 (graphical device) 生成），并且我们能够通过区块选项 <code>out.width</code> 和 <code>out.height</code> 指定图片的输出大小。这两个选项可能的取值由文档的输出格式决定。例如，<code>out.width = '30%'</code> 对于 HTML 输出格式来说是有效的，但对于 LaTeX/PDF 输出来说是无效值。然而，<strong>knitr</strong> 会自动地将 <code>x%</code> 格式的 <code>out.width</code> 的百分比值转化为 <code>(x / 100) \linewidth</code>。例如，当输出格式为 LaTeX 时，<code>out.width = '70%'</code> 将会被视为 <code>.7\linewidth</code>。这样的处理使得我们能够以一致的方式指定图片的相对宽度。图 <a href="2.4-figures.html#fig:cars-plot">2.2</a> 是 <code>out.width = 70%</code> 的一个示例。</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="2.4-figures.html#cb45-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
 <span id="cb45-2"><a href="2.4-figures.html#cb45-2" tabindex="-1"></a><span class="fu">plot</span>(cars, <span class="at">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:cars-plot"></span>
@@ -339,7 +340,7 @@ details > summary {
 图 2.2: 相对宽度为 70% 的一个图片示例。
 </p>
 </div>
-<p>  如果要在一个图形环境中放置多张图片，则必须使用区块选项 <code>fig.show = 'hold'</code> 来保存代码块中的多张图片，并将它们包含在一个环境中。如果所有图片的宽度之和小于或等于当前线宽 (line width)，也可以并排放置图片。例如，如果两张图片具有相同的宽度 <code>50%</code>，则它们将并排放置。类似地，可以通过指定 <code>out.width = '33%'</code> 在一行并排放置三张图片。图 <a href="2.4-figures.html#fig:multi-plots">2.3</a> 是放置两张图的示例，每张图的宽度为 <code>50%</code>。</p>
+<p>如果要在一个图形环境中放置多张图片，则必须使用区块选项 <code>fig.show = 'hold'</code> 来保存代码块中的多张图片，并将它们包含在一个环境中。如果所有图片的宽度之和小于或等于当前线宽 (line width)，也可以并排放置图片。例如，如果两张图片具有相同的宽度 <code>50%</code>，则它们将并排放置。类似地，可以通过指定 <code>out.width = '33%'</code> 在一行并排放置三张图片。图 <a href="2.4-figures.html#fig:multi-plots">2.3</a> 是放置两张图的示例，每张图的宽度为 <code>50%</code>。</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="2.4-figures.html#cb46-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, .<span class="dv">1</span>, .<span class="dv">1</span>))</span>
 <span id="cb46-2"><a href="2.4-figures.html#cb46-2" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">type =</span> <span class="st">&#39;b&#39;</span>)</span>
 <span id="cb46-3"><a href="2.4-figures.html#cb46-3" tabindex="-1"></a><span class="fu">plot</span>(cars, <span class="at">pch =</span> <span class="dv">19</span>)</span></code></pre></div>
@@ -349,7 +350,7 @@ details > summary {
 图 2.3: 并排放置两张图片。
 </p>
 </div>
-<p>  有时，你可能有一些不是从 R 代码生成的图片，这时可以通过函数 <code>knitr::include_graphics()</code> 将它们包含在 R Markdown 中。图 <a href="2.4-figures.html#fig:knitr-logo">2.4</a> 是在图形环境中包含三个 <strong>knitr</strong> 徽标的示例。你可以将一个或多个图像路径传递给 <code>include_graphics()</code> 函数，并且应用于普通 R plots 的所有区块选项也适用于这些图像，例如，可以使用 <code>out.width = '33%'</code> 设置这些图像在输出文档中的宽度。</p>
+<p>有时，你可能有一些不是从 R 代码生成的图片，这时可以通过函数 <code>knitr::include_graphics()</code> 将它们包含在 R Markdown 中。图 <a href="2.4-figures.html#fig:knitr-logo">2.4</a> 是在图形环境中包含三个 <strong>knitr</strong> 徽标的示例。你可以将一个或多个图像路径传递给 <code>include_graphics()</code> 函数，并且应用于普通 R plots 的所有区块选项也适用于这些图像，例如，可以使用 <code>out.width = '33%'</code> 设置这些图像在输出文档中的宽度。</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="2.4-figures.html#cb47-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="fu">rep</span>(<span class="st">&#39;images/knit-logo.png&#39;</span>, <span class="dv">3</span>))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:knitr-logo"></span>
 <img src="images/knit-logo.png" alt="包含在文档中的来自外部 PNG 图像文件的三个 knitr 徽标。" width="32.8%" /><img src="images/knit-logo.png" alt="包含在文档中的来自外部 PNG 图像文件的三个 knitr 徽标。" width="32.8%" /><img src="images/knit-logo.png" alt="包含在文档中的来自外部 PNG 图像文件的三个 knitr 徽标。" width="32.8%" />

@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -150,6 +150,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/toc.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 
 <style type = "text/css">
 .main-container {
@@ -310,8 +311,8 @@ details > summary {
 <div class="col-sm-12">
 <div id="web-页面和-shiny-应用" class="section level2" number="2.11">
 <h2><span class="header-section-number">2.11</span> Web 页面和 Shiny 应用</h2>
-<p>  与 HTML 小组件类似，书籍中可以嵌入任意网页。你可以使用函数 <code>knitr::include_url()</code> 通过 URL 在书籍中包含该网页。当输出格式为 HTML 时，它会使用一个 <code>iframe</code>；<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>在其他情况下，<strong>knitr</strong> 尝试拍摄该网页的屏幕截图（或使用你提供的自定义屏幕截图）。所有区块选项都与 HTML 小组件的选项相同。一个可能需要你特别注意的选项是 <code>delay</code>：HTML 小组件是在本地渲染的，因此 PhantomJS 通常可以快速加载以获取屏幕截图，但是加载任意 URL 可能需要更长的时间，因此你可能需要使用更大的 <code>delay</code> 值，例如，使用区块选项 <code>screenshot.opts = list(delay = 5)</code>。</p>
-<p>  另一个相关的函数是 <code>knitr::include_app()</code>，它与 <code>include_url()</code> 非常相似。它是为通过 URLs 在输出中嵌入 Shiny 应用程序而设计的。它与 <code>include_url()</code> 的唯一区别在于，如果 URL 中不存在其他查询参数，它会自动将查询参数 <code>?showcase=0</code> 添加到 URL 中，以禁用 Shiny 的 showcase 模式，该模式对于屏幕截图或 iframes 来说不太可能有用。如果确实需要 showcase 模式，请使用 <code>include_url()</code> 而不是 <code>include_app()</code>。下面是一个 Shiny 的应用程序示例（图 <a href="2.11-web-页面和-shiny-应用.html#fig:miniUI">2.6</a>）：</p>
+<p>与 HTML 小组件类似，书籍中可以嵌入任意网页。你可以使用函数 <code>knitr::include_url()</code> 通过 URL 在书籍中包含该网页。当输出格式为 HTML 时，它会使用一个 <code>iframe</code>；<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>在其他情况下，<strong>knitr</strong> 尝试拍摄该网页的屏幕截图（或使用你提供的自定义屏幕截图）。所有区块选项都与 HTML 小组件的选项相同。一个可能需要你特别注意的选项是 <code>delay</code>：HTML 小组件是在本地渲染的，因此 PhantomJS 通常可以快速加载以获取屏幕截图，但是加载任意 URL 可能需要更长的时间，因此你可能需要使用更大的 <code>delay</code> 值，例如，使用区块选项 <code>screenshot.opts = list(delay = 5)</code>。</p>
+<p>另一个相关的函数是 <code>knitr::include_app()</code>，它与 <code>include_url()</code> 非常相似。它是为通过 URLs 在输出中嵌入 Shiny 应用程序而设计的。它与 <code>include_url()</code> 的唯一区别在于，如果 URL 中不存在其他查询参数，它会自动将查询参数 <code>?showcase=0</code> 添加到 URL 中，以禁用 Shiny 的 showcase 模式，该模式对于屏幕截图或 iframes 来说不太可能有用。如果确实需要 showcase 模式，请使用 <code>include_url()</code> 而不是 <code>include_app()</code>。下面是一个 Shiny 的应用程序示例（图 <a href="2.11-web-页面和-shiny-应用.html#fig:miniUI">2.6</a>）：</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="2.11-web-页面和-shiny-应用.html#cb67-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_app</span>(<span class="st">&#39;https://yihui.shinyapps.io/miniUI/&#39;</span>, <span class="at">height =</span> <span class="st">&#39;600px&#39;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:miniUI"></span>
 <iframe src="https://yihui.shinyapps.io/miniUI/?showcase=0" width="768" height="600px" data-external="1">
@@ -320,8 +321,8 @@ details > summary {
 图 2.6: 通过 miniUI 软件包创建的一个 Shiny 应用；你可以在 <a href="https://yihui.shinyapps.io/miniUI/" class="uri">https://yihui.shinyapps.io/miniUI/</a> 看到在线版本
 </p>
 </div>
-<p>  同样的，如果你正在阅读本书的 HTML 版本，将看到一个活动的应用程序，如果你正在阅读本书的其他格式版本，将看到一个静态屏幕截图。上面的 Shiny 应用程序是使用 <strong>miniUI</strong> 软件包 <span class="citation">(<a href="#ref-R-miniUI">Cheng 2018</a>)</span> 创建的，这个软件包提供的布局功能对于小屏幕上的 Shiny 应用程序特别好。如果使用普通的 Shiny 布局功能，则可能会在 iframe 中看到垂直和/或水平滚动条，因为页面大小太大，无法放入 iframe 中。如果 iframe 的默认宽度太小，可以使用区块选项 <code>out.width</code> 进行更改。对于 iframe 的高度，请使用 <code>include_url()</code>/<code>include_app()</code> 的 <code>height</code> 参数。</p>
-<p>  Shiny 应用程序可能需要比普通 URL 更长的加载时间。你可能需要对 <code>delay</code> 选项使用一个保守的值，例如 10。不用多加叙说，<code>include_url()</code> 和 <code>include_app()</code> 需要一个正常工作的 Internet 连接，除非你以前缓存了区块（但是如果没有 Internet 连接，iframe 内的网页仍然无法工作）。</p>
+<p>同样的，如果你正在阅读本书的 HTML 版本，将看到一个活动的应用程序，如果你正在阅读本书的其他格式版本，将看到一个静态屏幕截图。上面的 Shiny 应用程序是使用 <strong>miniUI</strong> 软件包 <span class="citation">(<a href="#ref-R-miniUI">Cheng 2018</a>)</span> 创建的，这个软件包提供的布局功能对于小屏幕上的 Shiny 应用程序特别好。如果使用普通的 Shiny 布局功能，则可能会在 iframe 中看到垂直和/或水平滚动条，因为页面大小太大，无法放入 iframe 中。如果 iframe 的默认宽度太小，可以使用区块选项 <code>out.width</code> 进行更改。对于 iframe 的高度，请使用 <code>include_url()</code>/<code>include_app()</code> 的 <code>height</code> 参数。</p>
+<p>Shiny 应用程序可能需要比普通 URL 更长的加载时间。你可能需要对 <code>delay</code> 选项使用一个保守的值，例如 10。不用多加叙说，<code>include_url()</code> 和 <code>include_app()</code> 需要一个正常工作的 Internet 连接，除非你以前缓存了区块（但是如果没有 Internet 连接，iframe 内的网页仍然无法工作）。</p>
 
 </div>
 <!-- </div> -->

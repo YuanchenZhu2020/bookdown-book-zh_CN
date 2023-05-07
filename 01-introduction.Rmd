@@ -2,7 +2,7 @@
 
 # 简介 {#introduction}
 
-&emsp;&emsp;这本书是使用 R Markdown [@R-rmarkdown] 和 R 软件包 **bookdown** [@R-bookdown] 创作书籍和技术文档的指南。它侧重于创作书籍、长篇文章或报告所需要使用的功能，例如：
+这本书是使用 R Markdown [@R-rmarkdown] 和 R 软件包 **bookdown** [@R-bookdown] 创作书籍和技术文档的指南。它侧重于创作书籍、长篇文章或报告所需要使用的功能，例如：
 
 - 公式、定理、图表的排版和交叉引用；
 - 如何为一本书生成多种输出格式，例如 HTML、PDF 和电子书；
@@ -10,21 +10,21 @@
 - 编辑器支持（尤其是 RStudio IDE）;
 - 怎样发布书籍；
 
-&emsp;&emsp;这不是对 R Markdown 或 **knitr** 软件包[@R-knitr]的全面介绍，尽管 **bookdown** 就是在这个软件包的基础上构建的。要了解有关 R Markdown 的更多信息，请查看联机文档 <http://rmarkdown.rstudio.com>。关于 **knitr**，请参阅 @xie2015。你不必是 R 语言[@R-base]的专家就可以阅读这本书，但是你应该对 R Markdown 和 **knitr** 有一些基本的了解。对于初学者，你可以从 <https://www.rstudio.com/resources/cheatsheets/> 上的备忘单开始学习。本书的附录包含对这些软件包的简要介绍。为了能够自定义书籍模板和主题，你应该熟悉 LaTeX、HTML 和 CSS。
+这不是对 R Markdown 或 **knitr** 软件包[@R-knitr]的全面介绍，尽管 **bookdown** 就是在这个软件包的基础上构建的。要了解有关 R Markdown 的更多信息，请查看联机文档 <http://rmarkdown.rstudio.com>。关于 **knitr**，请参阅 @xie2015。你不必是 R 语言[@R-base]的专家就可以阅读这本书，但是你应该对 R Markdown 和 **knitr** 有一些基本的了解。对于初学者，你可以从 <https://www.rstudio.com/resources/cheatsheets/> 上的备忘单开始学习。本书的附录包含对这些软件包的简要介绍。为了能够自定义书籍模板和主题，你应该熟悉 LaTeX、HTML 和 CSS。
 
 ## 开发动机
 
-&emsp;&emsp;Markdown 是一种很好的语言，可以编写相对简单的文档，其中包含诸如节、段落、列表、链接和图像等元素。Pandoc (<http://pandoc.org>) 极大地扩展了[原始 Markdown 语法](http://daringfireball.net/projects/markdown/)，并增加了不少有用的新功能，如脚注、引文和表格。更重要的是，Pandoc 可以从 Markdown 生成多种格式的输出文档，包括 HTML、LaTeX/PDF、Word 和幻灯片。
+Markdown 是一种很好的语言，可以编写相对简单的文档，其中包含诸如节、段落、列表、链接和图像等元素。Pandoc (<http://pandoc.org>) 极大地扩展了[原始 Markdown 语法](http://daringfireball.net/projects/markdown/)，并增加了不少有用的新功能，如脚注、引文和表格。更重要的是，Pandoc 可以从 Markdown 生成多种格式的输出文档，包括 HTML、LaTeX/PDF、Word 和幻灯片。
 
-&emsp;&emsp;目前 Pandoc 的 Markdown 还缺少一些有用的功能，这些功能对于编写一个相对复杂的文档（比如一本书）是必要的，比如 HTML 输出中的图表自动编号、图表的交叉引用以及对图表外观的精细控制（例如，目前无法使用 Markdown 语法指定图像的对齐方式。这些是我们在 **bookdown** 软件包中解决的一些问题。
+目前 Pandoc 的 Markdown 还缺少一些有用的功能，这些功能对于编写一个相对复杂的文档（比如一本书）是必要的，比如 HTML 输出中的图表自动编号、图表的交叉引用以及对图表外观的精细控制（例如，目前无法使用 Markdown 语法指定图像的对齐方式。这些是我们在 **bookdown** 软件包中解决的一些问题。
 
-&emsp;&emsp;在我们想要以多种输出格式构建书籍的限制下，几乎不可能涵盖这些不同输出格式的所有可能的特性。例如，使用 (R) Markdown 语法在 HTML 输出中重新创建某个复杂的 LaTeX 环境可能很困难。我们的主要目标不是用 Markdown 来代替*一切*，而是涵盖编写一个相对复杂的文档所需的*大多数*常见功能，并使这些功能的语法在所有输出格式下保持一致。这样你只需要学习一种技术，它就可以用于所有输出格式。\index{Markdown}\index{LaTeX}
+在我们想要以多种输出格式构建书籍的限制下，几乎不可能涵盖这些不同输出格式的所有可能的特性。例如，使用 (R) Markdown 语法在 HTML 输出中重新创建某个复杂的 LaTeX 环境可能很困难。我们的主要目标不是用 Markdown 来代替*一切*，而是涵盖编写一个相对复杂的文档所需的*大多数*常见功能，并使这些功能的语法在所有输出格式下保持一致。这样你只需要学习一种技术，它就可以用于所有输出格式。\index{Markdown}\index{LaTeX}
 
-&emsp;&emsp;这个项目的另一个目标是使得构建令人赏心悦目的书籍变得更加容易。一些不错的现有例子包括 GitBook (<https://www.gitbook.com>)、tufte CSS (<http://edwardtufte.github.io/tufte-css/>) 和 Tufte-LaTeX (<https://tufte-latex.github.io/tufte-latex/>)。我们希望将这些主题和样式集成到 **bookdown** 中，这样作者就不必深入研究如何使用某个 LaTeX 类或如何为 HTML 输出配置 CSS 等细节。
+这个项目的另一个目标是使得构建令人赏心悦目的书籍变得更加容易。一些不错的现有例子包括 GitBook (<https://www.gitbook.com>)、tufte CSS (<http://edwardtufte.github.io/tufte-css/>) 和 Tufte-LaTeX (<https://tufte-latex.github.io/tufte-latex/>)。我们希望将这些主题和样式集成到 **bookdown** 中，这样作者就不必深入研究如何使用某个 LaTeX 类或如何为 HTML 输出配置 CSS 等细节。
 
 ## 开始
 
-&emsp;&emsp;对于初学者来说，使用 R Markdown 和 **bookdown** 开始创作书籍的最简单的方法是 GitHub 上的示例 `bookdown-demo`：
+对于初学者来说，使用 R Markdown 和 **bookdown** 开始创作书籍的最简单的方法是 GitHub 上的示例 `bookdown-demo`：
 
 1. 下载 GitHub 存储库 <https://github.com/rstudio/bookdown-demo> 作为 [Zip文件](https://github.com/rstudio/bookdown-demo/archive/main.zip)，然后在本地解压该文件。
 1. 安装 RStudio IDE。注意，你需要版本号高于 1.0.0 的 RStudio。如果你的 RStudio 版本低于 1.0.0，请[下载最新版本](https://posit.co/download/rstudio-desktop/)。
@@ -44,13 +44,13 @@
 如果你打算把你的书打印成 PDF 格式，你将需要一个 LaTeX 发行版。我们建议你安装 TinyTeX（包含 Xeletex）：<https://yihui.org/tinytex/>。
 ```
 
-&emsp;&emsp;现在你应该可以在 RStudio viewer 中看到本书样例的索引页。你可以添加或更改 R Markdown 文件，然后再次点击 `Knit` 按钮预览书籍。如果你不想使用 RStudio，也可以通过命令行编译书籍。详见下一节。
+现在你应该可以在 RStudio viewer 中看到本书样例的索引页。你可以添加或更改 R Markdown 文件，然后再次点击 `Knit` 按钮预览书籍。如果你不想使用 RStudio，也可以通过命令行编译书籍。详见下一节。
 
-&emsp;&emsp;尽管你在 `bookdown-demo` 示例中看到了不少文件，但大多数文件对于一本书来说并不是必需的。如果你对巨大的文件数量感到不知所措，可以使用这个最小的示例，它实际上是一个文件 `index.Rmd`：<https://github.com/yihui/bookdown-minimal>。`bookdown-demo`示例包含一些你之后可能需要学习的高级设置，例如如何自定义 LaTeX 序言 (preamble)、调整 CSS 以及在 GitHub 上构建图书等。
+尽管你在 `bookdown-demo` 示例中看到了不少文件，但大多数文件对于一本书来说并不是必需的。如果你对巨大的文件数量感到不知所措，可以使用这个最小的示例，它实际上是一个文件 `index.Rmd`：<https://github.com/yihui/bookdown-minimal>。`bookdown-demo`示例包含一些你之后可能需要学习的高级设置，例如如何自定义 LaTeX 序言 (preamble)、调整 CSS 以及在 GitHub 上构建图书等。
 
 ## 使用方法 {#usage}
 
-&emsp;&emsp;有典型的 **bookdown** 书籍包括多个章节，并且每一章放在一个 R Markdown 文件中，文件的拓展名为 `.Rmd`。每一个 R Markdown 文件必须直接以本章标题作为开头，并使用一级标题，例如 `# Chapter Title`。全部 R Markdown 文件必须使用 UTF-8 编码，特别是当他们包含某些多字节字符时，例如中文、日文和韩文。以下是一个例子（the bullets are the filenames, followed by the file content):
+有典型的 **bookdown** 书籍包括多个章节，并且每一章放在一个 R Markdown 文件中，文件的拓展名为 `.Rmd`。每一个 R Markdown 文件必须直接以本章标题作为开头，并使用一级标题，例如 `# Chapter Title`。全部 R Markdown 文件必须使用 UTF-8 编码，特别是当他们包含某些多字节字符时，例如中文、日文和韩文。以下是一个例子（the bullets are the filenames, followed by the file content):
 
 - index.Rmd
 
@@ -104,15 +104,15 @@
     我们完成了一本好书。
     ```
 
-&emsp;&emsp;默认情况下，**bookdown** 按文件名的顺序合并所有 Rmd 文件，例如，`01-intro.Rmd` 将出现在 `02-literature.Rmd` 之前。以下划线 `_` 开头的文件名将被跳过。如果存在名为 `index.Rmd` 的 Rmd 文件，则在合并所有 Rmd 文件时，它将始终被视为首个文件。使用这种特殊处理的原因是，从 `index.Rmd` 生成的 HTML 文件 `index.HTML` 通常是你查看网站时的默认主页，例如，当你打开 <http://yihui.org/> 时，你实际上正在浏览 <http://yihui.org/index.html>。
+默认情况下，**bookdown** 按文件名的顺序合并所有 Rmd 文件，例如，`01-intro.Rmd` 将出现在 `02-literature.Rmd` 之前。以下划线 `_` 开头的文件名将被跳过。如果存在名为 `index.Rmd` 的 Rmd 文件，则在合并所有 Rmd 文件时，它将始终被视为首个文件。使用这种特殊处理的原因是，从 `index.Rmd` 生成的 HTML 文件 `index.HTML` 通常是你查看网站时的默认主页，例如，当你打开 <http://yihui.org/> 时，你实际上正在浏览 <http://yihui.org/index.html>。
 
-&emsp;&emsp;你能够通过在书籍目录中包含一个名为 `_bookdown.yml`\index{\_bookdown.yml} 的配置文件来覆盖程序的上述行为。它是一个 YAML\index{YAML} 文件 (<https://en.wikipedia.org/wiki/YAML>)，R Markdown 用户应该对这种格式很熟悉，因为它也被用来在 R Markdown 文档开头编写元数据（你能够在第 \@ref(r-markdown) 节了解有关 YAML 的更多信息）。你可以使用一个名为 `rmd_files` 的字段来定义你自己的书籍文件列表与 Rmd 文件顺序。例如：
+你能够通过在书籍目录中包含一个名为 `_bookdown.yml`\index{\_bookdown.yml} 的配置文件来覆盖程序的上述行为。它是一个 YAML\index{YAML} 文件 (<https://en.wikipedia.org/wiki/YAML>)，R Markdown 用户应该对这种格式很熟悉，因为它也被用来在 R Markdown 文档开头编写元数据（你能够在第 \@ref(r-markdown) 节了解有关 YAML 的更多信息）。你可以使用一个名为 `rmd_files` 的字段来定义你自己的书籍文件列表与 Rmd 文件顺序。例如：
 
 ```yaml
 rmd_files: ["index.Rmd", "abstract.Rmd", "intro.Rmd"]
 ```
 
-&emsp;&emsp;使用上述方法时，**bookdown** 将会使用你在这个 YAML 字段（如果文件 `index.Rmd` 存在，它将会被添加进文件列表，并且以下划线命名的文件名将会被忽略）中定义的文件列表。如果你希望同时输出 HTML 和 LaTeX/PDF 文档，并且对于 HTML 和 LaTeX 输出使用不同的 Rmd 文件，你可以分别为这两种输出格式指定不同的文件列表，例如，
+使用上述方法时，**bookdown** 将会使用你在这个 YAML 字段（如果文件 `index.Rmd` 存在，它将会被添加进文件列表，并且以下划线命名的文件名将会被忽略）中定义的文件列表。如果你希望同时输出 HTML 和 LaTeX/PDF 文档，并且对于 HTML 和 LaTeX 输出使用不同的 Rmd 文件，你可以分别为这两种输出格式指定不同的文件列表，例如，
 
 ```yaml
 rmd_files:
@@ -120,9 +120,9 @@ rmd_files:
   latex: ["abstract.Rmd", "intro.Rmd"]
 ```
 
-&emsp;&emsp;尽管我们一直在谈论 R Markdown 文件，但章节文件实际上不必是 R Markdown 文件。它们可以是普通的 Markdown 文件 (`.md`)，并且完全不需要包含 R 代码块。你当然可以使用 **bookdown** 来创作小说和诗歌。
+尽管我们一直在谈论 R Markdown 文件，但章节文件实际上不必是 R Markdown 文件。它们可以是普通的 Markdown 文件 (`.md`)，并且完全不需要包含 R 代码块。你当然可以使用 **bookdown** 来创作小说和诗歌。
 
-&emsp;&emsp;目前，你可能会使用的主要的输出格式包括 `bookdown::pdf_book`、`bookdown::gitbook`、`bookdown::html_book` 和 `bookdown::epub_book`。软件包中有一个类似于 `rmarkdown::render()` 的函数 `bookdown::render_book()`\index{bookdown::render\_book()}，但它是为了使用输出格式函数将*多个* Rmd 文档呈现在一本书中。你可以直接从命令行调用这个函数，或者点击 RStudio IDE 中的相关按钮。下面是一些命令行示例：
+目前，你可能会使用的主要的输出格式包括 `bookdown::pdf_book`、`bookdown::gitbook`、`bookdown::html_book` 和 `bookdown::epub_book`。软件包中有一个类似于 `rmarkdown::render()` 的函数 `bookdown::render_book()`\index{bookdown::render\_book()}，但它是为了使用输出格式函数将*多个* Rmd 文档呈现在一本书中。你可以直接从命令行调用这个函数，或者点击 RStudio IDE 中的相关按钮。下面是一些命令行示例：
 
 ```{r eval=FALSE}
 bookdown::render_book('foo.Rmd', 'bookdown::gitbook')
@@ -131,7 +131,7 @@ bookdown::render_book('foo.Rmd', bookdown::gitbook(lib_dir = 'libs'))
 bookdown::render_book('foo.Rmd', bookdown::pdf_book(keep_tex = TRUE))
 ```
 
-&emsp;&emsp;为了在 RStudio IDE 中使用 `render_book` 和输出格式函数，可以定义一个名为 `site` 的 YAML 字段，其值为 `bookdown::bookdown_site`，^[这个函数会调用 `bookdown::render_book()`。]并且输出格式函数可以在 `output` 字段中使用，例如：
+为了在 RStudio IDE 中使用 `render_book` 和输出格式函数，可以定义一个名为 `site` 的 YAML 字段，其值为 `bookdown::bookdown_site`，^[这个函数会调用 `bookdown::render_book()`。]并且输出格式函数可以在 `output` 字段中使用，例如：
 
 ```yaml
 ---
@@ -144,9 +144,9 @@ output:
 ---
 ```
 
-&emsp;&emsp;然后你可以点击 RStudio 中 `Build` 选项卡下的 `Build Book` 按钮来将 Rmd 文件编译为一本书，或者点击工具栏中的 `Knit` 按钮来预览当前章节。
+然后你可以点击 RStudio 中 `Build` 选项卡下的 `Build Book` 按钮来将 Rmd 文件编译为一本书，或者点击工具栏中的 `Knit` 按钮来预览当前章节。
 
-&emsp;&emsp;更多在 `_bookdown.yml` 中的 **bookdown** 设置将会在第 \@ref(configuration) 节中介绍。除了这些配置，你还能够在书籍的*第一个* Rmd 文件中的 YAML 元数据里指定一些 Pandoc 相关的配置，例如标题、作者以及书籍付梓日期等。例如：
+更多在 `_bookdown.yml` 中的 **bookdown** 设置将会在第 \@ref(configuration) 节中介绍。除了这些配置，你还能够在书籍的*第一个* Rmd 文件中的 YAML 元数据里指定一些 Pandoc 相关的配置，例如标题、作者以及书籍付梓日期等。例如：
 
 ```yaml
 --- 
@@ -165,26 +165,26 @@ link-citations: yes
 
 ## 两种呈现方法 {#new-session}
 
-&emsp;&emsp;将所有章节合并到一个 Rmd 文件中，这是在 **bookdown** 中呈现书籍的一种方法。实际上还有另一种方法：你可以在一个*单独的*会话中生成每一章，**bookdown** 将合并所有章节的 Markdown 输出文档来呈现书籍。我们将这两种方法分别称为“合并与生成” (M-K) 以及“生成与合并” (K-M)。它们之间的差异可能看起来很微妙，但根据你的用例不同可能会变得相当重要。
+将所有章节合并到一个 Rmd 文件中，这是在 **bookdown** 中呈现书籍的一种方法。实际上还有另一种方法：你可以在一个*单独的*会话中生成每一章，**bookdown** 将合并所有章节的 Markdown 输出文档来呈现书籍。我们将这两种方法分别称为“合并与生成” (M-K) 以及“生成与合并” (K-M)。它们之间的差异可能看起来很微妙，但根据你的用例不同可能会变得相当重要。
 
 - 二者最显著的差异是：M-K 在相同的 R session 中运行*所有*代码块，而 K-M 对于每一个独立的章节都会使用单独的 R session。对于 M-K 来说，来自前几章的 R session 状态将会转移到之后的章节（例如，前几章中创建的对象可用于后几章，除非你故意删除了它们）；对于 K-M 来说，所有的章节都是相互隔离的。^[当然，没有人能阻止你在一个章节中写出一些文件，然后在另一个章节中呈现它们。剔除这些副作用是很困难的。]如果你希望每一章都在一个干净的状态下进行编译，那么就使用 K-M 方法。如果你使用 M-K 方法，那么将一个正在运行中的 R session 恢复到完全干净的状态是非常棘手和困难的。例如，即便你 detach/unload 上一章中加载的软件包，R 也不会清除由这些软件包注册的 S3 方法。
 - 因为 **knitr** 不允许在一个源文档中出现重复的代码块标签，因此当你使用 M-K 方法时，需要确保在书籍各章节中没有重复的标签，否则 **knitr** 在生成合并后的 Rmd 文件时会发出错误信号。而 K-M 方法只需要在任何单个 Rmd 文件中没有重复的标签。
 - K-M 方法不允许 Rmd 文件位于子目录中，而 M-K 方法允许。
 
-&emsp;&emsp;**bookdown** 中的默认方法时 M-K。如果想要转为 K-M 方法，可以在调用 `render_book()` 时使用参数 `new_session = TRUE`，或者在配置文件 `_bookdown.yml` 中设置 `new_session: yes`。
+**bookdown** 中的默认方法时 M-K。如果想要转为 K-M 方法，可以在调用 `render_book()` 时使用参数 `new_session = TRUE`，或者在配置文件 `_bookdown.yml` 中设置 `new_session: yes`。
 
-&emsp;&emsp;对于 K-M 方法，你可以在 `_bookdown.yml` 中配置 `book_filename` 选项，但是它应该是一个 Markdown 文件的名称，例如 `_main.md`。不过文件扩展名并不重要，你甚至可以省略扩展名，例如，只需设置为 `book_filename: _main` 即可。其它配置都适用于 M-K 和 K-M。
+对于 K-M 方法，你可以在 `_bookdown.yml` 中配置 `book_filename` 选项，但是它应该是一个 Markdown 文件的名称，例如 `_main.md`。不过文件扩展名并不重要，你甚至可以省略扩展名，例如，只需设置为 `book_filename: _main` 即可。其它配置都适用于 M-K 和 K-M。
 
 ## 一些提示
 
-&emsp;&emsp;分页限制下的排版（例如对于 LaTeX/PDF 输出）可能是一项非常繁琐和耗时的工作。我建议你不要经常查看 PDF 输出，因为大多数情况下你不太可能满意：文本可能超出页边空白，图片可能浮动得太远等等。不要试图*立即*使事情看起来很好，因为当你不断修改书籍时，你可能会一次又一次地失望。即使你只是做了一些小的改动，事情也可能会再次变得一团糟（参见 <http://bit.ly/tbrLtx>，这是一个很好的例子）。
+分页限制下的排版（例如对于 LaTeX/PDF 输出）可能是一项非常繁琐和耗时的工作。我建议你不要经常查看 PDF 输出，因为大多数情况下你不太可能满意：文本可能超出页边空白，图片可能浮动得太远等等。不要试图*立即*使事情看起来很好，因为当你不断修改书籍时，你可能会一次又一次地失望。即使你只是做了一些小的改动，事情也可能会再次变得一团糟（参见 <http://bit.ly/tbrLtx>，这是一个很好的例子）。
 
-&emsp;&emsp;如果想要预览书籍，请预览 HTML 输出。在完成了书籍的内容，并且非常确定不需要进行重大修订后再使用 PDF 版本。
+如果想要预览书籍，请预览 HTML 输出。在完成了书籍的内容，并且非常确定不需要进行重大修订后再使用 PDF 版本。
 
-&emsp;&emsp;如果 R Markdown 文档中的某些代码块运行起来很费时，你可以通过在块头部添加块选项 `cache=TRUE` 来缓存这一个代码块的输出，并且也建议你标记这些代码块，例如：
+如果 R Markdown 文档中的某些代码块运行起来很费时，你可以通过在块头部添加块选项 `cache=TRUE` 来缓存这一个代码块的输出，并且也建议你标记这些代码块，例如：
 
 ````markdown
 `r ''````{r important-computing, cache=TRUE}
 ````
 
-&emsp;&emsp;在第 \@ref(editing) 章，我们将会讨论如何在你编辑时快速地预览书籍。简单来说，你可以使用 `preview_chapter()` 函数来编译单个章节，而不是编译整本书。函数 `serve_book()` 能够让你轻松实现实时预览 HTML 书页：每当你修改 Rmd 文件时，书籍都可以重新编译，浏览器也能相应地自动刷新。
+在第 \@ref(editing) 章，我们将会讨论如何在你编辑时快速地预览书籍。简单来说，你可以使用 `preview_chapter()` 函数来编译单个章节，而不是编译整本书。函数 `serve_book()` 能够让你轻松实现实时预览 HTML 书页：每当你修改 Rmd 文件时，书籍都可以重新编译，浏览器也能相应地自动刷新。

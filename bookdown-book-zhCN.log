@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  3 MAY 2023 17:37
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  7 MAY 2023 19:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -555,7 +555,9 @@ Package fontspec Info: Font family 'KaiTi(0)' created for font 'KaiTi' with
 (fontspec)             <->s*[0.9350477383261104]"KaiTi/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-(d:/R/TinyTex/texmf-dist/tex/latex/caption/caption.sty
+(d:/R/TinyTex/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+) (d:/R/TinyTex/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/03/12 v3.6j Customizing captions (AR)
 (d:/R/TinyTex/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
@@ -1147,46 +1149,51 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibsep=\skip105
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count338
-)
-Package hyperref Info: Option `colorlinks' set `true' on input line 231.
-\c@theorem=\count339
-\c@lemma=\count340
-\c@corollary=\count341
-\c@proposition=\count342
-\c@conjecture=\count343
-\c@definition=\count344
-\c@example=\count345
-\c@exercise=\count346
-\c@hypothesis=\count347
+) (d:/R/TinyTex/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+(d:/R/TinyTex/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
+File: bkm-dvipdfm.def 2020-11-06 v1.29 bookmark driver for dvipdfm (HO)
+\BKM@id=\count339
+))
+Package hyperref Info: Option `colorlinks' set `true' on input line 222.
+\c@theorem=\count340
+\c@lemma=\count341
+\c@corollary=\count342
+\c@proposition=\count343
+\c@conjecture=\count344
+\c@definition=\count345
+\c@example=\count346
+\c@exercise=\count347
+\c@hypothesis=\count348
 (./bookdown-book-zhCN.aux)
 \openout1 = `bookdown-book-zhCN.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 254.
-LaTeX Font Info:    ... okay on input line 254.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 254.
-LaTeX Font Info:    ... okay on input line 254.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 254.
-LaTeX Font Info:    ... okay on input line 254.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 254.
-LaTeX Font Info:    ... okay on input line 254.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 254.
-LaTeX Font Info:    ... okay on input line 254.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 254.
-LaTeX Font Info:    ... okay on input line 254.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 254.
-LaTeX Font Info:    ... okay on input line 254.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 254.
-LaTeX Font Info:    ... okay on input line 254.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 254.
-LaTeX Font Info:    ... okay on input line 254.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 254.
-LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 245.
+LaTeX Font Info:    ... okay on input line 245.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 245.
+LaTeX Font Info:    ... okay on input line 245.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 245.
+LaTeX Font Info:    ... okay on input line 245.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 245.
+LaTeX Font Info:    ... okay on input line 245.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 245.
+LaTeX Font Info:    ... okay on input line 245.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 245.
+LaTeX Font Info:    ... okay on input line 245.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 245.
+LaTeX Font Info:    ... okay on input line 245.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 245.
+LaTeX Font Info:    ... okay on input line 245.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 245.
+LaTeX Font Info:    ... okay on input line 245.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 245.
+LaTeX Font Info:    ... okay on input line 245.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 254.
+(Font)              scaled to size 6.0pt on input line 245.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 254.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 245.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/b/n on input line 254.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/b/n on input line 245.
 
 Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             'latinmodern-math.otf' with options
@@ -1218,13 +1225,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 254.
+(Font)              `operators' in the math version `normal' on input line 245.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 254.
+(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 245.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 254.
+(Font)              `operators' in the math version `bold' on input line 245.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 254.
+(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 245.
 
 Package fontspec Info: latinmodern-math scale = 1.0001.
 
@@ -1288,13 +1295,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 254.
+(Font)              `symbols' in the math version `normal' on input line 245.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 254.
+(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 245.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 254.
+(Font)              `symbols' in the math version `bold' on input line 245.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 254.
+(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 245.
 
 Package fontspec Info: latinmodern-math scale = 0.9999.
 
@@ -1340,39 +1347,35 @@ Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
 (fontspec)             =7.2pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 254.
+(Font)              `largesymbols' in the math version `normal' on input line 245.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 254.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 245.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 254.
+(Font)              `largesymbols' in the math version `bold' on input line 245.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 254.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 245.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 254.
-(./bookdown-book-zhCN.out) (./bookdown-book-zhCN.out)
-\@outlinefile=\write5
-\openout5 = `bookdown-book-zhCN.out'.
-
+Package hyperref Info: Link coloring ON on input line 245.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 256.
+(Font)              scaled to size 10.0pt on input line 247.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 256.
+(Font)              scaled to size 8.0pt on input line 247.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/sl' in size <24> not available
-(Font)              Font shape `TU/Alegreya(0)/m/it' tried instead on input line 256.
+(Font)              Font shape `TU/Alegreya(0)/m/it' tried instead on input line 247.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/it' will be
-(Font)              scaled to size 24.0pt on input line 256.
+(Font)              scaled to size 24.0pt on input line 247.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/sl' in size <24> not available
-(Font)              Font shape `TU/Alegreya(0)/b/it' tried instead on input line 256.
+(Font)              Font shape `TU/Alegreya(0)/b/it' tried instead on input line 247.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/it' will be
-(Font)              scaled to size 24.0pt on input line 256.
+(Font)              scaled to size 24.0pt on input line 247.
 
 LaTeX Font Warning: Font shape `TU/KaiTi(0)/b/sl' undefined
-(Font)              using `TU/KaiTi(0)/m/n' instead on input line 256.
+(Font)              using `TU/KaiTi(0)/m/n' instead on input line 247.
 
 LaTeX Font Info:    Font shape `TU/KaiTi(0)/m/n' will be
-(Font)              scaled to size 22.44104pt on input line 256.
+(Font)              scaled to size 22.44104pt on input line 247.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1455,56 +1458,56 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [2]
-Underfull \vbox (badness 10000) detected at line 271
+Underfull \vbox (badness 10000) detected at line 262
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 271
+Overfull \hbox (336.25pt too wide) detected at line 262
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 271
+Underfull \vbox (badness 10000) detected at line 262
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 271
+Overfull \hbox (336.25pt too wide) detected at line 262
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 271
+Underfull \vbox (badness 10000) detected at line 262
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 271
+Overfull \hbox (336.25pt too wide) detected at line 262
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 271
+Underfull \vbox (badness 10000) detected at line 262
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 271
+Overfull \hbox (336.25pt too wide) detected at line 262
 []
  []
 
 
-Underfull \hbox (badness 10000) detected at line 271
+Underfull \hbox (badness 10000) detected at line 262
 []
  []
 
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/sl' in size <18> not available
-(Font)              Font shape `TU/Alegreya(0)/m/it' tried instead on input line 271.
+(Font)              Font shape `TU/Alegreya(0)/m/it' tried instead on input line 262.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/it' will be
-(Font)              scaled to size 18.0pt on input line 271.
+(Font)              scaled to size 18.0pt on input line 262.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/sl' in size <18> not available
-(Font)              Font shape `TU/Alegreya(0)/b/it' tried instead on input line 271.
+(Font)              Font shape `TU/Alegreya(0)/b/it' tried instead on input line 262.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/it' will be
-(Font)              scaled to size 18.0pt on input line 271.
+(Font)              scaled to size 18.0pt on input line 262.
 LaTeX Font Info:    Font shape `TU/KaiTi(0)/b/sl' will be
-(Font)              scaled to size 16.83078pt on input line 271.
+(Font)              scaled to size 16.83078pt on input line 262.
 (./bookdown-book-zhCN.toc
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
 (Font)              scaled to size 12.0pt on input line 2.
@@ -1549,16 +1552,72 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [3
 
-] [4] [5]
+] [4]
 
 LaTeX Font Warning: Font shape `TU/KaiTi(0)/m/it' undefined
 (Font)              using `TU/KaiTi(0)/m/n' instead on input line 72.
 
-[6])
-\tf@toc=\write6
-\openout6 = `bookdown-book-zhCN.toc'.
+[5])
+\tf@toc=\write5
+\openout5 = `bookdown-book-zhCN.toc'.
 
-[7]
+[6]
+Underfull \vbox (badness 10000) detected at line 264
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 264
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 264
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 264
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 264
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 264
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 264
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 264
+[]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 264
+[]
+ []
+
+
+Package hyperref Warning: bookmark level for unknown fm defaults to 0.
+
+(./bookdown-book-zhCN.lof)
+\tf@lof=\write6
+\openout6 = `bookdown-book-zhCN.lof'.
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[7
+
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1598,52 +1657,49 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [8
 
 ]
-Underfull \vbox (badness 10000) detected at line 273
+Underfull \vbox (badness 10000) detected at line 265
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 273
+Overfull \hbox (336.25pt too wide) detected at line 265
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 273
+Underfull \vbox (badness 10000) detected at line 265
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 273
+Overfull \hbox (336.25pt too wide) detected at line 265
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 273
+Underfull \vbox (badness 10000) detected at line 265
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 273
+Overfull \hbox (336.25pt too wide) detected at line 265
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 273
+Underfull \vbox (badness 10000) detected at line 265
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 273
+Overfull \hbox (336.25pt too wide) detected at line 265
 []
  []
 
 
-Underfull \hbox (badness 10000) detected at line 273
+Underfull \hbox (badness 10000) detected at line 265
 []
  []
 
-
-Package hyperref Warning: bookmark level for unknown fm defaults to 0.
-
-(./bookdown-book-zhCN.lof)
-\tf@lof=\write7
-\openout7 = `bookdown-book-zhCN.lof'.
+(./bookdown-book-zhCN.lot)
+\tf@lot=\write7
+\openout7 = `bookdown-book-zhCN.lot'.
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1653,62 +1709,6 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [9
 
 ]
-LaTeX Font Info:    Font shape `TU/KaiTi(0)/m/it' will be
-(Font)              scaled to size 9.35043pt on input line 274.
-[10]
-Underfull \vbox (badness 10000) detected at line 274
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 274
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 274
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 274
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 274
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 274
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 274
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 274
-[]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 274
-[]
- []
-
-(./bookdown-book-zhCN.lot)
-\tf@lot=\write8
-\openout8 = `bookdown-book-zhCN.lot'.
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
- [][][][] 
- []
-
-[11
-
-
-]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1745,71 +1745,65 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[12
+[10
 
 ]
-Underfull \vbox (badness 10000) detected at line 276
+Underfull \vbox (badness 10000) detected at line 267
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 276
+Overfull \hbox (336.25pt too wide) detected at line 267
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 276
+Underfull \vbox (badness 10000) detected at line 267
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 276
+Overfull \hbox (336.25pt too wide) detected at line 267
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 276
+Underfull \vbox (badness 10000) detected at line 267
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 276
+Overfull \hbox (336.25pt too wide) detected at line 267
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 276
+Underfull \vbox (badness 10000) detected at line 267
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 276
+Overfull \hbox (336.25pt too wide) detected at line 267
 []
  []
 
 
-Underfull \hbox (badness 10000) detected at line 276
+Underfull \hbox (badness 10000) detected at line 267
 []
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 8.4pt on input line 279.
+(Font)              scaled to size 8.4pt on input line 270.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 279.
+(Font)              scaled to size 10.00107pt on input line 270.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 279.
+(Font)              scaled to size 7.00075pt on input line 270.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 279.
+(Font)              scaled to size 5.00053pt on input line 270.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 279.
+(Font)              scaled to size 9.99893pt on input line 270.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 279.
+(Font)              scaled to size 6.99925pt on input line 270.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 279.
+(Font)              scaled to size 4.99947pt on input line 270.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 279.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+(Font)              scaled to size 7.0pt on input line 270.
 
 Package fontspec Info: Could not resolve font "FangSong/BI" (it probably
 (fontspec)             doesn't exist).
@@ -1823,7 +1817,7 @@ Package fontspec Info: Could not resolve font "FangSong/I" (it probably
 (fontspec)             doesn't exist).
 
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
-(Font)              scaled to size 8.39996pt on input line 312.
+(Font)              scaled to size 8.39996pt on input line 303.
 
 Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             with options [Script={CJK}].
@@ -1836,7 +1830,7 @@ Package fontspec Info: Font family 'FangSong(0)' created for font 'FangSong'
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 
-Overfull \hbox (15.57698pt too wide) in paragraph at lines 328--328
+Overfull \hbox (15.57698pt too wide) in paragraph at lines 319--319
 []|\TU/Alegreya(0)/m/n/12 upgrade/update|  
  []
 
@@ -1845,110 +1839,101 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[13
+[11
 
-] [14] [15] [16] [17] [18] [19] [20]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) detected at line 368
+]
+LaTeX Font Info:    Font shape `TU/KaiTi(0)/m/it' will be
+(Font)              scaled to size 9.35043pt on input line 347.
+[12] [13] [14] [15] [16] [17] [18]
+Underfull \hbox (badness 10000) detected at line 359
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 368
+Underfull \hbox (badness 10000) detected at line 359
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 376
+Underfull \hbox (badness 10000) detected at line 367
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 376
+Underfull \hbox (badness 10000) detected at line 367
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 378
+Underfull \hbox (badness 10000) detected at line 369
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 378
+Underfull \hbox (badness 10000) detected at line 369
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 380
+Underfull \hbox (badness 10000) detected at line 371
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 380
+Underfull \hbox (badness 10000) detected at line 371
 [][][]
  []
 
-[21]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[22]
-Underfull \vbox (badness 10000) detected at line 409
+[19] [20]
+Underfull \vbox (badness 10000) detected at line 400
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 409
+Overfull \hbox (336.25pt too wide) detected at line 400
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 409
+Underfull \vbox (badness 10000) detected at line 400
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 409
+Overfull \hbox (336.25pt too wide) detected at line 400
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 409
+Underfull \vbox (badness 10000) detected at line 400
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 409
+Overfull \hbox (336.25pt too wide) detected at line 400
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 409
+Underfull \vbox (badness 10000) detected at line 400
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 409
+Overfull \hbox (336.25pt too wide) detected at line 400
 []
  []
 
 
-Underfull \hbox (badness 10000) detected at line 409
+Underfull \hbox (badness 10000) detected at line 400
 []
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 File: images/by-nc-sa.png Graphic file (type bmp)
 <images/by-nc-sa.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 418--420
+Underfull \hbox (badness 10000) in paragraph at lines 409--411
 \TU/KaiTi(0)/m/n/12 本 书 的 在 线 版 本 依 据 \TU/Alegreya(0)/m/n/12 Creative Commons Attribution-
  []
 
 
-Underfull \hbox (badness 4940) in paragraph at lines 418--420
+Underfull \hbox (badness 4940) in paragraph at lines 409--411
 \TU/Alegreya(0)/m/n/12 NonCommercial-ShareAlike 4.0 International License[][][][][] \TU/KaiTi(0)/m/n/12 许 可 证 进
  []
 
@@ -1957,40 +1942,17 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[23
+[21
 
 
-]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[24]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 2111) in paragraph at lines 433--434
-[]\TU/Alegreya(0)/m/n/12   R ([][]$[][][][][] [] [] [] [][][] [] [] [][] [][][][][][][] [] [][][]$[][])\TU/KaiTi(0)/m/n/12 、| \TU/Alegreya(0)/m/n/12 Markdown \TU/KaiTi(0)/m/n/12 和 \TU/Alegreya(0)/m/n/12 Pandoc ([][]$[][][][] [] [] []
+] [22]
+Underfull \hbox (badness 2111) in paragraph at lines 424--425
+[]\TU/Alegreya(0)/m/n/12 R ([][]$[][][][][] [] [] [] [][][] [] [] [][] [][][][][][][] [] [][][]$[][])\TU/KaiTi(0)/m/n/12 、| \TU/Alegreya(0)/m/n/12 Markdown \TU/KaiTi(0)/m/n/12 和 \TU/Alegreya(0)/m/n/12 Pandoc ([][]$[][][][] [] [] []
  []
 
-[25]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[26]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[23] [24]
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/b/n' will be
-(Font)              scaled to size 8.39996pt on input line 455.
+(Font)              scaled to size 8.39996pt on input line 446.
 
 Package xeCJK Warning: `\xeCJKVerbAddon' may not work properly.
 (xeCJK)                
@@ -2022,20 +1984,104 @@ Package fontspec Info: Font family 'FangSong(1)' created for font 'FangSong'
 (fontspec)             <->s*[0.839996337890625]"FangSong/OT:script=hani;language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-[27]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[28]
-Underfull \hbox (badness 1019) in paragraph at lines 493--494
+[25] [26]
+Underfull \hbox (badness 1019) in paragraph at lines 484--485
 \TU/Alegreya(0)/m/n/12 is a list of all contributors: [][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][][][][][][] [] [][][][][][][][] []
  []
 
-[29]
-Underfull \hbox (badness 1910) in paragraph at lines 499--500
-[]\TU/Alegreya(0)/m/n/12 I moved to Omaha, Nebraska, in 2015, and enjoyed one year at
+[27] [28] [29]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
  []
 
-[30] [31]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[30
+
+]
+Underfull \vbox (badness 10000) detected at line 502
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 502
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 502
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 502
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 502
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 502
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 502
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 502
+[]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 502
+[]
+ []
+
+
+Underfull \hbox (badness 2343) in paragraph at lines 505--506
+[]\TU/KaiTi(0)/m/n/12 谢 益 辉 \TU/Alegreya(0)/m/n/12 (Yihui Xie) ([][]$[][][][] [] [] [] [][][][][] [] [][][]$[][]) \TU/KaiTi(0)/m/n/12 是 \TU/Alegreya(0)/m/n/12 Posit Software, PBC
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[31
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -2075,158 +2121,52 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [32
 
 ]
-Underfull \vbox (badness 10000) detected at line 511
+Underfull \vbox (badness 10000) detected at line 516
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 511
+Overfull \hbox (336.25pt too wide) detected at line 516
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 511
+Underfull \vbox (badness 10000) detected at line 516
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 511
+Overfull \hbox (336.25pt too wide) detected at line 516
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 511
+Underfull \vbox (badness 10000) detected at line 516
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 511
+Overfull \hbox (336.25pt too wide) detected at line 516
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 511
+Underfull \vbox (badness 10000) detected at line 516
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 511
-[]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 511
-[]
- []
-
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 1231) in paragraph at lines 514--515
-\TU/Alegreya(0)/m/n/12    \TU/KaiTi(0)/m/n/12 谢 益 辉 \TU/Alegreya(0)/m/n/12 (Yihui Xie) ([][]$[][][][] [] [] [] [][][][][] [] [][][]$[][]) \TU/KaiTi(0)/m/n/12 是 \TU/Alegreya(0)/m/n/12 Posit Software, PBC
- []
-
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) has occurred while \output is active
- [][][][] 
- []
-
-[33
-
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
- [][][][] 
- []
-
-[34
-
-]
-Underfull \vbox (badness 10000) detected at line 525
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 525
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 525
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 525
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 525
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 525
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 525
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 525
+Overfull \hbox (336.25pt too wide) detected at line 516
 []
  []
 
 Chapter 1.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
-(Font)              scaled to size 24.0pt on input line 525.
+(Font)              scaled to size 24.0pt on input line 516.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 24.0pt on input line 525.
+(Font)              scaled to size 24.0pt on input line 516.
 
 LaTeX Font Warning: Font shape `TU/KaiTi(0)/m/sl' undefined
-(Font)              using `TU/KaiTi(0)/m/n' instead on input line 525.
+(Font)              using `TU/KaiTi(0)/m/n' instead on input line 516.
 
 LaTeX Font Info:    Font shape `TU/KaiTi(0)/m/n' will be
-(Font)              scaled to size 16.83078pt on input line 525.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+(Font)              scaled to size 16.83078pt on input line 516.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
@@ -2235,458 +2175,263 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [1
 
 
-]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[2]
-Underfull \hbox (badness 10000) detected at line 564
+] [2]
+Underfull \hbox (badness 10000) detected at line 555
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 564
+Underfull \hbox (badness 10000) detected at line 555
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 566
+Underfull \hbox (badness 10000) detected at line 557
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 566
+Underfull \hbox (badness 10000) detected at line 557
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 568
+Underfull \hbox (badness 10000) detected at line 559
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 568
+Underfull \hbox (badness 10000) detected at line 559
 [][][]
  []
 
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/it' will be
-(Font)              scaled to size 8.39996pt on input line 572.
+(Font)              scaled to size 8.39996pt on input line 563.
 
 LaTeX Font Warning: Font shape `TU/FangSong(0)/m/it' undefined
-(Font)              using `TU/FangSong(0)/m/n' instead on input line 572.
+(Font)              using `TU/FangSong(0)/m/n' instead on input line 563.
 
 
-Underfull \hbox (badness 10000) detected at line 579
+Underfull \hbox (badness 10000) detected at line 570
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 579
+Underfull \hbox (badness 10000) detected at line 570
 [][][]
  []
 
 
-Underfull \hbox (badness 7595) in paragraph at lines 579--581
+Underfull \hbox (badness 7595) in paragraph at lines 570--572
 []\TU/KaiTi(0)/m/n/12 在 \TU/Alegreya(0)/m/n/12 RStudio \TU/KaiTi(0)/m/n/12 中 点 击 \TU/SourceCodePro(0)/m/n/12 bookdown-demo.Rproj \TU/KaiTi(0)/m/n/12 打 开 你 下 载 的
  []
 
 
-Underfull \hbox (badness 10000) detected at line 581
+Underfull \hbox (badness 10000) detected at line 572
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 581
+Underfull \hbox (badness 10000) detected at line 572
 [][][]
  []
 
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 [3]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 
 LaTeX Font Warning: Font shape `TU/FangSong(0)/b/n' undefined
-(Font)              using `TU/FangSong(0)/m/n' instead on input line 603.
+(Font)              using `TU/FangSong(0)/m/n' instead on input line 594.
 
 [4] [5]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 1168) in paragraph at lines 666--667
-[]\TU/Alegreya(0)/m/n/12    \TU/KaiTi(0)/m/n/12 你 能 够 通 过 在 书 籍 目 录 中 包 含 一 个 名 为 \TU/SourceCodePro(0)/m/n/12 _bookdown.yml[] \TU/KaiTi(0)/m/n/12 的 配
+Underfull \hbox (badness 2080) in paragraph at lines 657--658
+[]\TU/KaiTi(0)/m/n/12 你 能 够 通 过 在 书 籍 目 录 中 包 含 一 个 名 为 \TU/SourceCodePro(0)/m/n/12 _bookdown.yml[] \TU/KaiTi(0)/m/n/12 的 配
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 [6]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 LaTeX Font Info:    Font shape `TU/KaiTi(0)/m/n' will be
-(Font)              scaled to size 9.35043pt on input line 697.
+(Font)              scaled to size 9.35043pt on input line 688.
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
-(Font)              scaled to size 6.99997pt on input line 697.
-[7]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[8]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[9]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[10]
+(Font)              scaled to size 6.99997pt on input line 688.
+[7] [8] [9]
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/b/it' will be
-(Font)              scaled to size 8.39996pt on input line 763.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+(Font)              scaled to size 8.39996pt on input line 754.
+[10]
+Underfull \vbox (badness 10000) detected at line 761
+ []
 
 
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
+Overfull \hbox (336.25pt too wide) detected at line 761
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 10000) detected at line 761
+ []
 
 
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
+Overfull \hbox (336.25pt too wide) detected at line 761
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 10000) detected at line 761
+ []
 
 
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
+Overfull \hbox (336.25pt too wide) detected at line 761
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
-[]
+Underfull \vbox (badness 10000) detected at line 761
  []
 
 
-Underfull \hbox (badness 10000) has occurred while \output is active
- [][][][] 
- []
-
-[12
-
-]
-Underfull \vbox (badness 10000) detected at line 770
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 770
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 770
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 770
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 770
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 770
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 770
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 770
+Overfull \hbox (336.25pt too wide) detected at line 761
 []
  []
 
 Chapter 2.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
-(Font)              scaled to size 11.0pt on input line 780.
+(Font)              scaled to size 11.0pt on input line 771.
 LaTeX Font Info:    Font shape `TU/KaiTi(0)/b/n' will be
-(Font)              scaled to size 10.28548pt on input line 780.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+(Font)              scaled to size 10.28548pt on input line 771.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 782.
+(Font)              scaled to size 12.0pt on input line 773.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[13
+[11
 
-]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[14]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 
-Underfull \hbox (badness 10000) detected at line 855
+] [12]
+Underfull \hbox (badness 10000) detected at line 846
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 855
+Underfull \hbox (badness 10000) detected at line 846
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 857
+Underfull \hbox (badness 10000) detected at line 848
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 857
+Underfull \hbox (badness 10000) detected at line 848
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 859
+Underfull \hbox (badness 10000) detected at line 850
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 859
+Underfull \hbox (badness 10000) detected at line 850
 [][][]
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[15]
-Overfull \hbox (30.0pt too wide) in paragraph at lines 882--882
+[13]
+Overfull \hbox (30.0pt too wide) in paragraph at lines 873--873
 | 
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[16]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[17]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[18]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[14] [15] [16]
 File: images/caution.png Graphic file (type bmp)
 <images/caution.png>
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[17]
+LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 1039.
+LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
+(Font)              scaled to size 8.4pt on input line 1039.
+LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 1039.
+[18]
+LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 1059.
+LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 1059.
+LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 1059.
 [19]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[20]
-LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 1048.
-LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
-(Font)              scaled to size 8.4pt on input line 1048.
-LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 1048.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[21]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 1068.
-LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 1068.
-LaTeX Font Info:    Font shape `TU/Alegreya(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 1068.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[22]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) in paragraph at lines 1118--1119
-[]\TU/Alegreya(1)/m/n/12    \TU/KaiTi(0)/m/n/12 当 你 为 一 个 定 理 贴 上 标 签 后，|  你 可 以 使 用 语 法
+Underfull \hbox (badness 10000) in paragraph at lines 1109--1110
+[]\TU/KaiTi(0)/m/n/12 当 你 为 一 个 定 理 贴 上 标 签 后，|  你 可 以 使 用 语 法
  []
 
 
-Underfull \hbox (badness 3333) in paragraph at lines 1118--1119
+Underfull \hbox (badness 3333) in paragraph at lines 1109--1110
 \TU/SourceCodePro(0)/m/n/12 \@ref(prefix:label)[]\TU/KaiTi(0)/m/n/12 来 引 用 它。|  对 于 每 个 环 境 中 的 \TU/SourceCodePro(0)/m/n/12 prefix \TU/KaiTi(0)/m/n/12 值，|  请
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[23]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[24]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) in paragraph at lines 1150--1151
-[]\TU/Alegreya(1)/m/n/12    \TU/KaiTi(0)/m/n/12 当 \TU/Alegreya(0)/b/n/12 bookdown \TU/KaiTi(0)/m/n/12 在 \TU/Alegreya(1)/m/n/12 LaTeX \TU/KaiTi(0)/m/n/12 导 言 \TU/Alegreya(1)/m/n/12 (preamble) \TU/KaiTi(0)/m/n/12 中 检 测 到
+[20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 1141--1142
+[]\TU/KaiTi(0)/m/n/12 当 \TU/Alegreya(0)/b/n/12 bookdown \TU/KaiTi(0)/m/n/12 在 \TU/Alegreya(1)/m/n/12 LaTeX \TU/KaiTi(0)/m/n/12 导 言 \TU/Alegreya(1)/m/n/12 (preamble) \TU/KaiTi(0)/m/n/12 中 检 测 到
  []
 
 
-Underfull \hbox (badness 5189) in paragraph at lines 1150--1151
+Underfull \hbox (badness 5189) in paragraph at lines 1141--1142
 \TU/SourceCodePro(0)/m/n/12 \newtheorem{themore} \TU/KaiTi(0)/m/n/12 时，|  它 不 会 输 出 其 默 认 的 定 理 定 义，|  这 意
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 LaTeX Font Info:    Font shape `TU/Alegreya(1)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 1161.
+(Font)              scaled to size 12.0pt on input line 1152.
 LaTeX Font Info:    Font shape `TU/Alegreya(1)/b/n' will be
-(Font)              scaled to size 8.4pt on input line 1161.
+(Font)              scaled to size 8.4pt on input line 1152.
 LaTeX Font Info:    Font shape `TU/Alegreya(1)/b/n' will be
-(Font)              scaled to size 6.0pt on input line 1161.
-[25] [26]
+(Font)              scaled to size 6.0pt on input line 1152.
+[22] [23]
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
-(Font)              scaled to size 10.0pt on input line 1236.
+(Font)              scaled to size 10.0pt on input line 1227.
 LaTeX Font Info:    Font shape `TU/KaiTi(0)/b/n' will be
-(Font)              scaled to size 9.35043pt on input line 1236.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[27]
+(Font)              scaled to size 9.35043pt on input line 1227.
+[24]
 
 LaTeX Font Warning: Font shape `TU/FangSong(0)/b/it' undefined
-(Font)              using `TU/FangSong(0)/b/n' instead on input line 1243.
+(Font)              using `TU/FangSong(0)/b/n' instead on input line 1234.
 
 Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[28]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[25]
 LaTeX Font Info:    Font shape `TU/FangSong(1)/m/n' will be
-(Font)              scaled to size 10.07996pt on input line 1290.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[29]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+(Font)              scaled to size 10.07996pt on input line 1281.
+[26]
 LaTeX Font Info:    Font shape `TU/Alegreya(1)/b/n' will be
-(Font)              scaled to size 10.0pt on input line 1315.
+(Font)              scaled to size 10.0pt on input line 1306.
 LaTeX Font Info:    Font shape `TU/Alegreya(1)/b/n' will be
-(Font)              scaled to size 7.0pt on input line 1315.
+(Font)              scaled to size 7.0pt on input line 1306.
 LaTeX Font Info:    Font shape `TU/Alegreya(1)/b/n' will be
-(Font)              scaled to size 5.0pt on input line 1315.
-[30]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[31]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+(Font)              scaled to size 5.0pt on input line 1306.
+[27] [28]
+Underfull \hbox (badness 1152) in paragraph at lines 1345--1346
+[]\TU/KaiTi(0)/m/n/12 有 关 \TU/Alegreya(1)/b/n/12 knitr \TU/KaiTi(0)/m/n/12 区 块 选 项 的 详 细 信 息，|  请 参 阅 [][]\TU/Alegreya(1)/m/n/12 Xie[][] ([][]2015[][]) \TU/KaiTi(0)/m/n/12 或 网 页
+ []
+
 File: bookdown-book-zhCN_files/figure-latex/no-caption-1.pdf Graphic file (type pdf)
 <use bookdown-book-zhCN_files/figure-latex/no-caption-1.pdf>
-[32]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[33]
+[29]
 File: images/important.png Graphic file (type bmp)
 <images/important.png>
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[30]
 File: bookdown-book-zhCN_files/figure-latex/pressure-plot-1.pdf Graphic file (type pdf)
 <use bookdown-book-zhCN_files/figure-latex/pressure-plot-1.pdf>
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[34]
+[31]
 File: bookdown-book-zhCN_files/figure-latex/cars-plot-1.pdf Graphic file (type pdf)
 <use bookdown-book-zhCN_files/figure-latex/cars-plot-1.pdf>
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[35]
 File: bookdown-book-zhCN_files/figure-latex/multi-plots-1.pdf Graphic file (type pdf)
 <use bookdown-book-zhCN_files/figure-latex/multi-plots-1.pdf>
 File: bookdown-book-zhCN_files/figure-latex/multi-plots-2.pdf Graphic file (type pdf)
 <use bookdown-book-zhCN_files/figure-latex/multi-plots-2.pdf>
 
-Overfull \hbox (1.57272pt too wide) in paragraph at lines 1422--1422
+Overfull \hbox (1.57272pt too wide) in paragraph at lines 1413--1413
 [][][][] [][][] 
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[36]
+[32]
 File: images/knit-logo.png Graphic file (type bmp)
 <images/knit-logo.png>
 File: images/knit-logo.png Graphic file (type bmp)
@@ -2694,199 +2439,120 @@ File: images/knit-logo.png Graphic file (type bmp)
 File: images/knit-logo.png Graphic file (type bmp)
 <images/knit-logo.png>
 
-Underfull \hbox (badness 10000) detected at line 1443
+Underfull \hbox (badness 10000) detected at line 1434
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1443
+Underfull \hbox (badness 10000) detected at line 1434
 [][][]
  []
 
-
-Underfull \hbox (badness 10000) detected at line 1445
+[33]
+Underfull \hbox (badness 10000) detected at line 1436
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1445
+Underfull \hbox (badness 10000) detected at line 1436
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1447
+Underfull \hbox (badness 10000) detected at line 1438
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1447
+Underfull \hbox (badness 10000) detected at line 1438
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1449
+Underfull \hbox (badness 10000) detected at line 1440
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1449
+Underfull \hbox (badness 10000) detected at line 1440
 [][][]
  []
 
-[37]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1455--1456
-\TU/Alegreya(1)/m/n/12    \TU/KaiTi(0)/m/n/12 目 前 来 说，|  生 成 一 个 表 格[]的 最 方 便 的 方 法 是 使 用 函 数
+Underfull \hbox (badness 10000) in paragraph at lines 1446--1447
+[]\TU/KaiTi(0)/m/n/12 目 前 来 说，|  生 成 一 个 表 格[]的 最 方 便 的 方 法 是 使 用 函 数
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1455--1456
+Underfull \hbox (badness 10000) in paragraph at lines 1446--1447
 \TU/SourceCodePro(0)/m/n/12 knitr::kable()\TU/KaiTi(0)/m/n/12 ，|  因 为 在 \TU/Alegreya(1)/b/n/12 knitr \TU/KaiTi(0)/m/n/12 中 有 一 些 内 部 技 巧 可 以 使 其 与
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[34]
+Underfull \hbox (badness 1622) in paragraph at lines 1448--1449
+[]\TU/KaiTi(0)/m/n/12 和 图 片 一 样，|  带 有 标 题 的 表 格 也 将 被 编 号 并 且 可 以 被 引 用[]。|
+ []
 
-Overfull \hbox (11.93216pt too wide) in paragraph at lines 1472--1489
+
+Overfull \hbox (11.93216pt too wide) in paragraph at lines 1463--1480
  [][] 
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[38]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[39]
-Overfull \hbox (4.64409pt too wide) in alignment at lines 1543--1614
+[35]
+Underfull \hbox (badness 1033) in paragraph at lines 1523--1524
+[]\TU/KaiTi(0)/m/n/12 当 你 不 希 望 表 格 在 \TU/Alegreya(1)/m/n/12 PDF \TU/KaiTi(0)/m/n/12 中 浮 动 时，|  可 以 使 用 \TU/Alegreya(1)/m/n/12 LaTeX \TU/KaiTi(0)/m/n/12 软 件 包
+ []
+
+[36]
+Overfull \hbox (4.64409pt too wide) in alignment at lines 1534--1605
  [] [] [] [] [] 
  []
 
-[40] [41]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[42]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[43]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[37] [38] [39]
 
-LaTeX Warning: Reference `fig:does-not-exist' on page 44 undefined on input line 1642.
+LaTeX Warning: Reference `fig:does-not-exist' on page 40 undefined on input line 1633.
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 2253) in paragraph at lines 1664--1665
+[40]
+Underfull \hbox (badness 2253) in paragraph at lines 1655--1656
 []\TU/SourceCodePro(0)/m/n/12 [\TU/FangSong(0)/b/n/12 链 接 文 本\TU/SourceCodePro(0)/m/n/12 ](# \TU/FangSong(0)/b/n/12 标 识 符\TU/SourceCodePro(0)/m/n/12 )\TU/KaiTi(0)/m/n/12 。|  例 如，| \TU/Alegreya(1)/m/n/12 “[][]\TU/KaiTi(0)/m/n/12 表 格 填 充[][]\TU/Alegreya(1)/m/n/12 ” via \TU/SourceCodePro(0)/m/n/12 [\TU/FangSong(0)/b/n/12 表 格 填
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[44]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) detected at line 1687
+[41]
+Underfull \hbox (badness 10000) detected at line 1678
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1687
+Underfull \hbox (badness 10000) detected at line 1678
 [][][]
  []
 
-[45]
-Underfull \hbox (badness 10000) detected at line 1689
+
+Underfull \hbox (badness 10000) detected at line 1680
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 1689
+Underfull \hbox (badness 10000) detected at line 1680
 [][][]
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[46]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[42] [43] [44] [45] [46]
+Underfull \hbox (badness 1097) in paragraph at lines 1827--1828
+[]\TU/KaiTi(0)/m/n/12 在 上 面 的 例 子 中，| \TU/SourceCodePro(0)/m/n/12 intoc=true \TU/KaiTi(0)/m/n/12 将 在 目 录 中 包 含 一 个 索 引 条 目，|
+ []
+
 [47]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[48]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[49]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[50] [51]
-Underfull \hbox (badness 10000) in paragraph at lines 1876--1877
+Underfull \hbox (badness 10000) in paragraph at lines 1865--1866
 []\TU/KaiTi(0)/m/n/12 然 后，|  在 你 的 书 籍 中 使 用 \TU/SourceCodePro(0)/m/n/12 \index{Main en-
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[52]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[53]
-Overfull \hbox (501.81635pt too wide) in paragraph at lines 1916--1916
+[48] [49]
+Overfull \hbox (501.81635pt too wide) in paragraph at lines 1905--1905
 []\TU/SourceCodePro(0)/m/n/12 ## PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.[] 
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[54]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[55]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[56] [57]
+[50] [51] [52] [53]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -2923,545 +2589,224 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[58
+[54
 
 ]
-Underfull \vbox (badness 10000) detected at line 1957
+Underfull \vbox (badness 10000) detected at line 1946
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1957
+Overfull \hbox (336.25pt too wide) detected at line 1946
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1957
+Underfull \vbox (badness 10000) detected at line 1946
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1957
+Overfull \hbox (336.25pt too wide) detected at line 1946
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1957
+Underfull \vbox (badness 10000) detected at line 1946
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1957
+Overfull \hbox (336.25pt too wide) detected at line 1946
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1957
+Underfull \vbox (badness 10000) detected at line 1946
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 1957
+Overfull \hbox (336.25pt too wide) detected at line 1946
 []
  []
 
 Chapter 3.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[59
+[55
 
-]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[60]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[61]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) in paragraph at lines 2055--2056
-[]\TU/Alegreya(1)/m/n/12    \TU/KaiTi(0)/m/n/12 大 多 数 参 数 被 传 递 给 \TU/SourceCodePro(0)/m/n/12 rmarkdown::html_document()\TU/KaiTi(0)/m/n/12 ，|  包 括
+] [56] [57]
+Underfull \hbox (badness 10000) in paragraph at lines 2044--2045
+[]\TU/KaiTi(0)/m/n/12 大 多 数 参 数 被 传 递 给 \TU/SourceCodePro(0)/m/n/12 rmarkdown::html_document()\TU/KaiTi(0)/m/n/12 ，|  包 括
  []
 
-[62]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 
-Underfull \hbox (badness 2460) in paragraph at lines 2077--2077
+Underfull \hbox (badness 5741) in paragraph at lines 2044--2045
+\TU/SourceCodePro(0)/m/n/12 fig_caption\TU/KaiTi(0)/m/n/12 、| \TU/SourceCodePro(0)/m/n/12 lib_dir \TU/KaiTi(0)/m/n/12 和 \TU/SourceCodePro(0)/m/n/12 ...\TU/KaiTi(0)/m/n/12 。|  想 要 了 解 所 有 可 能 参 数 的 完 整 列
+ []
+
+[58]
+Underfull \hbox (badness 2460) in paragraph at lines 2066--2066
 [][][]\TU/KaiTi(0)/b/n/10 要 查 看 有 关 如 何 自 动 生 成 标 识 符 的 更 多 详 细 内 容，|  请 参 阅 \TU/Alegreya(1)/m/n/10 Pandoc \TU/KaiTi(0)/b/n/10 文
  []
 
-[63]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[64]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[65]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[59] [60] [61]
 File: images/gitbook.png Graphic file (type bmp)
 <images/gitbook.png>
-[66]
+[62] [63]
 Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[67]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[68]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[69]
-Underfull \hbox (badness 10000) in paragraph at lines 2212--2214
+[64]
+Underfull \hbox (badness 10000) in paragraph at lines 2201--2203
 []\TU/SourceCodePro(0)/m/n/12 description\TU/Alegreya(1)/m/n/12 : \TU/KaiTi(0)/m/n/12 一 个 字 符 串，|  它 将 会 被 写 入 \TU/Alegreya(1)/m/n/12 HTML \TU/KaiTi(0)/m/n/12 头 部 \TU/SourceCodePro(0)/m/n/12 <meta
  []
 
 
-Underfull \hbox (badness 5431) in paragraph at lines 2212--2214
+Underfull \hbox (badness 5431) in paragraph at lines 2201--2203
 \TU/SourceCodePro(0)/m/n/12 name="description" content=""> \TU/KaiTi(0)/m/n/12 标 签 中 的 \TU/SourceCodePro(0)/m/n/12 content \TU/KaiTi(0)/m/n/12 属 性  |（如 果
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[70]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[65] [66]
 File: images/bs4-book.png Graphic file (type bmp)
 <images/bs4-book.png>
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[71] [72]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[67] [68]
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/b/n' will be
-(Font)              scaled to size 6.99997pt on input line 2294.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+(Font)              scaled to size 6.99997pt on input line 2283.
 File: images/new-bs4-book.png Graphic file (type bmp)
 <images/new-bs4-book.png>
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[73]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[74]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[75]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) in paragraph at lines 2361--2362
-[]\TU/Alegreya(1)/m/n/12    \TU/KaiTi(0)/m/n/12 对 于 自 定 义 字 体 设 置，|  添 加 \TU/SourceCodePro(0)/m/n/12 google: \TU/KaiTi(0)/m/n/12 关 键 字 会 触 发
+[69] [70]
+Underfull \hbox (badness 10000) in paragraph at lines 2350--2351
+[]\TU/KaiTi(0)/m/n/12 对 于 自 定 义 字 体 设 置，|  添 加 \TU/SourceCodePro(0)/m/n/12 google: \TU/KaiTi(0)/m/n/12 关 键 字 会 触 发
  []
 
 
-Underfull \hbox (badness 7981) in paragraph at lines 2361--2362
+Underfull \hbox (badness 7981) in paragraph at lines 2350--2351
 \TU/SourceCodePro(0)/m/n/12 sass::font_google()[][][][][]\TU/KaiTi(0)/m/n/12 的 自 动 导 入 \TU/Alegreya(1)/m/n/12 Google \TU/KaiTi(0)/m/n/12 字 体 文 件[][][][][]的 能 力。|  下
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[76]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) in paragraph at lines 2384--2384
+[71]
+Underfull \hbox (badness 10000) in paragraph at lines 2373--2373
 [][][][][]$[][][][][] [] [] [] [][][][][][][] [] [][][][][][] [] [][] [] [][][][] [] [][][][][][][][][] [] [][][][] [] [][][][] [] [][][][] [] [][][][][][][] [][] [][][] [][] [][][][][][] [][]
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[72]
 File: images/rmd-note.png Graphic file (type bmp)
 <images/rmd-note.png>
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[77]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) in paragraph at lines 2435--2435
+[73]
+Underfull \hbox (badness 10000) in paragraph at lines 2424--2424
 [][][][][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][][][][][][] [] [][][][][][][][] [] [][][][] [] [][][][] [] [][][][] [] [][][][][][][][][] [] [][][] [] [][][][] []
  []
 
-[78]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[79]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[80]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) in paragraph at lines 2508--2508
+[74] [75]
+Underfull \hbox (badness 10000) in paragraph at lines 2497--2497
 [][][][][]$[][][][][] [] [] [] [][][][][][][][][][][] [] [][][] [] [][] [] [] [] [][][] [][] [][] [][] [][][] [] [][] [][] [][][] [][] [][][] [] [][][][][][][][][][][] [][]
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[81]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 3471) in paragraph at lines 2541--2542
-[]\TU/Alegreya(1)/m/n/12    \TU/KaiTi(0)/m/n/12 请 注 意 它 有 一 个 \TU/SourceCodePro(0)/m/n/12 base_format \TU/KaiTi(0)/m/n/12 参 数，|  接 受 一 个 基 础 输 出 格
+[76]
+Underfull \hbox (badness 1845) in paragraph at lines 2530--2531
+[]\TU/KaiTi(0)/m/n/12 请 注 意 它 有 一 个 \TU/SourceCodePro(0)/m/n/12 base_format \TU/KaiTi(0)/m/n/12 参 数，|  接 受 一 个 基 础 输 出 格 式
  []
 
 
-Underfull \hbox (badness 3612) in paragraph at lines 2541--2542
-\TU/KaiTi(0)/m/n/12 式 函 数，|  并 且 \TU/SourceCodePro(0)/m/n/12 html_book() \TU/KaiTi(0)/m/n/12 基 本 上 就 是 \TU/SourceCodePro(0)/m/n/12 html_chapters(base_format
+Underfull \hbox (badness 10000) in paragraph at lines 2530--2531
+\TU/KaiTi(0)/m/n/12 函 数，|  并 且 \TU/SourceCodePro(0)/m/n/12 html_book() \TU/KaiTi(0)/m/n/12 基 本 上 就 是 \TU/SourceCodePro(0)/m/n/12 html_chapters(base_format
  []
 
 
-Underfull \hbox (badness 6510) in paragraph at lines 2541--2542
+Underfull \hbox (badness 6510) in paragraph at lines 2530--2531
 \TU/SourceCodePro(0)/m/n/12 = rmarkdown::html_document)\TU/KaiTi(0)/m/n/12 。| \TU/SourceCodePro(0)/m/n/12 html_book() \TU/KaiTi(0)/m/n/12 的 所 有 参 数 都 传 递 给
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[82]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[83]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[84]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[85]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) in paragraph at lines 2653--2654
-[]\TU/Alegreya(1)/m/n/12    \TU/KaiTi(0)/m/n/12 事 实 上，|  如 果 你 把 \TU/SourceCodePro(0)/m/n/12 theme \TU/KaiTi(0)/m/n/12 选 项 设 置 为 \TU/SourceCodePro(0)/m/n/12 null\TU/KaiTi(0)/m/n/12 ，|  就 可 以 在
+[77] [78] [79] [80] [81]
+Underfull \hbox (badness 10000) in paragraph at lines 2642--2643
+[]\TU/KaiTi(0)/m/n/12 事 实 上，|  如 果 你 把 \TU/SourceCodePro(0)/m/n/12 theme \TU/KaiTi(0)/m/n/12 选 项 设 置 为 \TU/SourceCodePro(0)/m/n/12 null\TU/KaiTi(0)/m/n/12 ，|  就 可 以 在
  []
 
 
-Underfull \hbox (badness 2951) in paragraph at lines 2653--2654
+Underfull \hbox (badness 2951) in paragraph at lines 2642--2643
 \TU/SourceCodePro(0)/m/n/12 html_document() \TU/KaiTi(0)/m/n/12 中 摆 脱 \TU/Alegreya(1)/m/n/12 Bootstrap \TU/KaiTi(0)/m/n/12 样 式，|  你 可 以 自 由 地 使 用 \TU/SourceCodePro(0)/m/n/12 css
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 
-Package natbib Warning: Citation `R-tufte' on page 86 undefined on input line 2658.
+Package natbib Warning: Citation `R-tufte' on page 82 undefined on input line 2647.
 
-[86]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[87]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[88]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[82] [83]
+Underfull \hbox (badness 1163) in paragraph at lines 2698--2699
+[]\TU/KaiTi(0)/m/n/12 你 可 以 将 \TU/SourceCodePro(0)/m/n/12 base_format \TU/KaiTi(0)/m/n/12 函 数 改 成 其 他 的 输 出 格 式 函 数，| \TU/Alegreya(1)/b/n/12 book-
+ []
 
-Underfull \hbox (badness 4634) in paragraph at lines 2709--2710
+
+Underfull \hbox (badness 4634) in paragraph at lines 2698--2699
 \TU/Alegreya(1)/b/n/12 down \TU/KaiTi(0)/m/n/12 提 供 了 一 个 简 单 的 封 装 函 数 \TU/SourceCodePro(0)/m/n/12 tufte_book2()\TU/KaiTi(0)/m/n/12 ，|  基 本 上 就 是
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[89]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[90]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) in paragraph at lines 2765--2766
-[]\TU/Alegreya(1)/m/n/12    \TU/KaiTi(0)/m/n/12 函 数 \TU/SourceCodePro(0)/m/n/12 html_document2()\TU/KaiTi(0)/m/n/12 、| \TU/SourceCodePro(0)/m/n/12 tufte_html2()\TU/KaiTi(0)/m/n/12 、| \TU/SourceCodePro(0)/m/n/12 pdf_document2()\TU/KaiTi(0)/m/n/12 、|
+[84] [85] [86]
+Underfull \hbox (badness 10000) in paragraph at lines 2754--2755
+[]\TU/KaiTi(0)/m/n/12 函 数 \TU/SourceCodePro(0)/m/n/12 html_document2()\TU/KaiTi(0)/m/n/12 、| \TU/SourceCodePro(0)/m/n/12 tufte_html2()\TU/KaiTi(0)/m/n/12 、| \TU/SourceCodePro(0)/m/n/12 pdf_document2()\TU/KaiTi(0)/m/n/12 、|
  []
 
-[91]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[92]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[93]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Underfull \hbox (badness 10000) in paragraph at lines 2754--2755
+\TU/SourceCodePro(0)/m/n/12 word_document2()\TU/KaiTi(0)/m/n/12 、| \TU/SourceCodePro(0)/m/n/12 tufte_handout2() \TU/KaiTi(0)/m/n/12 和 \TU/SourceCodePro(0)/m/n/12 tufte_book2() \TU/KaiTi(0)/m/n/12 就 是 为 此 目
+ []
+
+[87] [88]
+Underfull \vbox (badness 10000) detected at line 2801
+ []
 
 
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
+Overfull \hbox (336.25pt too wide) detected at line 2801
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 10000) detected at line 2801
+ []
 
 
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
+Overfull \hbox (336.25pt too wide) detected at line 2801
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 10000) detected at line 2801
+ []
 
 
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
+Overfull \hbox (336.25pt too wide) detected at line 2801
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
-[]
+Underfull \vbox (badness 10000) detected at line 2801
  []
 
 
-Underfull \hbox (badness 10000) has occurred while \output is active
- [][][][] 
- []
-
-[94
-
-]
-Underfull \vbox (badness 10000) detected at line 2812
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 2812
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 2812
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 2812
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 2812
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 2812
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 2812
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 2812
+Overfull \hbox (336.25pt too wide) detected at line 2801
 []
  []
 
 Chapter 4.
 Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[95
+[89
 
-]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[96]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[97]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 2901--2901
+] [90] [91]
+Overfull \hbox (30.0pt too wide) in paragraph at lines 2890--2890
 |  
  []
 
-[98]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[99]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 1648) in paragraph at lines 2956--2957
+[92] [93]
+Underfull \hbox (badness 1648) in paragraph at lines 2945--2946
 \TU/Alegreya(1)/b/n/12 book \TU/Alegreya(1)/m/n/12 ([][]$[][][][][] [] [] [] [][][] [] [][][][] [] [][][] [] [][][] [] [][][][][][][]$[][])\TU/KaiTi(0)/m/n/12 、| \TU/Alegreya(1)/m/n/12 KOMA-Script ([][]$[][][][][] [] [] []
  []
 
-[100]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[101]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[102]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[103] [104]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[105]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Overfull \vbox (1.74574pt too high) detected at line 3124
- []
-
-[106]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[107]
+[94] [95] [96] [97] [98] [99] [100] [101]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -3498,135 +2843,70 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[108
+[102
 
 ]
-Underfull \vbox (badness 10000) detected at line 3143
+Underfull \vbox (badness 10000) detected at line 3132
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 3143
+Overfull \hbox (336.25pt too wide) detected at line 3132
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3143
+Underfull \vbox (badness 10000) detected at line 3132
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 3143
+Overfull \hbox (336.25pt too wide) detected at line 3132
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3143
+Underfull \vbox (badness 10000) detected at line 3132
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 3143
+Overfull \hbox (336.25pt too wide) detected at line 3132
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3143
+Underfull \vbox (badness 10000) detected at line 3132
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 3143
+Overfull \hbox (336.25pt too wide) detected at line 3132
 []
  []
 
 Chapter 5.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[109
+[103
 
 ]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Overfull \hbox (30.0pt too wide) in paragraph at lines 3179--3179
+Overfull \hbox (30.0pt too wide) in paragraph at lines 3168--3168
 |  
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[110]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[111]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[104] [105]
 
-Package natbib Warning: Citation `R-servr' on page 112 undefined on input line 3199.
+Package natbib Warning: Citation `R-servr' on page 106 undefined on input line 3188.
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[112]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[113]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[114]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[106] [107] [108]
 File: images/mathquill.png Graphic file (type bmp)
 <images/mathquill.png>
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 File: images/citr.png Graphic file (type bmp)
 <images/citr.png>
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[115]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[116]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[117]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[118]
+[109] [110] [111]
 File: images/disqus.png Graphic file (type bmp)
 <images/disqus.png>
-[119]
+[112] [113]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -3663,359 +2943,353 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[120
+[114
 
 ]
-Underfull \vbox (badness 10000) detected at line 3319
+Underfull \vbox (badness 10000) detected at line 3308
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 3319
+Overfull \hbox (336.25pt too wide) detected at line 3308
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3319
+Underfull \vbox (badness 10000) detected at line 3308
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 3319
+Overfull \hbox (336.25pt too wide) detected at line 3308
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3319
+Underfull \vbox (badness 10000) detected at line 3308
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 3319
+Overfull \hbox (336.25pt too wide) detected at line 3308
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3319
+Underfull \vbox (badness 10000) detected at line 3308
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 3319
+Overfull \hbox (336.25pt too wide) detected at line 3308
 []
  []
 
 Chapter 6.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[121
+[115
 
 ]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) detected at line 3361
+Underfull \hbox (badness 10000) detected at line 3350
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 3361
+Underfull \hbox (badness 10000) detected at line 3350
 [][][]
  []
 
-[122]
-Underfull \hbox (badness 10000) detected at line 3363
+
+Underfull \hbox (badness 10000) detected at line 3352
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 3363
+Underfull \hbox (badness 10000) detected at line 3352
 [][][]
  []
 
-
-Underfull \hbox (badness 10000) detected at line 3365
+[116]
+Underfull \hbox (badness 10000) detected at line 3354
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 3365
+Underfull \hbox (badness 10000) detected at line 3354
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 3367
+Underfull \hbox (badness 10000) detected at line 3356
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 3367
+Underfull \hbox (badness 10000) detected at line 3356
 [][][]
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[123]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[117]
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/it' will be
-(Font)              scaled to size 11.0pt on input line 3394.
+(Font)              scaled to size 11.0pt on input line 3383.
 
 LaTeX Font Warning: Font shape `TU/KaiTi(0)/b/it' undefined
-(Font)              using `TU/KaiTi(0)/b/n' instead on input line 3394.
+(Font)              using `TU/KaiTi(0)/b/n' instead on input line 3383.
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 File: images/netlify-drag-drop-update.png Graphic file (type bmp)
 <images/netlify-drag-drop-update.png>
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[124]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[125]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[126]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[127]
-Underfull \hbox (badness 10000) detected at line 3468
+[118] [119] [120]
+Underfull \hbox (badness 1194) in paragraph at lines 3449--3450
+[]\TU/KaiTi(0)/m/n/12 你 可 以 选 择 使 用 的 一 个 云 服 务 是 \TU/Alegreya(1)/m/n/12 Travis CI ([][]$[][][][][] [] [] [] [][][][][][] [][] [][] []
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3457
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 3468
+Underfull \hbox (badness 10000) detected at line 3457
 [][][]
  []
 
-
-Underfull \hbox (badness 10000) detected at line 3470
+[121]
+Underfull \hbox (badness 10000) detected at line 3459
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 3470
+Underfull \hbox (badness 10000) detected at line 3459
 [][][]
  []
 
 
-Underfull \hbox (badness 8056) in paragraph at lines 3470--3472
+Underfull \hbox (badness 8056) in paragraph at lines 3459--3461
 []\TU/KaiTi(0)/m/n/12 通 过 命 令 \TU/SourceCodePro(0)/m/n/12 travis encrypt \TU/KaiTi(0)/m/n/12 将 其 加 密 并 放 在 环 境 变 量
  []
 
 
-Underfull \hbox (badness 7273) in paragraph at lines 3470--3472
+Underfull \hbox (badness 7273) in paragraph at lines 3459--3461
 \TU/SourceCodePro(0)/m/n/12 GITHUB_PAT \TU/KaiTi(0)/m/n/12 里，|  然 后 储 存 在 \TU/SourceCodePro(0)/m/n/12 .travis.yml \TU/KaiTi(0)/m/n/12 文 件 中。|  例 如
  []
 
 
-Underfull \hbox (badness 6396) in paragraph at lines 3470--3472
+Underfull \hbox (badness 6396) in paragraph at lines 3459--3461
 [][]$[][][][][] [] [] [] [][][][][][] [][] [][] [] [][][] [] [][][][] [] [][][][] [] [][][][][][][][]$[][] \TU/KaiTi(0)/m/n/12 储 存 起 来，|  其 中
  []
 
 
-Underfull \hbox (badness 10000) detected at line 3472
+Underfull \hbox (badness 10000) detected at line 3461
  [][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 3472
+Underfull \hbox (badness 10000) detected at line 3461
 [][][]
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[128]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[129]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[130]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+[122] [123] [124]
+Underfull \hbox (badness 1577) in paragraph at lines 3536--3537
+[]\TU/KaiTi(0)/m/n/12 以 上 所 有 脚 本 和 配 置 都 可 以 在 \TU/SourceCodePro(0)/m/n/12 bookdown-demo \TU/KaiTi(0)/m/n/12 存 储 库 中 找 到：|
+ []
 
-Underfull \hbox (badness 1968) in paragraph at lines 3547--3548
+
+Underfull \hbox (badness 1968) in paragraph at lines 3536--3537
 [][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][][][][][][] [] [][][][][][][][] [][] [][][][][]$[][]\TU/KaiTi(0)/m/n/12 。|  如 果 你 将 它 们 复 制
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[131]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 File: images/404.png Graphic file (type bmp)
 <images/404.png>
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[132]
+[125] [126]
 File: images/social-og.png Graphic file (type bmp)
 <images/social-og.png>
 File: images/social-twitter.png Graphic file (type bmp)
 <images/social-twitter.png>
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[133]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 
-Underfull \hbox (badness 10000) in paragraph at lines 3600--3600
+Underfull \hbox (badness 10000) in paragraph at lines 3589--3589
 [][][][][]$[][][][][] [] [] [] [][][][] [] [][][][][][][][][][][][][][][][][] [] [][][] [] [][][] [][] [][] [][] [][][][] [][] [][][][][][][] [][] [] [][] [][][][] [][]
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[134]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[135]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[136]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 5091) in paragraph at lines 3681--3682
-[]\TU/Alegreya(1)/m/n/12    \TU/KaiTi(0)/m/n/12 我 们 上 面 提 到 的 所 有 导 言 \TU/Alegreya(1)/m/n/12 (preamble) \TU/KaiTi(0)/m/n/12 设 置 都 在 文 件 \TU/SourceCodePro(0)/m/n/12 la-
+[127] [128] [129]
+Underfull \hbox (badness 8151) in paragraph at lines 3670--3671
+[]\TU/KaiTi(0)/m/n/12 我 们 上 面 提 到 的 所 有 导 言 \TU/Alegreya(1)/m/n/12 (preamble) \TU/KaiTi(0)/m/n/12 设 置 都 在 文 件 \TU/SourceCodePro(0)/m/n/12 la-
  []
 
 
-Underfull \hbox (badness 1406) in paragraph at lines 3681--3682
+Underfull \hbox (badness 1406) in paragraph at lines 3670--3671
 \TU/SourceCodePro(0)/m/n/12 tex/preamble.tex \TU/KaiTi(0)/m/n/12 中，|  其 中 我 们 还 指 定 了 前 言 \TU/Alegreya(1)/m/n/12 (front matter) \TU/KaiTi(0)/m/n/12 的 开
  []
 
 
-Overfull \hbox (30.0pt too wide) in paragraph at lines 3685--3685
+Overfull \hbox (30.0pt too wide) in paragraph at lines 3674--3674
 |  
  []
 
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[137]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) in paragraph at lines 3715--3716
+[130]
+Underfull \hbox (badness 10000) in paragraph at lines 3704--3705
 \TU/Alegreya(1)/m/n/12 ([][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][][][][][][] [] [][][][][][][][] [] [][][][] [] [][][][][][] [] [][][][] [] [][][][][][][][]$[][])
  []
 
-[138]
-Underfull \vbox (badness 10000) detected at line 3724
- []
+[131]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 3724
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3724
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 3724
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3724
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 3724
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
 []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 3724
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 3724
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[132
+
+]
+Underfull \vbox (badness 10000) detected at line 3713
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3713
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3713
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3713
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3713
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3713
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3713
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3713
 []
  []
 
 附录 A.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[133
+
+
+] [134] [135] [136] [137]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[138
+
+]
+Underfull \vbox (badness 10000) detected at line 3842
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3842
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3842
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3842
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3842
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3842
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3842
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3842
+[]
+ []
+
+附录 B.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
@@ -4023,112 +3297,53 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [139
 
+] [140] [141] [142] [143] [144]
+Underfull \vbox (badness 10000) detected at line 4008
+ []
 
 
-]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[140]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[141]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[142]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[143]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
+Overfull \hbox (336.25pt too wide) detected at line 4008
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 10000) detected at line 4008
+ []
 
 
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
+Overfull \hbox (336.25pt too wide) detected at line 4008
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 10000) detected at line 4008
+ []
 
 
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
+Overfull \hbox (336.25pt too wide) detected at line 4008
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 10000) detected at line 4008
+ []
 
 
-Overfull \hbox (336.25pt too wide) has occurred while \output is active
+Overfull \hbox (336.25pt too wide) detected at line 4008
 []
  []
 
+附录 C.
 
-Underfull \hbox (badness 10000) has occurred while \output is active
- [][][][] 
- []
-
-[144
-
-]
-Underfull \vbox (badness 10000) detected at line 3853
+Underfull \hbox (badness 10000) detected at line 4015
+ [][]
  []
 
 
-Overfull \hbox (336.25pt too wide) detected at line 3853
-[]
+Underfull \hbox (badness 10000) detected at line 4015
+[][][]
  []
 
-
-Underfull \vbox (badness 10000) detected at line 3853
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 3853
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 3853
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 3853
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 3853
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 3853
-[]
- []
-
-附录 B.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
 
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
@@ -4136,97 +3351,6 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 [145
 
-]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[146]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[147]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[148]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[149]
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-[150]
-Underfull \vbox (badness 10000) detected at line 4019
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 4019
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 4019
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 4019
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 4019
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 4019
-[]
- []
-
-
-Underfull \vbox (badness 10000) detected at line 4019
- []
-
-
-Overfull \hbox (336.25pt too wide) detected at line 4019
-[]
- []
-
-附录 C.
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) detected at line 4026
- [][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 4026
-[][][]
- []
-
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-Missing character: There is no   (U+2003) in font [Alegreya-Regular.otf]/OT:script=latn;language=dflt;+pnum;+lnum;mapping=tex-text;!
-
-Underfull \hbox (badness 10000) has occurred while \output is active
- [][][][] 
- []
-
-[151
-
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -4265,7 +3389,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[152
+[146
 
 ] (./bookdown-book-zhCN.bbl
 Underfull \vbox (badness 10000) detected at line 1
@@ -4309,36 +3433,27 @@ Underfull \hbox (badness 10000) detected at line 1
  []
 
 
-Underfull \hbox (badness 1237) in paragraph at lines 9--12
-[]\TU/Alegreya(1)/m/n/12 Allaire, J., Xie, Y., McPherson, J., Luraschi, J., Ushey, K., Atkins,
- []
-
-
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[153
+[147
 
 
-]) (./bookdown-book-zhCN.ind [154]
+]) (./bookdown-book-zhCN.ind [148]
 Underfull \hbox (badness 10000) detected at line 1
 []
  []
 
 
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1.
-
-
 Underfull \hbox (badness 10000) has occurred while \output is active
  [][][][] 
  []
 
-[155
+[149
 
 
-] [156
+] [150
 
 ])
 
@@ -4351,16 +3466,14 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `bookdown-book-zhCN.out' has not changed.
-(rerunfilecheck)             Checksum: 7C3AE14B06868C0E22712389C8374547;7832.
  ) 
 Here is how much of TeX's memory you used:
- 24913 strings out of 478659
- 514259 string characters out of 5848699
+ 25210 strings out of 478659
+ 518796 string characters out of 5848699
  1924698 words of memory out of 5000000
- 44569 multiletter control sequences out of 15000+600000
+ 44862 multiletter control sequences out of 15000+600000
  521036 words of font info for 169 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,18n,137p,1323b,908s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 86i,18n,137p,1321b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on bookdown-book-zhCN.pdf (190 pages).
+Output written on bookdown-book-zhCN.pdf (182 pages).

@@ -1,18 +1,18 @@
 # 编辑 {#editing}
 
 
-&emsp;&emsp;在本章中，我们将解释如何在本地编辑、构建、预览和通过 HTTP 服务预览书籍。你可以使用任何文本编辑器来编辑书籍，不过我们将展示一些使用 RStudio IDE 的技巧。在介绍编辑器之前，我们将介绍用于构建、预览和通过 HTTP 服务预览书籍的底层 R 函数，以便你真正了解在 RStudio IDE 中单击某个按钮时在幕后发生的事情，并且还可以自定义调用这些函数的其它编辑器。
+在本章中，我们将解释如何在本地编辑、构建、预览和通过 HTTP 服务预览书籍。你可以使用任何文本编辑器来编辑书籍，不过我们将展示一些使用 RStudio IDE 的技巧。在介绍编辑器之前，我们将介绍用于构建、预览和通过 HTTP 服务预览书籍的底层 R 函数，以便你真正了解在 RStudio IDE 中单击某个按钮时在幕后发生的事情，并且还可以自定义调用这些函数的其它编辑器。
 
 ## 构建书籍 {#build-the-book}
 
-&emsp;&emsp;要将所有 Rmd 文件构建到一本书中，可以在 **bookdown** 中调用 `render_book()`\index{bookdown::render\_book()}函数。下面是 `render_book()` 的参数：
+要将所有 Rmd 文件构建到一本书中，可以在 **bookdown** 中调用 `render_book()`\index{bookdown::render\_book()}函数。下面是 `render_book()` 的参数：
 
 ```{r eval=FALSE, code=formatR::usage(bookdown::render_book, output=FALSE)}
 ```
 
-&emsp;&emsp;最重要的参数是 `output_format`，它可以接受表示输出格式的字符串（例如 `'bookdown::gitbook'`）。你可以将此参数留空，默认输出格式是在第一个 Rmd 文件的 YAML 元数据中指定的第一个输出格式，或者在单独的 YAML 文件 `_output.yml` 中，如 \@ref(configuration) 部分所述。如果你计划为书籍生成多种输出格式，建议在 `_output.yml` 中指定所有格式。
+最重要的参数是 `output_format`，它可以接受表示输出格式的字符串（例如 `'bookdown::gitbook'`）。你可以将此参数留空，默认输出格式是在第一个 Rmd 文件的 YAML 元数据中指定的第一个输出格式，或者在单独的 YAML 文件 `_output.yml` 中，如 \@ref(configuration) 部分所述。如果你计划为书籍生成多种输出格式，建议在 `_output.yml` 中指定所有格式。
 
-&emsp;&emsp;一旦在 `_output.yml` 中指定了所有格式，就很容易编写一个 R 或 Shell 脚本或 Makefile 来编译书籍。下面是一个使用 Shell 脚本将书籍编译为 HTML（GitBook 样式）和 PDF 的简单示例：
+一旦在 `_output.yml` 中指定了所有格式，就很容易编写一个 R 或 Shell 脚本或 Makefile 来编译书籍。下面是一个使用 Shell 脚本将书籍编译为 HTML（GitBook 样式）和 PDF 的简单示例：
 
 ```bash
 #!/usr/bin/env Rscript
@@ -21,49 +21,49 @@ bookdown::render_book("index.Rmd", "bookdown::gitbook")
 bookdown::render_book("index.Rmd", "bookdown::pdf_book")
 ```
 
-&emsp;&emsp;Shell 脚本在 Windows 上不起作用（虽然严格来说并不是真的），但希望你能理解。
+Shell 脚本在 Windows 上不起作用（虽然严格来说并不是真的），但希望你能理解。
 
 > 译者注：Windows 的 cmd 和 powershell 都无法运行 bash shell 脚本，但能够通过其它一些方式运行。
 
-&emsp;&emsp;参数 `...` 被传递给输出格式函数。参数 `clean` 和 `envir` 被传递给 `rmarkdown::render()`，分别决定是否清理中间文件以及指定运行 R 代码的环境。
+参数 `...` 被传递给输出格式函数。参数 `clean` 和 `envir` 被传递给 `rmarkdown::render()`，分别决定是否清理中间文件以及指定运行 R 代码的环境。
 
-&emsp;&emsp;书籍的输出目录可以通过 `output_dir` 参数指定。默认情况下，书籍生成到 `_book` 目录。这也可以通过配置文件 `_bookdown.yml` 中的 `output_dir` 字段进行更改，这样就不必多次指定它来将书籍编译为多种输出格式。`new_session` 参数已在第 \@ref(new-session) 节中进行了解释。当设置 `preview = TRUE` 时，只编译 `input` 参数中指定的 Rmd 文件，这在预览某一章节时很方便，因为你不重新编译整本书，但在发布图书时，该参数肯定应该设置为 `FALSE`。
+书籍的输出目录可以通过 `output_dir` 参数指定。默认情况下，书籍生成到 `_book` 目录。这也可以通过配置文件 `_bookdown.yml` 中的 `output_dir` 字段进行更改，这样就不必多次指定它来将书籍编译为多种输出格式。`new_session` 参数已在第 \@ref(new-session) 节中进行了解释。当设置 `preview = TRUE` 时，只编译 `input` 参数中指定的 Rmd 文件，这在预览某一章节时很方便，因为你不重新编译整本书，但在发布图书时，该参数肯定应该设置为 `FALSE`。
 
-&emsp;&emsp;`render_book()` 将生成许多输出文件。有时你可能需要清除书籍输出目录并重新开始生成书籍。例如，删除由 **knitr** 自动生成的图形和缓存文件。函数 `clean_book()` 就是为此而设计的。默认情况下，它告诉你可以删除哪些输出文件。如果你查看了它输出的可删除文件列表，并且确定没有文件被错误地标识为输出文件（你当然不想删除手动创建的输入文件），则可以使用 `bookdown::clean_book(TRUE)` 删除所有输出文件。由于删除文件是一个相对危险的操作，我们建议你通过版本控制工具（如 GIT）或支持备份和还原的服务来维护你的书籍，这样，如果你错误地删除某些文件，文件将不会永远丢失。
+`render_book()` 将生成许多输出文件。有时你可能需要清除书籍输出目录并重新开始生成书籍。例如，删除由 **knitr** 自动生成的图形和缓存文件。函数 `clean_book()` 就是为此而设计的。默认情况下，它告诉你可以删除哪些输出文件。如果你查看了它输出的可删除文件列表，并且确定没有文件被错误地标识为输出文件（你当然不想删除手动创建的输入文件），则可以使用 `bookdown::clean_book(TRUE)` 删除所有输出文件。由于删除文件是一个相对危险的操作，我们建议你通过版本控制工具（如 GIT）或支持备份和还原的服务来维护你的书籍，这样，如果你错误地删除某些文件，文件将不会永远丢失。
 
 ## 预览单个章节
 
-&emsp;&emsp;当书籍项目的大小很大时，构建整本书可能会很慢。有两件事会影响一本书的构建速度：R 代码块的计算以及使用 Pandoc 将 Markdown 转换为其他格式的过程。前者可以通过使用 chunk 选项 `cache = TRUE` 在 **knitr** 中启用缓存来改进，但创作者并没有什么办法能使后者更快。不过，你可以选择使用 **bookdown** 中的 `preview_chapter()` 函数一次只编译一个章节，通常这比编译整本书要快得多。只有传递到 `preview_chapter()` 的 Rmd 文件才会被编译。
+当书籍项目的大小很大时，构建整本书可能会很慢。有两件事会影响一本书的构建速度：R 代码块的计算以及使用 Pandoc 将 Markdown 转换为其他格式的过程。前者可以通过使用 chunk 选项 `cache = TRUE` 在 **knitr** 中启用缓存来改进，但创作者并没有什么办法能使后者更快。不过，你可以选择使用 **bookdown** 中的 `preview_chapter()` 函数一次只编译一个章节，通常这比编译整本书要快得多。只有传递到 `preview_chapter()` 的 Rmd 文件才会被编译。
 
-&emsp;&emsp;当你只关注当前章节时，预览当前章节会很有帮助，因为可以在添加更多内容或修改章节时立即看到实际输出。尽管预览功能适用于所有输出格式，但我们建议你预览 HTML 输出。
+当你只关注当前章节时，预览当前章节会很有帮助，因为可以在添加更多内容或修改章节时立即看到实际输出。尽管预览功能适用于所有输出格式，但我们建议你预览 HTML 输出。
 
-&emsp;&emsp;预览单个章节的一个缺点是，对其他章节的交叉引用将不起作用，因为在这种情况下，**bookdown** 对其他章节一无所知。这对于速度的提高来说是一个相当小的代价。由于预览章节只会呈现该特定章节的输出，因此不应期望其他章节的内容也能正确呈现。例如，当你导航到其他章节时，实际上你正在查看该章节的旧输出（甚至可能不存在该章节的输出）。
+预览单个章节的一个缺点是，对其他章节的交叉引用将不起作用，因为在这种情况下，**bookdown** 对其他章节一无所知。这对于速度的提高来说是一个相当小的代价。由于预览章节只会呈现该特定章节的输出，因此不应期望其他章节的内容也能正确呈现。例如，当你导航到其他章节时，实际上你正在查看该章节的旧输出（甚至可能不存在该章节的输出）。
 
 ## 使用 HTTP 服务预览书籍
 
-&emsp;&emsp;相比于重复运行 `render_book()` 或 `preview_chapter()` 来预览章节，你实际上可以在 web 浏览器中实时预览书籍，你只需要保存 Rmd 文件即可。**bookdown** 中的函数 `serve_book()`\index{bookdown::serve\_book()}可以基于 **servr** 软件包[@R-servr]启动本地 web 服务器，提供 HTML 输出的在线预览服务。
+相比于重复运行 `render_book()` 或 `preview_chapter()` 来预览章节，你实际上可以在 web 浏览器中实时预览书籍，你只需要保存 Rmd 文件即可。**bookdown** 中的函数 `serve_book()`\index{bookdown::serve\_book()}可以基于 **servr** 软件包[@R-servr]启动本地 web 服务器，提供 HTML 输出的在线预览服务。
 
 ```{r serve-book-usage, eval=FALSE, code=formatR::usage(bookdown::serve_book, output=FALSE)}
 ```
 
-&emsp;&emsp;将书籍的根目录传递给 `dir` 参数，上述函数将启动本地 web 服务器，以便你可以使用服务器查看书籍输出。访问书籍输出页面的默认 URL 是 `http://127.0.0.1:4321`。如果在交互式 R session 中运行此功能，此 URL 将自动在 web 浏览器中打开。如果你在 RStudio IDE 中，RStudio viewer 将用作默认的 web 浏览器，因此你可以在相同的环境中编写 Rmd 源文件并预览输出（例如，在左侧编写源文件，在右侧查看输出文件）。
+将书籍的根目录传递给 `dir` 参数，上述函数将启动本地 web 服务器，以便你可以使用服务器查看书籍输出。访问书籍输出页面的默认 URL 是 `http://127.0.0.1:4321`。如果在交互式 R session 中运行此功能，此 URL 将自动在 web 浏览器中打开。如果你在 RStudio IDE 中，RStudio viewer 将用作默认的 web 浏览器，因此你可以在相同的环境中编写 Rmd 源文件并预览输出（例如，在左侧编写源文件，在右侧查看输出文件）。
 
-&emsp;&emsp;服务器将侦听书籍根目录中的更改：每当修改书籍目录中的任何文件，`serve_book()` 都可以检测到更改，重新编译对应的 Rmd 文件，并自动刷新 web 浏览器。如果修改的文件不包括 Rmd 文件，它只会刷新浏览器（例如只更新了某个 CSS 文件）。这意味着一旦启动了服务器，接下来所要做的就是编写书籍并保存文件。在保存文件时，编译和预览将自动进行。
+服务器将侦听书籍根目录中的更改：每当修改书籍目录中的任何文件，`serve_book()` 都可以检测到更改，重新编译对应的 Rmd 文件，并自动刷新 web 浏览器。如果修改的文件不包括 Rmd 文件，它只会刷新浏览器（例如只更新了某个 CSS 文件）。这意味着一旦启动了服务器，接下来所要做的就是编写书籍并保存文件。在保存文件时，编译和预览将自动进行。
 
-&emsp;&emsp;如果真的不需要太多时间来重新编译整本书，可以设置参数 `preview = FALSE`，这样每次更新这本书时，整本书都会重新编译，否则只有修改过的章节会通过 `preview_chapter()` 重新编译。
+如果真的不需要太多时间来重新编译整本书，可以设置参数 `preview = FALSE`，这样每次更新这本书时，整本书都会重新编译，否则只有修改过的章节会通过 `preview_chapter()` 重新编译。
 
-&emsp;&emsp;`...` 里的参数都会传递给 `servr::httw()`，请参阅其帮助页面以查看所有可能的选项，例如 `daemon` 和 `port`。使用 `in_session = TRUE` 或 `FALSE` 有其优缺点：
+`...` 里的参数都会传递给 `servr::httw()`，请参阅其帮助页面以查看所有可能的选项，例如 `daemon` 和 `port`。使用 `in_session = TRUE` 或 `FALSE` 有其优缺点：
 
 - 对于 `in_session = TRUE`，你可以在当前 R session 中访问在书籍中创建的所有对象；如果使用守护进程（通过参数 `daemon = TRUE`），你可以在当前 R session 不忙碌时检查对象；否则必须先停止服务器，然后才能检查对象。这当你需要以交互方式探索书中的 R 对象时会很有用。`in_session = TRUE` 的缺点是输出内容可能与从新的 R session 编译的书不同，因为当前 R session 的状态可能不干净。
 - 对于 `in_session = FALSE`，你不能从当前 R session 访问书籍中的对象，但其输出内容更有可能是可复制的，因为所有内容都是从新的 R session 中创建的。由于此函数仅用于预览目的，因此 R session 是否干净可能不是一个大问题。
 
-&emsp;&emsp;根据具体的用例，你可以选择 `in_session = TRUE` 或 `FALSE`。最后，你应该从一个新的 R session 开始运行 `render_book()` 以生成一个可靠的书籍副本。
+根据具体的用例，你可以选择 `in_session = TRUE` 或 `FALSE`。最后，你应该从一个新的 R session 开始运行 `render_book()` 以生成一个可靠的书籍副本。
 
 ## RStudio IDE
 
-&emsp;&emsp;如果你的 RStudio IDE\index{RStudio IDE} 版本低于 1.0.0，我们建议你进行[升级](https://posit.co/download/rstudio-desktop/)。正如第 \@ref(usage) 节所述，所有 R Markdown 文件都必须用 UTF-8 编码。这一点非常重要，尤其是当文件包含多字节字符时。要使用 UTF-8 编码保存文件，可以使用菜单 `File -> Save with Encoding`，然后选择 `UTF-8`。
+如果你的 RStudio IDE\index{RStudio IDE} 版本低于 1.0.0，我们建议你进行[升级](https://posit.co/download/rstudio-desktop/)。正如第 \@ref(usage) 节所述，所有 R Markdown 文件都必须用 UTF-8 编码。这一点非常重要，尤其是当文件包含多字节字符时。要使用 UTF-8 编码保存文件，可以使用菜单 `File -> Save with Encoding`，然后选择 `UTF-8`。
 
-&emsp;&emsp;当你单击 `Knit` 按钮在 RStudio IDE 中编译 R Markdown 文档时，RStudio 调用的默认函数是 `rmarkdown::render()`，这不是我们想要的编译书籍的函数。要调用函数 `bookdown::render_book()`，可以在 R Markdown 文档 `index.Rmd` 的 YAML 元数据中将 `site` 字段设置为 `bookdown::bookdown_site`，例如：
+当你单击 `Knit` 按钮在 RStudio IDE 中编译 R Markdown 文档时，RStudio 调用的默认函数是 `rmarkdown::render()`，这不是我们想要的编译书籍的函数。要调用函数 `bookdown::render_book()`，可以在 R Markdown 文档 `index.Rmd` 的 YAML 元数据中将 `site` 字段设置为 `bookdown::bookdown_site`，例如：
 
 ```yaml
 ---
@@ -74,20 +74,20 @@ output:
 ---
 ```
 
-&emsp;&emsp;当你在 `index.Rmd` 中设置 `site: bookdown::bookdown_site` 后，RStudio 将能够发现作为书籍源目录的目录，^[这个目录必须是一个 RStudio 项目。]，并且你将在 `Build` 窗格中看到 `Build book` 按钮。你可以通过单击按钮以不同的格式构建整本书，另外，如果单击工具栏上的 `Knit` 按钮，RStudio 将自动预览当前章节，而不需要显式使用 `preview_chapter()`。
+当你在 `index.Rmd` 中设置 `site: bookdown::bookdown_site` 后，RStudio 将能够发现作为书籍源目录的目录，^[这个目录必须是一个 RStudio 项目。]，并且你将在 `Build` 窗格中看到 `Build book` 按钮。你可以通过单击按钮以不同的格式构建整本书，另外，如果单击工具栏上的 `Knit` 按钮，RStudio 将自动预览当前章节，而不需要显式使用 `preview_chapter()`。
 
-&emsp;&emsp;**bookdown** 软件包附带了几个 RStudio 插件。如果你不熟悉 RStudio 插件，可以在以下位置查看文档：<http://rstudio.github.io/rstudioaddins/>。当你安装了 **bookdown** 软件包并正在使用 RStudio v0.99.878 或更高版本时，打开菜单，你将在工具栏上看到名为“Addins”\index{RStudio addin}的下拉菜单和“Preview Book”以及“Input LaTeX Math”菜单项。
+**bookdown** 软件包附带了几个 RStudio 插件。如果你不熟悉 RStudio 插件，可以在以下位置查看文档：<http://rstudio.github.io/rstudioaddins/>。当你安装了 **bookdown** 软件包并正在使用 RStudio v0.99.878 或更高版本时，打开菜单，你将在工具栏上看到名为“Addins”\index{RStudio addin}的下拉菜单和“Preview Book”以及“Input LaTeX Math”菜单项。
 
-&emsp;&emsp;“Preview Book”插件调用 `bookdown::serve_Book()` 来编译书籍并通过 HTTP 服务提供书籍预览。它将阻塞当前的 R session，即当 `serve_book` 正在运行时，你将无法在 R console 中执行任何操作。为了避免阻塞 R session，你可以使用 `bookdown::serve_book(daemon = TRUE)` 在服务器上启动守护进程。请注意，在 RStudio 中打开的当前文档位于书籍的根目录下时，才能够使用这个加载项，否则 `serve_book()` 可能无法找到书籍源文档。
+“Preview Book”插件调用 `bookdown::serve_Book()` 来编译书籍并通过 HTTP 服务提供书籍预览。它将阻塞当前的 R session，即当 `serve_book` 正在运行时，你将无法在 R console 中执行任何操作。为了避免阻塞 R session，你可以使用 `bookdown::serve_book(daemon = TRUE)` 在服务器上启动守护进程。请注意，在 RStudio 中打开的当前文档位于书籍的根目录下时，才能够使用这个加载项，否则 `serve_book()` 可能无法找到书籍源文档。
 
-&emsp;&emsp;“Input LaTeX Math”插件本质上是一个小的 Shiny 应用程序，它提供一个文本框来帮助输入 LaTeX 数学表达式\index{LaTeX Math expression}（图 \@ref(fig:mathquill)）。输入表达式时，你将可以预览数学表达式并看到其源代码。这将使输入数学表达式时更不容易出错——当在没有预览的情况下输入一个长的 LaTeX 数学表达式时很容易犯错误，例如，输入 `X_ij` 时，可能想要输入的是 `X_{ij}`，或者输入时忽略了右括号。如果在单击加载项之前在 RStudio 编辑器中选择了 LaTeX 数学表达式，则该表达式将自动加载并呈现在文本框中。这个插件是建立在 MathQuill 库 (<http://mathquill.com>) 之上的。它并不是要为所有用于数学表达式的 LaTeX 命令提供完整支持，而是致力于帮助输入一些常见的数学表达式。
+“Input LaTeX Math”插件本质上是一个小的 Shiny 应用程序，它提供一个文本框来帮助输入 LaTeX 数学表达式\index{LaTeX Math expression}（图 \@ref(fig:mathquill)）。输入表达式时，你将可以预览数学表达式并看到其源代码。这将使输入数学表达式时更不容易出错——当在没有预览的情况下输入一个长的 LaTeX 数学表达式时很容易犯错误，例如，输入 `X_ij` 时，可能想要输入的是 `X_{ij}`，或者输入时忽略了右括号。如果在单击加载项之前在 RStudio 编辑器中选择了 LaTeX 数学表达式，则该表达式将自动加载并呈现在文本框中。这个插件是建立在 MathQuill 库 (<http://mathquill.com>) 之上的。它并不是要为所有用于数学表达式的 LaTeX 命令提供完整支持，而是致力于帮助输入一些常见的数学表达式。
 
 ```{r mathquill, echo=FALSE, fig.align='center', fig.cap='辅助输入 LaTeX 数学公式的 RStudio 插件'}
 knitr::include_graphics('images/mathquill.png', dpi = NA)
 ```
 
 
-&emsp;&emsp;还有其他 R 软件包提供了插件来帮助你编写书籍。**citr** 软件包 [@R-citr] 提供了一个名为“Insert citations”的加载项，可以很容易地将引用文献\index{citation}插入到 R Markdown 文档中。它会扫描你的文献数据库，并在下拉菜单中显示所有引用文献，因此你可以直接从列表中选择，而无需记住哪个引文键对应于哪个引文项（图 \@ref(fig:citr)）。
+还有其他 R 软件包提供了插件来帮助你编写书籍。**citr** 软件包 [@R-citr] 提供了一个名为“Insert citations”的加载项，可以很容易地将引用文献\index{citation}插入到 R Markdown 文档中。它会扫描你的文献数据库，并在下拉菜单中显示所有引用文献，因此你可以直接从列表中选择，而无需记住哪个引文键对应于哪个引文项（图 \@ref(fig:citr)）。
 
 ```{r citr, echo=FALSE, fig.align='center', fig.cap='帮助插入引用文献的 RStudio 插件'}
 knitr::include_graphics('images/citr.png', dpi = NA)
@@ -95,13 +95,13 @@ knitr::include_graphics('images/citr.png', dpi = NA)
 
 ## 协同工作 {#collaboration}
 
-&emsp;&emsp;今后创作书籍几乎肯定会涉及到多个人。你可能会和共同作者一起工作，以及不时提供反馈的读者。
+今后创作书籍几乎肯定会涉及到多个人。你可能会和共同作者一起工作，以及不时提供反馈的读者。
 
-&emsp;&emsp;由于所有书籍章节都是纯文本文件，因此它们非常适合用于应用版本控制工具。因此，如果你的所有合著者和合作者都具备 GIT 等版本控制工具的基本知识，你就可以使用这些工具与他们协作处理书籍内容。事实上，即使他们不知道如何使用 GIT，通过 GIT 进行协作也是可以的，因为 GitHub\index{GitHub}能够让使用者在 web 浏览器中在线创建和编辑文件。只需要有一个人必须熟悉 GIT，并且能够设置书籍存储库。其他合作者可以在线贡献内容，不过如果他们知道在本地使用 GIT 工作的基础用法，他们会有更多的自由。
+由于所有书籍章节都是纯文本文件，因此它们非常适合用于应用版本控制工具。因此，如果你的所有合著者和合作者都具备 GIT 等版本控制工具的基本知识，你就可以使用这些工具与他们协作处理书籍内容。事实上，即使他们不知道如何使用 GIT，通过 GIT 进行协作也是可以的，因为 GitHub\index{GitHub}能够让使用者在 web 浏览器中在线创建和编辑文件。只需要有一个人必须熟悉 GIT，并且能够设置书籍存储库。其他合作者可以在线贡献内容，不过如果他们知道在本地使用 GIT 工作的基础用法，他们会有更多的自由。
 
-&emsp;&emsp;读者可以通过两种方式做出贡献。一种方式是直接贡献内容，如果你的书源托管在 GitHub 上，最简单的方法是通过 [GitHub pull requests](https://help.github.com/articles/about-pull-requests/)。基本上，任何 GitHub 用户都可以单击 Rmd 源文件页面上的编辑 (edit) 按钮，编辑内容，并将更改提交给你进行审批。如果你对提交的更改感到满意（你可以清楚地看到更改的内容），可以单击“合并 (Merge)”按钮来合并更改。如果你不满意，可以在 pull request 中提供反馈，以便读者根据要求进一步修改。我们在第 \@ref(gitbook-style) 节中提到了 GitBook 样式中的编辑 (edit) 按钮。该按钮链接到每个页面的 Rmd 源文件，可以引导你创建 pull request。没有必要来回收发电子邮件来交流简单的更改内容，比如修改打字错误。
+读者可以通过两种方式做出贡献。一种方式是直接贡献内容，如果你的书源托管在 GitHub 上，最简单的方法是通过 [GitHub pull requests](https://help.github.com/articles/about-pull-requests/)。基本上，任何 GitHub 用户都可以单击 Rmd 源文件页面上的编辑 (edit) 按钮，编辑内容，并将更改提交给你进行审批。如果你对提交的更改感到满意（你可以清楚地看到更改的内容），可以单击“合并 (Merge)”按钮来合并更改。如果你不满意，可以在 pull request 中提供反馈，以便读者根据要求进一步修改。我们在第 \@ref(gitbook-style) 节中提到了 GitBook 样式中的编辑 (edit) 按钮。该按钮链接到每个页面的 Rmd 源文件，可以引导你创建 pull request。没有必要来回收发电子邮件来交流简单的更改内容，比如修改打字错误。
 
-&emsp;&emsp;读者对你的书作出贡献的另一种方式是留下评论。评论可以以多种形式留下：电子邮件、GitHub issues 或 HTML 页面评论。这里我们使用 Disqus（参见第 \@ref(yaml-options) 节）作为示例。Disqus 是一种在网页上嵌入讨论区的服务，可以通过 JavaScript 加载。当你注册并在 Disqus 上创建一个新的论坛后，你可以找到如下所示的 JavaScript 代码：
+读者对你的书作出贡献的另一种方式是留下评论。评论可以以多种形式留下：电子邮件、GitHub issues 或 HTML 页面评论。这里我们使用 Disqus（参见第 \@ref(yaml-options) 节）作为示例。Disqus 是一种在网页上嵌入讨论区的服务，可以通过 JavaScript 加载。当你注册并在 Disqus 上创建一个新的论坛后，你可以找到如下所示的 JavaScript 代码：
 
 ```html
 <div id="disqus_thread"></div>
@@ -118,7 +118,7 @@ s.setAttribute('data-timestamp', +new Date());
   comments powered by Disqus.</a></noscript>
 ```
 
-&emsp;&emsp;请注意，你需要用自己的论坛名称替换名称 `yihui`（创建新论坛时必须提供此名称）。你可以将代码保存到一个名为  `disqus.html` 的 HTML 文件中。然后可以通过 `after_body` 选项将其嵌入到每页的末尾（图 \@ref(fig:disqus) 显示了讨论区的外观）：
+请注意，你需要用自己的论坛名称替换名称 `yihui`（创建新论坛时必须提供此名称）。你可以将代码保存到一个名为  `disqus.html` 的 HTML 文件中。然后可以通过 `after_body` 选项将其嵌入到每页的末尾（图 \@ref(fig:disqus) 显示了讨论区的外观）：
 
 ```yaml
 ---

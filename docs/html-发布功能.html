@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6.4 HTML 发布功能 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6.4 HTML 发布功能 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -309,28 +310,28 @@ div.csl-indent {
 <h2><span class="header-section-number">6.4</span> HTML 发布功能<a href="html-发布功能.html#html-发布功能" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="html-404" class="section level3 hasAnchor" number="6.4.1">
 <h3><span class="header-section-number">6.4.1</span> HTML 404 页面<a href="html-发布功能.html#html-404" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>  如果读者试图访问书籍中无法找到的页面，浏览器将因为找不到请求的网页而显示 <a href="https://en.wikipedia.org/wiki/HTTP_404">404 错误</a>。这个 404 错误显示在一个 404 页面上。每个 web 服务器都有一个默认的 404 页面。但是大多数 web 服务平台，如 Netlify、Github Pages 和 Gitlab Pages 都会将网站根目录中名为 <code>404.html</code> 的文件用作自定义的错误提示网页（如果你能提供该文件）。</p>
-<p>  对于全部 HTML 书记格式，<strong>bookdown</strong> 会在你的输出目录中使用简单的内容（一个标题和 2 段正文）创建一个自定义的 <code>404.html</code>；请见图 <a href="html-发布功能.html#fig:404-page">6.2</a>。</p>
+<p>如果读者试图访问书籍中无法找到的页面，浏览器将因为找不到请求的网页而显示 <a href="https://en.wikipedia.org/wiki/HTTP_404">404 错误</a>。这个 404 错误显示在一个 404 页面上。每个 web 服务器都有一个默认的 404 页面。但是大多数 web 服务平台，如 Netlify、Github Pages 和 Gitlab Pages 都会将网站根目录中名为 <code>404.html</code> 的文件用作自定义的错误提示网页（如果你能提供该文件）。</p>
+<p>对于全部 HTML 书记格式，<strong>bookdown</strong> 会在你的输出目录中使用简单的内容（一个标题和 2 段正文）创建一个自定义的 <code>404.html</code>；请见图 <a href="html-发布功能.html#fig:404-page">6.2</a>。</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:404-page"></span>
 <img src="images/404.png" alt="展示一本在线 bs4_book 的屏幕截图，其中有侧边栏、页脚和 CSS 样式。文本为：未找到页面。找不到您请求的页面（可能已被移动或重命名）。您可能希望尝试搜索以查找页面的新位置，或使用目录查找您要查找的页面。"  />
 <p class="caption">
 图 6.2: 示例 404 页面的屏幕截图。
 </p>
 </div>
-<p>  如您所见，这个 404 页面嵌入在书中，以便读者能够快速返回正在阅读的书籍内容。网页书籍站点的整体结构（包括导航栏、页脚、侧边栏等）和 CSS 样式仍然保留在 404 页面上。</p>
-<p>  要自定义 404 页面而不是使用 <strong>bookdown</strong> 提供的页面，你可以向项目根目录中添加 <code>_404.Rmd</code> 或 <code>_404.md</code> 文件。如果在编译书籍时找到前述任何一个文件，则该文件内容将被编译并作为嵌入书籍结构中的 404 页面的主体内容。</p>
-<p>  如果一个 404.html 文件已经存在于根目录级别的书籍源文档仓库中（与书籍的 <code>.Rmd</code> 文件放在一起），那么 <strong>bookdown</strong> 将保持该文件不变，并且不会将它覆盖。这是因为我们假设你的发布工作流中已经有了使用这个自定义的 <code>404.html</code> 的机制。</p>
+<p>如您所见，这个 404 页面嵌入在书中，以便读者能够快速返回正在阅读的书籍内容。网页书籍站点的整体结构（包括导航栏、页脚、侧边栏等）和 CSS 样式仍然保留在 404 页面上。</p>
+<p>要自定义 404 页面而不是使用 <strong>bookdown</strong> 提供的页面，你可以向项目根目录中添加 <code>_404.Rmd</code> 或 <code>_404.md</code> 文件。如果在编译书籍时找到前述任何一个文件，则该文件内容将被编译并作为嵌入书籍结构中的 404 页面的主体内容。</p>
+<p>如果一个 404.html 文件已经存在于根目录级别的书籍源文档仓库中（与书籍的 <code>.Rmd</code> 文件放在一起），那么 <strong>bookdown</strong> 将保持该文件不变，并且不会将它覆盖。这是因为我们假设你的发布工作流中已经有了使用这个自定义的 <code>404.html</code> 的机制。</p>
 </div>
 <div id="metadata-for-sharing" class="section level3 hasAnchor" number="6.4.2">
 <h3><span class="header-section-number">6.4.2</span> 用于共享的元数据<a href="html-发布功能.html#metadata-for-sharing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>  Bookdown HTML 书籍将使用你在 <code>index.Rmd</code> 的 YAML 中提供的信息，为 Twitter、Facebook 和 LinkedIn 等平台上的社交共享提供 HTML 元数据。要对其进行设置，请设置书籍的 <code>url</code> 和 <code>cover-image</code> 文件的路径。该路径可以是绝对 URL，也可以是项目中图像文件的相对路径。书籍的 <code>title</code> 和 <code>description</code> 也会被使用。设置这些选项能带来一个很好的效果，当读者在社交网络网站上共享你的书籍的链接时，该链接将自动扩展为带有书籍封面图像和描述的卡片。</p>
+<p>Bookdown HTML 书籍将使用你在 <code>index.Rmd</code> 的 YAML 中提供的信息，为 Twitter、Facebook 和 LinkedIn 等平台上的社交共享提供 HTML 元数据。要对其进行设置，请设置书籍的 <code>url</code> 和 <code>cover-image</code> 文件的路径。该路径可以是绝对 URL，也可以是项目中图像文件的相对路径。书籍的 <code>title</code> 和 <code>description</code> 也会被使用。设置这些选项能带来一个很好的效果，当读者在社交网络网站上共享你的书籍的链接时，该链接将自动扩展为带有书籍封面图像和描述的卡片。</p>
 <div class="figure"><span style="display:block;" id="fig:social"></span>
 <img src="images/social-og.png" alt="在社交媒体上共享链接时，auto-preview 会在摘要卡片布局中显示封面图像、标题和说明。" width="47.55%" /><img src="images/social-twitter.png" alt="在社交媒体上共享链接时，auto-preview 会在摘要卡片布局中显示封面图像、标题和说明。" width="51.45%" />
 <p class="caption">
 图 6.3: 当链接在 Facebook 和 LinkedIn（左侧）和 Twitter（右侧）上被共享时，显示 HTML 书籍封面图像、标题和描述的屏幕截图。
 </p>
 </div>
-<p>  无论使用哪种方法发布 HTML 书籍，都可以使用 <a href="https://www.opengraph.xyz" class="uri">https://www.opengraph.xyz</a> 来检查书籍元数据，它显示了跨平台共享链接时链接外观的预览。你还可以使用特定于平台的开发人员工具：</p>
+<p>无论使用哪种方法发布 HTML 书籍，都可以使用 <a href="https://www.opengraph.xyz" class="uri">https://www.opengraph.xyz</a> 来检查书籍元数据，它显示了跨平台共享链接时链接外观的预览。你还可以使用特定于平台的开发人员工具：</p>
 <ul>
 <li>Facebook: <a href="https://developers.facebook.com/tools/debug/" class="uri">https://developers.facebook.com/tools/debug/</a></li>
 <li>LinkedIn: <a href="https://www.linkedin.com/post-inspector/" class="uri">https://www.linkedin.com/post-inspector/</a></li>

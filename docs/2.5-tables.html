@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -150,6 +150,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/toc.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 
 <style type = "text/css">
 .main-container {
@@ -310,8 +311,8 @@ details > summary {
 <div class="col-sm-12">
 <div id="tables" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> 表格</h2>
-<p>  目前来说，生成一个表格的最方便的方法是使用函数 <code>knitr::kable()</code>，因为在 <strong>knitr</strong> 中有一些内部技巧可以使其与 <strong>bookdown</strong> 一起工作，并且用户并不需要知道这些实现细节。我们在本节后面将会解释如何使用其他软件包和函数。</p>
-<p>  和图片一样，带有标题的表格也将被编号并且可以被引用。<code>kable()</code> 函数将会为表格环境自动生成一个标签，即前缀 <code>tab:</code> 加上区块标签。例如，标签为 <code>foo</code> 的代码块的表格标签将是 <code>tab:foo</code>，并且我们仍然能够使用语法 <code>\@ref(label)</code> 来引用该表格。表 <a href="2.5-tables.html#tab:table-single">2.2</a> 是一个简单的例子。</p>
+<p>目前来说，生成一个表格的最方便的方法是使用函数 <code>knitr::kable()</code>，因为在 <strong>knitr</strong> 中有一些内部技巧可以使其与 <strong>bookdown</strong> 一起工作，并且用户并不需要知道这些实现细节。我们在本节后面将会解释如何使用其他软件包和函数。</p>
+<p>和图片一样，带有标题的表格也将被编号并且可以被引用。<code>kable()</code> 函数将会为表格环境自动生成一个标签，即前缀 <code>tab:</code> 加上区块标签。例如，标签为 <code>foo</code> 的代码块的表格标签将是 <code>tab:foo</code>，并且我们仍然能够使用语法 <code>\@ref(label)</code> 来引用该表格。表 <a href="2.5-tables.html#tab:table-single">2.2</a> 是一个简单的例子。</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="2.5-tables.html#cb48-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
 <span id="cb48-2"><a href="2.5-tables.html#cb48-2" tabindex="-1"></a>  <span class="fu">head</span>(mtcars[, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>], <span class="dv">10</span>), <span class="at">booktabs =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb48-3"><a href="2.5-tables.html#cb48-3" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&#39;一个包含 mtcars 数据前 10 行的表格。&#39;</span></span>
@@ -444,7 +445,7 @@ details > summary {
 </tr>
 </tbody>
 </table>
-<p>  如果要在单个表格环境放入多个表格，请将数据对象（通常是 R 中的数据框）封装到一个列表中有关示例请见表 <a href="2.5-tables.html#tab:table-multi">2.3</a>。请注意此功能仅在 HTML 和 PDF 输出格式中起作用。</p>
+<p>如果要在单个表格环境放入多个表格，请将数据对象（通常是 R 中的数据框）封装到一个列表中有关示例请见表 <a href="2.5-tables.html#tab:table-multi">2.3</a>。请注意此功能仅在 HTML 和 PDF 输出格式中起作用。</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="2.5-tables.html#cb49-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
 <span id="cb49-2"><a href="2.5-tables.html#cb49-2" tabindex="-1"></a>  <span class="fu">list</span>(</span>
 <span id="cb49-3"><a href="2.5-tables.html#cb49-3" tabindex="-1"></a>    <span class="fu">head</span>(iris[, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>], <span class="dv">3</span>),</span>
@@ -529,7 +530,7 @@ details > summary {
 </tr>
 </tbody>
 </table>
-<p>  当你不希望表格在 PDF 中浮动时，可以使用 LaTeX 软件包 <a href="https://www.ctan.org/pkg/longtable"><strong>longtable</strong></a>，它可以在多个页面上截断一个表格。要使用 <strong>longtable</strong>，请将 <code>longtable = TRUE</code> 参数传递给 <code>kable()</code>，并确保在 LaTeX 导言 (preamble) 中包含 <code>\usepackage{longtable}</code>（有关如何自定义 LaTeX 导言的信息，请参阅第 <a href="4.1-yaml-options.html#yaml-options">4.1</a> 节)。当然，这与 HTML 输出无关，因为 HTML 中的表格并不需要浮动。</p>
+<p>当你不希望表格在 PDF 中浮动时，可以使用 LaTeX 软件包 <a href="https://www.ctan.org/pkg/longtable"><strong>longtable</strong></a>，它可以在多个页面上截断一个表格。要使用 <strong>longtable</strong>，请将 <code>longtable = TRUE</code> 参数传递给 <code>kable()</code>，并确保在 LaTeX 导言 (preamble) 中包含 <code>\usepackage{longtable}</code>（有关如何自定义 LaTeX 导言的信息，请参阅第 <a href="4.1-yaml-options.html#yaml-options">4.1</a> 节)。当然，这与 HTML 输出无关，因为 HTML 中的表格并不需要浮动。</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="2.5-tables.html#cb50-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
 <span id="cb50-2"><a href="2.5-tables.html#cb50-2" tabindex="-1"></a>  iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">55</span>, ], <span class="at">longtable =</span> <span class="cn">TRUE</span>, <span class="at">booktabs =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb50-3"><a href="2.5-tables.html#cb50-3" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&#39;由 longtable 软件包生成的表格。&#39;</span></span>
@@ -933,7 +934,7 @@ details > summary {
 </tr>
 </tbody>
 </table>
-<p>  Pandoc 支持多种类型的 <a href="http://pandoc.org/MANUAL.html#tables">Markdown 表格</a>，例如简单表格、多行表格、栅格表格和管道表格。<code>knitr::kable()</code> 生成的是这样一个简单的表格：</p>
+<p>Pandoc 支持多种类型的 <a href="http://pandoc.org/MANUAL.html#tables">Markdown 表格</a>，例如简单表格、多行表格、栅格表格和管道表格。<code>knitr::kable()</code> 生成的是这样一个简单的表格：</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb51-1"><a href="2.5-tables.html#cb51-1" tabindex="-1"></a>Table：Markdown 的一个简单表格。</span>
 <span id="cb51-2"><a href="2.5-tables.html#cb51-2" tabindex="-1"></a></span>
 <span id="cb51-3"><a href="2.5-tables.html#cb51-3" tabindex="-1"></a> Sepal.Length   Sepal.Width   Petal.Length   Petal.Width</span>
@@ -944,8 +945,8 @@ details > summary {
 <span id="cb51-8"><a href="2.5-tables.html#cb51-8" tabindex="-1"></a><span class="in">          4.6           3.1            1.5           0.2</span></span>
 <span id="cb51-9"><a href="2.5-tables.html#cb51-9" tabindex="-1"></a><span class="in">          5.0           3.6            1.4           0.2</span></span>
 <span id="cb51-10"><a href="2.5-tables.html#cb51-10" tabindex="-1"></a><span class="in">          5.4           3.9            1.7           0.4</span></span></code></pre></div>
-<p>  你可以在文档中使用任何类型的 Markdown 表格。为了能够交叉引用 Markdown 表格，它必须具有 <code>Table: (\#label) Caption here</code> 格式的标签标题，其中 <code>label</code> 必须具有前缀 <code>tab:</code>，例如 <code>tab:simple-table</code>。</p>
-<p>  如果决定使用其它 R 软件包生成表格，则必须确保表格环境的标签以 <code>(\#label)</code> 的格式出现在表格标题的开头（同样地，<code>label</code> 必须具有前缀 <code>tab:</code>）。你必须非常小心表格生成函数的 <em>通用性</em>：它应该在 HTML 和 LaTeX 输出格式下能够自动正常工作，因此必须在内部考虑输出格式（检查 <code>knitr::opts_knit$get('rmarkdown.pandoc.to')</code>）。当输出 HTML 表格时，标题必须写在 <code>&lt;caption&gt;&lt;/caption&gt;</code> 标签中，不过对于简单的表格，<code>kable()</code> 就足够了。如果你需要创建复杂的表格（例如，某些单元格跨越多列/行），则必须考虑上述问题。</p>
+<p>你可以在文档中使用任何类型的 Markdown 表格。为了能够交叉引用 Markdown 表格，它必须具有 <code>Table: (\#label) Caption here</code> 格式的标签标题，其中 <code>label</code> 必须具有前缀 <code>tab:</code>，例如 <code>tab:simple-table</code>。</p>
+<p>如果决定使用其它 R 软件包生成表格，则必须确保表格环境的标签以 <code>(\#label)</code> 的格式出现在表格标题的开头（同样地，<code>label</code> 必须具有前缀 <code>tab:</code>）。你必须非常小心表格生成函数的 <em>通用性</em>：它应该在 HTML 和 LaTeX 输出格式下能够自动正常工作，因此必须在内部考虑输出格式（检查 <code>knitr::opts_knit$get('rmarkdown.pandoc.to')</code>）。当输出 HTML 表格时，标题必须写在 <code>&lt;caption&gt;&lt;/caption&gt;</code> 标签中，不过对于简单的表格，<code>kable()</code> 就足够了。如果你需要创建复杂的表格（例如，某些单元格跨越多列/行），则必须考虑上述问题。</p>
 </div>
 <p style="text-align: center;">
 <a href="2.4-figures.html"><button class="btn btn-default">Previous</button></a>

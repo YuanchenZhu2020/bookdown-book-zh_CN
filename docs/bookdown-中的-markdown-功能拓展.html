@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.2 Bookdown 中的 Markdown 功能拓展 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.2 Bookdown 中的 Markdown 功能拓展 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,11 +308,11 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="bookdown-中的-markdown-功能拓展" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Bookdown 中的 Markdown 功能拓展<a href="bookdown-中的-markdown-功能拓展.html#bookdown-中的-markdown-功能拓展" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  尽管 Pandoc 风格的 Markdown 比原来的 Markdown 语法要丰富得多，但它仍然缺少我们在学术写作中可能需要的一些东西。例如，它支持数学公式，但不能在多页 HTML 或 EPUB 输出中对公式进行编号和引用。我们在 <strong>bookdown</strong> 中提供了一些 Markdown 扩展来填补这些空白。</p>
+<p>尽管 Pandoc 风格的 Markdown 比原来的 Markdown 语法要丰富得多，但它仍然缺少我们在学术写作中可能需要的一些东西。例如，它支持数学公式，但不能在多页 HTML 或 EPUB 输出中对公式进行编号和引用。我们在 <strong>bookdown</strong> 中提供了一些 Markdown 扩展来填补这些空白。</p>
 <div id="equations" class="section level3 hasAnchor" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> 方程编号与引用<a href="bookdown-中的-markdown-功能拓展.html#equations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To number and refer to equations, put them in the equation environments and assign labels to them using the syntax <code>(\#eq:label)</code>, e.g.,</p>
-<p>  要对方程进行编号和引用，请将它们放在方程环境中，并使用语法 <code>(\#eq:label)</code> 为它们指定标签，例如：</p>
+<p>要对方程进行编号和引用，请将它们放在方程环境中，并使用语法 <code>(\#eq:label)</code> 为它们指定标签，例如：</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb26-1"><a href="bookdown-中的-markdown-功能拓展.html#cb26-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}<span class="ss"> </span></span>
 <span id="cb26-2"><a href="bookdown-中的-markdown-功能拓展.html#cb26-2" tabindex="-1"></a><span class="ss">  f</span><span class="sc">\left</span><span class="ss">(k</span><span class="sc">\right</span><span class="ss">) = </span><span class="sc">\binom</span><span class="ss">{n}{k} p^k</span><span class="sc">\left</span><span class="ss">(1-p</span><span class="sc">\right</span><span class="ss">)^{n-k}</span></span>
 <span id="cb26-3"><a href="bookdown-中的-markdown-功能拓展.html#cb26-3" tabindex="-1"></a><span class="ss">  (</span><span class="sc">\#</span><span class="ss">eq:binom)</span></span>
@@ -320,19 +321,19 @@ div.csl-indent {
 <p><span class="math display" id="eq:binom">\[\begin{equation}
 f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} \tag{2.1}
 \end{equation}\]</span></p>
-<p>  你可以使用 <code>\@ref(eq:binom)</code> 来引用它，例如：请看方程 <a href="bookdown-中的-markdown-功能拓展.html#eq:binom">(2.1)</a>。</p>
+<p>你可以使用 <code>\@ref(eq:binom)</code> 来引用它，例如：请看方程 <a href="bookdown-中的-markdown-功能拓展.html#eq:binom">(2.1)</a>。</p>
 
 <div class="rmdcaution">
 方程标签在 <strong>bookdown</strong> 中必须以前缀 <code>eq:</code> 开头。<strong>bookdown</strong> 中的所有标签只能包含字母数字字符、<code>:</code>、<code>-</code> 和/或 <code>/</code>。方程引用最适合 LaTeX/PDF 输出格式，它们在 Word 或电子书中没有收到很好的支持。对于 HTML 输出，<strong>bookdown</strong> 只能对带有标签的方程进行编号。请确保没有标签的方程没有使用 <code>equation*</code> 环境或在方程中添加 <code>\nonumber</code> 或 <code>\notag</code> 进行编号。同样的规则也适用于其他数学环境，如 <code>eqnarray</code>、<code>gather</code>、<code>align</code> 等（例如可以使用 <code>align*</code> 环境）。
 </div>
-<p>  我们将在下面演示更多的数学方程环境。下面是一个使用 <code>equation*</code> 环境的未编号方程：</p>
+<p>我们将在下面演示更多的数学方程环境。下面是一个使用 <code>equation*</code> 环境的未编号方程：</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb27-1"><a href="bookdown-中的-markdown-功能拓展.html#cb27-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation*</span>}<span class="ss"> </span></span>
 <span id="cb27-2"><a href="bookdown-中的-markdown-功能拓展.html#cb27-2" tabindex="-1"></a><span class="sc">\frac</span><span class="ss">{d}{dx}</span><span class="sc">\left</span><span class="ss">( </span><span class="sc">\int</span><span class="ss">_{a}^{x} f(u)</span><span class="sc">\,</span><span class="ss">du</span><span class="sc">\right</span><span class="ss">)=f(x)</span></span>
 <span id="cb27-3"><a href="bookdown-中的-markdown-功能拓展.html#cb27-3" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">equation*</span>} </span></code></pre></div>
 <p><span class="math display">\[\begin{equation*}
 \frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x)
 \end{equation*}\]</span></p>
-<p>  下面展示了一个 <code>align</code> 环境 <a href="bookdown-中的-markdown-功能拓展.html#eq:align">(2.2)</a>:</p>
+<p>下面展示了一个 <code>align</code> 环境 <a href="bookdown-中的-markdown-功能拓展.html#eq:align">(2.2)</a>:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb28-1"><a href="bookdown-中的-markdown-功能拓展.html#cb28-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}<span class="ss"> </span></span>
 <span id="cb28-2"><a href="bookdown-中的-markdown-功能拓展.html#cb28-2" tabindex="-1"></a><span class="ss">g(X_{n}) &amp;= g(</span><span class="sc">\theta</span><span class="ss">)+g&#39;({</span><span class="sc">\tilde</span><span class="ss">{</span><span class="sc">\theta</span><span class="ss">}})(X_{n}-</span><span class="sc">\theta</span><span class="ss">) </span><span class="sc">\notag</span><span class="ss"> </span><span class="sc">\\</span></span>
 <span id="cb28-3"><a href="bookdown-中的-markdown-功能拓展.html#cb28-3" tabindex="-1"></a><span class="sc">\sqrt</span><span class="ss">{n}[g(X_{n})-g(</span><span class="sc">\theta</span><span class="ss">)] &amp;= g&#39;</span><span class="sc">\left</span><span class="ss">({</span><span class="sc">\tilde</span><span class="ss">{</span><span class="sc">\theta</span><span class="ss">}}</span><span class="sc">\right</span><span class="ss">)</span></span>
@@ -343,7 +344,7 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 \sqrt{n}[g(X_{n})-g(\theta)] &amp;= g&#39;\left({\tilde{\theta}}\right)
   \sqrt{n}[X_{n}-\theta ] \tag{2.2}
 \end{align}\]</span></p>
-<p>  你可以在 <code>equation</code> 中使用 <code>split</code> 环境，以便所有行共享相同的编号 <a href="bookdown-中的-markdown-功能拓展.html#eq:var-beta">(2.3)</a>。默认情况下，<code>align</code> 环境中的每一行都将被分配一个方程编号。在前面的示例中，我们使用 <code>\notag</code> 取消了第一行的编号。在本例中，整个 <code>split</code> 环境被分配了一个编号。</p>
+<p>你可以在 <code>equation</code> 中使用 <code>split</code> 环境，以便所有行共享相同的编号 <a href="bookdown-中的-markdown-功能拓展.html#eq:var-beta">(2.3)</a>。默认情况下，<code>align</code> 环境中的每一行都将被分配一个方程编号。在前面的示例中，我们使用 <code>\notag</code> 取消了第一行的编号。在本例中，整个 <code>split</code> 环境被分配了一个编号。</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb29-1"><a href="bookdown-中的-markdown-功能拓展.html#cb29-1" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">equation</span>}<span class="ss"> </span></span>
 <span id="cb29-2"><a href="bookdown-中的-markdown-功能拓展.html#cb29-2" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">split</span>}</span>
 <span id="cb29-3"><a href="bookdown-中的-markdown-功能拓展.html#cb29-3" tabindex="-1"></a><span class="sc">\mathrm</span><span class="ss">{Var}(</span><span class="sc">\hat</span><span class="ss">{</span><span class="sc">\beta</span><span class="ss">}) &amp; =</span><span class="sc">\mathrm</span><span class="ss">{Var}((X&#39;X)^{-1}X&#39;y)</span><span class="sc">\\</span></span>
@@ -367,13 +368,13 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 </div>
 <div id="theorems" class="section level3 hasAnchor" number="2.2.2">
 <h3><span class="header-section-number">2.2.2</span> 定理与证明<a href="bookdown-中的-markdown-功能拓展.html#theorems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>  定理和证明常用于数学文章和书籍中。但是请不要被名称误导：“定理”只是一个编号或标记的环境，它不一定是一个数学定理（例如，它可以是一个与数学无关的例子）。类似地，“证明”是一个没有编号的环境。在这一节中，除非明确说明，否则我们总是使用“定理”和“证明”的<em>一般</em>含义。</p>
-<p>  在 <strong>bookdown</strong> 中，支持的定理环境类型在表 <a href="bookdown-中的-markdown-功能拓展.html#tab:theorem-envs">2.1</a>。要写出一个定理，可以使用以下语法：</p>
+<p>定理和证明常用于数学文章和书籍中。但是请不要被名称误导：“定理”只是一个编号或标记的环境，它不一定是一个数学定理（例如，它可以是一个与数学无关的例子）。类似地，“证明”是一个没有编号的环境。在这一节中，除非明确说明，否则我们总是使用“定理”和“证明”的<em>一般</em>含义。</p>
+<p>在 <strong>bookdown</strong> 中，支持的定理环境类型在表 <a href="bookdown-中的-markdown-功能拓展.html#tab:theorem-envs">2.1</a>。要写出一个定理，可以使用以下语法：</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb30-1"><a href="bookdown-中的-markdown-功能拓展.html#cb30-1" tabindex="-1"></a>::: {.theorem}</span>
 <span id="cb30-2"><a href="bookdown-中的-markdown-功能拓展.html#cb30-2" tabindex="-1"></a>This is a <span class="in">`theorem`</span> environment that can contain **any**</span>
 <span id="cb30-3"><a href="bookdown-中的-markdown-功能拓展.html#cb30-3" tabindex="-1"></a>_Markdown_ syntax.</span>
 <span id="cb30-4"><a href="bookdown-中的-markdown-功能拓展.html#cb30-4" tabindex="-1"></a>:::</span></code></pre></div>
-<p>  这个语法基于 Pandoc 的 <a href="https://pandoc.org/MANUAL.html#divs-and-spans">fenced <code>Div</code> blocks</a>，并且已经可以在任何 R Markdown 文档中用于编写<a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html">自定义块</a>。<strong>Bookdown</strong> 只提供定理和证明环境的特殊处理。因为这使用了 Pandoc 风格的 Markdown 语法，所以可以在块内编写任何有效的 Markdown 文本。</p>
+<p>这个语法基于 Pandoc 的 <a href="https://pandoc.org/MANUAL.html#divs-and-spans">fenced <code>Div</code> blocks</a>，并且已经可以在任何 R Markdown 文档中用于编写<a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html">自定义块</a>。<strong>Bookdown</strong> 只提供定理和证明环境的特殊处理。因为这使用了 Pandoc 风格的 Markdown 语法，所以可以在块内编写任何有效的 Markdown 文本。</p>
 
 <table>
 <caption><span id="tab:theorem-envs">表 2.1: </span><strong>Bookdown</strong> 中的定理环境。</caption>
@@ -432,18 +433,18 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 </tr>
 </tbody>
 </table>
-<p>  要编写其他定理环境，请用表 <a href="bookdown-中的-markdown-功能拓展.html#tab:theorem-envs">2.1</a> 中的其他环境名称替换 <code>::: {.theorem}</code>，例如 <code>::: {.lemma}</code>。</p>
-<p>  一个定理可以有一个 <code>name</code> 属性，这样它的名字就会被打印出来。例如：</p>
+<p>要编写其他定理环境，请用表 <a href="bookdown-中的-markdown-功能拓展.html#tab:theorem-envs">2.1</a> 中的其他环境名称替换 <code>::: {.theorem}</code>，例如 <code>::: {.lemma}</code>。</p>
+<p>一个定理可以有一个 <code>name</code> 属性，这样它的名字就会被打印出来。例如：</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb31-1"><a href="bookdown-中的-markdown-功能拓展.html#cb31-1" tabindex="-1"></a>::: {.theorem name=&quot;Pythagorean theorem&quot;}</span>
 <span id="cb31-2"><a href="bookdown-中的-markdown-功能拓展.html#cb31-2" tabindex="-1"></a>For a right triangle, if $c$ denotes the length of the hypotenuse</span>
 <span id="cb31-3"><a href="bookdown-中的-markdown-功能拓展.html#cb31-3" tabindex="-1"></a>and $a$ and $b$ denote the lengths of the other two sides, we have</span>
 <span id="cb31-4"><a href="bookdown-中的-markdown-功能拓展.html#cb31-4" tabindex="-1"></a>$$a^2 + b^2 = c^2$$</span>
 <span id="cb31-5"><a href="bookdown-中的-markdown-功能拓展.html#cb31-5" tabindex="-1"></a>:::</span></code></pre></div>
-<p>  如果你想引用一个定理，应该给它贴上标签。标签可以以 <code>#label</code> 的形式作为一个 ID 提供给块。例如：</p>
+<p>如果你想引用一个定理，应该给它贴上标签。标签可以以 <code>#label</code> 的形式作为一个 ID 提供给块。例如：</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb32-1"><a href="bookdown-中的-markdown-功能拓展.html#cb32-1" tabindex="-1"></a>::: {.theorem #foo}</span>
 <span id="cb32-2"><a href="bookdown-中的-markdown-功能拓展.html#cb32-2" tabindex="-1"></a>A labeled theorem here.</span>
 <span id="cb32-3"><a href="bookdown-中的-markdown-功能拓展.html#cb32-3" tabindex="-1"></a>:::</span></code></pre></div>
-<p>  当你为一个定理贴上标签后，你可以使用语法 <code>\@ref(prefix:label)</code>来引用它。对于每个环境中的 <code>prefix</code> 值，请看表 <a href="bookdown-中的-markdown-功能拓展.html#tab:theorem-envs">2.1</a> 中的 <code>Label Prefix</code> 列。例如，我们在下面有一个标记和命名了的定理，<code>\@ref(thm:pyth)</code> 给出了它的定理编号 <a href="bookdown-中的-markdown-功能拓展.html#thm:pyth">2.1</a>：</p>
+<p>当你为一个定理贴上标签后，你可以使用语法 <code>\@ref(prefix:label)</code>来引用它。对于每个环境中的 <code>prefix</code> 值，请看表 <a href="bookdown-中的-markdown-功能拓展.html#tab:theorem-envs">2.1</a> 中的 <code>Label Prefix</code> 列。例如，我们在下面有一个标记和命名了的定理，<code>\@ref(thm:pyth)</code> 给出了它的定理编号 <a href="bookdown-中的-markdown-功能拓展.html#thm:pyth">2.1</a>：</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb33-1"><a href="bookdown-中的-markdown-功能拓展.html#cb33-1" tabindex="-1"></a>::: {.theorem #pyth name=&quot;Pythagorean theorem&quot;}</span>
 <span id="cb33-2"><a href="bookdown-中的-markdown-功能拓展.html#cb33-2" tabindex="-1"></a>For a right triangle, if $c$ denotes the length of the hypotenuse</span>
 <span id="cb33-3"><a href="bookdown-中的-markdown-功能拓展.html#cb33-3" tabindex="-1"></a>and $a$ and $b$ denote the lengths of the other two sides, we have</span>
@@ -454,13 +455,13 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 <p><span id="thm:pyth" class="theorem"><strong>定理 2.1  (Pythagorean theorem) </strong></span>对于直角三角形，如果 <span class="math inline">\(c\)</span> 表示斜边的长度，<span class="math inline">\(a\)</span> 和 <span class="math inline">\(b\)</span> 表示另外两边的长度，我们有</p>
 <p><span class="math display">\[a^2 + b^2 = c^2\]</span></p>
 </div>
-<p>  目前支持的证明环境有 <code>proof</code>、<code>remark</code> 和 <code>solution</code>。它的语法类似于定理环境，并且证明环境也能够使用 <code>name</code> 属性命名。唯一的区别是你不能引用它们，即便你为证明环境提供了 ID，因为它们无法进行编号。</p>
-<p>  无论你选择的输出是 PDF 还是 HTML，我们都已经尝试使所有这些定理和证明环境开箱即用。如果你是 LaTeX 或 HTML 专家，你可能希望自定义这些环境的样式（请参阅第 <a href="customization.html#customization">4</a> 章）。使用 CSS 可以很容易在 HTML 中自定义样式，每个环境都包含在 <code>&lt;div&gt;&lt;/div&gt;</code> 中，CSS class 属性为环境名称，例如 <code>&lt;div class=“lemma”&gt;&lt;/div&gt;</code>。对于 LaTeX 输出，我们为环境 <code>definition</code>、<code>example</code>、<code>exercise</code> 和 <code>hypothesis</code> 预定义了样式 <code>definition</code>，为环境 <code>proof</code> 和 <code>remark</code> 预定义了样式 <code>remark</code>。所有其他环境都使用 <code>plain</code> 样式。样式定义是通过 <strong>amsthm</strong> 包的 <code>\theoremstyle{}</code> 命令完成的。如果你不希望 <strong>bookdown</strong> 自动添加默认的定理定义，可以设置 <code>options(bookdown.thermo.preamble = FALSE)</code>。例如，使用输出格式 <code>bookdown::pdf_book</code> 和已经包含 <strong>amsmath</strong> 定义的 <code>base_format</code> 来避免单个文档（第 <a href="a-single-document.html#a-single-document">3.4</a> 节）中的冲突非常有用。</p>
-<p>  默认情况下，定理按篇章编号。如果文档中没有篇章，则按小节编号。如果整篇文档没有编号（输出格式选项为 <code>number_sections = FALSE</code>），则所有定理都从 1、2、…、N 开始依次编号。LaTeX 支持依次对一个又一个定理环境进行编号，例如，让定理和引理共享同一个计数器。<strong>bookdown</strong> 中的 HTML/EPUB 输出不支持此操作。你可以通过定义自己的定理环境来更改 LaTeX 导言 (preamble) 中的编号方案，例如：</p>
+<p>目前支持的证明环境有 <code>proof</code>、<code>remark</code> 和 <code>solution</code>。它的语法类似于定理环境，并且证明环境也能够使用 <code>name</code> 属性命名。唯一的区别是你不能引用它们，即便你为证明环境提供了 ID，因为它们无法进行编号。</p>
+<p>无论你选择的输出是 PDF 还是 HTML，我们都已经尝试使所有这些定理和证明环境开箱即用。如果你是 LaTeX 或 HTML 专家，你可能希望自定义这些环境的样式（请参阅第 <a href="customization.html#customization">4</a> 章）。使用 CSS 可以很容易在 HTML 中自定义样式，每个环境都包含在 <code>&lt;div&gt;&lt;/div&gt;</code> 中，CSS class 属性为环境名称，例如 <code>&lt;div class=“lemma”&gt;&lt;/div&gt;</code>。对于 LaTeX 输出，我们为环境 <code>definition</code>、<code>example</code>、<code>exercise</code> 和 <code>hypothesis</code> 预定义了样式 <code>definition</code>，为环境 <code>proof</code> 和 <code>remark</code> 预定义了样式 <code>remark</code>。所有其他环境都使用 <code>plain</code> 样式。样式定义是通过 <strong>amsthm</strong> 包的 <code>\theoremstyle{}</code> 命令完成的。如果你不希望 <strong>bookdown</strong> 自动添加默认的定理定义，可以设置 <code>options(bookdown.thermo.preamble = FALSE)</code>。例如，使用输出格式 <code>bookdown::pdf_book</code> 和已经包含 <strong>amsmath</strong> 定义的 <code>base_format</code> 来避免单个文档（第 <a href="a-single-document.html#a-single-document">3.4</a> 节）中的冲突非常有用。</p>
+<p>默认情况下，定理按篇章编号。如果文档中没有篇章，则按小节编号。如果整篇文档没有编号（输出格式选项为 <code>number_sections = FALSE</code>），则所有定理都从 1、2、…、N 开始依次编号。LaTeX 支持依次对一个又一个定理环境进行编号，例如，让定理和引理共享同一个计数器。<strong>bookdown</strong> 中的 HTML/EPUB 输出不支持此操作。你可以通过定义自己的定理环境来更改 LaTeX 导言 (preamble) 中的编号方案，例如：</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb34-1"><a href="bookdown-中的-markdown-功能拓展.html#cb34-1" tabindex="-1"></a><span class="fu">\newtheorem</span>{theorem}{Theorem}</span>
 <span id="cb34-2"><a href="bookdown-中的-markdown-功能拓展.html#cb34-2" tabindex="-1"></a><span class="fu">\newtheorem</span>{lemma}[theorem]{Lemma}</span></code></pre></div>
-<p>  当 <strong>bookdown</strong> 在 LaTeX 导言 (preamble) 中检测到 <code>\newtheorem{themore}</code> 时，它不会输出其默认的定理定义，这意味着你必须自己定义所有定理环境。为了简单和一致性，我们不建议你这样做。当 PDF 中的定理 18 变成 HTML 中的定理 2.4 时可能会令人十分困惑。</p>
-<p>  下面我们展示了定理和证明环境的更多的例子<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>，所以你可以在 <strong>bookdown</strong> 中看到默认样式。</p>
+<p>当 <strong>bookdown</strong> 在 LaTeX 导言 (preamble) 中检测到 <code>\newtheorem{themore}</code> 时，它不会输出其默认的定理定义，这意味着你必须自己定义所有定理环境。为了简单和一致性，我们不建议你这样做。当 PDF 中的定理 18 变成 HTML 中的定理 2.4 时可能会令人十分困惑。</p>
+<p>下面我们展示了定理和证明环境的更多的例子<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>，所以你可以在 <strong>bookdown</strong> 中看到默认样式。</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-1" class="definition"><strong>定义 2.1  </strong></span>随机变量 <span class="math inline">\(x\)</span> 的特征函数定义如下：</p>
 <p><span class="math display">\[\varphi _{X}(t)=\operatorname {E} \left[e^{itX}\right], \; t\in\mathcal{R}\]</span></p>
@@ -524,14 +525,14 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 </div>
 <div id="theorem-engine" class="section level4 hasAnchor" number="2.2.2.1">
 <h4><span class="header-section-number">2.2.2.1</span> 关于旧语法的注记<a href="bookdown-中的-markdown-功能拓展.html#theorem-engine" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>  对于较早版本的 <strong>bookdown</strong>（v0.21 之前），可以这样编写 <code>theorem</code> 环境：</p>
+<p>对于较早版本的 <strong>bookdown</strong>（v0.21 之前），可以这样编写 <code>theorem</code> 环境：</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb35-1"><a href="bookdown-中的-markdown-功能拓展.html#cb35-1" tabindex="-1"></a><span class="in">```{theorem pyth, name=&quot;Pythagorean theorem&quot;}</span></span>
 <span id="cb35-2"><a href="bookdown-中的-markdown-功能拓展.html#cb35-2" tabindex="-1"></a><span class="in">对于直角三角形，如果 $c$ 表示斜边的长度，$a$ 和 $b$ 表示另外两边的长度，我们有</span></span>
 <span id="cb35-3"><a href="bookdown-中的-markdown-功能拓展.html#cb35-3" tabindex="-1"></a></span>
 <span id="cb35-4"><a href="bookdown-中的-markdown-功能拓展.html#cb35-4" tabindex="-1"></a><span class="in">$$a^2 + b^2 = c^2$$</span></span>
 <span id="cb35-5"><a href="bookdown-中的-markdown-功能拓展.html#cb35-5" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>  这种语法仍然有效，但我们不建议使用这种语法，因为新语法允许编写更丰富的内容，并且具有更清晰的实现。</p>
-<p>  这两种语法之间的转换非常简单。上述定理可以这样改写：</p>
+<p>这种语法仍然有效，但我们不建议使用这种语法，因为新语法允许编写更丰富的内容，并且具有更清晰的实现。</p>
+<p>这两种语法之间的转换非常简单。上述定理可以这样改写：</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb36-1"><a href="bookdown-中的-markdown-功能拓展.html#cb36-1" tabindex="-1"></a>::: {.theorem #pyth name=&quot;Pythagorean theorem&quot;}</span>
 <span id="cb36-2"><a href="bookdown-中的-markdown-功能拓展.html#cb36-2" tabindex="-1"></a>For a right triangle, if $c$ denotes the length of the hypotenuse</span>
 <span id="cb36-3"><a href="bookdown-中的-markdown-功能拓展.html#cb36-3" tabindex="-1"></a>and $a$ and $b$ denote the lengths of the other two sides, we have</span>
@@ -540,12 +541,12 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 <span id="cb36-6"><a href="bookdown-中的-markdown-功能拓展.html#cb36-6" tabindex="-1"></a>:::</span></code></pre></div>
 <p>&amp;emso; 你可以使用帮助函数 <code>bookdown::fence_theorems()</code> 来转换整个文件或一段文本。这是一次性的操作。我们已经尝试过安全地从旧语法转换到新语法，但是可能错过了一些边缘情况。为确保不会意外覆盖 <code>input</code> 文件，可以将转换后的源代码写入新文件，例如：</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="bookdown-中的-markdown-功能拓展.html#cb37-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">fence_theorems</span>(<span class="st">&quot;01-intro.Rmd&quot;</span>, <span class="at">output =</span> <span class="st">&quot;01-intro-new.Rmd&quot;</span>)</span></code></pre></div>
-<p>  然后仔细检查 <code>01-intro-new.Rmd</code> 的内容。使用 <code>output = NULL</code> 将在 R 控制台中打印转换结果，这是检查转换的另一种方法。如果你使用的是版本控制工具，则可以将 <code>output</code> 设置为与 <code>input</code> 相同，因为如果出现任何问题，你应该可以安全且轻松地还原更改。</p>
+<p>然后仔细检查 <code>01-intro-new.Rmd</code> 的内容。使用 <code>output = NULL</code> 将在 R 控制台中打印转换结果，这是检查转换的另一种方法。如果你使用的是版本控制工具，则可以将 <code>output</code> 设置为与 <code>input</code> 相同，因为如果出现任何问题，你应该可以安全且轻松地还原更改。</p>
 </div>
 </div>
 <div id="特殊的标题" class="section level3 hasAnchor" number="2.2.3">
 <h3><span class="header-section-number">2.2.3</span> 特殊的标题<a href="bookdown-中的-markdown-功能拓展.html#特殊的标题" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>  有几种特殊类型的一级标题在 <strong>bookdown</strong> 会以不同方式处理。第一种类型是没有编号的标题，以标志 <code>(PART)</code> 开头。这种类型的标题将会翻译为书籍各部份的标题。如果你熟悉 LaTeX 就应该知道它基本上等同于 <code>\part{}</code>。当你的书籍有大量章节时，你可能希望将它们组织成部分，例如：</p>
+<p>有几种特殊类型的一级标题在 <strong>bookdown</strong> 会以不同方式处理。第一种类型是没有编号的标题，以标志 <code>(PART)</code> 开头。这种类型的标题将会翻译为书籍各部份的标题。如果你熟悉 LaTeX 就应该知道它基本上等同于 <code>\part{}</code>。当你的书籍有大量章节时，你可能希望将它们组织成部分，例如：</p>
 <pre><code># (PART) 第一部分 {-} 
 
 # 第一章
@@ -555,8 +556,8 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 # (PART) 第二部分 {-} 
 
 # 第三章</code></pre>
-<p>  各部分的标题应写在本部分第一章标题之前，两个标题应在同一文件中。如果各部分标题不应该参与自动编号，则可以使用 <code>(PART\*)</code>（<code>*</code> 前的反斜杠是必须的）而不是 <code>(PART)</code>。</p>
-<p>  第二种类型是以 <code>(APPENDIX)</code> 开头的无编号标题，表示此标题后面的所有章节都是附录，例如：</p>
+<p>各部分的标题应写在本部分第一章标题之前，两个标题应在同一文件中。如果各部分标题不应该参与自动编号，则可以使用 <code>(PART\*)</code>（<code>*</code> 前的反斜杠是必须的）而不是 <code>(PART)</code>。</p>
+<p>第二种类型是以 <code>(APPENDIX)</code> 开头的无编号标题，表示此标题后面的所有章节都是附录，例如：</p>
 <pre><code># 第一章
 
 # 第二章
@@ -566,14 +567,14 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 # 附录 A
 
 # 附录 B</code></pre>
-<p>  附录的编号样式将在 LaTeX/PDF 和 HTML 输出中自动更改（通常采用 A、A.1、A.2、B、B.1 等格式）。此功能不适用于电子书或 Word 输出。</p>
+<p>附录的编号样式将在 LaTeX/PDF 和 HTML 输出中自动更改（通常采用 A、A.1、A.2、B、B.1 等格式）。此功能不适用于电子书或 Word 输出。</p>
 </div>
 <div id="text-references" class="section level3 hasAnchor" number="2.2.4">
 <h3><span class="header-section-number">2.2.4</span> 文本引用<a href="bookdown-中的-markdown-功能拓展.html#text-references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>  你可以将一些文本指定给标签，并使用文档中其他位置的标签来引用这些文本。这对于长图形/表格的标题（第 <a href="figures.html#figures">2.4</a> 节和第 <a href="tables.html#tables">2.5</a> 节）特别有用，在这种情况下，你通常需要将整个字符串写入区块标题（例如 <code>fig.cap = "一张长图片的标题”）或 R 代码（例如</code>kable(caption = “一个很长很长的表格的标题”））。当这些标题包含特殊的 HTML 或 LaTeX 字符时，它也很有用。例如，如果图片标题包含下划线，则它在 HTML 输出中正常工作，但在 LaTeX 输出中可能不起作用，因为下划线必须在 LaTeX 中进行转义。</p>
-<p>  文本引用的语法是 <code>(ref:label) text</code>。其中 <code>text</code> 的标签 <code>label</code> 是在整个文档中唯一的标签<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>。文本引用必须放在一个单独的段落中，上面和下面都有空行。段落不能有多行，也不能以空格结尾。例如，</p>
+<p>你可以将一些文本指定给标签，并使用文档中其他位置的标签来引用这些文本。这对于长图形/表格的标题（第 <a href="figures.html#figures">2.4</a> 节和第 <a href="tables.html#tables">2.5</a> 节）特别有用，在这种情况下，你通常需要将整个字符串写入区块标题（例如 <code>fig.cap = "一张长图片的标题”）或 R 代码（例如</code>kable(caption = “一个很长很长的表格的标题”））。当这些标题包含特殊的 HTML 或 LaTeX 字符时，它也很有用。例如，如果图片标题包含下划线，则它在 HTML 输出中正常工作，但在 LaTeX 输出中可能不起作用，因为下划线必须在 LaTeX 中进行转义。</p>
+<p>文本引用的语法是 <code>(ref:label) text</code>。其中 <code>text</code> 的标签 <code>label</code> 是在整个文档中唯一的标签<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>。文本引用必须放在一个单独的段落中，上面和下面都有空行。段落不能有多行，也不能以空格结尾。例如，</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb40-1"><a href="bookdown-中的-markdown-功能拓展.html#cb40-1" tabindex="-1"></a>(ref:foo) **在这里**定义一个文本引用。</span></code></pre></div>
-<p>  然后你可以在图形/表格标题中使用 <code>(ref:foo)</code>。只要是一个段落，文本可以包含 Markdown 支持的任何内容。下面是一个完整的示例：</p>
+<p>然后你可以在图形/表格标题中使用 <code>(ref:foo)</code>。只要是一个段落，文本可以包含 Markdown 支持的任何内容。下面是一个完整的示例：</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb41-1"><a href="bookdown-中的-markdown-功能拓展.html#cb41-1" tabindex="-1"></a>A normal paragraph.</span>
 <span id="cb41-2"><a href="bookdown-中的-markdown-功能拓展.html#cb41-2" tabindex="-1"></a></span>
 <span id="cb41-3"><a href="bookdown-中的-markdown-功能拓展.html#cb41-3" tabindex="-1"></a>(ref:foo) 使用 **base** R 图形系统绘制的数据集 <span class="in">`cars`</span> 的散点图。</span>
@@ -581,7 +582,7 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta) \notag \\
 <span id="cb41-5"><a href="bookdown-中的-markdown-功能拓展.html#cb41-5" tabindex="-1"></a><span class="in">```{r foo, fig.cap=&#39;(ref:foo)&#39;}</span></span>
 <span id="cb41-6"><a href="bookdown-中的-markdown-功能拓展.html#cb41-6" tabindex="-1"></a><span class="in">plot(cars)  # 绘制散点图</span></span>
 <span id="cb41-7"><a href="bookdown-中的-markdown-功能拓展.html#cb41-7" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>  文本引用可以在文档中的任何位置使用（不仅限于图片标题）。如果你想在多个位置重用文本片段，它也很有用。</p>
+<p>文本引用可以在文档中的任何位置使用（不仅限于图片标题）。如果你想在多个位置重用文本片段，它也很有用。</p>
 </div>
 </div>
 <div class="footnotes">

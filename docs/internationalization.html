@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4.5 国际化 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4.5 国际化 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,8 +308,8 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="internationalization" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">4.5</span> 国际化<a href="internationalization.html#internationalization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  如果你的书籍的语言不是英语，那么可能需要将某些英语单词和短语翻译成你使用的语言，例如在 HTML 输出中自动编号数字/表格时的单词“Figure”和“Table”。国际化可能不是 LaTeX 输出的问题，因为一些 LaTeX 软件包可以自动将这些术语翻译成本地语言，例如 <strong>ctexcap</strong> 中文软件包。</p>
-<p>  对于非 LaTeX 输出，你可以在配置文件 <code>_bookdown.yml</code> 中设置 <code>language</code> 字段。目前默认的设置为：</p>
+<p>如果你的书籍的语言不是英语，那么可能需要将某些英语单词和短语翻译成你使用的语言，例如在 HTML 输出中自动编号数字/表格时的单词“Figure”和“Table”。国际化可能不是 LaTeX 输出的问题，因为一些 LaTeX 软件包可以自动将这些术语翻译成本地语言，例如 <strong>ctexcap</strong> 中文软件包。</p>
+<p>对于非 LaTeX 输出，你可以在配置文件 <code>_bookdown.yml</code> 中设置 <code>language</code> 字段。目前默认的设置为：</p>
 <div class="sourceCode" id="cb121"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb121-1"><a href="internationalization.html#cb121-1" tabindex="-1"></a><span class="fu">language</span><span class="kw">:</span></span>
 <span id="cb121-2"><a href="internationalization.html#cb121-2" tabindex="-1"></a><span class="at">  </span><span class="fu">label</span><span class="kw">:</span></span>
 <span id="cb121-3"><a href="internationalization.html#cb121-3" tabindex="-1"></a><span class="at">    </span><span class="fu">fig</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;Figure &#39;</span></span>
@@ -330,18 +331,18 @@ div.csl-indent {
 <span id="cb121-19"><a href="internationalization.html#cb121-19" tabindex="-1"></a><span class="at">    </span><span class="fu">edit</span><span class="kw">:</span><span class="at"> Edit</span></span>
 <span id="cb121-20"><a href="internationalization.html#cb121-20" tabindex="-1"></a><span class="at">    </span><span class="fu">chapter_name</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;&#39;</span></span>
 <span id="cb121-21"><a href="internationalization.html#cb121-21" tabindex="-1"></a><span class="at">    </span><span class="fu">appendix_name</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;&#39;</span></span></code></pre></div>
-<p>  例如，如果你想要将使用 <code>FIGURE x.x</code> 而不是 <code>Figure x.x</code>，你可以将 <code>fig</code> 更改为 <code>"FIGURE "</code>：</p>
+<p>例如，如果你想要将使用 <code>FIGURE x.x</code> 而不是 <code>Figure x.x</code>，你可以将 <code>fig</code> 更改为 <code>"FIGURE "</code>：</p>
 <div class="sourceCode" id="cb122"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb122-1"><a href="internationalization.html#cb122-1" tabindex="-1"></a><span class="fu">language</span><span class="kw">:</span></span>
 <span id="cb122-2"><a href="internationalization.html#cb122-2" tabindex="-1"></a><span class="at">  </span><span class="fu">label</span><span class="kw">:</span></span>
 <span id="cb122-3"><a href="internationalization.html#cb122-3" tabindex="-1"></a><span class="at">    </span><span class="fu">fig</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;FIGURE &quot;</span></span></code></pre></div>
-<p>  <code>ui</code> 下的字段用于指定用户界面中的某些术语。<code>edit</code> 字段指定在 <code>_bookdown.yml</code>（第 <a href="configuration.html#configuration">4.4</a> 节）中提到的 <code>edit</code> 链接相关联的文本。<code>chapter_name</code>、<code>appendix_name</code>、<code>fig</code>、<code>tab</code> 和 <code>eq</code> 字段可以是要在篇章或引用编号前加入的字符串（例如 <code>CHAPTER</code> 或 <code>FIGURE</code>），也可以是一个以接受数字（篇章或引用编号）输入并返回一个字符串的 R 函数（例如 <code>!expr function(i) paste('Chapter', i)</code>）。以下是匈牙利语的一个例子：</p>
+<p><code>ui</code> 下的字段用于指定用户界面中的某些术语。<code>edit</code> 字段指定在 <code>_bookdown.yml</code>（第 <a href="configuration.html#configuration">4.4</a> 节）中提到的 <code>edit</code> 链接相关联的文本。<code>chapter_name</code>、<code>appendix_name</code>、<code>fig</code>、<code>tab</code> 和 <code>eq</code> 字段可以是要在篇章或引用编号前加入的字符串（例如 <code>CHAPTER</code> 或 <code>FIGURE</code>），也可以是一个以接受数字（篇章或引用编号）输入并返回一个字符串的 R 函数（例如 <code>!expr function(i) paste('Chapter', i)</code>）。以下是匈牙利语的一个例子：</p>
 <div class="sourceCode" id="cb123"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb123-1"><a href="internationalization.html#cb123-1" tabindex="-1"></a><span class="fu">language</span><span class="kw">:</span></span>
 <span id="cb123-2"><a href="internationalization.html#cb123-2" tabindex="-1"></a><span class="at">  </span><span class="fu">label</span><span class="kw">:</span></span>
 <span id="cb123-3"><a href="internationalization.html#cb123-3" tabindex="-1"></a><span class="at">    </span><span class="fu">fig</span><span class="kw">:</span><span class="at"> !expr function(i) paste(i, &#39;ábra&#39;)</span></span>
 <span id="cb123-4"><a href="internationalization.html#cb123-4" tabindex="-1"></a><span class="at">  </span><span class="fu">ui</span><span class="kw">:</span></span>
 <span id="cb123-5"><a href="internationalization.html#cb123-5" tabindex="-1"></a><span class="at">    </span><span class="fu">chapter_name</span><span class="kw">:</span><span class="at"> !expr function(i) paste0(i, &#39;. fejezet&#39;)</span></span></code></pre></div>
-<p>  仅仅对于 <code>chapter_name</code> 和 <code>appendix_name</code>，如果它是长度为 2 的字符向量，则章节标题前缀将为 <code>paste0(chapter_name[1], i, chapter_name[2])</code>，其中 <code>i</code> 是章节编号。</p>
-<p>  当你使用使用多字节字符（如中文、日文和韩文 (CJK)）的语言编写时会有一个警告：Pandoc 无法从纯 CJK 字符的章节标题中生成标识符，因此你将无法交叉引用章节（它们没有标签），除非你通过将 <code>{#identifier}</code> 附加到章节标题来手动为其分配标识符，其中 <code>identifier</code> 是你选择的标识符。</p>
+<p>仅仅对于 <code>chapter_name</code> 和 <code>appendix_name</code>，如果它是长度为 2 的字符向量，则章节标题前缀将为 <code>paste0(chapter_name[1], i, chapter_name[2])</code>，其中 <code>i</code> 是章节编号。</p>
+<p>当你使用使用多字节字符（如中文、日文和韩文 (CJK)）的语言编写时会有一个警告：Pandoc 无法从纯 CJK 字符的章节标题中生成标识符，因此你将无法交叉引用章节（它们没有标签），除非你通过将 <code>{#identifier}</code> 附加到章节标题来手动为其分配标识符，其中 <code>identifier</code> 是你选择的标识符。</p>
 
 </div>
 <!-- </div> -->

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1.4 两种呈现方法 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1.4 两种呈现方法 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,14 +308,14 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="new-session" class="section level2 hasAnchor" number="1.4">
 <h2><span class="header-section-number">1.4</span> 两种呈现方法<a href="new-session.html#new-session" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  将所有章节合并到一个 Rmd 文件中，这是在 <strong>bookdown</strong> 中呈现书籍的一种方法。实际上还有另一种方法：你可以在一个<em>单独的</em>会话中生成每一章，<strong>bookdown</strong> 将合并所有章节的 Markdown 输出文档来呈现书籍。我们将这两种方法分别称为“合并与生成” (M-K) 以及“生成与合并” (K-M)。它们之间的差异可能看起来很微妙，但根据你的用例不同可能会变得相当重要。</p>
+<p>将所有章节合并到一个 Rmd 文件中，这是在 <strong>bookdown</strong> 中呈现书籍的一种方法。实际上还有另一种方法：你可以在一个<em>单独的</em>会话中生成每一章，<strong>bookdown</strong> 将合并所有章节的 Markdown 输出文档来呈现书籍。我们将这两种方法分别称为“合并与生成” (M-K) 以及“生成与合并” (K-M)。它们之间的差异可能看起来很微妙，但根据你的用例不同可能会变得相当重要。</p>
 <ul>
 <li>二者最显著的差异是：M-K 在相同的 R session 中运行<em>所有</em>代码块，而 K-M 对于每一个独立的章节都会使用单独的 R session。对于 M-K 来说，来自前几章的 R session 状态将会转移到之后的章节（例如，前几章中创建的对象可用于后几章，除非你故意删除了它们）；对于 K-M 来说，所有的章节都是相互隔离的。<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>如果你希望每一章都在一个干净的状态下进行编译，那么就使用 K-M 方法。如果你使用 M-K 方法，那么将一个正在运行中的 R session 恢复到完全干净的状态是非常棘手和困难的。例如，即便你 detach/unload 上一章中加载的软件包，R 也不会清除由这些软件包注册的 S3 方法。</li>
 <li>因为 <strong>knitr</strong> 不允许在一个源文档中出现重复的代码块标签，因此当你使用 M-K 方法时，需要确保在书籍各章节中没有重复的标签，否则 <strong>knitr</strong> 在生成合并后的 Rmd 文件时会发出错误信号。而 K-M 方法只需要在任何单个 Rmd 文件中没有重复的标签。</li>
 <li>K-M 方法不允许 Rmd 文件位于子目录中，而 M-K 方法允许。</li>
 </ul>
-<p>  <strong>bookdown</strong> 中的默认方法时 M-K。如果想要转为 K-M 方法，可以在调用 <code>render_book()</code> 时使用参数 <code>new_session = TRUE</code>，或者在配置文件 <code>_bookdown.yml</code> 中设置 <code>new_session: yes</code>。</p>
-<p>  对于 K-M 方法，你可以在 <code>_bookdown.yml</code> 中配置 <code>book_filename</code> 选项，但是它应该是一个 Markdown 文件的名称，例如 <code>_main.md</code>。不过文件扩展名并不重要，你甚至可以省略扩展名，例如，只需设置为 <code>book_filename: _main</code> 即可。其它配置都适用于 M-K 和 K-M。</p>
+<p><strong>bookdown</strong> 中的默认方法时 M-K。如果想要转为 K-M 方法，可以在调用 <code>render_book()</code> 时使用参数 <code>new_session = TRUE</code>，或者在配置文件 <code>_bookdown.yml</code> 中设置 <code>new_session: yes</code>。</p>
+<p>对于 K-M 方法，你可以在 <code>_bookdown.yml</code> 中配置 <code>book_filename</code> 选项，但是它应该是一个 Markdown 文件的名称，例如 <code>_main.md</code>。不过文件扩展名并不重要，你甚至可以省略扩展名，例如，只需设置为 <code>book_filename: _main</code> 即可。其它配置都适用于 M-K 和 K-M。</p>
 </div>
 <div class="footnotes">
 <hr />

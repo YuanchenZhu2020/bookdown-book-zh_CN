@@ -1,78 +1,78 @@
 # 发布与出版 {#publishing}
 
-&emsp;&emsp;当你在创作书籍时，你可以将书稿提供给公众，例如，将书稿发布到网站上，以便从读者那里得到早期反馈。当你完成书籍的创作后，你需要考虑正式出版书籍的方式，可以通过印刷本也可以通过电子书进行出版。
+当你在创作书籍时，你可以将书稿提供给公众，例如，将书稿发布到网站上，以便从读者那里得到早期反馈。当你完成书籍的创作后，你需要考虑正式出版书籍的方式，可以通过印刷本也可以通过电子书进行出版。
 
 ## RStudio Connect
 
-&emsp;&emsp;理论上，你可以自己编译书籍然后将其发布到你想要的任何地方。例如，你可以在自己的 Web 服务器上托管书籍的 HTML 版本。不过我们在 **bookdown** 中提供了一个函数 `publish_book()` ，它能够让你很轻松地将书籍上传至 <https://bookdown.org>。这是一个由 RStudio 提供的网站，用于免费托管你的书籍。\index{bookdown.org}这个网站建立在 ["RStudio Connect"](https://posit.co/products/enterprise/connect/)\index{RStudio Connect} 之上，它是 RStudio 提供的产品之一，能够让你将各种与 R 相关的应用部署到服务器上，包括 R Markdown 文档、Shiny 应用、R plots 等。
+理论上，你可以自己编译书籍然后将其发布到你想要的任何地方。例如，你可以在自己的 Web 服务器上托管书籍的 HTML 版本。不过我们在 **bookdown** 中提供了一个函数 `publish_book()` ，它能够让你很轻松地将书籍上传至 <https://bookdown.org>。这是一个由 RStudio 提供的网站，用于免费托管你的书籍。\index{bookdown.org}这个网站建立在 ["RStudio Connect"](https://posit.co/products/enterprise/connect/)\index{RStudio Connect} 之上，它是 RStudio 提供的产品之一，能够让你将各种与 R 相关的应用部署到服务器上，包括 R Markdown 文档、Shiny 应用、R plots 等。
 
-&emsp;&emsp;你不必了解太多 RStudio Connect 就能够将你的书籍发布到 bookdown.org。你需要在  https://bookdown.org/connect/ 注册，之后当你第一次尝试运行 `bookdown::publish_book()`\index{bookdown::publish\_book()} 时，系统将要求你授权 **bookdown** 发布到你的 bookdown.org 账户。以后使用时，只需要再次调用 `publish_book()` 即可，**bookdown** 将不会要求你进行任何其他的操作。
+你不必了解太多 RStudio Connect 就能够将你的书籍发布到 bookdown.org。你需要在  https://bookdown.org/connect/ 注册，之后当你第一次尝试运行 `bookdown::publish_book()`\index{bookdown::publish\_book()} 时，系统将要求你授权 **bookdown** 发布到你的 bookdown.org 账户。以后使用时，只需要再次调用 `publish_book()` 即可，**bookdown** 将不会要求你进行任何其他的操作。
 
 ```{r publish-book-usage, eval=FALSE, code=formatR::usage(bookdown::publish_book, output=FALSE)}
 ```
 
-&emsp;&emsp;你需要接触的 `publish_book()` 的唯一参数是 `render`。它决定了在发布之前是否编译书籍。如果你之前已经运行过 `render_book()`，就不需要改变这个参数，否则你可能需要将其设置为 `'local'`：
+你需要接触的 `publish_book()` 的唯一参数是 `render`。它决定了在发布之前是否编译书籍。如果你之前已经运行过 `render_book()`，就不需要改变这个参数，否则你可能需要将其设置为 `'local'`：
 
 ```{r eval=FALSE}
 bookdown::publish_book(render = 'local')
 ```
 
-&emsp;&emsp;如果你已经配置好了自己的 RStudio Connect 服务器，那么当然可以将书籍发布到你自己的服务器，而不必上传至 bookdown.org。
+如果你已经配置好了自己的 RStudio Connect 服务器，那么当然可以将书籍发布到你自己的服务器，而不必上传至 bookdown.org。
 
 ## Netlify Drop
 
-&emsp;&emsp;Netlify (<https://netlify.com>) 是一个为静态网站提供云托管和无服务器后端服务的平台。Netlify 提供免费和付费两种服务，但他们也提供一种称为 Netlify Drop (<https://app.netlify.com/drop>) 的服务，这是一个免费的发布书籍的选项，并且不需要拥有 Netlify 帐户就能够使用。该服务不需要你的 **bookdown** 项目位于受版本控制的存储库中。你所需要的只是一个可以在本地构建的 **bookdown** 项目。
+Netlify (<https://netlify.com>) 是一个为静态网站提供云托管和无服务器后端服务的平台。Netlify 提供免费和付费两种服务，但他们也提供一种称为 Netlify Drop (<https://app.netlify.com/drop>) 的服务，这是一个免费的发布书籍的选项，并且不需要拥有 Netlify 帐户就能够使用。该服务不需要你的 **bookdown** 项目位于受版本控制的存储库中。你所需要的只是一个可以在本地构建的 **bookdown** 项目。
 
 ### 构建和部署的工作流水线
 
-&emsp;&emsp;这种发布方法设置了以下事件流：
+这种发布方法设置了以下事件流：
 
 1. 从本地 **bookdown** 项目开始。
 1. 在本地将书籍构建到所选的输出目录中（默认情况下为`_book/`）。
 1. 访问 Netlify Drop (<https://app.netlify.com/drop>)，将输出目录拖放到 Netlify 基于浏览器的用户界面中。
 1. 对书籍进行修改，在本地重新构建，然后再次将输出目录拖放到 Netlify 中进行更新。
 
-&emsp;&emsp;以上内容仅为概述——请继续阅读以了解分步骤的说明。
+以上内容仅为概述——请继续阅读以了解分步骤的说明。
 
 ### 开始之前
 
-&emsp;&emsp;工作流水线从建立本地 **bookdown** 项目开始。项目并不需要放在 GitHub 或其它受版本控制的储存库内。
+工作流水线从建立本地 **bookdown** 项目开始。项目并不需要放在 GitHub 或其它受版本控制的储存库内。
 
-&emsp;&emsp;如果你没有线程的书籍，可以创建一个简单的 **bookdown** HTML 书籍来代替练习。有关如何在 RStudio 中创建新书的内容，请见图 \@ref(fig:new-bs4-book)；如果你不使用 RStudio，可以在 R console 中使用函数 `bookdown::create_gitbook()` 或 `bookdown::create_bs4_book()`。
+如果你没有线程的书籍，可以创建一个简单的 **bookdown** HTML 书籍来代替练习。有关如何在 RStudio 中创建新书的内容，请见图 \@ref(fig:new-bs4-book)；如果你不使用 RStudio，可以在 R console 中使用函数 `bookdown::create_gitbook()` 或 `bookdown::create_bs4_book()`。
 
 ### 构建书籍
 
-&emsp;&emsp;在本地从你的 **bookdown** 项目中构建书籍，你可以使用第 \@ref(build-the-book) 章中你喜欢的任何方法。
+在本地从你的 **bookdown** 项目中构建书籍，你可以使用第 \@ref(build-the-book) 章中你喜欢的任何方法。
 
 ### 部署网站
 
-&emsp;&emsp;转到 Netlify Drop ([netlify.com/drop](https://app.netlify.com/drop))，你应该能够在网页上看到一个方框，它高数你“将站点文件夹拖放到此处”。
+转到 Netlify Drop ([netlify.com/drop](https://app.netlify.com/drop))，你应该能够在网页上看到一个方框，它高数你“将站点文件夹拖放到此处”。
 
-&emsp;&emsp;接下来，将 **bookdown** 项目的输出目录（默认情况下为 `_book/`，除非你在 `_bookdown.yml` 文件中更改了这项设置）拖放到 Web 浏览器中的这个方框中。你应该会看到你的书籍使用了 `https://random-word-12345.netlify.com` 形式的随机子域名进行快速部署。
+接下来，将 **bookdown** 项目的输出目录（默认情况下为 `_book/`，除非你在 `_bookdown.yml` 文件中更改了这项设置）拖放到 Web 浏览器中的这个方框中。你应该会看到你的书籍使用了 `https://random-word-12345.netlify.com` 形式的随机子域名进行快速部署。
 
-&emsp;&emsp;你还会看到无人认领的网站会在 24 小时后被删除的通知。你可以注册一个 Netlify 账户来声明你的网站并使其永久在线。
+你还会看到无人认领的网站会在 24 小时后被删除的通知。你可以注册一个 Netlify 账户来声明你的网站并使其永久在线。
 
 ### *可选：更新站点*
 
-&emsp;&emsp;注册 Netlify 后，你*可以*更新这一类的网站，但它需要手动更新。访问 Netlify.com 并导航找到你的站点，然后单击“部署 (Deploys)”。你将看到一个方框，如图 \@ref(fig:netlify-drag-drop) 所示，这表示你可以拖放站点文件夹以更新站点（你可能需要滚动到此页面底部）。
+注册 Netlify 后，你*可以*更新这一类的网站，但它需要手动更新。访问 Netlify.com 并导航找到你的站点，然后单击“部署 (Deploys)”。你将看到一个方框，如图 \@ref(fig:netlify-drag-drop) 所示，这表示你可以拖放站点文件夹以更新站点（你可能需要滚动到此页面底部）。
 
 ```{r netlify-drag-drop, echo=FALSE, fig.align='center', fig.cap="在 Netlify 上拖放部署的站点更新方框的屏幕截图。"}
 knitr::include_graphics("images/netlify-drag-drop-update.png", dpi = NA)
 ```
 
-&emsp;&emsp;编辑你的书籍，再次在本地进行构建，然后将输出目录再次拖放到上传位置。
+编辑你的书籍，再次在本地进行构建，然后将输出目录再次拖放到上传位置。
 
 ### *可选：更改默认子域名* {#netlify-subdomain} 
 
-&emsp;&emsp;导航到 Netlify.com 上的站点登录页 (<https://app.netlify.com>)，单击*概述 (Overview) > 站点设置 (Site Settings)*。在*站点信息 (Site information)*下单击*更改站点名称 (Change site name)*并将其更新为你想要的名称。如果想使用自己的域名而不是 Netlify 的子域名，请阅读以下文档：<https://docs.netlify.com/domains-https/custom-domains/>。
+导航到 Netlify.com 上的站点登录页 (<https://app.netlify.com>)，单击*概述 (Overview) > 站点设置 (Site Settings)*。在*站点信息 (Site information)*下单击*更改站点名称 (Change site name)*并将其更新为你想要的名称。如果想使用自己的域名而不是 Netlify 的子域名，请阅读以下文档：<https://docs.netlify.com/domains-https/custom-domains/>。
 
 ### 缺点和备选方案
 
-&emsp;&emsp;这个工作流非常适合快速共享书籍原型。但是，如果你选择不声明你的站点，该链接将在 24 小时后过期。即使你申请了网站并设置了 Netlify 帐户，这个工作流也不适合正在积极编辑或合作创作的书籍，因为每次更新书籍的本地版本时，你都需要手动将书籍上传到 Netlify。使用这种方法也无法获得版本控制的好处。
+这个工作流非常适合快速共享书籍原型。但是，如果你选择不声明你的站点，该链接将在 24 小时后过期。即使你申请了网站并设置了 Netlify 帐户，这个工作流也不适合正在积极编辑或合作创作的书籍，因为每次更新书籍的本地版本时，你都需要手动将书籍上传到 Netlify。使用这种方法也无法获得版本控制的好处。
 
 ## GitHub
 
-&emsp;&emsp;你可以使用 GitHub Pages (https://pages.github.com) 在 GitHub\index{GitHub} 上免费托管你的书籍。GitHub 支持 Jekyll (http://jekyllrb.com), 它是一个静态网站生成器，能够将一系列 Markdown 文件转换为网站。这可能是 GitHub Pages 最常见的用法，但是 GitHub 还支持任意静态 HTML 文件，因此你可以在 GitHub 上托管书籍的 HTML 输出文件。其关键是创建一个隐藏文件 `.nojekyll`，它告诉 GitHub 你的网站不是通过 Jekyll 构建的，因为 **bookdown** 的 HTML 输出文件已经是一个独立的网站。
+你可以使用 GitHub Pages (https://pages.github.com) 在 GitHub\index{GitHub} 上免费托管你的书籍。GitHub 支持 Jekyll (http://jekyllrb.com), 它是一个静态网站生成器，能够将一系列 Markdown 文件转换为网站。这可能是 GitHub Pages 最常见的用法，但是 GitHub 还支持任意静态 HTML 文件，因此你可以在 GitHub 上托管书籍的 HTML 输出文件。其关键是创建一个隐藏文件 `.nojekyll`，它告诉 GitHub 你的网站不是通过 Jekyll 构建的，因为 **bookdown** 的 HTML 输出文件已经是一个独立的网站。
 
 ```bash
 # 假设你已经初始化了一个 git 储存库，并且已经在书籍储存库的目录下
@@ -83,11 +83,11 @@ touch .nojekyll
 git add .nojekyll
 ```
 
-&emsp;&emsp;如果你使用 Windows，那么可能没有 `touch` 命令，这时你可以在 R 中使用 `file.create('.nojekyll')` 来创建一个文件。
+如果你使用 Windows，那么可能没有 `touch` 命令，这时你可以在 R 中使用 `file.create('.nojekyll')` 来创建一个文件。
 
-&emsp;&emsp;发布书籍的一种方法将书籍的 HTML 文件放入 `master` 分支中的 `/docs` 文件夹，然后从该文件夹将书籍作为 GitHub Pagse 站点发布，就像 [GitHub Help](http://bit.ly/2cvloKV)中描述的那样。首先，在配置文件 `_bookdown.yml` 中添加一行 `output_dir:"docs"`，将书籍的输出目录设置为 `/docs`。然后，将更改推送到 GitHub ，再转到存储库的设置，在“GitHub Pages”配置项下将“Source”选项更改为“master branch/docs folder”。使用该方法时，`.nojekyll` 文件必须位于 `/docs` 文件夹中。
+发布书籍的一种方法将书籍的 HTML 文件放入 `master` 分支中的 `/docs` 文件夹，然后从该文件夹将书籍作为 GitHub Pagse 站点发布，就像 [GitHub Help](http://bit.ly/2cvloKV)中描述的那样。首先，在配置文件 `_bookdown.yml` 中添加一行 `output_dir:"docs"`，将书籍的输出目录设置为 `/docs`。然后，将更改推送到 GitHub ，再转到存储库的设置，在“GitHub Pages”配置项下将“Source”选项更改为“master branch/docs folder”。使用该方法时，`.nojekyll` 文件必须位于 `/docs` 文件夹中。
 
-&emsp;&emsp;另一种方法是先在存储库中创建一个 `gh-pages` 分支，再构建书籍，将 HTML 输出（包括图像、CSS 和 JavaScript 文件等所有外部资源）放入该分支，然后将该分支推送到远程存储库。如果你的书籍存储库没有 `gh-pages` 分支，可以使用以下命令创建一个分支：
+另一种方法是先在存储库中创建一个 `gh-pages` 分支，再构建书籍，将 HTML 输出（包括图像、CSS 和 JavaScript 文件等所有外部资源）放入该分支，然后将该分支推送到远程存储库。如果你的书籍存储库没有 `gh-pages` 分支，可以使用以下命令创建一个分支：
 
 ```bash
 # 假设你已经初始化了一个 git 储存库，并且已经在书籍储存库的目录下
@@ -104,17 +104,17 @@ git commit -m "Initial commit"
 git push origin gh-pages
 ```
 
-&emsp;&emsp;设置好 GIT 之后，剩下的工作可以通过脚本（Shell、R 或 Makefile，取决于你的偏好）实现自动化。总的来说，首先将书籍编译为 HTML，然后运行 git 命令将文件推送到 GitHub，但你可能不希望在本地反复手动执行这些操作，这时可以通过云来完成。由于在云上实现发布过程的完全自动化将会非常方便，因此一旦设置正确，接下来所要做的就是编写书籍并将 Rmd 源文件推送到 GitHub，你创作的书将始终在服务器端自动构建和发布。
+设置好 GIT 之后，剩下的工作可以通过脚本（Shell、R 或 Makefile，取决于你的偏好）实现自动化。总的来说，首先将书籍编译为 HTML，然后运行 git 命令将文件推送到 GitHub，但你可能不希望在本地反复手动执行这些操作，这时可以通过云来完成。由于在云上实现发布过程的完全自动化将会非常方便，因此一旦设置正确，接下来所要做的就是编写书籍并将 Rmd 源文件推送到 GitHub，你创作的书将始终在服务器端自动构建和发布。
 
-&emsp;&emsp;你可以选择使用的一个云服务是 Travis CI (https://travis-ci.com)。\index{Travis CI} 它对于 GitHub 上的共有储存库提供的服务是免费的，并且是为软件包的持续集成 (CI) 而设计的。Travis CI 能够连接到 GitHub, 即每当你推送更改到 GitHub 时，Travis 能够被触发在最新版本的储存库上运行某些命令/脚本。^[你需要先在 GitHub 上为你的储存库授权 Travis CI 服务。有关如何开始使用 Travis CI，请参阅 <https://docs.travis-ci.com/user/getting-started/>。]这些命令储存在你的储存库根目录下名为 `.travis.yml` 的 YAML 文件中。它们通常用于测试软件，但实际上它们的用途十分开放，这意味着你可以在 Travis（虚拟）机器上运行任意命令。也就是说，你当然可以在 Travis 上运行自己的脚本来构建书籍。注意，Travis 目前仅支持 Ubuntu 和 Mac OS X，因此你应该对于 Linux/Unix 命令有一些基本的了解。
+你可以选择使用的一个云服务是 Travis CI (https://travis-ci.com)。\index{Travis CI} 它对于 GitHub 上的共有储存库提供的服务是免费的，并且是为软件包的持续集成 (CI) 而设计的。Travis CI 能够连接到 GitHub, 即每当你推送更改到 GitHub 时，Travis 能够被触发在最新版本的储存库上运行某些命令/脚本。^[你需要先在 GitHub 上为你的储存库授权 Travis CI 服务。有关如何开始使用 Travis CI，请参阅 <https://docs.travis-ci.com/user/getting-started/>。]这些命令储存在你的储存库根目录下名为 `.travis.yml` 的 YAML 文件中。它们通常用于测试软件，但实际上它们的用途十分开放，这意味着你可以在 Travis（虚拟）机器上运行任意命令。也就是说，你当然可以在 Travis 上运行自己的脚本来构建书籍。注意，Travis 目前仅支持 Ubuntu 和 Mac OS X，因此你应该对于 Linux/Unix 命令有一些基本的了解。
 
-&emsp;&emsp;下一个问题是，怎样将在 Travis 中构建的书籍发布到 GitHub？大体上说，你需要授予 Travis 对你的 GitHub 储存库的写访问权限。该授权能够通过集中方式完成，对于初学者来说最简单的方式是个人访问令牌 (personal access token)。以下是你可以遵循的几个操作步骤：
+下一个问题是，怎样将在 Travis 中构建的书籍发布到 GitHub？大体上说，你需要授予 Travis 对你的 GitHub 储存库的写访问权限。该授权能够通过集中方式完成，对于初学者来说最简单的方式是个人访问令牌 (personal access token)。以下是你可以遵循的几个操作步骤：
 
 1. 对于你在 GitHub 上的账户创建一个 [个人访问令牌 (personal access token)](http://bit.ly/2cEBYWB)（请确保启用“repo”作用域 ("repo" scope)，以便可以通过此令牌写入你的 GitHub 储存库）。
 2. 通过命令 `travis encrypt` 将其加密并放在环境变量 `GITHUB_PAT` 里，然后储存在 `.travis.yml` 文件中。例如 `travis encrypt GITHUB_PAT=TOKEN`。如果你不知道如何安装或使用 Travis 命令行工具，只需要将这个环境变量通过 <https://travis-ci.com/user/repo/settings> 储存起来，其中 `user` 是你的 GitHub ID，`repo` 是储存库的名称。
 3. 你可以使用你的 GitHub 令牌在 Travis 上克隆先前创建的这个 `gh-pages` 分支，向其添加从 R Markdown 转换而来的 HTML 输出文件（不要忘记添加图片和 CSS 样式文件），然后推送到远程储存库。
 
-&emsp;&emsp;假设你正在 `master` 分支中（你存放 Rmd 源文件的分支），并且已经编译好书籍，放在 `_book` 目录中。接下来你可以在 Travis 中做的是：
+假设你正在 `master` 分支中（你存放 Rmd 源文件的分支），并且已经编译好书籍，放在 `_book` 目录中。接下来你可以在 Travis 中做的是：
 
 ```bash
 # 如果你还没有进行配置的话，设置好你的用户名和邮箱
@@ -133,7 +133,7 @@ git commit -m "Update the book"
 git push -q origin gh-pages
 ```
 
-&emsp;&emsp;变量名 `GITHUB_PAT` 和目录名 `book-output` 可以是任意名称。只要名称没有与已经存在的变量名或目录名冲突，你就可以使用喜欢的任何名字。上述脚本与我们在第 \@ref(build-the-book) 节提到的书籍构建脚本可以放在 `master` 分支作为 as Shell 脚本。例如，你可以将它们命名为 `_build.sh` 和 `_deploy.sh`。那么，你的 `.travis.yml` 文件可能是这样的：
+变量名 `GITHUB_PAT` 和目录名 `book-output` 可以是任意名称。只要名称没有与已经存在的变量名或目录名冲突，你就可以使用喜欢的任何名字。上述脚本与我们在第 \@ref(build-the-book) 节提到的书籍构建脚本可以放在 `master` 分支作为 as Shell 脚本。例如，你可以将它们命名为 `_build.sh` 和 `_deploy.sh`。那么，你的 `.travis.yml` 文件可能是这样的：
 
 ```yaml
 language: r
@@ -152,9 +152,9 @@ script:
   - ./_deploy.sh
 ```
 
-&emsp;&emsp;`language` 选项告诉 Travis 需要使用安装了 R 的虚拟机。`secure` 字段是加密的个人访问令牌 (personal access token )。如果你已经使用 Travis 上的 Web 界面而不是命令行工具 `travis encrypt` 保存了 `GITHUB_PAT` 变量，则可以忽略这项设置。
+`language` 选项告诉 Travis 需要使用安装了 R 的虚拟机。`secure` 字段是加密的个人访问令牌 (personal access token )。如果你已经使用 Travis 上的 Web 界面而不是命令行工具 `travis encrypt` 保存了 `GITHUB_PAT` 变量，则可以忽略这项设置。
 
-&emsp;&emsp;由于 Travis 服务主要用于检查 R 软件包，因此还需要一个（假的）`DESCRIPTION` 文件，使得书籍存储库像是一个 R 软件包一样。这个文件中唯一一个真正重要的是软件包依赖项这一配置。所有依赖项都将通过 **devtools** 包安装。如果依赖项在 CRAN 或 BioConductor 上，只需在 `DESCRIPTION` 文件的 `Imports` 字段中列出即可。如果它在 GitHub 上，您可以使用 `Remotes` 字段列出它的存储库名称。下面展示了一个例子：
+由于 Travis 服务主要用于检查 R 软件包，因此还需要一个（假的）`DESCRIPTION` 文件，使得书籍存储库像是一个 R 软件包一样。这个文件中唯一一个真正重要的是软件包依赖项这一配置。所有依赖项都将通过 **devtools** 包安装。如果依赖项在 CRAN 或 BioConductor 上，只需在 `DESCRIPTION` 文件的 `Imports` 字段中列出即可。如果它在 GitHub 上，您可以使用 `Remotes` 字段列出它的存储库名称。下面展示了一个例子：
 
 ```dcf
 Package: placeholder
@@ -165,7 +165,7 @@ Imports: bookdown, ggplot2
 Remotes: rstudio/bookdown
 ```
 
-&emsp;&emsp;如果你使用 Travis 的 [container-based infrastructure](https://docs.travis-ci.com/user/workers/container-based-infrastructure/)，你可以在 `.travis.yml` 中使用 `sudo: false` 启用缓存。通常你至少需要缓存两类目录：图片目录（例如 `_main_files`）以及缓存目录（例如 `_main_cache`）。如果你指定了 **knitr** 代码块选项 `fig.path` 和 `cache.path`，这些目录的名称可能不同，但是我强烈建议不要改变这些设置。图片和缓存目录都存放在书籍根目录中的 `_bookdown_files` 目录下。启用了 **knitr** 图片和缓存的 `.travis.yml` 文件可能具有如下的 `sudo` 和 `cache` 附加配置：
+如果你使用 Travis 的 [container-based infrastructure](https://docs.travis-ci.com/user/workers/container-based-infrastructure/)，你可以在 `.travis.yml` 中使用 `sudo: false` 启用缓存。通常你至少需要缓存两类目录：图片目录（例如 `_main_files`）以及缓存目录（例如 `_main_cache`）。如果你指定了 **knitr** 代码块选项 `fig.path` 和 `cache.path`，这些目录的名称可能不同，但是我强烈建议不要改变这些设置。图片和缓存目录都存放在书籍根目录中的 `_bookdown_files` 目录下。启用了 **knitr** 图片和缓存的 `.travis.yml` 文件可能具有如下的 `sudo` 和 `cache` 附加配置：
 
 ```yaml
 sudo: false
@@ -176,39 +176,39 @@ cache:
     - $TRAVIS_BUILD_DIR/_bookdown_files
 ```
 
-&emsp;&emsp;如果构建书籍非常耗时，你可以在 Travis 上使用上面的配置来节省时间。注意，`packages:yes` 表示安装在 Travis 上的 R 包也被缓存。
+如果构建书籍非常耗时，你可以在 Travis 上使用上面的配置来节省时间。注意，`packages:yes` 表示安装在 Travis 上的 R 包也被缓存。
 
-&emsp;&emsp;以上所有脚本和配置都可以在 `bookdown-demo` 存储库中找到：<https://github.com/rstudio/bookdown-demo/>。如果你将它们复制到自己的存储库中，请记住使用自己的加密变量 `GITHUB_PAT` 更改 `.travis.yml` 文件中的 `secure` 字段。
+以上所有脚本和配置都可以在 `bookdown-demo` 存储库中找到：<https://github.com/rstudio/bookdown-demo/>。如果你将它们复制到自己的存储库中，请记住使用自己的加密变量 `GITHUB_PAT` 更改 `.travis.yml` 文件中的 `secure` 字段。
 
-&emsp;&emsp;GitHub 和 Travis CI 当然不是构建和出版你的书籍的唯一选择。你可以在自己的服务器上自由地存储和发布这本书。
+GitHub 和 Travis CI 当然不是构建和出版你的书籍的唯一选择。你可以在自己的服务器上自由地存储和发布这本书。
 
 ## HTML 发布功能
 
 ### HTML 404 页面 {#html-404}
 
-&emsp;&emsp;如果读者试图访问书籍中无法找到的页面，浏览器将因为找不到请求的网页而显示 [404 错误](https://en.wikipedia.org/wiki/HTTP_404)。这个 404 错误显示在一个 404 页面上。每个 web 服务器都有一个默认的 404 页面。但是大多数 web 服务平台，如 Netlify、Github Pages 和 Gitlab Pages 都会将网站根目录中名为 `404.html` 的文件用作自定义的错误提示网页（如果你能提供该文件）。
+如果读者试图访问书籍中无法找到的页面，浏览器将因为找不到请求的网页而显示 [404 错误](https://en.wikipedia.org/wiki/HTTP_404)。这个 404 错误显示在一个 404 页面上。每个 web 服务器都有一个默认的 404 页面。但是大多数 web 服务平台，如 Netlify、Github Pages 和 Gitlab Pages 都会将网站根目录中名为 `404.html` 的文件用作自定义的错误提示网页（如果你能提供该文件）。
 
-&emsp;&emsp;对于全部 HTML 书记格式，**bookdown** 会在你的输出目录中使用简单的内容（一个标题和 2 段正文）创建一个自定义的 `404.html`；请见图 \@ref(fig:404-page)。
+对于全部 HTML 书记格式，**bookdown** 会在你的输出目录中使用简单的内容（一个标题和 2 段正文）创建一个自定义的 `404.html`；请见图 \@ref(fig:404-page)。
 
 ```{r 404-page, fig.alt="展示一本在线 bs4_book 的屏幕截图，其中有侧边栏、页脚和 CSS 样式。文本为：未找到页面。找不到您请求的页面（可能已被移动或重命名）。您可能希望尝试搜索以查找页面的新位置，或使用目录查找您要查找的页面。", fig.align='center', echo=FALSE, fig.cap= "示例 404 页面的屏幕截图。"}
 knitr::include_graphics('images/404.png', dpi = NA)
 ```
 
-&emsp;&emsp;如您所见，这个 404 页面嵌入在书中，以便读者能够快速返回正在阅读的书籍内容。网页书籍站点的整体结构（包括导航栏、页脚、侧边栏等）和 CSS 样式仍然保留在 404 页面上。
+如您所见，这个 404 页面嵌入在书中，以便读者能够快速返回正在阅读的书籍内容。网页书籍站点的整体结构（包括导航栏、页脚、侧边栏等）和 CSS 样式仍然保留在 404 页面上。
 
-&emsp;&emsp;要自定义 404 页面而不是使用 **bookdown** 提供的页面，你可以向项目根目录中添加 `_404.Rmd` 或 `_404.md` 文件。如果在编译书籍时找到前述任何一个文件，则该文件内容将被编译并作为嵌入书籍结构中的 404 页面的主体内容。
+要自定义 404 页面而不是使用 **bookdown** 提供的页面，你可以向项目根目录中添加 `_404.Rmd` 或 `_404.md` 文件。如果在编译书籍时找到前述任何一个文件，则该文件内容将被编译并作为嵌入书籍结构中的 404 页面的主体内容。
 
-&emsp;&emsp;如果一个 404.html 文件已经存在于根目录级别的书籍源文档仓库中（与书籍的 `.Rmd` 文件放在一起），那么 **bookdown** 将保持该文件不变，并且不会将它覆盖。这是因为我们假设你的发布工作流中已经有了使用这个自定义的 `404.html` 的机制。
+如果一个 404.html 文件已经存在于根目录级别的书籍源文档仓库中（与书籍的 `.Rmd` 文件放在一起），那么 **bookdown** 将保持该文件不变，并且不会将它覆盖。这是因为我们假设你的发布工作流中已经有了使用这个自定义的 `404.html` 的机制。
 
 ### 用于共享的元数据 {#metadata-for-sharing}
 
-&emsp;&emsp;Bookdown HTML 书籍将使用你在 `index.Rmd` 的 YAML 中提供的信息，为 Twitter、Facebook 和 LinkedIn 等平台上的社交共享提供 HTML 元数据。要对其进行设置，请设置书籍的 `url` 和 `cover-image` 文件的路径。该路径可以是绝对 URL，也可以是项目中图像文件的相对路径。书籍的 `title` 和  `description` 也会被使用。设置这些选项能带来一个很好的效果，当读者在社交网络网站上共享你的书籍的链接时，该链接将自动扩展为带有书籍封面图像和描述的卡片。
+Bookdown HTML 书籍将使用你在 `index.Rmd` 的 YAML 中提供的信息，为 Twitter、Facebook 和 LinkedIn 等平台上的社交共享提供 HTML 元数据。要对其进行设置，请设置书籍的 `url` 和 `cover-image` 文件的路径。该路径可以是绝对 URL，也可以是项目中图像文件的相对路径。书籍的 `title` 和  `description` 也会被使用。设置这些选项能带来一个很好的效果，当读者在社交网络网站上共享你的书籍的链接时，该链接将自动扩展为带有书籍封面图像和描述的卡片。
 
 ```{r social, out.width=c('47.55%','51.45%'), fig.alt="在社交媒体上共享链接时，auto-preview 会在摘要卡片布局中显示封面图像、标题和说明。", fig.show='hold', echo=FALSE, fig.cap= "当链接在 Facebook 和 LinkedIn（左侧）和 Twitter（右侧）上被共享时，显示 HTML 书籍封面图像、标题和描述的屏幕截图。"}
 knitr::include_graphics(c('images/social-og.png', 'images/social-twitter.png'), dpi = NA)
 ```
 
-&emsp;&emsp;无论使用哪种方法发布 HTML 书籍，都可以使用 <https://www.opengraph.xyz> 来检查书籍元数据，它显示了跨平台共享链接时链接外观的预览。你还可以使用特定于平台的开发人员工具：
+无论使用哪种方法发布 HTML 书籍，都可以使用 <https://www.opengraph.xyz> 来检查书籍元数据，它显示了跨平台共享链接时链接外观的预览。你还可以使用特定于平台的开发人员工具：
 
 - Facebook: <https://developers.facebook.com/tools/debug/>
 - LinkedIn: <https://www.linkedin.com/post-inspector/>
@@ -216,11 +216,11 @@ knitr::include_graphics(c('images/social-og.png', 'images/social-twitter.png'), 
 
 ## 出版商
 
-&emsp;&emsp;除了在网上发布你的书之外，你还可以考虑通过出版商\index{publisher}出版你的书籍。例如，本书是由 Chapman & Hall/CRC 出版的，在 <https://bookdown.org/yihui/bookdown/> 也有免费的在线版本（与出版商达成了协议）。如果你不想与的发布者合作，你还可以考虑自主出版 (<https://en.wikipedia.org/wiki/Self-publishing>)。Pablo Casas 写了两篇你可能会觉得有用的博客文章：["How to self-publish a book"](https://blog.datascienceheroes.com/how-to-self-publish-a-book/) 和 ["How to self-publish a book: customizing bookdown"](https://blog.datascienceheroes.com/how-to-self-publish-a-book-customizing-bookdown/)。
+除了在网上发布你的书之外，你还可以考虑通过出版商\index{publisher}出版你的书籍。例如，本书是由 Chapman & Hall/CRC 出版的，在 <https://bookdown.org/yihui/bookdown/> 也有免费的在线版本（与出版商达成了协议）。如果你不想与的发布者合作，你还可以考虑自主出版 (<https://en.wikipedia.org/wiki/Self-publishing>)。Pablo Casas 写了两篇你可能会觉得有用的博客文章：["How to self-publish a book"](https://blog.datascienceheroes.com/how-to-self-publish-a-book/) 和 ["How to self-publish a book: customizing bookdown"](https://blog.datascienceheroes.com/how-to-self-publish-a-book-customizing-bookdown/)。
 
-&emsp;&emsp;如果你选择的出版商支持 LaTeX，那么出版用 **bookdown** 编写的书会容易得多。\index{LaTeX}例如，Chapman & Hall 提供了一个名为 `krantz.cls` 的 LaTeX 类，Springer 提供的是 `svmono.cls`。如果要将这些 LaTeX 类应用于 PDF 书籍，请将 `index.Rmd` 的 YAML 元数据中的 `documentclass` 设置为 LaTeX 类文件名（不带扩展名 `.cls`）。
+如果你选择的出版商支持 LaTeX，那么出版用 **bookdown** 编写的书会容易得多。\index{LaTeX}例如，Chapman & Hall 提供了一个名为 `krantz.cls` 的 LaTeX 类，Springer 提供的是 `svmono.cls`。如果要将这些 LaTeX 类应用于 PDF 书籍，请将 `index.Rmd` 的 YAML 元数据中的 `documentclass` 设置为 LaTeX 类文件名（不带扩展名 `.cls`）。
 
-&emsp;&emsp;LaTeX 类是 YAML 元数据中最重要的设置。它控制了 PDF 书籍的整体样式。还有一些其他设置是你经常需要调整的，下面我们将展示有关本书的一些详细信息。
+LaTeX 类是 YAML 元数据中最重要的设置。它控制了 PDF 书籍的整体样式。还有一些其他设置是你经常需要调整的，下面我们将展示有关本书的一些详细信息。
 
 本书的 YAML 元数据包含以下设置：
 
@@ -233,9 +233,9 @@ monofont: "Source Code Pro"
 monofontoptions: "Scale=0.7"
 ```
 
-&emsp;&emsp;字段 `lot:yes` 表示我们需要表格列表；类似地，`lof` 表示图片列表。基础字体大小是 '12pt'，我们使用了 [Source Code Pro](https://www.fontsquirrel.com/fonts/source-code-pro) 作为等宽（固定宽度）字体，它适用于本书中的所有程序代码。
+字段 `lot:yes` 表示我们需要表格列表；类似地，`lof` 表示图片列表。基础字体大小是 '12pt'，我们使用了 [Source Code Pro](https://www.fontsquirrel.com/fonts/source-code-pro) 作为等宽（固定宽度）字体，它适用于本书中的所有程序代码。
 
-&emsp;&emsp;在 LaTeX 导言 (preamble)（第 \@ref(yaml-options) 节）中，我们还有一些设置。首先，我们将主字体族\index{font}设置为 [Alegreya](https://www.fontsquirrel.com/fonts/alegreya)，并且由于此字体没有 <span style="font-variant:small caps;">Small Capitals</span>（小型大写字母）特征，我们使用 Alegreya SC 字体。
+在 LaTeX 导言 (preamble)（第 \@ref(yaml-options) 节）中，我们还有一些设置。首先，我们将主字体族\index{font}设置为 [Alegreya](https://www.fontsquirrel.com/fonts/alegreya)，并且由于此字体没有 <span style="font-variant:small caps;">Small Capitals</span>（小型大写字母）特征，我们使用 Alegreya SC 字体。
 
 ```latex
 \setmainfont[
@@ -243,7 +243,7 @@ monofontoptions: "Scale=0.7"
 ]{Alegreya}
 ```
 
-&emsp;&emsp;下面的命令通过允许浮动环境\index{floating environment}占用更大部分的页面而不是浮动，从而使得它们更不太可能浮动。
+下面的命令通过允许浮动环境\index{floating environment}占用更大部分的页面而不是浮动，从而使得它们更不太可能浮动。
 
 ```latex
 \renewcommand{\textfraction}{0.05}
@@ -252,20 +252,20 @@ monofontoptions: "Scale=0.7"
 \renewcommand{\floatpagefraction}{0.75}
 ```
 
-&emsp;&emsp;由于 `krantz.cls` 为引用文段提供了一个环境 `VF`，因此我们将标准的 `quote` 环境重新定义为 `VF`。您可以在第 \@ref(markdown-syntax) 节中看到它的样式。
+由于 `krantz.cls` 为引用文段提供了一个环境 `VF`，因此我们将标准的 `quote` 环境重新定义为 `VF`。您可以在第 \@ref(markdown-syntax) 节中看到它的样式。
 
 ```latex
 \renewenvironment{quote}{\begin{VF}}{\end{VF}}
 ```
 
-&emsp;&emsp;然后我们将超链接重新定义为脚注，因为当书印刷在纸上时，读者无法点击文本中的链接，而脚注会告诉他们实际的链接是什么。
+然后我们将超链接重新定义为脚注，因为当书印刷在纸上时，读者无法点击文本中的链接，而脚注会告诉他们实际的链接是什么。
 
 ```latex
 \let\oldhref\href
 \renewcommand{\href}[2]{#2\footnote{\url{#1}}}
 ```
 
-&emsp;&emsp;我们还为 `_output.yml`\index{\_output.yml} 中的 `bookdown::pdf_book` 格式进行了一些设置：
+我们还为 `_output.yml`\index{\_output.yml} 中的 `bookdown::pdf_book` 格式进行了一些设置：
 
 ```yaml
 bookdown::pdf_book:
@@ -285,7 +285,7 @@ bookdown::pdf_book:
   highlight_bw: yes
 ```
 
-&emsp;&emsp;我们上面提到的所有导言 (preamble) 设置都在文件 `latex/preamble.tex` 中，其中我们还指定了前言 (front matter) 的开始：
+我们上面提到的所有导言 (preamble) 设置都在文件 `latex/preamble.tex` 中，其中我们还指定了前言 (front matter) 的开始：
 
 > 译者注：`\frontmatter` 通常跟在 `\begin{document}` 后，会关闭章节序号，页码使用罗马数字。
 
@@ -293,7 +293,7 @@ bookdown::pdf_book:
 \frontmatter
 ```
 
-&emsp;&emsp;在 `latex/before_body.tex` 中，我们插入了出版商要求的一些空白页，并编写了奉献页。在书的第一章之前，我们插入
+在 `latex/before_body.tex` 中，我们插入了出版商要求的一些空白页，并编写了奉献页。在书的第一章之前，我们插入
 
 ```latex
 \mainmatter
@@ -301,16 +301,16 @@ bookdown::pdf_book:
 
 因此，LaTeX 知道将页码样式从罗马数字（前言所用的样式）更改为阿拉伯数字（正文所用的样式）。
 
-&emsp;&emsp;我们在 `latex/after_body.tex`（第 \@ref(latex-index) 节）中打印索引。
+我们在 `latex/after_body.tex`（第 \@ref(latex-index) 节）中打印索引。
 
-&emsp;&emsp;由于默认设备 `pdf` 不能嵌入字体，因此用于保存图片的图形设备 (`dev`) 被设置为 `cairo_pdf`，以便字体可以嵌入图片中。你的文案编辑可能会要求您嵌入 PDF 中使用的所有字体，以便该书可以完全按其电子版本的外观打印，否则某些字体可能会被替换，印刷时的字型可能无法预测。
+由于默认设备 `pdf` 不能嵌入字体，因此用于保存图片的图形设备 (`dev`) 被设置为 `cairo_pdf`，以便字体可以嵌入图片中。你的文案编辑可能会要求您嵌入 PDF 中使用的所有字体，以便该书可以完全按其电子版本的外观打印，否则某些字体可能会被替换，印刷时的字型可能无法预测。
 
-&emsp;&emsp;`quote_footer` 字段是为了确保引用页脚右对齐：`krantz.cls` 提供了 LaTeX 命令 `\VA{}` 以包含引用页脚。
+`quote_footer` 字段是为了确保引用页脚右对齐：`krantz.cls` 提供了 LaTeX 命令 `\VA{}` 以包含引用页脚。
 
-&emsp;&emsp;`highlight_bw` 选项被设置为 true，这样语法高亮显示的代码块中的颜色将转换为灰度，因为这本书将采用黑白打印。
+`highlight_bw` 选项被设置为 true，这样语法高亮显示的代码块中的颜色将转换为灰度，因为这本书将采用黑白打印。
 
-&emsp;&emsp;这本书是通过 `xelatex` 编译成 PDF 的，以便于我们使用自定义字体。
+这本书是通过 `xelatex` 编译成 PDF 的，以便于我们使用自定义字体。
 
-&emsp;&emsp;除 `VF` 环境和 `\VA{}` 命令外，上述所有设置都可以应用于任何其他 LaTeX 文档类。
+除 `VF` 环境和 `\VA{}` 命令外，上述所有设置都可以应用于任何其他 LaTeX 文档类。
 
-&emsp;&emsp;如果你也想与 Chapman & Hall 合作，你可以从我们存储库 (<https://github.com/rstudio/bookdown/tree/master/inst/examples>) 中的 `krantz.cls` 文件开始，而不使用你从编辑那里得到的副本。我们已经与 LaTeX 帮助中心合作解决了这个 LaTeX 类的许多问题，所以如果你使用 **bookdown**，希望它能很好地用于你的书。
+如果你也想与 Chapman & Hall 合作，你可以从我们存储库 (<https://github.com/rstudio/bookdown/tree/master/inst/examples>) 中的 `krantz.cls` 文件开始，而不使用你从编辑那里得到的副本。我们已经与 LaTeX 帮助中心合作解决了这个 LaTeX 类的许多问题，所以如果你使用 **bookdown**，希望它能很好地用于你的书。

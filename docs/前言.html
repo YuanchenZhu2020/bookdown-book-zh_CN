@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>前言 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="前言 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -308,10 +309,10 @@ div.csl-indent {
 <div id="前言" class="section level1 unnumbered hasAnchor">
 <h1>前言<a href="前言.html#前言" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><a href="https://www.crcpress.com/product/isbn/9781138700109" target="_blank"><img src="images/cover.jpg" style="display: block; margin: auto;" /></a></p>
-<p>  这本短小精悍的书籍介绍了一个 R 软件包 <strong>bookdown</strong>，它能够改变你创作书籍的流程。写一本书在技术上要容易，看书时在视觉上要舒适愉悦，与书互动时要有趣，总览全书要方便，读者能够直截了当地为书籍内容做出贡献，或是给作者留下反馈。最重要的是，作者不应该总是被排版细节分散注意力。</p>
-<p>  <strong>Bookdown</strong> 是构建在 R Markdown (<a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>) 之上的一个拓展包，它继承了 Markdown 语法的简单性（你能够在5分钟内学会基础内容；请看第 <a href="markdown-syntax.html#markdown-syntax">2.1</a> 节），同时也继承了以多种格式 (PDF/HTML/Word/…) 进行输出的可能性。同时，它添加了多页HTML输出、图/表/节/方程的编号与交叉引用、插入多章组成的部分/附录等功能，并导入了 GitBook 样式 (<a href="https://www.gitbook.com" class="uri">https://www.gitbook.com</a>) 以创建优雅迷人的HTML书页。这本书本身就是一个教你如何从一系列 R Markdown 文档中生成一本书籍的例子，并且其印刷版与在线版都能够有专业的观感。你能够在 <a href="https://bookdown.org" class="uri">https://bookdown.org</a> 上找到更多的例子。</p>
+<p>这本短小精悍的书籍介绍了一个 R 软件包 <strong>bookdown</strong>，它能够改变你创作书籍的流程。写一本书在技术上要容易，看书时在视觉上要舒适愉悦，与书互动时要有趣，总览全书要方便，读者能够直截了当地为书籍内容做出贡献，或是给作者留下反馈。最重要的是，作者不应该总是被排版细节分散注意力。</p>
+<p><strong>Bookdown</strong> 是构建在 R Markdown (<a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>) 之上的一个拓展包，它继承了 Markdown 语法的简单性（你能够在5分钟内学会基础内容；请看第 <a href="markdown-syntax.html#markdown-syntax">2.1</a> 节），同时也继承了以多种格式 (PDF/HTML/Word/…) 进行输出的可能性。同时，它添加了多页HTML输出、图/表/节/方程的编号与交叉引用、插入多章组成的部分/附录等功能，并导入了 GitBook 样式 (<a href="https://www.gitbook.com" class="uri">https://www.gitbook.com</a>) 以创建优雅迷人的HTML书页。这本书本身就是一个教你如何从一系列 R Markdown 文档中生成一本书籍的例子，并且其印刷版与在线版都能够有专业的观感。你能够在 <a href="https://bookdown.org" class="uri">https://bookdown.org</a> 上找到更多的例子。</p>
 <p><a href="https://github.com/rstudio/bookdown" target="_blank"><img src="images/logo.png" style="display: block; margin: auto;" /></a></p>
-<p>  尽管名称中包含了“Book”一词，但 <strong>Bookdown</strong> 软件包并不仅仅适用于写书。“书”可以是任何能够按照线性顺序阅读的一系列 R Markdown 文档，例如课程讲义、学习笔记、软件使用手册、论文，甚至可以是日记。事实上，许多 <strong>bookdown</strong> 特性也适用于单个 R Markdown 文档（请见第 <a href="a-single-document.html#a-single-document">3.4</a> 节）。</p>
+<p>尽管名称中包含了“Book”一词，但 <strong>Bookdown</strong> 软件包并不仅仅适用于写书。“书”可以是任何能够按照线性顺序阅读的一系列 R Markdown 文档，例如课程讲义、学习笔记、软件使用手册、论文，甚至可以是日记。事实上，许多 <strong>bookdown</strong> 特性也适用于单个 R Markdown 文档（请见第 <a href="a-single-document.html#a-single-document">3.4</a> 节）。</p>
 <p><img src="images/by-nc-sa.png" alt="Creative Commons License" /><br />
 本书的在线版本依据 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> 许可证进行授权。另外，你能够在 <a href="https://www.crcpress.com/product/isbn/9781138700109">Chapman &amp; Hall</a> 或者亚马逊上购买本书的实体版本。</p>
 </div>

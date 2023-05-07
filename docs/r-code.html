@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.3 R 代码 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.3 R 代码 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,13 +308,13 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="r-code" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> R 代码<a href="r-code.html#r-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 <code>`r R_CODE`</code>，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 <code>{r}</code>，在 <code>{}</code> 内有（可选的）区块选项，例如：</p>
+<p>R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 <code>`r R_CODE`</code>，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 <code>{r}</code>，在 <code>{}</code> 内有（可选的）区块选项，例如：</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb42-1"><a href="r-code.html#cb42-1" tabindex="-1"></a><span class="in">```{r chunk-label, echo = FALSE, fig.cap = &#39;A figure caption.&#39;}</span></span>
 <span id="cb42-2"><a href="r-code.html#cb42-2" tabindex="-1"></a><span class="in">1 + 1</span></span>
 <span id="cb42-3"><a href="r-code.html#cb42-3" tabindex="-1"></a><span class="in">rnorm(10)  # 10 个随机数</span></span>
 <span id="cb42-4"><a href="r-code.html#cb42-4" tabindex="-1"></a><span class="in">plot(dist ~ speed, cars)  # 绘制散点图</span></span>
 <span id="cb42-5"><a href="r-code.html#cb42-5" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>  有关 <strong>knitr</strong> 区块选项的详细信息，请参阅 <span class="citation">Xie (<a href="#ref-xie2015">2015</a>)</span> 或网页 <a href="http://yihui.org/knitr/options" class="uri">http://yihui.org/knitr/options</a>。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 <a href="configuration.html#configuration">4.4</a> 节中的 <code>before_chapter_script</code> 和 <code>after_chapter_script</code>。</p>
+<p>有关 <strong>knitr</strong> 区块选项的详细信息，请参阅 <span class="citation">Xie (<a href="#ref-xie2015">2015</a>)</span> 或网页 <a href="http://yihui.org/knitr/options" class="uri">http://yihui.org/knitr/options</a>。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 <a href="configuration.html#configuration">4.4</a> 节中的 <code>before_chapter_script</code> 和 <code>after_chapter_script</code>。</p>
 </div>
 <h3>参考文献<a href="参考文献.html#参考文献" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">

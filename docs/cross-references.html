@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.6 交叉引用 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.6 交叉引用 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,9 +308,9 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="cross-references" class="section level2 hasAnchor" number="2.6">
 <h2><span class="header-section-number">2.6</span> 交叉引用<a href="cross-references.html#cross-references" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  我们已经解释了交叉引用是如何在方程（第 <a href="bookdown-中的-markdown-功能拓展.html#equations">2.2.1</a> 节）、定理（第 <a href="bookdown-中的-markdown-功能拓展.html#theorems">2.2.2</a> 节）、图片（第 <a href="figures.html#figures">2.4</a> 节）和表格（第 <a href="tables.html#tables">2.5</a> 节）上起作用的。事实上，你也能够使用相同的语法 <code>\@ref(label)</code> 引用章节，在此时 <code>label</code> 是章节的标识符。默认情况下，Pandoc 将会为全部章节标题生成一个标识符，例如 <code># Hello World</code> 这一章将会有名为 <code>hello-world</code> 的标识符。我们建议你手动为章节标题指定标识符，以确保更改章节标题后不会忘记更新参考标签。要将标识符分配给章节标题，只需要简单的在章节标题之后添加 <code>{#id}</code> 即可。章节标题的其他属性可以使用标准 <a href="http://pandoc.org/MANUAL.html#heading-identifiers">Pandoc 语法</a>。</p>
-<p>  当找不到引用的标签时，你将会看见两个问号 <a href="#fig:does-not-exist"><strong>??</strong></a>以及编译书籍时在 R console 中打印的警告信息。</p>
-<p>  你也可以使用显式或自动指定的章节标识符，甚至是实际的章节标题文本创建基于文本的章节链接。</p>
+<p>我们已经解释了交叉引用是如何在方程（第 <a href="bookdown-中的-markdown-功能拓展.html#equations">2.2.1</a> 节）、定理（第 <a href="bookdown-中的-markdown-功能拓展.html#theorems">2.2.2</a> 节）、图片（第 <a href="figures.html#figures">2.4</a> 节）和表格（第 <a href="tables.html#tables">2.5</a> 节）上起作用的。事实上，你也能够使用相同的语法 <code>\@ref(label)</code> 引用章节，在此时 <code>label</code> 是章节的标识符。默认情况下，Pandoc 将会为全部章节标题生成一个标识符，例如 <code># Hello World</code> 这一章将会有名为 <code>hello-world</code> 的标识符。我们建议你手动为章节标题指定标识符，以确保更改章节标题后不会忘记更新参考标签。要将标识符分配给章节标题，只需要简单的在章节标题之后添加 <code>{#id}</code> 即可。章节标题的其他属性可以使用标准 <a href="http://pandoc.org/MANUAL.html#heading-identifiers">Pandoc 语法</a>。</p>
+<p>当找不到引用的标签时，你将会看见两个问号 <a href="#fig:does-not-exist"><strong>??</strong></a>以及编译书籍时在 R console 中打印的警告信息。</p>
+<p>你也可以使用显式或自动指定的章节标识符，甚至是实际的章节标题文本创建基于文本的章节链接。</p>
 <ul>
 <li>如果你对使用章节标题作为链接文本感到满意，请在一组方括号内使用它：
 <ul>
@@ -321,8 +322,8 @@ div.csl-indent {
 <li><code>[链接文本](#标识符)</code>。例如，“<a href="tables.html#tables">表格填充</a>” via <code>[表格填充](#tables)</code></li>
 </ul></li>
 </ul>
-<p>  Pandoc 文档提供了更多详细信息，请见 <a href="http://pandoc.org/MANUAL.html#extension-auto_identifiers">自动指定章节标识符 (automatic section IDs)</a> 和 <a href="http://pandoc.org/MANUAL.html#extension-implicit_header_references">隐式标题引用 (implicit header references)</a>。</p>
-<p>  当我们在 PDF 或 HTML 输出文档下提及并不在当前页面的文档项目时，交叉引用仍然能够起作用。例如，请见方程 <a href="bookdown-中的-markdown-功能拓展.html#eq:binom">(2.1)</a> 和图片 <a href="figures.html#fig:knitr-logo">2.4</a>。</p>
+<p>Pandoc 文档提供了更多详细信息，请见 <a href="http://pandoc.org/MANUAL.html#extension-auto_identifiers">自动指定章节标识符 (automatic section IDs)</a> 和 <a href="http://pandoc.org/MANUAL.html#extension-implicit_header_references">隐式标题引用 (implicit header references)</a>。</p>
+<p>当我们在 PDF 或 HTML 输出文档下提及并不在当前页面的文档项目时，交叉引用仍然能够起作用。例如，请见方程 <a href="bookdown-中的-markdown-功能拓展.html#eq:binom">(2.1)</a> 和图片 <a href="figures.html#fig:knitr-logo">2.4</a>。</p>
 </div>
             </section>
 

@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -150,6 +150,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/toc.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 
 <style type = "text/css">
 .main-container {
@@ -310,7 +311,7 @@ details > summary {
 <div class="col-sm-12">
 <div id="usage" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> 使用方法</h2>
-<p>  有典型的 <strong>bookdown</strong> 书籍包括多个章节，并且每一章放在一个 R Markdown 文件中，文件的拓展名为 <code>.Rmd</code>。每一个 R Markdown 文件必须直接以本章标题作为开头，并使用一级标题，例如 <code># Chapter Title</code>。全部 R Markdown 文件必须使用 UTF-8 编码，特别是当他们包含某些多字节字符时，例如中文、日文和韩文。以下是一个例子（the bullets are the filenames, followed by the file content):</p>
+<p>有典型的 <strong>bookdown</strong> 书籍包括多个章节，并且每一章放在一个 R Markdown 文件中，文件的拓展名为 <code>.Rmd</code>。每一个 R Markdown 文件必须直接以本章标题作为开头，并使用一级标题，例如 <code># Chapter Title</code>。全部 R Markdown 文件必须使用 UTF-8 编码，特别是当他们包含某些多字节字符时，例如中文、日文和韩文。以下是一个例子（the bullets are the filenames, followed by the file content):</p>
 <ul>
 <li><p>index.Rmd</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="1.3-usage.html#cb4-1" tabindex="-1"></a><span class="fu"># 前言 {-}</span></span>
@@ -341,20 +342,20 @@ details > summary {
 <span id="cb9-2"><a href="1.3-usage.html#cb9-2" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="1.3-usage.html#cb9-3" tabindex="-1"></a>我们完成了一本好书。</span></code></pre></div></li>
 </ul>
-<p>  默认情况下，<strong>bookdown</strong> 按文件名的顺序合并所有 Rmd 文件，例如，<code>01-intro.Rmd</code> 将出现在 <code>02-literature.Rmd</code> 之前。以下划线 <code>_</code> 开头的文件名将被跳过。如果存在名为 <code>index.Rmd</code> 的 Rmd 文件，则在合并所有 Rmd 文件时，它将始终被视为首个文件。使用这种特殊处理的原因是，从 <code>index.Rmd</code> 生成的 HTML 文件 <code>index.HTML</code> 通常是你查看网站时的默认主页，例如，当你打开 <a href="http://yihui.org/" class="uri">http://yihui.org/</a> 时，你实际上正在浏览 <a href="http://yihui.org/index.html" class="uri">http://yihui.org/index.html</a>。</p>
-<p>  你能够通过在书籍目录中包含一个名为 <code>_bookdown.yml</code> 的配置文件来覆盖程序的上述行为。它是一个 YAML 文件 (<a href="https://en.wikipedia.org/wiki/YAML" class="uri">https://en.wikipedia.org/wiki/YAML</a>)，R Markdown 用户应该对这种格式很熟悉，因为它也被用来在 R Markdown 文档开头编写元数据（你能够在第 <a href="B.2-r-markdown.html#r-markdown">B.2</a> 节了解有关 YAML 的更多信息）。你可以使用一个名为 <code>rmd_files</code> 的字段来定义你自己的书籍文件列表与 Rmd 文件顺序。例如：</p>
+<p>默认情况下，<strong>bookdown</strong> 按文件名的顺序合并所有 Rmd 文件，例如，<code>01-intro.Rmd</code> 将出现在 <code>02-literature.Rmd</code> 之前。以下划线 <code>_</code> 开头的文件名将被跳过。如果存在名为 <code>index.Rmd</code> 的 Rmd 文件，则在合并所有 Rmd 文件时，它将始终被视为首个文件。使用这种特殊处理的原因是，从 <code>index.Rmd</code> 生成的 HTML 文件 <code>index.HTML</code> 通常是你查看网站时的默认主页，例如，当你打开 <a href="http://yihui.org/" class="uri">http://yihui.org/</a> 时，你实际上正在浏览 <a href="http://yihui.org/index.html" class="uri">http://yihui.org/index.html</a>。</p>
+<p>你能够通过在书籍目录中包含一个名为 <code>_bookdown.yml</code> 的配置文件来覆盖程序的上述行为。它是一个 YAML 文件 (<a href="https://en.wikipedia.org/wiki/YAML" class="uri">https://en.wikipedia.org/wiki/YAML</a>)，R Markdown 用户应该对这种格式很熟悉，因为它也被用来在 R Markdown 文档开头编写元数据（你能够在第 <a href="B.2-r-markdown.html#r-markdown">B.2</a> 节了解有关 YAML 的更多信息）。你可以使用一个名为 <code>rmd_files</code> 的字段来定义你自己的书籍文件列表与 Rmd 文件顺序。例如：</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="1.3-usage.html#cb10-1" tabindex="-1"></a><span class="fu">rmd_files</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;abstract.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;intro.Rmd&quot;</span><span class="kw">]</span></span></code></pre></div>
-<p>  使用上述方法时，<strong>bookdown</strong> 将会使用你在这个 YAML 字段（如果文件 <code>index.Rmd</code> 存在，它将会被添加进文件列表，并且以下划线命名的文件名将会被忽略）中定义的文件列表。如果你希望同时输出 HTML 和 LaTeX/PDF 文档，并且对于 HTML 和 LaTeX 输出使用不同的 Rmd 文件，你可以分别为这两种输出格式指定不同的文件列表，例如，</p>
+<p>使用上述方法时，<strong>bookdown</strong> 将会使用你在这个 YAML 字段（如果文件 <code>index.Rmd</code> 存在，它将会被添加进文件列表，并且以下划线命名的文件名将会被忽略）中定义的文件列表。如果你希望同时输出 HTML 和 LaTeX/PDF 文档，并且对于 HTML 和 LaTeX 输出使用不同的 Rmd 文件，你可以分别为这两种输出格式指定不同的文件列表，例如，</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb11-1"><a href="1.3-usage.html#cb11-1" tabindex="-1"></a><span class="fu">rmd_files</span><span class="kw">:</span></span>
 <span id="cb11-2"><a href="1.3-usage.html#cb11-2" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;abstract.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;intro.Rmd&quot;</span><span class="kw">]</span></span>
 <span id="cb11-3"><a href="1.3-usage.html#cb11-3" tabindex="-1"></a><span class="at">  </span><span class="fu">latex</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;abstract.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;intro.Rmd&quot;</span><span class="kw">]</span></span></code></pre></div>
-<p>  尽管我们一直在谈论 R Markdown 文件，但章节文件实际上不必是 R Markdown 文件。它们可以是普通的 Markdown 文件 (<code>.md</code>)，并且完全不需要包含 R 代码块。你当然可以使用 <strong>bookdown</strong> 来创作小说和诗歌。</p>
-<p>  目前，你可能会使用的主要的输出格式包括 <code>bookdown::pdf_book</code>、<code>bookdown::gitbook</code>、<code>bookdown::html_book</code> 和 <code>bookdown::epub_book</code>。软件包中有一个类似于 <code>rmarkdown::render()</code> 的函数 <code>bookdown::render_book()</code>，但它是为了使用输出格式函数将<em>多个</em> Rmd 文档呈现在一本书中。你可以直接从命令行调用这个函数，或者点击 RStudio IDE 中的相关按钮。下面是一些命令行示例：</p>
+<p>尽管我们一直在谈论 R Markdown 文件，但章节文件实际上不必是 R Markdown 文件。它们可以是普通的 Markdown 文件 (<code>.md</code>)，并且完全不需要包含 R 代码块。你当然可以使用 <strong>bookdown</strong> 来创作小说和诗歌。</p>
+<p>目前，你可能会使用的主要的输出格式包括 <code>bookdown::pdf_book</code>、<code>bookdown::gitbook</code>、<code>bookdown::html_book</code> 和 <code>bookdown::epub_book</code>。软件包中有一个类似于 <code>rmarkdown::render()</code> 的函数 <code>bookdown::render_book()</code>，但它是为了使用输出格式函数将<em>多个</em> Rmd 文档呈现在一本书中。你可以直接从命令行调用这个函数，或者点击 RStudio IDE 中的相关按钮。下面是一些命令行示例：</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="1.3-usage.html#cb12-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, <span class="st">&#39;bookdown::gitbook&#39;</span>)</span>
 <span id="cb12-2"><a href="1.3-usage.html#cb12-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, <span class="st">&#39;bookdown::pdf_book&#39;</span>)</span>
 <span id="cb12-3"><a href="1.3-usage.html#cb12-3" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, bookdown<span class="sc">::</span><span class="fu">gitbook</span>(<span class="at">lib_dir =</span> <span class="st">&#39;libs&#39;</span>))</span>
 <span id="cb12-4"><a href="1.3-usage.html#cb12-4" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, bookdown<span class="sc">::</span><span class="fu">pdf_book</span>(<span class="at">keep_tex =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
-<p>  为了在 RStudio IDE 中使用 <code>render_book</code> 和输出格式函数，可以定义一个名为 <code>site</code> 的 YAML 字段，其值为 <code>bookdown::bookdown_site</code>，<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>并且输出格式函数可以在 <code>output</code> 字段中使用，例如：</p>
+<p>为了在 RStudio IDE 中使用 <code>render_book</code> 和输出格式函数，可以定义一个名为 <code>site</code> 的 YAML 字段，其值为 <code>bookdown::bookdown_site</code>，<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>并且输出格式函数可以在 <code>output</code> 字段中使用，例如：</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb13-1"><a href="1.3-usage.html#cb13-1" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb13-2"><a href="1.3-usage.html#cb13-2" tabindex="-1"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;bookdown::bookdown_site&quot;</span></span>
 <span id="cb13-3"><a href="1.3-usage.html#cb13-3" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
@@ -363,8 +364,8 @@ details > summary {
 <span id="cb13-6"><a href="1.3-usage.html#cb13-6" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:pdf_book</span><span class="kw">:</span></span>
 <span id="cb13-7"><a href="1.3-usage.html#cb13-7" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
 <span id="cb13-8"><a href="1.3-usage.html#cb13-8" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<p>  然后你可以点击 RStudio 中 <code>Build</code> 选项卡下的 <code>Build Book</code> 按钮来将 Rmd 文件编译为一本书，或者点击工具栏中的 <code>Knit</code> 按钮来预览当前章节。</p>
-<p>  更多在 <code>_bookdown.yml</code> 中的 <strong>bookdown</strong> 设置将会在第 <a href="4.4-configuration.html#configuration">4.4</a> 节中介绍。除了这些配置，你还能够在书籍的<em>第一个</em> Rmd 文件中的 YAML 元数据里指定一些 Pandoc 相关的配置，例如标题、作者以及书籍付梓日期等。例如：</p>
+<p>然后你可以点击 RStudio 中 <code>Build</code> 选项卡下的 <code>Build Book</code> 按钮来将 Rmd 文件编译为一本书，或者点击工具栏中的 <code>Knit</code> 按钮来预览当前章节。</p>
+<p>更多在 <code>_bookdown.yml</code> 中的 <strong>bookdown</strong> 设置将会在第 <a href="4.4-configuration.html#configuration">4.4</a> 节中介绍。除了这些配置，你还能够在书籍的<em>第一个</em> Rmd 文件中的 YAML 元数据里指定一些 Pandoc 相关的配置，例如标题、作者以及书籍付梓日期等。例如：</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb14-1"><a href="1.3-usage.html#cb14-1" tabindex="-1"></a><span class="pp">--- </span></span>
 <span id="cb14-2"><a href="1.3-usage.html#cb14-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Authoring A Book with R Markdown&quot;</span></span>
 <span id="cb14-3"><a href="1.3-usage.html#cb14-3" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Yihui Xie&quot;</span></span>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>为什么要阅读这本书 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="为什么要阅读这本书 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,12 +308,12 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="为什么要阅读这本书" class="section level2 unnumbered hasAnchor">
 <h2>为什么要阅读这本书<a href="为什么要阅读这本书.html#为什么要阅读这本书" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  我们能够只使用一种源文档格式编写书籍，但能生成多种格式的输出文档吗？书籍传统上通常是使用 LaTeX 或者 Microsoft Word 进行编写的。但不论是哪种工具都会使得写书变成一趟单程旅行，你无法回头：如果选择 LaTeX，你通常只会得到一个 PDF 文档；如果使用 Word，你可能不得不永远挣扎在 Word 的泥潭中，而且可能会错过许多有用的特性以及来自 LaTeX 的漂亮的 PDF 输出。</p>
-<p>  我们能够专注于书写内容而不用太担心排版吗？内容和外观之间似乎有着天然的矛盾，我们总是要平衡花费在这两方面上的时间。鱼和熊掌不可兼得，但这并不意味着我们不能吃到半条鱼和半块熊掌。我们希望我们的书看起来美观，我们也希望把注意力集中在内容上。一种选择是暂时放弃 PDF 输出，作为回报，你可能会得到一个相当不错的HTML网页预览版。LaTeX 是一个非常好的排版工具，但是在编写书籍的过程中，你很容易沉浸于大量的 LaTeX 命令和排版细节。我们很难避免通过 PDF 预览正在编写的书籍，然而不幸的是，我们经常会发现某些单词超出了页边空白，某些图片浮动到随机的页面上，一章末尾的五到六个零星的单词骄傲地占据了一个全新的页面……如果书籍要印刷，我们最终将不得不处理这些问题，但当你在创作书的内容时，不值得一次又一次为此分心。事实上，Markdown 语法比 LaTeX 更加简单，功能更少，这有助于你专注于书的内容。真的有必要自己定义一个像 <code>\myprecious{}</code> 一样的新命令来将 <code>\textbf{\textit{\textsf{}}}</code> 应用到文本上吗？当读者能够轻易地理解字母“R”代表 R 语言时，字母“R”是否有必要包括在 <code>\proglang{}</code> 中？如果读者需要关注书籍的每一处细节，那这和读者什么都不关注有什么区别呢？因此好的书籍创作技术应该帮助作者自动解决对于内容不重要的细节，让作者关注重点内容。</p>
-<p>  读者能和我们的书籍中的例子进行互动吗？如果书籍是打印在纸上的，答案当然是不能。但如果你的书籍有 HTML 版本，并包含了在线示例，例如 Shiny 应用 (<a href="https://shiny.rstudio.com" class="uri">https://shiny.rstudio.com</a>) 或 HTML 组件 (<a href="https://htmlwidgets.org" class="uri">https://htmlwidgets.org</a>)，那么读者阅读时就可能能够与书进行互动。例如，读者能够立刻知道如果他们改变了统计模型的某些参数后会发生什么。</p>
-<p>  我们能够在创作书籍时得到来自读者的反馈，甚至是内容贡献吗？传统上，编辑会找一小部分匿名评审员来审查你的书。评审员往往很有帮助，但你仍然可能错过来自更有代表性的读者的智慧。如果读者只有等到第一版印刷发布之后才能够看到你的书，那可能已经太迟了，他们可能需要等待好几年才能看到增订修改后的第二版。有一些网络平台，人们可以轻松地利用它们提供反馈并为你的项目做出贡献。GitHub (<a href="https://github.com" class="uri">https://github.com</a>) 就是一个突出的例子。如果有人在你的书里发现一个拼写错误，他/她能够简单地进行在线更正，并将更改提交给你供你审阅批准。你只需要点击一个按钮来合并更改，无需询问任何问题或来回发送邮件。为了能够使用这些平台，你需要学习 GIT 等版本控制系统，并且你的书籍源文件应该是纯文本。</p>
-<p>  R (<a href="https://www.r-project.org" class="uri">https://www.r-project.org</a>)、Markdown 和 Pandoc (<a href="http://pandoc.org" class="uri">http://pandoc.org</a>) 的组合使得将文档从一种简单的源格式 (R Markdown) 转换为多种格式（PDF、HTML、EPUB 和 Word……）成为可能。<strong>bookdown</strong> 软件包的功能基于 R Markdown 实现，并为书籍和长篇文章提供输出格式，其中包括 GitBook 格式，它是一种多页面 HTML 输出格式，有着实用且美观的用户界面。用 HTML 进行排版比用 LaTeX 轻松得多，因此你能够经常使用 HTML 预览你的书籍，并且在内容基本完成后再转为 PDF 进行调整。可运行示例很容易就能够插入 HTML 中，它可以使得书籍更具有吸引力和实用性。R Markdown 是一种纯文本格式，因此你也能享受版本控制的优势，例如在 GitHub 上协作创作。我们还努力将一些重要特性从 LaTeX 移植到 HTML 和其它输出格式上，例如图/表编号和交叉引用。</p>
-<p>  简单来说，你只需要准备一些 R Markdown 格式的书籍章节文档，然后 <strong>bookdown</strong> 就能帮助你将它们转变成一本漂亮的书。</p>
+<p>我们能够只使用一种源文档格式编写书籍，但能生成多种格式的输出文档吗？书籍传统上通常是使用 LaTeX 或者 Microsoft Word 进行编写的。但不论是哪种工具都会使得写书变成一趟单程旅行，你无法回头：如果选择 LaTeX，你通常只会得到一个 PDF 文档；如果使用 Word，你可能不得不永远挣扎在 Word 的泥潭中，而且可能会错过许多有用的特性以及来自 LaTeX 的漂亮的 PDF 输出。</p>
+<p>我们能够专注于书写内容而不用太担心排版吗？内容和外观之间似乎有着天然的矛盾，我们总是要平衡花费在这两方面上的时间。鱼和熊掌不可兼得，但这并不意味着我们不能吃到半条鱼和半块熊掌。我们希望我们的书看起来美观，我们也希望把注意力集中在内容上。一种选择是暂时放弃 PDF 输出，作为回报，你可能会得到一个相当不错的HTML网页预览版。LaTeX 是一个非常好的排版工具，但是在编写书籍的过程中，你很容易沉浸于大量的 LaTeX 命令和排版细节。我们很难避免通过 PDF 预览正在编写的书籍，然而不幸的是，我们经常会发现某些单词超出了页边空白，某些图片浮动到随机的页面上，一章末尾的五到六个零星的单词骄傲地占据了一个全新的页面……如果书籍要印刷，我们最终将不得不处理这些问题，但当你在创作书的内容时，不值得一次又一次为此分心。事实上，Markdown 语法比 LaTeX 更加简单，功能更少，这有助于你专注于书的内容。真的有必要自己定义一个像 <code>\myprecious{}</code> 一样的新命令来将 <code>\textbf{\textit{\textsf{}}}</code> 应用到文本上吗？当读者能够轻易地理解字母“R”代表 R 语言时，字母“R”是否有必要包括在 <code>\proglang{}</code> 中？如果读者需要关注书籍的每一处细节，那这和读者什么都不关注有什么区别呢？因此好的书籍创作技术应该帮助作者自动解决对于内容不重要的细节，让作者关注重点内容。</p>
+<p>读者能和我们的书籍中的例子进行互动吗？如果书籍是打印在纸上的，答案当然是不能。但如果你的书籍有 HTML 版本，并包含了在线示例，例如 Shiny 应用 (<a href="https://shiny.rstudio.com" class="uri">https://shiny.rstudio.com</a>) 或 HTML 组件 (<a href="https://htmlwidgets.org" class="uri">https://htmlwidgets.org</a>)，那么读者阅读时就可能能够与书进行互动。例如，读者能够立刻知道如果他们改变了统计模型的某些参数后会发生什么。</p>
+<p>我们能够在创作书籍时得到来自读者的反馈，甚至是内容贡献吗？传统上，编辑会找一小部分匿名评审员来审查你的书。评审员往往很有帮助，但你仍然可能错过来自更有代表性的读者的智慧。如果读者只有等到第一版印刷发布之后才能够看到你的书，那可能已经太迟了，他们可能需要等待好几年才能看到增订修改后的第二版。有一些网络平台，人们可以轻松地利用它们提供反馈并为你的项目做出贡献。GitHub (<a href="https://github.com" class="uri">https://github.com</a>) 就是一个突出的例子。如果有人在你的书里发现一个拼写错误，他/她能够简单地进行在线更正，并将更改提交给你供你审阅批准。你只需要点击一个按钮来合并更改，无需询问任何问题或来回发送邮件。为了能够使用这些平台，你需要学习 GIT 等版本控制系统，并且你的书籍源文件应该是纯文本。</p>
+<p>R (<a href="https://www.r-project.org" class="uri">https://www.r-project.org</a>)、Markdown 和 Pandoc (<a href="http://pandoc.org" class="uri">http://pandoc.org</a>) 的组合使得将文档从一种简单的源格式 (R Markdown) 转换为多种格式（PDF、HTML、EPUB 和 Word……）成为可能。<strong>bookdown</strong> 软件包的功能基于 R Markdown 实现，并为书籍和长篇文章提供输出格式，其中包括 GitBook 格式，它是一种多页面 HTML 输出格式，有着实用且美观的用户界面。用 HTML 进行排版比用 LaTeX 轻松得多，因此你能够经常使用 HTML 预览你的书籍，并且在内容基本完成后再转为 PDF 进行调整。可运行示例很容易就能够插入 HTML 中，它可以使得书籍更具有吸引力和实用性。R Markdown 是一种纯文本格式，因此你也能享受版本控制的优势，例如在 GitHub 上协作创作。我们还努力将一些重要特性从 LaTeX 移植到 HTML 和其它输出格式上，例如图/表编号和交叉引用。</p>
+<p>简单来说，你只需要准备一些 R Markdown 格式的书籍章节文档，然后 <strong>bookdown</strong> 就能帮助你将它们转变成一本漂亮的书。</p>
 </div>
             </section>
 

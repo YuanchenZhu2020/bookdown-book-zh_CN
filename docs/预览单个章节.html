@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5.2 预览单个章节 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5.2 预览单个章节 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,9 +308,9 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="预览单个章节" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> 预览单个章节<a href="预览单个章节.html#预览单个章节" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  当书籍项目的大小很大时，构建整本书可能会很慢。有两件事会影响一本书的构建速度：R 代码块的计算以及使用 Pandoc 将 Markdown 转换为其他格式的过程。前者可以通过使用 chunk 选项 <code>cache = TRUE</code> 在 <strong>knitr</strong> 中启用缓存来改进，但创作者并没有什么办法能使后者更快。不过，你可以选择使用 <strong>bookdown</strong> 中的 <code>preview_chapter()</code> 函数一次只编译一个章节，通常这比编译整本书要快得多。只有传递到 <code>preview_chapter()</code> 的 Rmd 文件才会被编译。</p>
-<p>  当你只关注当前章节时，预览当前章节会很有帮助，因为可以在添加更多内容或修改章节时立即看到实际输出。尽管预览功能适用于所有输出格式，但我们建议你预览 HTML 输出。</p>
-<p>  预览单个章节的一个缺点是，对其他章节的交叉引用将不起作用，因为在这种情况下，<strong>bookdown</strong> 对其他章节一无所知。这对于速度的提高来说是一个相当小的代价。由于预览章节只会呈现该特定章节的输出，因此不应期望其他章节的内容也能正确呈现。例如，当你导航到其他章节时，实际上你正在查看该章节的旧输出（甚至可能不存在该章节的输出）。</p>
+<p>当书籍项目的大小很大时，构建整本书可能会很慢。有两件事会影响一本书的构建速度：R 代码块的计算以及使用 Pandoc 将 Markdown 转换为其他格式的过程。前者可以通过使用 chunk 选项 <code>cache = TRUE</code> 在 <strong>knitr</strong> 中启用缓存来改进，但创作者并没有什么办法能使后者更快。不过，你可以选择使用 <strong>bookdown</strong> 中的 <code>preview_chapter()</code> 函数一次只编译一个章节，通常这比编译整本书要快得多。只有传递到 <code>preview_chapter()</code> 的 Rmd 文件才会被编译。</p>
+<p>当你只关注当前章节时，预览当前章节会很有帮助，因为可以在添加更多内容或修改章节时立即看到实际输出。尽管预览功能适用于所有输出格式，但我们建议你预览 HTML 输出。</p>
+<p>预览单个章节的一个缺点是，对其他章节的交叉引用将不起作用，因为在这种情况下，<strong>bookdown</strong> 对其他章节一无所知。这对于速度的提高来说是一个相当小的代价。由于预览章节只会呈现该特定章节的输出，因此不应期望其他章节的内容也能正确呈现。例如，当你导航到其他章节时，实际上你正在查看该章节的旧输出（甚至可能不存在该章节的输出）。</p>
 </div>
             </section>
 

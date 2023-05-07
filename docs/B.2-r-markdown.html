@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -150,6 +150,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/toc.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 
 <style type = "text/css">
 .main-container {
@@ -310,26 +311,26 @@ details > summary {
 <div class="col-sm-12">
 <div id="r-markdown" class="section level2" number="8.2">
 <h2><span class="header-section-number">B.2</span> R Markdown</h2>
-<p>  由于 R 和 Pandoc 的强大功能，你可以轻松地在 R Markdown 文档中进行计算，并将其转换为各种输出格式，包括 HTML/PDF/Word 文档、HTML5/Beamer 幻灯片、仪表板和网站等。R Markdown 文档通常由 YAML 元数据（可选）和文档主体组成。我们在第 <a href="2-components.html#components">2</a> 章中介绍了编写文档主体各个组件的语法，并在本节中详细解释了 YAML 元数据。</p>
-<p>  R Markdown 的元数据可以写在文档的最开头，分别以三个短划线 <code>---</code> 开头和结尾。YAML 元数据通常由冒号分隔的标记值对组成，例如：</p>
+<p>由于 R 和 Pandoc 的强大功能，你可以轻松地在 R Markdown 文档中进行计算，并将其转换为各种输出格式，包括 HTML/PDF/Word 文档、HTML5/Beamer 幻灯片、仪表板和网站等。R Markdown 文档通常由 YAML 元数据（可选）和文档主体组成。我们在第 <a href="2-components.html#components">2</a> 章中介绍了编写文档主体各个组件的语法，并在本节中详细解释了 YAML 元数据。</p>
+<p>R Markdown 的元数据可以写在文档的最开头，分别以三个短划线 <code>---</code> 开头和结尾。YAML 元数据通常由冒号分隔的标记值对组成，例如：</p>
 <div class="sourceCode" id="cb159"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb159-1"><a href="B.2-r-markdown.html#cb159-1" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb159-2"><a href="B.2-r-markdown.html#cb159-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;An R Markdown Document&quot;</span></span>
 <span id="cb159-3"><a href="B.2-r-markdown.html#cb159-3" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Yihui Xie&quot;</span></span>
 <span id="cb159-4"><a href="B.2-r-markdown.html#cb159-4" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<p>  对于元数据中的字符值，当其不包含特殊字符时，你可以省略引号，但如果希望它们是字符值，则使用引号更为安全。</p>
-<p>  除字符类型外，另一种元数据取值的常见类型是逻辑类型。<code>yes</code> 和 <code>true</code> 都表示 true，<code>no</code>/<code>false</code> 都表示 false，例如：</p>
+<p>对于元数据中的字符值，当其不包含特殊字符时，你可以省略引号，但如果希望它们是字符值，则使用引号更为安全。</p>
+<p>除字符类型外，另一种元数据取值的常见类型是逻辑类型。<code>yes</code> 和 <code>true</code> 都表示 true，<code>no</code>/<code>false</code> 都表示 false，例如：</p>
 <div class="sourceCode" id="cb160"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb160-1"><a href="B.2-r-markdown.html#cb160-1" tabindex="-1"></a><span class="fu">link-citations</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
-<p>  元数据取值可以是向量，并且有两种写入向量的方法。下面两种方法是等价的</p>
+<p>元数据取值可以是向量，并且有两种写入向量的方法。下面两种方法是等价的</p>
 <div class="sourceCode" id="cb161"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb161-1"><a href="B.2-r-markdown.html#cb161-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;html_document&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;word_document&quot;</span><span class="kw">]</span></span></code></pre></div>
 <div class="sourceCode" id="cb162"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb162-1"><a href="B.2-r-markdown.html#cb162-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb162-2"><a href="B.2-r-markdown.html#cb162-2" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;html_document&quot;</span></span>
 <span id="cb162-3"><a href="B.2-r-markdown.html#cb162-3" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;word_document&quot;</span></span></code></pre></div>
-<p>  元数据取值也可以是值的列表，只需要将其额外缩进两个空格，例如：</p>
+<p>元数据取值也可以是值的列表，只需要将其额外缩进两个空格，例如：</p>
 <div class="sourceCode" id="cb163"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb163-1"><a href="B.2-r-markdown.html#cb163-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb163-2"><a href="B.2-r-markdown.html#cb163-2" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
 <span id="cb163-3"><a href="B.2-r-markdown.html#cb163-3" tabindex="-1"></a><span class="at">    </span><span class="fu">split_by</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;section&quot;</span></span>
 <span id="cb163-4"><a href="B.2-r-markdown.html#cb163-4" tabindex="-1"></a><span class="at">    </span><span class="fu">split_bib</span><span class="kw">:</span><span class="at"> </span><span class="ch">no</span></span></code></pre></div>
-<p>  忘记缩进元数据取值是一个常见的错误。例如，下面的数据</p>
+<p>忘记缩进元数据取值是一个常见的错误。例如，下面的数据</p>
 <div class="sourceCode" id="cb164"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb164-1"><a href="B.2-r-markdown.html#cb164-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb164-2"><a href="B.2-r-markdown.html#cb164-2" tabindex="-1"></a><span class="fu">html_document</span><span class="kw">:</span></span>
 <span id="cb164-3"><a href="B.2-r-markdown.html#cb164-3" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
@@ -341,8 +342,8 @@ details > summary {
 <div class="sourceCode" id="cb166"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb166-1"><a href="B.2-r-markdown.html#cb166-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb166-2"><a href="B.2-r-markdown.html#cb166-2" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
 <span id="cb166-3"><a href="B.2-r-markdown.html#cb166-3" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span></code></pre></div>
-<p>  R Markdown 输出格式在 YAML 元数据中的 <code>output</code> 字段中指定，并且你需要查阅 R 帮助页面以获得可以填写的选项，例如 <code>?rmarkdown::html_document</code> 或 <code>?bookdown::gitbook</code>。YAML 中其它大多数字段的含义可以在 Pandoc 文档中找到。</p>
-<p>  <strong>rmarkdown</strong> 软件包提供了这些 R Markdown 输出格式：</p>
+<p>R Markdown 输出格式在 YAML 元数据中的 <code>output</code> 字段中指定，并且你需要查阅 R 帮助页面以获得可以填写的选项，例如 <code>?rmarkdown::html_document</code> 或 <code>?bookdown::gitbook</code>。YAML 中其它大多数字段的含义可以在 Pandoc 文档中找到。</p>
+<p><strong>rmarkdown</strong> 软件包提供了这些 R Markdown 输出格式：</p>
 <ul>
 <li><code>beamer_presentation</code></li>
 <li><code>context_document</code></li>
@@ -358,7 +359,7 @@ details > summary {
 <li><code>slidy_presentation</code></li>
 <li><code>word_document</code></li>
 </ul>
-<p>  在其他 R 软件包中有更多可能的输出格式，包括 <strong>bookdown</strong>、<strong>tufte</strong>、<strong>rticles</strong>、<strong>flexdashboard</strong>、<strong>revealjs</strong> 和 <strong>rmdformats</strong>等。</p>
+<p>在其他 R 软件包中有更多可能的输出格式，包括 <strong>bookdown</strong>、<strong>tufte</strong>、<strong>rticles</strong>、<strong>flexdashboard</strong>、<strong>revealjs</strong> 和 <strong>rmdformats</strong>等。</p>
 
 </div>
 <!-- </div> -->

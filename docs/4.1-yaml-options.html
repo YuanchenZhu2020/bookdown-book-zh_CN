@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -150,6 +150,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/toc.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 
 <style type = "text/css">
 .main-container {
@@ -316,7 +317,7 @@ details > summary {
 <span id="cb107-3"><a href="4.1-yaml-options.html#cb107-3" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
 <span id="cb107-4"><a href="4.1-yaml-options.html#cb107-4" tabindex="-1"></a><span class="at">    </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> tango</span></span>
 <span id="cb107-5"><a href="4.1-yaml-options.html#cb107-5" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<p>  对于 HTML 输出格式，你最有可能使用 <code>css</code> 选项来提供自己的 CSS 样式表，以自定义 HTML 元素的外观。有一个 <code>includes</code> 选项能够适用于更多格式，包括 HTML 和 LaTeX。<code>includes</code> 选项允许你在输出文档之前和/或之后插入任意自定义的内容。它有三个子选项：<code>in_header</code>、<code>before_body</code> 和 <code>after_body</code>。你需要了解 HTML 或 LaTeX 文档的基本结构才能理解这些选项。HTML 文件源文本如下所示：</p>
+<p>对于 HTML 输出格式，你最有可能使用 <code>css</code> 选项来提供自己的 CSS 样式表，以自定义 HTML 元素的外观。有一个 <code>includes</code> 选项能够适用于更多格式，包括 HTML 和 LaTeX。<code>includes</code> 选项允许你在输出文档之前和/或之后插入任意自定义的内容。它有三个子选项：<code>in_header</code>、<code>before_body</code> 和 <code>after_body</code>。你需要了解 HTML 或 LaTeX 文档的基本结构才能理解这些选项。HTML 文件源文本如下所示：</p>
 <div class="sourceCode" id="cb108"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb108-1"><a href="4.1-yaml-options.html#cb108-1" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb108-2"><a href="4.1-yaml-options.html#cb108-2" tabindex="-1"></a>  </span>
 <span id="cb108-3"><a href="4.1-yaml-options.html#cb108-3" tabindex="-1"></a>  <span class="kw">&lt;head&gt;</span></span>
@@ -328,8 +329,8 @@ details > summary {
 <span id="cb108-9"><a href="4.1-yaml-options.html#cb108-9" tabindex="-1"></a>  <span class="kw">&lt;/body&gt;</span></span>
 <span id="cb108-10"><a href="4.1-yaml-options.html#cb108-10" tabindex="-1"></a></span>
 <span id="cb108-11"><a href="4.1-yaml-options.html#cb108-11" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
-<p>  <code>in_header</code> 选项接受一个文件路径然后将文件内容插入到 <code>&lt;head&gt;</code> 标签之间。<code>before_body</code> 所指文件将会被插入到 <code>&lt;body&gt;</code> 标签的正下方，<code>after_body</code> 所指文件将会被插入到 <code>&lt;/body&gt;</code> 标签之前。</p>
-<p>  一个 LaTeX 源文档有着相似的结构：</p>
+<p><code>in_header</code> 选项接受一个文件路径然后将文件内容插入到 <code>&lt;head&gt;</code> 标签之间。<code>before_body</code> 所指文件将会被插入到 <code>&lt;body&gt;</code> 标签的正下方，<code>after_body</code> 所指文件将会被插入到 <code>&lt;/body&gt;</code> 标签之前。</p>
+<p>一个 LaTeX 源文档有着相似的结构：</p>
 <div class="sourceCode" id="cb109"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb109-1"><a href="4.1-yaml-options.html#cb109-1" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">book</span>}</span>
 <span id="cb109-2"><a href="4.1-yaml-options.html#cb109-2" tabindex="-1"></a></span>
 <span id="cb109-3"><a href="4.1-yaml-options.html#cb109-3" tabindex="-1"></a><span class="co">% LaTeX 导言 (preamble)</span></span>
@@ -342,21 +343,21 @@ details > summary {
 <span id="cb109-10"><a href="4.1-yaml-options.html#cb109-10" tabindex="-1"></a></span>
 <span id="cb109-11"><a href="4.1-yaml-options.html#cb109-11" tabindex="-1"></a><span class="co">% 这里插入 after_body</span></span>
 <span id="cb109-12"><a href="4.1-yaml-options.html#cb109-12" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
-<p>  <code>includes</code> 选项非常有用且使用灵活。对于 HTML 输出，它意味着你能够将任意 HTML 代码插入到输出中。例如，当你在 HTML 输出中通过 MathJax 库渲染 LaTeX 数学表达式，并希望方程编号显示在左侧（默认显示在右侧），你可以创建一个包含有以下代码的文本文件：</p>
+<p><code>includes</code> 选项非常有用且使用灵活。对于 HTML 输出，它意味着你能够将任意 HTML 代码插入到输出中。例如，当你在 HTML 输出中通过 MathJax 库渲染 LaTeX 数学表达式，并希望方程编号显示在左侧（默认显示在右侧），你可以创建一个包含有以下代码的文本文件：</p>
 <div class="sourceCode" id="cb110"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb110-1"><a href="4.1-yaml-options.html#cb110-1" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/x-mathjax-config&quot;</span><span class="kw">&gt;</span></span>
 <span id="cb110-2"><a href="4.1-yaml-options.html#cb110-2" tabindex="-1"></a>MathJax<span class="op">.</span><span class="at">Hub</span><span class="op">.</span><span class="fu">Config</span>({</span>
 <span id="cb110-3"><a href="4.1-yaml-options.html#cb110-3" tabindex="-1"></a>  <span class="dt">TeX</span><span class="op">:</span> { <span class="dt">TagSide</span><span class="op">:</span> <span class="st">&quot;left&quot;</span> }</span>
 <span id="cb110-4"><a href="4.1-yaml-options.html#cb110-4" tabindex="-1"></a>})<span class="op">;</span></span>
 <span id="cb110-5"><a href="4.1-yaml-options.html#cb110-5" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
-<p>  让我们假设文件名为 <code>mathjax-number.html</code>，并且它位于你的书籍的根目录下（包含有你的全部 Rmd 文件的目录）。你可以通过 <code>in_header</code> 选项将该文件插入到 HTML 首部，例如：</p>
+<p>让我们假设文件名为 <code>mathjax-number.html</code>，并且它位于你的书籍的根目录下（包含有你的全部 Rmd 文件的目录）。你可以通过 <code>in_header</code> 选项将该文件插入到 HTML 首部，例如：</p>
 <div class="sourceCode" id="cb111"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb111-1"><a href="4.1-yaml-options.html#cb111-1" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb111-2"><a href="4.1-yaml-options.html#cb111-2" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb111-3"><a href="4.1-yaml-options.html#cb111-3" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
 <span id="cb111-4"><a href="4.1-yaml-options.html#cb111-4" tabindex="-1"></a><span class="at">    </span><span class="fu">includes</span><span class="kw">:</span></span>
 <span id="cb111-5"><a href="4.1-yaml-options.html#cb111-5" tabindex="-1"></a><span class="at">      </span><span class="fu">in_header</span><span class="kw">:</span><span class="at"> mathjax-number.html</span></span>
 <span id="cb111-6"><a href="4.1-yaml-options.html#cb111-6" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<p>  另一个例子是在 HTML 页面上启用评论区或讨论区。有这么几种可能的选择，例如：Disqus (<a href="https://disqus.com" class="uri">https://disqus.com</a>) 或 Hypothesis (<a href="https://hypothes.is" class="uri">https://hypothes.is</a>)。这些服务可以通过 <code>includes</code> 选项轻松地嵌入到你的 HTML 书籍中（有关更多详细信息，请参阅第 <a href="5.5-collaboration.html#collaboration">5.5</a> 节）。</p>
-<p>  类似地，如果你熟悉 LaTeX，则可以在导言 (preamble) 中添加任意 LaTeX 代码。这意味着你可以使用任何 LaTeX 软件包，并为书籍设置任何软件包选项。例如，本书通过 <code>in_header</code> 选项使用了更多的 LaTeX 软件包，如 <strong>booktabs</strong>（用于更美观的表格）和 <strong>longtable</strong>（用于跨多个页面的表格），并对图形环境中的链接不起作用的 XeLeTeX 问题进行了修复：</p>
+<p>另一个例子是在 HTML 页面上启用评论区或讨论区。有这么几种可能的选择，例如：Disqus (<a href="https://disqus.com" class="uri">https://disqus.com</a>) 或 Hypothesis (<a href="https://hypothes.is" class="uri">https://hypothes.is</a>)。这些服务可以通过 <code>includes</code> 选项轻松地嵌入到你的 HTML 书籍中（有关更多详细信息，请参阅第 <a href="5.5-collaboration.html#collaboration">5.5</a> 节）。</p>
+<p>类似地，如果你熟悉 LaTeX，则可以在导言 (preamble) 中添加任意 LaTeX 代码。这意味着你可以使用任何 LaTeX 软件包，并为书籍设置任何软件包选项。例如，本书通过 <code>in_header</code> 选项使用了更多的 LaTeX 软件包，如 <strong>booktabs</strong>（用于更美观的表格）和 <strong>longtable</strong>（用于跨多个页面的表格），并对图形环境中的链接不起作用的 XeLeTeX 问题进行了修复：</p>
 <blockquote>
 <p>中文版还使用了 <strong>ctex</strong> 软件包以在 PDF 输出中渲染中文字符。</p>
 </blockquote>
@@ -376,7 +377,7 @@ details > summary {
 <span id="cb112-14"><a href="4.1-yaml-options.html#cb112-14" tabindex="-1"></a>    }<span class="co">%</span></span>
 <span id="cb112-15"><a href="4.1-yaml-options.html#cb112-15" tabindex="-1"></a>  }<span class="co">%</span></span>
 <span id="cb112-16"><a href="4.1-yaml-options.html#cb112-16" tabindex="-1"></a><span class="fu">\fi</span></span></code></pre></div>
-<p>  上述 LaTeX 代码保存在文件 <code>preamble.tex</code> 中，而书籍的 YAML 元数据如下所示：</p>
+<p>上述 LaTeX 代码保存在文件 <code>preamble.tex</code> 中，而书籍的 YAML 元数据如下所示：</p>
 <div class="sourceCode" id="cb113"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb113-1"><a href="4.1-yaml-options.html#cb113-1" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb113-2"><a href="4.1-yaml-options.html#cb113-2" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb113-3"><a href="4.1-yaml-options.html#cb113-3" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:pdf_book</span><span class="kw">:</span></span>

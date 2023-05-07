@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>A.2 Pandoc | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="A.2 Pandoc | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,10 +308,10 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="pandoc" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">A.2</span> Pandoc<a href="pandoc.html#pandoc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  R Markdown 文档 (<code>*.Rmd</code>) 首先通过 <strong>knitr</strong> 软件包编译成 Markdown (<code>*.md</code>)，然后通过 Pandoc 将 Markdown 编译成其他输出格式（如 LaTeX 或 HTML）。这个过程由 <strong>rmarkdown</strong> 软件包自动完成。你不需要单独安装 <strong>knitr</strong> 或 <strong>rmarkdown</strong>，因为它们是 <strong>bookdown</strong> 的必需软件包，安装 <strong>bookdown</strong> 时会自动安装。但是，Pandoc 不是 R 软件包，因此在安装 <strong>bookdown</strong> 时不会自动安装。你可以按照 Pandoc 主页 (<a href="http://pandoc.org" class="uri">http://pandoc.org</a>) 上的安装说明安装 Pandoc，但是如果你使用 RStudio IDE，实际上不需要单独安装 Pandoc，因为 RStudio 包含一个 Pandoc 的副本。Pandoc 版本号可通过以下方式获得：</p>
+<p>R Markdown 文档 (<code>*.Rmd</code>) 首先通过 <strong>knitr</strong> 软件包编译成 Markdown (<code>*.md</code>)，然后通过 Pandoc 将 Markdown 编译成其他输出格式（如 LaTeX 或 HTML）。这个过程由 <strong>rmarkdown</strong> 软件包自动完成。你不需要单独安装 <strong>knitr</strong> 或 <strong>rmarkdown</strong>，因为它们是 <strong>bookdown</strong> 的必需软件包，安装 <strong>bookdown</strong> 时会自动安装。但是，Pandoc 不是 R 软件包，因此在安装 <strong>bookdown</strong> 时不会自动安装。你可以按照 Pandoc 主页 (<a href="http://pandoc.org" class="uri">http://pandoc.org</a>) 上的安装说明安装 Pandoc，但是如果你使用 RStudio IDE，实际上不需要单独安装 Pandoc，因为 RStudio 包含一个 Pandoc 的副本。Pandoc 版本号可通过以下方式获得：</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="pandoc.html#cb150-1" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">pandoc_version</span>()</span>
 <span id="cb150-2"><a href="pandoc.html#cb150-2" tabindex="-1"></a><span class="do">## [1] &#39;3.1&#39;</span></span></code></pre></div>
-<p>  如果你发现这个版本太低了，并且一些 Pandoc 功能特性只在更高版本中提供，你可以安装更高版本的 Pandoc，之后 <strong>rmarkdown</strong> 将会调用更高版本的 Pandoc，而不是内置的版本。</p>
+<p>如果你发现这个版本太低了，并且一些 Pandoc 功能特性只在更高版本中提供，你可以安装更高版本的 Pandoc，之后 <strong>rmarkdown</strong> 将会调用更高版本的 Pandoc，而不是内置的版本。</p>
 </div>
             </section>
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>第 3 章 输出格式 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="第 3 章 输出格式 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,7 +308,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="output-formats" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">第 3 章</span> 输出格式<a href="output-formats.html#output-formats" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>  <strong>bookdown</strong> 软件包主要支持三种类型的输出格式：HTML、LaTeX/PDF 和电子书。在本章中，我们将介绍这些格式的可能的配置项。输出格式可以在书籍的第一个 Rmd 文件中的 YAML 元数据中指定，也可以在书籍根目录下名为 <code>_output.yml</code> 的单独 YAML 文件中指定。以下是前者的简要示例（输出格式在 YAML 元数据中的 <code>output</code> 字段中指定）：</p>
+<p><strong>bookdown</strong> 软件包主要支持三种类型的输出格式：HTML、LaTeX/PDF 和电子书。在本章中，我们将介绍这些格式的可能的配置项。输出格式可以在书籍的第一个 Rmd 文件中的 YAML 元数据中指定，也可以在书籍根目录下名为 <code>_output.yml</code> 的单独 YAML 文件中指定。以下是前者的简要示例（输出格式在 YAML 元数据中的 <code>output</code> 字段中指定）：</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb68-1"><a href="output-formats.html#cb68-1" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb68-2"><a href="output-formats.html#cb68-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;一本令人印象深刻的书&quot;</span></span>
 <span id="cb68-3"><a href="output-formats.html#cb68-3" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;李雷和韩梅梅&quot;</span></span>
@@ -324,7 +325,7 @@ div.csl-indent {
 <span id="cb68-14"><a href="output-formats.html#cb68-14" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> toc.css</span></span>
 <span id="cb68-15"><a href="output-formats.html#cb68-15" tabindex="-1"></a><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> book</span></span>
 <span id="cb68-16"><a href="output-formats.html#cb68-16" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
-<p>  这是 <code>_output.yml</code> 的示例：</p>
+<p>这是 <code>_output.yml</code> 的示例：</p>
 <div class="sourceCode" id="cb69"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb69-1"><a href="output-formats.html#cb69-1" tabindex="-1"></a><span class="at">bookdown:</span><span class="fu">:gitbook</span><span class="kw">:</span></span>
 <span id="cb69-2"><a href="output-formats.html#cb69-2" tabindex="-1"></a><span class="at">  </span><span class="fu">lib_dir</span><span class="kw">:</span><span class="at"> assets</span></span>
 <span id="cb69-3"><a href="output-formats.html#cb69-3" tabindex="-1"></a><span class="at">  </span><span class="fu">split_by</span><span class="kw">:</span><span class="at"> section</span></span>
@@ -335,7 +336,7 @@ div.csl-indent {
 <span id="cb69-8"><a href="output-formats.html#cb69-8" tabindex="-1"></a><span class="at">  </span><span class="fu">keep_tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb69-9"><a href="output-formats.html#cb69-9" tabindex="-1"></a><span class="at">bookdown:</span><span class="fu">:html_book</span><span class="kw">:</span></span>
 <span id="cb69-10"><a href="output-formats.html#cb69-10" tabindex="-1"></a><span class="at">  </span><span class="fu">css</span><span class="kw">:</span><span class="at"> toc.css</span></span></code></pre></div>
-<p>  在这种情况下，所有格式配置都应该在顶层，而不是在 <code>output</code> 字段下。在 <code>_output.yml</code> 文件中你不需要这三个破折号 <code>---</code>。</p>
+<p>在这种情况下，所有格式配置都应该在顶层，而不是在 <code>output</code> 字段下。在 <code>_output.yml</code> 文件中你不需要这三个破折号 <code>---</code>。</p>
 </div>
             </section>
 

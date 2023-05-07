@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>B.1 knitr | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="B.1 knitr | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,24 +308,24 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="knitr" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">B.1</span> knitr<a href="knitr.html#knitr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  <strong>knitr</strong> 软件包是基于“文学编程”<span class="citation">(<a href="#ref-knuth1984">Knuth 1984</a>)</span>的思想设计的，它允许你将程序代码与源文档中的文本混合在一起。当 <strong>knitr</strong> 编译文档时，将提取并执行程序代码（以代码块为单位），程序输出将与输出文档中的原始文本一起显示。我们在第 <a href="r-code.html#r-code">2.3</a> 节中介绍了基本的语法。</p>
-<p>  R Markdown 不是 <strong>knitr</strong> 支持的唯一源格式。<strong>knitr</strong> 的基本思想可应用于其他计算和创作语言。例如，<strong>knitr</strong>还支持 R 和 LaTeX 的组合（<code>*.rnw</code>文档），以及 R + HTML (<code>*.RtML</code>) 等。你也可以在 <strong>knitr</strong> 中 使用其他计算语言，如 C++、Python、SQL 等。下面是一个简单的例子，你可以在 <a href="http://rmarkdown.rstudio.com/authoring_knitr_engines.html" class="uri">http://rmarkdown.rstudio.com/authoring_knitr_engines.html</a> 中了解更多信息。</p>
+<p><strong>knitr</strong> 软件包是基于“文学编程”<span class="citation">(<a href="#ref-knuth1984">Knuth 1984</a>)</span>的思想设计的，它允许你将程序代码与源文档中的文本混合在一起。当 <strong>knitr</strong> 编译文档时，将提取并执行程序代码（以代码块为单位），程序输出将与输出文档中的原始文本一起显示。我们在第 <a href="r-code.html#r-code">2.3</a> 节中介绍了基本的语法。</p>
+<p>R Markdown 不是 <strong>knitr</strong> 支持的唯一源格式。<strong>knitr</strong> 的基本思想可应用于其他计算和创作语言。例如，<strong>knitr</strong>还支持 R 和 LaTeX 的组合（<code>*.rnw</code>文档），以及 R + HTML (<code>*.RtML</code>) 等。你也可以在 <strong>knitr</strong> 中 使用其他计算语言，如 C++、Python、SQL 等。下面是一个简单的例子，你可以在 <a href="http://rmarkdown.rstudio.com/authoring_knitr_engines.html" class="uri">http://rmarkdown.rstudio.com/authoring_knitr_engines.html</a> 中了解更多信息。</p>
 <div class="sourceCode" id="cb156"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb156-1"><a href="knitr.html#cb156-1" tabindex="-1"></a><span class="in">```{python}</span></span>
 <span id="cb156-2"><a href="knitr.html#cb156-2" tabindex="-1"></a><span class="in">x = &#39;Hello, Python World!&#39;</span></span>
 <span id="cb156-3"><a href="knitr.html#cb156-3" tabindex="-1"></a><span class="in">print(x.split(&#39; &#39;))</span></span>
 <span id="cb156-4"><a href="knitr.html#cb156-4" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>  Python 用户可能熟悉 IPython 或 Jupyter Notebooks (<a href="https://jupyter.org" class="uri">https://jupyter.org</a>)。事实上，R Markdown 也可以作为笔记本使用，并有一些额外的优势；有关这方面详细信息，请参阅这篇博客文章：<a href="https://blog.rstudio.org/2016/10/05/r-notebooks/" class="uri">https://blog.rstudio.org/2016/10/05/r-notebooks/</a>。</p>
-<p>  如果要在文档中显示文本形式的代码块，可以在块头部之前添加一个内联表达式，该表达式生成一个空字符串 (<code>`r ''`</code>)，并将代码块用在四个反引号包裹起来，<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>例如：</p>
+<p>Python 用户可能熟悉 IPython 或 Jupyter Notebooks (<a href="https://jupyter.org" class="uri">https://jupyter.org</a>)。事实上，R Markdown 也可以作为笔记本使用，并有一些额外的优势；有关这方面详细信息，请参阅这篇博客文章：<a href="https://blog.rstudio.org/2016/10/05/r-notebooks/" class="uri">https://blog.rstudio.org/2016/10/05/r-notebooks/</a>。</p>
+<p>如果要在文档中显示文本形式的代码块，可以在块头部之前添加一个内联表达式，该表达式生成一个空字符串 (<code>`r ''`</code>)，并将代码块用在四个反引号包裹起来，<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>例如：</p>
 <div class="sourceCode" id="cb157"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb157-1"><a href="knitr.html#cb157-1" tabindex="-1"></a><span class="in">````</span></span>
 <span id="cb157-2"><a href="knitr.html#cb157-2" tabindex="-1"></a><span class="in">`r &#39;&#39;````{r}</span></span>
 <span id="cb157-3"><a href="knitr.html#cb157-3" tabindex="-1"></a><span class="in"># a literal code chunk</span></span>
 <span id="cb157-4"><a href="knitr.html#cb157-4" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb157-5"><a href="knitr.html#cb157-5" tabindex="-1"></a><span class="in">````</span></span></code></pre></div>
-<p>  当文档被编译后，内联表达式将会消失，你会看到：</p>
+<p>当文档被编译后，内联表达式将会消失，你会看到：</p>
 <div class="sourceCode" id="cb158"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb158-1"><a href="knitr.html#cb158-1" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb158-2"><a href="knitr.html#cb158-2" tabindex="-1"></a><span class="in"># a literal code chunk</span></span>
 <span id="cb158-3"><a href="knitr.html#cb158-3" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>  编译文档时通常不需要直接调用 <strong>knitr</strong> 函数，因为 <strong>rmarkdown</strong> 会调用 <strong>knitr</strong>。如果你希望编译源文档而不进一步将其转换为其他格式，可以使用 <code>knitr::knit()</code> 函数。</p>
+<p>编译文档时通常不需要直接调用 <strong>knitr</strong> 函数，因为 <strong>rmarkdown</strong> 会调用 <strong>knitr</strong>。如果你希望编译源文档而不进一步将其转换为其他格式，可以使用 <code>knitr::knit()</code> 函数。</p>
 </div>
 <h3>参考文献<a href="参考文献.html#参考文献" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">

@@ -4,52 +4,52 @@
 
 # 软件工具 {#software-tools}
 
-&emsp;&emsp;对于那些不熟悉如何使用 R Markdown 所需的软件包的读者，我们将简要介绍这些软件包的安装和维护。
+对于那些不熟悉如何使用 R Markdown 所需的软件包的读者，我们将简要介绍这些软件包的安装和维护。
 
 ## R 和 R 软件包
 
-&emsp;&emsp;R 能够从任何一个 CRAN (the Comprehensive R Archive Network) 镜像站中下载和安装，例如 <https://cran.rstudio.com>。请注意每年都会有一些 R 的新版本发布，你可能需要偶尔升级 R。
+R 能够从任何一个 CRAN (the Comprehensive R Archive Network) 镜像站中下载和安装，例如 <https://cran.rstudio.com>。请注意每年都会有一些 R 的新版本发布，你可能需要偶尔升级 R。
 
-&emsp;&emsp;为了安装 **bookdown** 阮家堡，你可以在 R 中输入：
+为了安装 **bookdown** 阮家堡，你可以在 R 中输入：
 
 ```{r eval=FALSE}
 install.packages("bookdown")
 ```
 
-&emsp;&emsp;这将安装所有必需的 R 软件包。如果你不太关心这些软件包是否实际用于编译你的书籍（例如 **htmlwidgets**），也可以选择安装所有可选的软件包：
+这将安装所有必需的 R 软件包。如果你不太关心这些软件包是否实际用于编译你的书籍（例如 **htmlwidgets**），也可以选择安装所有可选的软件包：
 
 ```{r eval=FALSE}
 install.packages("bookdown", dependencies = TRUE)
 ```
 
-&emsp;&emsp;如果想体验 GitHub 上 **bookdown** 的开发版本，需要首先安装 **devtools**：
+如果想体验 GitHub 上 **bookdown** 的开发版本，需要首先安装 **devtools**：
 
 ```{r eval=FALSE}
 if (!requireNamespace('devtools')) install.packages('devtools')
 devtools::install_github('rstudio/bookdown')
 ```
 
-&emsp;&emsp;R 软件包同样也经常在 CRAN 或 GitHub 上不断更新，因此你可能需要偶尔地更新它们：
+R 软件包同样也经常在 CRAN 或 GitHub 上不断更新，因此你可能需要偶尔地更新它们：
 
 ```{r eval=FALSE}
 update.packages(ask = FALSE)
 ```
 
-&emsp;&emsp;尽管这不是必须的，但当你在处理与 R 相关的项目时，RStudio IDE 能够使很多事情变得更加简单。RStudio IDE 可以从 <https://www.posit.co> 下载。
+尽管这不是必须的，但当你在处理与 R 相关的项目时，RStudio IDE 能够使很多事情变得更加简单。RStudio IDE 可以从 <https://www.posit.co> 下载。
 
 ## Pandoc
 
-&emsp;&emsp;R Markdown 文档 (`*.Rmd`) 首先通过 **knitr** 软件包编译成 Markdown (`*.md`)，然后通过 Pandoc 将 Markdown 编译成其他输出格式（如 LaTeX 或 HTML）。\index{Pandoc}这个过程由 **rmarkdown** 软件包自动完成。你不需要单独安装 **knitr** 或 **rmarkdown**，因为它们是 **bookdown** 的必需软件包，安装 **bookdown** 时会自动安装。但是，Pandoc 不是 R 软件包，因此在安装 **bookdown** 时不会自动安装。你可以按照 Pandoc 主页 (<http://pandoc.org>) 上的安装说明安装 Pandoc，但是如果你使用 RStudio IDE，实际上不需要单独安装 Pandoc，因为 RStudio 包含一个 Pandoc 的副本。Pandoc 版本号可通过以下方式获得：
+R Markdown 文档 (`*.Rmd`) 首先通过 **knitr** 软件包编译成 Markdown (`*.md`)，然后通过 Pandoc 将 Markdown 编译成其他输出格式（如 LaTeX 或 HTML）。\index{Pandoc}这个过程由 **rmarkdown** 软件包自动完成。你不需要单独安装 **knitr** 或 **rmarkdown**，因为它们是 **bookdown** 的必需软件包，安装 **bookdown** 时会自动安装。但是，Pandoc 不是 R 软件包，因此在安装 **bookdown** 时不会自动安装。你可以按照 Pandoc 主页 (<http://pandoc.org>) 上的安装说明安装 Pandoc，但是如果你使用 RStudio IDE，实际上不需要单独安装 Pandoc，因为 RStudio 包含一个 Pandoc 的副本。Pandoc 版本号可通过以下方式获得：
 
 ```{r collapse=TRUE}
 rmarkdown::pandoc_version()
 ```
 
-&emsp;&emsp;如果你发现这个版本太低了，并且一些 Pandoc 功能特性只在更高版本中提供，你可以安装更高版本的 Pandoc，之后 **rmarkdown** 将会调用更高版本的 Pandoc，而不是内置的版本。
+如果你发现这个版本太低了，并且一些 Pandoc 功能特性只在更高版本中提供，你可以安装更高版本的 Pandoc，之后 **rmarkdown** 将会调用更高版本的 Pandoc，而不是内置的版本。
 
 ## LaTeX
 
-&emsp;&emsp;只有当你想要将你的书籍转为 PDF 时，你才需要 LaTeX\index{LaTeX}。你可以查阅 <https://www.latex-project.org/get/> 以获取更多关于 LaTeX 它的安装的信息，但是我们强烈推荐你安装名为 [TinyTeX](https://yihui.org/tinytex/) 的轻量级跨平台 LaTeX 发行版，它是基于 TeX Live 构建的。TinyTeX 能够通过 R 软件包 **tinytex** 轻松安装（安装 **bookdown** 时将自动安装）：
+只有当你想要将你的书籍转为 PDF 时，你才需要 LaTeX\index{LaTeX}。你可以查阅 <https://www.latex-project.org/get/> 以获取更多关于 LaTeX 它的安装的信息，但是我们强烈推荐你安装名为 [TinyTeX](https://yihui.org/tinytex/) 的轻量级跨平台 LaTeX 发行版，它是基于 TeX Live 构建的。TinyTeX 能够通过 R 软件包 **tinytex** 轻松安装（安装 **bookdown** 时将自动安装）：
 
 ```{r, eval=FALSE}
 tinytex::install_tinytex()
@@ -74,9 +74,9 @@ Error: pandoc document conversion failed with error 43
 Execution halted
 ```
 
-&emsp;&emsp;上面的错误信息表示你使用了一个包含 `titling.sty` 的 LaTeX 软件包，但它并没有被安装。LaTeX 软件包名称通常是 `*.sty` 这样的文件名格式，因此在本例中，你可以尝试安装 `titling` 软件包。如果你使用带有 R Markdown 的 TinyTeX，丢失的 LaTeX 软件包将自动安装，因此你无需担心此类问题。
+上面的错误信息表示你使用了一个包含 `titling.sty` 的 LaTeX 软件包，但它并没有被安装。LaTeX 软件包名称通常是 `*.sty` 这样的文件名格式，因此在本例中，你可以尝试安装 `titling` 软件包。如果你使用带有 R Markdown 的 TinyTeX，丢失的 LaTeX 软件包将自动安装，因此你无需担心此类问题。
 
-&emsp;&emsp;LaTeX 发行版和其软件包也不时会进行更新，你可以考虑更新它们，特别是当您遇到 LaTeX 问题时。你可以通过以下方式找到 LaTeX 发行版的版本：
+LaTeX 发行版和其软件包也不时会进行更新，你可以考虑更新它们，特别是当您遇到 LaTeX 问题时。你可以通过以下方式找到 LaTeX 发行版的版本：
 
 ```{r include=FALSE}
 res <- base::system('pdflatex --version', intern = TRUE)
@@ -89,13 +89,13 @@ system('pdflatex --version')
 `r res`
 ```
 
-&emsp;&emsp;你可以运行如下代码来更新 TinyTeX：
+你可以运行如下代码来更新 TinyTeX：
 
 ```{r eval=FALSE}
 tinytex::tlmgr_update()
 ```
 
-&emsp;&emsp;随着时间的推移，你可能也需要升级 TinyTeX（否则你无法安装或更新任何 LaTeX 软件包），在这种情况下你需要重新安装 TinyTeX：
+随着时间的推移，你可能也需要升级 TinyTeX（否则你无法安装或更新任何 LaTeX 软件包），在这种情况下你需要重新安装 TinyTeX：
 
 ```{r eval=FALSE}
 tinytex::reinstall_tinytex()

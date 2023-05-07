@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -150,6 +150,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/toc.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 
 <style type = "text/css">
 .main-container {
@@ -310,13 +311,13 @@ details > summary {
 <div class="col-sm-12">
 <div id="r-code" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> R 代码</h2>
-<p>  R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 <code>`r R_CODE`</code>，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 <code>{r}</code>，在 <code>{}</code> 内有（可选的）区块选项，例如：</p>
+<p>R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 <code>`r R_CODE`</code>，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 <code>{r}</code>，在 <code>{}</code> 内有（可选的）区块选项，例如：</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb42-1"><a href="2.3-r-code.html#cb42-1" tabindex="-1"></a><span class="in">```{r chunk-label, echo = FALSE, fig.cap = &#39;A figure caption.&#39;}</span></span>
 <span id="cb42-2"><a href="2.3-r-code.html#cb42-2" tabindex="-1"></a><span class="in">1 + 1</span></span>
 <span id="cb42-3"><a href="2.3-r-code.html#cb42-3" tabindex="-1"></a><span class="in">rnorm(10)  # 10 个随机数</span></span>
 <span id="cb42-4"><a href="2.3-r-code.html#cb42-4" tabindex="-1"></a><span class="in">plot(dist ~ speed, cars)  # 绘制散点图</span></span>
 <span id="cb42-5"><a href="2.3-r-code.html#cb42-5" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
-<p>  有关 <strong>knitr</strong> 区块选项的详细信息，请参阅 <span class="citation">Xie (<a href="#ref-xie2015">2015</a>)</span> 或网页 <a href="http://yihui.org/knitr/options" class="uri">http://yihui.org/knitr/options</a>。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 <a href="4.4-configuration.html#configuration">4.4</a> 节中的 <code>before_chapter_script</code> 和 <code>after_chapter_script</code>。</p>
+<p>有关 <strong>knitr</strong> 区块选项的详细信息，请参阅 <span class="citation">Xie (<a href="#ref-xie2015">2015</a>)</span> 或网页 <a href="http://yihui.org/knitr/options" class="uri">http://yihui.org/knitr/options</a>。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 <a href="4.4-configuration.html#configuration">4.4</a> 节中的 <code>before_chapter_script</code> 和 <code>after_chapter_script</code>。</p>
 </div>
 <h3>参考文献</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">

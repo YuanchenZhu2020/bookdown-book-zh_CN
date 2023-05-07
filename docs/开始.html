@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1.2 开始 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1.2 开始 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,7 +308,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="开始" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> 开始<a href="开始.html#开始" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  对于初学者来说，使用 R Markdown 和 <strong>bookdown</strong> 开始创作书籍的最简单的方法是 GitHub 上的示例 <code>bookdown-demo</code>：</p>
+<p>对于初学者来说，使用 R Markdown 和 <strong>bookdown</strong> 开始创作书籍的最简单的方法是 GitHub 上的示例 <code>bookdown-demo</code>：</p>
 <ol style="list-style-type: decimal">
 <li><p>下载 GitHub 存储库 <a href="https://github.com/rstudio/bookdown-demo" class="uri">https://github.com/rstudio/bookdown-demo</a> 作为 <a href="https://github.com/rstudio/bookdown-demo/archive/main.zip">Zip文件</a>，然后在本地解压该文件。</p></li>
 <li><p>安装 RStudio IDE。注意，你需要版本号高于 1.0.0 的 RStudio。如果你的 RStudio 版本低于 1.0.0，请<a href="https://posit.co/download/rstudio-desktop/">下载最新版本</a>。</p></li>
@@ -323,8 +324,8 @@ div.csl-indent {
 <div class="rmdnote">
 如果你打算把你的书打印成 PDF 格式，你将需要一个 LaTeX 发行版。我们建议你安装 TinyTeX（包含 Xeletex）：<a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>。
 </div>
-<p>  现在你应该可以在 RStudio viewer 中看到本书样例的索引页。你可以添加或更改 R Markdown 文件，然后再次点击 <code>Knit</code> 按钮预览书籍。如果你不想使用 RStudio，也可以通过命令行编译书籍。详见下一节。</p>
-<p>  尽管你在 <code>bookdown-demo</code> 示例中看到了不少文件，但大多数文件对于一本书来说并不是必需的。如果你对巨大的文件数量感到不知所措，可以使用这个最小的示例，它实际上是一个文件 <code>index.Rmd</code>：<a href="https://github.com/yihui/bookdown-minimal" class="uri">https://github.com/yihui/bookdown-minimal</a>。<code>bookdown-demo</code>示例包含一些你之后可能需要学习的高级设置，例如如何自定义 LaTeX 序言 (preamble)、调整 CSS 以及在 GitHub 上构建图书等。</p>
+<p>现在你应该可以在 RStudio viewer 中看到本书样例的索引页。你可以添加或更改 R Markdown 文件，然后再次点击 <code>Knit</code> 按钮预览书籍。如果你不想使用 RStudio，也可以通过命令行编译书籍。详见下一节。</p>
+<p>尽管你在 <code>bookdown-demo</code> 示例中看到了不少文件，但大多数文件对于一本书来说并不是必需的。如果你对巨大的文件数量感到不知所措，可以使用这个最小的示例，它实际上是一个文件 <code>index.Rmd</code>：<a href="https://github.com/yihui/bookdown-minimal" class="uri">https://github.com/yihui/bookdown-minimal</a>。<code>bookdown-demo</code>示例包含一些你之后可能需要学习的高级设置，例如如何自定义 LaTeX 序言 (preamble)、调整 CSS 以及在 GitHub 上构建图书等。</p>
 </div>
             </section>
 

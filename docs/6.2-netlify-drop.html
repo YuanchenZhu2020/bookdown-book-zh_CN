@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -150,6 +150,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/toc.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 
 <style type = "text/css">
 .main-container {
@@ -310,51 +311,51 @@ details > summary {
 <div class="col-sm-12">
 <div id="netlify-drop" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Netlify Drop</h2>
-<p>  Netlify (<a href="https://netlify.com" class="uri">https://netlify.com</a>) 是一个为静态网站提供云托管和无服务器后端服务的平台。Netlify 提供免费和付费两种服务，但他们也提供一种称为 Netlify Drop (<a href="https://app.netlify.com/drop" class="uri">https://app.netlify.com/drop</a>) 的服务，这是一个免费的发布书籍的选项，并且不需要拥有 Netlify 帐户就能够使用。该服务不需要你的 <strong>bookdown</strong> 项目位于受版本控制的存储库中。你所需要的只是一个可以在本地构建的 <strong>bookdown</strong> 项目。</p>
+<p>Netlify (<a href="https://netlify.com" class="uri">https://netlify.com</a>) 是一个为静态网站提供云托管和无服务器后端服务的平台。Netlify 提供免费和付费两种服务，但他们也提供一种称为 Netlify Drop (<a href="https://app.netlify.com/drop" class="uri">https://app.netlify.com/drop</a>) 的服务，这是一个免费的发布书籍的选项，并且不需要拥有 Netlify 帐户就能够使用。该服务不需要你的 <strong>bookdown</strong> 项目位于受版本控制的存储库中。你所需要的只是一个可以在本地构建的 <strong>bookdown</strong> 项目。</p>
 <div id="构建和部署的工作流水线" class="section level3" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> 构建和部署的工作流水线</h3>
-<p>  这种发布方法设置了以下事件流：</p>
+<p>这种发布方法设置了以下事件流：</p>
 <ol style="list-style-type: decimal">
 <li>从本地 <strong>bookdown</strong> 项目开始。</li>
 <li>在本地将书籍构建到所选的输出目录中（默认情况下为<code>_book/</code>）。</li>
 <li>访问 Netlify Drop (<a href="https://app.netlify.com/drop" class="uri">https://app.netlify.com/drop</a>)，将输出目录拖放到 Netlify 基于浏览器的用户界面中。</li>
 <li>对书籍进行修改，在本地重新构建，然后再次将输出目录拖放到 Netlify 中进行更新。</li>
 </ol>
-<p>  以上内容仅为概述——请继续阅读以了解分步骤的说明。</p>
+<p>以上内容仅为概述——请继续阅读以了解分步骤的说明。</p>
 </div>
 <div id="开始之前" class="section level3" number="6.2.2">
 <h3><span class="header-section-number">6.2.2</span> 开始之前</h3>
-<p>  工作流水线从建立本地 <strong>bookdown</strong> 项目开始。项目并不需要放在 GitHub 或其它受版本控制的储存库内。</p>
-<p>  如果你没有线程的书籍，可以创建一个简单的 <strong>bookdown</strong> HTML 书籍来代替练习。有关如何在 RStudio 中创建新书的内容，请见图 <a href="3.1-html.html#fig:new-bs4-book">3.3</a>；如果你不使用 RStudio，可以在 R console 中使用函数 <code>bookdown::create_gitbook()</code> 或 <code>bookdown::create_bs4_book()</code>。</p>
+<p>工作流水线从建立本地 <strong>bookdown</strong> 项目开始。项目并不需要放在 GitHub 或其它受版本控制的储存库内。</p>
+<p>如果你没有线程的书籍，可以创建一个简单的 <strong>bookdown</strong> HTML 书籍来代替练习。有关如何在 RStudio 中创建新书的内容，请见图 <a href="3.1-html.html#fig:new-bs4-book">3.3</a>；如果你不使用 RStudio，可以在 R console 中使用函数 <code>bookdown::create_gitbook()</code> 或 <code>bookdown::create_bs4_book()</code>。</p>
 </div>
 <div id="构建书籍" class="section level3" number="6.2.3">
 <h3><span class="header-section-number">6.2.3</span> 构建书籍</h3>
-<p>  在本地从你的 <strong>bookdown</strong> 项目中构建书籍，你可以使用第 <a href="5.1-build-the-book.html#build-the-book">5.1</a> 章中你喜欢的任何方法。</p>
+<p>在本地从你的 <strong>bookdown</strong> 项目中构建书籍，你可以使用第 <a href="5.1-build-the-book.html#build-the-book">5.1</a> 章中你喜欢的任何方法。</p>
 </div>
 <div id="部署网站" class="section level3" number="6.2.4">
 <h3><span class="header-section-number">6.2.4</span> 部署网站</h3>
-<p>  转到 Netlify Drop (<a href="https://app.netlify.com/drop">netlify.com/drop</a>)，你应该能够在网页上看到一个方框，它高数你“将站点文件夹拖放到此处”。</p>
-<p>  接下来，将 <strong>bookdown</strong> 项目的输出目录（默认情况下为 <code>_book/</code>，除非你在 <code>_bookdown.yml</code> 文件中更改了这项设置）拖放到 Web 浏览器中的这个方框中。你应该会看到你的书籍使用了 <code>https://random-word-12345.netlify.com</code> 形式的随机子域名进行快速部署。</p>
-<p>  你还会看到无人认领的网站会在 24 小时后被删除的通知。你可以注册一个 Netlify 账户来声明你的网站并使其永久在线。</p>
+<p>转到 Netlify Drop (<a href="https://app.netlify.com/drop">netlify.com/drop</a>)，你应该能够在网页上看到一个方框，它高数你“将站点文件夹拖放到此处”。</p>
+<p>接下来，将 <strong>bookdown</strong> 项目的输出目录（默认情况下为 <code>_book/</code>，除非你在 <code>_bookdown.yml</code> 文件中更改了这项设置）拖放到 Web 浏览器中的这个方框中。你应该会看到你的书籍使用了 <code>https://random-word-12345.netlify.com</code> 形式的随机子域名进行快速部署。</p>
+<p>你还会看到无人认领的网站会在 24 小时后被删除的通知。你可以注册一个 Netlify 账户来声明你的网站并使其永久在线。</p>
 </div>
 <div id="可选更新站点" class="section level3" number="6.2.5">
 <h3><span class="header-section-number">6.2.5</span> <em>可选：更新站点</em></h3>
-<p>  注册 Netlify 后，你<em>可以</em>更新这一类的网站，但它需要手动更新。访问 Netlify.com 并导航找到你的站点，然后单击“部署 (Deploys)”。你将看到一个方框，如图 <a href="6.2-netlify-drop.html#fig:netlify-drag-drop">6.1</a> 所示，这表示你可以拖放站点文件夹以更新站点（你可能需要滚动到此页面底部）。</p>
+<p>注册 Netlify 后，你<em>可以</em>更新这一类的网站，但它需要手动更新。访问 Netlify.com 并导航找到你的站点，然后单击“部署 (Deploys)”。你将看到一个方框，如图 <a href="6.2-netlify-drop.html#fig:netlify-drag-drop">6.1</a> 所示，这表示你可以拖放站点文件夹以更新站点（你可能需要滚动到此页面底部）。</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:netlify-drag-drop"></span>
 <img src="images/netlify-drag-drop-update.png" alt="在 Netlify 上拖放部署的站点更新方框的屏幕截图。"  />
 <p class="caption">
 图 6.1: 在 Netlify 上拖放部署的站点更新方框的屏幕截图。
 </p>
 </div>
-<p>  编辑你的书籍，再次在本地进行构建，然后将输出目录再次拖放到上传位置。</p>
+<p>编辑你的书籍，再次在本地进行构建，然后将输出目录再次拖放到上传位置。</p>
 </div>
 <div id="netlify-subdomain" class="section level3" number="6.2.6">
 <h3><span class="header-section-number">6.2.6</span> <em>可选：更改默认子域名</em></h3>
-<p>  导航到 Netlify.com 上的站点登录页 (<a href="https://app.netlify.com" class="uri">https://app.netlify.com</a>)，单击<em>概述 (Overview) &gt; 站点设置 (Site Settings)</em>。在<em>站点信息 (Site information)</em>下单击<em>更改站点名称 (Change site name)</em>并将其更新为你想要的名称。如果想使用自己的域名而不是 Netlify 的子域名，请阅读以下文档：<a href="https://docs.netlify.com/domains-https/custom-domains/" class="uri">https://docs.netlify.com/domains-https/custom-domains/</a>。</p>
+<p>导航到 Netlify.com 上的站点登录页 (<a href="https://app.netlify.com" class="uri">https://app.netlify.com</a>)，单击<em>概述 (Overview) &gt; 站点设置 (Site Settings)</em>。在<em>站点信息 (Site information)</em>下单击<em>更改站点名称 (Change site name)</em>并将其更新为你想要的名称。如果想使用自己的域名而不是 Netlify 的子域名，请阅读以下文档：<a href="https://docs.netlify.com/domains-https/custom-domains/" class="uri">https://docs.netlify.com/domains-https/custom-domains/</a>。</p>
 </div>
 <div id="缺点和备选方案" class="section level3" number="6.2.7">
 <h3><span class="header-section-number">6.2.7</span> 缺点和备选方案</h3>
-<p>  这个工作流非常适合快速共享书籍原型。但是，如果你选择不声明你的站点，该链接将在 24 小时后过期。即使你申请了网站并设置了 Netlify 帐户，这个工作流也不适合正在积极编辑或合作创作的书籍，因为每次更新书籍的本地版本时，你都需要手动将书籍上传到 Netlify。使用这种方法也无法获得版本控制的好处。</p>
+<p>这个工作流非常适合快速共享书籍原型。但是，如果你选择不声明你的站点，该链接将在 24 小时后过期。即使你申请了网站并设置了 Netlify 帐户，这个工作流也不适合正在积极编辑或合作创作的书籍，因为每次更新书籍的本地版本时，你都需要手动将书籍上传到 Netlify。使用这种方法也无法获得版本控制的好处。</p>
 </div>
 </div>
 <p style="text-align: center;">

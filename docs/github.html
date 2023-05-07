@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6.3 GitHub | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6.3 GitHub | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,16 +308,16 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="github" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> GitHub<a href="github.html#github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  你可以使用 GitHub Pages (<a href="https://pages.github.com" class="uri">https://pages.github.com</a>) 在 GitHub 上免费托管你的书籍。GitHub 支持 Jekyll (<a href="http://jekyllrb.com" class="uri">http://jekyllrb.com</a>), 它是一个静态网站生成器，能够将一系列 Markdown 文件转换为网站。这可能是 GitHub Pages 最常见的用法，但是 GitHub 还支持任意静态 HTML 文件，因此你可以在 GitHub 上托管书籍的 HTML 输出文件。其关键是创建一个隐藏文件 <code>.nojekyll</code>，它告诉 GitHub 你的网站不是通过 Jekyll 构建的，因为 <strong>bookdown</strong> 的 HTML 输出文件已经是一个独立的网站。</p>
+<p>你可以使用 GitHub Pages (<a href="https://pages.github.com" class="uri">https://pages.github.com</a>) 在 GitHub 上免费托管你的书籍。GitHub 支持 Jekyll (<a href="http://jekyllrb.com" class="uri">http://jekyllrb.com</a>), 它是一个静态网站生成器，能够将一系列 Markdown 文件转换为网站。这可能是 GitHub Pages 最常见的用法，但是 GitHub 还支持任意静态 HTML 文件，因此你可以在 GitHub 上托管书籍的 HTML 输出文件。其关键是创建一个隐藏文件 <code>.nojekyll</code>，它告诉 GitHub 你的网站不是通过 Jekyll 构建的，因为 <strong>bookdown</strong> 的 HTML 输出文件已经是一个独立的网站。</p>
 <div class="sourceCode" id="cb132"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb132-1"><a href="github.html#cb132-1" tabindex="-1"></a><span class="co"># 假设你已经初始化了一个 git 储存库，并且已经在书籍储存库的目录下</span></span>
 <span id="cb132-2"><a href="github.html#cb132-2" tabindex="-1"></a></span>
 <span id="cb132-3"><a href="github.html#cb132-3" tabindex="-1"></a><span class="co"># 创建一个隐藏文件 .nojekyll</span></span>
 <span id="cb132-4"><a href="github.html#cb132-4" tabindex="-1"></a><span class="fu">touch</span> .nojekyll</span>
 <span id="cb132-5"><a href="github.html#cb132-5" tabindex="-1"></a><span class="co"># 将其添加入 git 版本控制中，这样她就不会再 RStudio 中显示</span></span>
 <span id="cb132-6"><a href="github.html#cb132-6" tabindex="-1"></a><span class="fu">git</span> add .nojekyll</span></code></pre></div>
-<p>  如果你使用 Windows，那么可能没有 <code>touch</code> 命令，这时你可以在 R 中使用 <code>file.create('.nojekyll')</code> 来创建一个文件。</p>
-<p>  发布书籍的一种方法将书籍的 HTML 文件放入 <code>master</code> 分支中的 <code>/docs</code> 文件夹，然后从该文件夹将书籍作为 GitHub Pagse 站点发布，就像 <a href="http://bit.ly/2cvloKV">GitHub Help</a>中描述的那样。首先，在配置文件 <code>_bookdown.yml</code> 中添加一行 <code>output_dir:"docs"</code>，将书籍的输出目录设置为 <code>/docs</code>。然后，将更改推送到 GitHub ，再转到存储库的设置，在“GitHub Pages”配置项下将“Source”选项更改为“master branch/docs folder”。使用该方法时，<code>.nojekyll</code> 文件必须位于 <code>/docs</code> 文件夹中。</p>
-<p>  另一种方法是先在存储库中创建一个 <code>gh-pages</code> 分支，再构建书籍，将 HTML 输出（包括图像、CSS 和 JavaScript 文件等所有外部资源）放入该分支，然后将该分支推送到远程存储库。如果你的书籍存储库没有 <code>gh-pages</code> 分支，可以使用以下命令创建一个分支：</p>
+<p>如果你使用 Windows，那么可能没有 <code>touch</code> 命令，这时你可以在 R 中使用 <code>file.create('.nojekyll')</code> 来创建一个文件。</p>
+<p>发布书籍的一种方法将书籍的 HTML 文件放入 <code>master</code> 分支中的 <code>/docs</code> 文件夹，然后从该文件夹将书籍作为 GitHub Pagse 站点发布，就像 <a href="http://bit.ly/2cvloKV">GitHub Help</a>中描述的那样。首先，在配置文件 <code>_bookdown.yml</code> 中添加一行 <code>output_dir:"docs"</code>，将书籍的输出目录设置为 <code>/docs</code>。然后，将更改推送到 GitHub ，再转到存储库的设置，在“GitHub Pages”配置项下将“Source”选项更改为“master branch/docs folder”。使用该方法时，<code>.nojekyll</code> 文件必须位于 <code>/docs</code> 文件夹中。</p>
+<p>另一种方法是先在存储库中创建一个 <code>gh-pages</code> 分支，再构建书籍，将 HTML 输出（包括图像、CSS 和 JavaScript 文件等所有外部资源）放入该分支，然后将该分支推送到远程存储库。如果你的书籍存储库没有 <code>gh-pages</code> 分支，可以使用以下命令创建一个分支：</p>
 <div class="sourceCode" id="cb133"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb133-1"><a href="github.html#cb133-1" tabindex="-1"></a><span class="co"># 假设你已经初始化了一个 git 储存库，并且已经在书籍储存库的目录下</span></span>
 <span id="cb133-2"><a href="github.html#cb133-2" tabindex="-1"></a></span>
 <span id="cb133-3"><a href="github.html#cb133-3" tabindex="-1"></a><span class="co"># 创建一个名为 gh-pages 的分支，并清除全部文件</span></span>
@@ -329,15 +330,15 @@ div.csl-indent {
 <span id="cb133-10"><a href="github.html#cb133-10" tabindex="-1"></a></span>
 <span id="cb133-11"><a href="github.html#cb133-11" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Initial commit&quot;</span></span>
 <span id="cb133-12"><a href="github.html#cb133-12" tabindex="-1"></a><span class="fu">git</span> push origin gh-pages</span></code></pre></div>
-<p>  设置好 GIT 之后，剩下的工作可以通过脚本（Shell、R 或 Makefile，取决于你的偏好）实现自动化。总的来说，首先将书籍编译为 HTML，然后运行 git 命令将文件推送到 GitHub，但你可能不希望在本地反复手动执行这些操作，这时可以通过云来完成。由于在云上实现发布过程的完全自动化将会非常方便，因此一旦设置正确，接下来所要做的就是编写书籍并将 Rmd 源文件推送到 GitHub，你创作的书将始终在服务器端自动构建和发布。</p>
-<p>  你可以选择使用的一个云服务是 Travis CI (<a href="https://travis-ci.com" class="uri">https://travis-ci.com</a>)。 它对于 GitHub 上的共有储存库提供的服务是免费的，并且是为软件包的持续集成 (CI) 而设计的。Travis CI 能够连接到 GitHub, 即每当你推送更改到 GitHub 时，Travis 能够被触发在最新版本的储存库上运行某些命令/脚本。<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>这些命令储存在你的储存库根目录下名为 <code>.travis.yml</code> 的 YAML 文件中。它们通常用于测试软件，但实际上它们的用途十分开放，这意味着你可以在 Travis（虚拟）机器上运行任意命令。也就是说，你当然可以在 Travis 上运行自己的脚本来构建书籍。注意，Travis 目前仅支持 Ubuntu 和 Mac OS X，因此你应该对于 Linux/Unix 命令有一些基本的了解。</p>
-<p>  下一个问题是，怎样将在 Travis 中构建的书籍发布到 GitHub？大体上说，你需要授予 Travis 对你的 GitHub 储存库的写访问权限。该授权能够通过集中方式完成，对于初学者来说最简单的方式是个人访问令牌 (personal access token)。以下是你可以遵循的几个操作步骤：</p>
+<p>设置好 GIT 之后，剩下的工作可以通过脚本（Shell、R 或 Makefile，取决于你的偏好）实现自动化。总的来说，首先将书籍编译为 HTML，然后运行 git 命令将文件推送到 GitHub，但你可能不希望在本地反复手动执行这些操作，这时可以通过云来完成。由于在云上实现发布过程的完全自动化将会非常方便，因此一旦设置正确，接下来所要做的就是编写书籍并将 Rmd 源文件推送到 GitHub，你创作的书将始终在服务器端自动构建和发布。</p>
+<p>你可以选择使用的一个云服务是 Travis CI (<a href="https://travis-ci.com" class="uri">https://travis-ci.com</a>)。 它对于 GitHub 上的共有储存库提供的服务是免费的，并且是为软件包的持续集成 (CI) 而设计的。Travis CI 能够连接到 GitHub, 即每当你推送更改到 GitHub 时，Travis 能够被触发在最新版本的储存库上运行某些命令/脚本。<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>这些命令储存在你的储存库根目录下名为 <code>.travis.yml</code> 的 YAML 文件中。它们通常用于测试软件，但实际上它们的用途十分开放，这意味着你可以在 Travis（虚拟）机器上运行任意命令。也就是说，你当然可以在 Travis 上运行自己的脚本来构建书籍。注意，Travis 目前仅支持 Ubuntu 和 Mac OS X，因此你应该对于 Linux/Unix 命令有一些基本的了解。</p>
+<p>下一个问题是，怎样将在 Travis 中构建的书籍发布到 GitHub？大体上说，你需要授予 Travis 对你的 GitHub 储存库的写访问权限。该授权能够通过集中方式完成，对于初学者来说最简单的方式是个人访问令牌 (personal access token)。以下是你可以遵循的几个操作步骤：</p>
 <ol style="list-style-type: decimal">
 <li>对于你在 GitHub 上的账户创建一个 <a href="http://bit.ly/2cEBYWB">个人访问令牌 (personal access token)</a>（请确保启用“repo”作用域 (“repo” scope)，以便可以通过此令牌写入你的 GitHub 储存库）。</li>
 <li>通过命令 <code>travis encrypt</code> 将其加密并放在环境变量 <code>GITHUB_PAT</code> 里，然后储存在 <code>.travis.yml</code> 文件中。例如 <code>travis encrypt GITHUB_PAT=TOKEN</code>。如果你不知道如何安装或使用 Travis 命令行工具，只需要将这个环境变量通过 <a href="https://travis-ci.com/user/repo/settings" class="uri">https://travis-ci.com/user/repo/settings</a> 储存起来，其中 <code>user</code> 是你的 GitHub ID，<code>repo</code> 是储存库的名称。</li>
 <li>你可以使用你的 GitHub 令牌在 Travis 上克隆先前创建的这个 <code>gh-pages</code> 分支，向其添加从 R Markdown 转换而来的 HTML 输出文件（不要忘记添加图片和 CSS 样式文件），然后推送到远程储存库。</li>
 </ol>
-<p>  假设你正在 <code>master</code> 分支中（你存放 Rmd 源文件的分支），并且已经编译好书籍，放在 <code>_book</code> 目录中。接下来你可以在 Travis 中做的是：</p>
+<p>假设你正在 <code>master</code> 分支中（你存放 Rmd 源文件的分支），并且已经编译好书籍，放在 <code>_book</code> 目录中。接下来你可以在 Travis 中做的是：</p>
 <div class="sourceCode" id="cb134"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb134-1"><a href="github.html#cb134-1" tabindex="-1"></a><span class="co"># 如果你还没有进行配置的话，设置好你的用户名和邮箱</span></span>
 <span id="cb134-2"><a href="github.html#cb134-2" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">&quot;you@example.com&quot;</span></span>
 <span id="cb134-3"><a href="github.html#cb134-3" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">&quot;Your Name&quot;</span></span>
@@ -352,7 +353,7 @@ div.csl-indent {
 <span id="cb134-12"><a href="github.html#cb134-12" tabindex="-1"></a><span class="fu">git</span> add <span class="at">--all</span> <span class="pp">*</span></span>
 <span id="cb134-13"><a href="github.html#cb134-13" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Update the book&quot;</span></span>
 <span id="cb134-14"><a href="github.html#cb134-14" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-q</span> origin gh-pages</span></code></pre></div>
-<p>  变量名 <code>GITHUB_PAT</code> 和目录名 <code>book-output</code> 可以是任意名称。只要名称没有与已经存在的变量名或目录名冲突，你就可以使用喜欢的任何名字。上述脚本与我们在第 <a href="build-the-book.html#build-the-book">5.1</a> 节提到的书籍构建脚本可以放在 <code>master</code> 分支作为 as Shell 脚本。例如，你可以将它们命名为 <code>_build.sh</code> 和 <code>_deploy.sh</code>。那么，你的 <code>.travis.yml</code> 文件可能是这样的：</p>
+<p>变量名 <code>GITHUB_PAT</code> 和目录名 <code>book-output</code> 可以是任意名称。只要名称没有与已经存在的变量名或目录名冲突，你就可以使用喜欢的任何名字。上述脚本与我们在第 <a href="build-the-book.html#build-the-book">5.1</a> 节提到的书籍构建脚本可以放在 <code>master</code> 分支作为 as Shell 脚本。例如，你可以将它们命名为 <code>_build.sh</code> 和 <code>_deploy.sh</code>。那么，你的 <code>.travis.yml</code> 文件可能是这样的：</p>
 <div class="sourceCode" id="cb135"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb135-1"><a href="github.html#cb135-1" tabindex="-1"></a><span class="fu">language</span><span class="kw">:</span><span class="at"> r</span></span>
 <span id="cb135-2"><a href="github.html#cb135-2" tabindex="-1"></a><span class="fu">pandoc_version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.19.2.1</span></span>
 <span id="cb135-3"><a href="github.html#cb135-3" tabindex="-1"></a></span>
@@ -367,24 +368,24 @@ div.csl-indent {
 <span id="cb135-12"><a href="github.html#cb135-12" tabindex="-1"></a><span class="fu">script</span><span class="kw">:</span></span>
 <span id="cb135-13"><a href="github.html#cb135-13" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ./_build.sh</span></span>
 <span id="cb135-14"><a href="github.html#cb135-14" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ./_deploy.sh</span></span></code></pre></div>
-<p>  <code>language</code> 选项告诉 Travis 需要使用安装了 R 的虚拟机。<code>secure</code> 字段是加密的个人访问令牌 (personal access token )。如果你已经使用 Travis 上的 Web 界面而不是命令行工具 <code>travis encrypt</code> 保存了 <code>GITHUB_PAT</code> 变量，则可以忽略这项设置。</p>
-<p>  由于 Travis 服务主要用于检查 R 软件包，因此还需要一个（假的）<code>DESCRIPTION</code> 文件，使得书籍存储库像是一个 R 软件包一样。这个文件中唯一一个真正重要的是软件包依赖项这一配置。所有依赖项都将通过 <strong>devtools</strong> 包安装。如果依赖项在 CRAN 或 BioConductor 上，只需在 <code>DESCRIPTION</code> 文件的 <code>Imports</code> 字段中列出即可。如果它在 GitHub 上，您可以使用 <code>Remotes</code> 字段列出它的存储库名称。下面展示了一个例子：</p>
+<p><code>language</code> 选项告诉 Travis 需要使用安装了 R 的虚拟机。<code>secure</code> 字段是加密的个人访问令牌 (personal access token )。如果你已经使用 Travis 上的 Web 界面而不是命令行工具 <code>travis encrypt</code> 保存了 <code>GITHUB_PAT</code> 变量，则可以忽略这项设置。</p>
+<p>由于 Travis 服务主要用于检查 R 软件包，因此还需要一个（假的）<code>DESCRIPTION</code> 文件，使得书籍存储库像是一个 R 软件包一样。这个文件中唯一一个真正重要的是软件包依赖项这一配置。所有依赖项都将通过 <strong>devtools</strong> 包安装。如果依赖项在 CRAN 或 BioConductor 上，只需在 <code>DESCRIPTION</code> 文件的 <code>Imports</code> 字段中列出即可。如果它在 GitHub 上，您可以使用 <code>Remotes</code> 字段列出它的存储库名称。下面展示了一个例子：</p>
 <pre class="dcf"><code>Package: placeholder
 Type: Book
 Title: Does not matter.
 Version: 0.0.1
 Imports: bookdown, ggplot2
 Remotes: rstudio/bookdown</code></pre>
-<p>  如果你使用 Travis 的 <a href="https://docs.travis-ci.com/user/workers/container-based-infrastructure/">container-based infrastructure</a>，你可以在 <code>.travis.yml</code> 中使用 <code>sudo: false</code> 启用缓存。通常你至少需要缓存两类目录：图片目录（例如 <code>_main_files</code>）以及缓存目录（例如 <code>_main_cache</code>）。如果你指定了 <strong>knitr</strong> 代码块选项 <code>fig.path</code> 和 <code>cache.path</code>，这些目录的名称可能不同，但是我强烈建议不要改变这些设置。图片和缓存目录都存放在书籍根目录中的 <code>_bookdown_files</code> 目录下。启用了 <strong>knitr</strong> 图片和缓存的 <code>.travis.yml</code> 文件可能具有如下的 <code>sudo</code> 和 <code>cache</code> 附加配置：</p>
+<p>如果你使用 Travis 的 <a href="https://docs.travis-ci.com/user/workers/container-based-infrastructure/">container-based infrastructure</a>，你可以在 <code>.travis.yml</code> 中使用 <code>sudo: false</code> 启用缓存。通常你至少需要缓存两类目录：图片目录（例如 <code>_main_files</code>）以及缓存目录（例如 <code>_main_cache</code>）。如果你指定了 <strong>knitr</strong> 代码块选项 <code>fig.path</code> 和 <code>cache.path</code>，这些目录的名称可能不同，但是我强烈建议不要改变这些设置。图片和缓存目录都存放在书籍根目录中的 <code>_bookdown_files</code> 目录下。启用了 <strong>knitr</strong> 图片和缓存的 <code>.travis.yml</code> 文件可能具有如下的 <code>sudo</code> 和 <code>cache</code> 附加配置：</p>
 <div class="sourceCode" id="cb137"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb137-1"><a href="github.html#cb137-1" tabindex="-1"></a><span class="fu">sudo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
 <span id="cb137-2"><a href="github.html#cb137-2" tabindex="-1"></a></span>
 <span id="cb137-3"><a href="github.html#cb137-3" tabindex="-1"></a><span class="fu">cache</span><span class="kw">:</span></span>
 <span id="cb137-4"><a href="github.html#cb137-4" tabindex="-1"></a><span class="at">  </span><span class="fu">packages</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
 <span id="cb137-5"><a href="github.html#cb137-5" tabindex="-1"></a><span class="at">  </span><span class="fu">directories</span><span class="kw">:</span></span>
 <span id="cb137-6"><a href="github.html#cb137-6" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> $TRAVIS_BUILD_DIR/_bookdown_files</span></span></code></pre></div>
-<p>  如果构建书籍非常耗时，你可以在 Travis 上使用上面的配置来节省时间。注意，<code>packages:yes</code> 表示安装在 Travis 上的 R 包也被缓存。</p>
-<p>  以上所有脚本和配置都可以在 <code>bookdown-demo</code> 存储库中找到：<a href="https://github.com/rstudio/bookdown-demo/" class="uri">https://github.com/rstudio/bookdown-demo/</a>。如果你将它们复制到自己的存储库中，请记住使用自己的加密变量 <code>GITHUB_PAT</code> 更改 <code>.travis.yml</code> 文件中的 <code>secure</code> 字段。</p>
-<p>  GitHub 和 Travis CI 当然不是构建和出版你的书籍的唯一选择。你可以在自己的服务器上自由地存储和发布这本书。</p>
+<p>如果构建书籍非常耗时，你可以在 Travis 上使用上面的配置来节省时间。注意，<code>packages:yes</code> 表示安装在 Travis 上的 R 包也被缓存。</p>
+<p>以上所有脚本和配置都可以在 <code>bookdown-demo</code> 存储库中找到：<a href="https://github.com/rstudio/bookdown-demo/" class="uri">https://github.com/rstudio/bookdown-demo/</a>。如果你将它们复制到自己的存储库中，请记住使用自己的加密变量 <code>GITHUB_PAT</code> 更改 <code>.travis.yml</code> 文件中的 <code>secure</code> 字段。</p>
+<p>GitHub 和 Travis CI 当然不是构建和出版你的书籍的唯一选择。你可以在自己的服务器上自由地存储和发布这本书。</p>
 </div>
 <div class="footnotes">
 <hr />

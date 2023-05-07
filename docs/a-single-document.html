@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3.4 单个文档 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3.4 单个文档 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,29 +308,29 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="a-single-document" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> 单个文档<a href="a-single-document.html#a-single-document" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  有时你可能不想写一本书，而是想写一篇长篇文章或报告。通常你要做的是使用特定的输出格式函数调用 <code>rmarkdown::render()</code>。这种情况下缺少的主要功能是图片/表格/方程的自动编号，以及对图片/表格/方程/章节的交叉引用。我们已经将这些特性从 <strong>bookdown</strong> 中分解出来，这样你就可以使用它们而无需准备一本包含多个 Rmd 文件的书籍。</p>
-<p>  函数 <code>html_document2()</code>、<code>tufte_html2()</code>、<code>pdf_document2()</code>、<code>word_document2()</code>、<code>tufte_handout2()</code> 和 <code>tufte_book2()</code> 就是为此目的而设计的。如果使用这些输出格式渲染一份 R Markdown 文档，例如 <code>bookdown::html_document2</code>，你将能够对图片/表格自动编号，并能够使用第 <a href="components.html#components">2</a> 章描述的语法在单个 HTML 页面中对它们进行交叉引用。</p>
-<p>  下面是单个 Rmd 文件的 YAML 元数据中这些输出格式的几个例子（你也可以把这些格式添加到 <code>_output.yml</code> 文件中）。</p>
+<p>有时你可能不想写一本书，而是想写一篇长篇文章或报告。通常你要做的是使用特定的输出格式函数调用 <code>rmarkdown::render()</code>。这种情况下缺少的主要功能是图片/表格/方程的自动编号，以及对图片/表格/方程/章节的交叉引用。我们已经将这些特性从 <strong>bookdown</strong> 中分解出来，这样你就可以使用它们而无需准备一本包含多个 Rmd 文件的书籍。</p>
+<p>函数 <code>html_document2()</code>、<code>tufte_html2()</code>、<code>pdf_document2()</code>、<code>word_document2()</code>、<code>tufte_handout2()</code> 和 <code>tufte_book2()</code> 就是为此目的而设计的。如果使用这些输出格式渲染一份 R Markdown 文档，例如 <code>bookdown::html_document2</code>，你将能够对图片/表格自动编号，并能够使用第 <a href="components.html#components">2</a> 章描述的语法在单个 HTML 页面中对它们进行交叉引用。</p>
+<p>下面是单个 Rmd 文件的 YAML 元数据中这些输出格式的几个例子（你也可以把这些格式添加到 <code>_output.yml</code> 文件中）。</p>
 <div class="sourceCode" id="cb103"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb103-1"><a href="a-single-document.html#cb103-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb103-2"><a href="a-single-document.html#cb103-2" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:html_document2</span><span class="kw">:</span><span class="at"> default</span></span>
 <span id="cb103-3"><a href="a-single-document.html#cb103-3" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:pdf_document2</span><span class="kw">:</span></span>
 <span id="cb103-4"><a href="a-single-document.html#cb103-4" tabindex="-1"></a><span class="at">    </span><span class="fu">keep_tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb103-5"><a href="a-single-document.html#cb103-5" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:word_document2</span><span class="kw">:</span></span>
 <span id="cb103-6"><a href="a-single-document.html#cb103-6" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
-<p>  上面的 HTML 和 PDF 输出格式函数基本上是对输出格式 <code>bookdown::html_book</code> 和 <code>bookdown::pdf_book</code> 的封装，其意义在于它们改变了 <code>base_format</code> 参数。例如，你可以查阅 <code>pdf_document2</code> 的源代码。</p>
+<p>上面的 HTML 和 PDF 输出格式函数基本上是对输出格式 <code>bookdown::html_book</code> 和 <code>bookdown::pdf_book</code> 的封装，其意义在于它们改变了 <code>base_format</code> 参数。例如，你可以查阅 <code>pdf_document2</code> 的源代码。</p>
 <div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="a-single-document.html#cb104-1" tabindex="-1"></a>bookdown<span class="sc">::</span>pdf_document2</span></code></pre></div>
 <pre><code>## function (...) 
 ## {
 ##     pdf_book(..., base_format = rmarkdown::pdf_document)
 ## }
-## &lt;bytecode: 0x000001f2d5fe6150&gt;
+## &lt;bytecode: 0x000002c602ef0a90&gt;
 ## &lt;environment: namespace:bookdown&gt;</code></pre>
-<p>  在你知道这个事实后，你可以通过使用适当的 <code>base_format</code> 将同样的想法应用于其他输出格式。例如，你可以通过使用 YAML 元数据将 <strong>bookdown</strong> 的功能移植到 <strong>rticles</strong> 软件包<span class="citation">(<a href="#ref-R-rticles">Allaire, Xie, Dervieux, et al. 2022</a>)</span>中的 <code>jss_article</code> 格式。</p>
+<p>在你知道这个事实后，你可以通过使用适当的 <code>base_format</code> 将同样的想法应用于其他输出格式。例如，你可以通过使用 YAML 元数据将 <strong>bookdown</strong> 的功能移植到 <strong>rticles</strong> 软件包<span class="citation">(<a href="#ref-R-rticles">Allaire et al. 2022</a>)</span>中的 <code>jss_article</code> 格式。</p>
 <div class="sourceCode" id="cb106"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb106-1"><a href="a-single-document.html#cb106-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb106-2"><a href="a-single-document.html#cb106-2" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:pdf_book</span><span class="kw">:</span></span>
 <span id="cb106-3"><a href="a-single-document.html#cb106-3" tabindex="-1"></a><span class="at">    </span><span class="fu">base_format</span><span class="kw">:</span><span class="at"> rticles::jss_article</span></span></code></pre></div>
-<p>  然后你就可以使用我们在第 <a href="components.html#components">2</a> 章中介绍的所有功能了。</p>
-<p>  尽管 <code>gitbook()</code> 格式主要是为书籍设计的，但实际上你也可以将其应用于单个 R Markdown 文档。唯一不同的是，在单页输出上不会有搜索按钮，因为你可以简单地使用网络浏览器的搜索工具来查找文本（例如使用 <code>Ctrl + F</code> 或 <code>Command + F</code>）。你也可以把选项 <code>split_by</code> 设置为 <code>none</code>，这样只会生成一个输出页面，在这种情况下不会有任何导航按钮，因为没有其他页面可以导航。如果你愿意，仍然可以生成多页 HTML 文件。当只生成单一的输出页面时，另一个你可能想使用的配置项是 <code>self_contained = TRUE</code>。</p>
+<p>然后你就可以使用我们在第 <a href="components.html#components">2</a> 章中介绍的所有功能了。</p>
+<p>尽管 <code>gitbook()</code> 格式主要是为书籍设计的，但实际上你也可以将其应用于单个 R Markdown 文档。唯一不同的是，在单页输出上不会有搜索按钮，因为你可以简单地使用网络浏览器的搜索工具来查找文本（例如使用 <code>Ctrl + F</code> 或 <code>Command + F</code>）。你也可以把选项 <code>split_by</code> 设置为 <code>none</code>，这样只会生成一个输出页面，在这种情况下不会有任何导航按钮，因为没有其他页面可以导航。如果你愿意，仍然可以生成多页 HTML 文件。当只生成单一的输出页面时，另一个你可能想使用的配置项是 <code>self_contained = TRUE</code>。</p>
 
 </div>
 <!-- </div> -->

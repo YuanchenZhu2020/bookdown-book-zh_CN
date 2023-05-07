@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -150,6 +150,7 @@ div.csl-indent {
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/toc.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 
 <style type = "text/css">
 .main-container {
@@ -310,13 +311,13 @@ details > summary {
 <div class="col-sm-12">
 <div id="rstudio-connect" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> RStudio Connect</h2>
-<p>  理论上，你可以自己编译书籍然后将其发布到你想要的任何地方。例如，你可以在自己的 Web 服务器上托管书籍的 HTML 版本。不过我们在 <strong>bookdown</strong> 中提供了一个函数 <code>publish_book()</code> ，它能够让你很轻松地将书籍上传至 <a href="https://bookdown.org" class="uri">https://bookdown.org</a>。这是一个由 RStudio 提供的网站，用于免费托管你的书籍。这个网站建立在 <a href="https://posit.co/products/enterprise/connect/">“RStudio Connect”</a> 之上，它是 RStudio 提供的产品之一，能够让你将各种与 R 相关的应用部署到服务器上，包括 R Markdown 文档、Shiny 应用、R plots 等。</p>
-<p>  你不必了解太多 RStudio Connect 就能够将你的书籍发布到 bookdown.org。你需要在 <a href="https://bookdown.org/connect/" class="uri">https://bookdown.org/connect/</a> 注册，之后当你第一次尝试运行 <code>bookdown::publish_book()</code> 时，系统将要求你授权 <strong>bookdown</strong> 发布到你的 bookdown.org 账户。以后使用时，只需要再次调用 <code>publish_book()</code> 即可，<strong>bookdown</strong> 将不会要求你进行任何其他的操作。</p>
+<p>理论上，你可以自己编译书籍然后将其发布到你想要的任何地方。例如，你可以在自己的 Web 服务器上托管书籍的 HTML 版本。不过我们在 <strong>bookdown</strong> 中提供了一个函数 <code>publish_book()</code> ，它能够让你很轻松地将书籍上传至 <a href="https://bookdown.org" class="uri">https://bookdown.org</a>。这是一个由 RStudio 提供的网站，用于免费托管你的书籍。这个网站建立在 <a href="https://posit.co/products/enterprise/connect/">“RStudio Connect”</a> 之上，它是 RStudio 提供的产品之一，能够让你将各种与 R 相关的应用部署到服务器上，包括 R Markdown 文档、Shiny 应用、R plots 等。</p>
+<p>你不必了解太多 RStudio Connect 就能够将你的书籍发布到 bookdown.org。你需要在 <a href="https://bookdown.org/connect/" class="uri">https://bookdown.org/connect/</a> 注册，之后当你第一次尝试运行 <code>bookdown::publish_book()</code> 时，系统将要求你授权 <strong>bookdown</strong> 发布到你的 bookdown.org 账户。以后使用时，只需要再次调用 <code>publish_book()</code> 即可，<strong>bookdown</strong> 将不会要求你进行任何其他的操作。</p>
 <div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="6.1-rstudio-connect.html#cb130-1" tabindex="-1"></a><span class="fu">publish_book</span>(<span class="at">name =</span> <span class="cn">NULL</span>, <span class="at">account =</span> <span class="cn">NULL</span>,</span>
 <span id="cb130-2"><a href="6.1-rstudio-connect.html#cb130-2" tabindex="-1"></a>  <span class="at">server =</span> <span class="cn">NULL</span>, <span class="at">render =</span> <span class="fu">c</span>(<span class="st">&quot;none&quot;</span>, <span class="st">&quot;local&quot;</span>, <span class="st">&quot;server&quot;</span>))</span></code></pre></div>
-<p>  你需要接触的 <code>publish_book()</code> 的唯一参数是 <code>render</code>。它决定了在发布之前是否编译书籍。如果你之前已经运行过 <code>render_book()</code>，就不需要改变这个参数，否则你可能需要将其设置为 <code>'local'</code>：</p>
+<p>你需要接触的 <code>publish_book()</code> 的唯一参数是 <code>render</code>。它决定了在发布之前是否编译书籍。如果你之前已经运行过 <code>render_book()</code>，就不需要改变这个参数，否则你可能需要将其设置为 <code>'local'</code>：</p>
 <div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="6.1-rstudio-connect.html#cb131-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">publish_book</span>(<span class="at">render =</span> <span class="st">&#39;local&#39;</span>)</span></code></pre></div>
-<p>  如果你已经配置好了自己的 RStudio Connect 服务器，那么当然可以将书籍发布到你自己的服务器，而不必上传至 bookdown.org。</p>
+<p>如果你已经配置好了自己的 RStudio Connect 服务器，那么当然可以将书籍发布到你自己的服务器，而不必上传至 bookdown.org。</p>
 </div>
 <p style="text-align: center;">
 <a href="6-publishing.html"><button class="btn btn-default">Previous</button></a>

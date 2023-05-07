@@ -1,18 +1,18 @@
 # 组成部分 {#components}
 
-&emsp;&emsp;本章演示了用 **bookdown** 编写的书籍中常见组件的语法，包括代码块、数字、表格、引文、数学定理和公式。该方法基于 Pandoc，因此我们从 Pandoc\index{Pandoc} 风格的 Markdown 语法开始讲起。
+本章演示了用 **bookdown** 编写的书籍中常见组件的语法，包括代码块、数字、表格、引文、数学定理和公式。该方法基于 Pandoc，因此我们从 Pandoc\index{Pandoc} 风格的 Markdown 语法开始讲起。
 
 ## Markdown 语法 {#markdown-syntax}
 
-&emsp;&emsp;在本节中，我们将非常简要地介绍 Pandoc  风格的 Markdown\index{Markdown}。熟悉 Markdown 的读者可以跳过这一节。Pandoc 风格的 Markdown 的全部语法可以在 Pandoc 网站 <http://pandoc.org> 上找到。
+在本节中，我们将非常简要地介绍 Pandoc  风格的 Markdown\index{Markdown}。熟悉 Markdown 的读者可以跳过这一节。Pandoc 风格的 Markdown 的全部语法可以在 Pandoc 网站 <http://pandoc.org> 上找到。
 
 ### 内联格式
 
-&emsp;&emsp;要将文本变为 _斜体_ (_italic_)，可以用下划线或星号将它围起来，例如 `_text_` 或 `*text*`。对于 **粗体** (**bold**) 文本，可以使用双下划线 (`__text__`) 或双星号 (`**text**`)。被 `~` 围住的文本将会被转换为下标（例如 `H~2~SO~4~` 呈现为 H~2~SO~4~）。类似地，两个脱字符 (`^`) 能够产生上标（例如 `Fe^2+^` 渲染为 Fe^2+^）。为了把文本标注为 `内联代码` (`inline code`)，使用一堆反引号，例如 `` `code` ``。^[为了呈现文本性的反引号，需要在外部使用更多的反引号，例如你可以使用两个反引号使内部的一个反引号能够呈现出来：``` `` `code` `` ```。]小型大写字母 (Small caps) 能够通过 HTML 标签 `span` 呈现出来，例如 `<span style="font-variant:small-caps;">Small Caps</span>` 呈现为 <span style="font-variant:small-caps;">Small Caps</span>。链接是使用 `[text](link)` 呈现的，例如 `[RStudio](https://www.rstudio.com)`，图片的语法也类似：在前面加一个感叹号即可，例如 `![alt text or image title](path/to/image)`。脚注放进脱字符 (`^`) 后面的方括号内 `^[]`，例如 `^[This is a footnote.]`。我们将在第 \@ref(citations) 节内讨论引文 (citations)。
+要将文本变为 _斜体_ (_italic_)，可以用下划线或星号将它围起来，例如 `_text_` 或 `*text*`。对于 **粗体** (**bold**) 文本，可以使用双下划线 (`__text__`) 或双星号 (`**text**`)。被 `~` 围住的文本将会被转换为下标（例如 `H~2~SO~4~` 呈现为 H~2~SO~4~）。类似地，两个脱字符 (`^`) 能够产生上标（例如 `Fe^2+^` 渲染为 Fe^2+^）。为了把文本标注为 `内联代码` (`inline code`)，使用一堆反引号，例如 `` `code` ``。^[为了呈现文本性的反引号，需要在外部使用更多的反引号，例如你可以使用两个反引号使内部的一个反引号能够呈现出来：``` `` `code` `` ```。]小型大写字母 (Small caps) 能够通过 HTML 标签 `span` 呈现出来，例如 `<span style="font-variant:small-caps;">Small Caps</span>` 呈现为 <span style="font-variant:small-caps;">Small Caps</span>。链接是使用 `[text](link)` 呈现的，例如 `[RStudio](https://www.rstudio.com)`，图片的语法也类似：在前面加一个感叹号即可，例如 `![alt text or image title](path/to/image)`。脚注放进脱字符 (`^`) 后面的方括号内 `^[]`，例如 `^[This is a footnote.]`。我们将在第 \@ref(citations) 节内讨论引文 (citations)。
 
 ### 块级元素
 
-&emsp;&emsp;小节标题可以在若干 `#` 号之后写入，例如：
+小节标题可以在若干 `#` 号之后写入，例如：
 
 ```markdown
 # First-level header
@@ -22,13 +22,13 @@
 ### Third-level header
 ```
 
-&emsp;&emsp;如果你不想对某个标题进行编号，可以在标题后面添加 `{-}`，例如：
+如果你不想对某个标题进行编号，可以在标题后面添加 `{-}`，例如：
 
 ```markdown
 # Preface {-}
 ```
 
-&emsp;&emsp;无序列表以 `*`、`-` 或 `+` 开头，并且你可以通过缩进四个空格将另一个列表嵌套进一个列表中，例如
+无序列表以 `*`、`-` 或 `+` 开头，并且你可以通过缩进四个空格将另一个列表嵌套进一个列表中，例如
 
 ```markdown
 - one item
@@ -46,7 +46,7 @@
     - one item
     - one item
 
-&emsp;&emsp;嵌套列表以数字开头（嵌套列表的书写规则同上），例如：
+嵌套列表以数字开头（嵌套列表的书写规则同上），例如：
 
 ```markdown
 1. the first item
@@ -60,7 +60,7 @@
 2. the second item
 3. the third item
 
-&emsp;&emsp;块引用 (blockquotes) 写在 `>` 之后，例如：
+块引用 (blockquotes) 写在 `>` 之后，例如：
 
 ```markdown
 > "I thoroughly disapprove of duels. If a man should challenge me,
@@ -78,7 +78,7 @@
 >
 > --- Mark Twain
 
-&emsp;&emsp;纯文本代码块可以在三个或更多的反引号后写入，也可以将块缩进四个空格，例如：
+纯文本代码块可以在三个或更多的反引号后写入，也可以将块缩进四个空格，例如：
 
 ````markdown
 ```
@@ -92,11 +92,11 @@ Or indent by four spaces:
 
 ### 数学表达式
 
-&emsp;&emsp;内联 LaTeX 方程\index{LaTeX math expression} 可以使用 LaTeX 语法写在一对美元符号 (`$`) 内，例如：`$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$`（实际输出为：$f(k)=\binom{n}{k}p^{k}(1-p)^{n-k}$）；展示样式的数学表达式可以用一对双美元符号表示，例如： `$$f(k) = \binom{n}{k} p^{k} (1-p)^{n-k}$$`，其输出看起来像这样：
+内联 LaTeX 方程\index{LaTeX math expression} 可以使用 LaTeX 语法写在一对美元符号 (`$`) 内，例如：`$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$`（实际输出为：$f(k)=\binom{n}{k}p^{k}(1-p)^{n-k}$）；展示样式的数学表达式可以用一对双美元符号表示，例如： `$$f(k) = \binom{n}{k} p^{k} (1-p)^{n-k}$$`，其输出看起来像这样：
 
 $$f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k}$$
 
-&emsp;&emsp;你也能够在 `$ $` 或 `$$ $$` 中使用数学环境，例如：
+你也能够在 `$ $` 或 `$$ $$` 中使用数学环境，例如：
 
 ```latex
 $$\begin{array}{ccc}
@@ -144,14 +144,14 @@ c & d
 
 ## Bookdown 中的 Markdown 功能拓展
 
-&emsp;&emsp;尽管 Pandoc 风格的 Markdown 比原来的 Markdown 语法要丰富得多，但它仍然缺少我们在学术写作中可能需要的一些东西。例如，它支持数学公式，但不能在多页 HTML 或 EPUB 输出中对公式进行编号和引用。我们在 **bookdown** 中提供了一些 Markdown 扩展来填补这些空白。
+尽管 Pandoc 风格的 Markdown 比原来的 Markdown 语法要丰富得多，但它仍然缺少我们在学术写作中可能需要的一些东西。例如，它支持数学公式，但不能在多页 HTML 或 EPUB 输出中对公式进行编号和引用。我们在 **bookdown** 中提供了一些 Markdown 扩展来填补这些空白。
 
 ### 方程编号与引用 {#equations}
 
 
 To number and refer to equations\index{equation}\index{cross-reference}, put them in the equation environments and assign labels to them using the syntax `(\#eq:label)`, e.g.,
 
-&emsp;&emsp;要对方程\index{equation}进行编号和引用\index{cross-reference}，请将它们放在方程环境中，并使用语法 `(\#eq:label)` 为它们指定标签，例如：
+要对方程\index{equation}进行编号和引用\index{cross-reference}，请将它们放在方程环境中，并使用语法 `(\#eq:label)` 为它们指定标签，例如：
 
 ```latex
 \begin{equation} 
@@ -166,13 +166,13 @@ To number and refer to equations\index{equation}\index{cross-reference}, put the
 f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} (\#eq:binom)
 \end{equation}
 
-&emsp;&emsp;你可以使用 `\@ref(eq:binom)` 来引用它，例如：请看方程 \@ref(eq:binom)。
+你可以使用 `\@ref(eq:binom)` 来引用它，例如：请看方程 \@ref(eq:binom)。
 
 ```{block2, type='rmdcaution'}
 方程标签在 **bookdown** 中必须以前缀 `eq:` 开头。**bookdown** 中的所有标签只能包含字母数字字符、`:`、`-` 和/或 `/`。方程引用最适合 LaTeX/PDF 输出格式，它们在 Word 或电子书中没有收到很好的支持。对于 HTML 输出，**bookdown** 只能对带有标签的方程进行编号。请确保没有标签的方程没有使用 `equation*` 环境或在方程中添加 `\nonumber` 或 `\notag` 进行编号。同样的规则也适用于其他数学环境，如 `eqnarray`、`gather`、`align` 等（例如可以使用 `align*` 环境）。
 ```
 
-&emsp;&emsp;我们将在下面演示更多的数学方程环境。下面是一个使用 `equation*` 环境的未编号方程：
+我们将在下面演示更多的数学方程环境。下面是一个使用 `equation*` 环境的未编号方程：
 
 ```latex
 \begin{equation*} 
@@ -184,7 +184,7 @@ f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} (\#eq:binom)
 \frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x)
 \end{equation*}
 
-&emsp;&emsp;下面展示了一个 `align` 环境 \@ref(eq:align):
+下面展示了一个 `align` 环境 \@ref(eq:align):
 
 ```latex
 \begin{align} 
@@ -200,7 +200,7 @@ g(X_{n}) &= g(\theta)+g'({\tilde{\theta}})(X_{n}-\theta) \notag \\
   \sqrt{n}[X_{n}-\theta ] (\#eq:align)
 \end{align}
 
-&emsp;&emsp;你可以在 `equation` 中使用 `split` 环境，以便所有行共享相同的编号 \@ref(eq:var-beta)。默认情况下，`align` 环境中的每一行都将被分配一个方程编号。在前面的示例中，我们使用 `\notag` 取消了第一行的编号。在本例中，整个 `split` 环境被分配了一个编号。
+你可以在 `equation` 中使用 `split` 环境，以便所有行共享相同的编号 \@ref(eq:var-beta)。默认情况下，`align` 环境中的每一行都将被分配一个方程编号。在前面的示例中，我们使用 `\notag` 取消了第一行的编号。在本例中，整个 `split` 环境被分配了一个编号。
 
 ```latex
 \begin{equation} 
@@ -228,9 +228,9 @@ g(X_{n}) &= g(\theta)+g'({\tilde{\theta}})(X_{n}-\theta) \notag \\
 
 ### 定理与证明 {#theorems}
 
-&emsp;&emsp;定理\index{theorem}和证明常用于数学文章和书籍中。但是请不要被名称误导：“定理”只是一个编号或标记的环境，它不一定是一个数学定理（例如，它可以是一个与数学无关的例子）。类似地，“证明”是一个没有编号的环境。在这一节中，除非明确说明，否则我们总是使用“定理”和“证明”的*一般*含义。
+定理\index{theorem}和证明常用于数学文章和书籍中。但是请不要被名称误导：“定理”只是一个编号或标记的环境，它不一定是一个数学定理（例如，它可以是一个与数学无关的例子）。类似地，“证明”是一个没有编号的环境。在这一节中，除非明确说明，否则我们总是使用“定理”和“证明”的*一般*含义。
 
-&emsp;&emsp;在 **bookdown** 中，支持的定理环境类型在表 \@ref(tab:theorem-envs)。要写出一个定理，可以使用以下语法：
+在 **bookdown** 中，支持的定理环境类型在表 \@ref(tab:theorem-envs)。要写出一个定理，可以使用以下语法：
 
 ````markdown
 ::: {.theorem}
@@ -240,7 +240,7 @@ _Markdown_ syntax.
 ````
 
 
-&emsp;&emsp;这个语法基于 Pandoc 的 [fenced `Div` blocks](https://pandoc.org/MANUAL.html#divs-and-spans)，并且已经可以在任何 R Markdown 文档中用于编写[自定义块](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html)。**Bookdown** 只提供定理和证明环境的特殊处理。因为这使用了 Pandoc 风格的 Markdown 语法，所以可以在块内编写任何有效的 Markdown 文本。
+这个语法基于 Pandoc 的 [fenced `Div` blocks](https://pandoc.org/MANUAL.html#divs-and-spans)，并且已经可以在任何 R Markdown 文档中用于编写[自定义块](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html)。**Bookdown** 只提供定理和证明环境的特殊处理。因为这使用了 Pandoc 风格的 Markdown 语法，所以可以在块内编写任何有效的 Markdown 文本。
 
 (ref:theorem-envs) **Bookdown** 中的定理环境。
 
@@ -253,9 +253,9 @@ knitr::kable(data.frame(
 ), caption = '(ref:theorem-envs)', booktabs = TRUE)
 ```
 
-&emsp;&emsp;要编写其他定理环境，请用表 \@ref(tab:theorem-envs) 中的其他环境名称替换 `::: {.theorem}`，例如 `::: {.lemma}`。
+要编写其他定理环境，请用表 \@ref(tab:theorem-envs) 中的其他环境名称替换 `::: {.theorem}`，例如 `::: {.lemma}`。
 
-&emsp;&emsp;一个定理可以有一个 `name` 属性，这样它的名字就会被打印出来。例如：
+一个定理可以有一个 `name` 属性，这样它的名字就会被打印出来。例如：
 
 ````markdown
 ::: {.theorem name="Pythagorean theorem"}
@@ -265,7 +265,7 @@ $$a^2 + b^2 = c^2$$
 :::
 ````
 
-&emsp;&emsp;如果你想引用一个定理，应该给它贴上标签。标签可以以 `#label` 的形式作为一个 ID 提供给块。例如：
+如果你想引用一个定理，应该给它贴上标签。标签可以以 `#label` 的形式作为一个 ID 提供给块。例如：
 
 ````markdown
 ::: {.theorem #foo}
@@ -273,7 +273,7 @@ A labeled theorem here.
 :::
 ````
 
-&emsp;&emsp;当你为一个定理贴上标签后，你可以使用语法 `\@ref(prefix:label)`\index{cross-reference}来引用它。对于每个环境中的 `prefix` 值，请看表 \@ref(tab:theorem-envs) 中的 `Label Prefix` 列。例如，我们在下面有一个标记和命名了的定理，`\@ref(thm:pyth)` 给出了它的定理编号 \@ref(thm:pyth)：
+当你为一个定理贴上标签后，你可以使用语法 `\@ref(prefix:label)`\index{cross-reference}来引用它。对于每个环境中的 `prefix` 值，请看表 \@ref(tab:theorem-envs) 中的 `Label Prefix` 列。例如，我们在下面有一个标记和命名了的定理，`\@ref(thm:pyth)` 给出了它的定理编号 \@ref(thm:pyth)：
 
 ````markdown
 ::: {.theorem #pyth name="Pythagorean theorem"}
@@ -290,20 +290,20 @@ $$a^2 + b^2 = c^2$$
 $$a^2 + b^2 = c^2$$
 :::
 
-&emsp;&emsp;目前支持的证明环境有 `r knitr::combine_words(names(bookdown:::label_names_math2), before='\x60', sep='、', and=" 和 ", oxford_comma=FALSE)`。它的语法类似于定理环境，并且证明环境也能够使用 `name` 属性命名。唯一的区别是你不能引用它们，即便你为证明环境提供了 ID，因为它们无法进行编号。
+目前支持的证明环境有 `r knitr::combine_words(names(bookdown:::label_names_math2), before='\x60', sep='、', and=" 和 ", oxford_comma=FALSE)`。它的语法类似于定理环境，并且证明环境也能够使用 `name` 属性命名。唯一的区别是你不能引用它们，即便你为证明环境提供了 ID，因为它们无法进行编号。
 
-&emsp;&emsp;无论你选择的输出是 PDF 还是 HTML，我们都已经尝试使所有这些定理和证明环境开箱即用。如果你是 LaTeX 或 HTML 专家，你可能希望自定义这些环境的样式（请参阅第 \@ref(customization) 章）。使用 CSS 可以很容易在 HTML 中自定义样式，每个环境都包含在 `<div></div>` 中，CSS class 属性为环境名称，例如 `<div class=“lemma”></div>`。对于 LaTeX 输出，我们为环境 `r knitr::combine_words(bookdown:::style_definition, before='\x60', sep='、', and=" 和 ", oxford_comma=FALSE)` 预定义了样式 `definition`，为环境 `r knitr::combine_words(c('proof', bookdown:::style_remark), before='\x60', sep='、', and=" 和 ", oxford_comma=FALSE)` 预定义了样式 `remark`。所有其他环境都使用 `plain` 样式。样式定义是通过 **amsthm** 包的 `\theoremstyle{}` 命令完成的。如果你不希望 **bookdown** 自动添加默认的定理定义，可以设置 `options(bookdown.thermo.preamble = FALSE)`。例如，使用输出格式 `bookdown::pdf_book` 和已经包含 **amsmath** 定义的 `base_format` 来避免单个文档（第 \@ref(a-single-document) 节）中的冲突非常有用。
+无论你选择的输出是 PDF 还是 HTML，我们都已经尝试使所有这些定理和证明环境开箱即用。如果你是 LaTeX 或 HTML 专家，你可能希望自定义这些环境的样式（请参阅第 \@ref(customization) 章）。使用 CSS 可以很容易在 HTML 中自定义样式，每个环境都包含在 `<div></div>` 中，CSS class 属性为环境名称，例如 `<div class=“lemma”></div>`。对于 LaTeX 输出，我们为环境 `r knitr::combine_words(bookdown:::style_definition, before='\x60', sep='、', and=" 和 ", oxford_comma=FALSE)` 预定义了样式 `definition`，为环境 `r knitr::combine_words(c('proof', bookdown:::style_remark), before='\x60', sep='、', and=" 和 ", oxford_comma=FALSE)` 预定义了样式 `remark`。所有其他环境都使用 `plain` 样式。样式定义是通过 **amsthm** 包的 `\theoremstyle{}` 命令完成的。如果你不希望 **bookdown** 自动添加默认的定理定义，可以设置 `options(bookdown.thermo.preamble = FALSE)`。例如，使用输出格式 `bookdown::pdf_book` 和已经包含 **amsmath** 定义的 `base_format` 来避免单个文档（第 \@ref(a-single-document) 节）中的冲突非常有用。
 
-&emsp;&emsp;默认情况下，定理按篇章编号。如果文档中没有篇章，则按小节编号。如果整篇文档没有编号（输出格式选项为 `number_sections = FALSE`），则所有定理都从 1、2、…、N 开始依次编号。LaTeX 支持依次对一个又一个定理环境进行编号，例如，让定理和引理共享同一个计数器。**bookdown** 中的 HTML/EPUB 输出不支持此操作。你可以通过定义自己的定理环境来更改 LaTeX 导言 (preamble) 中的编号方案，例如：
+默认情况下，定理按篇章编号。如果文档中没有篇章，则按小节编号。如果整篇文档没有编号（输出格式选项为 `number_sections = FALSE`），则所有定理都从 1、2、…、N 开始依次编号。LaTeX 支持依次对一个又一个定理环境进行编号，例如，让定理和引理共享同一个计数器。**bookdown** 中的 HTML/EPUB 输出不支持此操作。你可以通过定义自己的定理环境来更改 LaTeX 导言 (preamble) 中的编号方案，例如：
 
 ```latex
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 ```
 
-&emsp;&emsp;当 **bookdown** 在 LaTeX 导言 (preamble) 中检测到 `\newtheorem{themore}` 时，它不会输出其默认的定理定义，这意味着你必须自己定义所有定理环境。为了简单和一致性，我们不建议你这样做。当 PDF 中的定理 18 变成 HTML 中的定理 2.4 时可能会令人十分困惑。
+当 **bookdown** 在 LaTeX 导言 (preamble) 中检测到 `\newtheorem{themore}` 时，它不会输出其默认的定理定义，这意味着你必须自己定义所有定理环境。为了简单和一致性，我们不建议你这样做。当 PDF 中的定理 18 变成 HTML 中的定理 2.4 时可能会令人十分困惑。
 
-&emsp;&emsp;下面我们展示了定理和证明环境的更多的例子^[一些例子改编自维基百科页面 <https://en.wikipedia.org/wiki/Characteristic_function_(probability_theory)>]，所以你可以在 **bookdown** 中看到默认样式。
+下面我们展示了定理和证明环境的更多的例子^[一些例子改编自维基百科页面 <https://en.wikipedia.org/wiki/Characteristic_function_(probability_theory)>]，所以你可以在 **bookdown** 中看到默认样式。
 
 ::: {.definition}
 随机变量 $x$ 的特征函数定义如下：
@@ -389,7 +389,7 @@ $$\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}$$
 
 #### 关于旧语法的注记 {#theorem-engine}
 
-&emsp;&emsp;对于较早版本的 **bookdown**（v0.21 之前），可以这样编写 `theorem` 环境：
+对于较早版本的 **bookdown**（v0.21 之前），可以这样编写 `theorem` 环境：
 
 ````markdown
 `r ''````{theorem pyth, name="Pythagorean theorem"}
@@ -399,9 +399,9 @@ $$a^2 + b^2 = c^2$$
 ```
 ````
 
-&emsp;&emsp;这种语法仍然有效，但我们不建议使用这种语法，因为新语法允许编写更丰富的内容，并且具有更清晰的实现。
+这种语法仍然有效，但我们不建议使用这种语法，因为新语法允许编写更丰富的内容，并且具有更清晰的实现。
 
-&emsp;&emsp;这两种语法之间的转换非常简单。上述定理可以这样改写：
+这两种语法之间的转换非常简单。上述定理可以这样改写：
 
 ````markdown
 ::: {.theorem #pyth name="Pythagorean theorem"}
@@ -418,11 +418,11 @@ $$a^2 + b^2 = c^2$$
 bookdown::fence_theorems("01-intro.Rmd", output = "01-intro-new.Rmd")
 ```
 
-&emsp;&emsp;然后仔细检查 `01-intro-new.Rmd` 的内容。使用 `output = NULL` 将在 R 控制台中打印转换结果，这是检查转换的另一种方法。如果你使用的是版本控制工具，则可以将 `output` 设置为与 `input` 相同，因为如果出现任何问题，你应该可以安全且轻松地还原更改。
+然后仔细检查 `01-intro-new.Rmd` 的内容。使用 `output = NULL` 将在 R 控制台中打印转换结果，这是检查转换的另一种方法。如果你使用的是版本控制工具，则可以将 `output` 设置为与 `input` 相同，因为如果出现任何问题，你应该可以安全且轻松地还原更改。
 
 ### 特殊的标题
 
-&emsp;&emsp;有几种特殊类型的一级标题在 **bookdown** 会以不同方式处理。第一种类型是没有编号的标题，以标志 `(PART)` 开头。这种类型的标题将会翻译为书籍各部份的标题\index{part}。如果你熟悉 LaTeX 就应该知道它基本上等同于 `\part{}`。当你的书籍有大量章节时，你可能希望将它们组织成部分，例如：
+有几种特殊类型的一级标题在 **bookdown** 会以不同方式处理。第一种类型是没有编号的标题，以标志 `(PART)` 开头。这种类型的标题将会翻译为书籍各部份的标题\index{part}。如果你熟悉 LaTeX 就应该知道它基本上等同于 `\part{}`。当你的书籍有大量章节时，你可能希望将它们组织成部分，例如：
 
 ```
 # (PART) 第一部分 {-} 
@@ -436,9 +436,9 @@ bookdown::fence_theorems("01-intro.Rmd", output = "01-intro-new.Rmd")
 # 第三章
 ```
 
-&emsp;&emsp;各部分的标题应写在本部分第一章标题之前，两个标题应在同一文件中。如果各部分标题不应该参与自动编号，则可以使用 `(PART\*)`（`*` 前的反斜杠是必须的）而不是 `(PART)`。
+各部分的标题应写在本部分第一章标题之前，两个标题应在同一文件中。如果各部分标题不应该参与自动编号，则可以使用 `(PART\*)`（`*` 前的反斜杠是必须的）而不是 `(PART)`。
 
-&emsp;&emsp;第二种类型是以 `(APPENDIX)` 开头的无编号标题，表示此标题后面的所有章节都是附录\index{appendix}，例如：
+第二种类型是以 `(APPENDIX)` 开头的无编号标题，表示此标题后面的所有章节都是附录\index{appendix}，例如：
 
 ```
 # 第一章
@@ -452,19 +452,19 @@ bookdown::fence_theorems("01-intro.Rmd", output = "01-intro-new.Rmd")
 # 附录 B
 ```
 
-&emsp;&emsp;附录的编号样式将在 LaTeX/PDF 和 HTML 输出中自动更改（通常采用 A、A.1、A.2、B、B.1 等格式）。此功能不适用于电子书或 Word 输出。
+附录的编号样式将在 LaTeX/PDF 和 HTML 输出中自动更改（通常采用 A、A.1、A.2、B、B.1 等格式）。此功能不适用于电子书或 Word 输出。
 
 ### 文本引用 {#text-references}
 
-&emsp;&emsp;你可以将一些文本指定给标签，并使用文档中其他位置的标签来引用这些文本。这对于长图形/表格的标题（第 \@ref(figures) 节和第 \@ref(tables) 节）特别有用，在这种情况下，你通常需要将整个字符串写入区块标题（例如 `fig.cap = "一张长图片的标题”）或 R 代码（例如 `kable(caption = "一个很长很长的表格的标题”））。当这些标题包含特殊的 HTML 或 LaTeX 字符时，它也很有用。例如，如果图片标题包含下划线，则它在 HTML 输出中正常工作，但在 LaTeX 输出中可能不起作用，因为下划线必须在 LaTeX 中进行转义。
+你可以将一些文本指定给标签，并使用文档中其他位置的标签来引用这些文本。这对于长图形/表格的标题（第 \@ref(figures) 节和第 \@ref(tables) 节）特别有用，在这种情况下，你通常需要将整个字符串写入区块标题（例如 `fig.cap = "一张长图片的标题”）或 R 代码（例如 `kable(caption = "一个很长很长的表格的标题”））。当这些标题包含特殊的 HTML 或 LaTeX 字符时，它也很有用。例如，如果图片标题包含下划线，则它在 HTML 输出中正常工作，但在 LaTeX 输出中可能不起作用，因为下划线必须在 LaTeX 中进行转义。
 
-&emsp;&emsp;文本引用的语法是 `(ref:label) text`。其中 `text` 的标签 `label` 是在整个文档中唯一的标签^[你可以考使用代码块标签]。文本引用必须放在一个单独的段落中，上面和下面都有空行。段落不能有多行，也不能以空格结尾。例如，
+文本引用的语法是 `(ref:label) text`。其中 `text` 的标签 `label` 是在整个文档中唯一的标签^[你可以考使用代码块标签]。文本引用必须放在一个单独的段落中，上面和下面都有空行。段落不能有多行，也不能以空格结尾。例如，
 
 ```markdown
 (ref:foo) **在这里**定义一个文本引用。
 ```
 
-&emsp;&emsp;然后你可以在图形/表格标题中使用 `(ref:foo)`。只要是一个段落，文本可以包含 Markdown 支持的任何内容。下面是一个完整的示例：
+然后你可以在图形/表格标题中使用 `(ref:foo)`。只要是一个段落，文本可以包含 Markdown 支持的任何内容。下面是一个完整的示例：
 
 ````markdown
 A normal paragraph.
@@ -476,11 +476,11 @@ plot(cars)  # 绘制散点图
 ```
 ````
 
-&emsp;&emsp;文本引用可以在文档中的任何位置使用（不仅限于图片标题）。如果你想在多个位置重用文本片段，它也很有用。
+文本引用可以在文档中的任何位置使用（不仅限于图片标题）。如果你想在多个位置重用文本片段，它也很有用。
 
 ## R 代码 {#r-code}
 
-&emsp;&emsp;R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 `` ``r ''`r R_CODE` ``，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 `{r}`，在 `{}` 内有（可选的）区块选项，例如：
+R Markdown/knitr 文档中有两种类型的 R 代码：R 代码块和内联 R 代码。后者的语法是 `` ``r ''`r R_CODE` ``，它可以嵌入到其他文档元素中。R 代码块看起来像普通代码块，但是在三个反记号后面有 `{r}`，在 `{}` 内有（可选的）区块选项，例如：
 
 ````markdown
 `r ''````{r chunk-label, echo = FALSE, fig.cap = 'A figure caption.'}
@@ -490,34 +490,34 @@ plot(dist ~ speed, cars)  # 绘制散点图
 ```
 ````
 
-&emsp;&emsp;有关 **knitr** 区块选项的详细信息，请参阅 @xie2015 或网页 <http://yihui.org/knitr/options>。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 \@ref(configuration) 节中的 `before_chapter_script` 和 `after_chapter_script`。
+有关 **knitr** 区块选项的详细信息，请参阅 @xie2015 或网页 <http://yihui.org/knitr/options>。对于书籍可以在每章之前/之后执行额外的 R 代码；请参见第 \@ref(configuration) 节中的 `before_chapter_script` 和 `after_chapter_script`。
 
 ## 图片 {#figures}
 
-&emsp;&emsp;默认情况下，图片\index{figure}在 **knitr** 生成的输出文档中没有标题，这意味着它们将放在生成它们的 R 代码处。下面就是这样一个例子。
+默认情况下，图片\index{figure}在 **knitr** 生成的输出文档中没有标题，这意味着它们将放在生成它们的 R 代码处。下面就是这样一个例子。
 
 ```{r no-caption, fig.width=6, fig.asp=.7, out.width='70%', ref.label='pressure-plot'}
 ```
 
-&emsp;&emsp;这样排版图片的缺点是，如果当前页面没有足够的空间放置图片，图片可能会被放在页面的底部（因此会超出页边空白），或者被推到下一页，在当前页面底部留下一大块空白。这基本上就是 LaTeX 中存在着“浮动环境 (floating environments)”\index{floating environment} 的原因：不能再多个页面上进行拆分（如图片）的元素会被放在浮动环境中，因此它们可以浮动到一个有足够空间容纳它们的页面。但是，向前或向后的浮动也存在着缺点：读者可能需要跳转到另一个页面才能找到当前页面上提到的图片。这只是不得不在多个页面上以固定大小进行排版的一个自然的结果。不过 HTML 中不存在这个问题，因为所有内容都可以被连续地放置在一个页面上（大概有着无限的高度），并且不需要在有着相同页面大小的多个页面上分割任何内容。
+这样排版图片的缺点是，如果当前页面没有足够的空间放置图片，图片可能会被放在页面的底部（因此会超出页边空白），或者被推到下一页，在当前页面底部留下一大块空白。这基本上就是 LaTeX 中存在着“浮动环境 (floating environments)”\index{floating environment} 的原因：不能再多个页面上进行拆分（如图片）的元素会被放在浮动环境中，因此它们可以浮动到一个有足够空间容纳它们的页面。但是，向前或向后的浮动也存在着缺点：读者可能需要跳转到另一个页面才能找到当前页面上提到的图片。这只是不得不在多个页面上以固定大小进行排版的一个自然的结果。不过 HTML 中不存在这个问题，因为所有内容都可以被连续地放置在一个页面上（大概有着无限的高度），并且不需要在有着相同页面大小的多个页面上分割任何内容。
 
-&emsp;&emsp;如果我们通过区块选项 `fig.cap` 为代码块分配一个图片标题，那么 R 图形将被放入图形 (figure) 环境中，它将被自动标记和编号，还可以进行交叉引用。图形环境的标签是从代码块的标签生成的。例如，如果块标签是 `foo`，则图片标签将是 `fig:foo`（前缀 `fig:` 在 `foo` 之前添加）。如果要引用一张图片\index{cross-reference}，请使用语法 `\@ref(label)`，^[不要忘记前导的反斜杠！注意 `ref` 后面的括号 `()`；它们不是大括号 `{}`。]，其中 `label` 是图片标签，例如 `fig:foo`。
+如果我们通过区块选项 `fig.cap` 为代码块分配一个图片标题，那么 R 图形将被放入图形 (figure) 环境中，它将被自动标记和编号，还可以进行交叉引用。图形环境的标签是从代码块的标签生成的。例如，如果块标签是 `foo`，则图片标签将是 `fig:foo`（前缀 `fig:` 在 `foo` 之前添加）。如果要引用一张图片\index{cross-reference}，请使用语法 `\@ref(label)`，^[不要忘记前导的反斜杠！注意 `ref` 后面的括号 `()`；它们不是大括号 `{}`。]，其中 `label` 是图片标签，例如 `fig:foo`。
 
-&emsp;&emsp;如果要*在图片标题中*利用 Markdown 格式化的优势，需要使用文本引用（请参阅第 \@ref(text-references) 节）。例如，当输出格式为 LaTeX/PDF 时，包含 `_斜体文本_` 的图片标题将不起作用，因为下划线是 LaTeX 中的特殊字符。但如果使用文本引用，则当输出为 LaTeX 时，`_斜体文本_` 将被转换为 LaTeX 代码。
+如果要*在图片标题中*利用 Markdown 格式化的优势，需要使用文本引用（请参阅第 \@ref(text-references) 节）。例如，当输出格式为 LaTeX/PDF 时，包含 `_斜体文本_` 的图片标题将不起作用，因为下划线是 LaTeX 中的特殊字符。但如果使用文本引用，则当输出为 LaTeX 时，`_斜体文本_` 将被转换为 LaTeX 代码。
 
 ```{block2, type='rmdimportant'}
 如果要交叉引用从代码块生成的图片或表格，请确保块标签仅包含*字母与数字字符 (alphanumber)* （a-z、a-z、0-9）、斜杠 (/) 或破折号 (-)。
 ```
 
 
-&emsp;&emsp;区块选项 `fig.asp` 能够被用来设置图片的纵横比。例如图片的高宽比。如果图片的宽度是 6 英寸 (`fig.width = 6`) 并且 `fig.asp = 0.7`，则图片的高度将会自动使用 `fig.width * fig.asp = 6 * 0.7 = 4.2` 计算得出。图 \@ref(fig:pressure-plot) 是使用区块选项 `fig.asp = 0.7`、`fig.width = 6` 和 `fig.align = 'center'` 的一个例子，它是从下面的代码中生成的：
+区块选项 `fig.asp` 能够被用来设置图片的纵横比。例如图片的高宽比。如果图片的宽度是 6 英寸 (`fig.width = 6`) 并且 `fig.asp = 0.7`，则图片的高度将会自动使用 `fig.width * fig.asp = 6 * 0.7 = 4.2` 计算得出。图 \@ref(fig:pressure-plot) 是使用区块选项 `fig.asp = 0.7`、`fig.width = 6` 和 `fig.align = 'center'` 的一个例子，它是从下面的代码中生成的：
 
 ```{r pressure-plot, fig.asp=.7, fig.width=6, fig.cap='指定纵横比、宽度和对齐方式的一个图片示例。', fig.align='center', out.width='90%'}
 par(mar = c(4, 4, .1, .1))
 plot(pressure, pch = 19, type = 'b')
 ```
 
-&emsp;&emsp;图片的实际大小是由区块选项 `fig.width` 和 `fig.height` 决定的（图片的大小由图形设备 (graphical device) 生成），并且我们能够通过区块选项 `out.width` 和 `out.height` 指定图片的输出大小。这两个选项可能的取值由文档的输出格式决定。例如，`out.width = '30%'` 对于 HTML 输出格式来说是有效的，但对于 LaTeX/PDF 输出来说是无效值。然而，**knitr** 会自动地将 `x%` 格式的 `out.width` 的百分比值转化为 `(x / 100) \linewidth`。例如，当输出格式为 LaTeX 时，`out.width = '70%'` 将会被视为 `.7\linewidth`。这样的处理使得我们能够以一致的方式指定图片的相对宽度。图 \@ref(fig:cars-plot) 是 `out.width = 70%` 的一个示例。
+图片的实际大小是由区块选项 `fig.width` 和 `fig.height` 决定的（图片的大小由图形设备 (graphical device) 生成），并且我们能够通过区块选项 `out.width` 和 `out.height` 指定图片的输出大小。这两个选项可能的取值由文档的输出格式决定。例如，`out.width = '30%'` 对于 HTML 输出格式来说是有效的，但对于 LaTeX/PDF 输出来说是无效值。然而，**knitr** 会自动地将 `x%` 格式的 `out.width` 的百分比值转化为 `(x / 100) \linewidth`。例如，当输出格式为 LaTeX 时，`out.width = '70%'` 将会被视为 `.7\linewidth`。这样的处理使得我们能够以一致的方式指定图片的相对宽度。图 \@ref(fig:cars-plot) 是 `out.width = 70%` 的一个示例。
 
 ```{r cars-plot, out.width='70%', fig.cap='相对宽度为 70\\% 的一个图片示例。'}
 par(mar = c(4, 4, .1, .1))
@@ -525,7 +525,7 @@ plot(cars, pch = 19)
 ```
 
 
-&emsp;&emsp;如果要在一个图形环境中放置多张图片，则必须使用区块选项 `fig.show = 'hold'` 来保存代码块中的多张图片，并将它们包含在一个环境中。如果所有图片的宽度之和小于或等于当前线宽 (line width)，也可以并排放置图片。例如，如果两张图片具有相同的宽度 `50%`，则它们将并排放置。类似地，可以通过指定 `out.width = '33%'` 在一行并排放置三张图片。图 \@ref(fig:multi-plots) 是放置两张图的示例，每张图的宽度为 `50%`。
+如果要在一个图形环境中放置多张图片，则必须使用区块选项 `fig.show = 'hold'` 来保存代码块中的多张图片，并将它们包含在一个环境中。如果所有图片的宽度之和小于或等于当前线宽 (line width)，也可以并排放置图片。例如，如果两张图片具有相同的宽度 `50%`，则它们将并排放置。类似地，可以通过指定 `out.width = '33%'` 在一行并排放置三张图片。图 \@ref(fig:multi-plots) 是放置两张图的示例，每张图的宽度为 `50%`。
 
 ```{r multi-plots, out.width='50%', fig.show='hold', fig.cap='并排放置两张图片。'}
 par(mar = c(4, 4, .1, .1))
@@ -533,7 +533,7 @@ plot(pressure, pch = 19, type = 'b')
 plot(cars, pch = 19)
 ```
 
-&emsp;&emsp;有时，你可能有一些不是从 R 代码生成的图片，这时可以通过函数 `knitr::include_graphics()` 将它们包含在 R Markdown 中。图 \@ref(fig:knitr-logo) 是在图形环境中包含三个 **knitr** 徽标的示例。你可以将一个或多个图像路径传递给 `include_graphics()`\index{knitr::include\_graphics()} 函数，并且应用于普通 R plots 的所有区块选项也适用于这些图像，例如，可以使用 `out.width = '33%'` 设置这些图像在输出文档中的宽度。
+有时，你可能有一些不是从 R 代码生成的图片，这时可以通过函数 `knitr::include_graphics()` 将它们包含在 R Markdown 中。图 \@ref(fig:knitr-logo) 是在图形环境中包含三个 **knitr** 徽标的示例。你可以将一个或多个图像路径传递给 `include_graphics()`\index{knitr::include\_graphics()} 函数，并且应用于普通 R plots 的所有区块选项也适用于这些图像，例如，可以使用 `out.width = '33%'` 设置这些图像在输出文档中的宽度。
 
 ```{r knitr-logo, out.width='32.8%', fig.show='hold', fig.cap='包含在文档中的来自外部 PNG 图像文件的三个 knitr 徽标。'}
 knitr::include_graphics(rep('images/knit-logo.png', 3))
@@ -548,9 +548,9 @@ knitr::include_graphics(rep('images/knit-logo.png', 3))
 
 ## 表格 {#tables}
 
-&emsp;&emsp;目前来说，生成一个表格\index{table}的最方便的方法是使用函数 `knitr::kable()`，因为在 **knitr** 中有一些内部技巧可以使其与 **bookdown** 一起工作，并且用户并不需要知道这些实现细节。我们在本节后面将会解释如何使用其他软件包和函数。
+目前来说，生成一个表格\index{table}的最方便的方法是使用函数 `knitr::kable()`，因为在 **knitr** 中有一些内部技巧可以使其与 **bookdown** 一起工作，并且用户并不需要知道这些实现细节。我们在本节后面将会解释如何使用其他软件包和函数。
 
-&emsp;&emsp;和图片一样，带有标题的表格也将被编号并且可以被引用\index{cross-reference}。`kable()` 函数将会为表格环境自动生成一个标签，即前缀 `tab:` 加上区块标签。例如，标签为 `foo` 的代码块的表格标签将是 `tab:foo`，并且我们仍然能够使用语法 `\@ref(label)` 来引用该表格。表 \@ref(tab:table-single) 是一个简单的例子。
+和图片一样，带有标题的表格也将被编号并且可以被引用\index{cross-reference}。`kable()` 函数将会为表格环境自动生成一个标签，即前缀 `tab:` 加上区块标签。例如，标签为 `foo` 的代码块的表格标签将是 `tab:foo`，并且我们仍然能够使用语法 `\@ref(label)` 来引用该表格。表 \@ref(tab:table-single) 是一个简单的例子。
 
 ```{r table-single, tidy=FALSE}
 knitr::kable(
@@ -559,7 +559,7 @@ knitr::kable(
 )
 ```
 
-&emsp;&emsp;如果要在单个表格环境放入多个表格，请将数据对象（通常是 R 中的数据框）封装到一个列表中有关示例请见表 \@ref(tab:table-multi)。请注意此功能仅在 HTML 和 PDF 输出格式中起作用。
+如果要在单个表格环境放入多个表格，请将数据对象（通常是 R 中的数据框）封装到一个列表中有关示例请见表 \@ref(tab:table-multi)。请注意此功能仅在 HTML 和 PDF 输出格式中起作用。
 
 ```{r table-multi, tidy=FALSE}
 knitr::kable(
@@ -571,7 +571,7 @@ knitr::kable(
 )
 ```
 
-&emsp;&emsp;当你不希望表格在 PDF 中浮动时，可以使用 LaTeX 软件包 [**longtable**](https://www.ctan.org/pkg/longtable)\index{longtable}，它可以在多个页面上截断一个表格。要使用 **longtable**，请将 `longtable = TRUE` 参数传递给 `kable()`，并确保在 LaTeX 导言 (preamble) 中包含 `\usepackage{longtable}`（有关如何自定义 LaTeX 导言的信息，请参阅第 \@ref(yaml-options) 节)。当然，这与 HTML 输出无关，因为 HTML 中的表格并不需要浮动。
+当你不希望表格在 PDF 中浮动时，可以使用 LaTeX 软件包 [**longtable**](https://www.ctan.org/pkg/longtable)\index{longtable}，它可以在多个页面上截断一个表格。要使用 **longtable**，请将 `longtable = TRUE` 参数传递给 `kable()`，并确保在 LaTeX 导言 (preamble) 中包含 `\usepackage{longtable}`（有关如何自定义 LaTeX 导言的信息，请参阅第 \@ref(yaml-options) 节)。当然，这与 HTML 输出无关，因为 HTML 中的表格并不需要浮动。
 
 ```{r longtable, tidy=FALSE}
 knitr::kable(
@@ -580,7 +580,7 @@ knitr::kable(
 )
 ```
 
-&emsp;&emsp;Pandoc 支持多种类型的 [Markdown 表格](http://pandoc.org/MANUAL.html#tables)，例如简单表格、多行表格、栅格表格和管道表格。`knitr::kable()` 生成的是这样一个简单的表格：
+Pandoc 支持多种类型的 [Markdown 表格](http://pandoc.org/MANUAL.html#tables)，例如简单表格、多行表格、栅格表格和管道表格。`knitr::kable()` 生成的是这样一个简单的表格：
 
 ```markdown
 Table：Markdown 的一个简单表格。
@@ -595,17 +595,17 @@ Table：Markdown 的一个简单表格。
           5.4           3.9            1.7           0.4
 ```
 
-&emsp;&emsp;你可以在文档中使用任何类型的 Markdown 表格。为了能够交叉引用 Markdown 表格，它必须具有 `Table: (\#label) Caption here` 格式的标签标题，其中 `label` 必须具有前缀 `tab:`，例如 `tab:simple-table`。
+你可以在文档中使用任何类型的 Markdown 表格。为了能够交叉引用 Markdown 表格，它必须具有 `Table: (\#label) Caption here` 格式的标签标题，其中 `label` 必须具有前缀 `tab:`，例如 `tab:simple-table`。
 
-&emsp;&emsp;如果决定使用其它 R 软件包生成表格，则必须确保表格环境的标签以 `(\#label)` 的格式出现在表格标题的开头（同样地，`label` 必须具有前缀 `tab:`）。你必须非常小心表格生成函数的 *通用性*：它应该在 HTML 和 LaTeX 输出格式下能够自动正常工作，因此必须在内部考虑输出格式（检查 `knitr::opts_knit$get('rmarkdown.pandoc.to')`）。当输出 HTML 表格时，标题必须写在 `<caption></caption>` 标签中，不过对于简单的表格，`kable()` 就足够了。如果你需要创建复杂的表格（例如，某些单元格跨越多列/行），则必须考虑上述问题。
+如果决定使用其它 R 软件包生成表格，则必须确保表格环境的标签以 `(\#label)` 的格式出现在表格标题的开头（同样地，`label` 必须具有前缀 `tab:`）。你必须非常小心表格生成函数的 *通用性*：它应该在 HTML 和 LaTeX 输出格式下能够自动正常工作，因此必须在内部考虑输出格式（检查 `knitr::opts_knit$get('rmarkdown.pandoc.to')`）。当输出 HTML 表格时，标题必须写在 `<caption></caption>` 标签中，不过对于简单的表格，`kable()` 就足够了。如果你需要创建复杂的表格（例如，某些单元格跨越多列/行），则必须考虑上述问题。
 
 ## 交叉引用 {#cross-references}
 
-&emsp;&emsp;我们已经解释了交叉引用\index{cross-reference}是如何在方程（第 \@ref(equations) 节）、定理（第 \@ref(theorems) 节）、图片（第 \@ref(figures) 节）和表格（第 \@ref(tables) 节）上起作用的。事实上，你也能够使用相同的语法 `\@ref(label)` 引用章节，在此时 `label` 是章节的标识符。默认情况下，Pandoc 将会为全部章节标题生成一个标识符，例如 `# Hello World` 这一章将会有名为 `hello-world` 的标识符。我们建议你手动为章节标题指定标识符，以确保更改章节标题后不会忘记更新参考标签。要将标识符分配给章节标题，只需要简单的在章节标题之后添加 `{#id}` 即可。章节标题的其他属性可以使用标准 [Pandoc 语法](http://pandoc.org/MANUAL.html#heading-identifiers)。
+我们已经解释了交叉引用\index{cross-reference}是如何在方程（第 \@ref(equations) 节）、定理（第 \@ref(theorems) 节）、图片（第 \@ref(figures) 节）和表格（第 \@ref(tables) 节）上起作用的。事实上，你也能够使用相同的语法 `\@ref(label)` 引用章节，在此时 `label` 是章节的标识符。默认情况下，Pandoc 将会为全部章节标题生成一个标识符，例如 `# Hello World` 这一章将会有名为 `hello-world` 的标识符。我们建议你手动为章节标题指定标识符，以确保更改章节标题后不会忘记更新参考标签。要将标识符分配给章节标题，只需要简单的在章节标题之后添加 `{#id}` 即可。章节标题的其他属性可以使用标准 [Pandoc 语法](http://pandoc.org/MANUAL.html#heading-identifiers)。
 
-&emsp;&emsp;当找不到引用的标签时，你将会看见两个问号 \@ref(fig:does-not-exist)以及编译书籍时在 R console 中打印的警告信息。
+当找不到引用的标签时，你将会看见两个问号 \@ref(fig:does-not-exist)以及编译书籍时在 R console 中打印的警告信息。
 
-&emsp;&emsp;你也可以使用显式或自动指定的章节标识符，甚至是实际的章节标题文本创建基于文本的章节链接。
+你也可以使用显式或自动指定的章节标识符，甚至是实际的章节标题文本创建基于文本的章节链接。
 
 - 如果你对使用章节标题作为链接文本感到满意，请在一组方括号内使用它：
     - `[章节标题文本]`: 例如通过 `[单个文档]` 创建指定的链接文本 "[单个文档]" 
@@ -614,19 +614,19 @@ Table：Markdown 的一个简单表格。
     - `[链接文本][章节标题文本]`。例如，"[非英语书籍][国际化]" via `[非英语书籍][国际化]`
     - `[链接文本](#标识符)`。例如，"[表格填充](#tables)" via `[表格填充](#tables)`
 
-&emsp;&emsp;Pandoc 文档提供了更多详细信息，请见 [自动指定章节标识符 (automatic section IDs)](http://pandoc.org/MANUAL.html#extension-auto_identifiers) 和 [隐式标题引用 (implicit header references)](http://pandoc.org/MANUAL.html#extension-implicit_header_references)。
+Pandoc 文档提供了更多详细信息，请见 [自动指定章节标识符 (automatic section IDs)](http://pandoc.org/MANUAL.html#extension-auto_identifiers) 和 [隐式标题引用 (implicit header references)](http://pandoc.org/MANUAL.html#extension-implicit_header_references)。
 
-&emsp;&emsp;当我们在 PDF 或 HTML 输出文档下提及并不在当前页面的文档项目时，交叉引用仍然能够起作用。例如，请见方程 \@ref(eq:binom) 和图片 \@ref(fig:knitr-logo)。
+当我们在 PDF 或 HTML 输出文档下提及并不在当前页面的文档项目时，交叉引用仍然能够起作用。例如，请见方程 \@ref(eq:binom) 和图片 \@ref(fig:knitr-logo)。
 
 ## 自定义区块
 
-&emsp;&emsp;自定义区块通常用于技术书籍中，它可以创建引起读者注意的代码和/或描述文字的突出文本框。例如，自定义区块可用于高亮显示注释或警告。可以使用 Pandoc 的 `Div` 围栏区块 (<https://pandoc.org/MANUAL.html#divs-and-spans>) 的语法将其包含在多个 **bookdown** 输出格式中。关于其用法可以阅读 [_R Markdown Cookbook_](<https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html>) 第 9.6 节 [@rmarkdown2020]。
+自定义区块通常用于技术书籍中，它可以创建引起读者注意的代码和/或描述文字的突出文本框。例如，自定义区块可用于高亮显示注释或警告。可以使用 Pandoc 的 `Div` 围栏区块 (<https://pandoc.org/MANUAL.html#divs-and-spans>) 的语法将其包含在多个 **bookdown** 输出格式中。关于其用法可以阅读 [_R Markdown Cookbook_](<https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html>) 第 9.6 节 [@rmarkdown2020]。
 
-&emsp;&emsp;HTML 输出格式 `bs4_book()` 包括为选定的自定义区块设置样式的功能，请见第 \@ref(bs4-book) 节。
+HTML 输出格式 `bs4_book()` 包括为选定的自定义区块设置样式的功能，请见第 \@ref(bs4-book) 节。
 
 ## 引文 {#citations}
 
-&emsp;&emsp;Pandoc 提供了两种方法来管理文档中引用文献\index{citation}和参考书目。
+Pandoc 提供了两种方法来管理文档中引用文献\index{citation}和参考书目。
 
 1. 默认的方法是使用名为 [`pandoc-citeproc`](https://github.com/jgm/pandoc-citeproc) 的 Pandoc 帮助程序，它遵循 [引用样式语言 (Citation Style Language, CSL)](https://docs.citationstyles.org/en/v1.0.1/specification.html) 的规范，并从大量可用的 [CSL 样式文件 (CSL style files)](https://www.zotero.org/styles/) 之一中获取特定的格式说明。
 
@@ -642,13 +642,13 @@ Table：Markdown 的一个简单表格。
         citation_package: biblatex
     ```
 
-&emsp;&emsp;即使你为 PDF 输出格式选择了 `natbib` 或 `biblatex` 作为引文软件包，所有其它输出格式都将使用 `pandoc-citeproc`。如果使用相匹配的样式（例如对于 `biblatex` 采用 `biblio-style: apa`，而对于 `pandoc-citeproc` 采用 `csl: apa.csl`），输出到 PDF 和 非 PDF 的格式将非常相似，但不一定是相同的。
+即使你为 PDF 输出格式选择了 `natbib` 或 `biblatex` 作为引文软件包，所有其它输出格式都将使用 `pandoc-citeproc`。如果使用相匹配的样式（例如对于 `biblatex` 采用 `biblio-style: apa`，而对于 `pandoc-citeproc` 采用 `csl: apa.csl`），输出到 PDF 和 非 PDF 的格式将非常相似，但不一定是相同的。
 
-&emsp;&emsp;对于任何非 PDF 输出格式，`pandoc-citeproc` 是唯一可用的选项。如果 PDF 和非 PDF 输出格式之间的一致性很重要，请始终使用 `pandoc-citeproc`。
+对于任何非 PDF 输出格式，`pandoc-citeproc` 是唯一可用的选项。如果 PDF 和非 PDF 输出格式之间的一致性很重要，请始终使用 `pandoc-citeproc`。
 
-&emsp;&emsp;参考书目数据有很多种格式。本节仅展示了 BibTeX 数据库的示例，对于其他格式请参见 Pandoc 使用指南中 ["Citations"](https://pandoc.org/MANUAL.html#citations) 一节。
+参考书目数据有很多种格式。本节仅展示了 BibTeX 数据库的示例，对于其他格式请参见 Pandoc 使用指南中 ["Citations"](https://pandoc.org/MANUAL.html#citations) 一节。
 
-&emsp;&emsp;BibTeX 数据库是一个纯文本文件（依惯例其文件扩展名为 `.bib`），其内容包含有类似于以下所示的参考书目条目：
+BibTeX 数据库是一个纯文本文件（依惯例其文件扩展名为 `.bib`），其内容包含有类似于以下所示的参考书目条目：
 
 ```bibtex
 @Manual{R-base,
@@ -662,18 +662,18 @@ Table：Markdown 的一个简单表格。
 }
 ```
 
-&emsp;&emsp;参考书目条目以 `@type{` 开头，其中 `type` 可以是 `article`、`book`、`manual`等等。^[类型名称不区分大小写，因此不管是 `manual`、`Manual` 或 `MANUAL` 都可以。]紧跟着是一个引文关键词，在上面的示例中为 `R-base`。要引用一个条目，需要使用 `@key` 或 `[@key]`（后者会将引用文字放在圆括号中），例如，`@R-base` 被渲染为 @R-base，而 `[@R-base]` 则渲染为 "[@R-base]"。注释也可以包含在方括号中，例如 `[a note about, @R-base]` 将会被渲染为 "[a note about, @R-base]"。如果你对 LaTeX 中的 **natbib** 软件包很熟悉，你会发现 `@key` 基本上就是 `\citet{key}`，而 `[@key]` 等同于 `\citep{key}`。
+参考书目条目以 `@type{` 开头，其中 `type` 可以是 `article`、`book`、`manual`等等。^[类型名称不区分大小写，因此不管是 `manual`、`Manual` 或 `MANUAL` 都可以。]紧跟着是一个引文关键词，在上面的示例中为 `R-base`。要引用一个条目，需要使用 `@key` 或 `[@key]`（后者会将引用文字放在圆括号中），例如，`@R-base` 被渲染为 @R-base，而 `[@R-base]` 则渲染为 "[@R-base]"。注释也可以包含在方括号中，例如 `[a note about, @R-base]` 将会被渲染为 "[a note about, @R-base]"。如果你对 LaTeX 中的 **natbib** 软件包很熟悉，你会发现 `@key` 基本上就是 `\citet{key}`，而 `[@key]` 等同于 `\citep{key}`。
 
-&emsp;&emsp;在一个参考书目条目中有许多字段，例如 `title`、`author` 和 `year` 等。你可用在 <https://en.wikipedia.org/wiki/BibTeX> 查看 BibTeX 中可能的条目和字段类型。
+在一个参考书目条目中有许多字段，例如 `title`、`author` 和 `year` 等。你可用在 <https://en.wikipedia.org/wiki/BibTeX> 查看 BibTeX 中可能的条目和字段类型。
 
-&emsp;&emsp;在 **knitr** 中有一个帮助函数 `write_bib()`，它能够为 R 软件包自动生成 BibTeX 条目，例如：
+在 **knitr** 中有一个帮助函数 `write_bib()`，它能够为 R 软件包自动生成 BibTeX 条目，例如：
 
 ```{r write-bib, comment='', warning=FALSE}
 # the second argument can be a .bib file
 knitr::write_bib(c('knitr', 'stringr'), '', width = 60)
 ```
 
-&emsp;&emsp;一旦你有一个或多个 `.bib` 文件，你可以在第一个 R Markdown 文档（通常是 `index.Rmd`）中的 YAML 元数据中使用字段 `bibliography` 来使用它们，你也可以通过 `biblio-style` 指定参考书目样式（它仅对 PDF 输出文档起作用），例如：
+一旦你有一个或多个 `.bib` 文件，你可以在第一个 R Markdown 文档（通常是 `index.Rmd`）中的 YAML 元数据中使用字段 `bibliography` 来使用它们，你也可以通过 `biblio-style` 指定参考书目样式（它仅对 PDF 输出文档起作用），例如：
 
 ```yaml
 ---
@@ -683,19 +683,19 @@ link-citations: true
 ---
 ```
 
-&emsp;&emsp;字段 `link-citations` 能够用来添加从“作者-年份”格式的引文文本到 HTML 输出中参考书目条目的内部链接。
+字段 `link-citations` 能够用来添加从“作者-年份”格式的引文文本到 HTML 输出中参考书目条目的内部链接。
 
-&emsp;&emsp;当输出格式为 LaTeX 时，参考文献列表将自动放在文档末尾的章节中。对于非 LaTeX 输出，你可以为你的书籍添加一个空章节作为最后一章。例如，如果最后一章是 Rmd 文件 `06-references.Rmd`，则它的内容可以是内联 R 表达式：
+当输出格式为 LaTeX 时，参考文献列表将自动放在文档末尾的章节中。对于非 LaTeX 输出，你可以为你的书籍添加一个空章节作为最后一章。例如，如果最后一章是 Rmd 文件 `06-references.Rmd`，则它的内容可以是内联 R 表达式：
 
 ```markdown
 `r "\x60r if (knitr::is_html_output()) '# References {-}'\x60"`
 ```
 
-&emsp;&emsp;有关如何使用引文的更多详细说明和示例，请参阅 Pandoc 使用指南的“引文”部分。
+有关如何使用引文的更多详细说明和示例，请参阅 Pandoc 使用指南的“引文”部分。
 
 ## 索引 {#latex-index}
 
-&emsp;&emsp;目前只有 LaTeX/PDF 输出支持索引\index{index}。要在书籍之后打印索引，你可以在 LaTeX 导言 (preamble) 中使用 LaTeX 软件包 **makeidx** （请参阅第 \@ref(yaml-options) 节）：
+目前只有 LaTeX/PDF 输出支持索引\index{index}。要在书籍之后打印索引，你可以在 LaTeX 导言 (preamble) 中使用 LaTeX 软件包 **makeidx** （请参阅第 \@ref(yaml-options) 节）：
 
 ```latex
 \usepackage{makeidx}
@@ -761,40 +761,40 @@ should be part of your version control system.
 
 ## HTML 小组件
 
-&emsp;&emsp;尽管 R 的最大优势之一是数据可视化，但仍然有大量 JavaScript 库可用于更丰富的数据可视化。这些库可以被用来构建能够在 Web 浏览器中轻松呈现的可交互式应用，因此用户不必安装其它任何软件包就能够查看可视化效果。将这些 JavaScript 库引入 R 的一种方法是通过 [**htmlwidgets**](http://htmlwidgets.org) 软件包 [@R-htmlwidgets]\index{HTML widget}。
+尽管 R 的最大优势之一是数据可视化，但仍然有大量 JavaScript 库可用于更丰富的数据可视化。这些库可以被用来构建能够在 Web 浏览器中轻松呈现的可交互式应用，因此用户不必安装其它任何软件包就能够查看可视化效果。将这些 JavaScript 库引入 R 的一种方法是通过 [**htmlwidgets**](http://htmlwidgets.org) 软件包 [@R-htmlwidgets]\index{HTML widget}。
 
-&emsp;&emsp;HTML 小组件能够呈现为独立的网页（就像 R plot 一样），或者嵌入 R Markdown 文档和 Shiny 应用中。它们最初仅被设计用于 HTML 输出，并且需要使用 JavaScript，因此它们不能用于非 HTML 输出格式，例如 LaTeX/PDF。在 **knitr** v1.13 之前，如果你试图在非 HTML 输出格式中呈现 HTML 小组件，你将会收到错误消息。从 **knitr** v1.13 开始，HTML 小组件将会自动被呈现为通过 **webshot** 软件包 [@R-webshot] 截取的屏幕截图。当然，你需要安装有 **webshot** 软件包。另外，你必须安装 PhantomJS (http://phantomjs.org)，因为 **webshot** 使用它来捕捉屏幕截图。**webshot** 和 PhantomJS 都能够在 R 中自动安装：
+HTML 小组件能够呈现为独立的网页（就像 R plot 一样），或者嵌入 R Markdown 文档和 Shiny 应用中。它们最初仅被设计用于 HTML 输出，并且需要使用 JavaScript，因此它们不能用于非 HTML 输出格式，例如 LaTeX/PDF。在 **knitr** v1.13 之前，如果你试图在非 HTML 输出格式中呈现 HTML 小组件，你将会收到错误消息。从 **knitr** v1.13 开始，HTML 小组件将会自动被呈现为通过 **webshot** 软件包 [@R-webshot] 截取的屏幕截图。当然，你需要安装有 **webshot** 软件包。另外，你必须安装 PhantomJS (http://phantomjs.org)，因为 **webshot** 使用它来捕捉屏幕截图。**webshot** 和 PhantomJS 都能够在 R 中自动安装：
 
 ```{r eval=FALSE}
 install.packages('webshot')
 webshot::install_phantomjs()
 ```
 
-&emsp;&emsp;函数 `install_phantomjs()` 适用于 Windows、OS X 和 Linux。如果你熟悉修改系统环境变量 `PATH`，也可以选择自己下载和安装 PhantomJS。
+函数 `install_phantomjs()` 适用于 Windows、OS X 和 Linux。如果你熟悉修改系统环境变量 `PATH`，也可以选择自己下载和安装 PhantomJS。
 
-&emsp;&emsp;当 **knitr** 在代码块中检测到 HTML 小组件对象时，它要么在当前输出格式为 HTML 时正常呈现小组件，要么在输出格式不是 HTML 时将小组件保存为 HTML 页面，并调用 **webshot** 来捕获 HTML 页面的屏幕图像。下面是从 **DT** 软件包 [@R-DT] 创建的表格的示例：
+当 **knitr** 在代码块中检测到 HTML 小组件对象时，它要么在当前输出格式为 HTML 时正常呈现小组件，要么在输出格式不是 HTML 时将小组件保存为 HTML 页面，并调用 **webshot** 来捕获 HTML 页面的屏幕图像。下面是从 **DT** 软件包 [@R-DT] 创建的表格的示例：
 
 ```{r DT-demo, fig.cap='A table widget rendered via the DT package.', dev='png', cache=TRUE, cache.extra=packageVersion('DT'), screenshot.opts=list(zoom=2)}
 DT::datatable(iris)
 ```
 
-&emsp;&emsp;如果你现在以网页的形式阅读本书，应该能看到由上述代码块生成的交互式表格：你可以对列进行排序并在表格中进行搜索。如果你正在阅读本书的非 HTML 版本，应该能看到这个表格的屏幕截图。由于真实的 Web 浏览器和 PhantomJS 的虚拟浏览器之间的差异，屏幕截图可能与 Web 浏览器中呈现的实际小组件略有不同。
+如果你现在以网页的形式阅读本书，应该能看到由上述代码块生成的交互式表格：你可以对列进行排序并在表格中进行搜索。如果你正在阅读本书的非 HTML 版本，应该能看到这个表格的屏幕截图。由于真实的 Web 浏览器和 PhantomJS 的虚拟浏览器之间的差异，屏幕截图可能与 Web 浏览器中呈现的实际小组件略有不同。
 
-&emsp;&emsp;有许多与屏幕捕获相关的 **knitr** 区块选项。第一，如果你对自动截图的质量不满意，或者想要一个特定状态的小组件的屏幕截图（例如在你单击并排序表的某一列之后），可以手动捕获屏幕图像，并通过区块选项 `screenshot.alt`（备选屏幕截图 (alternative screenshots)）提供自己的屏幕截图。该选项使用图像的路径获得图片。如果一个区块中有多个小组件，则可以提供一个图像路径的向量。当该选项存在时，**knitr** 将不再调用 **webshot** 自动截图。
+有许多与屏幕捕获相关的 **knitr** 区块选项。第一，如果你对自动截图的质量不满意，或者想要一个特定状态的小组件的屏幕截图（例如在你单击并排序表的某一列之后），可以手动捕获屏幕图像，并通过区块选项 `screenshot.alt`（备选屏幕截图 (alternative screenshots)）提供自己的屏幕截图。该选项使用图像的路径获得图片。如果一个区块中有多个小组件，则可以提供一个图像路径的向量。当该选项存在时，**knitr** 将不再调用 **webshot** 自动截图。
 
-&emsp;&emsp;第二，有时你可能希望强制 **knitr** 使用静态屏幕截图，而不是在 HTML 页面上呈现实际的小组件。在这种情况下，你可以设置区块选项 `screenshot.force = TRUE`。小组件将始终呈现为静态图像。请注意，你仍然可以选择使用自动或自定义的屏幕截图。
+第二，有时你可能希望强制 **knitr** 使用静态屏幕截图，而不是在 HTML 页面上呈现实际的小组件。在这种情况下，你可以设置区块选项 `screenshot.force = TRUE`。小组件将始终呈现为静态图像。请注意，你仍然可以选择使用自动或自定义的屏幕截图。
 
-&emsp;&emsp;第三，**webshot** 有一些控制自动屏幕截图的选项，你可以通过区块选项 `screenshot.opts` 来进行设置，该选项接收一个类似 `list(delay = 2, cliprect = 'viewport')` 的列表。有关可用选项的完整列表，请查阅帮助页面 [`?webshot::webshot`](https://wch.github.io/webshot/reference/webshot.html)，而其中一些选项的效果说明请见[软件包介绍](https://wch.github.io/web/packages/webshot/articles/intro.html)。这里的 `delay` 选项对于需要很长时间进行渲染的小组件来说很重要：`delay` 指定了 PhantomJS 在截图前等待的秒数。如果看到不完整的屏幕截图，可能需要指定更长的延迟时间（默认值为 0.2 秒）。
+第三，**webshot** 有一些控制自动屏幕截图的选项，你可以通过区块选项 `screenshot.opts` 来进行设置，该选项接收一个类似 `list(delay = 2, cliprect = 'viewport')` 的列表。有关可用选项的完整列表，请查阅帮助页面 [`?webshot::webshot`](https://wch.github.io/webshot/reference/webshot.html)，而其中一些选项的效果说明请见[软件包介绍](https://wch.github.io/web/packages/webshot/articles/intro.html)。这里的 `delay` 选项对于需要很长时间进行渲染的小组件来说很重要：`delay` 指定了 PhantomJS 在截图前等待的秒数。如果看到不完整的屏幕截图，可能需要指定更长的延迟时间（默认值为 0.2 秒）。
 
-&emsp;&emsp;第四，如果你觉得捕获屏幕截图很慢，或者不想每次执行代码块时都这样做，可以使用区块选项 `cache = TRUE` 来缓存区块。缓存对于 HTML 和非 HTML 输出格式都适用。
+第四，如果你觉得捕获屏幕截图很慢，或者不想每次执行代码块时都这样做，可以使用区块选项 `cache = TRUE` 来缓存区块。缓存对于 HTML 和非 HTML 输出格式都适用。
 
-&emsp;&emsp;屏幕截图的表现类似于普通的 R plot，因为许多与图形相关的区块选项也适用于屏幕截图，包括 `fig.width`、`fig.height`、`out.width`、`fig.cap` 等。因此你可以在输出文档中指定屏幕截图的大小，并为其指定图片标题。可以通过区块选项 `dev` 指定自动截图的图片格式，可能的值为 `pdf`、`png` 和 `jpeg`。PDF 输出的默认值为 `pdf`，其他类型输出的默认值为 `png`。请注意，`pdf` 可能不如 `png` 那样可靠：有时 HTML 页面上的某些元素无法呈现到 PDF 屏幕截图中，因此你甚至可能希望在 PDF 输出中使用 `dev = 'png'`。不过能否正常使用取决于 HTML 小部件的具体情况，在确定哪种格式更加合适之前，你可以对 `pdf` 和 `png`（或 `jpeg`）都加以尝试。
+屏幕截图的表现类似于普通的 R plot，因为许多与图形相关的区块选项也适用于屏幕截图，包括 `fig.width`、`fig.height`、`out.width`、`fig.cap` 等。因此你可以在输出文档中指定屏幕截图的大小，并为其指定图片标题。可以通过区块选项 `dev` 指定自动截图的图片格式，可能的值为 `pdf`、`png` 和 `jpeg`。PDF 输出的默认值为 `pdf`，其他类型输出的默认值为 `png`。请注意，`pdf` 可能不如 `png` 那样可靠：有时 HTML 页面上的某些元素无法呈现到 PDF 屏幕截图中，因此你甚至可能希望在 PDF 输出中使用 `dev = 'png'`。不过能否正常使用取决于 HTML 小部件的具体情况，在确定哪种格式更加合适之前，你可以对 `pdf` 和 `png`（或 `jpeg`）都加以尝试。
 
 ## Web 页面和 Shiny 应用
 
-&emsp;&emsp;与 HTML 小组件类似，书籍中可以嵌入任意网页。你可以使用函数 `knitr::include_url()` 通过 URL 在书籍中包含该网页。当输出格式为 HTML 时，它会使用一个 `iframe`；^[`iframe` 基本上是一个网页上的框，用于嵌入另一个网页。]在其他情况下，**knitr** 尝试拍摄该网页的屏幕截图（或使用你提供的自定义屏幕截图）。所有区块选项都与 HTML 小组件的选项相同。一个可能需要你特别注意的选项是 `delay`：HTML 小组件是在本地渲染的，因此 PhantomJS 通常可以快速加载以获取屏幕截图，但是加载任意 URL 可能需要更长的时间，因此你可能需要使用更大的 `delay` 值，例如，使用区块选项 `screenshot.opts = list(delay = 5)`。
+与 HTML 小组件类似，书籍中可以嵌入任意网页。你可以使用函数 `knitr::include_url()` 通过 URL 在书籍中包含该网页。当输出格式为 HTML 时，它会使用一个 `iframe`；^[`iframe` 基本上是一个网页上的框，用于嵌入另一个网页。]在其他情况下，**knitr** 尝试拍摄该网页的屏幕截图（或使用你提供的自定义屏幕截图）。所有区块选项都与 HTML 小组件的选项相同。一个可能需要你特别注意的选项是 `delay`：HTML 小组件是在本地渲染的，因此 PhantomJS 通常可以快速加载以获取屏幕截图，但是加载任意 URL 可能需要更长的时间，因此你可能需要使用更大的 `delay` 值，例如，使用区块选项 `screenshot.opts = list(delay = 5)`。
 
-&emsp;&emsp;另一个相关的函数是 `knitr::include_app()`，它与 `include_url()` 非常相似。它是为通过 URLs 在输出中嵌入 Shiny 应用程序\index{Shiny application}而设计的。它与 `include_url()` 的唯一区别在于，如果 URL 中不存在其他查询参数，它会自动将查询参数 `?showcase=0` 添加到 URL  中，以禁用 Shiny 的 showcase 模式，该模式对于屏幕截图或 iframes 来说不太可能有用。如果确实需要 showcase 模式，请使用 `include_url()` 而不是 `include_app()`。下面是一个 Shiny 的应用程序示例（图 \@ref(fig:miniUI)）：
+另一个相关的函数是 `knitr::include_app()`，它与 `include_url()` 非常相似。它是为通过 URLs 在输出中嵌入 Shiny 应用程序\index{Shiny application}而设计的。它与 `include_url()` 的唯一区别在于，如果 URL 中不存在其他查询参数，它会自动将查询参数 `?showcase=0` 添加到 URL  中，以禁用 Shiny 的 showcase 模式，该模式对于屏幕截图或 iframes 来说不太可能有用。如果确实需要 showcase 模式，请使用 `include_url()` 而不是 `include_app()`。下面是一个 Shiny 的应用程序示例（图 \@ref(fig:miniUI)）：
 
 \let\ooldhref\href
 \let\href\oldhref
@@ -805,6 +805,6 @@ knitr::include_app('https://yihui.shinyapps.io/miniUI/', height = '600px')
 
 \let\href\ooldhref
 
-&emsp;&emsp;同样的，如果你正在阅读本书的 HTML 版本，将看到一个活动的应用程序，如果你正在阅读本书的其他格式版本，将看到一个静态屏幕截图。上面的 Shiny 应用程序是使用 **miniUI** 软件包 [@R-miniUI] 创建的，这个软件包提供的布局功能对于小屏幕上的 Shiny 应用程序特别好。如果使用普通的 Shiny 布局功能，则可能会在 iframe 中看到垂直和/或水平滚动条，因为页面大小太大，无法放入 iframe 中。如果 iframe 的默认宽度太小，可以使用区块选项 `out.width` 进行更改。对于 iframe 的高度，请使用 `include_url()`/`include_app()` 的 `height` 参数。
+同样的，如果你正在阅读本书的 HTML 版本，将看到一个活动的应用程序，如果你正在阅读本书的其他格式版本，将看到一个静态屏幕截图。上面的 Shiny 应用程序是使用 **miniUI** 软件包 [@R-miniUI] 创建的，这个软件包提供的布局功能对于小屏幕上的 Shiny 应用程序特别好。如果使用普通的 Shiny 布局功能，则可能会在 iframe 中看到垂直和/或水平滚动条，因为页面大小太大，无法放入 iframe 中。如果 iframe 的默认宽度太小，可以使用区块选项 `out.width` 进行更改。对于 iframe 的高度，请使用 `include_url()`/`include_app()` 的 `height` 参数。
 
-&emsp;&emsp;Shiny 应用程序可能需要比普通 URL 更长的加载时间。你可能需要对 `delay` 选项使用一个保守的值，例如 10。不用多加叙说，`include_url()` 和 `include_app()` 需要一个正常工作的 Internet 连接，除非你以前缓存了区块（但是如果没有 Internet 连接，iframe 内的网页仍然无法工作）。
+Shiny 应用程序可能需要比普通 URL 更长的加载时间。你可能需要对 `delay` 选项使用一个保守的值，例如 10。不用多加叙说，`include_url()` 和 `include_app()` 需要一个正常工作的 Internet 连接，除非你以前缓存了区块（但是如果没有 Internet 连接，iframe 内的网页仍然无法工作）。

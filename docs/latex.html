@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>A.3 LaTeX | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="A.3 LaTeX | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-05-03" />
+<meta name="date" content="2023-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -151,6 +151,7 @@ div.csl-indent {
 </style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
 </head>
 
 <body>
@@ -307,7 +308,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="latex" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">A.3</span> LaTeX<a href="latex.html#latex" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>  只有当你想要将你的书籍转为 PDF 时，你才需要 LaTeX。你可以查阅 <a href="https://www.latex-project.org/get/" class="uri">https://www.latex-project.org/get/</a> 以获取更多关于 LaTeX 它的安装的信息，但是我们强烈推荐你安装名为 <a href="https://yihui.org/tinytex/">TinyTeX</a> 的轻量级跨平台 LaTeX 发行版，它是基于 TeX Live 构建的。TinyTeX 能够通过 R 软件包 <strong>tinytex</strong> 轻松安装（安装 <strong>bookdown</strong> 时将自动安装）：</p>
+<p>只有当你想要将你的书籍转为 PDF 时，你才需要 LaTeX。你可以查阅 <a href="https://www.latex-project.org/get/" class="uri">https://www.latex-project.org/get/</a> 以获取更多关于 LaTeX 它的安装的信息，但是我们强烈推荐你安装名为 <a href="https://yihui.org/tinytex/">TinyTeX</a> 的轻量级跨平台 LaTeX 发行版，它是基于 TeX Live 构建的。TinyTeX 能够通过 R 软件包 <strong>tinytex</strong> 轻松安装（安装 <strong>bookdown</strong> 时将自动安装）：</p>
 <div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="latex.html#cb151-1" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
 <p>使用 TinyTeX，你将永远不会看见这样的错误信息：</p>
 <div class="sourceCode" id="cb152"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb152-1"><a href="latex.html#cb152-1" tabindex="-1"></a>! LaTeX Error: File `titling.sty&#39; not found.</span>
@@ -324,8 +325,8 @@ div.csl-indent {
 <span id="cb152-12"><a href="latex.html#cb152-12" tabindex="-1"></a>pandoc: Error producing PDF</span>
 <span id="cb152-13"><a href="latex.html#cb152-13" tabindex="-1"></a>Error: pandoc document conversion failed with error 43</span>
 <span id="cb152-14"><a href="latex.html#cb152-14" tabindex="-1"></a>Execution halted</span></code></pre></div>
-<p>  上面的错误信息表示你使用了一个包含 <code>titling.sty</code> 的 LaTeX 软件包，但它并没有被安装。LaTeX 软件包名称通常是 <code>*.sty</code> 这样的文件名格式，因此在本例中，你可以尝试安装 <code>titling</code> 软件包。如果你使用带有 R Markdown 的 TinyTeX，丢失的 LaTeX 软件包将自动安装，因此你无需担心此类问题。</p>
-<p>  LaTeX 发行版和其软件包也不时会进行更新，你可以考虑更新它们，特别是当您遇到 LaTeX 问题时。你可以通过以下方式找到 LaTeX 发行版的版本：</p>
+<p>上面的错误信息表示你使用了一个包含 <code>titling.sty</code> 的 LaTeX 软件包，但它并没有被安装。LaTeX 软件包名称通常是 <code>*.sty</code> 这样的文件名格式，因此在本例中，你可以尝试安装 <code>titling</code> 软件包。如果你使用带有 R Markdown 的 TinyTeX，丢失的 LaTeX 软件包将自动安装，因此你无需担心此类问题。</p>
+<p>LaTeX 发行版和其软件包也不时会进行更新，你可以考虑更新它们，特别是当您遇到 LaTeX 问题时。你可以通过以下方式找到 LaTeX 发行版的版本：</p>
 <div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="latex.html#cb153-1" tabindex="-1"></a><span class="fu">system</span>(<span class="st">&#39;pdflatex --version&#39;</span>)</span>
 <span id="cb153-2"><a href="latex.html#cb153-2" tabindex="-1"></a><span class="do">##  pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023)</span></span>
 <span id="cb153-3"><a href="latex.html#cb153-3" tabindex="-1"></a><span class="do">##  kpathsea version 6.3.5</span></span>
@@ -339,9 +340,9 @@ div.csl-indent {
 <span id="cb153-11"><a href="latex.html#cb153-11" tabindex="-1"></a><span class="do">##  Compiled with libpng 1.6.39; using libpng 1.6.39</span></span>
 <span id="cb153-12"><a href="latex.html#cb153-12" tabindex="-1"></a><span class="do">##  Compiled with zlib 1.2.13; using zlib 1.2.13</span></span>
 <span id="cb153-13"><a href="latex.html#cb153-13" tabindex="-1"></a><span class="do">##  Compiled with xpdf version 4.04</span></span></code></pre></div>
-<p>  你可以运行如下代码来更新 TinyTeX：</p>
+<p>你可以运行如下代码来更新 TinyTeX：</p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="latex.html#cb154-1" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">tlmgr_update</span>()</span></code></pre></div>
-<p>  随着时间的推移，你可能也需要升级 TinyTeX（否则你无法安装或更新任何 LaTeX 软件包），在这种情况下你需要重新安装 TinyTeX：</p>
+<p>随着时间的推移，你可能也需要升级 TinyTeX（否则你无法安装或更新任何 LaTeX 软件包），在这种情况下你需要重新安装 TinyTeX：</p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="latex.html#cb155-1" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">reinstall_tinytex</span>()</span></code></pre></div>
 
 </div>

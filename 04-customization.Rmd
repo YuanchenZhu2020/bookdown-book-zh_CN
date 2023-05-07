@@ -1,6 +1,6 @@
 # 定制化 {#customization}
 
-&emsp;&emsp;正如我们在本书的开头中所提到的，你应该对 R Markdown 有一些基本的了解，并且我们一直在重点介绍 **bookdown** 而不是 **rmarkdown** 的特性。事实上，R Markdown 是高度可定制的，你可以使用许多选项来定制输出文档。根据你希望自定义输出文档的程度，你可以在 YAML 元数据中使用一些简单的选项，或者只替换整个 Pandoc 模板。
+正如我们在本书的开头中所提到的，你应该对 R Markdown 有一些基本的了解，并且我们一直在重点介绍 **bookdown** 而不是 **rmarkdown** 的特性。事实上，R Markdown 是高度可定制的，你可以使用许多选项来定制输出文档。根据你希望自定义输出文档的程度，你可以在 YAML 元数据中使用一些简单的选项，或者只替换整个 Pandoc 模板。
 
 ## YAML 选项 {#yaml-options}
 
@@ -14,7 +14,7 @@ output:
 ---
 ```
 
-&emsp;&emsp;对于 HTML\index{HTML} 输出格式，你最有可能使用 `css` 选项来提供自己的 CSS\index{CSS} 样式表，以自定义 HTML 元素的外观。有一个 `includes` 选项能够适用于更多格式，包括 HTML 和 LaTeX。`includes` 选项允许你在输出文档之前和/或之后插入任意自定义的内容。它有三个子选项：`in_header`、`before_body` 和 `after_body`。你需要了解 HTML 或 LaTeX 文档的基本结构才能理解这些选项。HTML 文件源文本如下所示：
+对于 HTML\index{HTML} 输出格式，你最有可能使用 `css` 选项来提供自己的 CSS\index{CSS} 样式表，以自定义 HTML 元素的外观。有一个 `includes` 选项能够适用于更多格式，包括 HTML 和 LaTeX。`includes` 选项允许你在输出文档之前和/或之后插入任意自定义的内容。它有三个子选项：`in_header`、`before_body` 和 `after_body`。你需要了解 HTML 或 LaTeX 文档的基本结构才能理解这些选项。HTML 文件源文本如下所示：
 
 ```html
 <html>
@@ -30,9 +30,9 @@ output:
 </html>
 ```
 
-&emsp;&emsp;`in_header` 选项接受一个文件路径然后将文件内容插入到 `<head>` 标签之间。`before_body` 所指文件将会被插入到 `<body>` 标签的正下方，`after_body` 所指文件将会被插入到 `</body>` 标签之前。
+`in_header` 选项接受一个文件路径然后将文件内容插入到 `<head>` 标签之间。`before_body` 所指文件将会被插入到 `<body>` 标签的正下方，`after_body` 所指文件将会被插入到 `</body>` 标签之前。
 
-&emsp;&emsp;一个 LaTeX\index{LaTeX} 源文档有着相似的结构：
+一个 LaTeX\index{LaTeX} 源文档有着相似的结构：
 
 ```latex
 \documentclass{book}
@@ -49,7 +49,7 @@ output:
 \end{document}
 ```
 
-&emsp;&emsp;`includes` 选项非常有用且使用灵活。对于 HTML 输出，它意味着你能够将任意 HTML 代码插入到输出中。例如，当你在 HTML 输出中通过 MathJax\index{MathJax} 库渲染 LaTeX 数学表达式，并希望方程编号显示在左侧（默认显示在右侧），你可以创建一个包含有以下代码的文本文件：
+`includes` 选项非常有用且使用灵活。对于 HTML 输出，它意味着你能够将任意 HTML 代码插入到输出中。例如，当你在 HTML 输出中通过 MathJax\index{MathJax} 库渲染 LaTeX 数学表达式，并希望方程编号显示在左侧（默认显示在右侧），你可以创建一个包含有以下代码的文本文件：
 
 ```html
 <script type="text/x-mathjax-config">
@@ -59,7 +59,7 @@ MathJax.Hub.Config({
 </script>
 ```
 
-&emsp;&emsp;让我们假设文件名为 `mathjax-number.html`，并且它位于你的书籍的根目录下（包含有你的全部 Rmd 文件的目录）。你可以通过 `in_header` 选项将该文件插入到 HTML 首部，例如：
+让我们假设文件名为 `mathjax-number.html`，并且它位于你的书籍的根目录下（包含有你的全部 Rmd 文件的目录）。你可以通过 `in_header` 选项将该文件插入到 HTML 首部，例如：
 
 ```yaml
 ---
@@ -70,9 +70,9 @@ output:
 ---
 ```
 
-&emsp;&emsp;另一个例子是在 HTML 页面上启用评论区或讨论区。有这么几种可能的选择，例如：Disqus (https://disqus.com) 或 Hypothesis (https://hypothes.is)。这些服务可以通过 `includes` 选项轻松地嵌入到你的 HTML 书籍中（有关更多详细信息，请参阅第 \@ref(collaboration) 节）。
+另一个例子是在 HTML 页面上启用评论区或讨论区。有这么几种可能的选择，例如：Disqus (https://disqus.com) 或 Hypothesis (https://hypothes.is)。这些服务可以通过 `includes` 选项轻松地嵌入到你的 HTML 书籍中（有关更多详细信息，请参阅第 \@ref(collaboration) 节）。
 
-&emsp;&emsp;类似地，如果你熟悉 LaTeX，则可以在导言 (preamble) 中添加任意 LaTeX 代码。这意味着你可以使用任何 LaTeX 软件包，并为书籍设置任何软件包选项。例如，本书通过 `in_header` 选项使用了更多的 LaTeX 软件包，如 **booktabs**（用于更美观的表格）和 **longtable**（用于跨多个页面的表格），并对图形环境中的链接不起作用的 XeLeTeX 问题进行了修复：
+类似地，如果你熟悉 LaTeX，则可以在导言 (preamble) 中添加任意 LaTeX 代码。这意味着你可以使用任何 LaTeX 软件包，并为书籍设置任何软件包选项。例如，本书通过 `in_header` 选项使用了更多的 LaTeX 软件包，如 **booktabs**（用于更美观的表格）和 **longtable**（用于跨多个页面的表格），并对图形环境中的链接不起作用的 XeLeTeX 问题进行了修复：
 
 > 中文版还使用了 **ctex** 软件包以在 PDF 输出中渲染中文字符。
 
@@ -95,7 +95,7 @@ output:
 \fi
 ```
 
-&emsp;&emsp;上述 LaTeX 代码保存在文件 `preamble.tex` 中，而书籍的 YAML 元数据如下所示：
+上述 LaTeX 代码保存在文件 `preamble.tex` 中，而书籍的 YAML 元数据如下所示：
 
 ```yaml
 ---
@@ -108,9 +108,9 @@ output:
 
 ## 更换主题
 
-&emsp;&emsp;有时你可能想要更改输出的整体主题，这通常可以通过上一节叙述的 `in_header` 选项或 `css` 选项（如果输出格式为 HTML）来完成。一些输出格式有它们独特的主题，例如 `gitbook`、`tufte_html_book` 和 `tufte_book2`，而你可能不想过多地自定义这些主题。相比之下，输出格式 `html_book()` 和 `pdf_book` 不受到特定主题的约束，更具有定制性。
+有时你可能想要更改输出的整体主题，这通常可以通过上一节叙述的 `in_header` 选项或 `css` 选项（如果输出格式为 HTML）来完成。一些输出格式有它们独特的主题，例如 `gitbook`、`tufte_html_book` 和 `tufte_book2`，而你可能不想过多地自定义这些主题。相比之下，输出格式 `html_book()` 和 `pdf_book` 不受到特定主题的约束，更具有定制性。
 
-&emsp;&emsp;如第 \@ref(bootstrap-style) 节所述，`html_book()` 的默认样式是 Bootstrap 样式。Bootstrap 样式实际上有一些可以使用的内置主题，包括 `r knitr::combine_words(rmarkdown:::themes(), before='\x60', sep='、', and=" 和 ", oxford_comma=FALSE)`。你可以通过 `theme` 选项设定主题，例如：
+如第 \@ref(bootstrap-style) 节所述，`html_book()` 的默认样式是 Bootstrap 样式。Bootstrap 样式实际上有一些可以使用的内置主题，包括 `r knitr::combine_words(rmarkdown:::themes(), before='\x60', sep='、', and=" 和 ", oxford_comma=FALSE)`。你可以通过 `theme` 选项设定主题，例如：
 
 ```yaml
 ---
@@ -120,9 +120,9 @@ output:
 ---
 ```
 
-&emsp;&emsp;如果你不喜欢上述任何一个 Bootstrap 主题，你可以将 `theme` 设置为 `null`，然后通过 `css` 或 `includes` 选项应用你自己的 CSS。
+如果你不喜欢上述任何一个 Bootstrap 主题，你可以将 `theme` 设置为 `null`，然后通过 `css` 或 `includes` 选项应用你自己的 CSS。
 
-&emsp;&emsp;对于 `pdf_book()`，除了上一节提到的 `in_header` 选项，另一个方法是改变文档类 (document calss)。对于书籍来说有许多可用的 LaTeX 类，例如 **memoir** (https://www.ctan.org/pkg/memoir)、**amsbook** (https://www.ctan.org/pkg/amsbook)、KOMA-Script (https://www.ctan.org/pkg/koma-script) 等等。以下是在 YAML 元数据中指定 KOMA-Script 软件包中的 `srcbook` 类的一个简要的示例：
+对于 `pdf_book()`，除了上一节提到的 `in_header` 选项，另一个方法是改变文档类 (document calss)。对于书籍来说有许多可用的 LaTeX 类，例如 **memoir** (https://www.ctan.org/pkg/memoir)、**amsbook** (https://www.ctan.org/pkg/amsbook)、KOMA-Script (https://www.ctan.org/pkg/koma-script) 等等。以下是在 YAML 元数据中指定 KOMA-Script 软件包中的 `srcbook` 类的一个简要的示例：
 
 ```yaml
 ---
@@ -133,9 +133,9 @@ output:
 ---
 ```
 
-&emsp;&emsp;一些出版商（例如 Springer 和 Chapman & Hall/CRC）有他们自己的 LaTeX 样式或类文件。你可以尝试更改 `documentclass` 选项来使用他们的文档类，尽管通常情况下并非如此简单。你最终可能会使用 `in_header`，甚至设计一个自定义的 Pandoc LaTeX 模板来容纳这些文档类。
+一些出版商（例如 Springer 和 Chapman & Hall/CRC）有他们自己的 LaTeX 样式或类文件。你可以尝试更改 `documentclass` 选项来使用他们的文档类，尽管通常情况下并非如此简单。你最终可能会使用 `in_header`，甚至设计一个自定义的 Pandoc LaTeX 模板来容纳这些文档类。
 
-&emsp;&emsp;请注意，当你更改 `documentclass` 时，你可能会指定一个额外的 Pandoc 参数 `--top-level-division=chapter` 以便 Pandoc 知道应该将第一级标题视为章而不是小节（这是在 `documentclass` 为 `book` 时的默认值），例如：
+请注意，当你更改 `documentclass` 时，你可能会指定一个额外的 Pandoc 参数 `--top-level-division=chapter` 以便 Pandoc 知道应该将第一级标题视为章而不是小节（这是在 `documentclass` 为 `book` 时的默认值），例如：
 
 ```yaml
 documentclass: krantz
@@ -146,7 +146,7 @@ output:
 
 ## 模板
 
-&emsp;&emsp;当 Pandoc 将 Markdown 转换为另一种输出格式时，它在幕后使用模板\index{Pandoc template}。模板是一个纯文本文件，其中包含一些格式为 `$variable$` 的变量。这些变量将由 Pandoc 生成的值替换。下面是一个非常简短的 HTML 输出模板：
+当 Pandoc 将 Markdown 转换为另一种输出格式时，它在幕后使用模板\index{Pandoc template}。模板是一个纯文本文件，其中包含一些格式为 `$variable$` 的变量。这些变量将由 Pandoc 生成的值替换。下面是一个非常简短的 HTML 输出模板：
 
 ```html
 <html>
@@ -160,7 +160,7 @@ output:
 </html>
 ```
 
-&emsp;&emsp;它有两个变量 `title` 和 `body`。`title` 的值来自 YAML 元数据的 `title` 字段，`body` 是从 Markdown 输入文档的正文生成的 HTML 代码。例如，假设我们有一个 Markdown 文档：
+它有两个变量 `title` 和 `body`。`title` 的值来自 YAML 元数据的 `title` 字段，`body` 是从 Markdown 输入文档的正文生成的 HTML 代码。例如，假设我们有一个 Markdown 文档：
 
 ```markdown
 ---
@@ -172,7 +172,7 @@ title: 一本好书
 这是一本**优秀的**书！
 ```
 
-&emsp;&emsp;如果我们使用上述文档生成 HTML 文档，其源代码如下：
+如果我们使用上述文档生成 HTML 文档，其源代码如下：
 
 ```html
 <html>
@@ -190,14 +190,14 @@ title: 一本好书
 </html>
 ```
 
-&emsp;&emsp;实际的 HTML、LaTeX 和 EPUB 模板更加复杂，但其中的核心思想是一样的。你需要知道哪些变量可以使用：有些变量是内置的 Pandoc 变量，有些可以由用户在 YAML 元数据中定义，或者从命令行选项 `-V` 或 `--variable` 传递。某些变量仅在特定的输出格式中有意义，例如，`documentclass` 变量仅用于 LaTeX 输出。请参阅 Pandoc 文档以了解有关这些变量的更多信息，你可以在 GitHub 存储库 <https://github.com/jgm/pandoc-templates> 中找到所有默认的 Pandoc 模板。
+实际的 HTML、LaTeX 和 EPUB 模板更加复杂，但其中的核心思想是一样的。你需要知道哪些变量可以使用：有些变量是内置的 Pandoc 变量，有些可以由用户在 YAML 元数据中定义，或者从命令行选项 `-V` 或 `--variable` 传递。某些变量仅在特定的输出格式中有意义，例如，`documentclass` 变量仅用于 LaTeX 输出。请参阅 Pandoc 文档以了解有关这些变量的更多信息，你可以在 GitHub 存储库 <https://github.com/jgm/pandoc-templates> 中找到所有默认的 Pandoc 模板。
 
-&emsp;&emsp;请注意，对于 HTML 输出，**bookdown** 需要模板中的一些附加注释标记，我们已经在第 \@ref(bootstrap-style) 节中对它们进行了解释。
+请注意，对于 HTML 输出，**bookdown** 需要模板中的一些附加注释标记，我们已经在第 \@ref(bootstrap-style) 节中对它们进行了解释。
 
 
 ## 配置 {#configuration}
 
-&emsp;&emsp;我们以尽在第 \@ref(usage) 节中提到了 `rmd_files`，并且你可以在 `_bookdown.yml`\index{\_bookdown.yml} 中为书籍配置更多（可选的）设置。^[对于 [`bs4_book()`](#bs4-book) 格式，`edit`、`history` 和 `view` 字段不会起作用，可以使用输出函数的 [repo](#specifying-the-repository) 参数来指定类似的配置。]:
+我们以尽在第 \@ref(usage) 节中提到了 `rmd_files`，并且你可以在 `_bookdown.yml`\index{\_bookdown.yml} 中为书籍配置更多（可选的）设置。^[对于 [`bs4_book()`](#bs4-book) 格式，`edit`、`history` 和 `view` 字段不会起作用，可以使用输出函数的 [repo](#specifying-the-repository) 参数来指定类似的配置。]:
 
 - `book_filename`: 主 Rmd 文件的文件名，即从所有章节进行合并后的单个 Rmd 文件；默认情况下，它被命名为 `_main.Rmd`。
 - `delete_merged_file`: 书籍成功编译后是否删除主 Rmd 文件。
@@ -210,7 +210,7 @@ title: 一本好书
 - `output_dir`: 书籍的输出目录（默认为 `_book`）；`render_book()` 将会读取并使用这个设置。
 - `clean`: `clean_book()` 函数将要清理的文件和目录的向量。
 
-&emsp;&emsp;下面是一个简短的 `_bookdown.yml`：
+下面是一个简短的 `_bookdown.yml`：
 
 ```yaml
 book_filename: "my-book.Rmd"
@@ -225,9 +225,9 @@ clean: ["my-book.bbl", "R-packages.bib"]
 
 ## 国际化 {#internationalization}
 
-&emsp;&emsp;如果你的书籍的语言不是英语，那么可能需要将某些英语单词和短语翻译成你使用的语言，例如在 HTML 输出中自动编号数字/表格时的单词“Figure”和“Table”。国际化可能不是 LaTeX 输出的问题，因为一些 LaTeX 软件包可以自动将这些术语翻译成本地语言，例如 **ctexcap** 中文软件包。
+如果你的书籍的语言不是英语，那么可能需要将某些英语单词和短语翻译成你使用的语言，例如在 HTML 输出中自动编号数字/表格时的单词“Figure”和“Table”。国际化可能不是 LaTeX 输出的问题，因为一些 LaTeX 软件包可以自动将这些术语翻译成本地语言，例如 **ctexcap** 中文软件包。
 
-&emsp;&emsp;对于非 LaTeX 输出，你可以在配置文件 `_bookdown.yml` 中设置 `language` 字段。目前默认的设置为：
+对于非 LaTeX 输出，你可以在配置文件 `_bookdown.yml` 中设置 `language` 字段。目前默认的设置为：
 
 ```{r echo=FALSE, comment='', results='asis'}
 cat('```yaml\n')
@@ -239,7 +239,7 @@ cat(yaml::as.yaml(list(language = list(
 cat('```')
 ```
 
-&emsp;&emsp;例如，如果你想要将使用 `FIGURE x.x` 而不是 `Figure x.x`，你可以将 `fig` 更改为 `"FIGURE "`：
+例如，如果你想要将使用 `FIGURE x.x` 而不是 `Figure x.x`，你可以将 `fig` 更改为 `"FIGURE "`：
 
 ```yaml
 language:
@@ -247,7 +247,7 @@ language:
     fig: "FIGURE "
 ```
 
-&emsp;&emsp;`ui` 下的字段用于指定用户界面中的某些术语。`edit` 字段指定在 `_bookdown.yml`（第 \@ref(configuration) 节）中提到的 `edit` 链接相关联的文本。`chapter_name`、`appendix_name`、`fig`、`tab` 和 `eq` 字段可以是要在篇章或引用编号前加入的字符串（例如 `CHAPTER` 或 `FIGURE`），也可以是一个以接受数字（篇章或引用编号）输入并返回一个字符串的 R 函数（例如 `!expr function(i) paste('Chapter', i)`）。以下是匈牙利语的一个例子：
+`ui` 下的字段用于指定用户界面中的某些术语。`edit` 字段指定在 `_bookdown.yml`（第 \@ref(configuration) 节）中提到的 `edit` 链接相关联的文本。`chapter_name`、`appendix_name`、`fig`、`tab` 和 `eq` 字段可以是要在篇章或引用编号前加入的字符串（例如 `CHAPTER` 或 `FIGURE`），也可以是一个以接受数字（篇章或引用编号）输入并返回一个字符串的 R 函数（例如 `!expr function(i) paste('Chapter', i)`）。以下是匈牙利语的一个例子：
 
 ```yaml
 language:
@@ -257,6 +257,6 @@ language:
     chapter_name: !expr function(i) paste0(i, '. fejezet')
 ```
 
-&emsp;&emsp;仅仅对于 `chapter_name` 和 `appendix_name`，如果它是长度为 2 的字符向量，则章节标题前缀将为 `paste0(chapter_name[1], i, chapter_name[2])`，其中 `i` 是章节编号。
+仅仅对于 `chapter_name` 和 `appendix_name`，如果它是长度为 2 的字符向量，则章节标题前缀将为 `paste0(chapter_name[1], i, chapter_name[2])`，其中 `i` 是章节编号。
 
-&emsp;&emsp;当你使用使用多字节字符（如中文、日文和韩文 (CJK)）的语言编写时会有一个警告：Pandoc 无法从纯 CJK 字符的章节标题中生成标识符，因此你将无法交叉引用章节（它们没有标签），除非你通过将 `{#identifier}` 附加到章节标题来手动为其分配标识符，其中 `identifier` 是你选择的标识符。
+当你使用使用多字节字符（如中文、日文和韩文 (CJK)）的语言编写时会有一个警告：Pandoc 无法从纯 CJK 字符的章节标题中生成标识符，因此你将无法交叉引用章节（它们没有标签），除非你通过将 `{#identifier}` 附加到章节标题来手动为其分配标识符，其中 `identifier` 是你选择的标识符。

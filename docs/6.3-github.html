@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="6.3 GitHub | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
+<meta property="og:type" content="book" />
+<meta property="og:image" content="https://book.formlesslab.top/bookdown//images/cover.jpg" />
+<meta property="og:description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
+<meta name="github-repo" content="YuanchenZhu2020/bookdown-book-zh_CN" />
+
+<meta name="author" content="Yihui Xie" />
+
+<meta name="date" content="2023-12-25" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。">
+
+<title>6.3 GitHub | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
+
+<script src="libs/jquery/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="libs/navigation/tabsets.js"></script>
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding/datatables.js"></script>
+<link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/toc.css" type="text/css" />
+<link rel="stylesheet" href="css/extra_style.css" type="text/css" />
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+/* show arrow before summary tag as in bootstrap
+TODO: remove if boostrap in updated in html_document (rmarkdown#1485) */
+details > summary {
+  display: list-item;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li class="has-sub"><a href="index.html#翻译与排版说明" id="toc-翻译与排版说明">翻译与排版说明</a>
+<ul>
+<li><a href="翻译说明.html#翻译说明" id="toc-翻译说明">翻译说明</a></li>
+<li><a href="排版说明.html#排版说明" id="toc-排版说明">排版说明</a></li>
+<li><a href="翻译进度.html#翻译进度" id="toc-翻译进度">翻译进度</a></li>
+</ul></li>
+<li class="has-sub"><a href="前言.html#前言" id="toc-前言">前言</a>
+<ul>
+<li><a href="为什么要阅读这本书.html#为什么要阅读这本书" id="toc-为什么要阅读这本书">为什么要阅读这本书</a></li>
+<li><a href="本书的结构.html#本书的结构" id="toc-本书的结构">本书的结构</a></li>
+<li><a href="软件信息与一些约定.html#软件信息与一些约定" id="toc-软件信息与一些约定">软件信息与一些约定</a></li>
+<li><a href="致谢.html#致谢" id="toc-致谢">致谢</a></li>
+</ul></li>
+<li><a href="关于作者.html#关于作者" id="toc-关于作者">关于作者</a></li>
+<li class="has-sub"><a href="1-introduction.html#introduction" id="toc-introduction"><span class="toc-section-number">1</span> 简介</a>
+<ul>
+<li><a href="1.1-开发动机.html#开发动机" id="toc-开发动机"><span class="toc-section-number">1.1</span> 开发动机</a></li>
+<li><a href="1.2-开始.html#开始" id="toc-开始"><span class="toc-section-number">1.2</span> 开始</a></li>
+<li><a href="1.3-usage.html#usage" id="toc-usage"><span class="toc-section-number">1.3</span> 使用方法</a></li>
+<li><a href="1.4-new-session.html#new-session" id="toc-new-session"><span class="toc-section-number">1.4</span> 两种呈现方法</a></li>
+<li><a href="1.5-一些提示.html#一些提示" id="toc-一些提示"><span class="toc-section-number">1.5</span> 一些提示</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-components.html#components" id="toc-components"><span class="toc-section-number">2</span> 组成部分</a>
+<ul>
+<li class="has-sub"><a href="2.1-markdown-syntax.html#markdown-syntax" id="toc-markdown-syntax"><span class="toc-section-number">2.1</span> Markdown 语法</a>
+<ul>
+<li><a href="2.1-markdown-syntax.html#内联格式" id="toc-内联格式"><span class="toc-section-number">2.1.1</span> 内联格式</a></li>
+<li><a href="2.1-markdown-syntax.html#块级元素" id="toc-块级元素"><span class="toc-section-number">2.1.2</span> 块级元素</a></li>
+<li><a href="2.1-markdown-syntax.html#数学表达式" id="toc-数学表达式"><span class="toc-section-number">2.1.3</span> 数学表达式</a></li>
+</ul></li>
+<li class="has-sub"><a href="2.2-bookdown-中的-markdown-功能拓展.html#bookdown-中的-markdown-功能拓展" id="toc-bookdown-中的-markdown-功能拓展"><span class="toc-section-number">2.2</span> Bookdown 中的 Markdown 功能拓展</a>
+<ul>
+<li><a href="2.2-bookdown-中的-markdown-功能拓展.html#equations" id="toc-equations"><span class="toc-section-number">2.2.1</span> 方程编号与引用</a></li>
+<li><a href="2.2-bookdown-中的-markdown-功能拓展.html#theorems" id="toc-theorems"><span class="toc-section-number">2.2.2</span> 定理与证明</a></li>
+<li><a href="2.2-bookdown-中的-markdown-功能拓展.html#特殊的标题" id="toc-特殊的标题"><span class="toc-section-number">2.2.3</span> 特殊的标题</a></li>
+<li><a href="2.2-bookdown-中的-markdown-功能拓展.html#text-references" id="toc-text-references"><span class="toc-section-number">2.2.4</span> 文本引用</a></li>
+</ul></li>
+<li><a href="2.3-r-code.html#r-code" id="toc-r-code"><span class="toc-section-number">2.3</span> R 代码</a></li>
+<li><a href="2.4-figures.html#figures" id="toc-figures"><span class="toc-section-number">2.4</span> 图片</a></li>
+<li><a href="2.5-tables.html#tables" id="toc-tables"><span class="toc-section-number">2.5</span> 表格</a></li>
+<li><a href="2.6-cross-references.html#cross-references" id="toc-cross-references"><span class="toc-section-number">2.6</span> 交叉引用</a></li>
+<li><a href="2.7-自定义区块.html#自定义区块" id="toc-自定义区块"><span class="toc-section-number">2.7</span> 自定义区块</a></li>
+<li><a href="2.8-citations.html#citations" id="toc-citations"><span class="toc-section-number">2.8</span> 引文</a></li>
+<li class="has-sub"><a href="2.9-latex-index.html#latex-index" id="toc-latex-index"><span class="toc-section-number">2.9</span> 索引</a>
+<ul>
+<li><a href="2.9-latex-index.html#插入索引条目" id="toc-插入索引条目"><span class="toc-section-number">2.9.1</span> 插入索引条目</a></li>
+<li><a href="2.9-latex-index.html#构建索引" id="toc-构建索引"><span class="toc-section-number">2.9.2</span> 构建索引</a></li>
+</ul></li>
+<li><a href="2.10-html-小组件.html#html-小组件" id="toc-html-小组件"><span class="toc-section-number">2.10</span> HTML 小组件</a></li>
+<li><a href="2.11-web-页面和-shiny-应用.html#web-页面和-shiny-应用" id="toc-web-页面和-shiny-应用"><span class="toc-section-number">2.11</span> Web 页面和 Shiny 应用</a></li>
+</ul></li>
+<li class="has-sub"><a href="3-output-formats.html#output-formats" id="toc-output-formats"><span class="toc-section-number">3</span> 输出格式</a>
+<ul>
+<li class="has-sub"><a href="3.1-html.html#html" id="toc-html"><span class="toc-section-number">3.1</span> HTML</a>
+<ul>
+<li><a href="3.1-html.html#gitbook-style" id="toc-gitbook-style"><span class="toc-section-number">3.1.1</span> GitBook 样式</a></li>
+<li><a href="3.1-html.html#bs4-book" id="toc-bs4-book"><span class="toc-section-number">3.1.2</span> 三列 Bootstrap 样式</a></li>
+<li><a href="3.1-html.html#bootstrap-style" id="toc-bootstrap-style"><span class="toc-section-number">3.1.3</span> 默认的 Bootstrap 样式</a></li>
+<li><a href="3.1-html.html#tufte-style" id="toc-tufte-style"><span class="toc-section-number">3.1.4</span> Tufte 样式</a></li>
+</ul></li>
+<li><a href="3.2-latexpdf.html#latexpdf" id="toc-latexpdf"><span class="toc-section-number">3.2</span> LaTeX/PDF</a></li>
+<li class="has-sub"><a href="3.3-电子书.html#电子书" id="toc-电子书"><span class="toc-section-number">3.3</span> 电子书</a>
+<ul>
+<li><a href="3.3-电子书.html#epub" id="toc-epub"><span class="toc-section-number">3.3.1</span> EPUB</a></li>
+<li><a href="3.3-电子书.html#mobi" id="toc-mobi"><span class="toc-section-number">3.3.2</span> MOBI</a></li>
+</ul></li>
+<li><a href="3.4-a-single-document.html#a-single-document" id="toc-a-single-document"><span class="toc-section-number">3.4</span> 单个文档</a></li>
+</ul></li>
+<li class="has-sub"><a href="4-customization.html#customization" id="toc-customization"><span class="toc-section-number">4</span> 定制化</a>
+<ul>
+<li><a href="4.1-yaml-options.html#yaml-options" id="toc-yaml-options"><span class="toc-section-number">4.1</span> YAML 选项</a></li>
+<li><a href="4.2-更换主题.html#更换主题" id="toc-更换主题"><span class="toc-section-number">4.2</span> 更换主题</a></li>
+<li><a href="4.3-模板.html#模板" id="toc-模板"><span class="toc-section-number">4.3</span> 模板</a></li>
+<li><a href="4.4-configuration.html#configuration" id="toc-configuration"><span class="toc-section-number">4.4</span> 配置</a></li>
+<li><a href="4.5-internationalization.html#internationalization" id="toc-internationalization"><span class="toc-section-number">4.5</span> 国际化</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-editing.html#editing" id="toc-editing"><span class="toc-section-number">5</span> 编辑</a>
+<ul>
+<li><a href="5.1-build-the-book.html#build-the-book" id="toc-build-the-book"><span class="toc-section-number">5.1</span> 构建书籍</a></li>
+<li><a href="5.2-预览单个章节.html#预览单个章节" id="toc-预览单个章节"><span class="toc-section-number">5.2</span> 预览单个章节</a></li>
+<li><a href="5.3-使用-http-服务预览书籍.html#使用-http-服务预览书籍" id="toc-使用-http-服务预览书籍"><span class="toc-section-number">5.3</span> 使用 HTTP 服务预览书籍</a></li>
+<li><a href="5.4-rstudio-ide.html#rstudio-ide" id="toc-rstudio-ide"><span class="toc-section-number">5.4</span> RStudio IDE</a></li>
+<li><a href="5.5-collaboration.html#collaboration" id="toc-collaboration"><span class="toc-section-number">5.5</span> 协同工作</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-publishing.html#publishing" id="toc-publishing"><span class="toc-section-number">6</span> 发布与出版</a>
+<ul>
+<li><a href="6.1-rstudio-connect.html#rstudio-connect" id="toc-rstudio-connect"><span class="toc-section-number">6.1</span> RStudio Connect</a></li>
+<li class="has-sub"><a href="6.2-netlify-drop.html#netlify-drop" id="toc-netlify-drop"><span class="toc-section-number">6.2</span> Netlify Drop</a>
+<ul>
+<li><a href="6.2-netlify-drop.html#构建和部署的工作流水线" id="toc-构建和部署的工作流水线"><span class="toc-section-number">6.2.1</span> 构建和部署的工作流水线</a></li>
+<li><a href="6.2-netlify-drop.html#开始之前" id="toc-开始之前"><span class="toc-section-number">6.2.2</span> 开始之前</a></li>
+<li><a href="6.2-netlify-drop.html#构建书籍" id="toc-构建书籍"><span class="toc-section-number">6.2.3</span> 构建书籍</a></li>
+<li><a href="6.2-netlify-drop.html#部署网站" id="toc-部署网站"><span class="toc-section-number">6.2.4</span> 部署网站</a></li>
+<li><a href="6.2-netlify-drop.html#可选更新站点" id="toc-可选更新站点"><span class="toc-section-number">6.2.5</span> <em>可选：更新站点</em></a></li>
+<li><a href="6.2-netlify-drop.html#netlify-subdomain" id="toc-netlify-subdomain"><span class="toc-section-number">6.2.6</span> <em>可选：更改默认子域名</em></a></li>
+<li><a href="6.2-netlify-drop.html#缺点和备选方案" id="toc-缺点和备选方案"><span class="toc-section-number">6.2.7</span> 缺点和备选方案</a></li>
+</ul></li>
+<li><a href="6.3-github.html#github" id="toc-github"><span class="toc-section-number">6.3</span> GitHub</a></li>
+<li class="has-sub"><a href="6.4-html-发布功能.html#html-发布功能" id="toc-html-发布功能"><span class="toc-section-number">6.4</span> HTML 发布功能</a>
+<ul>
+<li><a href="6.4-html-发布功能.html#html-404" id="toc-html-404"><span class="toc-section-number">6.4.1</span> HTML 404 页面</a></li>
+<li><a href="6.4-html-发布功能.html#metadata-for-sharing" id="toc-metadata-for-sharing"><span class="toc-section-number">6.4.2</span> 用于共享的元数据</a></li>
+</ul></li>
+<li><a href="6.5-出版商.html#出版商" id="toc-出版商"><span class="toc-section-number">6.5</span> 出版商</a></li>
+</ul></li>
+<li class="appendix"><span><b>附录</b></span></li>
+<li class="has-sub"><a href="A-software-tools.html#software-tools" id="toc-software-tools"><span class="toc-section-number">A</span> 软件工具</a>
+<ul>
+<li><a href="A.1-r-和-r-软件包.html#r-和-r-软件包" id="toc-r-和-r-软件包"><span class="toc-section-number">A.1</span> R 和 R 软件包</a></li>
+<li><a href="A.2-pandoc.html#pandoc" id="toc-pandoc"><span class="toc-section-number">A.2</span> Pandoc</a></li>
+<li><a href="A.3-latex.html#latex" id="toc-latex"><span class="toc-section-number">A.3</span> LaTeX</a></li>
+</ul></li>
+<li class="has-sub"><a href="B-software-usage.html#software-usage" id="toc-software-usage"><span class="toc-section-number">B</span> 软件使用</a>
+<ul>
+<li><a href="B.1-knitr.html#knitr" id="toc-knitr"><span class="toc-section-number">B.1</span> knitr</a></li>
+<li><a href="B.2-r-markdown.html#r-markdown" id="toc-r-markdown"><span class="toc-section-number">B.2</span> R Markdown</a></li>
+</ul></li>
+<li><a href="C-常见问题.html#常见问题" id="toc-常见问题"><span class="toc-section-number">C</span> 常见问题</a></li>
+<li><a href="参考文献.html#参考文献" id="toc-参考文献">参考文献</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="github" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> GitHub</h2>
+<p>你可以使用 GitHub Pages (<a href="https://pages.github.com" class="uri">https://pages.github.com</a>) 在 GitHub 上免费托管你的书籍。GitHub 支持 Jekyll (<a href="http://jekyllrb.com" class="uri">http://jekyllrb.com</a>), 它是一个静态网站生成器，能够将一系列 Markdown 文件转换为网站。这可能是 GitHub Pages 最常见的用法，但是 GitHub 还支持任意静态 HTML 文件，因此你可以在 GitHub 上托管书籍的 HTML 输出文件。其关键是创建一个隐藏文件 <code>.nojekyll</code>，它告诉 GitHub 你的网站不是通过 Jekyll 构建的，因为 <strong>bookdown</strong> 的 HTML 输出文件已经是一个独立的网站。</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb132-1"><a href="6.3-github.html#cb132-1" tabindex="-1"></a><span class="co"># 假设你已经初始化了一个 git 储存库，并且已经在书籍储存库的目录下</span></span>
+<span id="cb132-2"><a href="6.3-github.html#cb132-2" tabindex="-1"></a></span>
+<span id="cb132-3"><a href="6.3-github.html#cb132-3" tabindex="-1"></a><span class="co"># 创建一个隐藏文件 .nojekyll</span></span>
+<span id="cb132-4"><a href="6.3-github.html#cb132-4" tabindex="-1"></a><span class="fu">touch</span> .nojekyll</span>
+<span id="cb132-5"><a href="6.3-github.html#cb132-5" tabindex="-1"></a><span class="co"># 将其添加入 git 版本控制中，这样她就不会再 RStudio 中显示</span></span>
+<span id="cb132-6"><a href="6.3-github.html#cb132-6" tabindex="-1"></a><span class="fu">git</span> add .nojekyll</span></code></pre></div>
+<p>如果你使用 Windows，那么可能没有 <code>touch</code> 命令，这时你可以在 R 中使用 <code>file.create('.nojekyll')</code> 来创建一个文件。</p>
+<p>发布书籍的一种方法将书籍的 HTML 文件放入 <code>master</code> 分支中的 <code>/docs</code> 文件夹，然后从该文件夹将书籍作为 GitHub Pagse 站点发布，就像 <a href="http://bit.ly/2cvloKV">GitHub Help</a>中描述的那样。首先，在配置文件 <code>_bookdown.yml</code> 中添加一行 <code>output_dir:"docs"</code>，将书籍的输出目录设置为 <code>/docs</code>。然后，将更改推送到 GitHub ，再转到存储库的设置，在“GitHub Pages”配置项下将“Source”选项更改为“master branch/docs folder”。使用该方法时，<code>.nojekyll</code> 文件必须位于 <code>/docs</code> 文件夹中。</p>
+<p>另一种方法是先在存储库中创建一个 <code>gh-pages</code> 分支，再构建书籍，将 HTML 输出（包括图像、CSS 和 JavaScript 文件等所有外部资源）放入该分支，然后将该分支推送到远程存储库。如果你的书籍存储库没有 <code>gh-pages</code> 分支，可以使用以下命令创建一个分支：</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb133-1"><a href="6.3-github.html#cb133-1" tabindex="-1"></a><span class="co"># 假设你已经初始化了一个 git 储存库，并且已经在书籍储存库的目录下</span></span>
+<span id="cb133-2"><a href="6.3-github.html#cb133-2" tabindex="-1"></a></span>
+<span id="cb133-3"><a href="6.3-github.html#cb133-3" tabindex="-1"></a><span class="co"># 创建一个名为 gh-pages 的分支，并清除全部文件</span></span>
+<span id="cb133-4"><a href="6.3-github.html#cb133-4" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">--orphan</span> gh-pages</span>
+<span id="cb133-5"><a href="6.3-github.html#cb133-5" tabindex="-1"></a><span class="fu">git</span> rm <span class="at">-rf</span> .</span>
+<span id="cb133-6"><a href="6.3-github.html#cb133-6" tabindex="-1"></a></span>
+<span id="cb133-7"><a href="6.3-github.html#cb133-7" tabindex="-1"></a><span class="co"># 创建一个隐藏文件 .nojekyll</span></span>
+<span id="cb133-8"><a href="6.3-github.html#cb133-8" tabindex="-1"></a><span class="fu">touch</span> .nojekyll</span>
+<span id="cb133-9"><a href="6.3-github.html#cb133-9" tabindex="-1"></a><span class="fu">git</span> add .nojekyll</span>
+<span id="cb133-10"><a href="6.3-github.html#cb133-10" tabindex="-1"></a></span>
+<span id="cb133-11"><a href="6.3-github.html#cb133-11" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Initial commit&quot;</span></span>
+<span id="cb133-12"><a href="6.3-github.html#cb133-12" tabindex="-1"></a><span class="fu">git</span> push origin gh-pages</span></code></pre></div>
+<p>设置好 GIT 之后，剩下的工作可以通过脚本（Shell、R 或 Makefile，取决于你的偏好）实现自动化。总的来说，首先将书籍编译为 HTML，然后运行 git 命令将文件推送到 GitHub，但你可能不希望在本地反复手动执行这些操作，这时可以通过云来完成。由于在云上实现发布过程的完全自动化将会非常方便，因此一旦设置正确，接下来所要做的就是编写书籍并将 Rmd 源文件推送到 GitHub，你创作的书将始终在服务器端自动构建和发布。</p>
+<p>你可以选择使用的一个云服务是 Travis CI (<a href="https://travis-ci.com" class="uri">https://travis-ci.com</a>)。 它对于 GitHub 上的共有储存库提供的服务是免费的，并且是为软件包的持续集成 (CI) 而设计的。Travis CI 能够连接到 GitHub, 即每当你推送更改到 GitHub 时，Travis 能够被触发在最新版本的储存库上运行某些命令/脚本。<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>这些命令储存在你的储存库根目录下名为 <code>.travis.yml</code> 的 YAML 文件中。它们通常用于测试软件，但实际上它们的用途十分开放，这意味着你可以在 Travis（虚拟）机器上运行任意命令。也就是说，你当然可以在 Travis 上运行自己的脚本来构建书籍。注意，Travis 目前仅支持 Ubuntu 和 Mac OS X，因此你应该对于 Linux/Unix 命令有一些基本的了解。</p>
+<p>下一个问题是，怎样将在 Travis 中构建的书籍发布到 GitHub？大体上说，你需要授予 Travis 对你的 GitHub 储存库的写访问权限。该授权能够通过集中方式完成，对于初学者来说最简单的方式是个人访问令牌 (personal access token)。以下是你可以遵循的几个操作步骤：</p>
+<ol style="list-style-type: decimal">
+<li>对于你在 GitHub 上的账户创建一个 <a href="http://bit.ly/2cEBYWB">个人访问令牌 (personal access token)</a>（请确保启用“repo”作用域 (“repo” scope)，以便可以通过此令牌写入你的 GitHub 储存库）。</li>
+<li>通过命令 <code>travis encrypt</code> 将其加密并放在环境变量 <code>GITHUB_PAT</code> 里，然后储存在 <code>.travis.yml</code> 文件中。例如 <code>travis encrypt GITHUB_PAT=TOKEN</code>。如果你不知道如何安装或使用 Travis 命令行工具，只需要将这个环境变量通过 <a href="https://travis-ci.com/user/repo/settings" class="uri">https://travis-ci.com/user/repo/settings</a> 储存起来，其中 <code>user</code> 是你的 GitHub ID，<code>repo</code> 是储存库的名称。</li>
+<li>你可以使用你的 GitHub 令牌在 Travis 上克隆先前创建的这个 <code>gh-pages</code> 分支，向其添加从 R Markdown 转换而来的 HTML 输出文件（不要忘记添加图片和 CSS 样式文件），然后推送到远程储存库。</li>
+</ol>
+<p>假设你正在 <code>master</code> 分支中（你存放 Rmd 源文件的分支），并且已经编译好书籍，放在 <code>_book</code> 目录中。接下来你可以在 Travis 中做的是：</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb134-1"><a href="6.3-github.html#cb134-1" tabindex="-1"></a><span class="co"># 如果你还没有进行配置的话，设置好你的用户名和邮箱</span></span>
+<span id="cb134-2"><a href="6.3-github.html#cb134-2" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">&quot;you@example.com&quot;</span></span>
+<span id="cb134-3"><a href="6.3-github.html#cb134-3" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">&quot;Your Name&quot;</span></span>
+<span id="cb134-4"><a href="6.3-github.html#cb134-4" tabindex="-1"></a></span>
+<span id="cb134-5"><a href="6.3-github.html#cb134-5" tabindex="-1"></a><span class="co"># 将储存库克隆到书籍输出目录 book-output</span></span>
+<span id="cb134-6"><a href="6.3-github.html#cb134-6" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">-b</span> gh-pages <span class="dt">\</span></span>
+<span id="cb134-7"><a href="6.3-github.html#cb134-7" tabindex="-1"></a>  https://<span class="va">${GITHUB_PAT}</span>@github.com/<span class="va">${TRAVIS_REPO_SLUG}</span>.git <span class="dt">\</span></span>
+<span id="cb134-8"><a href="6.3-github.html#cb134-8" tabindex="-1"></a>  book-output</span>
+<span id="cb134-9"><a href="6.3-github.html#cb134-9" tabindex="-1"></a><span class="bu">cd</span> book-output</span>
+<span id="cb134-10"><a href="6.3-github.html#cb134-10" tabindex="-1"></a><span class="fu">git</span> rm <span class="at">-rf</span> <span class="pp">*</span></span>
+<span id="cb134-11"><a href="6.3-github.html#cb134-11" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-r</span> ../_book/<span class="pp">*</span> ./</span>
+<span id="cb134-12"><a href="6.3-github.html#cb134-12" tabindex="-1"></a><span class="fu">git</span> add <span class="at">--all</span> <span class="pp">*</span></span>
+<span id="cb134-13"><a href="6.3-github.html#cb134-13" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Update the book&quot;</span></span>
+<span id="cb134-14"><a href="6.3-github.html#cb134-14" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-q</span> origin gh-pages</span></code></pre></div>
+<p>变量名 <code>GITHUB_PAT</code> 和目录名 <code>book-output</code> 可以是任意名称。只要名称没有与已经存在的变量名或目录名冲突，你就可以使用喜欢的任何名字。上述脚本与我们在第 <a href="5.1-build-the-book.html#build-the-book">5.1</a> 节提到的书籍构建脚本可以放在 <code>master</code> 分支作为 as Shell 脚本。例如，你可以将它们命名为 <code>_build.sh</code> 和 <code>_deploy.sh</code>。那么，你的 <code>.travis.yml</code> 文件可能是这样的：</p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb135-1"><a href="6.3-github.html#cb135-1" tabindex="-1"></a><span class="fu">language</span><span class="kw">:</span><span class="at"> r</span></span>
+<span id="cb135-2"><a href="6.3-github.html#cb135-2" tabindex="-1"></a><span class="fu">pandoc_version</span><span class="kw">:</span><span class="at"> </span><span class="fl">1.19.2.1</span></span>
+<span id="cb135-3"><a href="6.3-github.html#cb135-3" tabindex="-1"></a></span>
+<span id="cb135-4"><a href="6.3-github.html#cb135-4" tabindex="-1"></a><span class="fu">env</span><span class="kw">:</span></span>
+<span id="cb135-5"><a href="6.3-github.html#cb135-5" tabindex="-1"></a><span class="at">  </span><span class="fu">global</span><span class="kw">:</span></span>
+<span id="cb135-6"><a href="6.3-github.html#cb135-6" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">secure</span><span class="kw">:</span><span class="at"> A_LONG_ENCRYPTED_STRING</span></span>
+<span id="cb135-7"><a href="6.3-github.html#cb135-7" tabindex="-1"></a></span>
+<span id="cb135-8"><a href="6.3-github.html#cb135-8" tabindex="-1"></a><span class="fu">before_script</span><span class="kw">:</span></span>
+<span id="cb135-9"><a href="6.3-github.html#cb135-9" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> chmod +x ./_build.sh</span></span>
+<span id="cb135-10"><a href="6.3-github.html#cb135-10" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> chmod +x ./_deploy.sh</span></span>
+<span id="cb135-11"><a href="6.3-github.html#cb135-11" tabindex="-1"></a></span>
+<span id="cb135-12"><a href="6.3-github.html#cb135-12" tabindex="-1"></a><span class="fu">script</span><span class="kw">:</span></span>
+<span id="cb135-13"><a href="6.3-github.html#cb135-13" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ./_build.sh</span></span>
+<span id="cb135-14"><a href="6.3-github.html#cb135-14" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ./_deploy.sh</span></span></code></pre></div>
+<p><code>language</code> 选项告诉 Travis 需要使用安装了 R 的虚拟机。<code>secure</code> 字段是加密的个人访问令牌 (personal access token )。如果你已经使用 Travis 上的 Web 界面而不是命令行工具 <code>travis encrypt</code> 保存了 <code>GITHUB_PAT</code> 变量，则可以忽略这项设置。</p>
+<p>由于 Travis 服务主要用于检查 R 软件包，因此还需要一个（假的）<code>DESCRIPTION</code> 文件，使得书籍存储库像是一个 R 软件包一样。这个文件中唯一一个真正重要的是软件包依赖项这一配置。所有依赖项都将通过 <strong>devtools</strong> 包安装。如果依赖项在 CRAN 或 BioConductor 上，只需在 <code>DESCRIPTION</code> 文件的 <code>Imports</code> 字段中列出即可。如果它在 GitHub 上，您可以使用 <code>Remotes</code> 字段列出它的存储库名称。下面展示了一个例子：</p>
+<pre class="dcf"><code>Package: placeholder
+Type: Book
+Title: Does not matter.
+Version: 0.0.1
+Imports: bookdown, ggplot2
+Remotes: rstudio/bookdown</code></pre>
+<p>如果你使用 Travis 的 <a href="https://docs.travis-ci.com/user/workers/container-based-infrastructure/">container-based infrastructure</a>，你可以在 <code>.travis.yml</code> 中使用 <code>sudo: false</code> 启用缓存。通常你至少需要缓存两类目录：图片目录（例如 <code>_main_files</code>）以及缓存目录（例如 <code>_main_cache</code>）。如果你指定了 <strong>knitr</strong> 代码块选项 <code>fig.path</code> 和 <code>cache.path</code>，这些目录的名称可能不同，但是我强烈建议不要改变这些设置。图片和缓存目录都存放在书籍根目录中的 <code>_bookdown_files</code> 目录下。启用了 <strong>knitr</strong> 图片和缓存的 <code>.travis.yml</code> 文件可能具有如下的 <code>sudo</code> 和 <code>cache</code> 附加配置：</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb137-1"><a href="6.3-github.html#cb137-1" tabindex="-1"></a><span class="fu">sudo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb137-2"><a href="6.3-github.html#cb137-2" tabindex="-1"></a></span>
+<span id="cb137-3"><a href="6.3-github.html#cb137-3" tabindex="-1"></a><span class="fu">cache</span><span class="kw">:</span></span>
+<span id="cb137-4"><a href="6.3-github.html#cb137-4" tabindex="-1"></a><span class="at">  </span><span class="fu">packages</span><span class="kw">:</span><span class="at"> </span><span class="ch">yes</span></span>
+<span id="cb137-5"><a href="6.3-github.html#cb137-5" tabindex="-1"></a><span class="at">  </span><span class="fu">directories</span><span class="kw">:</span></span>
+<span id="cb137-6"><a href="6.3-github.html#cb137-6" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> $TRAVIS_BUILD_DIR/_bookdown_files</span></span></code></pre></div>
+<p>如果构建书籍非常耗时，你可以在 Travis 上使用上面的配置来节省时间。注意，<code>packages:yes</code> 表示安装在 Travis 上的 R 包也被缓存。</p>
+<p>以上所有脚本和配置都可以在 <code>bookdown-demo</code> 存储库中找到：<a href="https://github.com/rstudio/bookdown-demo/" class="uri">https://github.com/rstudio/bookdown-demo/</a>。如果你将它们复制到自己的存储库中，请记住使用自己的加密变量 <code>GITHUB_PAT</code> 更改 <code>.travis.yml</code> 文件中的 <code>secure</code> 字段。</p>
+<p>GitHub 和 Travis CI 当然不是构建和出版你的书籍的唯一选择。你可以在自己的服务器上自由地存储和发布这本书。</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="13">
+<li id="fn13"><p>你需要先在 GitHub 上为你的储存库授权 Travis CI 服务。有关如何开始使用 Travis CI，请参阅 <a href="https://docs.travis-ci.com/user/getting-started/" class="uri">https://docs.travis-ci.com/user/getting-started/</a>。<a href="6.3-github.html#fnref13" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+<p style="text-align: center;">
+<a href="6.2-netlify-drop.html"><button class="btn btn-default">Previous</button></a>
+<a href="6.4-html-发布功能.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

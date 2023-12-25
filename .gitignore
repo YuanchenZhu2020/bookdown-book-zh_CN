@@ -2,6 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+*.log
 _bookdown_files
 _book
 packages.bib

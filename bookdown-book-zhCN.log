@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  7 MAY 2023 19:21
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.5.3)  25 DEC 2023 17:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2894,11 +2894,7 @@ Overfull \hbox (30.0pt too wide) in paragraph at lines 3168--3168
 |  
  []
 
-[104] [105]
-
-Package natbib Warning: Citation `R-servr' on page 106 undefined on input line 3188.
-
-[106] [107] [108]
+[104] [105] [106] [107] [108]
 File: images/mathquill.png Graphic file (type bmp)
 <images/mathquill.png>
 File: images/citr.png Graphic file (type bmp)
@@ -3468,10 +3464,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 25210 strings out of 478659
- 518796 string characters out of 5848699
+ 25213 strings out of 478659
+ 518841 string characters out of 5848699
  1924698 words of memory out of 5000000
- 44862 multiletter control sequences out of 15000+600000
+ 44865 multiletter control sequences out of 15000+600000
  521036 words of font info for 169 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,18n,137p,1321b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s

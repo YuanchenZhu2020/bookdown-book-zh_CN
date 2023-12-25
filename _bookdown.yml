@@ -1,6 +1,6 @@
 book_filename: bookdown-book-zhCN
 repo: https://github.com/rstudio/bookdown/
-output_dir: docs
+output_dir: _book
 clean: [packages.bib, bookdown.bbl]
 delete_merged_file: true
 language:

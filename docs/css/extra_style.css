@@ -1,4 +1,0 @@
-/* add chinese 2 spaces in the head of paragraph */
-div > p {
-  text-indent: 2em;
-}

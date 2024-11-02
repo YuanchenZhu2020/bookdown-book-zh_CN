@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-12-25" />
+<meta name="date" content="2024-11-02" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -55,7 +55,7 @@ MathJax.Hub.Config({
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -130,6 +130,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -311,7 +312,7 @@ details > summary {
 <div class="col-sm-12">
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">第 1 章</span> 简介</h1>
-<p>这本书是使用 R Markdown <span class="citation">(<a href="#ref-R-rmarkdown">Allaire et al. 2023</a>)</span> 和 R 软件包 <strong>bookdown</strong> <span class="citation">(<a href="#ref-R-bookdown">Xie 2023a</a>)</span> 创作书籍和技术文档的指南。它侧重于创作书籍、长篇文章或报告所需要使用的功能，例如：</p>
+<p>这本书是使用 R Markdown <span class="citation">(<a href="#ref-R-rmarkdown">Allaire, Xie, Dervieux, McPherson, et al. 2023</a>)</span> 和 R 软件包 <strong>bookdown</strong> <span class="citation">(<a href="#ref-R-bookdown">Xie 2023a</a>)</span> 创作书籍和技术文档的指南。它侧重于创作书籍、长篇文章或报告所需要使用的功能，例如：</p>
 <ul>
 <li>公式、定理、图表的排版和交叉引用；</li>
 <li>如何为一本书生成多种输出格式，例如 HTML、PDF 和电子书；</li>
@@ -319,21 +320,21 @@ details > summary {
 <li>编辑器支持（尤其是 RStudio IDE）;</li>
 <li>怎样发布书籍；</li>
 </ul>
-<p>这不是对 R Markdown 或 <strong>knitr</strong> 软件包<span class="citation">(<a href="#ref-R-knitr">Xie 2023b</a>)</span>的全面介绍，尽管 <strong>bookdown</strong> 就是在这个软件包的基础上构建的。要了解有关 R Markdown 的更多信息，请查看联机文档 <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>。关于 <strong>knitr</strong>，请参阅 <span class="citation">Xie (<a href="#ref-xie2015">2015</a>)</span>。你不必是 R 语言<span class="citation">(<a href="#ref-R-base">R Core Team 2022</a>)</span>的专家就可以阅读这本书，但是你应该对 R Markdown 和 <strong>knitr</strong> 有一些基本的了解。对于初学者，你可以从 <a href="https://www.rstudio.com/resources/cheatsheets/" class="uri">https://www.rstudio.com/resources/cheatsheets/</a> 上的备忘单开始学习。本书的附录包含对这些软件包的简要介绍。为了能够自定义书籍模板和主题，你应该熟悉 LaTeX、HTML 和 CSS。</p>
+<p>这不是对 R Markdown 或 <strong>knitr</strong> 软件包<span class="citation">(<a href="#ref-R-knitr">Xie 2023b</a>)</span>的全面介绍，尽管 <strong>bookdown</strong> 就是在这个软件包的基础上构建的。要了解有关 R Markdown 的更多信息，请查看联机文档 <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>。关于 <strong>knitr</strong>，请参阅 <span class="citation">Xie (<a href="#ref-xie2015">2015</a>)</span>。你不必是 R 语言<span class="citation">(<a href="#ref-R-base">R Core Team 2023</a>)</span>的专家就可以阅读这本书，但是你应该对 R Markdown 和 <strong>knitr</strong> 有一些基本的了解。对于初学者，你可以从 <a href="https://www.rstudio.com/resources/cheatsheets/" class="uri">https://www.rstudio.com/resources/cheatsheets/</a> 上的备忘单开始学习。本书的附录包含对这些软件包的简要介绍。为了能够自定义书籍模板和主题，你应该熟悉 LaTeX、HTML 和 CSS。</p>
 </div>
 <h3>参考文献</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-R-rmarkdown" class="csl-entry">
-Allaire, JJ, Yihui Xie, Christophe Dervieux, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, et al. 2023. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.
+Allaire, JJ, Yihui Xie, Christophe Dervieux, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, et al. 2023. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://github.com/rstudio/rmarkdown">https://github.com/rstudio/rmarkdown</a>.
 </div>
 <div id="ref-R-base" class="csl-entry">
-R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 <div id="ref-xie2015" class="csl-entry">
 Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.org/knitr/">http://yihui.org/knitr/</a>.
 </div>
 <div id="ref-R-bookdown" class="csl-entry">
-———. 2023a. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.
+———. 2023a. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
 </div>
 <div id="ref-R-knitr" class="csl-entry">
 ———. 2023b. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.

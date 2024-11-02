@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>软件信息与一些约定 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="软件信息与一些约定 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-12-25" />
+<meta name="date" content="2024-11-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -64,7 +64,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -74,7 +74,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -136,6 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -315,11 +316,12 @@ div.csl-indent {
 <p>本书内容主要关于 R 的软件包 <strong>bookdown</strong>，因此你至少需要安装 R 和 <strong>bookdown</strong> 软件包。不过，你的书籍根本不必与 R 语言相关。你可以使用其它计算语言（C++、SQL、Python 等；详情请见附录 <a href="software-usage.html#software-usage">B</a>），甚至可以与计算完全无关（例如，你可以创作小说或者是诗集）。附录 <a href="software-tools.html#software-tools">A</a> 介绍了创作并构建一本书籍所需的软件工具。</p>
 <p>编译本书时的 R Session 信息如下所示：</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="软件信息与一些约定.html#cb1-1" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>## R version 4.2.1 (2022-06-23 ucrt)
+<pre><code>## R version 4.3.2 (2023-10-31 ucrt)
 ## Platform: x86_64-w64-mingw32/x64 (64-bit)
-## Running under: Windows 10 x64 (build 22000)
+## Running under: Windows 11 x64 (build 22631)
 ## 
 ## Matrix products: default
+## 
 ## 
 ## locale:
 ## [1] LC_COLLATE=Chinese (Simplified)_China.utf8 
@@ -328,14 +330,17 @@ div.csl-indent {
 ## [4] LC_NUMERIC=C                               
 ## [5] LC_TIME=Chinese (Simplified)_China.utf8    
 ## 
+## time zone: Asia/Shanghai
+## tzcode source: internal
+## 
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets 
 ## [6] methods   base     
 ## 
 ## loaded via a namespace (and not attached):
-## [1] knitr_1.43      tools_4.2.1     miniUI_0.1.1.1 
-## [4] htmltools_0.5.5 bookdown_0.34   shiny_1.7.4    
-## [7] rmarkdown_2.22</code></pre>
+## [1] knitr_1.45      shiny_1.8.0     htmltools_0.5.7
+## [4] rmarkdown_2.25  bookdown_0.37   miniUI_0.1.1.1 
+## [7] tools_4.3.2</code></pre>
 <p>我们在本书的源代码中没有添加提示符（<code>&gt;</code> 和 <code>+</code>），默认情况下我们使用两个 <code>##</code> 标签注释掉文本输出，就像你在上面的 R Session 信息中看到的那样。这样做是为了让你能够方便地复制和运行代码（由于文本输出被注释掉了，因此执行代码时会被忽略）。程序包名称以粗体显示（例如，<strong>rmarkdown</strong>），行内代码和文件名用老式打字机字体进行格式化（例如，<code>knitr::knit('foo.Rmd')</code>）。函数名称后跟括号（例如，<code>bookdown::render_book()</code>）。双冒号操作符 <code>::</code> 表示从软件包的命名空间对其中的对象进行访问。</p>
 </div>
             </section>

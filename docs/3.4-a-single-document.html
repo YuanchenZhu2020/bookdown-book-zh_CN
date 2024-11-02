@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-12-25" />
+<meta name="date" content="2024-11-02" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -55,7 +55,7 @@ MathJax.Hub.Config({
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -130,6 +130,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -326,9 +327,9 @@ details > summary {
 ## {
 ##     pdf_book(..., base_format = rmarkdown::pdf_document)
 ## }
-## &lt;bytecode: 0x00000215aa8261b0&gt;
+## &lt;bytecode: 0x000001d789810a58&gt;
 ## &lt;environment: namespace:bookdown&gt;</code></pre>
-<p>在你知道这个事实后，你可以通过使用适当的 <code>base_format</code> 将同样的想法应用于其他输出格式。例如，你可以通过使用 YAML 元数据将 <strong>bookdown</strong> 的功能移植到 <strong>rticles</strong> 软件包<span class="citation">(<a href="#ref-R-rticles">Allaire et al. 2022</a>)</span>中的 <code>jss_article</code> 格式。</p>
+<p>在你知道这个事实后，你可以通过使用适当的 <code>base_format</code> 将同样的想法应用于其他输出格式。例如，你可以通过使用 YAML 元数据将 <strong>bookdown</strong> 的功能移植到 <strong>rticles</strong> 软件包<span class="citation">(<a href="#ref-R-rticles">Allaire, Xie, Dervieux, R Foundation, et al. 2023</a>)</span>中的 <code>jss_article</code> 格式。</p>
 <div class="sourceCode" id="cb106"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb106-1"><a href="3.4-a-single-document.html#cb106-1" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>
 <span id="cb106-2"><a href="3.4-a-single-document.html#cb106-2" tabindex="-1"></a><span class="at">  bookdown:</span><span class="fu">:pdf_book</span><span class="kw">:</span></span>
 <span id="cb106-3"><a href="3.4-a-single-document.html#cb106-3" tabindex="-1"></a><span class="at">    </span><span class="fu">base_format</span><span class="kw">:</span><span class="at"> rticles::jss_article</span></span></code></pre></div>
@@ -338,9 +339,9 @@ details > summary {
 </div>
 <!-- </div> -->
 <h3>参考文献</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-R-rticles" class="csl-entry">
-Allaire, JJ, Yihui Xie, Christophe Dervieux, R Foundation, Hadley Wickham, Journal of Statistical Software, Ramnath Vaidyanathan, et al. 2022. <em>Rticles: Article Formats for r Markdown</em>. <a href="https://github.com/rstudio/rticles">https://github.com/rstudio/rticles</a>.
+Allaire, JJ, Yihui Xie, Christophe Dervieux, R Foundation, Hadley Wickham, Journal of Statistical Software, Ramnath Vaidyanathan, et al. 2023. <em>Rticles: Article Formats for r Markdown</em>. <a href="https://github.com/rstudio/rticles">https://github.com/rstudio/rticles</a>.
 </div>
 </div>
 <p style="text-align: center;">

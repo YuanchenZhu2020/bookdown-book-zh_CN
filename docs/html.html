@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3.1 HTML | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3.1 HTML | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-12-25" />
+<meta name="date" content="2024-11-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -64,7 +64,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -74,7 +74,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -136,6 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -502,7 +503,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb81"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb81-1"><a href="html.html#cb81-1" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb81-2"><a href="html.html#cb81-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;A Minimal Book Example&quot;</span></span>
 <span id="cb81-3"><a href="html.html#cb81-3" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Jane Doe&quot;</span></span>
-<span id="cb81-4"><a href="html.html#cb81-4" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2023-12-25&quot;</span></span>
+<span id="cb81-4"><a href="html.html#cb81-4" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2024-11-02&quot;</span></span>
 <span id="cb81-5"><a href="html.html#cb81-5" tabindex="-1"></a><span class="fu">site</span><span class="kw">:</span><span class="at"> bookdown::bookdown_site</span></span>
 <span id="cb81-6"><a href="html.html#cb81-6" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> bookdown::bs4_book</span></span>
 <span id="cb81-7"><a href="html.html#cb81-7" tabindex="-1"></a><span class="fu">url</span><span class="kw">:</span><span class="at"> https://bookdown.org/janedoe/bookdown-demo</span></span>
@@ -665,24 +666,24 @@ div.csl-indent {
 <span id="cb96-26"><a href="html.html#cb96-26" tabindex="-1"></a>}</span></code></pre></div>
 <p>基本上，这个函数使用许多组件，如 HTML 头部、目录、章节正文等，它将返回一个字符串，该字符串是完整 HTML 页面的 HTML 源代码。你可以使用诸如 <code>gsub()</code> 和 <code>paste()</code> 之类的文本处理函数来操作此函数中的所有组件。</p>
 <p>默认的页面生成器所做的是将目录放在第一行，正文放在第二行，导航按钮放在正文底部，并将它们与 HTML 头部和底部连接起来。下面是 HTML 源代码的一个简要示例，可以帮助你理解 <code>build_chapter()</code> 的输出：</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb97-1"><a href="html.html#cb97-1" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
-<span id="cb97-2"><a href="html.html#cb97-2" tabindex="-1"></a>  <span class="kw">&lt;head&gt;</span></span>
-<span id="cb97-3"><a href="html.html#cb97-3" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>一本好书<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb97-4"><a href="html.html#cb97-4" tabindex="-1"></a>  <span class="kw">&lt;/head&gt;</span></span>
-<span id="cb97-5"><a href="html.html#cb97-5" tabindex="-1"></a>  <span class="kw">&lt;body&gt;</span></span>
+<div class="sourceCode" id="cb97"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb97-1"><a href="html.html#cb97-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb97-2"><a href="html.html#cb97-2" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb97-3"><a href="html.html#cb97-3" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>一本好书<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb97-4"><a href="html.html#cb97-4" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb97-5"><a href="html.html#cb97-5" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
 <span id="cb97-6"><a href="html.html#cb97-6" tabindex="-1"></a>  </span>
-<span id="cb97-7"><a href="html.html#cb97-7" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span>目录<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb97-7"><a href="html.html#cb97-7" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;row&quot;</span><span class="dt">&gt;</span>目录<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb97-8"><a href="html.html#cb97-8" tabindex="-1"></a>    </span>
-<span id="cb97-9"><a href="html.html#cb97-9" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;row&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb97-9"><a href="html.html#cb97-9" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;row&quot;</span><span class="dt">&gt;</span></span>
 <span id="cb97-10"><a href="html.html#cb97-10" tabindex="-1"></a>      章节主体</span>
-<span id="cb97-11"><a href="html.html#cb97-11" tabindex="-1"></a>      <span class="kw">&lt;p&gt;</span></span>
-<span id="cb97-12"><a href="html.html#cb97-12" tabindex="-1"></a>        <span class="kw">&lt;button&gt;</span>上一章<span class="kw">&lt;/button&gt;</span></span>
-<span id="cb97-13"><a href="html.html#cb97-13" tabindex="-1"></a>        <span class="kw">&lt;button&gt;</span>下一章<span class="kw">&lt;/button&gt;</span></span>
-<span id="cb97-14"><a href="html.html#cb97-14" tabindex="-1"></a>      <span class="kw">&lt;/p&gt;</span></span>
-<span id="cb97-15"><a href="html.html#cb97-15" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb97-11"><a href="html.html#cb97-11" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb97-12"><a href="html.html#cb97-12" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">button</span><span class="dt">&gt;</span>上一章<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb97-13"><a href="html.html#cb97-13" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">button</span><span class="dt">&gt;</span>下一章<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb97-14"><a href="html.html#cb97-14" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb97-15"><a href="html.html#cb97-15" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb97-16"><a href="html.html#cb97-16" tabindex="-1"></a>  </span>
-<span id="cb97-17"><a href="html.html#cb97-17" tabindex="-1"></a>  <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb97-18"><a href="html.html#cb97-18" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<span id="cb97-17"><a href="html.html#cb97-17" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb97-18"><a href="html.html#cb97-18" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
 <p>对于所有 HTML 页面，主要的区别在于章节主体，其它大部分元素是相同的。<code>html_book()</code> 的默认输出将在 <code>&lt;head&gt;</code> 标签中包括 Bootstrap CSS 和 JavaScript 文件。</p>
 <p>目录常用于导航。在 GitBook 样式中，目录显示在侧边栏中。对于 Bootstrap 样式，我们没有对它应用特殊样式，因此它显示为普通的无序列表（在 HTML 标签 <code>&lt;ul&gt;</code> 中）。使用某些 CSS 技术可以轻松地将此列表转为导航栏。在这个软件包中我们已经提供了一个 CSS 文件 <code>toc.css</code>，你可以在这里找到它：<a href="https://github.com/rstudio/bookdown/blob/master/inst/examples/css/toc.css" class="uri">https://github.com/rstudio/bookdown/blob/master/inst/examples/css/toc.css</a></p>
 <p>你可以复制这个文件导你的书籍的根目录，然后通过 <code>css</code> 配置项应用到 HTML 输出，例如：</p>
@@ -697,7 +698,7 @@ div.csl-indent {
 </div>
 <div id="tufte-style" class="section level3 hasAnchor" number="3.1.4">
 <h3><span class="header-section-number">3.1.4</span> Tufte 样式<a href="html.html#tufte-style" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>和 Bootstrap 样式一样，Tufte 样式由输出格式 <code>tufte_html_book()</code> 提供，这也是 <code>html_chapters()</code> 的一个特例，使用 <code>tufte::tufte_html()</code> 作为基础格式。如果你不熟悉 Tufte 样式，请查阅 <strong>tufte</strong> 软件包<span class="citation">(<a href="#ref-R-tufte"><strong>R-tufte?</strong></a>)</span>。你可以在这里阅读一个 <code>tufte_html_book()</code> 的例子：<a href="https://bookdown.org/yihui/bookdown-demo3/" class="uri">https://bookdown.org/yihui/bookdown-demo3/</a>。</p>
+<p>和 Bootstrap 样式一样，Tufte 样式由输出格式 <code>tufte_html_book()</code> 提供，这也是 <code>html_chapters()</code> 的一个特例，使用 <code>tufte::tufte_html()</code> 作为基础格式。如果你不熟悉 Tufte 样式，请查阅 <strong>tufte</strong> 软件包<span class="citation">(<a href="#ref-R-tufte">Xie and Allaire 2023</a>)</span>。你可以在这里阅读一个 <code>tufte_html_book()</code> 的例子：<a href="https://bookdown.org/yihui/bookdown-demo3/" class="uri">https://bookdown.org/yihui/bookdown-demo3/</a>。</p>
 <p>基本上，它是一个左边是主栏，右边是边栏的布局。内容主体在主栏中，边栏用来放置脚注 (footnotes)、边注 (margin notes)、参考文献 (references) 和边栏图片 (margin figures) 等。</p>
 <p><code>tufte_html_book()</code> 的所有参数的含义与 <code>html_book()</code> 完全相同，例如，你同样也可以通过 <code>css</code> 配置项定制 CSS。然而，有一些元素是 Tufte 风格所特有的，如边注 (margin notes)、边栏图片 (margin figures) 和全宽图片 (full-width figures)。这些元素需要特殊的语法来生成；请查阅 <strong>tufte</strong> 软件包的文档。请注意，你不需要对脚注和参考文献做任何特殊处理（只需使用正常的 Markdown 语法 <code>^[footnote]</code> 和 <code>[@citation]</code>），因为它们会被自动放到页边。一个关于 <code>tufte_html_book</code> 格式的简短 YAML 示例如下：</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb99-1"><a href="html.html#cb99-1" tabindex="-1"></a><span class="pp">---</span></span>
@@ -706,6 +707,12 @@ div.csl-indent {
 <span id="cb99-4"><a href="html.html#cb99-4" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb99-5"><a href="html.html#cb99-5" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> toc.css</span></span>
 <span id="cb99-6"><a href="html.html#cb99-6" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+</div>
+</div>
+<h3>参考文献<a href="参考文献.html#参考文献" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-R-tufte" class="csl-entry">
+Xie, Yihui, and JJ Allaire. 2023. <em>Tufte: Tufte’s Styles for r Markdown Documents</em>. <a href="https://github.com/rstudio/tufte">https://github.com/rstudio/tufte</a>.
 </div>
 </div>
 <div class="footnotes">

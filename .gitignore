@@ -5,5 +5,7 @@
 *.log
 _bookdown_files
 _book
+bookdown-book-zhCN_cache
+bookdown-book-zhCN_files
 packages.bib
 images/dedication.lyx

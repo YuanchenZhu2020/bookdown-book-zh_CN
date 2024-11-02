@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-12-25" />
+<meta name="date" content="2024-11-02" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -55,7 +55,7 @@ MathJax.Hub.Config({
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -130,6 +130,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -311,7 +312,7 @@ details > summary {
 <div class="col-sm-12">
 <div id="使用-http-服务预览书籍" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> 使用 HTTP 服务预览书籍</h2>
-<p>相比于重复运行 <code>render_book()</code> 或 <code>preview_chapter()</code> 来预览章节，你实际上可以在 web 浏览器中实时预览书籍，你只需要保存 Rmd 文件即可。<strong>bookdown</strong> 中的函数 <code>serve_book()</code>可以基于 <strong>servr</strong> 软件包<span class="citation">(<a href="#ref-R-servr">Xie 2023c</a>)</span>启动本地 web 服务器，提供 HTML 输出的在线预览服务。</p>
+<p>相比于重复运行 <code>render_book()</code> 或 <code>preview_chapter()</code> 来预览章节，你实际上可以在 web 浏览器中实时预览书籍，你只需要保存 Rmd 文件即可。<strong>bookdown</strong> 中的函数 <code>serve_book()</code>可以基于 <strong>servr</strong> 软件包<span class="citation">(<a href="#ref-R-servr">Xie 2024</a>)</span>启动本地 web 服务器，提供 HTML 输出的在线预览服务。</p>
 <div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="5.3-使用-http-服务预览书籍.html#cb126-1" tabindex="-1"></a><span class="fu">serve_book</span>(<span class="at">dir =</span> <span class="st">&quot;.&quot;</span>, <span class="at">output_dir =</span> <span class="st">&quot;_book&quot;</span>,</span>
 <span id="cb126-2"><a href="5.3-使用-http-服务预览书籍.html#cb126-2" tabindex="-1"></a>  <span class="at">preview =</span> <span class="cn">TRUE</span>, <span class="at">in_session =</span> <span class="cn">TRUE</span>, <span class="at">quiet =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb126-3"><a href="5.3-使用-http-服务预览书籍.html#cb126-3" tabindex="-1"></a>  ...)</span></code></pre></div>
@@ -326,9 +327,9 @@ details > summary {
 <p>根据具体的用例，你可以选择 <code>in_session = TRUE</code> 或 <code>FALSE</code>。最后，你应该从一个新的 R session 开始运行 <code>render_book()</code> 以生成一个可靠的书籍副本。</p>
 </div>
 <h3>参考文献</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-R-servr" class="csl-entry">
-———. 2023c. <em>Servr: A Simple HTTP Server to Serve Static Files or Dynamic Documents</em>. <a href="https://github.com/yihui/servr">https://github.com/yihui/servr</a>.
+———. 2024. <em>Servr: A Simple HTTP Server to Serve Static Files or Dynamic Documents</em>. <a href="https://github.com/yihui/servr">https://github.com/yihui/servr</a>.
 </div>
 </div>
 <p style="text-align: center;">

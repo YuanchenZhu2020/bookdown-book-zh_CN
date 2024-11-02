@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-12-25" />
+<meta name="date" content="2024-11-02" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -55,7 +55,7 @@ MathJax.Hub.Config({
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -130,6 +130,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -318,17 +319,17 @@ details > summary {
 <span id="cb107-4"><a href="4.1-yaml-options.html#cb107-4" tabindex="-1"></a><span class="at">    </span><span class="fu">highlight</span><span class="kw">:</span><span class="at"> tango</span></span>
 <span id="cb107-5"><a href="4.1-yaml-options.html#cb107-5" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>对于 HTML 输出格式，你最有可能使用 <code>css</code> 选项来提供自己的 CSS 样式表，以自定义 HTML 元素的外观。有一个 <code>includes</code> 选项能够适用于更多格式，包括 HTML 和 LaTeX。<code>includes</code> 选项允许你在输出文档之前和/或之后插入任意自定义的内容。它有三个子选项：<code>in_header</code>、<code>before_body</code> 和 <code>after_body</code>。你需要了解 HTML 或 LaTeX 文档的基本结构才能理解这些选项。HTML 文件源文本如下所示：</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb108-1"><a href="4.1-yaml-options.html#cb108-1" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<div class="sourceCode" id="cb108"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb108-1"><a href="4.1-yaml-options.html#cb108-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
 <span id="cb108-2"><a href="4.1-yaml-options.html#cb108-2" tabindex="-1"></a>  </span>
-<span id="cb108-3"><a href="4.1-yaml-options.html#cb108-3" tabindex="-1"></a>  <span class="kw">&lt;head&gt;</span></span>
+<span id="cb108-3"><a href="4.1-yaml-options.html#cb108-3" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
 <span id="cb108-4"><a href="4.1-yaml-options.html#cb108-4" tabindex="-1"></a>  <span class="co">&lt;!-- 这里放置首部内容，例如 CSS 和 JS --&gt;</span></span>
-<span id="cb108-5"><a href="4.1-yaml-options.html#cb108-5" tabindex="-1"></a>  <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb108-5"><a href="4.1-yaml-options.html#cb108-5" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
 <span id="cb108-6"><a href="4.1-yaml-options.html#cb108-6" tabindex="-1"></a>  </span>
-<span id="cb108-7"><a href="4.1-yaml-options.html#cb108-7" tabindex="-1"></a>  <span class="kw">&lt;body&gt;</span></span>
+<span id="cb108-7"><a href="4.1-yaml-options.html#cb108-7" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
 <span id="cb108-8"><a href="4.1-yaml-options.html#cb108-8" tabindex="-1"></a>  <span class="co">&lt;!-- 这里放置正文内容 --&gt;</span></span>
-<span id="cb108-9"><a href="4.1-yaml-options.html#cb108-9" tabindex="-1"></a>  <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb108-9"><a href="4.1-yaml-options.html#cb108-9" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
 <span id="cb108-10"><a href="4.1-yaml-options.html#cb108-10" tabindex="-1"></a></span>
-<span id="cb108-11"><a href="4.1-yaml-options.html#cb108-11" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<span id="cb108-11"><a href="4.1-yaml-options.html#cb108-11" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
 <p><code>in_header</code> 选项接受一个文件路径然后将文件内容插入到 <code>&lt;head&gt;</code> 标签之间。<code>before_body</code> 所指文件将会被插入到 <code>&lt;body&gt;</code> 标签的正下方，<code>after_body</code> 所指文件将会被插入到 <code>&lt;/body&gt;</code> 标签之前。</p>
 <p>一个 LaTeX 源文档有着相似的结构：</p>
 <div class="sourceCode" id="cb109"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb109-1"><a href="4.1-yaml-options.html#cb109-1" tabindex="-1"></a><span class="bu">\documentclass</span>{<span class="ex">book</span>}</span>
@@ -344,11 +345,11 @@ details > summary {
 <span id="cb109-11"><a href="4.1-yaml-options.html#cb109-11" tabindex="-1"></a><span class="co">% 这里插入 after_body</span></span>
 <span id="cb109-12"><a href="4.1-yaml-options.html#cb109-12" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
 <p><code>includes</code> 选项非常有用且使用灵活。对于 HTML 输出，它意味着你能够将任意 HTML 代码插入到输出中。例如，当你在 HTML 输出中通过 MathJax 库渲染 LaTeX 数学表达式，并希望方程编号显示在左侧（默认显示在右侧），你可以创建一个包含有以下代码的文本文件：</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb110-1"><a href="4.1-yaml-options.html#cb110-1" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/x-mathjax-config&quot;</span><span class="kw">&gt;</span></span>
+<div class="sourceCode" id="cb110"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb110-1"><a href="4.1-yaml-options.html#cb110-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> type=</span><span class="st">&quot;text/x-mathjax-config&quot;</span><span class="dt">&gt;</span></span>
 <span id="cb110-2"><a href="4.1-yaml-options.html#cb110-2" tabindex="-1"></a>MathJax<span class="op">.</span><span class="at">Hub</span><span class="op">.</span><span class="fu">Config</span>({</span>
 <span id="cb110-3"><a href="4.1-yaml-options.html#cb110-3" tabindex="-1"></a>  <span class="dt">TeX</span><span class="op">:</span> { <span class="dt">TagSide</span><span class="op">:</span> <span class="st">&quot;left&quot;</span> }</span>
 <span id="cb110-4"><a href="4.1-yaml-options.html#cb110-4" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb110-5"><a href="4.1-yaml-options.html#cb110-5" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<span id="cb110-5"><a href="4.1-yaml-options.html#cb110-5" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div>
 <p>让我们假设文件名为 <code>mathjax-number.html</code>，并且它位于你的书籍的根目录下（包含有你的全部 Rmd 文件的目录）。你可以通过 <code>in_header</code> 选项将该文件插入到 HTML 首部，例如：</p>
 <div class="sourceCode" id="cb111"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb111-1"><a href="4.1-yaml-options.html#cb111-1" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb111-2"><a href="4.1-yaml-options.html#cb111-2" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>

@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-12-25" />
+<meta name="date" content="2024-11-02" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -55,7 +55,7 @@ MathJax.Hub.Config({
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -130,6 +130,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -315,18 +316,18 @@ details > summary {
 <p>由于所有书籍章节都是纯文本文件，因此它们非常适合用于应用版本控制工具。因此，如果你的所有合著者和合作者都具备 GIT 等版本控制工具的基本知识，你就可以使用这些工具与他们协作处理书籍内容。事实上，即使他们不知道如何使用 GIT，通过 GIT 进行协作也是可以的，因为 GitHub能够让使用者在 web 浏览器中在线创建和编辑文件。只需要有一个人必须熟悉 GIT，并且能够设置书籍存储库。其他合作者可以在线贡献内容，不过如果他们知道在本地使用 GIT 工作的基础用法，他们会有更多的自由。</p>
 <p>读者可以通过两种方式做出贡献。一种方式是直接贡献内容，如果你的书源托管在 GitHub 上，最简单的方法是通过 <a href="https://help.github.com/articles/about-pull-requests/">GitHub pull requests</a>。基本上，任何 GitHub 用户都可以单击 Rmd 源文件页面上的编辑 (edit) 按钮，编辑内容，并将更改提交给你进行审批。如果你对提交的更改感到满意（你可以清楚地看到更改的内容），可以单击“合并 (Merge)”按钮来合并更改。如果你不满意，可以在 pull request 中提供反馈，以便读者根据要求进一步修改。我们在第 <a href="3.1-html.html#gitbook-style">3.1.1</a> 节中提到了 GitBook 样式中的编辑 (edit) 按钮。该按钮链接到每个页面的 Rmd 源文件，可以引导你创建 pull request。没有必要来回收发电子邮件来交流简单的更改内容，比如修改打字错误。</p>
 <p>读者对你的书作出贡献的另一种方式是留下评论。评论可以以多种形式留下：电子邮件、GitHub issues 或 HTML 页面评论。这里我们使用 Disqus（参见第 <a href="4.1-yaml-options.html#yaml-options">4.1</a> 节）作为示例。Disqus 是一种在网页上嵌入讨论区的服务，可以通过 JavaScript 加载。当你注册并在 Disqus 上创建一个新的论坛后，你可以找到如下所示的 JavaScript 代码：</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb128-1"><a href="5.5-collaboration.html#cb128-1" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;disqus_thread&quot;</span><span class="kw">&gt;&lt;/div&gt;</span></span>
-<span id="cb128-2"><a href="5.5-collaboration.html#cb128-2" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
+<div class="sourceCode" id="cb128"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb128-1"><a href="5.5-collaboration.html#cb128-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;disqus_thread&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb128-2"><a href="5.5-collaboration.html#cb128-2" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb128-3"><a href="5.5-collaboration.html#cb128-3" tabindex="-1"></a>(<span class="kw">function</span>() { <span class="co">// DON&#39;T EDIT BELOW THIS LINE</span></span>
 <span id="cb128-4"><a href="5.5-collaboration.html#cb128-4" tabindex="-1"></a><span class="kw">var</span> d <span class="op">=</span> <span class="bu">document</span><span class="op">,</span> s <span class="op">=</span> d<span class="op">.</span><span class="fu">createElement</span>(<span class="st">&#39;script&#39;</span>)<span class="op">;</span></span>
 <span id="cb128-5"><a href="5.5-collaboration.html#cb128-5" tabindex="-1"></a>s<span class="op">.</span><span class="at">src</span> <span class="op">=</span> <span class="st">&#39;//yihui.disqus.com/embed.js&#39;</span><span class="op">;</span></span>
 <span id="cb128-6"><a href="5.5-collaboration.html#cb128-6" tabindex="-1"></a>s<span class="op">.</span><span class="fu">setAttribute</span>(<span class="st">&#39;data-timestamp&#39;</span><span class="op">,</span> <span class="op">+</span><span class="kw">new</span> <span class="bu">Date</span>())<span class="op">;</span></span>
 <span id="cb128-7"><a href="5.5-collaboration.html#cb128-7" tabindex="-1"></a>(d<span class="op">.</span><span class="at">head</span> <span class="op">||</span> d<span class="op">.</span><span class="at">body</span>)<span class="op">.</span><span class="fu">appendChild</span>(s)<span class="op">;</span></span>
 <span id="cb128-8"><a href="5.5-collaboration.html#cb128-8" tabindex="-1"></a>})()<span class="op">;</span></span>
-<span id="cb128-9"><a href="5.5-collaboration.html#cb128-9" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span>
-<span id="cb128-10"><a href="5.5-collaboration.html#cb128-10" tabindex="-1"></a><span class="kw">&lt;noscript&gt;</span>Please enable JavaScript to view the</span>
-<span id="cb128-11"><a href="5.5-collaboration.html#cb128-11" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://disqus.com/?ref_noscript&quot;</span><span class="kw">&gt;</span></span>
-<span id="cb128-12"><a href="5.5-collaboration.html#cb128-12" tabindex="-1"></a>  comments powered by Disqus.<span class="kw">&lt;/a&gt;&lt;/noscript&gt;</span></span></code></pre></div>
+<span id="cb128-9"><a href="5.5-collaboration.html#cb128-9" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb128-10"><a href="5.5-collaboration.html#cb128-10" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">noscript</span><span class="dt">&gt;</span>Please enable JavaScript to view the</span>
+<span id="cb128-11"><a href="5.5-collaboration.html#cb128-11" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;https://disqus.com/?ref_noscript&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb128-12"><a href="5.5-collaboration.html#cb128-12" tabindex="-1"></a>  comments powered by Disqus.<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">noscript</span><span class="dt">&gt;</span></span></code></pre></div>
 <p>请注意，你需要用自己的论坛名称替换名称 <code>yihui</code>（创建新论坛时必须提供此名称）。你可以将代码保存到一个名为 <code>disqus.html</code> 的 HTML 文件中。然后可以通过 <code>after_body</code> 选项将其嵌入到每页的末尾（图 <a href="5.5-collaboration.html#fig:disqus">5.3</a> 显示了讨论区的外观）：</p>
 <div class="sourceCode" id="cb129"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb129-1"><a href="5.5-collaboration.html#cb129-1" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb129-2"><a href="5.5-collaboration.html#cb129-2" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span></span>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.8 引文 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.8 引文 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-12-25" />
+<meta name="date" content="2024-11-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -64,7 +64,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -74,7 +74,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -136,6 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -336,7 +337,7 @@ div.csl-indent {
 <span id="cb53-7"><a href="citations.html#cb53-7" tabindex="-1"></a>  <span class="dt">year</span> = {2016},</span>
 <span id="cb53-8"><a href="citations.html#cb53-8" tabindex="-1"></a>  <span class="dt">url</span> = {https://www.R-project.org/},</span>
 <span id="cb53-9"><a href="citations.html#cb53-9" tabindex="-1"></a>}</span></code></pre></div>
-<p>参考书目条目以 <code>@type{</code> 开头，其中 <code>type</code> 可以是 <code>article</code>、<code>book</code>、<code>manual</code>等等。<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>紧跟着是一个引文关键词，在上面的示例中为 <code>R-base</code>。要引用一个条目，需要使用 <code>@key</code> 或 <code>[@key]</code>（后者会将引用文字放在圆括号中），例如，<code>@R-base</code> 被渲染为 <span class="citation">R Core Team (<a href="#ref-R-base">2022</a>)</span>，而 <code>[@R-base]</code> 则渲染为 “<span class="citation">(<a href="#ref-R-base">R Core Team 2022</a>)</span>”。注释也可以包含在方括号中，例如 <code>[a note about, @R-base]</code> 将会被渲染为 “<span class="citation">(a note about, <a href="#ref-R-base">R Core Team 2022</a>)</span>”。如果你对 LaTeX 中的 <strong>natbib</strong> 软件包很熟悉，你会发现 <code>@key</code> 基本上就是 <code>\citet{key}</code>，而 <code>[@key]</code> 等同于 <code>\citep{key}</code>。</p>
+<p>参考书目条目以 <code>@type{</code> 开头，其中 <code>type</code> 可以是 <code>article</code>、<code>book</code>、<code>manual</code>等等。<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>紧跟着是一个引文关键词，在上面的示例中为 <code>R-base</code>。要引用一个条目，需要使用 <code>@key</code> 或 <code>[@key]</code>（后者会将引用文字放在圆括号中），例如，<code>@R-base</code> 被渲染为 <span class="citation">R Core Team (<a href="#ref-R-base">2023</a>)</span>，而 <code>[@R-base]</code> 则渲染为 “<span class="citation">(<a href="#ref-R-base">R Core Team 2023</a>)</span>”。注释也可以包含在方括号中，例如 <code>[a note about, @R-base]</code> 将会被渲染为 “<span class="citation">(a note about, <a href="#ref-R-base">R Core Team 2023</a>)</span>”。如果你对 LaTeX 中的 <strong>natbib</strong> 软件包很熟悉，你会发现 <code>@key</code> 基本上就是 <code>\citet{key}</code>，而 <code>[@key]</code> 等同于 <code>\citep{key}</code>。</p>
 <p>在一个参考书目条目中有许多字段，例如 <code>title</code>、<code>author</code> 和 <code>year</code> 等。你可用在 <a href="https://en.wikipedia.org/wiki/BibTeX" class="uri">https://en.wikipedia.org/wiki/BibTeX</a> 查看 BibTeX 中可能的条目和字段类型。</p>
 <p>在 <strong>knitr</strong> 中有一个帮助函数 <code>write_bib()</code>，它能够为 R 软件包自动生成 BibTeX 条目，例如：</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="citations.html#cb54-1" tabindex="-1"></a><span class="co"># the second argument can be a .bib file</span></span>
@@ -346,7 +347,7 @@ div.csl-indent {
     Report Generation in R},
   author = {Yihui Xie},
   year = {2023},
-  note = {R package version 1.43},
+  note = {R package version 1.45},
   url = {https://yihui.org/knitr/},
 }
 
@@ -354,9 +355,10 @@ div.csl-indent {
   title = {stringr: Simple, Consistent Wrappers for Common
     String Operations},
   author = {Hadley Wickham},
-  year = {2022},
-  note = {R package version 1.5.0},
-  url = {https://CRAN.R-project.org/package=stringr},
+  year = {2023},
+  note = {R package version 1.5.1,
+    https://github.com/tidyverse/stringr},
+  url = {https://stringr.tidyverse.org},
 }
 
 @Book{knitr2015,
@@ -394,9 +396,9 @@ div.csl-indent {
 <p>有关如何使用引文的更多详细说明和示例，请参阅 Pandoc 使用指南的“引文”部分。</p>
 </div>
 <h3>参考文献<a href="参考文献.html#参考文献" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-R-base" class="csl-entry">
-R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 </div>
 <div class="footnotes">

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2.11 Web 页面和 Shiny 应用 | Bookdown: 使用 R Markdown 创作书籍和技术文档</title>
   <meta name="description" content="这是一本使用 R Markdown 编写书籍的指南，包括如何生成图片和表格，以及如何在 R Markdown 中插入交叉引用、引文、HTML 组件和 Shiny 应用。本书能够导出为 HTML、PDF 和电子书（例如 EPUB）。本书的风格是可以定制的。你可以在 RStudio IDE 或其它编辑器中轻松地编辑和预览本书，并在你想要的任何地方（例如 bookdown.org）托管本书。" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2.11 Web 页面和 Shiny 应用 | Bookdown: 使用 R Markdown 创作书籍和技术文档" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2023-12-25" />
+<meta name="date" content="2024-11-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -64,7 +64,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -74,7 +74,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -136,6 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -322,17 +323,11 @@ div.csl-indent {
 图 2.6: 通过 miniUI 软件包创建的一个 Shiny 应用；你可以在 <a href="https://yihui.shinyapps.io/miniUI/" class="uri">https://yihui.shinyapps.io/miniUI/</a> 看到在线版本
 </p>
 </div>
-<p>同样的，如果你正在阅读本书的 HTML 版本，将看到一个活动的应用程序，如果你正在阅读本书的其他格式版本，将看到一个静态屏幕截图。上面的 Shiny 应用程序是使用 <strong>miniUI</strong> 软件包 <span class="citation">(<a href="#ref-R-miniUI">Cheng 2018</a>)</span> 创建的，这个软件包提供的布局功能对于小屏幕上的 Shiny 应用程序特别好。如果使用普通的 Shiny 布局功能，则可能会在 iframe 中看到垂直和/或水平滚动条，因为页面大小太大，无法放入 iframe 中。如果 iframe 的默认宽度太小，可以使用区块选项 <code>out.width</code> 进行更改。对于 iframe 的高度，请使用 <code>include_url()</code>/<code>include_app()</code> 的 <code>height</code> 参数。</p>
+<p>同样的，如果你正在阅读本书的 HTML 版本，将看到一个活动的应用程序，如果你正在阅读本书的其他格式版本，将看到一个静态屏幕截图。上面的 Shiny 应用程序是使用 <strong>miniUI</strong> 软件包 <span class="citation">(<a href="#ref-R-miniUI"><strong>R-miniUI?</strong></a>)</span> 创建的，这个软件包提供的布局功能对于小屏幕上的 Shiny 应用程序特别好。如果使用普通的 Shiny 布局功能，则可能会在 iframe 中看到垂直和/或水平滚动条，因为页面大小太大，无法放入 iframe 中。如果 iframe 的默认宽度太小，可以使用区块选项 <code>out.width</code> 进行更改。对于 iframe 的高度，请使用 <code>include_url()</code>/<code>include_app()</code> 的 <code>height</code> 参数。</p>
 <p>Shiny 应用程序可能需要比普通 URL 更长的加载时间。你可能需要对 <code>delay</code> 选项使用一个保守的值，例如 10。不用多加叙说，<code>include_url()</code> 和 <code>include_app()</code> 需要一个正常工作的 Internet 连接，除非你以前缓存了区块（但是如果没有 Internet 连接，iframe 内的网页仍然无法工作）。</p>
 
 </div>
 <!-- </div> -->
-<h3>参考文献<a href="参考文献.html#参考文献" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-R-miniUI" class="csl-entry">
-Cheng, Joe. 2018. <em>miniUI: Shiny UI Widgets for Small Screens</em>. <a href="https://CRAN.R-project.org/package=miniUI">https://CRAN.R-project.org/package=miniUI</a>.
-</div>
-</div>
 <div class="footnotes">
 <hr />
 <ol start="8">

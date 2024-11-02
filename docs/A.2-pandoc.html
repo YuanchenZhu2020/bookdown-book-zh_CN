@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-12-25" />
+<meta name="date" content="2024-11-02" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -55,7 +55,7 @@ MathJax.Hub.Config({
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -130,6 +130,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -313,7 +314,7 @@ details > summary {
 <h2><span class="header-section-number">A.2</span> Pandoc</h2>
 <p>R Markdown 文档 (<code>*.Rmd</code>) 首先通过 <strong>knitr</strong> 软件包编译成 Markdown (<code>*.md</code>)，然后通过 Pandoc 将 Markdown 编译成其他输出格式（如 LaTeX 或 HTML）。这个过程由 <strong>rmarkdown</strong> 软件包自动完成。你不需要单独安装 <strong>knitr</strong> 或 <strong>rmarkdown</strong>，因为它们是 <strong>bookdown</strong> 的必需软件包，安装 <strong>bookdown</strong> 时会自动安装。但是，Pandoc 不是 R 软件包，因此在安装 <strong>bookdown</strong> 时不会自动安装。你可以按照 Pandoc 主页 (<a href="http://pandoc.org" class="uri">http://pandoc.org</a>) 上的安装说明安装 Pandoc，但是如果你使用 RStudio IDE，实际上不需要单独安装 Pandoc，因为 RStudio 包含一个 Pandoc 的副本。Pandoc 版本号可通过以下方式获得：</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="A.2-pandoc.html#cb150-1" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">pandoc_version</span>()</span>
-<span id="cb150-2"><a href="A.2-pandoc.html#cb150-2" tabindex="-1"></a><span class="do">## [1] &#39;3.1.1&#39;</span></span></code></pre></div>
+<span id="cb150-2"><a href="A.2-pandoc.html#cb150-2" tabindex="-1"></a><span class="do">## [1] &#39;3.2&#39;</span></span></code></pre></div>
 <p>如果你发现这个版本太低了，并且一些 Pandoc 功能特性只在更高版本中提供，你可以安装更高版本的 Pandoc，之后 <strong>rmarkdown</strong> 将会调用更高版本的 Pandoc，而不是内置的版本。</p>
 </div>
 <p style="text-align: center;">

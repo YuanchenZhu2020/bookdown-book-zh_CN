@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2023-12-25" />
+<meta name="date" content="2024-11-02" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -55,7 +55,7 @@ MathJax.Hub.Config({
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -130,6 +130,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -312,15 +313,15 @@ details > summary {
 <div id="模板" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> 模板</h2>
 <p>当 Pandoc 将 Markdown 转换为另一种输出格式时，它在幕后使用模板。模板是一个纯文本文件，其中包含一些格式为 <code>$variable$</code> 的变量。这些变量将由 Pandoc 生成的值替换。下面是一个非常简短的 HTML 输出模板：</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb117-1"><a href="4.3-模板.html#cb117-1" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
-<span id="cb117-2"><a href="4.3-模板.html#cb117-2" tabindex="-1"></a>  <span class="kw">&lt;head&gt;</span></span>
-<span id="cb117-3"><a href="4.3-模板.html#cb117-3" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>$title$<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb117-4"><a href="4.3-模板.html#cb117-4" tabindex="-1"></a>  <span class="kw">&lt;/head&gt;</span></span>
+<div class="sourceCode" id="cb117"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb117-1"><a href="4.3-模板.html#cb117-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb117-2"><a href="4.3-模板.html#cb117-2" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb117-3"><a href="4.3-模板.html#cb117-3" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>$title$<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb117-4"><a href="4.3-模板.html#cb117-4" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
 <span id="cb117-5"><a href="4.3-模板.html#cb117-5" tabindex="-1"></a>  </span>
-<span id="cb117-6"><a href="4.3-模板.html#cb117-6" tabindex="-1"></a>  <span class="kw">&lt;body&gt;</span></span>
+<span id="cb117-6"><a href="4.3-模板.html#cb117-6" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
 <span id="cb117-7"><a href="4.3-模板.html#cb117-7" tabindex="-1"></a>  $body$</span>
-<span id="cb117-8"><a href="4.3-模板.html#cb117-8" tabindex="-1"></a>  <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb117-9"><a href="4.3-模板.html#cb117-9" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<span id="cb117-8"><a href="4.3-模板.html#cb117-8" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb117-9"><a href="4.3-模板.html#cb117-9" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
 <p>它有两个变量 <code>title</code> 和 <code>body</code>。<code>title</code> 的值来自 YAML 元数据的 <code>title</code> 字段，<code>body</code> 是从 Markdown 输入文档的正文生成的 HTML 代码。例如，假设我们有一个 Markdown 文档：</p>
 <div class="sourceCode" id="cb118"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb118-1"><a href="4.3-模板.html#cb118-1" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb118-2"><a href="4.3-模板.html#cb118-2" tabindex="-1"></a><span class="an">title:</span><span class="co"> 一本好书</span></span>
@@ -330,19 +331,19 @@ details > summary {
 <span id="cb118-6"><a href="4.3-模板.html#cb118-6" tabindex="-1"></a></span>
 <span id="cb118-7"><a href="4.3-模板.html#cb118-7" tabindex="-1"></a>这是一本**优秀的**书！</span></code></pre></div>
 <p>如果我们使用上述文档生成 HTML 文档，其源代码如下：</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb119-1"><a href="4.3-模板.html#cb119-1" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
-<span id="cb119-2"><a href="4.3-模板.html#cb119-2" tabindex="-1"></a>  <span class="kw">&lt;head&gt;</span></span>
-<span id="cb119-3"><a href="4.3-模板.html#cb119-3" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>一本好书<span class="kw">&lt;/title&gt;</span></span>
-<span id="cb119-4"><a href="4.3-模板.html#cb119-4" tabindex="-1"></a>  <span class="kw">&lt;/head&gt;</span></span>
+<div class="sourceCode" id="cb119"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb119-1"><a href="4.3-模板.html#cb119-1" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb119-2"><a href="4.3-模板.html#cb119-2" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb119-3"><a href="4.3-模板.html#cb119-3" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>一本好书<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb119-4"><a href="4.3-模板.html#cb119-4" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
 <span id="cb119-5"><a href="4.3-模板.html#cb119-5" tabindex="-1"></a>  </span>
-<span id="cb119-6"><a href="4.3-模板.html#cb119-6" tabindex="-1"></a>  <span class="kw">&lt;body&gt;</span></span>
+<span id="cb119-6"><a href="4.3-模板.html#cb119-6" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
 <span id="cb119-7"><a href="4.3-模板.html#cb119-7" tabindex="-1"></a>  </span>
-<span id="cb119-8"><a href="4.3-模板.html#cb119-8" tabindex="-1"></a>  <span class="kw">&lt;h1&gt;</span>简介<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb119-8"><a href="4.3-模板.html#cb119-8" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>简介<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
 <span id="cb119-9"><a href="4.3-模板.html#cb119-9" tabindex="-1"></a>  </span>
-<span id="cb119-10"><a href="4.3-模板.html#cb119-10" tabindex="-1"></a>  <span class="kw">&lt;p&gt;</span>这是一本<span class="kw">&lt;strong&gt;</span>优秀的<span class="kw">&lt;/strong&gt;</span>书！<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb119-10"><a href="4.3-模板.html#cb119-10" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>这是一本<span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>优秀的<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span>书！<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
 <span id="cb119-11"><a href="4.3-模板.html#cb119-11" tabindex="-1"></a>  </span>
-<span id="cb119-12"><a href="4.3-模板.html#cb119-12" tabindex="-1"></a>  <span class="kw">&lt;/body&gt;</span></span>
-<span id="cb119-13"><a href="4.3-模板.html#cb119-13" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<span id="cb119-12"><a href="4.3-模板.html#cb119-12" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb119-13"><a href="4.3-模板.html#cb119-13" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
 <p>实际的 HTML、LaTeX 和 EPUB 模板更加复杂，但其中的核心思想是一样的。你需要知道哪些变量可以使用：有些变量是内置的 Pandoc 变量，有些可以由用户在 YAML 元数据中定义，或者从命令行选项 <code>-V</code> 或 <code>--variable</code> 传递。某些变量仅在特定的输出格式中有意义，例如，<code>documentclass</code> 变量仅用于 LaTeX 输出。请参阅 Pandoc 文档以了解有关这些变量的更多信息，你可以在 GitHub 存储库 <a href="https://github.com/jgm/pandoc-templates" class="uri">https://github.com/jgm/pandoc-templates</a> 中找到所有默认的 Pandoc 模板。</p>
 <p>请注意，对于 HTML 输出，<strong>bookdown</strong> 需要模板中的一些附加注释标记，我们已经在第 <a href="3.1-html.html#bootstrap-style">3.1.3</a> 节中对它们进行了解释。</p>
 </div>

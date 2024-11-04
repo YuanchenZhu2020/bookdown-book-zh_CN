@@ -109,6 +109,8 @@ lapply(names(githubs), function(pkg) {
 | sticky header| 悬浮标题、粘性标题 | 指无论如何滚动网页，页面上总是有一个固定的组件，就像粘在页面上。通常可以是导航栏、网页页头等，能够方便导航。 |
 | Project Wizard | 项目向导 | 项目引导程序。 |
 | Chapter; Section; Subsection | 章；节；小节 |
+| rant | 吐槽 | 直译为咆哮、叫嚷、夸夸其谈，考虑到宾语为 Twitter，这里翻译为贴近口语的“吐槽”。 |
+| Literate Programming| 文学化编程 | 指的是一种将程序代码和文本交织在一起进行说明报告的文档风格。 |
 
 ## 排版说明 {-}
 
@@ -134,7 +136,7 @@ lapply(names(githubs), function(pkg) {
 | Customization | √ | × |
 | Editing | √ | × |
 | Publishing | √ | × |
-| Appendix | √ | × |
+| Appendix | √ | √ |
 | References | √ | √ |
 
 # 前言 {-}

@@ -1,9 +1,9 @@
 # 关于作者 {-}
 
-谢益辉(Yihui Xie) (<http://yihui.org>) 是 Posit Software, PBC (<https://posit.co>) 的软件工程师。 他在爱荷华州立大学统计系获得了博士学位。他对交互式统计图形和统计计算感兴趣。作为一个活跃的 R 语言用户，他编写了多个 R 包，如 **knitr**、**bookdown**、**blogdown**、**animation**、**DT**、**tinytex**、**tufte**、**formatR**、**fun**、**mime**、**highr**、**servr**、**Rd2roxygen** 等，其中 **animation** 软件包荣获 2009 年的 John M. Chambers Statistical Software Award (ASA)。他还与人合作编写了其他一些 R 软件包，包括 **shiny**、**rmarkdown** 和 **leaflet**。
+谢益辉 (Yihui Xie) (<http://yihui.org>) 是 Posit Software, PBC (<https://posit.co>) 的软件工程师。 他在爱荷华州立大学统计系 (Department of Statistics, Iowa State University) 获得了博士学位。他对交互式统计图形和统计计算感兴趣。作为一个活跃的 R 语言用户，他开发了多个 R 包，如 **knitr**、**bookdown**、**blogdown**、**animation**、**DT**、**tinytex**、**tufte**、**formatR**、**fun**、**mime**、**highr**、**servr** 和 **Rd2roxygen** 等，其中 **animation** 包获得了 2009 年的 John M. Chambers Statistical Software Award (ASA)。此外，他还与人合作开发了其他一些 R 软件包，包括 **shiny**、**rmarkdown** 和 **leaflet**。
 
-2006 年，他创立了统计之都 (<https://cosx.org>)，它已经发展成为中国的一个大型统计在线社区。他于 2008 年发起了中国 R 语言会议，此后一直参与组织中国 R 语言会议。在爱荷华州立大学攻读博士学位期间，他获得了 Vince Sposito Statistical Computing Award (2011) 和统计系的 Snedecor Award (2012)。
+2006 年，他创立了统计之都 (<https://cosx.org>)，该网站已经发展成为中国的一个大型统计学在线社区。他于 2008 年发起了中国 R 语言会议，此后一直参与组织中国 R 语言会议。在爱荷华州立大学攻读博士学位期间，他获得了统计系的 Vince Sposito Statistical Computing Award (2011) 和 Snedecor Award (2012)。
 
-他偶尔在推特上夸夸其谈 (<https://twitter.com/xieyihui>)，大多数时候你都可以在 GitHub 上找到他 (<https://github.com/yihui>).
+他偶尔在推特上吐槽 (<https://twitter.com/xieyihui>)，大多数时候你都可以在 GitHub 上找到他 (<https://github.com/yihui>).
 
-他喜欢中国古典文学，也喜欢辛辣的食物。
+他喜欢吃辣的食物，也热爱中国古典文学。

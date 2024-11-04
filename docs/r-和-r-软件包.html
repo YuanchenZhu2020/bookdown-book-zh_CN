@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2024-11-02" />
+<meta name="date" content="2024-11-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -313,17 +313,17 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="r-和-r-软件包" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">A.1</span> R 和 R 软件包<a href="r-和-r-软件包.html#r-和-r-软件包" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>R 能够从任何一个 CRAN (the Comprehensive R Archive Network) 镜像站中下载和安装，例如 <a href="https://cran.rstudio.com" class="uri">https://cran.rstudio.com</a>。请注意每年都会有一些 R 的新版本发布，你可能需要偶尔升级 R。</p>
-<p>为了安装 <strong>bookdown</strong> 阮家堡，你可以在 R 中输入：</p>
+<p>你能够从任何一个 CRAN (the Comprehensive R Archive Network) 镜像站中下载并安装 R，例如 <a href="https://cran.rstudio.com" class="uri">https://cran.rstudio.com</a>。请注意每年都会有一些 R 的新版本发布，你可能需要偶尔进行升级。</p>
+<p>为了安装 <strong>bookdown</strong> 包，你可以在 R 中输入：</p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="r-和-r-软件包.html#cb146-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span></code></pre></div>
-<p>这将安装所有必需的 R 软件包。如果你不太关心这些软件包是否实际用于编译你的书籍（例如 <strong>htmlwidgets</strong>），也可以选择安装所有可选的软件包：</p>
+<p>这将安装所有必需的 R 包。如果你不太关心这些包是否真的会被用来编译你的书籍（例如 <strong>htmlwidgets</strong>），也可以选择安装所有可选的包：</p>
 <div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="r-和-r-软件包.html#cb147-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p>如果想体验 GitHub 上 <strong>bookdown</strong> 的开发版本，需要首先安装 <strong>devtools</strong>：</p>
+<p>如果你想体验 GitHub 上 <strong>bookdown</strong> 的开发版本，需要首先安装 <strong>devtools</strong>：</p>
 <div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="r-和-r-软件包.html#cb148-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&#39;devtools&#39;</span>)) <span class="fu">install.packages</span>(<span class="st">&#39;devtools&#39;</span>)</span>
 <span id="cb148-2"><a href="r-和-r-软件包.html#cb148-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&#39;rstudio/bookdown&#39;</span>)</span></code></pre></div>
-<p>R 软件包同样也经常在 CRAN 或 GitHub 上不断更新，因此你可能需要偶尔地更新它们：</p>
+<p>R 包也经常在 CRAN 或 GitHub 上不断更新，所以你可能需要偶尔更新它们：</p>
 <div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="r-和-r-软件包.html#cb149-1" tabindex="-1"></a><span class="fu">update.packages</span>(<span class="at">ask =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p>尽管这不是必须的，但当你在处理与 R 相关的项目时，RStudio IDE 能够使很多事情变得更加简单。RStudio IDE 可以从 <a href="https://www.posit.co" class="uri">https://www.posit.co</a> 下载。</p>
+<p>尽管不是必需的，但当你从事与 R 相关的项目时，使用 RStudio IDE 能够使很多事情变得更加简单。你可以从 <a href="https://www.posit.co" class="uri">https://www.posit.co</a> 下载 RStudio IDE。</p>
 </div>
             </section>
 

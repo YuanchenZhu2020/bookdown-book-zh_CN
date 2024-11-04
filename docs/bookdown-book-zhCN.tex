@@ -223,7 +223,7 @@
 
 \title{Bookdown: 使用 R Markdown 创作书籍和技术文档}
 \author{Yihui Xie}
-\date{2024-11-02}
+\date{2024-11-04}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{定理}[chapter]
@@ -342,6 +342,8 @@ full-width figures & 全宽图片（暂） & ``full-width'' 含义未明，可�
 sticky header & 悬浮标题、粘性标题 & 指无论如何滚动网页，页面上总是有一个固定的组件，就像粘在页面上。通常可以是导航栏、网页页头等，能够方便导航。 \\
 Project Wizard & 项目向导 & 项目引导程序。 \\
 Chapter; Section; Subsection & 章；节；小节 & \\
+rant & 吐槽 & 直译为咆哮、叫嚷、夸夸其谈，考虑到宾语为 Twitter，这里翻译为贴近口语的``吐槽''。 \\
+Literate Programming & 文学化编程 & 指的是一种将程序代码和文本交织在一起进行说明报告的文档风格。 \\
 \end{longtable}
 
 \section*{排版说明}\label{ux6392ux7248ux8bf4ux660e}
@@ -388,7 +390,7 @@ Output Formats & √ & × \\
 Customization & √ & × \\
 Editing & √ & × \\
 Publishing & √ & × \\
-Appendix & √ & × \\
+Appendix & √ & √ \\
 References & √ & √ \\
 \end{longtable}
 
@@ -496,13 +498,13 @@ Elkhorn, Nebraska
 \chapter*{关于作者}\label{ux5173ux4e8eux4f5cux8005}
 
 
-谢益辉(Yihui Xie) (\url{http://yihui.org}) 是 Posit Software, PBC (\url{https://posit.co}) 的软件工程师。 他在爱荷华州立大学统计系获得了博士学位。他对交互式统计图形和统计计算感兴趣。作为一个活跃的 R 语言用户，他编写了多个 R 包，如 \textbf{knitr}、\textbf{bookdown}、\textbf{blogdown}、\textbf{animation}、\textbf{DT}、\textbf{tinytex}、\textbf{tufte}、\textbf{formatR}、\textbf{fun}、\textbf{mime}、\textbf{highr}、\textbf{servr}、\textbf{Rd2roxygen} 等，其中 \textbf{animation} 软件包荣获 2009 年的 John M. Chambers Statistical Software Award (ASA)。他还与人合作编写了其他一些 R 软件包，包括 \textbf{shiny}、\textbf{rmarkdown} 和 \textbf{leaflet}。
+谢益辉 (Yihui Xie) (\url{http://yihui.org}) 是 Posit Software, PBC (\url{https://posit.co}) 的软件工程师。 他在爱荷华州立大学统计系 (Department of Statistics, Iowa State University) 获得了博士学位。他对交互式统计图形和统计计算感兴趣。作为一个活跃的 R 语言用户，他开发了多个 R 包，如 \textbf{knitr}、\textbf{bookdown}、\textbf{blogdown}、\textbf{animation}、\textbf{DT}、\textbf{tinytex}、\textbf{tufte}、\textbf{formatR}、\textbf{fun}、\textbf{mime}、\textbf{highr}、\textbf{servr} 和 \textbf{Rd2roxygen} 等，其中 \textbf{animation} 包获得了 2009 年的 John M. Chambers Statistical Software Award (ASA)。此外，他还与人合作开发了其他一些 R 软件包，包括 \textbf{shiny}、\textbf{rmarkdown} 和 \textbf{leaflet}。
 
-2006 年，他创立了统计之都 (\url{https://cosx.org})，它已经发展成为中国的一个大型统计在线社区。他于 2008 年发起了中国 R 语言会议，此后一直参与组织中国 R 语言会议。在爱荷华州立大学攻读博士学位期间，他获得了 Vince Sposito Statistical Computing Award (2011) 和统计系的 Snedecor Award (2012)。
+2006 年，他创立了统计之都 (\url{https://cosx.org})，该网站已经发展成为中国的一个大型统计学在线社区。他于 2008 年发起了中国 R 语言会议，此后一直参与组织中国 R 语言会议。在爱荷华州立大学攻读博士学位期间，他获得了统计系的 Vince Sposito Statistical Computing Award (2011) 和 Snedecor Award (2012)。
 
-他偶尔在推特上夸夸其谈 (\url{https://twitter.com/xieyihui})，大多数时候你都可以在 GitHub 上找到他 (\url{https://github.com/yihui}).
+他偶尔在推特上吐槽 (\url{https://twitter.com/xieyihui})，大多数时候你都可以在 GitHub 上找到他 (\url{https://github.com/yihui}).
 
-他喜欢中国古典文学，也喜欢辛辣的食物。
+他喜欢吃辣的食物，也热爱中国古典文学。
 
 \mainmatter
 
@@ -2289,7 +2291,7 @@ Gitbook 样式在每个页面的顶部都有一个工具栏（图 \ref{fig:gitbo
 \PreprocessorTok{{-}{-}{-}}
 \FunctionTok{title}\KeywordTok{:}\AttributeTok{ }\StringTok{"A Minimal Book Example"}
 \FunctionTok{author}\KeywordTok{:}\AttributeTok{ }\StringTok{"Jane Doe"}
-\FunctionTok{date}\KeywordTok{:}\AttributeTok{ }\StringTok{"2024{-}11{-}02"}
+\FunctionTok{date}\KeywordTok{:}\AttributeTok{ }\StringTok{"2024{-}11{-}04"}
 \FunctionTok{site}\KeywordTok{:}\AttributeTok{ bookdown::bookdown\_site}
 \FunctionTok{output}\KeywordTok{:}\AttributeTok{ bookdown::bs4\_book}
 \FunctionTok{url}\KeywordTok{:}\AttributeTok{ https://bookdown.org/janedoe/bookdown{-}demo}
@@ -2735,7 +2737,7 @@ MOBI 电子书可以在亚马逊的 Kindle 设备上阅读。Pandoc 本身不支
 ## {
 ##     pdf_book(..., base_format = rmarkdown::pdf_document)
 ## }
-## <bytecode: 0x0000012ff3bbda58>
+## <bytecode: 0x0000017bd71e85f8>
 ## <environment: namespace:bookdown>
 \end{verbatim}
 
@@ -3639,13 +3641,13 @@ LaTeX 类是 YAML 元数据中最重要的设置。它控制了 PDF 书籍的整
 
 \chapter{软件工具}\label{software-tools}
 
-对于那些不熟悉如何使用 R Markdown 所需的软件包的读者，我们将简要介绍这些软件包的安装和维护。
+对于不熟悉如何使用 R Markdown 的依赖软件包的人，我们将简要介绍这些软件包的安装和维护。
 
 \section{R 和 R 软件包}\label{r-ux548c-r-ux8f6fux4ef6ux5305}
 
-R 能够从任何一个 CRAN (the Comprehensive R Archive Network) 镜像站中下载和安装，例如 \url{https://cran.rstudio.com}。请注意每年都会有一些 R 的新版本发布，你可能需要偶尔升级 R。
+你能够从任何一个 CRAN (the Comprehensive R Archive Network) 镜像站中下载并安装 R，例如 \url{https://cran.rstudio.com}。请注意每年都会有一些 R 的新版本发布，你可能需要偶尔进行升级。
 
-为了安装 \textbf{bookdown} 阮家堡，你可以在 R 中输入：
+为了安装 \textbf{bookdown} 包，你可以在 R 中输入：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3653,7 +3655,7 @@ R 能够从任何一个 CRAN (the Comprehensive R Archive Network) 镜像站中�
 \end{Highlighting}
 \end{Shaded}
 
-这将安装所有必需的 R 软件包。如果你不太关心这些软件包是否实际用于编译你的书籍（例如 \textbf{htmlwidgets}），也可以选择安装所有可选的软件包：
+这将安装所有必需的 R 包。如果你不太关心这些包是否真的会被用来编译你的书籍（例如 \textbf{htmlwidgets}），也可以选择安装所有可选的包：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3661,7 +3663,7 @@ R 能够从任何一个 CRAN (the Comprehensive R Archive Network) 镜像站中�
 \end{Highlighting}
 \end{Shaded}
 
-如果想体验 GitHub 上 \textbf{bookdown} 的开发版本，需要首先安装 \textbf{devtools}：
+如果你想体验 GitHub 上 \textbf{bookdown} 的开发版本，需要首先安装 \textbf{devtools}：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3670,7 +3672,7 @@ R 能够从任何一个 CRAN (the Comprehensive R Archive Network) 镜像站中�
 \end{Highlighting}
 \end{Shaded}
 
-R 软件包同样也经常在 CRAN 或 GitHub 上不断更新，因此你可能需要偶尔地更新它们：
+R 包也经常在 CRAN 或 GitHub 上不断更新，所以你可能需要偶尔更新它们：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3678,11 +3680,11 @@ R 软件包同样也经常在 CRAN 或 GitHub 上不断更新，因此你可能�
 \end{Highlighting}
 \end{Shaded}
 
-尽管这不是必须的，但当你在处理与 R 相关的项目时，RStudio IDE 能够使很多事情变得更加简单。RStudio IDE 可以从 \url{https://www.posit.co} 下载。
+尽管不是必需的，但当你从事与 R 相关的项目时，使用 RStudio IDE 能够使很多事情变得更加简单。你可以从 \url{https://www.posit.co} 下载 RStudio IDE。
 
 \section{Pandoc}\label{pandoc}
 
-R Markdown 文档 (\texttt{*.Rmd}) 首先通过 \textbf{knitr} 软件包编译成 Markdown (\texttt{*.md})，然后通过 Pandoc 将 Markdown 编译成其他输出格式（如 LaTeX 或 HTML）。\index{Pandoc}这个过程由 \textbf{rmarkdown} 软件包自动完成。你不需要单独安装 \textbf{knitr} 或 \textbf{rmarkdown}，因为它们是 \textbf{bookdown} 的必需软件包，安装 \textbf{bookdown} 时会自动安装。但是，Pandoc 不是 R 软件包，因此在安装 \textbf{bookdown} 时不会自动安装。你可以按照 Pandoc 主页 (\url{http://pandoc.org}) 上的安装说明安装 Pandoc，但是如果你使用 RStudio IDE，实际上不需要单独安装 Pandoc，因为 RStudio 包含一个 Pandoc 的副本。Pandoc 版本号可通过以下方式获得：
+R Markdown 文档 (\texttt{*.Rmd}) 首先会通过 \textbf{knitr} 包编译成 Markdown (\texttt{*.md})，然后 Markdown 再通过 Pandoc 编译成其他输出格式（如 LaTeX 或 HTML）。\index{Pandoc}整个过程是由 \textbf{rmarkdown} 包自动完成的。你不需要额外安装 \textbf{knitr} 或 \textbf{rmarkdown}，因为它们是 \textbf{bookdown} 的依赖包，在安装 \textbf{bookdown} 时会自动安装。然而，Pandoc 并不是 R 软件包，因此不会在安装 \textbf{bookdown} 时自动安装。你可以参考 Pandoc 主页 (\url{http://pandoc.org}) 上的安装说明来安装 Pandoc，但如果你使用 RStudio IDE，则不需要额外安装 Pandoc，因为 RStudio 已经包含了一个 Pandoc 的副本。你可以通过以下方式查看 Pandoc 版本号：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3695,7 +3697,7 @@ R Markdown 文档 (\texttt{*.Rmd}) 首先通过 \textbf{knitr} 软件包编译�
 
 \section{LaTeX}\label{latex}
 
-只有当你想要将你的书籍转为 PDF 时，你才需要 LaTeX\index{LaTeX}。你可以查阅 \url{https://www.latex-project.org/get/} 以获取更多关于 LaTeX 它的安装的信息，但是我们强烈推荐你安装名为 \href{https://yihui.org/tinytex/}{TinyTeX} 的轻量级跨平台 LaTeX 发行版，它是基于 TeX Live 构建的。TinyTeX 能够通过 R 软件包 \textbf{tinytex} 轻松安装（安装 \textbf{bookdown} 时将自动安装）：
+只有当你想要将书籍输出为 PDF 时，你才需要 LaTeX\index{LaTeX}。你可以通过访问 \url{https://www.latex-project.org/get/} 来获取更多关于 LaTeX 及其安装的信息，但是我们强烈推荐你安装名为 \href{https://yihui.org/tinytex/}{TinyTeX} 的轻量级跨平台 LaTeX 发行版，它是基于 TeX Live 构建的。TinyTeX 能够通过 R 包 \textbf{tinytex} 轻松安装（安装 \textbf{bookdown} 时将自动安装）：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3703,7 +3705,7 @@ R Markdown 文档 (\texttt{*.Rmd}) 首先通过 \textbf{knitr} 软件包编译�
 \end{Highlighting}
 \end{Shaded}
 
-使用 TinyTeX，你将永远不会看见这样的错误信息：
+使用 TinyTeX，你应该永远不会看见这样的错误信息：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3724,29 +3726,29 @@ R Markdown 文档 (\texttt{*.Rmd}) 首先通过 \textbf{knitr} 软件包编译�
 \end{Highlighting}
 \end{Shaded}
 
-上面的错误信息表示你使用了一个包含 \texttt{titling.sty} 的 LaTeX 软件包，但它并没有被安装。LaTeX 软件包名称通常是 \texttt{*.sty} 这样的文件名格式，因此在本例中，你可以尝试安装 \texttt{titling} 软件包。如果你使用带有 R Markdown 的 TinyTeX，丢失的 LaTeX 软件包将自动安装，因此你无需担心此类问题。
+上面的错误信息表示你使用了一个包含 \texttt{titling.sty} 文件的 LaTeX 包，但并没有安装该软件包。LaTeX 包名通常是 \texttt{*.sty} 的格式，因此在本例中，你可以尝试安装 \texttt{titling} 包。如果你在 R Markdown 中使用 TinyTeX，缺少的 LaTeX 包将会自动安装，因此无需担心此类问题。
 
-LaTeX 发行版和其软件包也不时会进行更新，你可以考虑更新它们，特别是当您遇到 LaTeX 问题时。你可以通过以下方式找到 LaTeX 发行版的版本：
+LaTeX 发行版和其软件包也会不时进行更新，你可以考虑更新它们，特别是当遇到 LaTeX 问题时。你可以通过以下方式查看 LaTeX 发行版的版本：
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{system}\NormalTok{(}\StringTok{\textquotesingle{}pdflatex {-}{-}version\textquotesingle{}}\NormalTok{)}
-\DocumentationTok{\#\#  pdfTeX 3.141592653{-}2.6{-}1.40.25 (TeX Live 2023)}
-\DocumentationTok{\#\#  kpathsea version 6.3.5}
-\DocumentationTok{\#\#  Copyright 2023 Han The Thanh (pdfTeX) et al.}
+\DocumentationTok{\#\#  pdfTeX 3.141592653{-}2.6{-}1.40.26 (TeX Live 2024)}
+\DocumentationTok{\#\#  kpathsea version 6.4.0}
+\DocumentationTok{\#\#  Copyright 2024 Han The Thanh (pdfTeX) et al.}
 \DocumentationTok{\#\#  There is NO warranty.  Redistribution of this software is}
 \DocumentationTok{\#\#  covered by the terms of both the pdfTeX copyright and}
 \DocumentationTok{\#\#  the Lesser GNU General Public License.}
 \DocumentationTok{\#\#  For more information about these matters, see the file}
 \DocumentationTok{\#\#  named COPYING and the pdfTeX source.}
 \DocumentationTok{\#\#  Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.}
-\DocumentationTok{\#\#  Compiled with libpng 1.6.39; using libpng 1.6.39}
-\DocumentationTok{\#\#  Compiled with zlib 1.2.13; using zlib 1.2.13}
+\DocumentationTok{\#\#  Compiled with libpng 1.6.43; using libpng 1.6.43}
+\DocumentationTok{\#\#  Compiled with zlib 1.3.1; using zlib 1.3.1}
 \DocumentationTok{\#\#  Compiled with xpdf version 4.04}
 \end{Highlighting}
 \end{Shaded}
 
-你可以运行如下代码来更新 TinyTeX：
+你可以运行以下代码来更新 TinyTeX：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3764,11 +3766,11 @@ LaTeX 发行版和其软件包也不时会进行更新，你可以考虑更新�
 
 \chapter{软件使用}\label{software-usage}
 
-如第 \ref{introduction} 章所述,这本书并不是一本全面的 \textbf{knitr} 或 \textbf{rmarkdown} 指南。在本章中，我们简要地解释了 \textbf{knitr} 和 \textbf{rmarkdown} 中的一些基本概念和语法。如果你还有什么问题，可以将它们发布到 StackOverflow (\url{https://stackoverflow.com}) 上，并用 \texttt{r}、\texttt{knitr}、\texttt{rmarkdown} 和/或 \texttt{bookdown} 等任何适合的标签标记你的问题。
+如第 \ref{introduction} 章所述，这本书并不是一本全面的 \textbf{knitr} 或 \textbf{rmarkdown} 指南。在本章中，我们简要地解释了 \textbf{knitr} 和 \textbf{rmarkdown} 中的一些基本概念和语法。如果你有更多的问题，可以在 StackOverflow (\url{https://stackoverflow.com}) 上提问，并用 \texttt{r}、\texttt{knitr}、\texttt{rmarkdown} 和/或 \texttt{bookdown} 等任何适合的标签标记你的问题。
 
 \section{knitr}\label{knitr}
 
-\textbf{knitr} 软件包\index{knitr}是基于``文学编程''\citep{knuth1984}的思想设计的，它允许你将程序代码与源文档中的文本混合在一起。当 \textbf{knitr} 编译文档时，将提取并执行程序代码（以代码块为单位），程序输出将与输出文档中的原始文本一起显示。我们在第 \ref{r-code} 节中介绍了基本的语法。
+\textbf{knitr} 包\index{knitr}是基于``文学化编程 (Literate Programming)''\citep{knuth1984}的思想设计的，它允许你在源文档中将程序代码与文本混合在一起。当 \textbf{knitr} 编译文档时，程序代码（以代码块为单位）会被提取并执行，程序输出将与原始文本一起展示在输出文档中。我们在第 \ref{r-code} 节中介绍了基本的语法。
 
 R Markdown 不是 \textbf{knitr} 支持的唯一源格式。\textbf{knitr} 的基本思想可应用于其他计算和创作语言。例如，\textbf{knitr}还支持 R 和 LaTeX 的组合（\texttt{*.rnw}文档），以及 R + HTML (\texttt{*.RtML}) 等。你也可以在 \textbf{knitr} 中 使用其他计算语言，如 C++、Python、SQL 等。下面是一个简单的例子，你可以在 \url{http://rmarkdown.rstudio.com/authoring_knitr_engines.html} 中了解更多信息。
 
@@ -3809,9 +3811,9 @@ Python 用户可能熟悉 IPython\index{IPython} 或 Jupyter\index{Jupyter Noteb
 
 \section{R Markdown}\label{r-markdown}
 
-由于 R 和 Pandoc 的强大功能，你可以轻松地在 R Markdown 文档中进行计算，并将其转换为各种输出格式，包括 HTML/PDF/Word 文档、HTML5/Beamer 幻灯片、仪表板和网站等。R Markdown 文档通常由 YAML\index{YAML} 元数据（可选）和文档主体组成。我们在第 \ref{components} 章中介绍了编写文档主体各个组件的语法，并在本节中详细解释了 YAML 元数据。
+得益于 R 和 Pandoc 的强大功能，你可以轻松地在 R Markdown 文档中进行计算，并将其转换为各种输出格式，包括 HTML/PDF/Word 文档、HTML5/Beamer 幻灯片、仪表板和网站等。一份 R Markdown 文档通常由 YAML\index{YAML} 元数据（可选）和文档主体组成。我们在第 \ref{components} 章中介绍了编写文档主体各个组件的语法，并将在本节详细解释 YAML 元数据。
 
-R Markdown 的元数据可以写在文档的最开头，分别以三个短划线 \texttt{-\/-\/-} 开头和结尾。YAML 元数据通常由冒号分隔的标记值对组成，例如：
+R Markdown 的元数据可以写在文档的最开头，分别以三个短划线 \texttt{-\/-\/-} 开头和结尾。YAML 元数据通常由冒号分隔的标签和值组成，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3822,9 +3824,9 @@ R Markdown 的元数据可以写在文档的最开头，分别以三个短划线
 \end{Highlighting}
 \end{Shaded}
 
-对于元数据中的字符值，当其不包含特殊字符时，你可以省略引号，但如果希望它们是字符值，则使用引号更为安全。
+对于字符类型的取值，当不包含特殊字符时，你可以省略引号，但如果希望它们被解析为字符类型，则使用引号更为安全。
 
-除字符类型外，另一种元数据取值的常见类型是逻辑类型。\texttt{yes} 和 \texttt{true} 都表示 true，\texttt{no}/\texttt{false} 都表示 false，例如：
+除字符类型外，另一种常见类型是逻辑类型。\texttt{yes} 和 \texttt{true} 都表示 true，\texttt{no}/\texttt{false} 都表示 false，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3832,7 +3834,7 @@ R Markdown 的元数据可以写在文档的最开头，分别以三个短划线
 \end{Highlighting}
 \end{Shaded}
 
-元数据取值可以是向量，并且有两种写入向量的方法。下面两种方法是等价的
+元数据取值也可以是向量，并且有两种写入向量的方法。下面列出的两种方法是等价的
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3848,7 +3850,7 @@ R Markdown 的元数据可以写在文档的最开头，分别以三个短划线
 \end{Highlighting}
 \end{Shaded}
 
-元数据取值也可以是值的列表，只需要将其额外缩进两个空格，例如：
+元数据取值也可以是键值对的列表，只需要将其额外缩进两个空格，例如：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3859,7 +3861,7 @@ R Markdown 的元数据可以写在文档的最开头，分别以三个短划线
 \end{Highlighting}
 \end{Shaded}
 
-忘记缩进元数据取值是一个常见的错误。例如，下面的数据
+忘记缩进是一个常见的错误。例如，下面的数据
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3879,7 +3881,7 @@ R Markdown 的元数据可以写在文档的最开头，分别以三个短划线
 \end{Highlighting}
 \end{Shaded}
 
-而不是你可能期望的那样：
+而不是你期望的那样：
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3889,7 +3891,7 @@ R Markdown 的元数据可以写在文档的最开头，分别以三个短划线
 \end{Highlighting}
 \end{Shaded}
 
-R Markdown 输出格式在 YAML 元数据中的 \texttt{output} 字段中指定，并且你需要查阅 R 帮助页面以获得可以填写的选项，例如 \texttt{?rmarkdown::html\_document} 或 \texttt{?bookdown::gitbook}。YAML 中其它大多数字段的含义可以在 Pandoc 文档中找到。
+R Markdown 输出格式是在 YAML 元数据的 \texttt{output} 字段中指定的，你需要查阅 R 帮助页面以获得可以填写的选项，例如 \texttt{?rmarkdown::html\_document} 或 \texttt{?bookdown::gitbook}。YAML 中其它大多数字段的含义可以在 Pandoc 文档中找到。
 
 \textbf{rmarkdown} 软件包提供了这些 R Markdown 输出格式：
 
@@ -3923,23 +3925,23 @@ R Markdown 输出格式在 YAML 元数据中的 \texttt{output} 字段中指定�
   \texttt{word\_document}
 \end{itemize}
 
-在其他 R 软件包中有更多可能的输出格式，包括 \textbf{bookdown}、\textbf{tufte}、\textbf{rticles}、\textbf{flexdashboard}、\textbf{revealjs} 和 \textbf{rmdformats}等。
+在其他 R 包中还支持了更多的输出格式，包括 \textbf{bookdown}、\textbf{tufte}、\textbf{rticles}、\textbf{flexdashboard}、\textbf{revealjs} 和 \textbf{rmdformats}等。
 
 \chapter{常见问题}\label{ux5e38ux89c1ux95eeux9898}
 
-下面是常见问题 (FAQ) 的\emph{完整}列表。是的，这里只有一个问题。我个人不喜欢 FAQs。它们通常意味着惊喜，而惊喜对软件用户来说并不好。
+下面是\emph{完整的}常见问题 (FAQ) 列表。是的，这里只有一个问题。我个人不喜欢 FAQs。它们通常意味着意料之外的事物，而这对软件用户来说并不友好。
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   问：\textbf{bookdown} 会不会有 X、Y 和 Z功能？
 
-  答：简而言之，答案是否定的。但是如果你已经问了自己多次``我真的需要这些功能吗''，而答案仍然是``是''时，请随时向我们提出功能要求 \url{https://github.com/rstudio/bookdown/issues}。
+  答：简而言之，答案是否定的。但是如果你已经多次询问自己``我真的需要这些功能吗''，而答案仍然是``是''时，请随时向我们提出功能要求 \url{https://github.com/rstudio/bookdown/issues}。
 
-  用户要求的更多功能往往来自 LaTeX 世界。如果你的功能要求是这样的话，这个问题的答案是肯定的，因为 Pandoc 的 Markdown 支持原始 LaTeX 代码。每当你觉得 Markdown 不能为你完成这项工作时，总是可以选择在 Markdown 文档中应用一些原始的 LaTeX 代码。例如，你可以使用 \textbf{glossaries} 软件包创建术语表，或者你知道 LaTeX 语法的话，可以嵌入一个复杂的 LaTeX 表。但是请记住，LaTeX 内容不可移植。它只适用于 LaTeX/PDF 输出，在其他类型的输出中将被忽略。根据要求，我们将来可能会在 \textbf{bookdown} 中引入更多的 LaTeX 功能，但我们的基本理念是 Markdown 应该尽可能简单。
+  需要更多功能的用户往往来自 LaTeX 世界。如果你是这种情况，这个问题的答案是肯定的，因为 Pandoc 的 Markdown 支持原始 LaTeX 代码。每当你觉得 Markdown 不能帮你完成工作时，你可以选择在 Markdown 文档中应用一些原始的 LaTeX 代码。例如，你可以使用 \textbf{glossaries} 包创建术语表，或者嵌入一个复杂的 LaTeX 表，只要你知道 LaTeX 语法的话。但是请记住，LaTeX 内容是不可移植的。它只适用于 LaTeX/PDF 输出，在其他类型的输出中将被忽略。根据需求，我们将来可能会在 \textbf{bookdown} 中引入更多的 LaTeX 功能，但我们的基本理念是保持 Markdown 尽可能简单。
 \end{enumerate}
 
-世界上最具挑战性的不是学习花哨的技术，而是控制自己的狂野之心。
+世界上最具挑战性事情的不是学习花哨的技术，而是控制自己的狂野之心。
 
 \backmatter
 

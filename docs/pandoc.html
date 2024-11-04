@@ -23,7 +23,7 @@
 <meta name="author" content="Yihui Xie" />
 
 
-<meta name="date" content="2024-11-02" />
+<meta name="date" content="2024-11-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -313,7 +313,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="pandoc" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">A.2</span> Pandoc<a href="pandoc.html#pandoc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>R Markdown 文档 (<code>*.Rmd</code>) 首先通过 <strong>knitr</strong> 软件包编译成 Markdown (<code>*.md</code>)，然后通过 Pandoc 将 Markdown 编译成其他输出格式（如 LaTeX 或 HTML）。这个过程由 <strong>rmarkdown</strong> 软件包自动完成。你不需要单独安装 <strong>knitr</strong> 或 <strong>rmarkdown</strong>，因为它们是 <strong>bookdown</strong> 的必需软件包，安装 <strong>bookdown</strong> 时会自动安装。但是，Pandoc 不是 R 软件包，因此在安装 <strong>bookdown</strong> 时不会自动安装。你可以按照 Pandoc 主页 (<a href="http://pandoc.org" class="uri">http://pandoc.org</a>) 上的安装说明安装 Pandoc，但是如果你使用 RStudio IDE，实际上不需要单独安装 Pandoc，因为 RStudio 包含一个 Pandoc 的副本。Pandoc 版本号可通过以下方式获得：</p>
+<p>R Markdown 文档 (<code>*.Rmd</code>) 首先会通过 <strong>knitr</strong> 包编译成 Markdown (<code>*.md</code>)，然后 Markdown 再通过 Pandoc 编译成其他输出格式（如 LaTeX 或 HTML）。整个过程是由 <strong>rmarkdown</strong> 包自动完成的。你不需要额外安装 <strong>knitr</strong> 或 <strong>rmarkdown</strong>，因为它们是 <strong>bookdown</strong> 的依赖包，在安装 <strong>bookdown</strong> 时会自动安装。然而，Pandoc 并不是 R 软件包，因此不会在安装 <strong>bookdown</strong> 时自动安装。你可以参考 Pandoc 主页 (<a href="http://pandoc.org" class="uri">http://pandoc.org</a>) 上的安装说明来安装 Pandoc，但如果你使用 RStudio IDE，则不需要额外安装 Pandoc，因为 RStudio 已经包含了一个 Pandoc 的副本。你可以通过以下方式查看 Pandoc 版本号：</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="pandoc.html#cb150-1" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">pandoc_version</span>()</span>
 <span id="cb150-2"><a href="pandoc.html#cb150-2" tabindex="-1"></a><span class="do">## [1] &#39;3.2&#39;</span></span></code></pre></div>
 <p>如果你发现这个版本太低了，并且一些 Pandoc 功能特性只在更高版本中提供，你可以安装更高版本的 Pandoc，之后 <strong>rmarkdown</strong> 将会调用更高版本的 Pandoc，而不是内置的版本。</p>

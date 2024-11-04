@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2024-11-02" />
+<meta name="date" content="2024-11-04" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -312,9 +312,9 @@ details > summary {
 <div class="col-sm-12">
 <div id="latex" class="section level2" number="7.3">
 <h2><span class="header-section-number">A.3</span> LaTeX</h2>
-<p>只有当你想要将你的书籍转为 PDF 时，你才需要 LaTeX。你可以查阅 <a href="https://www.latex-project.org/get/" class="uri">https://www.latex-project.org/get/</a> 以获取更多关于 LaTeX 它的安装的信息，但是我们强烈推荐你安装名为 <a href="https://yihui.org/tinytex/">TinyTeX</a> 的轻量级跨平台 LaTeX 发行版，它是基于 TeX Live 构建的。TinyTeX 能够通过 R 软件包 <strong>tinytex</strong> 轻松安装（安装 <strong>bookdown</strong> 时将自动安装）：</p>
+<p>只有当你想要将书籍输出为 PDF 时，你才需要 LaTeX。你可以通过访问 <a href="https://www.latex-project.org/get/" class="uri">https://www.latex-project.org/get/</a> 来获取更多关于 LaTeX 及其安装的信息，但是我们强烈推荐你安装名为 <a href="https://yihui.org/tinytex/">TinyTeX</a> 的轻量级跨平台 LaTeX 发行版，它是基于 TeX Live 构建的。TinyTeX 能够通过 R 包 <strong>tinytex</strong> 轻松安装（安装 <strong>bookdown</strong> 时将自动安装）：</p>
 <div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="A.3-latex.html#cb151-1" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
-<p>使用 TinyTeX，你将永远不会看见这样的错误信息：</p>
+<p>使用 TinyTeX，你应该永远不会看见这样的错误信息：</p>
 <div class="sourceCode" id="cb152"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb152-1"><a href="A.3-latex.html#cb152-1" tabindex="-1"></a>! LaTeX Error: File `titling.sty&#39; not found.</span>
 <span id="cb152-2"><a href="A.3-latex.html#cb152-2" tabindex="-1"></a></span>
 <span id="cb152-3"><a href="A.3-latex.html#cb152-3" tabindex="-1"></a>Type X to quit or &lt;RETURN&gt; to proceed,</span>
@@ -329,22 +329,22 @@ details > summary {
 <span id="cb152-12"><a href="A.3-latex.html#cb152-12" tabindex="-1"></a>pandoc: Error producing PDF</span>
 <span id="cb152-13"><a href="A.3-latex.html#cb152-13" tabindex="-1"></a>Error: pandoc document conversion failed with error 43</span>
 <span id="cb152-14"><a href="A.3-latex.html#cb152-14" tabindex="-1"></a>Execution halted</span></code></pre></div>
-<p>上面的错误信息表示你使用了一个包含 <code>titling.sty</code> 的 LaTeX 软件包，但它并没有被安装。LaTeX 软件包名称通常是 <code>*.sty</code> 这样的文件名格式，因此在本例中，你可以尝试安装 <code>titling</code> 软件包。如果你使用带有 R Markdown 的 TinyTeX，丢失的 LaTeX 软件包将自动安装，因此你无需担心此类问题。</p>
-<p>LaTeX 发行版和其软件包也不时会进行更新，你可以考虑更新它们，特别是当您遇到 LaTeX 问题时。你可以通过以下方式找到 LaTeX 发行版的版本：</p>
+<p>上面的错误信息表示你使用了一个包含 <code>titling.sty</code> 文件的 LaTeX 包，但并没有安装该软件包。LaTeX 包名通常是 <code>*.sty</code> 的格式，因此在本例中，你可以尝试安装 <code>titling</code> 包。如果你在 R Markdown 中使用 TinyTeX，缺少的 LaTeX 包将会自动安装，因此无需担心此类问题。</p>
+<p>LaTeX 发行版和其软件包也会不时进行更新，你可以考虑更新它们，特别是当遇到 LaTeX 问题时。你可以通过以下方式查看 LaTeX 发行版的版本：</p>
 <div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="A.3-latex.html#cb153-1" tabindex="-1"></a><span class="fu">system</span>(<span class="st">&#39;pdflatex --version&#39;</span>)</span>
-<span id="cb153-2"><a href="A.3-latex.html#cb153-2" tabindex="-1"></a><span class="do">##  pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023)</span></span>
-<span id="cb153-3"><a href="A.3-latex.html#cb153-3" tabindex="-1"></a><span class="do">##  kpathsea version 6.3.5</span></span>
-<span id="cb153-4"><a href="A.3-latex.html#cb153-4" tabindex="-1"></a><span class="do">##  Copyright 2023 Han The Thanh (pdfTeX) et al.</span></span>
+<span id="cb153-2"><a href="A.3-latex.html#cb153-2" tabindex="-1"></a><span class="do">##  pdfTeX 3.141592653-2.6-1.40.26 (TeX Live 2024)</span></span>
+<span id="cb153-3"><a href="A.3-latex.html#cb153-3" tabindex="-1"></a><span class="do">##  kpathsea version 6.4.0</span></span>
+<span id="cb153-4"><a href="A.3-latex.html#cb153-4" tabindex="-1"></a><span class="do">##  Copyright 2024 Han The Thanh (pdfTeX) et al.</span></span>
 <span id="cb153-5"><a href="A.3-latex.html#cb153-5" tabindex="-1"></a><span class="do">##  There is NO warranty.  Redistribution of this software is</span></span>
 <span id="cb153-6"><a href="A.3-latex.html#cb153-6" tabindex="-1"></a><span class="do">##  covered by the terms of both the pdfTeX copyright and</span></span>
 <span id="cb153-7"><a href="A.3-latex.html#cb153-7" tabindex="-1"></a><span class="do">##  the Lesser GNU General Public License.</span></span>
 <span id="cb153-8"><a href="A.3-latex.html#cb153-8" tabindex="-1"></a><span class="do">##  For more information about these matters, see the file</span></span>
 <span id="cb153-9"><a href="A.3-latex.html#cb153-9" tabindex="-1"></a><span class="do">##  named COPYING and the pdfTeX source.</span></span>
 <span id="cb153-10"><a href="A.3-latex.html#cb153-10" tabindex="-1"></a><span class="do">##  Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.</span></span>
-<span id="cb153-11"><a href="A.3-latex.html#cb153-11" tabindex="-1"></a><span class="do">##  Compiled with libpng 1.6.39; using libpng 1.6.39</span></span>
-<span id="cb153-12"><a href="A.3-latex.html#cb153-12" tabindex="-1"></a><span class="do">##  Compiled with zlib 1.2.13; using zlib 1.2.13</span></span>
+<span id="cb153-11"><a href="A.3-latex.html#cb153-11" tabindex="-1"></a><span class="do">##  Compiled with libpng 1.6.43; using libpng 1.6.43</span></span>
+<span id="cb153-12"><a href="A.3-latex.html#cb153-12" tabindex="-1"></a><span class="do">##  Compiled with zlib 1.3.1; using zlib 1.3.1</span></span>
 <span id="cb153-13"><a href="A.3-latex.html#cb153-13" tabindex="-1"></a><span class="do">##  Compiled with xpdf version 4.04</span></span></code></pre></div>
-<p>你可以运行如下代码来更新 TinyTeX：</p>
+<p>你可以运行以下代码来更新 TinyTeX：</p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="A.3-latex.html#cb154-1" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">tlmgr_update</span>()</span></code></pre></div>
 <p>随着时间的推移，你可能也需要升级 TinyTeX（否则你无法安装或更新任何 LaTeX 软件包），在这种情况下你需要重新安装 TinyTeX：</p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="A.3-latex.html#cb155-1" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">reinstall_tinytex</span>()</span></code></pre></div>

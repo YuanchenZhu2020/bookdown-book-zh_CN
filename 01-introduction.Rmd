@@ -38,10 +38,10 @@ Markdown 是一种很好的语言，可以编写相对简单的文档，其中�
     ```
 
 1. 在 RStudio 中点击 `bookdown-demo.Rproj` 打开你下载的 `bookdown-demo` 储存库。
-1. 打开 R Markdown 文件 `index.Rmd`，然后点击 RStudio 里位于 `Biold` 选项卡中的按钮 `Build Book`。
+1. 打开 R Markdown 文件 `index.Rmd`，然后点击 RStudio 里位于 `Build` 选项卡中的按钮 `Build Book`。
 
 ```{block2, type='rmdnote'}
-如果你打算把你的书打印成 PDF 格式，你将需要一个 LaTeX 发行版。我们建议你安装 TinyTeX（包含 Xeletex）：<https://yihui.org/tinytex/>。
+如果你打算把你的书打印成 PDF 格式，你将需要一个 LaTeX 发行版。我们建议你安装 TinyTeX（包含 Xelatex）：<https://yihui.org/tinytex/>。
 ```
 
 现在你应该可以在 RStudio viewer 中看到本书样例的索引页。你可以添加或更改 R Markdown 文件，然后再次点击 `Knit` 按钮预览书籍。如果你不想使用 RStudio，也可以通过命令行编译书籍。详见下一节。

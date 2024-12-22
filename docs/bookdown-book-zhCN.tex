@@ -223,7 +223,7 @@
 
 \title{Bookdown: 使用 R Markdown 创作书籍和技术文档}
 \author{Yihui Xie}
-\date{2024-11-04}
+\date{2024-12-22}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{定理}[chapter]
@@ -562,11 +562,11 @@ Markdown 是一种很好的语言，可以编写相对简单的文档，其中�
 \item
   在 RStudio 中点击 \texttt{bookdown-demo.Rproj} 打开你下载的 \texttt{bookdown-demo} 储存库。
 \item
-  打开 R Markdown 文件 \texttt{index.Rmd}，然后点击 RStudio 里位于 \texttt{Biold} 选项卡中的按钮 \texttt{Build\ Book}。
+  打开 R Markdown 文件 \texttt{index.Rmd}，然后点击 RStudio 里位于 \texttt{Build} 选项卡中的按钮 \texttt{Build\ Book}。
 \end{enumerate}
 
 \begin{rmdnote}
-如果你打算把你的书打印成 PDF 格式，你将需要一个 LaTeX 发行版。我们建议你安装 TinyTeX（包含 Xeletex）：\url{https://yihui.org/tinytex/}。
+如果你打算把你的书打印成 PDF 格式，你将需要一个 LaTeX 发行版。我们建议你安装 TinyTeX（包含 XeLaTeX）：\url{https://yihui.org/tinytex/}。
 \end{rmdnote}
 
 现在你应该可以在 RStudio viewer 中看到本书样例的索引页。你可以添加或更改 R Markdown 文件，然后再次点击 \texttt{Knit} 按钮预览书籍。如果你不想使用 RStudio，也可以通过命令行编译书籍。详见下一节。
@@ -665,6 +665,7 @@ Markdown 是一种很好的语言，可以编写相对简单的文档，其中�
 \end{Shaded}
 
 尽管我们一直在谈论 R Markdown 文件，但章节文件实际上不必是 R Markdown 文件。它们可以是普通的 Markdown 文件 (\texttt{.md})，并且完全不需要包含 R 代码块。你当然可以使用 \textbf{bookdown} 来创作小说和诗歌。
+但是，默认情况下，只有 \texttt{.Rmd} 文件（而不是 \texttt{.md} 文件）会被视为章节文件，从而被包含在自动收集的文件中。
 
 目前，你可能会使用的主要的输出格式包括 \texttt{bookdown::pdf\_book}、\texttt{bookdown::gitbook}、\texttt{bookdown::html\_book} 和 \texttt{bookdown::epub\_book}。软件包中有一个类似于 \texttt{rmarkdown::render()} 的函数 \texttt{bookdown::render\_book()}\index{bookdown::render\_book()}，但它是为了使用输出格式函数将\emph{多个} Rmd 文档呈现在一本书中。你可以直接从命令行调用这个函数，或者点击 RStudio IDE 中的相关按钮。下面是一些命令行示例：
 
@@ -2291,7 +2292,7 @@ Gitbook 样式在每个页面的顶部都有一个工具栏（图 \ref{fig:gitbo
 \PreprocessorTok{{-}{-}{-}}
 \FunctionTok{title}\KeywordTok{:}\AttributeTok{ }\StringTok{"A Minimal Book Example"}
 \FunctionTok{author}\KeywordTok{:}\AttributeTok{ }\StringTok{"Jane Doe"}
-\FunctionTok{date}\KeywordTok{:}\AttributeTok{ }\StringTok{"2024{-}11{-}04"}
+\FunctionTok{date}\KeywordTok{:}\AttributeTok{ }\StringTok{"2024{-}12{-}22"}
 \FunctionTok{site}\KeywordTok{:}\AttributeTok{ bookdown::bookdown\_site}
 \FunctionTok{output}\KeywordTok{:}\AttributeTok{ bookdown::bs4\_book}
 \FunctionTok{url}\KeywordTok{:}\AttributeTok{ https://bookdown.org/janedoe/bookdown{-}demo}
@@ -2737,7 +2738,7 @@ MOBI 电子书可以在亚马逊的 Kindle 设备上阅读。Pandoc 本身不支
 ## {
 ##     pdf_book(..., base_format = rmarkdown::pdf_document)
 ## }
-## <bytecode: 0x0000017bd71e85f8>
+## <bytecode: 0x000001bd811ea3a0>
 ## <environment: namespace:bookdown>
 \end{verbatim}
 
@@ -3001,6 +3002,8 @@ MOBI 电子书可以在亚马逊的 Kindle 设备上阅读。Pandoc 本身不支
   \texttt{view}: 类似于 \texttt{edit}，它是一个指向当前页面源代码的链接。
 \item
   \texttt{rmd\_subdir}: 是否在子目录中搜索书籍 Rmd 源文件（默认情况下仅搜索根目录）。它可以是一个布尔值（例如，如果设为 \texttt{true}，则将在项目目录和所有子目录中搜索书记的 Rmd 源文件），如果要在子目录的子集中搜索书籍的 Rmd 源文件，它也可以是一个路径列表。
+\item
+  \texttt{include\_md}: 在搜索数据源文件时包含 \texttt{.md} 文件（默认情况下只会包含 \texttt{.Rmd} 文件）。
 \item
   \texttt{output\_dir}: 书籍的输出目录（默认为 \texttt{\_book}）；\texttt{render\_book()} 将会读取并使用这个设置。
 \item

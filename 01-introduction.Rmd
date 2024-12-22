@@ -121,6 +121,7 @@ rmd_files:
 ```
 
 尽管我们一直在谈论 R Markdown 文件，但章节文件实际上不必是 R Markdown 文件。它们可以是普通的 Markdown 文件 (`.md`)，并且完全不需要包含 R 代码块。你当然可以使用 **bookdown** 来创作小说和诗歌。
+但是，默认情况下，只有 `.Rmd` 文件（而不是 `.md` 文件）会被视为章节文件，从而被包含在自动收集的文件中。
 
 目前，你可能会使用的主要的输出格式包括 `bookdown::pdf_book`、`bookdown::gitbook`、`bookdown::html_book` 和 `bookdown::epub_book`。软件包中有一个类似于 `rmarkdown::render()` 的函数 `bookdown::render_book()`\index{bookdown::render\_book()}，但它是为了使用输出格式函数将*多个* Rmd 文档呈现在一本书中。你可以直接从命令行调用这个函数，或者点击 RStudio IDE 中的相关按钮。下面是一些命令行示例：
 

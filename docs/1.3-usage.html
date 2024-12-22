@@ -13,7 +13,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2024-11-04" />
+<meta name="date" content="2024-12-22" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -350,7 +350,8 @@ details > summary {
 <div class="sourceCode" id="cb11"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb11-1"><a href="1.3-usage.html#cb11-1" tabindex="-1"></a><span class="fu">rmd_files</span><span class="kw">:</span></span>
 <span id="cb11-2"><a href="1.3-usage.html#cb11-2" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;index.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;abstract.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;intro.Rmd&quot;</span><span class="kw">]</span></span>
 <span id="cb11-3"><a href="1.3-usage.html#cb11-3" tabindex="-1"></a><span class="at">  </span><span class="fu">latex</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">&quot;abstract.Rmd&quot;</span><span class="kw">,</span><span class="at"> </span><span class="st">&quot;intro.Rmd&quot;</span><span class="kw">]</span></span></code></pre></div>
-<p>尽管我们一直在谈论 R Markdown 文件，但章节文件实际上不必是 R Markdown 文件。它们可以是普通的 Markdown 文件 (<code>.md</code>)，并且完全不需要包含 R 代码块。你当然可以使用 <strong>bookdown</strong> 来创作小说和诗歌。</p>
+<p>尽管我们一直在谈论 R Markdown 文件，但章节文件实际上不必是 R Markdown 文件。它们可以是普通的 Markdown 文件 (<code>.md</code>)，并且完全不需要包含 R 代码块。你当然可以使用 <strong>bookdown</strong> 来创作小说和诗歌。
+但是，默认情况下，只有 <code>.Rmd</code> 文件（而不是 <code>.md</code> 文件）会被视为章节文件，从而被包含在自动收集的文件中。</p>
 <p>目前，你可能会使用的主要的输出格式包括 <code>bookdown::pdf_book</code>、<code>bookdown::gitbook</code>、<code>bookdown::html_book</code> 和 <code>bookdown::epub_book</code>。软件包中有一个类似于 <code>rmarkdown::render()</code> 的函数 <code>bookdown::render_book()</code>，但它是为了使用输出格式函数将<em>多个</em> Rmd 文档呈现在一本书中。你可以直接从命令行调用这个函数，或者点击 RStudio IDE 中的相关按钮。下面是一些命令行示例：</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="1.3-usage.html#cb12-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, <span class="st">&#39;bookdown::gitbook&#39;</span>)</span>
 <span id="cb12-2"><a href="1.3-usage.html#cb12-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&#39;foo.Rmd&#39;</span>, <span class="st">&#39;bookdown::pdf_book&#39;</span>)</span>
